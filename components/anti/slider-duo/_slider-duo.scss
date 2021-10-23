@@ -1,0 +1,30 @@
+// ░█▀▀▄ ░█▀▀▀█ 　 ░█▄─░█ ░█▀▀▀█ ▀▀█▀▀ 　 ░█▀▀▀ ░█▀▀▄ ▀█▀ ▀▀█▀▀
+// ░█─░█ ░█──░█ 　 ░█░█░█ ░█──░█ ─░█── 　 ░█▀▀▀ ░█─░█ ░█─ ─░█──
+// ░█▄▄▀ ░█▄▄▄█ 　 ░█──▀█ ░█▄▄▄█ ─░█── 　 ░█▄▄▄ ░█▄▄▀ ▄█▄ ─░█──
+// Override style on .slider-duo-custom.scss instead
+// unless you want to upgrade the component version
+
+// ========================================================================================================================================
+// Slider Duo
+// ========================================================================================================================================
+
+.slider-duo {
+  @include media-breakpoint-up(md) {
+    .col-body {
+      .slick-slider,
+      .slick-list,
+      .slick-track,
+      .slick-slide,
+      .slick-slide > div,
+      .col-body-wrapper,
+      .col-body-content {
+        height: 100%;
+      }
+      .col-body-content {
+        display: flex !important;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+  }
+}

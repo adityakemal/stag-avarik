@@ -1,0 +1,107 @@
+// ░█▀▀▄ ░█▀▀▀█ 　 ░█▄─░█ ░█▀▀▀█ ▀▀█▀▀ 　 ░█▀▀▀ ░█▀▀▄ ▀█▀ ▀▀█▀▀
+// ░█─░█ ░█──░█ 　 ░█░█░█ ░█──░█ ─░█── 　 ░█▀▀▀ ░█─░█ ░█─ ─░█──
+// ░█▄▄▀ ░█▄▄▄█ 　 ░█──▀█ ░█▄▄▄█ ─░█── 　 ░█▄▄▄ ░█▄▄▀ ▄█▄ ─░█──
+// Override style on .tabs-custom.scss instead
+// unless you want to upgrade the component version
+
+// ========================================================================================================================================
+// Tabs
+// ========================================================================================================================================
+
+// Nav tabs & pills
+.nav-tabs-wrapper,
+.nav-pills-wrapper {
+  margin-bottom: 1rem;
+  .nav-tabs,
+  .nav-pills {
+    .nav-link {
+      padding: 0.75rem 1.5rem;
+    }
+  }
+}
+
+// Nav tabs
+.nav-tabs-wrapper {
+  border: none;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: $gray-100;
+  }
+  .nav-tabs {
+    border: none;
+    .nav-link {
+      @extend .hover-underline;
+      border: none;
+      position: relative;
+      color: $gray-400;
+      color: rgba($body-color, 0.75);
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      @include media-breakpoint-up(md) {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+      }
+      &:before {
+        height: 3px;
+        bottom: 1px;
+      }
+      @include hover-focus-active {
+        color: $primary;
+      }
+      &.active {
+        color: $primary;
+        border-bottom: none;
+        &:before {
+          transform: scale3d(1, 1, 1);
+        }
+      }
+    }
+  }
+}
+
+// Scrollable
+.nav-scrollable-wrapper {
+  position: relative;
+  @include media-breakpoint-down(xs) {
+    margin-left: -$container-padding;
+    margin-right: -$container-padding;
+  }
+  .nav-scrollable {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .nav-tabs,
+    .nav-pills {
+      flex-wrap: nowrap;
+      .nav-item {
+        flex-shrink: 0;
+      }
+    }
+  }
+  &.scrollable-fade {
+    &:after {
+      content: "";
+      width: 2rem;
+      height: calc(100% - 1px);
+      position: absolute;
+      right: 0;
+      top: 0;
+      @include gradient-x-to-left(rgba($white, 1), rgba($white, 0));
+    }
+  }
+}
+
+// Tab state
+[data-tab-content] {
+  display: none;
+}
+.active[data-tab-content] {
+  display: block;
+}

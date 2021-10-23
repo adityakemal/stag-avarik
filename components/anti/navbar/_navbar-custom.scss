@@ -1,0 +1,276 @@
+// ========================================================================================================================================
+// Navbar - Custom
+// ========================================================================================================================================
+
+.navbar {
+  .navbar-top {
+    .col-left {
+      margin-left: -0.75rem; // Set depending on hover style & padding
+      @include media-breakpoint-up($navbar-expand-up) {
+        margin-left: -0.75rem; // Set depending on hover style & padding
+      }
+    }
+    .col-right {
+      margin-right: -0.75rem; // Set depending on hover style & padding
+      @include media-breakpoint-up($navbar-expand-up) {
+        margin-right: -0.75rem; // Set depending on hover style & padding
+      }
+    }
+  }
+  .navbar-main {
+    .col-left {
+      margin-left: -0.75rem; // Set depending on hover style & padding
+      @include media-breakpoint-up($navbar-expand-up) {
+        margin-left: -0.75rem; // Set depending on hover style & padding
+      }
+    }
+    .col-right {
+      margin-right: -0.75rem; // Set depending on hover style & padding
+      @include media-breakpoint-up($navbar-expand-up) {
+        margin-right: 0; // Set depending on hover style & padding
+      }
+    }
+  }
+}
+
+.navbar-brand {
+  padding-left: 0.75rem;
+  width: 85px;
+  @include media-breakpoint-up($navbar-expand-up) {
+    width: 100px;
+  }
+}
+
+// ========================================================================================================================================
+// Mobile
+// ========================================================================================================================================
+
+// ==========================================================================
+// Mobile - Navbar Main
+// ==========================================================================
+
+.navbar-main {
+  .col-left,
+  .col-right {
+    .nav-item {
+      width: 3rem;
+    }
+    .nav-icon {
+      // prettier-ignore
+      .ais, .aib, .ail, .air, .icon {
+        top: 1px;
+      }
+      i {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+
+.nav-toggler {
+  .icon-bar {
+    width: 22px;
+    border-radius: 2px;
+    height: 2px; // Alt 1
+    // height: 1px; // Alt 2
+    & + .icon-bar {
+      margin-top: 4px; // Alt 1
+      // margin-top: 5px; // Alt 2
+    }
+  }
+}
+
+// ==========================================================================
+// Mobile - Menu
+// ==========================================================================
+
+// Main
+.mobile-menu {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  .mobile-menu-content {
+    padding: 5rem 0;
+  }
+  .nav-item {
+    overflow: hidden;
+    .nav-link {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+// ========================================================================================================================================
+// Desktop
+// ========================================================================================================================================
+
+// ==========================================================================
+// Desktop - Navbar Top
+// ==========================================================================
+
+.navbar-top {
+  .nav-link {
+    padding: 0 0.75rem;
+    i {
+      font-size: 1rem;
+    }
+  }
+}
+
+// ==========================================================================
+// Desktop - Navbar Main
+// ==========================================================================
+
+.navbar-main {
+  .desktop-menu {
+    position: relative;
+    align-items: center;
+    .nav-item {
+      margin-left: 1rem;
+      .nav-link {
+        i {
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+}
+
+// ========================================================================================================================================
+// Search
+// ========================================================================================================================================
+
+.search-menu {
+  background: transparent;
+}
+
+.form-search {
+  .form-control {
+    border-color: transparent;
+    border-radius: 2rem;
+    padding-left: 2.75rem;
+    background: $white;
+  }
+  .form-search-icon {
+    font-size: 1.25rem;
+    left: 0.75rem;
+  }
+  .form-search-close {
+    right: 0.7rem;
+    background: $gray-100;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    @include hover-focus-active {
+      background: $gray-200;
+    }
+  }
+}
+
+// Effect (Expand)
+.search-menu {
+  &.expand {
+    .form-group {
+      @include media-breakpoint-up($navbar-expand-up) {
+        right: 120px;
+      }
+      .form-search {
+        width: 80px;
+      }
+    }
+    &.hide {
+      .form-search {
+        width: 80px;
+      }
+    }
+    &.show {
+      .form-search {
+        width: 100%;
+      }
+      @include media-breakpoint-up($navbar-expand-up) {
+        .form-search {
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// Color Theme
+// ==========================================================================
+
+// prettier-ignore
+.navbar {
+  &.navbar-light {
+    .navbar-brand { .logo-light { display: none; } .logo-dark { display: block; } }
+    .nav-toggler { .icon-bar { background-color: $dark; } }
+    .navbar-top {
+      background: $gray-100; 
+      .nav-item {
+        .nav-link { 
+          color: $primary; 
+          &:hover { color: darken($primary, 10%); }
+        }
+      }
+    }
+    .navbar-main {
+      background: $white;
+      .nav-item {
+        .nav-toggler .icon-bar { 
+          background: $primary;
+          &:hover { background: darken($primary, 10%); }
+        }
+        .nav-link, .nav-icon { 
+          color: $primary; 
+          &:hover { color: darken($primary, 10%); }
+        }
+      }
+    }
+  }
+  &.navbar-dark {
+    .navbar-brand { .logo-dark { display: none; } .logo-light { display: block; } }
+    .navbar-top {
+      background: $gray-800; 
+      .nav-item {
+        .nav-link { 
+          color: $white; 
+          &:hover { color: $primary; }
+        }
+      }
+    }
+    .navbar-main {
+      background: $dark; 
+      .nav-item {
+        .nav-toggler .icon-bar { 
+          background: $white;
+          &:hover { background: $white; }
+        }
+        .nav-link, .nav-icon { 
+          color: $white; 
+          &:hover { color: $primary; }
+        }
+      }
+    }
+  }
+  &.transparent {
+    .navbar-main { background: transparent; }
+  }
+  &.is-scrolled {
+    .navbar-main { background: $dark; }
+  }
+}
+
+.mobile-menu {
+  background: $dark;
+  // background: $white;
+  .nav-item {
+    .nav-link {
+      color: $white;
+      // color: $dark;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+// ========================================================================================================================================
+// Type
+// ========================================================================================================================================
+
+// █░█ █▀█ █░█░█   ▀█▀ █▀█   █▀▀ █░█ ▄▀█ █▄░█ █▀▀ █▀▀   █▀▀ █▀█ █▄░█ ▀█▀   █▀ █ ▀█ █▀▀
+// █▀█ █▄█ ▀▄▀▄▀   ░█░ █▄█   █▄▄ █▀█ █▀█ █░▀█ █▄█ ██▄   █▀░ █▄█ █░▀█ ░█░   ▄█ █ █▄ ██▄
+//
+// 1. Go to variables/typograph.scss
+// 2. Change the $font-size-base (if necessary) and the multiplier on $h1-font-size, $h2-font-size, etc.
+//
+// Tips
+// - Always change ONLY the sizes of typography on variables/typograph.scss for consistency
+//
+// Reference
+// $h1-font-size: $font-size-base * 2.5;
+// $h2-font-size: $font-size-base * 2;
+// $h3-font-size: $font-size-base * 1.75;
+// $h4-font-size: $font-size-base * 1.5;
+// $h5-font-size: $font-size-base * 1.25;
+// $h6-font-size: $font-size-base;
+
+// prettier-ignore
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $headings-font-family; // Edit the variable on variables-custom.scss
+  // Add custom styles here
+}
+
+// Caption
+// Usually used as label with text uppercase
+.caption {
+  @include font-size($font-size-base * 1);
+  text-transform: uppercase;
+  color: $body-color-secondary;
+  margin-bottom: 1rem;
+}

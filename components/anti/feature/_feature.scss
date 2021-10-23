@@ -1,0 +1,69 @@
+// ░█▀▀▄ ░█▀▀▀█ 　 ░█▄─░█ ░█▀▀▀█ ▀▀█▀▀ 　 ░█▀▀▀ ░█▀▀▄ ▀█▀ ▀▀█▀▀
+// ░█─░█ ░█──░█ 　 ░█░█░█ ░█──░█ ─░█── 　 ░█▀▀▀ ░█─░█ ░█─ ─░█──
+// ░█▄▄▀ ░█▄▄▄█ 　 ░█──▀█ ░█▄▄▄█ ─░█── 　 ░█▄▄▄ ░█▄▄▀ ▄█▄ ─░█──
+// Override style on .feature-custom.scss instead
+// unless you want to upgrade the component version
+
+// ========================================================================================================================================
+// Feature
+// ========================================================================================================================================
+
+// .feature - Generic feature item usually with icon on top, title, text, and optionally button
+
+// Feature
+.feature {
+  display: flex;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+  @include media-breakpoint-up(md) {
+    flex-direction: column;
+  }
+  .feature-img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 1rem;
+    }
+  }
+  .feature-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .feature-title {
+      color: $body-color;
+    }
+    .feature-text {
+      color: $body-color;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Color Theme
+.light {
+  .feature {
+    .feature-body {
+      .feature-title {
+        color: $body-color;
+      }
+      .feature-text {
+        color: $body-color-secondary;
+      }
+    }
+  }
+}
+.dark {
+  .feature {
+    .feature-body {
+      .feature-title {
+        color: $white;
+      }
+      .feature-text {
+        color: rgba($white, 0.75);
+      }
+    }
+  }
+}

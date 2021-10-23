@@ -1,0 +1,126 @@
+// ░█▀▀▄ ░█▀▀▀█ 　 ░█▄─░█ ░█▀▀▀█ ▀▀█▀▀ 　 ░█▀▀▀ ░█▀▀▄ ▀█▀ ▀▀█▀▀
+// ░█─░█ ░█──░█ 　 ░█░█░█ ░█──░█ ─░█── 　 ░█▀▀▀ ░█─░█ ░█─ ─░█──
+// ░█▄▄▀ ░█▄▄▄█ 　 ░█──▀█ ░█▄▄▄█ ─░█── 　 ░█▄▄▄ ░█▄▄▀ ▄█▄ ─░█──
+// Override style on .loader-custom.scss instead
+// unless you want to upgrade the component version
+
+// ========================================================================================================================================
+// Loader
+// ========================================================================================================================================
+
+.loader {
+  @include position(fixed, 0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // visibility: hidden; // Prevent flashing element
+
+  // Loader exit
+  &.loader-exit {
+    pointer-events: none;
+  }
+
+  // Variant
+  &.loader-image {
+    .img-brand {
+      height: 25px;
+      display: block;
+      animation: loaderImage 2s 0.5s ease-in-out both;
+      visibility: hidden; // Prevent flashing element
+    }
+  }
+  &.loader-spinner {
+    .img-spinner-wrapper {
+      animation: loaderSpinner 2s 0.5s ease-in-out both;
+      visibility: hidden; // Prevent flashing element
+      .img-spinner {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear;
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+  &.loader-lottie {
+    .img-lottie {
+      width: 100px !important;
+      @include media-breakpoint-up(md) {
+        width: 200px !important;
+      }
+    }
+  }
+
+  // Animation
+  &.fadeOut {
+    animation: fadeOut 1s 2.5s ease-in-out both;
+  }
+  &.slideOutUp {
+    animation: loaderSlideOutUp 1s 2.5s ease(in-out-quart) both;
+  }
+
+  // Theme
+  &.loader-light {
+    background: $light;
+    .img-spinner {
+      border: 2px solid $gray-100;
+      border-top: 2px solid $gray-400;
+    }
+  }
+  &.loader-dark {
+    background: $dark;
+    .img-spinner {
+      border: 2px solid $gray-800;
+      border-top: 2px solid $white;
+    }
+  }
+}
+
+@keyframes loaderImage {
+  from {
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes loaderSpinner {
+  from {
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes loaderSlideOutUp {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0;
+  }
+}
