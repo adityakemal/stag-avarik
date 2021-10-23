@@ -73,7 +73,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Loader variant="image" theme="dark" effect="fadeOut" />
+      {/* <Loader variant="image" theme="dark" effect="fadeOut" /> */}
       <Navbar />
       <main>
         {/* {!initialLoading ? children : <div className="h-vh-100 w-vw-100" />} */}

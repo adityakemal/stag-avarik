@@ -51,7 +51,7 @@ export const Navbar = () => {
   }, [])
 
   useEffect(() => {
-    window.onscroll = function() {
+    window.onscroll = function () {
       if (window.pageYOffset > 5) {
         setNavScroll(true)
       } else {
@@ -74,7 +74,7 @@ export const Navbar = () => {
       setDisabledMenu(false)
     }, 1500) // set this with your mobile menu animation duration
   }
-  const handleMenuMobile = () => {
+  const handleMenuMobile = (e, fn) => {
     disableMenu()
     if (mobileMenu.initial === false) {
       setMobileMenu({ initial: null, clicked: true })
@@ -82,6 +82,11 @@ export const Navbar = () => {
       setMobileMenu({ clicked: !mobileMenu.clicked })
     } else if (mobileMenu.clicked === false) {
       setMobileMenu({ clicked: !mobileMenu.clicked })
+    }
+    if (fn) {
+      setTimeout(() => {
+        fn()
+      }, 1500)
     }
   }
 
@@ -161,68 +166,19 @@ export const Navbar = () => {
           ${navScroll ? "is-scrolled" : ""}
         `}
       >
-        <div className="navbar-top">
-          <div className="container">
-            <ul className="col-left">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Menu
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Menu
-                </Link>
-              </li>
-            </ul>
-            <ul className="col-right">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Menu
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Menu
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  <i className="ais ai-shopping-bag" />
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
         <div className="navbar-main">
           <div className="container">
-            <ul className="col-left">
+            {/* <ul className="col-left">
               <li className="nav-item-brand">
-                {/* prettier-ignore */}
                 <Link className="navbar-brand absolute" to="/">
                   <img src={logoLight} className="logo-light img-fluid" alt="Logo"/>
                   <img src={logoDark} className="logo-dark img-fluid" alt="Logo"/>
                 </Link>
               </li>
-            </ul>
+            </ul> */}
 
             {/* Mobile */}
             <ul className={`col-right d-${navExpand}-none`}>
-              <li className="nav-item">
-                <Link className="nav-icon" to="/">
-                  <i className="ais ai-shopping-bag" />
-                </Link>
-              </li>
-              <li className="nav-item">
-                <button
-                  className="nav-icon search-toggler"
-                  disabled={disabledSearch}
-                  onClick={handleSearch}
-                >
-                  <i className="ais ai-search" />
-                </button>
-              </li>
               <li className="nav-item">
                 <button
                   className="nav-icon nav-toggler inactive absolute"
@@ -247,9 +203,10 @@ export const Navbar = () => {
         </div>
 
         <MobileMenu
+          handleMenuMobile={handleMenuMobile}
           mobileMenu={mobileMenu}
           navExpand={navExpand}
-          variant="slide-right"
+          variant="slide-down"
         />
         <div className="menu-bg" />
       </nav>

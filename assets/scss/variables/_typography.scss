@@ -15,9 +15,8 @@ $font-weight-bold:            700; // Antikode
 $font-weight-bolder:          bolder; // Antikode
 
 // Custom font import
-// @include font-face("AkzidenzGrotesk", "AkzidenzGrotesk-Light", $font-weight-light);
-// @include font-face("AkzidenzGrotesk", "AkzidenzGrotesk-Regular", $font-weight-normal);
-// @include font-face("AkzidenzGrotesk", "AkzidenzGrotesk-Medium", $font-weight-bold);
+@include font-face('Trajan Pro', 'TrajanPro-Regular', $font-weight-normal);
+@include font-face('Trajan Pro', 'TrajanPro-Bold', $font-weight-bold);
 
 // Font default / fallback (DO NOT EDIT)
 $font-default-sans-serif:     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default; // Antikode
@@ -26,7 +25,7 @@ $font-default-monospace:      SFMono-Regular, Menlo, Monaco, Consolas, "Liberati
 
 // Add custom font in front of the $font-default-
 // e.g. "Proxima Nova", $font-default-sans-serif
-$font-family-sans-serif:      $font-default-sans-serif; // Antikode
+$font-family-sans-serif:      'Trajan Pro', $font-default-sans-serif; // Avarik Saga
 $font-family-serif:           $font-default-serif; // Antikode
 $font-family-monospace:       $font-default-monospace; // Antikode
 
@@ -44,7 +43,7 @@ $line-height-base:            1.5;
 $line-height-lg:              1.5;
 $line-height-sm:              1.5;
 
-$font-size-base:              1rem;
+$font-size-base:              .9rem;
 $font-size-lg:                $font-size-base * 1.25;
 $font-size-sm:                $font-size-base * .875;
 

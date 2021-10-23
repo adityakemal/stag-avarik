@@ -35,16 +35,42 @@ $btn-hover-bg-darken-custom: $btn-hover-bg-darken; // EDIT THIS AS NEEDED (Defau
 // }
 
 // Toggle hover underline effect for link buttons
-//
-// .btn-link {
-//   @include hover-underline;
-//   &:before {
-//     bottom: 0.25rem; // underline effect position (default: 0)
-//   }
-// }
+.btn-link {
+  @extend .hover-underline;
+  &:before {
+    bottom: 0.5rem; // underline effect position (default: 0)
+  }
+}
 
 // ==========================================================================
 // General
 // ==========================================================================
 
-// Add customs styles here
+.btn {
+  font-family: $headings-font-family;
+  text-transform: lowercase;
+}
+
+.btn-outline-white {
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    background: rgba($white, 0.5);
+  }
+  &:before {
+    left: 0.25rem;
+  }
+  &:after {
+    right: 0.25rem;
+  }
+  &:hover(not:disabled) {
+    &:before,
+    &:after {
+      background: $black;
+    }
+  }
+}

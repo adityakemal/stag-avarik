@@ -4,6 +4,128 @@
 
 footer {
   h5 {
-    @extend .h6;
+    @extend .h5;
+  }
+  background: $purple url(../../../assets/img/common/bg_footer.jpg) no-repeat
+    center center;
+  background-size: cover;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    @include gradient-y-to-bottom($black, rgba($black, 0));
+    height: 300px;
+    top: 0;
+    width: 100%;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background: rgba($black, 0.4);
+    height: 100%;
+    width: 100%;
+    top: 0;
+  }
+  .footer-main,
+  .footer-bottom {
+    z-index: 3;
+    position: relative;
+  }
+  .footer-main {
+    padding-top: 5rem;
+    @include media-breakpoint-up(md) {
+      padding-top: 10rem;
+    }
+  }
+}
+
+.footer-main {
+  @include media-breakpoint-up(xl) {
+    .row-main {
+      margin-left: -2rem;
+      margin-right: -2rem;
+      > .col-footer {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    .row-main {
+      margin-left: -3rem;
+      margin-right: -3rem;
+      > .col-footer {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+    }
+  }
+}
+
+.footer-menu {
+  .nav-link {
+    color: rgba($white, 0.75);
+    @include hover-focus-active {
+      color: $white;
+    }
+    &:before {
+      background: $white;
+      height: 1px;
+    }
+  }
+}
+
+.footer-about {
+  img {
+    width: 60%;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 0.75rem;
+    color: rgba($white, 0.75);
+  }
+}
+
+.footer-menu {
+  .nav-link {
+    &:before {
+      bottom: 0.5rem; // underline effect position (default: 0)
+    }
+  }
+}
+
+.footer-contact {
+  h5 {
+    margin-bottom: 1rem;
+  }
+  a {
+    margin-bottom: 0;
+    color: rgba($white, 0.75);
+    @include hover-focus-active {
+      color: $white;
+    }
+  }
+}
+
+.footer-bottom {
+  color: rgba($white, 0.75);
+  font-size: 0.75rem;
+  text-transform: lowercase;
+  .btn-link {
+    color: rgba($white, 0.75);
+    font-size: 0.75rem;
+    text-transform: lowercase;
+    padding: 0;
+    line-height: 1;
+    @include hover-focus-active {
+      color: $white;
+    }
+    &:before {
+      bottom: -0.25rem;
+      height: 1px;
+      background: $white;
+    }
   }
 }

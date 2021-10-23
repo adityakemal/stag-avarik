@@ -2,75 +2,81 @@ import React from "react"
 import { Link } from "components/anti/link/link"
 import { Accordion } from "components/anti/accordion/accordion"
 
+import { scroller, Element } from "react-scroll"
+
 const MobileMenu = ({ navExpand, variant }) => {
+  const handleClick = (content) => {
+    scroller.scrollTo(content, {
+      duration: 500,
+      delay: 100,
+      smooth: true,
+    })
+  }
+
+  const handleCloseMenu = (content) => {
+    handleMenuMobile(false, () => handleClick(content))
+  }
   return (
     <>
       <div className={`mobile-menu d-${navExpand}-none ${variant}`}>
         <div className="mobile-menu-content">
           <div className="container">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link
-                  className="nav-link anim-1"
-                  activeClassName="active"
-                  to="/"
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
+              <li
+                className="nav-item"
+                onClick={() => handleCloseMenu("saga-content")}
+              >
                 <Link
                   className="nav-link anim-2"
                   activeClassName="active"
-                  to="/about"
+                  // to="/#saga"
                 >
-                  About
+                  Saga
                 </Link>
               </li>
-              <li className="nav-item">
-                <Accordion
-                  className="anim-3 w-100"
-                  title="Facilities"
-                  titleClassName="nav-link"
+              <li
+                className="nav-item"
+                onClick={() => handleCloseMenu("character-content")}
+              >
+                <Link
+                  className="nav-link anim-3"
+                  activeClassName="active"
+                  // to="/#characters"
                 >
-                  <ul className="list-unstyled">
-                    <li>
-                      <Link to="/facilities">Item</Link>
-                    </li>
-                    <li>
-                      <Link to="/facilities">Item</Link>
-                    </li>
-                    <li>
-                      <Link to="/facilities">Item</Link>
-                    </li>
-                  </ul>
-                </Accordion>
+                  Characters
+                </Link>
               </li>
-              <li className="nav-item">
+              <li
+                className="nav-item"
+                onClick={() => handleCloseMenu("roadmap-content")}
+              >
                 <Link
                   className="nav-link anim-4"
                   activeClassName="active"
-                  to="/news-events"
+                  // to="/#roadmap"
                 >
-                  News & Events
+                  Roadmap
                 </Link>
               </li>
-              <li className="nav-item">
+              <li
+                className="nav-item"
+                onClick={() => handleCloseMenu("team-content")}
+              >
                 <Link
                   className="nav-link anim-5"
                   activeClassName="active"
-                  to="/access"
+                  // to="/#team"
                 >
-                  Access
+                  Team
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
                   className="nav-link anim-6"
                   activeClassName="active"
-                  to="/services"
+                  to="/litepaper"
                 >
-                  Services
+                  Lite Paper
                 </Link>
               </li>
             </ul>

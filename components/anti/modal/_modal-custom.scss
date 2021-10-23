@@ -2,4 +2,122 @@
 // Modal
 // ========================================================================================================================================
 
-// Add custom styles here
+.modal {
+  height: auto;
+  .modal-content {
+    background: $white url(../../../assets/img/common/bg_paper-texture.jpg)
+      repeat;
+    background-size: 200px;
+    padding: 0.25rem !important;
+    h3,
+    h4,
+    h5,
+    p {
+      color: $body-color;
+    }
+    .modal-inner-content {
+      border: 1px solid rgba($black, 0.5);
+      padding: 1.5rem;
+      @include media-breakpoint-up(md) {
+        padding: 2rem;
+      }
+    }
+  }
+}
+
+.modal-rarity {
+  h4 {
+    margin-bottom: 1rem;
+    img {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-right: 0.5rem;
+      @include media-breakpoint-up(md) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  .img-wrapper {
+    border: 1px solid rgba($black, 0.5);
+    padding: 0.25rem;
+  }
+  .rarity-item {
+    border-bottom: 1px solid rgba($black, 0.125);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    @include media-breakpoint-up(md) {
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border: none;
+    }
+    .col-image {
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 0.75rem;
+      }
+    }
+    .col-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include media-breakpoint-up(xl) {
+        padding-left: 1.75rem;
+      }
+      p {
+        .rarity-level {
+          padding: 0.125rem;
+          text-transform: lowercase;
+          font-size: 0.8rem;
+          color: $white;
+          display: inline-block;
+          margin-right: 0.375rem;
+          .content {
+            padding: 0.15rem 0.375rem 0.1rem;
+            border: 1px solid rgba($white, 0.5);
+          }
+        }
+        strong {
+          color: $body-color;
+        }
+        // i {
+        //   text-transform: lowercase;
+        //   font-style: normal;
+        //   font-size: 0.8rem;
+        // }
+      }
+    }
+    &:nth-child(2) {
+      .col-text {
+        .rarity-level {
+          background: $purple-alt;
+        }
+      }
+    }
+    &:nth-child(3) {
+      .col-text {
+        .rarity-level {
+          background: $purple;
+        }
+      }
+    }
+    &:nth-child(4) {
+      .col-text {
+        .rarity-level {
+          background: $orange;
+        }
+      }
+    }
+    &:nth-child(5) {
+      .col-text {
+        .rarity-level {
+          background: $yellow;
+        }
+      }
+    }
+  }
+}
