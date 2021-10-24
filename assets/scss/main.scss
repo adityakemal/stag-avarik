@@ -114,9 +114,6 @@
 @import "../../components/anti/cover/cover-custom";
 @import "../../components/anti/cursor/cursor";
 @import "../../components/anti/cursor/cursor-custom";
-@import "../../components/anti/demo/demo";
-@import "../../components/anti/download/download";
-@import "../../components/anti/download/download-custom";
 @import "../../components/anti/footer/footer";
 @import "../../components/anti/footer/footer-custom";
 @import "../../components/anti/feature/feature";
@@ -129,12 +126,8 @@
 @import "../../components/anti/link/link-custom";
 @import "../../components/anti/loader/loader";
 @import "../../components/anti/loader/loader-custom";
-// @import "../../components/anti/map/map";
-// @import "../../components/anti/map/map-custom";
 @import "../../components/anti/modal/modal";
 @import "../../components/anti/modal/modal-custom";
-@import "../../components/anti/nav-bottom/nav-bottom";
-@import "../../components/anti/nav-bottom/nav-bottom-custom";
 @import "../../components/anti/navbar/navbar";
 @import "../../components/anti/navbar/navbar-custom";
 @import "../../components/anti/newsletter/newsletter";
@@ -145,8 +138,6 @@
 @import "../../components/anti/post/post-custom";
 @import "../../components/anti/social/social";
 @import "../../components/anti/social/social-custom";
-@import "../../components/anti/stats/stats";
-@import "../../components/anti/stats/stats-custom";
 @import "../../components/anti/tabs/tabs";
 @import "../../components/anti/tabs/tabs-custom";
 @import "../../components/anti/type/type";
@@ -155,27 +146,14 @@
 @import "../../components/anti/video/video";
 
 // ==========================================================================
-// Gutenberg Components
-// ==========================================================================
-
-// REMOVE IF UNUSED
-@import "../../components/gutenberg/acf-label-w-value-list/label-w-value-list";
-@import "../../components/gutenberg/acf-download/download";
-@import "../../components/gutenberg/shortcode/post-list/post-list";
-@import "../../components/gutenberg/shortcode/project-list/project-list";
-
-// ==========================================================================
 // Pages Styles
 // ==========================================================================
 
-// Demo - REMOVE BEFORE DELIVERING
-@import "pages/demo";
-
 // Main Pages
-@import "pages/home";
 @import "pages/about";
-@import "pages/contact";
-@import "pages/framer"; // Demo
+@import "pages/common";
+@import "pages/home";
+@import "pages/litepaper";
 
 // ========================================================================================================================================
 // Custom Styles

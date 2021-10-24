@@ -162,7 +162,7 @@ export const Navbar = () => {
       {/* When giving .navbar-expand-*, don't forget to modify the variables on _navbar.scss */}
       <nav
         className={`
-          navbar ${navTheme} navbar-expand-${navExpand} ${navPosition} 
+          navbar ${navTheme} navbar-expand-${navExpand} ${navPosition} transparent
           ${navScroll ? "is-scrolled" : ""}
         `}
       >

@@ -1,18 +1,34 @@
 import React from "react"
-// import Helmet from "react-helmet"
+import Helmet from "react-helmet"
 import Seo from "components/seo"
-// import Layout from "components/layout"
+import Layout from "components/layout"
 
-import CommonCover from "components/pages/common/common-cover"
-import HomeAbout from "components/pages/home/home-about"
+// import { Loader } from 'components/anti/loader/loader';
+
+import HomeCover from "components/pages/home/home-cover"
+import HomeSaga from "components/pages/home/home-saga"
+import HomeCharacters from "components/pages/home/home-characters"
+import HomeRoadmap from "components/pages/home/home-roadmap"
+import HomeLitePaper from "components/pages/home/home-litepaper"
+import HomeTeam from "components/pages/home/home-team"
+import HomeSocial from "components/pages/home/home-social"
 
 const HomePage = () => {
   return (
     <>
-      <Seo title="Home" />
-
-      <CommonCover />
-      <HomeAbout />
+      <Seo title="Avarik Saga NFT" />
+      <Layout>
+        <Helmet>
+          <body className="bd-home" />
+        </Helmet>
+        <HomeCover />
+        <HomeSaga />
+        <HomeCharacters />
+        <HomeRoadmap />
+        <HomeLitePaper />
+        <HomeTeam />
+        <HomeSocial />
+      </Layout>
     </>
   )
 }

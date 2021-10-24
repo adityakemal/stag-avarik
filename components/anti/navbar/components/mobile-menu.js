@@ -79,6 +79,15 @@ const MobileMenu = ({ navExpand, variant }) => {
                   Lite Paper
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link anim-7"
+                  activeClassName="active"
+                  to="/weapons"
+                >
+                  Weapons
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
