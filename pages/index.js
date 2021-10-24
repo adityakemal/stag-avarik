@@ -17,10 +17,10 @@ const HomePage = () => {
   return (
     <>
       <Seo title="Avarik Saga NFT" />
+      <Helmet>
+        <body className="bd-home" />
+      </Helmet>
       <Layout>
-        <Helmet>
-          <body className="bd-home" />
-        </Helmet>
         <HomeCover />
         <HomeSaga />
         <HomeCharacters />
