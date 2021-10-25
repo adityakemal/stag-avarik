@@ -4,7 +4,7 @@ import { Accordion } from "components/anti/accordion/accordion"
 
 import { scroller, Element } from "react-scroll"
 
-const MobileMenu = ({ navExpand, variant }) => {
+const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
   const handleClick = (content) => {
     scroller.scrollTo(content, {
       duration: 500,
@@ -29,7 +29,7 @@ const MobileMenu = ({ navExpand, variant }) => {
                 <Link
                   className="nav-link anim-2"
                   activeClassName="active"
-                  // to="/#saga"
+                // to="/#saga"
                 >
                   Saga
                 </Link>
@@ -41,7 +41,7 @@ const MobileMenu = ({ navExpand, variant }) => {
                 <Link
                   className="nav-link anim-3"
                   activeClassName="active"
-                  // to="/#characters"
+                // to="/#characters"
                 >
                   Characters
                 </Link>
@@ -53,7 +53,7 @@ const MobileMenu = ({ navExpand, variant }) => {
                 <Link
                   className="nav-link anim-4"
                   activeClassName="active"
-                  // to="/#roadmap"
+                // to="/#roadmap"
                 >
                   Roadmap
                 </Link>
@@ -65,7 +65,7 @@ const MobileMenu = ({ navExpand, variant }) => {
                 <Link
                   className="nav-link anim-5"
                   activeClassName="active"
-                  // to="/#team"
+                // to="/#team"
                 >
                   Team
                 </Link>

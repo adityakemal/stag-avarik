@@ -5,15 +5,16 @@ import { useRouter } from "next/router"
 import { Navbar, Footer, Loader } from "components/anti"
 import { LoadingContext } from "context/loading-context"
 
-const navigate = (to) => {
-  const router = useRouter()
-  router.push(to)
-}
+// const navigate = (to) => {
+//   const router = useRouter()
+//   router.push(to)
+// }
 
 const Layout = ({ children }) => {
   // Loader Context
   // allows loader only shown when directly visited via URL
   const { initialLoading } = useContext(LoadingContext)
+  const router = useRouter()
 
   // Mobile viewport height workaround
   // prevent quirky behaviour on mobile when cover is set to 100vh
@@ -21,6 +22,11 @@ const Layout = ({ children }) => {
     let vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty("--vh", `${vh}px`)
   }, [])
+
+  //!EDIT 
+  const navigate = (to) => {
+    router.push(to)
+  }
 
   // Transition link
   // for smooth transition effect
