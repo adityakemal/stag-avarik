@@ -1,20 +1,27 @@
 import React from "react"
 import { Link } from "components/anti/link/link"
 import { Accordion } from "components/anti/accordion/accordion"
-
+import { useRouter } from 'next/router'
 import { scroller, Element } from "react-scroll"
 
-const MobileMenu = ({ navExpand, variant }) => {
-  const handleClick = (content) => {
-    scroller.scrollTo(content, {
-      duration: 500,
-      delay: 100,
-      smooth: true,
-    })
+const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
+
+  const Router = useRouter()
+
+  const handleClick = (content, url) => {
+    if (url) {
+      Router.push(url)
+    } else {
+      scroller.scrollTo(content, {
+        duration: 500,
+        delay: 100,
+        smooth: true,
+      })
+    }
   }
 
-  const handleCloseMenu = (content) => {
-    handleMenuMobile(false, () => handleClick(content))
+  const handleCloseMenu = (content, url) => {
+    handleMenuMobile(false, () => handleClick(content, url))
   }
   return (
     <>
@@ -29,7 +36,7 @@ const MobileMenu = ({ navExpand, variant }) => {
                 <Link
                   className="nav-link anim-2"
                   activeClassName="active"
-                  // to="/#saga"
+                // to="/#saga"
                 >
                   Saga
                 </Link>
@@ -41,7 +48,7 @@ const MobileMenu = ({ navExpand, variant }) => {
                 <Link
                   className="nav-link anim-3"
                   activeClassName="active"
-                  // to="/#characters"
+                // to="/#characters"
                 >
                   Characters
                 </Link>
@@ -53,7 +60,7 @@ const MobileMenu = ({ navExpand, variant }) => {
                 <Link
                   className="nav-link anim-4"
                   activeClassName="active"
-                  // to="/#roadmap"
+                // to="/#roadmap"
                 >
                   Roadmap
                 </Link>
@@ -65,25 +72,29 @@ const MobileMenu = ({ navExpand, variant }) => {
                 <Link
                   className="nav-link anim-5"
                   activeClassName="active"
-                  // to="/#team"
+                // to="/#team"
                 >
                   Team
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item"
+                onClick={() => handleCloseMenu("", "/litepaper")}
+              >
                 <Link
                   className="nav-link anim-6"
                   activeClassName="active"
-                  to="/litepaper"
+                // to="/litepaper"
                 >
                   Lite Paper
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item"
+                onClick={() => handleCloseMenu("", "/weapons")}
+              >
                 <Link
                   className="nav-link anim-7"
                   activeClassName="active"
-                  to="/weapons"
+                // to="/weapons"
                 >
                   Weapons
                 </Link>
