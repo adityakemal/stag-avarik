@@ -1,0 +1,37 @@
+kind: pipeline
+type: ssh
+name: avariksaga-v2
+
+clone:
+  disable: true
+
+server:
+  host:
+    from_secret: stag1Host
+  user:
+    from_secret: stag1User
+  ssh_key:
+    from_secret: stag1Pass
+
+steps:
+- name: Pull
+  commands:
+  - cd /prod/avariksaga-v2
+  - sudo git pull
+  when:
+   event:
+    - push
+    - custom
+   branch:
+    - master
+- name: Build
+  commands:
+  - cd /prod/avariksaga-v2
+  - sudo npm run build
+  - sudo pm2 reload 0
+  when:
+   event:
+    - push
+    - custom
+   branch:
+    - master
