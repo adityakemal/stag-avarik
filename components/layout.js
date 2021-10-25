@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
     document.documentElement.style.setProperty("--vh", `${vh}px`)
   }, [])
 
-  //!EDIT 
+  //!EDIT
   const navigate = (to) => {
     router.push(to)
   }
