@@ -1,0 +1,39 @@
+kind: pipeline
+type: exec
+name: avariksaga-v2
+
+clone:
+  disable: true
+
+steps:
+  - name: fetching
+    commands:
+      - cd $WWW_PATH/$DRONE_REPO_NAME
+      - git reset --hard origin/$DRONE_BRANCH
+      - git pull
+    when:
+      event:
+        - push
+      branch:
+        - release
+  - name: build
+    commands:
+      - cd $WWW_PATH/$DRONE_REPO_NAME
+      - npm run build
+    when:
+      event:
+        - push
+        - custom
+      branch:
+        - release
+  - name: pm2 reload
+    commands:
+      - cd $WWW_PATH/$DRONE_REPO_NAME
+      - cp /opt/robots.txt public/
+      - /root/avarik-v2.sh
+    when:
+      event:
+        - push
+        - custom
+      branch:
+        - release
