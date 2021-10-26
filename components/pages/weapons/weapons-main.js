@@ -189,6 +189,20 @@ const WeaponsMain = () => {
           <h2 className={anim(1)}>The Weapons</h2>
         </div>
 
+        <div className="box box-dark text-center">
+          <div className="box-inner">
+            <div className="content">
+              <p className="mw-lg mx-auto mb-0">
+                Weapons and armors hold rarities similar to the model for Avarik
+                Heroes themselves. There are 4 rarities for weapons and armors.
+                The rarity influences 2 key principles in the game: Greater base
+                stats on the weapon and armor. Enhances the skill power of both
+                active and passive skills of the Hero
+              </p>
+            </div>
+          </div>
+        </div>
+
         <section ref={trigger1} className="mb-3">
           <div className={`box ${anim1(2)} box-rarity box-${character1.id}`}>
             <div className="box-inner">
