@@ -1,0 +1,144 @@
+//
+// Ava token
+//
+
+.bd-ava-token {
+    &:after {
+        content: "";
+        background: $purple url(../../img/common/bg_mint.jpg) no-repeat center center;
+        background-size: cover;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: -1;
+        animation: fadeInUp 1s 0.4s ease-in-out both;
+    }
+    .navbar,
+    footer {
+        display: none;
+    }
+}
+.sc-ava-token {
+    .about-ava-token {
+        .row {
+            flex-direction: row;
+            @include media-breakpoint-down(sm) {
+                flex-direction: column-reverse;
+            }
+            .title {
+                color: $body-color;
+            }
+        }
+        .sc-logo {
+            @include media-breakpoint-down(sm) {
+                padding: 2rem;
+            }
+            .logo-ava-token {
+                width: 100px;
+                object-fit: contain;
+            }
+        }
+    }
+    .where-ava-token-used {
+        .content {
+            .img-where-content {
+                width: 85%;
+                object-fit: contain;
+            }
+            .desc-where-content {
+                text-align: center;
+            }
+        }
+    }
+    .how-to-claim {
+        .content {
+            .img-where-content {
+                width: 85%;
+                object-fit: contain;
+            }
+            .desc-where-content {
+                text-align: center;
+            }
+        }
+    }
+    .recruit-mechanic {
+        h3.title {
+            margin-left: 0.625rem;
+            @include media-breakpoint-down(sm) {
+                text-align: center;
+            }
+        }
+        .content {
+            .img-wrapper {
+                display: flex;
+                justify-content: end;
+                border: none;
+                @include media-breakpoint-down(sm) {
+                    justify-content: center;
+                    border: none;
+                }
+                .img-recruit-mechanic {
+                    @include media-breakpoint-down(sm) {
+                        width: 95%;
+                        padding-bottom: 2rem;
+                    }
+                }
+            }
+            @include media-breakpoint-down(sm) {
+                flex-direction: column-reverse;
+            }
+            .recruit-mechanic-list {
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                margin-left: -3.5rem;
+            }
+            .img-recruit-mechanic {
+                width: 80%;
+                object-fit: contain;
+            }
+        }
+    }
+    .staking-mechanics-and-avrk-token {
+        .content {
+            @include media-breakpoint-down(sm) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            h5.description {
+                width: 85%;
+                text-align: center;
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                }
+            }
+            .img-staking-mechanics,
+            .img-avrk-token {
+                width: 80%;
+                object-fit: contain;
+            }
+        }
+    }
+    .total-supply {
+        .title-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .img-total-supply {
+            width: 95%;
+            object-fit: contain;
+        }
+    }
+    .milestone {
+        .img-milestone {
+            width: 100%;
+        }
+    }
+}
