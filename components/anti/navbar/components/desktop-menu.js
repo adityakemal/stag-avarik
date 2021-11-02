@@ -73,8 +73,8 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" activeClassName="active" to="/ava-token">
-              AVA
+            <Link className="nav-link" activeClassName="active" to="/token">
+              Token
             </Link>
           </li>
         </ul>
