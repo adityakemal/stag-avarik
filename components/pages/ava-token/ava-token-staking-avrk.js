@@ -10,14 +10,14 @@ const AvaTokenStakingAvrk = () => {
             <div className="py-5">
                 <div className="row">
                     <div className="content col-md-6 col-sm-12">
-                        <div className="heading">
+                        <div className="heading mb-5">
                             <h3 className={`title ${anim(1)}`}>Staking Mechanics</h3>
                         </div>
                         <img src={imgStakingMechanics} className={`img-staking-mechanics ${anim(2)}`} />
                         <h5 className={`description ${anim(3)}`}>Each Avarik NFT in the staking smart contracts will earn 10 $AVA per day</h5>
                     </div>
                     <div className="content col-md-6 col-sm-12">
-                        <div className="heading">
+                        <div className="heading mb-5">
                             <h3 className={`title ${anim(4)}`}>$AVRK Token</h3>
                         </div>
                         <img src={imgAvrkToken} className={`img-avrk-token ${anim(5)}`} />

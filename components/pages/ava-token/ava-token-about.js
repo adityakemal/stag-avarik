@@ -7,7 +7,7 @@ const AvaTokenAbout = () => {
     const [trigger, anim] = useScrollAnim()
     return (
         <section className="about-ava-token" ref={trigger}>
-            <div className="py-5">
+            <div className="pb-5 pt-2">
                 <div className="row m-0 w-100 justify-content-between">
                     <div className="col-md-8 col-sm-12">
                         <h1 className={`title ${anim(2)}`}>$AVA Token</h1>
@@ -18,7 +18,7 @@ const AvaTokenAbout = () => {
                             Total supply: No Cap
                         </h6>
                     </div>
-                    <div className="sc-logo col-md-4 col-sm-12 d-flex justify-content-center">
+                    <div className="sc-logo col-md-4 col-sm-12">
                         <img src={logoAvaToken} className={`logo-ava-token ${anim(2)}`} />
                         <img src={logoVortem} className={`logo-ava-token ${anim(2)}`} />
                     </div>

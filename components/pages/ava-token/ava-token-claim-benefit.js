@@ -22,7 +22,7 @@ const data = [
 const AvaTokenClaimBenefit = () => {
     const [trigger, anim] = useScrollAnim()
     return (
-        <section className="how-to-claim" ref={trigger}>
+        <section className="how-to-claim-benefit" ref={trigger}>
             <div className="py-5">
                 <div className={`heading ${anim(1)}`}>
                     <h3>How can I claim benefits from AVRK tokens?</h3>
@@ -31,8 +31,8 @@ const AvaTokenClaimBenefit = () => {
                     <div className="row m-0">
                         {data.map((item, index) => (
                             <div className="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                                <img src={item.img} className={`img-where-content ${anim(index + 1)}`} />
-                                <h6 className={`desc-where-content ${anim(index + 1)}`}>{item.text}</h6>
+                                <img src={item.img} className={`img-claim-benefit ${anim(index + 1)}`} />
+                                <h6 className={`desc-claim-benefit ${anim(index + 1)}`}>{item.text}</h6>
                             </div>
                         ))}
                     </div>

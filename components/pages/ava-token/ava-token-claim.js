@@ -31,8 +31,8 @@ const AvaTokenClaim = () => {
                     <div className="row m-0">
                         {data.map((item, index) => (
                             <div className="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                                <img src={item.img} className={`img-where-content ${anim(index + 1)}`} />
-                                <h6 className={`desc-where-content ${anim(index + 1)}`}>{item.text}</h6>
+                                <img src={item.img} className={`img-claim ${anim(index + 1)}`} />
+                                <h6 className={`desc-claim ${anim(index + 1)}`}>{item.text}</h6>
                             </div>
                         ))}
                     </div>

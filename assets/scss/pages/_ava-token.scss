@@ -32,7 +32,10 @@
             }
         }
         .sc-logo {
+            display: flex;
+            justify-content: center;
             @include media-breakpoint-down(sm) {
+                display: none;
                 padding: 2rem;
             }
             .logo-ava-token {
@@ -44,7 +47,8 @@
     .where-ava-token-used {
         .content {
             .img-where-content {
-                width: 85%;
+                width: 60%;
+                margin-bottom: 1rem;
                 object-fit: contain;
             }
             .desc-where-content {
@@ -54,11 +58,24 @@
     }
     .how-to-claim {
         .content {
-            .img-where-content {
-                width: 85%;
+            .img-claim {
+                width: 60%;
+                margin-bottom: 1rem;
                 object-fit: contain;
             }
-            .desc-where-content {
+            .desc-claim {
+                text-align: center;
+            }
+        }
+    }
+    .how-to-claim-benefit {
+        .content {
+            .img-claim-benefit {
+                width: 60%;
+                margin-bottom: 1rem;
+                object-fit: contain;
+            }
+            .desc-claim-benefit {
                 text-align: center;
             }
         }
@@ -104,12 +121,10 @@
     }
     .staking-mechanics-and-avrk-token {
         .content {
-            @include media-breakpoint-down(sm) {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             h5.description {
                 width: 85%;
                 text-align: center;
@@ -119,7 +134,8 @@
             }
             .img-staking-mechanics,
             .img-avrk-token {
-                width: 80%;
+                width: 50%;
+                margin-bottom: 2rem;
                 object-fit: contain;
             }
         }
