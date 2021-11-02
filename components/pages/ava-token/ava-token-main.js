@@ -28,14 +28,14 @@ const AvaTokenMain = () => {
                             <AvaTokenStakingAvrk />
                             <AvaTokenClaimBenefit />
                             <AvaTokenTotalSupply />
-                            <section className="milestone">
+                            {/* <section className="milestone">
                                 <div className="py-5">
                                     <div className="heading">
                                         <h3>Our Milestone</h3>
                                     </div>
                                     <img src={milestone} className="img-milestone" />
                                 </div>
-                            </section>
+                            </section> */}
                         </div>
                     </div>
                 </div>
