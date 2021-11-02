@@ -29,15 +29,15 @@ const AvaTokenWhere = () => {
     return (
         <section className="where-ava-token-used" ref={trigger}>
             <div className="pt-5 pb-3">
-                <div className={`heading ${anim(3)}`}>
+                <div className={`heading ${anim(1)}`}>
                     <h3>Where is AVA Token used?</h3>
                 </div>
                 <div className="content">
                     <div className="row m-0">
                         {data.map((item, index) => (
                             <div className="col-md-3 col-sm-12 d-flex flex-column align-items-center">
-                                <img src={item.img} className={`img-where-content ${anim(index + 1)}`} />
-                                <h6 className={`desc-where-content ${anim(index + 1)}`}>{item.text}</h6>
+                                <img src={item.img} className={`img-where-content ${anim(index + 2)}`} />
+                                <h6 className={`desc-where-content ${anim(index + 2)}`}>{item.text}</h6>
                             </div>
                         ))}
                     </div>

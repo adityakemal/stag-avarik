@@ -105,9 +105,9 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                 <Link
                   className="nav-link anim-7"
                   activeClassName="active"
-                // to="/weapons"
+                  to="/token"
                 >
-                  AVA
+                  Token
                 </Link>
               </li>
             </ul>
