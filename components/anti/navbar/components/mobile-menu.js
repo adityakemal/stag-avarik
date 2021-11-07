@@ -99,6 +99,17 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                   Weapons
                 </Link>
               </li>
+              <li className="nav-item"
+                onClick={() => handleCloseMenu("", "/ava-token")}
+              >
+                <Link
+                  className="nav-link anim-7"
+                  activeClassName="active"
+                  to="/token"
+                >
+                  Token
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

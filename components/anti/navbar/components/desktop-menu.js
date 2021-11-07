@@ -72,6 +72,11 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               Weapons
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" activeClassName="active" to="/token">
+              Token
+            </Link>
+          </li>
         </ul>
       </div>
     </>
