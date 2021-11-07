@@ -15,13 +15,21 @@ const HomeCover = () => {
         <div className="view-opensea">
           <p className="mb-2">
             View <span className="d-none d-md-inline">official</span>{" "}
-            <strong>Avarik Saga Universe</strong> on our
+            <strong>Avarik Saga Universe</strong> on <strong>OpenSea</strong>
           </p>
           <Button
-            variant="outline-white"
+            variant="outline-white mx-1"
+            className="mb-sm-down-2"
             link="https://opensea.io/collection/avariksagauniverse"
           >
-            OpenSea
+            Main Collection
+          </Button>
+          <Button
+            variant="outline-white"
+            className="mb-sm-down-2 mx-1"
+            link="https://opensea.io/collection/avarikweapons"
+          >
+            Weapons
           </Button>
         </div>
       </div>
