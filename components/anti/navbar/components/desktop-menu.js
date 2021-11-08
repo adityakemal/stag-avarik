@@ -24,7 +24,7 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
             <Link
               className="nav-link"
               activeClassName="active"
-              // to="/#story"
+            // to="/#story"
             >
               Saga
             </Link>
@@ -36,7 +36,7 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
             <Link
               className="nav-link"
               activeClassName="active"
-              // to="/#characters"
+            // to="/#characters"
             >
               Characters
             </Link>
@@ -48,7 +48,7 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
             <Link
               className="nav-link"
               activeClassName="active"
-              // to="/#roadmap"
+            // to="/#roadmap"
             >
               Roadmap
             </Link>
@@ -57,7 +57,7 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
             <Link
               className="nav-link"
               activeClassName="active"
-              // to="/#team"
+            // to="/#team"
             >
               Team
             </Link>
@@ -72,11 +72,11 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               Weapons
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="nav-link" activeClassName="active" to="/token">
               Token
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>

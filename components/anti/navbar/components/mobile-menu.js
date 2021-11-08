@@ -99,7 +99,7 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                   Weapons
                 </Link>
               </li>
-              <li className="nav-item"
+              {/* <li className="nav-item"
                 onClick={() => handleCloseMenu("", "/ava-token")}
               >
                 <Link
@@ -109,7 +109,7 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                 >
                   Token
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
