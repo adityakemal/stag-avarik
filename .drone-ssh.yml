@@ -18,6 +18,7 @@ steps:
   commands:
   - cd /prod/avariksaga-v2
   - sudo git pull
+  - sudo npm i
   when:
    event:
     - push
@@ -28,7 +29,7 @@ steps:
   commands:
   - cd /prod/avariksaga-v2
   - sudo npm run build
-  - sudo pm2 reload 0
+  - sudo pm2 reload 0 --update-env
   when:
    event:
     - push
@@ -58,12 +59,10 @@ steps:
        Commit: {{build.commit}}
        Event: {{build.event}} 
        Status: {{build.status}}
-       Good Job :)
       {{else}}
        Project: {{repo.name}} 
        Branch: {{build.branch}}
        Commit: {{build.commit}}
        Event: {{build.event}} 
        Status: {{build.status}}
-       Fix me please :(
       {{/success}}
