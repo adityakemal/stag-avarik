@@ -15,51 +15,9 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
     <>
       <div className={`desktop-menu d-none d-${navExpand}-flex`}>
         <ul className="navbar-nav ml-auto">
-          {/* <li className="nav-item">
-            <Button className="btn btn-primary" link="/">
+          <li className="nav-item">
+            <Link className="nav-link" activeClassName="active" to="/">
               Home
-            </Button>
-          </li> */}
-          <li className="nav-item" onClick={() => handleClick("saga-content")}>
-            <Link
-              className="nav-link"
-              activeClassName="active"
-            // to="/#story"
-            >
-              Saga
-            </Link>
-          </li>
-          <li
-            className="nav-item"
-            onClick={() => handleClick("character-content")}
-          >
-            <Link
-              className="nav-link"
-              activeClassName="active"
-            // to="/#characters"
-            >
-              Characters
-            </Link>
-          </li>
-          <li
-            className="nav-item"
-            onClick={() => handleClick("roadmap-content")}
-          >
-            <Link
-              className="nav-link"
-              activeClassName="active"
-            // to="/#roadmap"
-            >
-              Roadmap
-            </Link>
-          </li>
-          <li className="nav-item" onClick={() => handleClick("team-content")}>
-            <Link
-              className="nav-link"
-              activeClassName="active"
-            // to="/#team"
-            >
-              Team
             </Link>
           </li>
           <li className="nav-item">

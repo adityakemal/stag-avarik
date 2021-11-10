@@ -1,12 +1,12 @@
-import React from "react";
+import React from "react"
 
-import { Social } from "components/anti/social/social";
-import { useScrollAnim } from "components/hooks/hooks";
+import { Social } from "components/anti/social/social"
+import { useScrollAnim } from "components/hooks/hooks"
 
-import icLogo from "assets/img/common/logo_main-icon-light.png";
+import icLogo from "assets/img/common/logo_main-icon-light.png"
 
 const HomeSocial = () => {
-  const [trigger, anim] = useScrollAnim();
+  const [trigger, anim] = useScrollAnim()
   const social = [
     {
       type: "discord",
@@ -20,10 +20,10 @@ const HomeSocial = () => {
       type: "instagram",
       url: "https://instagram.com/avariksaga",
     },
-  ];
+  ]
 
   return (
-    <div className="sc-home-social pt-main-sm pb-main" ref={trigger}>
+    <div className="sc-home-social sc-dark pt-main-sm pb-main" ref={trigger}>
       <div className="container mw-xl">
         <div className="heading">
           <img
@@ -42,7 +42,7 @@ const HomeSocial = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HomeSocial;
+export default HomeSocial

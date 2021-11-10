@@ -17,19 +17,18 @@ import logoDark from "assets/img/common/logo_footer.png"
 export const Footer = () => {
   const [modal, setModal] = useState(null)
 
-  const handleClick = (content) => {
-    scroller.scrollTo(content, {
-      duration: 500,
-      delay: 0,
-      smooth: true,
-    })
-  }
+  // const handleClick = (content) => {
+  //   scroller.scrollTo(content, {
+  //     duration: 500,
+  //     delay: 0,
+  //     smooth: true,
+  //   })
+  // }
 
   const menuLinks = [
-    { title: "Saga", link: "saga-content" },
-    { title: "Characters", link: "characters-content" },
-    { title: "Roadmap", link: "roadmap-content" },
-    { title: "Team", link: "team-content" },
+    { title: "Home", link: "/" },
+    { title: "Lite Paper", link: "/lite-paper" },
+    { title: "Weapons", link: "/weapons" },
     // { title: "FAQ", link: "/faq" },
   ]
 
@@ -95,9 +94,11 @@ export const Footer = () => {
                             <div
                               className="nav-item"
                               key={i}
-                              onClick={() => handleClick(link.link)}
+                              // onClick={() => handleClick(link.link)}
                             >
-                              <Link className="nav-link">{link.title}</Link>
+                              <Link className="nav-link" to={link.link}>
+                                {link.title}
+                              </Link>
                             </div>
                           </div>
                         )

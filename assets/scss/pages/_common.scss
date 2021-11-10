@@ -16,6 +16,12 @@
       @include media-breakpoint-up(xl) {
         padding: 3rem;
       }
+      &.content-sm {
+        padding: 1.25rem;
+        @include media-breakpoint-up(md) {
+          padding: 1.5rem;
+        }
+      }
     }
   }
   .img-wrapper {
@@ -32,7 +38,10 @@
     h6 {
       color: $body-color;
     }
-    p {
+    p,
+    ol,
+    ul,
+    li {
       color: rgba($body-color, 0.75);
       strong {
         color: $body-color;

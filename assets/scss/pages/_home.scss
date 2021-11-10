@@ -26,6 +26,10 @@ body {
   animation: fadeInDown 1s #{$home-anim-delay + 0.2s} ease-in-out both;
 }
 
+.bd-home {
+  background: $black;
+}
+
 // Cover
 .sc-home-cover {
   &:after {
@@ -143,15 +147,15 @@ body {
     strong {
       color: $white;
     }
-    .btn-outline-white {
-      background: rgba($black, 0.25);
-      @include media-breakpoint-up(md) {
-        background: rgba($black, 0.5);
-      }
-      @include hover-focus-active {
-        color: $white;
-      }
-    }
+    // .btn-outline-white {
+    //   background: rgba($black, 0.25);
+    //   @include media-breakpoint-up(md) {
+    //     background: rgba($black, 0.5);
+    //   }
+    //   @include hover-focus-active {
+    //     color: $white;
+    //   }
+    // }
   }
 }
 
