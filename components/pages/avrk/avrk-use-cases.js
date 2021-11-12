@@ -14,7 +14,7 @@ const AVRKUseCases = () => {
         <div className="heading">
           <h2 className={anim(1)}>Token Use Cases</h2>
           <p className={`${anim(2)} mw-md mx-auto`}>
-            AVRK Token will be developed as an ERC 20 governance token for
+            $AVRK Token will be developed as an ERC 20 governance token for
             Avarik Saga Universe, focusing on giving back to our players.
           </p>
         </div>
@@ -38,14 +38,13 @@ const AVRKUseCases = () => {
                     </li>
                     <li>
                       <p className={anim(5)}>
-                        <strong>AVRK token</strong> will act as a{" "}
+                        <strong>$AVRK token</strong> will act as a{" "}
                         <strong>transaction fee on our marketplace</strong>
                       </p>
                     </li>
                     <li>
                       <p className={`${anim(6)} mb-0`}>
-                        <strong>Gives voting rights</strong> on how the Avarik
-                        Saga Universe's path similar to a stock
+                        <strong>Gives voting rights</strong> on Avarik Saga's future development
                       </p>
                     </li>
                   </ol>

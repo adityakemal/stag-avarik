@@ -27,7 +27,7 @@ const AVRKHowToGet = () => {
                   <div className="info">
                     <h3>Staking</h3>
                     <p className="mb-0">
-                      By staking the Avarik NFT you will get the VORTEM token.
+                      By staking the $AVRK Token you will get more $AVRK, similiar to earning interest on the tokens
                     </p>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ const AVRKHowToGet = () => {
                 <div className="content content-sm">
                   <img src={imgBuying} className="img-fluid" alt="Buying" />
                   <div className="info">
-                    <h3>Buying from Various Exchanges</h3>
+                    <h3>Buy/Sell On Exchanges</h3>
                     <p className="mb-0">To be announced end of 2021</p>
                   </div>
                 </div>

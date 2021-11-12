@@ -24,7 +24,7 @@ const AVRKRoadmap = () => {
       <div className="container mw-xl">
         <div className="heading">
           <h2 className={anim(1)}>Roadmap</h2>
-          <p className={`${anim(2)} mw-md mx-auto`}>The routes towards AVRK</p>
+          <p className={`${anim(2)} mw-md mx-auto`}>The Route Towards $AVRK</p>
         </div>
         <div className={`box box-light ${anim(3)}`}>
           <div className="box-inner">
