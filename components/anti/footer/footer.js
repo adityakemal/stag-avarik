@@ -29,7 +29,7 @@ export const Footer = () => {
     { title: "Home", link: "/" },
     { title: "Lite Paper", link: "/lite-paper" },
     { title: "Weapons", link: "/weapons" },
-    // { title: "FAQ", link: "/faq" },
+    { title: "$AVRK", link: "/avrk" },
   ]
 
   const social = [

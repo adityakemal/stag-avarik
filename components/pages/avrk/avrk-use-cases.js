@@ -22,24 +22,34 @@ const AVRKUseCases = () => {
           <div className="box-inner">
             <div className="content">
               <div className="row">
+                <div className="col-lg-5" />
                 <div className="col-lg-7">
-                  <p className={anim(3)}>
-                    <strong>Recruit fee</strong> of new Avarik
-                  </p>
-                  <p className={anim(4)}>
-                    <strong>Monetization of appointment</strong> model to reduce
-                    time of upgrades, recruit, etc.
-                  </p>
-                  <p className={anim(5)}>
-                    <strong>AVRK token</strong> will act as a{" "}
-                    <strong>transaction fee on our marketplace</strong>
-                  </p>
-                  <p className={`${anim(6)} mb-0`}>
-                    <strong>Gives voting rights</strong> on how the Avarik Saga
-                    Universe's path similar to a stock
-                  </p>
+                  <ol className="mb-0">
+                    <li>
+                      <p className={anim(3)}>
+                        <strong>Recruit fee</strong> of new Avarik
+                      </p>
+                    </li>
+                    <li>
+                      <p className={anim(4)}>
+                        <strong>Monetization of appointment</strong> model to
+                        reduce time of upgrades, recruit, etc.
+                      </p>
+                    </li>
+                    <li>
+                      <p className={anim(5)}>
+                        <strong>AVRK token</strong> will act as a{" "}
+                        <strong>transaction fee on our marketplace</strong>
+                      </p>
+                    </li>
+                    <li>
+                      <p className={`${anim(6)} mb-0`}>
+                        <strong>Gives voting rights</strong> on how the Avarik
+                        Saga Universe's path similar to a stock
+                      </p>
+                    </li>
+                  </ol>
                 </div>
-                <div className="col-lg-5 order-lg-first"></div>
               </div>
             </div>
           </div>

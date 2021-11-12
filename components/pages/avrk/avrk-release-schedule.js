@@ -1,7 +1,7 @@
 import React from "react"
 import { useScrollAnim } from "components/hooks/hooks"
 
-import imgChart from "assets/img/token/img_total-supply.png"
+import imgChart from "assets/img/token/img_avrk-graph.png"
 
 const AVRKReleaseSchedule = () => {
   const [trigger, anim] = useScrollAnim()
@@ -17,7 +17,9 @@ const AVRKReleaseSchedule = () => {
         </div>
         <div className={`box box-light ${anim(3)}`}>
           <div className="box-inner">
-            <div className="content content-sm h-300px"></div>
+            <div className="content content-sm">
+              <img src={imgChart} className="img-fluid" alt="Graph" />
+            </div>
           </div>
         </div>
       </div>
