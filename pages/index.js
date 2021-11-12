@@ -8,10 +8,11 @@ import Layout from "components/layout"
 import HomeCover from "components/pages/home/home-cover"
 import HomeSaga from "components/pages/home/home-saga"
 import HomeCharacters from "components/pages/home/home-characters"
-import HomeRoadmap from "components/pages/home/home-roadmap"
-import HomeLitePaper from "components/pages/home/home-litepaper"
+// import HomeRoadmap from "components/pages/home/home-roadmap"
+// import HomeLitePaper from "components/pages/home/home-litepaper"
 import HomeTeam from "components/pages/home/home-team"
 import HomeSocial from "components/pages/home/home-social"
+// import HomeVortem from "components/pages/home/home-vortem"
 
 const HomePage = () => {
   return (
@@ -24,8 +25,9 @@ const HomePage = () => {
         <HomeCover />
         <HomeSaga />
         <HomeCharacters />
-        <HomeRoadmap />
-        <HomeLitePaper />
+        {/* <HomeRoadmap /> */}
+        {/* <HomeLitePaper /> */}
+        {/* <HomeVortem /> */}
         <HomeTeam />
         <HomeSocial />
       </Layout>

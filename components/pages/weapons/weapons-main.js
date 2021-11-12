@@ -179,7 +179,7 @@ const WeaponsMain = () => {
   }
 
   return (
-    <section className="sc-main sc-rarity pb-main" ref={trigger}>
+    <section className="sc-main sc-dark sc-rarity pb-main" ref={trigger}>
       <div className="container">
         <Link to="/" className="logo mb-md-5">
           <img src={logoMain} className={`img-fluid ${anim(1)}`} alt="Logo" />
@@ -189,7 +189,7 @@ const WeaponsMain = () => {
           <h2 className={anim(1)}>The Weapons</h2>
         </div>
 
-        <div className="box box-dark text-center">
+        <div className={`box box-dark text-center ${anim(2)}`}>
           <div className="box-inner">
             <div className="content">
               <p className="mw-lg mx-auto mb-0">

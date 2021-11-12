@@ -9,7 +9,7 @@ import logoMain from "assets/img/common/logo_main-title.png"
 
 const HomeCover = () => {
   return (
-    <div className="sc-home-cover cover-full">
+    <div className="sc-home-cover sc-dark cover-full">
       <div className="cover-cta">
         <img src={logoMain} className="cover-logo" alt="Logo" />
         <div className="view-opensea">

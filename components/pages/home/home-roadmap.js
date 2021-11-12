@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react"
 
-import { useScrollAnim } from "components/hooks/hooks";
+import { useScrollAnim } from "components/hooks/hooks"
 
-import { Element } from "react-scroll";
+import { Element } from "react-scroll"
 
 const HomeRoadmap = () => {
-  const [trigger, anim] = useScrollAnim();
+  const [trigger, anim] = useScrollAnim()
 
   const roadmap = [
     {
@@ -46,11 +46,15 @@ const HomeRoadmap = () => {
         </p>
       ),
     },
-  ];
+  ]
 
   return (
     <Element name="roadmap-content">
-      <div className="sc-home-roadmap pt-main" id="roadmap" ref={trigger}>
+      <div
+        className="sc-home-roadmap sc-dark pt-main"
+        id="roadmap"
+        ref={trigger}
+      >
         <div className="container">
           <div className={`heading ${anim(1)}`}>
             <h2>The Roadmap</h2>
@@ -67,7 +71,7 @@ const HomeRoadmap = () => {
                         </div>
                         <div className="roadmap-content">{item.content}</div>
                       </li>
-                    );
+                    )
                   })}
                 </ul>
               </div>
@@ -150,7 +154,7 @@ const HomeRoadmap = () => {
         </div>
       </div>
     </Element>
-  );
-};
+  )
+}
 
-export default HomeRoadmap;
+export default HomeRoadmap

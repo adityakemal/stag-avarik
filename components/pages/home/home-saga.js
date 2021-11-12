@@ -1,20 +1,20 @@
-import React from "react";
+import React from "react"
 
-import ignis from "assets/img/common/flag_ignis.png";
-import tenebris from "assets/img/common/flag_tenebris.png";
-import terra from "assets/img/common/flag_terra.png";
-import glacia from "assets/img/common/flag_glacia.png";
+import ignis from "assets/img/common/flag_ignis.png"
+import tenebris from "assets/img/common/flag_tenebris.png"
+import terra from "assets/img/common/flag_terra.png"
+import glacia from "assets/img/common/flag_glacia.png"
 
-import { useScrollAnim } from "components/hooks/hooks";
+import { useScrollAnim } from "components/hooks/hooks"
 
-import { Element } from "react-scroll";
+import { Element } from "react-scroll"
 
 const HomeSaga = () => {
-  const [trigger, anim] = useScrollAnim();
+  const [trigger, anim] = useScrollAnim()
 
   return (
     <Element name="saga-content">
-      <div className="sc-home-saga pt-main" id="saga" ref={trigger}>
+      <div className="sc-home-saga sc-dark pt-main" id="saga" ref={trigger}>
         <div className="container">
           <div className="heading">
             <h2 className={anim(1)}>The Saga</h2>
@@ -79,7 +79,7 @@ const HomeSaga = () => {
         </div>
       </div>
     </Element>
-  );
-};
+  )
+}
 
-export default HomeSaga;
+export default HomeSaga

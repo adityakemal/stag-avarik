@@ -5,6 +5,7 @@
 footer {
   h5 {
     @extend .h5;
+    color: $white;
   }
   background: $purple url(../../../assets/img/common/bg_footer.jpg) no-repeat
     center center;

@@ -380,7 +380,11 @@ const HomeCharacters = () => {
 
   return (
     <Element name="character-content">
-      <section className="sc-rarity pt-main" id="characters" ref={trigger}>
+      <section
+        className="sc-rarity sc-dark pt-main"
+        id="characters"
+        ref={trigger}
+      >
         <div className="container">
           <div className="heading">
             <h2 className={anim(1)}>The Characters</h2>
