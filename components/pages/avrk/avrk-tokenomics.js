@@ -11,7 +11,7 @@ const AVRKTokenomics = () => {
         <div className="heading">
           <h2 className={anim(1)}>Tokenomics</h2>
           <p className={`${anim(2)} mw-md mx-auto`}>
-            AVRK are the native tokens used in the governance of Avarik Saga
+            $AVRK are the native tokens used in the governance of Avarik Saga
             ecosystem. These tokens have several utilities that will help the
             holders to be an active part of building the community.
           </p>
@@ -22,7 +22,7 @@ const AVRKTokenomics = () => {
               <div className="row row-3">
                 <div className={`col-md-8 col-chart ${anim(3)}`}>
                   <h3>Token Allocation</h3>
-                  <p>AVRK Token has a limited supply of 500,000,000</p>
+                  <p>$AVRK Token has a limited supply of 500,000,000</p>
                   <img src={imgChart} className="img-fluid" alt="Chart" />
                 </div>
                 <div className="col-md-4 col-chart-data order-md-first">
