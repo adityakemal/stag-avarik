@@ -33,15 +33,15 @@ const AVRKRoadmap = () => {
                 <div className="row">
                   <div className="col-4">
                     <h4>Investor Round</h4>
-                    <p className="mb-0">Nov 2021</p>
-                  </div>
-                  <div className="col-4">
-                    <h4>Public Sale</h4>
                     <p className="mb-0">Dec 2021</p>
                   </div>
                   <div className="col-4">
-                    <h4>In-Game Utility</h4>
+                    <h4>Public Sale</h4>
                     <p className="mb-0">Q1 2022</p>
+                  </div>
+                  <div className="col-4">
+                    <h4>In-Game Utility</h4>
+                    <p className="mb-0">Q2 2022</p>
                   </div>
                 </div>
               </div>
