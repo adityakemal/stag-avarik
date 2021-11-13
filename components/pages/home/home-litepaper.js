@@ -1,12 +1,16 @@
-import React from "react";
+import React from "react"
 
-import { useScrollAnim } from "components/hooks/hooks";
+import { useScrollAnim } from "components/hooks/hooks"
 
 const HomeLitePaper = () => {
-  const [trigger, anim] = useScrollAnim();
+  const [trigger, anim] = useScrollAnim()
 
   return (
-    <div className="sc-home-litepaper pt-main" id="litepaper" ref={trigger}>
+    <div
+      className="sc-home-litepaper sc-dark pt-main"
+      id="litepaper"
+      ref={trigger}
+    >
       <div className="container">
         <div className={`heading ${anim(1)}`}>
           <h2>Lite Paper</h2>
@@ -48,7 +52,7 @@ const HomeLitePaper = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HomeLitePaper;
+export default HomeLitePaper

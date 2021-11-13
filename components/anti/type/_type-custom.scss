@@ -23,7 +23,6 @@
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: $headings-font-family; // Edit the variable on variables-custom.scss
-  color: $white;
 }
 
 // Caption
@@ -35,14 +34,11 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 1rem;
 }
 
-.bd-home {
+.bd-home,
+.bd-avrk {
   p {
-    color: rgba($white, 0.825);
     @include media-breakpoint-down(sm) {
       font-size: 0.85rem;
-    }
-    strong {
-      color: $white;
     }
   }
 }
@@ -53,7 +49,33 @@ h1, h2, h3, h4, h5, h6,
   @include media-breakpoint-up(md) {
     margin-bottom: 1.5rem;
   }
-  h2 {
+  h2:last-child {
     margin-bottom: 0;
+  }
+}
+
+// Theme
+.sc-light {
+  // prettier-ignore
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { color: $body-color; }
+  // prettier-ignore
+  p, ul, ol, li, .cover-text { color: rgba($body-color, .8); }
+}
+
+.sc-dark {
+  // prettier-ignore
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { color: $white; }
+  // prettier-ignore
+  p, ul, ol, li, .cover-text { color: rgba($white, .8);}
+  p {
+    strong {
+      color: rgba($white, 1);
+    }
+  }
+  .btn-link {
+    color: $white;
+    &.hover-underline:before {
+      background-color: $white;
+    }
   }
 }

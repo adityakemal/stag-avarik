@@ -154,7 +154,11 @@ const HomeTeam = () => {
 
   return (
     <Element name="team-content">
-      <div className="sc-home-team pt-main pb-main" id="team" ref={trigger}>
+      <div
+        className="sc-home-team sc-dark pt-main pb-main"
+        id="team"
+        ref={trigger}
+      >
         <div className="container">
           <div className={`heading ${anim(1)}`}>
             <h2>The Team</h2>
