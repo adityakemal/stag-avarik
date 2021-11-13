@@ -8,15 +8,15 @@ const AVRKRoadmap = () => {
   const data = [
     {
       title: "Investor Round",
-      text: "Nov 2021",
-    },
-    {
-      title: "Public Sale",
       text: "Dec 2021",
     },
     {
-      title: "In-Game Utility",
+      title: "Public Sale",
       text: "Q1 2022",
+    },
+    {
+      title: "In-Game Utility",
+      text: "Q2 2022",
     },
   ]
   return (
