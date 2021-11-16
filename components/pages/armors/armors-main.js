@@ -6,30 +6,30 @@ import { useScrollAnim } from "components/hooks/hooks"
 
 import knightsIconLight from "assets/img/knights/icon_light.png"
 import knightsIconDark from "assets/img/knights/icon_dark.png"
-import knightsImg1 from "assets/img/knights/weapon_uncommon.jpg"
-import knightsImg2 from "assets/img/knights/weapon_legendary.jpg"
-import knightsCommonImg from "assets/img/knights/weapon_common.jpg"
-import knightsUncommonImg from "assets/img/knights/weapon_uncommon.jpg"
-import knightsRareImg from "assets/img/knights/weapon_rare.jpg"
-import knightsLegendaryImg from "assets/img/knights/weapon_legendary.jpg"
+import knightsImg1 from "assets/img/knights/armor_uncommon.jpg"
+import knightsImg2 from "assets/img/knights/armor_legendary.jpg"
+import knightsCommonImg from "assets/img/knights/armor_common.jpg"
+import knightsUncommonImg from "assets/img/knights/armor_uncommon.jpg"
+import knightsRareImg from "assets/img/knights/armor_rare.jpg"
+import knightsLegendaryImg from "assets/img/knights/armor_legendary.jpg"
 
 import wizardsIconLight from "assets/img/wizards/icon_light.png"
 import wizardsIconDark from "assets/img/wizards/icon_dark.png"
-import wizardsImg1 from "assets/img/wizards/weapon_common.jpg"
-import wizardsImg2 from "assets/img/wizards/weapon_legendary.jpg"
-import wizardsCommonImg from "assets/img/wizards/weapon_common.jpg"
-import wizardsUncommonImg from "assets/img/wizards/weapon_uncommon.jpg"
-import wizardsRareImg from "assets/img/wizards/weapon_rare.jpg"
-import wizardsLegendaryImg from "assets/img/wizards/weapon_legendary.jpg"
+import wizardsImg1 from "assets/img/wizards/armor_common.jpg"
+import wizardsImg2 from "assets/img/wizards/armor_legendary.jpg"
+import wizardsCommonImg from "assets/img/wizards/armor_common.jpg"
+import wizardsUncommonImg from "assets/img/wizards/armor_uncommon.jpg"
+import wizardsRareImg from "assets/img/wizards/armor_rare.jpg"
+import wizardsLegendaryImg from "assets/img/wizards/armor_legendary.jpg"
 
 import marksmenIconLight from "assets/img/marksmen/icon_light.png"
 import marksmenIconDark from "assets/img/marksmen/icon_dark.png"
-import marksmenImg1 from "assets/img/marksmen/weapon_rare.jpg"
-import marksmenImg2 from "assets/img/marksmen/weapon_legendary.jpg"
-import marksmenCommonImg from "assets/img/marksmen/weapon_common.jpg"
-import marksmenUncommonImg from "assets/img/marksmen/weapon_uncommon.jpg"
-import marksmenRareImg from "assets/img/marksmen/weapon_rare.jpg"
-import marksmenLegendaryImg from "assets/img/marksmen/weapon_legendary.jpg"
+import marksmenImg1 from "assets/img/marksmen/armor_rare.jpg"
+import marksmenImg2 from "assets/img/marksmen/armor_legendary.jpg"
+import marksmenCommonImg from "assets/img/marksmen/armor_common.jpg"
+import marksmenUncommonImg from "assets/img/marksmen/armor_uncommon.jpg"
+import marksmenRareImg from "assets/img/marksmen/armor_rare.jpg"
+import marksmenLegendaryImg from "assets/img/marksmen/armor_legendary.jpg"
 
 import logoMain from "assets/img/common/logo_main-title.png"
 
@@ -43,41 +43,41 @@ const WeaponsMain = () => {
   const character1 = {
     order: true,
     id: "knight",
-    title: "Knight's Weapons",
+    title: "Knight's Armors",
     titleIconLight: knightsIconLight,
     titleIconDark: knightsIconDark,
-    text: "A weapon of varying weight, strength and agility, Knights’ weapons are lethal in the right hands of those who strike fast, unnerved by death.",
+    text: "A symbol of defense, honor, and courage, the Knight’s Armor protects the mighty warrior as they fight ferociously.",
     modalId: "modal-knights",
     img1: knightsImg1,
     img2: knightsImg2,
     rarities: [
       {
-        title: "Common Weapons",
-        text: "This weapon may look plain, but in the hands of skilled and crafty Knights, it has won many impossible wars and rightful victories.",
+        title: "Common Armors",
+        text: "The Knight’s Common Armor is beset with bloody myths and deep-rooted history. Its immense durability allows it’s Knight in shining armor to throw devastating punches",
         img: knightsCommonImg,
         population: {
           type: "Common",
         },
       },
       {
-        title: "Uncommon Weapons",
-        text: "A balanced weapon that grants its Knight fluid movement, wind speed, and mighty blows that will bring your foe to the ground in no time.",
+        title: "Uncommon Armors",
+        text: "The Uncommon Knight Armor is the symbol of hope and resilience of a swift Knight who fights with wit.",
         img: knightsUncommonImg,
         population: {
           type: "Uncommon",
         },
       },
       {
-        title: "Rare Weapons",
-        text: "It’s origin and trade is a mystery, only that it holds a bloody history and is ready to claim more prey. The wielder of the Rare Knight Weapon is a formidable Knight that tames the most vicious monsters.",
+        title: "Rare Armors",
+        text: "The Rare Armor is made for the Knight’s shining glory, fiery strength, and immense speed that is amplified a hundred-fold.",
         img: knightsRareImg,
         population: {
           type: "Rare",
         },
       },
       {
-        title: "Legendary Weapons",
-        text: "The most powerful blade welded by the best craftsman and the power of the universe, a Legendary Knight Weapon perfectly encapsulates its Knight’s infinite potential and reverberates it a thousand times fold.",
+        title: "Legendary Armors",
+        text: "Forged by the smithing God himself, one look at the Legendary Armor will bring any foe weak on their knees.",
         img: knightsLegendaryImg,
         population: {
           type: "Legendary",
@@ -89,41 +89,41 @@ const WeaponsMain = () => {
   const character2 = {
     order: false,
     id: "wizard",
-    title: "Wizard's Weapons",
+    title: "Wizard's Armors",
     titleIconLight: wizardsIconLight,
     titleIconDark: wizardsIconDark,
-    text: "Mysterious items imbued with magical energy that awakens a Wizard’s sorcery gift and channels different levels and types of Mana for destructive, dark, or elusive powers.",
+    text: "Magical Robes and Cloaks with an affinity for considerable magical presence that will serve as magical protection.",
     modalId: "modal-wizards",
     img1: wizardsImg1,
     img2: wizardsImg2,
     rarities: [
       {
-        title: "Common Weapons",
-        text: "The root of all things magic, passed down through generations from the eldest, most powerful wizards to younger, gifted disciples. ",
+        title: "Common Armors",
+        text: "The Wizard’s Common Robe has been passed down from generations fashioned from elven leather that holds mysterious magical defense.",
         img: wizardsCommonImg,
         population: {
           type: "Common",
         },
       },
       {
-        title: "Uncommon Weapons",
-        text: "Weapons fitting for skilled Wizards who have awakened their aptitude for the mysterious arts of magic and sorcery. ",
+        title: "Uncommon Armors",
+        text: "The Uncommon Robe can dispel a wide range of attacks and reduce its damage to the veiled Wizard.",
         img: wizardsUncommonImg,
         population: {
           type: "Uncommon",
         },
       },
       {
-        title: "Rare Weapons",
-        text: "Forged by pooling immense amounts of magic (sometimes from questionable sources), these magical items only have affinity to a select few Wizards who will not succumb to the arcane powers.",
+        title: "Rare Armors",
+        text: "Made from the power of darkness, the Rare Robe shrouds the Wizard in mystical darkness. When the sun goes down, they turn invisible.",
         img: wizardsRareImg,
         population: {
           type: "Rare",
         },
       },
       {
-        title: "Legendary Weapons",
-        text: "The Elders claim that these are relics with a sliver of something sinisterly immortal, lending it and its holders an infinite source of power and a peek into its otherworldly knowledge.",
+        title: "Legendary Armors",
+        text: "A Legendary Robe made from the indestructibletentacle skin of the Kraken that is the ultimate defense against physical and magical attacks.",
         img: wizardsLegendaryImg,
         population: {
           type: "Legendary",
@@ -135,41 +135,41 @@ const WeaponsMain = () => {
   const character3 = {
     order: true,
     id: "marksman",
-    title: "Marksman's Weapons",
+    title: "Marksman's Armors",
     titleIconLight: marksmenIconLight,
     titleIconDark: marksmenIconDark,
-    text: "The sly and sneaky Marksmen’s choice of weapon — its long range vantage and the unique craftsmanship of each weapon is critical for the different classes of masters.",
+    text: "Specially built to accommodate the nimble Marksmen and their sprightly attacks, these Armors must also defend them for their angry foes.",
     modalId: "modal-marksmen",
     img1: marksmenImg1,
     img2: marksmenImg2,
     rarities: [
       {
-        title: "Common Weapons",
-        text: "The origin of it all — a common Marksmen weapon carries the historical birth of Marksmen hunters. Who has the skills of a true Marksman?",
+        title: "Common Armors",
+        text: "An efficient comfortable Common Armor, excellentfor camouflage and stealthy movements of agile marksmen.",
         img: marksmenCommonImg,
         population: {
           type: "Common",
         },
       },
       {
-        title: "Uncommon Weapons",
-        text: "An uncommon weapon desired by many for its precision and silence as it slices through the air — perfect for distraction or assasination.",
+        title: "Uncommon Armors",
+        text: "A protective coat of arms with no room forweak spots, the Marksmen’s Uncommon Armor is slightly heavy but shields against most classes.",
         img: marksmenUncommonImg,
         population: {
           type: "Uncommon",
         },
       },
       {
-        title: "Rare Weapons",
-        text: "The uncannily perfect weight and balance of these rare bows and arrows are said to be crafted by a legendary marksman, who promised an unfair advantage to its wielders.",
+        title: "Rare Armors",
+        text: "Light and silent as a feather, with discreet silhouette day or night, the Rare Marksmen Armor is indispensable for seasoned marksmen to execute stealth or guerrilla attacks.",
         img: marksmenRareImg,
         population: {
           type: "Rare",
         },
       },
       {
-        title: "Legendary Weapons",
-        text: "Ripping through the air and all that stands its way, wielders of the legendary Marksman bow must be ready to harness, shoot, and aim this almighty arrow with nerves of steel.",
+        title: "Legendary Armors",
+        text: "A daunting Legendary Armor that will unnerveall enemies, it serves as a taunt to all unworthy foes. Crafted with a rare metal of the lands by an ancient master, this armor protects from all types of attacks and cuts the damage significantly.",
         img: marksmenLegendaryImg,
         population: {
           type: "Legendary",
@@ -186,17 +186,17 @@ const WeaponsMain = () => {
         </Link>
 
         <div className="heading">
-          <h2 className={anim(1)}>The Weapons</h2>
+          <h2 className={anim(1)}>The Armors</h2>
         </div>
 
         <div className={`box box-dark text-center ${anim(2)}`}>
           <div className="box-inner">
             <div className="content">
               <p className="mw-lg mx-auto mb-0">
-                Weapons hold rarities similar to the model for Avarik Heroes
-                themselves. There are 4 rarities for weapons. The rarity
+                Armors hold rarities similar to the model for Avarik Heroes
+                themselves. There are 4 rarities for armors. The rarity
                 influences 2 key principles in the game: Greater base stats on
-                the weapon. Enhances the skill power of both active and passive
+                the armor. Enhances the skill power of both active and passive
                 skills of the Hero.
               </p>
             </div>
