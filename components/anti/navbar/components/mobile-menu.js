@@ -69,7 +69,7 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                 className="nav-item"
                 onClick={() => handleCloseMenu("", "/vortem")}
               >
-                <Link className="nav-link anim-3" activeClassName="active">
+                <Link className="nav-link anim-6" activeClassName="active">
                   $VORTEM
                 </Link>
               </li>
