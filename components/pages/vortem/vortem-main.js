@@ -153,8 +153,11 @@ const WeaponsMain = () => {
               className={`img-fluid ${anim1(1)}`}
               alt="Vortem"
             />
-            <p className="my-5">
-              The cost in the $VORTEM token is a function of the recruit count of the parent's Avarik.<br /> Meaning, the higher the recruit count, the more $VORTEM token you will need.
+            <p className="my-5 mw-lg mx-auto">
+              The cost in the $VORTEM token is a function of the recruit count
+              of the parent's Avarik.
+              <br /> Meaning, the higher the recruit count, the more $VORTEM
+              token you will need.
             </p>
           </div>
           <div className="recruit-list">
@@ -179,7 +182,9 @@ const WeaponsMain = () => {
               </div>
               <div className="col-md-6">
                 <p className={`mb-3 d-none d-md-block ${anim1(3)}`}>
-                  The cost to recruit will use a number of $VORTEM (to be confirmed) & vary based on the number of times the Avarik has been recruited
+                  The cost to recruit will use a number of $VORTEM (to be
+                  confirmed) & vary based on the number of times the Avarik has
+                  been recruited
                 </p>
                 <img
                   src={recruit2}
@@ -187,7 +192,9 @@ const WeaponsMain = () => {
                   alt="Vortem"
                 />
                 <p className={`mb-0 d-block d-md-none ${anim1(5)}`}>
-                  The cost to recruit will use a number of $VORTEM (to be confirmed) & vary based on the number of times the Avarik has been recruited
+                  The cost to recruit will use a number of $VORTEM (to be
+                  confirmed) & vary based on the number of times the Avarik has
+                  been recruited
                 </p>
               </div>
               <div className="col-md-6">
@@ -197,7 +204,8 @@ const WeaponsMain = () => {
                   alt="Vortem"
                 />
                 <p className={`mb-0 ${anim1(7)}`}>
-                  Once the Avarik Saga Governance Token ($AVRK) is introduced, it will be required as part of the recruitment fee.
+                  Once the Avarik Saga Governance Token ($AVRK) is introduced,
+                  it will be required as part of the recruitment fee.
                 </p>
               </div>
               <div className="col-md-6">
