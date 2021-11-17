@@ -67,6 +67,16 @@ const WeaponsMain = () => {
               <div className="row">
                 <div className="col-12">
                   <img
+                    src={claimStaking}
+                    className={`img-fluid claim-1 ${anim(4)}`}
+                    alt="Vortem"
+                  />
+                  <p className={`mb-0 ${anim(5)}`}>
+                    By staking the Avarik NFT you will get the $VORTEM token.
+                  </p>
+                </div>
+                <div className="col-12">
+                  <img
                     src={claimPlay}
                     className={`img-fluid claim-2 ${anim(2)}`}
                     alt="Vortem"
@@ -80,17 +90,7 @@ const WeaponsMain = () => {
                     <li>- Tournament Rewards</li>
                   </ul>
                 </div>
-                <div className="col-12 col-md-6">
-                  <img
-                    src={claimStaking}
-                    className={`img-fluid claim-1 ${anim(4)}`}
-                    alt="Vortem"
-                  />
-                  <p className={`mb-0 ${anim(5)}`}>
-                    By staking the Avarik NFT you will get the $VORTEM token.
-                  </p>
-                </div>
-                <div className="col-12 col-md-6">
+                <div className="col-12">
                   <img
                     src={claimExchange}
                     className={`img-fluid claim-3 ${anim(6)}`}
@@ -154,10 +154,10 @@ const WeaponsMain = () => {
               alt="Vortem"
             />
             <p className="my-5 mw-lg mx-auto">
-              The cost in the $VORTEM token is a function of the recruit count
-              of the parent's Avarik.
-              <br /> Meaning, the higher the recruit count, the more $VORTEM
-              token you will need.
+              The $VORTEM token is the major currency for recruiting new
+              Avariks. The cost to recruit ($VORTEM) will rise every time you
+              recruit more. This is calculated based on the recruit count of the
+              parent's Avarik.
             </p>
           </div>
           <div className="recruit-list">
