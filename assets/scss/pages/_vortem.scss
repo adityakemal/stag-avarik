@@ -57,8 +57,10 @@
   }
   img {
     width: 100%;
-    max-width: 800px;
     margin: auto;
+    @include media-breakpoint-up(lg) {
+      margin-left: 7rem;
+    }
   }
 }
 
@@ -90,6 +92,7 @@
       }
     }
     .claim-2 {
+      object-fit: contain;
       @include media-breakpoint-up(md) {
         max-width: 75%;
       }
@@ -106,8 +109,14 @@
     .heading {
       margin-bottom: 2rem;
     }
-    .claim-item-1 {
-      margin-right: -1.5rem;
+    .claim-item {
+      width: 25%;
+      &.claim-item-2 {
+        width: 50%;
+      }
+      &.claim-item-1 {
+        margin-right: -1.5rem;
+      }
     }
     img {
       height: 300px;
@@ -156,8 +165,9 @@
       margin-bottom: 1.5rem;
       p {
         @include media-breakpoint-up(md) {
-          max-width: 55%;
+          max-width: 60%;
           margin: 0 auto 1rem;
+          height: 15%;
         }
       }
       img {

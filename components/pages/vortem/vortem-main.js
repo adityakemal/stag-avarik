@@ -61,12 +61,6 @@ const WeaponsMain = () => {
               className={`img-fluid mb-3 ${anim(1)}`}
               alt="Vortem"
             />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-              quam laboriosam obcaecati quae mollitia voluptatem odit
-              perferendis natus. Quod eaque modi suscipit corrupti adipisci
-              similique ipsa debitis accusantium sunt cupiditate!
-            </p>
           </div>
           <div className="claim-list">
             <div className="claim-mobile d-block d-xl-none">
@@ -77,9 +71,14 @@ const WeaponsMain = () => {
                     className={`img-fluid claim-2 ${anim(2)}`}
                     alt="Vortem"
                   />
-                  <p className={`mb-0 ${anim(3)}`}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
+                  <ul className={`mb-0 ${anim(3)} list-unstyled`}>
+                    <li>- Player v. Environment (PvE)</li>
+                    <li>- Player v. Player (PvP) </li>
+                    <li>- Match Making Rating (MMR) PvP</li>
+                    <li>- Dungeon Raid</li>
+                    <li>- Faction War</li>
+                    <li>- Tournament Rewards</li>
+                  </ul>
                 </div>
                 <div className="col-12 col-md-6">
                   <img
@@ -88,7 +87,7 @@ const WeaponsMain = () => {
                     alt="Vortem"
                   />
                   <p className={`mb-0 ${anim(5)}`}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    By staking the Avarik NFT you will get the $VORTEM token.
                   </p>
                 </div>
                 <div className="col-12 col-md-6">
@@ -98,7 +97,7 @@ const WeaponsMain = () => {
                     alt="Vortem"
                   />
                   <p className={`mb-0 ${anim(7)}`}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    To be announced end of 2021.
                   </p>
                 </div>
               </div>
@@ -111,18 +110,23 @@ const WeaponsMain = () => {
                   alt="Vortem"
                 />
                 <p className={`mb-0 ${anim(3)}`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  By staking the Avarik NFT you will get the $VORTEM token.
                 </p>
               </div>
-              <div className="claim-item">
+              <div className="claim-item claim-item-2">
                 <img
                   src={claimPlay}
                   className={`img-fluid claim-2 ${anim(4)}`}
                   alt="Vortem"
                 />
-                <p className={`mb-0 ${anim(5)}`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
+                <ul className={`mb-0 ${anim(3)} list-unstyled`}>
+                  <li>- Player v. Environment (PvE)</li>
+                  <li>- Player v. Player (PvP) </li>
+                  <li>- Match Making Rating (MMR) PvP</li>
+                  <li>- Dungeon Raid</li>
+                  <li>- Faction War</li>
+                  <li>- Tournament Rewards</li>
+                </ul>
               </div>
               <div className="claim-item">
                 <img
@@ -131,7 +135,7 @@ const WeaponsMain = () => {
                   alt="Vortem"
                 />
                 <p className={`mb-0 ${anim(7)}`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  To be announced end of 2021.
                 </p>
               </div>
             </div>
@@ -149,6 +153,9 @@ const WeaponsMain = () => {
               className={`img-fluid ${anim1(1)}`}
               alt="Vortem"
             />
+            <p className="my-5">
+              The cost in the $VORTEM token is a function of the recruit count of the parent's Avarik.<br /> Meaning, the higher the recruit count, the more $VORTEM token you will need.
+            </p>
           </div>
           <div className="recruit-list">
             <img
@@ -159,7 +166,7 @@ const WeaponsMain = () => {
             <div className="row">
               <div className="col-md-6">
                 <p className={`mb-3 d-none d-md-block ${anim1(1)}`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Must have 2 Avarik NFT, <br /> both Male & Female
                 </p>
                 <img
                   src={recruit1}
@@ -167,20 +174,20 @@ const WeaponsMain = () => {
                   alt="Vortem"
                 />
                 <p className={`mb-0 d-block d-md-none ${anim1(3)}`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Must have 2 Avarik NFT, both Male & Female
                 </p>
               </div>
               <div className="col-md-6">
                 <p className={`mb-3 d-none d-md-block ${anim1(3)}`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  The cost to recruit will use a number of $VORTEM (to be confirmed) & vary based on the number of times the Avarik has been recruited
                 </p>
                 <img
                   src={recruit2}
-                  className={`img-fluid ${anim1(4)}`}
+                  className={`img-fluid ${anim1(4)} `}
                   alt="Vortem"
                 />
                 <p className={`mb-0 d-block d-md-none ${anim1(5)}`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  The cost to recruit will use a number of $VORTEM (to be confirmed) & vary based on the number of times the Avarik has been recruited
                 </p>
               </div>
               <div className="col-md-6">
@@ -190,7 +197,7 @@ const WeaponsMain = () => {
                   alt="Vortem"
                 />
                 <p className={`mb-0 ${anim1(7)}`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Once the Avarik Saga Governance Token ($AVRK) is introduced, it will be required as part of the recruitment fee.
                 </p>
               </div>
               <div className="col-md-6">
@@ -200,7 +207,7 @@ const WeaponsMain = () => {
                   alt="Vortem"
                 />
                 <p className={`mb-0 ${anim1(9)}`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  There will be some duration in the recruitment process
                 </p>
               </div>
             </div>
@@ -222,7 +229,7 @@ const WeaponsMain = () => {
           <div className="row">
             <div className="col-md-6 col-xl-5 col-text">
               <p className={`${anim2(2)}`}>
-                Each Avarik NFT in the staking smart contracts will earn 10
+                Each Avarik NFT in the staking smart contracts will earn 3
                 $VORTEM per day.
               </p>
             </div>
