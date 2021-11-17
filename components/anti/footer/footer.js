@@ -29,7 +29,9 @@ export const Footer = () => {
     { title: "Home", link: "/" },
     { title: "Lite Paper", link: "/lite-paper" },
     { title: "Weapons", link: "/weapons" },
+    { title: "Armors", link: "/armors" },
     { title: "$AVRK", link: "/avrk" },
+    { title: "$VORTEM", link: "/vortem" },
   ]
 
   const social = [

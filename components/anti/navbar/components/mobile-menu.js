@@ -45,24 +45,32 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                 className="nav-item"
                 onClick={() => handleCloseMenu("", "/weapons")}
               >
-                <Link
-                  className="nav-link anim-3"
-                  activeClassName="active"
-                  // to="/weapons"
-                >
+                <Link className="nav-link anim-3" activeClassName="active">
                   Weapons
+                </Link>
+              </li>
+              <li
+                className="nav-item"
+                onClick={() => handleCloseMenu("", "/armors")}
+              >
+                <Link className="nav-link anim-4" activeClassName="active">
+                  Armors
                 </Link>
               </li>
               <li
                 className="nav-item"
                 onClick={() => handleCloseMenu("", "/avrk")}
               >
-                <Link
-                  className="nav-link anim-3"
-                  activeClassName="active"
-                  // to="/weapons"
-                >
+                <Link className="nav-link anim-5" activeClassName="active">
                   $AVRK
+                </Link>
+              </li>
+              <li
+                className="nav-item"
+                onClick={() => handleCloseMenu("", "/vortem")}
+              >
+                <Link className="nav-link anim-6" activeClassName="active">
+                  $VORTEM
                 </Link>
               </li>
               {/* <li className="nav-item"
