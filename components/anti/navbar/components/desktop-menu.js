@@ -31,8 +31,18 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
             </Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" activeClassName="active" to="/armors">
+              Armors
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link className="nav-link" activeClassName="active" to="/avrk">
               $AVRK
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" activeClassName="active" to="/vortem">
+              $VORTEM
             </Link>
           </li>
           {/* <li className="nav-item">
