@@ -220,13 +220,13 @@ const WeaponsMain = () => {
             />
           </div>
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 col-xl-5 col-text">
               <p className={`${anim2(2)}`}>
                 Each Avarik NFT in the staking smart contracts will earn 10
                 $VORTEM per day.
               </p>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-xl-7">
               <img
                 src={stakingImage}
                 className={`img-fluid ${anim2(3)}`}
