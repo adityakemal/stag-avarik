@@ -192,13 +192,18 @@ const WeaponsMain = () => {
         <div className={`box box-dark text-center ${anim(2)}`}>
           <div className="box-inner">
             <div className="content">
-              <p className="mw-lg mx-auto mb-0">
+              <p className="mw-lg mx-auto mb-5">
                 Armors hold rarities similar to the model for Avarik Heroes
                 themselves. There are 4 rarities for armors. The rarity
                 influences 2 key principles in the game: Greater base stats on
                 the armor. Enhances the skill power of both active and passive
                 skills of the Hero.
               </p>
+              <div className="box-inner">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aGgHFL2Nbd4"></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -209,9 +214,8 @@ const WeaponsMain = () => {
               <div className="content">
                 <div className="row row-3">
                   <div
-                    className={`col-lg-4 col-text ${
-                      character1.order && "order-lg-last"
-                    }`}
+                    className={`col-lg-4 col-text ${character1.order && "order-lg-last"
+                      }`}
                   >
                     <h3 className={anim1(4)}>
                       <img
@@ -232,9 +236,8 @@ const WeaponsMain = () => {
                     </div>
                   </div>
                   <div
-                    className={`col-lg-8 ${
-                      character1.order && "order-lg-first"
-                    }`}
+                    className={`col-lg-8 ${character1.order && "order-lg-first"
+                      }`}
                   >
                     <div className="row">
                       <div className="col-sm-6 mb-sm-down-2">
@@ -334,9 +337,8 @@ const WeaponsMain = () => {
               <div className="content">
                 <div className="row row-3">
                   <div
-                    className={`col-lg-4 col-text ${
-                      character2.order && "order-lg-last"
-                    }`}
+                    className={`col-lg-4 col-text ${character2.order && "order-lg-last"
+                      }`}
                   >
                     <h3 className={anim2(4)}>
                       <img
@@ -357,9 +359,8 @@ const WeaponsMain = () => {
                     </div>
                   </div>
                   <div
-                    className={`col-lg-8 ${
-                      character2.order && "order-lg-first"
-                    }`}
+                    className={`col-lg-8 ${character2.order && "order-lg-first"
+                      }`}
                   >
                     <div className="row">
                       <div className="col-sm-6 mb-sm-down-2">
@@ -459,9 +460,8 @@ const WeaponsMain = () => {
               <div className="content">
                 <div className="row row-3">
                   <div
-                    className={`col-lg-4 col-text ${
-                      character3.order && "order-lg-last"
-                    }`}
+                    className={`col-lg-4 col-text ${character3.order && "order-lg-last"
+                      }`}
                   >
                     <h3 className={anim3(4)}>
                       <img
@@ -482,9 +482,8 @@ const WeaponsMain = () => {
                     </div>
                   </div>
                   <div
-                    className={`col-lg-8 ${
-                      character3.order && "order-lg-first"
-                    }`}
+                    className={`col-lg-8 ${character3.order && "order-lg-first"
+                      }`}
                   >
                     <div className="row">
                       <div className="col-sm-6 mb-sm-down-2">
