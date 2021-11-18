@@ -9,7 +9,11 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
 
   const handleClick = (content, url) => {
     if (url) {
-      Router.push(url)
+      if (url.includes("https")) {
+        window.open(url)
+      } else {
+        Router.push(url)
+      }
     } else {
       scroller.scrollTo(content, {
         duration: 500,
@@ -35,10 +39,10 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
               </li>
               <li
                 className="nav-item"
-                onClick={() => handleCloseMenu("", "/litepaper")}
+                onClick={() => handleCloseMenu("", "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/")}
               >
                 <Link className="nav-link anim-2" activeClassName="active">
-                  Lite Paper
+                  Whitepaper
                 </Link>
               </li>
               <li
@@ -57,14 +61,14 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                   Armors
                 </Link>
               </li>
-              <li
+              {/* <li
                 className="nav-item"
                 onClick={() => handleCloseMenu("", "/avrk")}
               >
                 <Link className="nav-link anim-5" activeClassName="active">
                   $AVRK
                 </Link>
-              </li>
+              </li> */}
               <li
                 className="nav-item"
                 onClick={() => handleCloseMenu("", "/vortem")}
