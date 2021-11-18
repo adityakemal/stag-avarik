@@ -21,8 +21,8 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" activeClassName="active" to="/litepaper">
-              Lite Paper
+            <Link className="nav-link" activeClassName="active" to="https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/">
+              Whitepaper
             </Link>
           </li>
           <li className="nav-item">
@@ -35,11 +35,11 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               Armors
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="nav-link" activeClassName="active" to="/avrk">
               $AVRK
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link className="nav-link" activeClassName="active" to="/vortem">
               $VORTEM
