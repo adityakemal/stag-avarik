@@ -2,7 +2,7 @@ import { Button } from "components/anti/buttons/buttons"
 import { Modal } from "components/anti/modal/modal"
 
 
-export const ModalWithdraw = ({ modal, setModal, stake, handleChange, disabledMinusBtn, disabledPlusBtn }) => {
+export const ModalWithdraw = ({ modal, setModal, earned }) => {
     return (
         <Modal
             id="modalWithdraw"
@@ -12,53 +12,22 @@ export const ModalWithdraw = ({ modal, setModal, stake, handleChange, disabledMi
         >
             <div className="modal-inner-content">
                 <div className="heading">
-                    <h4>Withdraw Avarik Saga Token</h4>
-                    <p>You have {stake.total} token available to withdraw </p>
-                </div>
-                <div className="stake-counter">
-                    <div className="counter-wrapper">
-                        <div className="counter">
-                            <div
-                                className={`counter-button left ${disabledMinusBtn ? "disabled" : ""
-                                    }`}
-                                onClick={() =>
-                                    !disabledMinusBtn &&
-                                    handleChange("minus", "withdraw")
-                                }
-                                role="button"
-                                aria-hidden="true"
-                            />
-                            <h4>{stake.countWithdraw}</h4>
-                            <div
-                                className={`counter-button right ${disabledPlusBtn ? "disabled" : ""
-                                    }`}
-                                onClick={() =>
-                                    !disabledPlusBtn &&
-                                    handleChange("plus", "withdraw")
-                                }
-                                role="button"
-                                aria-hidden="true"
-                            />
-                        </div>
-                        <Button
-                            variant="outline-primary btn-max"
-                            onClick={() =>
-                                !disabledPlusBtn &&
-                                handleChange("max", "withdraw")
-                            }
-                            disabled={stake.countWithdraw === stake.total}
-                        >
-                            Max
-                        </Button>
-                    </div>
+                    <h4>Claim Avarik Saga $VORTEM</h4>
+                    <p>Are you sure want to claim all your $VORTEM?  </p>
                 </div>
                 <Button
-                    variant="danger"
+                    variant="primary"
                     className="w-100 mb-1"
-                    disabled={stake.count === 0}
                     onClick={() => setModal(null)}
                 >
-                    Withdraw
+                    CLAIM
+                </Button>
+                <Button
+                    variant="outline-primary"
+                    className="w-100 mb-1"
+                    onClick={() => setModal(null)}
+                >
+                    CANCEL
                 </Button>
             </div>
         </Modal>

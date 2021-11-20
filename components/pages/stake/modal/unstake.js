@@ -3,10 +3,10 @@ import { Button } from "components/anti/buttons/buttons"
 import { Modal } from "components/anti/modal/modal"
 
 
-export const ModalStake = ({ modal, setModal, data, onConfirm }) => {
+export const ModalUnstake = ({ modal, setModal, data, onConfirm }) => {
     return (
         <Modal
-            id="modalStake"
+            id="modalUnstake"
             isShowing={modal}
             className={`modal-stake`}
             hide={() => setModal(null)}
@@ -14,7 +14,7 @@ export const ModalStake = ({ modal, setModal, data, onConfirm }) => {
             <div className="modal-inner-content">
                 <div className="heading">
                     <h4>Stake Avariksaga NFT Token</h4>
-                    <p>Are you sure want to stake this token?</p>
+                    <p>Are you sure want to unstake this token?</p>
                 </div>
                 <div className="stake-data">
                     <div className="row w-100 mx-0 my-2">

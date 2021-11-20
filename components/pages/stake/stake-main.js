@@ -15,98 +15,62 @@ import { ModalConnect } from "./modal/connect"
 import { ModalStake } from "./modal/stake"
 import { ModalWithdraw } from "./modal/withdraw"
 
+import ignis1 from "assets/img/mint/ignis-1.jpg"
+import glacia1 from "assets/img/mint/glacia-1.jpg"
+import tenebris1 from "assets/img/mint/tenebris-1.jpg"
+import terra1 from "assets/img/mint/terra-1.jpg"
+import { Card } from "components/anti"
+import { ModalUnstake } from "./modal/unstake"
+
+const token = [
+    {
+        img: ignis1,
+        id: "1024",
+    },
+    {
+        img: glacia1,
+        id: "1025",
+    },
+    {
+        img: tenebris1,
+        id: "1026",
+    },
+    {
+        img: terra1,
+        id: "1027",
+    },
+]
+
 
 const StakeMain = ({ }) => {
     const [modal, setModal] = useState("")
     const [approved, setApproved] = useState(false);
-    const [trigger, anim] = useScrollAnim()
     const { connector, account, activate, error } = useWeb3React();
     const [loading, setLoading] = useState("");
     const [activatingConnector, setActivatingConnector] = useState();
 
+    const [trigger, anim] = useScrollAnim()
+    const [triggerToken, animToken] = useScrollAnim()
+    const [triggerStake, animStake] = useScrollAnim()
+    const [triggerOpenSea, animOpenSea] = useScrollAnim()
+    const [triggerEarned, animEarned] = useScrollAnim()
+
+    const [listToken, setListToken] = useState(token)
+    const [listTokenTemp, setListTokenTemp] = useState(token)
+    const [tokenStakeSelected, setTokenStakeSelected] = useState([])
+    const [tokenUnstakeSelected, setTokenUnstakeSelected] = useState([])
+    const [listStaked, setListStaked] = useState([])
+    const [listStakedTemp, setListStakedTemp] = useState([])
+    const [earned, setEarned] = useState(0)
 
     const triedEagerConnect = useEagerConnect();
     useInactiveListener(!triedEagerConnect || !!activatingConnector);
-
     useEffect(() => {
         if (activatingConnector && activatingConnector === connector) {
             setActivatingConnector(undefined);
         }
     }, [activatingConnector, connector]);
 
-    const [stake, setStake] = useState({
-        countStake: 0,
-        countWithdraw: 0,
-        total: 5,
-        available: 3,
-    })
-    const [earned, setEarned] = useState({
-        count: 0,
-        total: 0
-    })
-
-    const disabledMinusStake = stake.available === 0 || stake.countStake === 0;
-    const disabledPlusStake = stake.countStake === stake.available;
-    const disabledMinusWithdraw = stake.total === 0 || stake.countWithdraw === 0;
-    const disabledPlusWithdraw = stake.countWithdraw === stake.total;
-    const disabledMinusEarned = earned.total === 0 || earned.count === 0;
-    const disabledPlusEarned = earned.count === earned.total;
-
-
-    const handleChange = (type, category) => {
-        if (category === 'stake') {
-            if (type === "plus") {
-                setStake({
-                    ...stake,
-                    countStake: stake.countStake + 1
-                })
-            }
-            if (type === "minus") {
-                setStake({
-                    ...stake,
-                    countStake: stake.countStake - 1
-                })
-            }
-            if (type === 'max') {
-                setStake({
-                    ...stake,
-                    countStake: stake.available
-                })
-            }
-        }
-        if (category === 'withdraw') {
-            if (type === "plus") {
-                setStake({
-                    ...stake,
-                    countWithdraw: stake.countWithdraw + 1
-                })
-            }
-            if (type === "minus") {
-                setStake({
-                    ...stake,
-                    countWithdraw: stake.countWithdraw - 1
-                })
-            }
-            if (type === 'max') {
-                setStake({
-                    ...stake,
-                    countWithdraw: stake.total
-                })
-            }
-        }
-        if (category === 'earned') {
-            if (type === "plus")
-                setEarned({
-                    ...stake,
-                    count: stake.count + 1
-                })
-            if (type === "minus")
-                setEarned({
-                    ...stake,
-                    count: stake.count - 1
-                })
-        }
-    }
     const onConnect = async (connector) => {
         setLoading(connector);
         try {
@@ -122,6 +86,34 @@ const StakeMain = ({ }) => {
             setModal(null);
         }
     };
+    const selectToStake = (item) => {
+        const staked = [...tokenStakeSelected]
+        staked.push(item)
+        setTokenStakeSelected(staked)
+        const token = listToken.filter((itemToken) => itemToken !== item)
+        setListToken(token)
+    }
+    const onStake = (data) => {
+        setListStaked([...listStaked, ...data])
+        setListStakedTemp([...listStaked, ...data])
+        setListTokenTemp(listToken)
+        setTokenStakeSelected([])
+        setModal(null)
+    }
+    const selectToUnstake = (item) => {
+        const unstaked = [...tokenUnstakeSelected]
+        unstaked.push(item)
+        setTokenUnstakeSelected(unstaked)
+        const staked = listStaked.filter((itemStaked) => itemStaked !== item)
+        setListStaked(staked)
+    }
+    const onUnstake = (data) => {
+        setListToken([...listToken, ...data])
+        setListTokenTemp([...listToken, ...data])
+        setListStakedTemp(listStaked)
+        setTokenUnstakeSelected([])
+        setModal(null)
+    }
     return (
         <>
             <section className="sc-stake-main pb-main" ref={trigger}>
@@ -136,127 +128,267 @@ const StakeMain = ({ }) => {
                                     Stake
                                 </h1>
                                 <p>
-                                    Stake your Avariksaga NFT Token and Earn $Stack
+                                    Stake your Avariksaga NFT Token and Earn $VORTEM
                                 </p>
                             </div>
                             <div className={`box ${anim(3)} box-stake`}>
                                 <div className="box-inner">
                                     <div className="content">
-                                        <div className="row row-3">
+                                        <div className="row row-3 mb-3">
                                             <div className="col-lg-6 col-forms">
                                                 <form>
-                                                    <div className="heading">
-                                                        <h2 className={`text-white mb-2 ${anim(5)}`}>
-                                                            Earned
-                                                        </h2>
-                                                    </div>
-                                                    <div className={`box ${anim(7)}`}>
-                                                        <div className="box-inner">
-                                                            <div className="content">
-                                                                <div className="stake-data">
-                                                                    <span>Total Earned</span>
-                                                                    <span>
-                                                                        <strong>
-                                                                            {earned.total}
-                                                                        </strong>
-                                                                        <small>$Stack</small>
-                                                                    </span>
-                                                                </div>
-                                                                <div className="stake-counter">
-                                                                    <div className="counter-wrapper">
-                                                                        <div className="counter">
-                                                                            <div
-                                                                                className={`counter-button left ${disabledMinusEarned ? "disabled" : ""
-                                                                                    }`}
-                                                                                onClick={() =>
-                                                                                    !disabledMinusEarned &&
-                                                                                    handleChange(1, "minus")
-                                                                                }
-                                                                                role="button"
-                                                                                aria-hidden="true"
-                                                                            />
-                                                                            <h4>{earned.count}</h4>
-                                                                            <div
-                                                                                className={`counter-button right ${disabledPlusEarned ? "disabled" : ""
-                                                                                    }`}
-                                                                                onClick={() =>
-                                                                                    !disabledPlusEarned &&
-                                                                                    handleChange(1, "plus")
-                                                                                }
-                                                                                role="button"
-                                                                                aria-hidden="true"
-                                                                            />
+                                                    <div className={`box ${anim(4)}`} ref={triggerToken}>
+                                                        {
+                                                            tokenUnstakeSelected.length ? (
+                                                                <div className="box-inner">
+                                                                    <div className="content">
+                                                                        <div className="stake-data">
+                                                                            {tokenUnstakeSelected.map((item, i) => (
+                                                                                <div className="col-md-2" key={i}>
+                                                                                    <Card
+                                                                                        className={`card-item-token ${animToken(i + 1)}`}
+                                                                                        img={item.img}
+                                                                                        imgRatio="r-1-1"
+                                                                                        text={item.id}
+                                                                                    />
+                                                                                </div>
+                                                                            ))}
+                                                                        </div>
+                                                                        <div className="stake-button">
+                                                                            <Button
+                                                                                variant="primary"
+                                                                                className={`w-100 mb-2 ${animToken(1)}`}
+                                                                                onClick={() => setModal("modalUnstake")}
+                                                                            >
+                                                                                Confirm Unstake
+                                                                            </Button>
+                                                                            <Button
+                                                                                variant="outline-primary"
+                                                                                className={`w-100 ${animToken(2)}`}
+                                                                                onClick={() => {
+                                                                                    setListStaked([...listStakedTemp])
+                                                                                    setTokenUnstakeSelected([])
+                                                                                }}
+                                                                            >
+                                                                                Cancel
+                                                                            </Button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="stake-button">
-                                                                    <Button
-                                                                        variant="primary"
-                                                                        className="w-100"
-                                                                        disabled={earned.total === 0}
-                                                                    >
-                                                                        Claim
-                                                                    </Button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                            ) :
+                                                                !listTokenTemp.length ? (
+                                                                    <div className="box-inner staked-empty">
+                                                                        <div className="heading">
+                                                                            <h4 className={`mt-2 ${animToken(1)}`}>
+                                                                                No token to stake
+                                                                            </h4>
+                                                                        </div>
+                                                                        <Button
+                                                                            variant="primary"
+                                                                            className={`w-100 ${animToken(2)}`}
+                                                                            link="https://opensea.io/collection/avariksagauniverse"
+                                                                        >
+                                                                            Buy on Opensea
+                                                                        </Button>
+                                                                    </div>
+                                                                ) :
+                                                                    (
+                                                                        <div className="box-inner">
+                                                                            <div className="heading mb-0">
+                                                                                <h4 className={`mt-2 ${animToken(1)}`}>
+                                                                                    {listToken.length ? "Click to Stake" : "No Token to Stake"}
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div className="content">
+                                                                                {listToken.length ? (
+                                                                                    <div className="stake-data">
+                                                                                        {listToken.map((item, i) => (
+                                                                                            <div className="col-md-2" key={i}>
+                                                                                                <Card
+                                                                                                    className={`card-item-token ${animToken(i + 2)}`}
+                                                                                                    img={item.img}
+                                                                                                    imgRatio="r-1-1"
+                                                                                                    text={item.id}
+                                                                                                    onClick={() => selectToStake(item)}
+                                                                                                />
+                                                                                            </div>
+                                                                                        ))}
+                                                                                    </div>
+                                                                                ) : null}
+                                                                                <div className="stake-button">
+                                                                                    <Button
+                                                                                        variant="primary"
+                                                                                        className={`w-100 ${anim(3)}`}
+                                                                                        disabled={!listToken.length}
+                                                                                        onClick={() => {
+                                                                                            setTokenStakeSelected([...listTokenTemp])
+                                                                                            setListToken([])
+                                                                                        }}
+                                                                                    >
+                                                                                        Stake All
+                                                                                    </Button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    )
+                                                        }
                                                     </div>
                                                 </form>
                                             </div>
                                             <div className="col-lg-6 col-forms">
                                                 <form>
-                                                    <div className="heading">
-                                                        <h2 className={`text-white mb-2 ${anim(7)}`}>
-                                                            Staked
-                                                        </h2>
+                                                    <div className={`box ${anim(5)}`} ref={triggerStake}>
+                                                        {
+                                                            tokenStakeSelected.length ?
+                                                                (
+                                                                    <div className="box-inner">
+                                                                        <div className="content">
+                                                                            <div className="stake-data">
+                                                                                {tokenStakeSelected.map((item, i) => (
+                                                                                    <div className="col-md-2" key={i}>
+                                                                                        <Card
+                                                                                            className={`card-item-token ${animStake(i + 1)}`}
+                                                                                            img={item.img}
+                                                                                            imgRatio="r-1-1"
+                                                                                            text={item.id}
+                                                                                        />
+                                                                                    </div>
+                                                                                ))}
+                                                                            </div>
+                                                                            <div className="stake-button">
+                                                                                <Button
+                                                                                    variant="primary"
+                                                                                    className={`w-100 mb-2 ${anim(2)}`}
+                                                                                    onClick={() => setModal("modalStake")}
+                                                                                >
+                                                                                    Confirm Stake
+                                                                                </Button>
+                                                                                <Button
+                                                                                    variant="outline-primary"
+                                                                                    className={`w-100 ${anim(3)}`}
+                                                                                    onClick={() => {
+                                                                                        setListToken([...token])
+                                                                                        setTokenStakeSelected([])
+                                                                                    }}
+                                                                                >
+                                                                                    Cancel
+                                                                                </Button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                ) :
+                                                                !listStakedTemp.length ?
+                                                                    (
+                                                                        <div className="box-inner staked-empty">
+                                                                            <div className="heading">
+                                                                                <h4 className={`mt-2 ${animStake(1)}`}>
+                                                                                    No token staked
+                                                                                </h4>
+                                                                            </div>
+                                                                        </div>
+                                                                    ) :
+                                                                    (
+                                                                        <div className="box-inner">
+                                                                            <div className="heading mb-0">
+                                                                                <h4 className={`mt-2 ${animStake(1)}`}>
+                                                                                    {listStaked.length ? "Click to Unstake" : "No Token to Unstake"}
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div className="content">
+                                                                                {listStaked.length ? (
+                                                                                    <div className="stake-data">
+                                                                                        {listStaked.map((item, i) => (
+                                                                                            <div className="col-md-2" key={i}>
+                                                                                                <Card
+                                                                                                    className={`card-item-token ${animStake(i + 2)}`}
+                                                                                                    img={item.img}
+                                                                                                    imgRatio="r-1-1"
+                                                                                                    text={item.id}
+                                                                                                    onClick={() => selectToUnstake(item)}
+                                                                                                />
+                                                                                            </div>
+                                                                                        ))}
+                                                                                    </div>
+                                                                                ) : null}
+                                                                                <div className="stake-button">
+                                                                                    <Button
+                                                                                        variant="primary"
+                                                                                        className={`w-100 ${anim(3)}`}
+                                                                                        disabled={!listStaked.length}
+                                                                                        onClick={() => {
+                                                                                            setTokenUnstakeSelected([...listStakedTemp])
+                                                                                            setListStaked([])
+                                                                                        }}
+                                                                                    >
+                                                                                        Unstake All
+                                                                                    </Button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    )
+                                                        }
                                                     </div>
-                                                    <div className={`box ${anim(8)}`}>
-                                                        <div className="box-inner">
-                                                            <div className="content">
-                                                                <div className="stake-data">
-                                                                    <span>Total Staked</span>
-                                                                    <span>
-                                                                        <strong>
-                                                                            {stake.total}
-                                                                        </strong>
-                                                                        <small>Token</small>
-                                                                    </span>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div className="row row-3">
+                                            <div className="col-lg-6 col-forms">
+                                                {listTokenTemp.length ? (
+                                                    <form>
+                                                        <div className={`box ${anim(6)}`} ref={triggerOpenSea}>
+                                                            <div className={`box-inner box-opensea`}>
+                                                                <div className="heading">
+                                                                    <h5 className={`${animOpenSea(1)}`}>
+                                                                        You can buy more token to stake on Opensea
+                                                                    </h5>
                                                                 </div>
-                                                                <div className="stake-button">
-                                                                    <Button
-                                                                        variant="danger"
-                                                                        className="w-100"
-                                                                        disabled={stake.total === 0}
-                                                                        onClick={() => setModal("modalWithdraw")}
-                                                                    >
-                                                                        Unstake
-                                                                    </Button>
-                                                                </div>
+                                                                <Button
+                                                                    variant="primary"
+                                                                    className={`w-100 ${animOpenSea(2)}`}
+                                                                    link="https://opensea.io/collection/avariksagauniverse"
+                                                                >
+                                                                    Buy on Opensea
+                                                                </Button>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div className={`box ${anim(9)}`}>
-                                                        <div className="box-inner">
-                                                            <div className="content">
-                                                                <div className="stake-data">
-                                                                    <span>Total Unstaked</span>
-                                                                    <span>
-                                                                        <strong>
-                                                                            {stake.available}
-                                                                        </strong>
-                                                                        <small>Token</small>
-                                                                    </span>
+                                                    </form>
+                                                ) : null}
+                                            </div>
+                                            <div className="col-lg-6 col-forms">
+                                                <form>
+                                                    <div className={`box ${anim(7)}`} ref={triggerEarned}>
+                                                        <div className={`box-inner box-earned`}>
+                                                            {!listStakedTemp.length ? (
+                                                                <div className="heading mb-0">
+                                                                    <h4 className={`mt-2 ${animEarned(1)}`}>
+                                                                        Earn 10 $VORTEM /NFT /day
+                                                                    </h4>
                                                                 </div>
-                                                                <div className="stake-button">
+                                                            ) : (
+                                                                <>
+                                                                    <div className="heading mb-0">
+                                                                        <h4 className={`mt-2 ${animEarned(2)}`}>
+                                                                            {listStakedTemp.length} staked NFT
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div className="h-100 w-100 d-flex align-items-center justify-content-center">
+                                                                        <div className={`stake-data earned ${animEarned(3)}`}>
+                                                                            <span className="label">Total Earned</span>
+                                                                            <span className="value">
+                                                                                <strong>{earned} </strong>
+                                                                                <small> $VORTEM</small>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
                                                                     <Button
                                                                         variant="primary"
-                                                                        className="w-100 mb-1"
-                                                                        onClick={() => setModal("modalStake")}
+                                                                        className={`w-100 ${animOpenSea(2)}`}
+                                                                        onClick={() => setModal("modalWithdraw")}
                                                                     >
-                                                                        Stake
+                                                                        Claim
                                                                     </Button>
-                                                                </div>
-                                                            </div>
+                                                                </>
+                                                            )}
                                                         </div>
                                                     </div>
                                                 </form>
@@ -295,18 +427,18 @@ const StakeMain = ({ }) => {
             <ModalStake
                 modal={modal}
                 setModal={setModal}
-                stake={stake}
-                handleChange={handleChange}
-                disabledMinusBtn={disabledMinusStake}
-                disabledPlusBtn={disabledPlusStake}
+                data={tokenStakeSelected}
+                onConfirm={onStake}
+            />
+            <ModalUnstake
+                modal={modal}
+                setModal={setModal}
+                data={tokenUnstakeSelected}
+                onConfirm={onUnstake}
             />
             <ModalWithdraw
                 modal={modal}
                 setModal={setModal}
-                stake={stake}
-                handleChange={handleChange}
-                disabledMinusBtn={disabledMinusWithdraw}
-                disabledPlusBtn={disabledPlusWithdraw}
             />
 
         </>
