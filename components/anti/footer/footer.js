@@ -27,10 +27,10 @@ export const Footer = () => {
 
   const menuLinks = [
     { title: "Home", link: "/" },
-    { title: "Lite Paper", link: "/lite-paper" },
+    { title: "Whitepaper", link: "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/" },
     { title: "Weapons", link: "/weapons" },
     { title: "Armors", link: "/armors" },
-    { title: "$AVRK", link: "/avrk" },
+    // { title: "$AVRK", link: "/avrk" },
     { title: "$VORTEM", link: "/vortem" },
   ]
 
