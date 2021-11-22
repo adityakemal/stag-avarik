@@ -333,26 +333,6 @@ const StakeMain = ({ }) => {
                                         </div>
                                         <div className="row row-3">
                                             <div className="col-lg-6 col-forms">
-                                                {listTokenTemp.length ? (
-                                                    <form>
-                                                        <div className={`box ${anim(6)}`} ref={triggerOpenSea}>
-                                                            <div className={`box-inner box-opensea`}>
-                                                                <div className="heading">
-                                                                    <h5 className={`${animOpenSea(1)}`}>
-                                                                        You can buy more token to stake on Opensea
-                                                                    </h5>
-                                                                </div>
-                                                                <Button
-                                                                    variant="primary"
-                                                                    className={`w-100 ${animOpenSea(2)}`}
-                                                                    link="https://opensea.io/collection/avariksagauniverse"
-                                                                >
-                                                                    Buy on Opensea
-                                                                </Button>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                ) : null}
                                             </div>
                                             <div className="col-lg-6 col-forms">
                                                 <form>
