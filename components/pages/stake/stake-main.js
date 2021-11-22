@@ -125,7 +125,7 @@ const StakeMain = ({ }) => {
                                     Stake
                                 </h1>
                                 <p>
-                                    Stake your Avariksaga NFT Token and Earn Approximately 3 $VORTEM/NFT/day
+                                    Stake your Avariksaga NFT and Earn Approximately 3 $VORTEM/NFT/day
                                 </p>
                             </div>
                             <div className={`box ${anim(3)} box-stake`}>
