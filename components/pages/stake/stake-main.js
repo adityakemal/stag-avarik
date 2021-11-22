@@ -1,26 +1,24 @@
 import { useWeb3React } from "@web3-react/core"
 import logoMain from "assets/img/common/logo_main-title.png"
+import glacia1 from "assets/img/mint/glacia-1.jpg"
+import ignis1 from "assets/img/mint/ignis-1.jpg"
+import tenebris1 from "assets/img/mint/tenebris-1.jpg"
+import terra1 from "assets/img/mint/terra-1.jpg"
 import cogoToast from "cogo-toast"
+import { Card } from "components/anti"
 import { Button } from "components/anti/buttons/buttons"
-import { Image } from "components/anti/image/image"
 import { Link } from "components/anti/link/link"
-import { Modal } from "components/anti/modal/modal"
 import { useScrollAnim } from "components/hooks/hooks"
+import useEagerConnect from "components/hooks/useEagerConnect"
+import useInactiveListener from "components/hooks/useInactiveListener"
 import { injected, walletconnect } from "components/utils/connecters"
-import useEagerConnect from "components/hooks/useEagerConnect";
-import useInactiveListener from "components/hooks/useInactiveListener";
 import React, { useEffect, useState } from "react"
 import { ModalApproval } from "./modal/approval"
 import { ModalConnect } from "./modal/connect"
 import { ModalStake } from "./modal/stake"
+import { ModalUnstake } from "./modal/unstake"
 import { ModalWithdraw } from "./modal/withdraw"
 
-import ignis1 from "assets/img/mint/ignis-1.jpg"
-import glacia1 from "assets/img/mint/glacia-1.jpg"
-import tenebris1 from "assets/img/mint/tenebris-1.jpg"
-import terra1 from "assets/img/mint/terra-1.jpg"
-import { Card } from "components/anti"
-import { ModalUnstake } from "./modal/unstake"
 
 const token = [
     {
@@ -52,7 +50,6 @@ const StakeMain = ({ }) => {
     const [trigger, anim] = useScrollAnim()
     const [triggerToken, animToken] = useScrollAnim()
     const [triggerStake, animStake] = useScrollAnim()
-    const [triggerOpenSea, animOpenSea] = useScrollAnim()
     const [triggerEarned, animEarned] = useScrollAnim()
 
     const [listToken, setListToken] = useState(token)

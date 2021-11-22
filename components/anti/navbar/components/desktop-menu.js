@@ -45,11 +45,11 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               $VORTEM
             </Link>
           </li>
-          {/* <li className="nav-item">
-            <Link className="nav-link" activeClassName="active" to="/token">
-              Token
+          <li className="nav-item">
+            <Link className="nav-link" activeClassName="active" to="/stake">
+              Stake
             </Link>
-          </li> */}
+          </li>
         </ul>
       </div>
     </>

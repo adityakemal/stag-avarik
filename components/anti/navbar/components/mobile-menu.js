@@ -73,21 +73,18 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                 className="nav-item"
                 onClick={() => handleCloseMenu("", "/vortem")}
               >
-                <Link className="nav-link anim-6" activeClassName="active">
+                <Link className="nav-link anim-5" activeClassName="active">
                   $VORTEM
                 </Link>
               </li>
-              {/* <li className="nav-item"
-                onClick={() => handleCloseMenu("", "/ava-token")}
+              <li
+                className="nav-item"
+                onClick={() => handleCloseMenu("", "/stake")}
               >
-                <Link
-                  className="nav-link anim-7"
-                  activeClassName="active"
-                  to="/token"
-                >
-                  Token
+                <Link className="nav-link anim-6" activeClassName="active">
+                  Stake
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </div>
         </div>
