@@ -63,7 +63,10 @@ export const Button = ({
       <button
         className={`btn ${btnVariant()} ${size ? btnSize() : ""} ${iconLeft ? "btn-ic-left" : ""} ${iconRight ? "btn-ic-right" : ""} ${className}`}
         id={id}
-        onClick={onClick}
+        onClick={(e) => {
+          e.preventDefault()
+          onClick(e)
+        }}
         disabled={disabled}
       >
         <span>
