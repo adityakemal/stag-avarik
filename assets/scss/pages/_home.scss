@@ -9,8 +9,7 @@ body {
   @include gradient-y-to-bottom($purple, $purple-alt);
   &:after {
     content: "";
-    background: $purple url(../../../assets/img/common/bg_common.jpg) no-repeat
-      center center;
+    background: $purple url(../../../assets/img/common/bg_common.jpg) no-repeat center center;
     background-size: cover;
     top: 0;
     left: 0;
@@ -185,8 +184,7 @@ body {
     z-index: 2;
     .box-inner {
       .content {
-        background: $purple url(../../../assets/img/common/bg_story.jpg)
-          no-repeat center center;
+        background: $purple url(../../../assets/img/common/bg_story.jpg) no-repeat center center;
         background-size: cover;
         color: $white;
       }
@@ -230,8 +228,7 @@ body {
           height: 100%;
           width: 100%;
           content: "";
-          background: $black url(../../../assets/img/common/bg_roadmap.jpg)
-            no-repeat center center;
+          background: $black url(../../../assets/img/common/bg_roadmap.jpg) no-repeat center center;
           background-size: cover;
         }
       }
@@ -401,6 +398,17 @@ body {
           font-size: 1.5rem;
         }
       }
+    }
+  }
+}
+
+//vortem
+
+.sc-home-vortem {
+  .box {
+    .box-inner {
+      background: $purple url(../../../assets/img/common/bg_story.jpg) no-repeat center center;
+      background-size: cover;
     }
   }
 }
