@@ -54,7 +54,7 @@ const HomeVortem = () => {
               link="/vortem"
             >
               <h5 className="mb-0">
-                Click to learn more about $VORTEM »
+                Click here to learn more about $VORTEM »
               </h5>
             </Button>
           </div>
