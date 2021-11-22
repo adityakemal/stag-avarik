@@ -42,7 +42,7 @@ const token = [
 
 const StakeMain = ({ }) => {
     const [modal, setModal] = useState("")
-    const [approved, setApproved] = useState(false);
+    // const [approved, setApproved] = useState(false);
     const { connector, account, activate, error } = useWeb3React();
     const [loading, setLoading] = useState("");
     const [activatingConnector, setActivatingConnector] = useState();
@@ -77,11 +77,12 @@ const StakeMain = ({ }) => {
             console.log('error connect', error);
         }
         setLoading(null)
-        if (!approved) {
-            setModal("modalApproval")
-        } else {
-            setModal(null);
-        }
+        setModal(null)
+        // if (!approved) {
+        //     setModal("modalApproval")
+        // } else {
+        //     setModal(null);
+        // }
     };
     const selectToStake = (item) => {
         const staked = [...tokenStakeSelected]
@@ -393,7 +394,7 @@ const StakeMain = ({ }) => {
                     )}
                 </div>
             </section>
-            <ModalApproval modal={modal} setModal={setModal} setApproved={setApproved} />
+            {/* <ModalApproval modal={modal} setModal={setModal} setApproved={setApproved} /> */}
             <ModalConnect modal={modal} setModal={setModal} loading={loading} onConnect={onConnect} />
             <ModalStake
                 modal={modal}
