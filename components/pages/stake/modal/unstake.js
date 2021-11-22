@@ -19,7 +19,7 @@ export const ModalUnstake = ({ modal, setModal, data, onConfirm }) => {
                 <div className="stake-data">
                     <div className="row w-100 mx-0 my-2">
                         {data.map((item) => (
-                            <div className="col-md-2">
+                            <div className="col-md-2 col-4">
                                 <Card
                                     className="card-item-token"
                                     img={item.img}

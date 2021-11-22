@@ -128,7 +128,7 @@ const StakeMain = ({ }) => {
                                     Stake
                                 </h1>
                                 <p>
-                                    Stake your Avariksaga NFT Token and Earn $VORTEM
+                                    Stake your Avariksaga NFT Token and Earn 3 $VORTEM /NFT /day
                                 </p>
                             </div>
                             <div className={`box ${anim(3)} box-stake`}>
@@ -144,7 +144,7 @@ const StakeMain = ({ }) => {
                                                                     <div className="content">
                                                                         <div className="stake-data">
                                                                             {tokenUnstakeSelected.map((item, i) => (
-                                                                                <div className="col-md-2" key={i}>
+                                                                                <div className="col-md-2 col-4" key={i}>
                                                                                     <Card
                                                                                         className={`card-item-token ${animToken(i + 1)}`}
                                                                                         img={item.img}
@@ -203,7 +203,7 @@ const StakeMain = ({ }) => {
                                                                                 {listToken.length ? (
                                                                                     <div className="stake-data">
                                                                                         {listToken.map((item, i) => (
-                                                                                            <div className="col-md-2" key={i}>
+                                                                                            <div className="col-md-2 col-4" key={i}>
                                                                                                 <Card
                                                                                                     className={`card-item-token ${animToken(i + 2)}`}
                                                                                                     img={item.img}
@@ -245,7 +245,7 @@ const StakeMain = ({ }) => {
                                                                         <div className="content">
                                                                             <div className="stake-data">
                                                                                 {tokenStakeSelected.map((item, i) => (
-                                                                                    <div className="col-md-2" key={i}>
+                                                                                    <div className="col-md-2 col-4" key={i}>
                                                                                         <Card
                                                                                             className={`card-item-token ${animStake(i + 1)}`}
                                                                                             img={item.img}
@@ -298,7 +298,7 @@ const StakeMain = ({ }) => {
                                                                                 {listStaked.length ? (
                                                                                     <div className="stake-data">
                                                                                         {listStaked.map((item, i) => (
-                                                                                            <div className="col-md-2" key={i}>
+                                                                                            <div className="col-md-2 col-4" key={i}>
                                                                                                 <Card
                                                                                                     className={`card-item-token ${animStake(i + 2)}`}
                                                                                                     img={item.img}
@@ -313,7 +313,7 @@ const StakeMain = ({ }) => {
                                                                                 <div className="stake-button">
                                                                                     <Button
                                                                                         variant="primary"
-                                                                                        className={`w-100 ${anim(3)}`}
+                                                                                        className={`w-100 ${animStake(3)}`}
                                                                                         disabled={!listStaked.length}
                                                                                         onClick={() => {
                                                                                             setTokenUnstakeSelected([...listStakedTemp])
@@ -335,16 +335,10 @@ const StakeMain = ({ }) => {
                                             <div className="col-lg-6 col-forms">
                                             </div>
                                             <div className="col-lg-6 col-forms">
-                                                <form>
-                                                    <div className={`box ${anim(7)}`} ref={triggerEarned}>
-                                                        <div className={`box-inner box-earned`}>
-                                                            {!listStakedTemp.length ? (
-                                                                <div className="heading mb-0">
-                                                                    <h4 className={`mt-2 ${animEarned(1)}`}>
-                                                                        Earn 10 $VORTEM /NFT /day
-                                                                    </h4>
-                                                                </div>
-                                                            ) : (
+                                                {!listStakedTemp.length ? null : (
+                                                    <form>
+                                                        <div className={`box ${anim(7)}`} ref={triggerEarned}>
+                                                            <div className={`box-inner box-earned`}>
                                                                 <>
                                                                     <div className="heading mb-0">
                                                                         <h4 className={`mt-2 ${animEarned(2)}`}>
@@ -362,16 +356,16 @@ const StakeMain = ({ }) => {
                                                                     </div>
                                                                     <Button
                                                                         variant="primary"
-                                                                        className={`w-100 ${animOpenSea(2)}`}
+                                                                        className={`w-100 ${animEarned(2)}`}
                                                                         onClick={() => setModal("modalWithdraw")}
                                                                     >
                                                                         Claim
                                                                     </Button>
                                                                 </>
-                                                            )}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </form>
+                                                    </form>
+                                                )}
                                             </div>
                                         </div>
                                     </div>

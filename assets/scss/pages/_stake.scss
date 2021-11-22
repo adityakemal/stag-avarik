@@ -370,6 +370,21 @@
       width: 100%;
     }
   }
+  .card-item-token {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    .col-body {
+      height: 20px;
+      .card-body {
+        padding: 0;
+        .card-text {
+          font-size: 0.625rem;
+          text-align: center;
+          color: $body-color-secondary;
+        }
+      }
+    }
+  }
 }
 
 .modal-wallet {
