@@ -4,6 +4,8 @@ import glacia1 from "assets/img/mint/glacia-1.jpg"
 import ignis1 from "assets/img/mint/ignis-1.jpg"
 import tenebris1 from "assets/img/mint/tenebris-1.jpg"
 import terra1 from "assets/img/mint/terra-1.jpg"
+import stakingTitle from "assets/img/vortem/5a_staking_title.png"
+import stakingImage from "assets/img/vortem/5b_staking_image.png"
 import cogoToast from "cogo-toast"
 import { Card } from "components/anti"
 import { Button } from "components/anti/buttons/buttons"
@@ -13,7 +15,6 @@ import useEagerConnect from "components/hooks/useEagerConnect"
 import useInactiveListener from "components/hooks/useInactiveListener"
 import { injected, walletconnect } from "components/utils/connecters"
 import React, { useEffect, useState } from "react"
-import { ModalApproval } from "./modal/approval"
 import { ModalConnect } from "./modal/connect"
 import { ModalStake } from "./modal/stake"
 import { ModalUnstake } from "./modal/unstake"
@@ -371,26 +372,50 @@ const StakeMain = ({ }) => {
                             </div>
                         </>
                     ) : (
-                        <div className="box connect-wallet fadeInUp d1">
-                            <div className="box-inner">
-                                <div className="content">
-                                    <div className={"heading"}>
-                                        <h2 className="fadeInUp d2">Avarik Saga Stake</h2>
-                                        <p className={`fadeInUp d3 mb-4 mt-3`}>
-                                            Before staking your Avarik Saga Token, please connect by clicking
-                                            on the button below.
-                                        </p>
+                        <>
+                            <div className="heading mt-5">
+                                <h4 className="text-white fadeInUp d1">Stake your Token to Earn $VORTEM</h4>
+                            </div>
+                            <div className="box connect-wallet fadeInUp d1">
+                                <div className="box-inner">
+                                    <div className="content">
+                                        <div className="sc-stake-info">
+                                            <div className="container mw-xl">
+                                                <div className="row">
+                                                    <div className="col-md-6 col-xl-5 col-text">
+                                                        <p className={`text-white fadeInUp d2`}>
+                                                            Each Avarik NFT in the staking smart contracts will earn 3
+                                                            $VORTEM per day.
+                                                        </p>
+                                                    </div>
+                                                    <div className="col-md-6 col-xl-7">
+                                                        <img
+                                                            src={stakingImage}
+                                                            className={`img-fluid fadeInUp d3`}
+                                                            alt="Vortem"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className={"heading"}>
+                                            {/* <h2 className="fadeInUp d2">Avarik Saga Stake</h2> */}
+                                            <p className={`text-white fadeInUp d4 mb-4 mt-3`}>
+                                                Before staking your Avarik Saga Token, please connect by clicking
+                                                on the button below.
+                                            </p>
+                                        </div>
+                                        <Button
+                                            variant="outline-white"
+                                            className="w-100 fadeInUp d5 btn-connect"
+                                            onClick={() => setModal("modalConnect")}
+                                        >
+                                            Connect
+                                        </Button>
                                     </div>
-                                    <Button
-                                        variant="dark"
-                                        className="w-100 fadeInUp d4 btn-connect"
-                                        onClick={() => setModal("modalConnect")}
-                                    >
-                                        Connect
-                                    </Button>
                                 </div>
                             </div>
-                        </div>
+                        </>
                     )}
                 </div>
             </section>

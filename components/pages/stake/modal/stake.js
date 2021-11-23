@@ -14,7 +14,8 @@ export const ModalStake = ({ modal, setModal, data, onConfirm }) => {
             <div className="modal-inner-content">
                 <div className="heading">
                     <h4>Stake Avariksaga NFT Token</h4>
-                    <p>Are you sure want to stake this token?</p>
+                    <p>Are you sure want to stake this token? <br />
+                        You will earn approximately {3 * data.length} $VORTEM /Day for staking {data.length} NFT Token </p>
                 </div>
                 <div className="stake-data">
                     <div className="row w-100 mx-0 my-2">
