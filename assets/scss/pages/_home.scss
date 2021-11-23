@@ -409,6 +409,40 @@ body {
     .box-inner {
       background: $purple url(../../../assets/img/common/bg_story.jpg) no-repeat center center;
       background-size: cover;
+      .container {
+        flex-direction: column;
+        padding: 1rem;
+        @include media-breakpoint-up(md) {
+          padding: 2rem;
+        }
+        @include media-breakpoint-up(xl) {
+          padding: 3rem;
+        }
+        .logo-text {
+          text-align: left;
+          @include media-breakpoint-up(md) {
+            margin-right: 4rem;
+          }
+          @include media-breakpoint-up(lg) {
+            margin-left: 6rem;
+          }
+          p {
+            margin-bottom: 0.5rem;
+          }
+          .btn {
+            width: fit-content;
+          }
+          h1 {
+            @include media-breakpoint-up(md) {
+              font-size: 3rem;
+            }
+            span {
+              color: #e86dbd;
+              font-size: 125%;
+            }
+          }
+        }
+      }
     }
   }
 }

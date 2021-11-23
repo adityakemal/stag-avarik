@@ -14,50 +14,54 @@ const HomeVortem = () => {
       <div className="py-main">
         <div className="container">
           <div className="heading">
-            <h2 className={`${anim(1)} text-white`}>$VORTEM</h2>
+            <h2 className={`${anim(1)} text-white`}>In Game Currency</h2>
           </div>
           <div className="box mb-3">
             <div className="box-inner">
-              <div className="sc-main sc-dark sc-vortem-logo py-main" ref={trigger}>
+              <div className="sc-main sc-dark sc-vortem-logo" ref={trigger}>
                 <div className="container">
-                  <div className="logo-text">
-                    <p className={anim(1)}>Avarik Saga In Game Currency</p>
-                    <h1 className={anim(2)}>
-                      <span>$Vortem</span> <br />
-                      Token
-                    </h1>
+                  <div className="row mb-3">
+                    <div className="col-md-8 col-6 d-flex align-items-center">
+                      <div className="logo-text">
+                        <p className={`title ${anim(1)}`}>Avarik Saga In Game Currency</p>
+                        <h1 className={anim(2)}>
+                          <span>$Vortem</span> Token
+                        </h1>
+                        <p className={`d-none d-md-block ${anim(3)}`}>
+                          $VORTEM is the official Avarik Saga in-game currency, which you can use for upgrading weapons and armors, recruit new Avariks and purchase ingredient
+                        </p>
+                        <Button
+                          variant="outline-white mx-1"
+                          className={`d-none d-md-block mb-sm-down-2 mt-3 ${anim(4)}`}
+                          link="/vortem"
+                        >
+                          Click here to learn more about $VORTEM»
+                        </Button>
+                      </div>
+                    </div>
+                    <div className="col-md-4 col-6 d-flex align-items-center">
+                      <img src={logo} className={anim(3)} alt="Vortem" />
+                    </div>
                   </div>
-                  <img src={logo} className={anim(3)} alt="Vortem" />
+                  <div className="row mb-3">
+                    <p className={`d-block d-md-none ${anim(3)}`}>
+                      $VORTEM is the official Avarik Saga in-game currency, which you can use for upgrading weapons and armors, recruit new Avariks and purchase ingredient
+                    </p>
+                  </div>
+                  {/* <div className="w-100 d-flex justify-content-start" ref={trigger3}> */}
+                  <Button
+                    variant="outline-white mx-1"
+                    className={`d-block d-md-none mb-sm-down-2 ${anim(4)}`}
+                    link="/vortem"
+                  >
+                    Click here to learn more about $VORTEM »
+                  </Button>
+                  {/* </div> */}
                 </div>
               </div>
             </div>
           </div>
-          <div className="box mb-3">
-            <div className="box-inner">
-              <div className="sc-main sc-dark sc-vortem-what py-main" ref={trigger2}>
-                <div className="container">
-                  <div className="heading">
-                    <p className={`mb-1 ${anim2(1)}`}>What Is</p>
-                    <h2 className={`h1 ${anim2(2)}`}>
-                      <span>$Vortem</span>
-                    </h2>
-                  </div>
-                  <img src={whatMain} className={`"img-fluid ${anim2(3)}`} alt="Vortem" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="w-100 d-flex justify-content-center" ref={trigger3}>
-            <Button
-              variant="outline-white mx-1"
-              className={`mb-sm-down-2 ${anim3()}`}
-              link="/vortem"
-            >
-              <h5 className="mb-0">
-                Click here to learn more about $VORTEM »
-              </h5>
-            </Button>
-          </div>
+
         </div>
       </div>
     </section>

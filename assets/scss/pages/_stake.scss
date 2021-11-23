@@ -211,18 +211,22 @@
   .box {
     background: $white url(../../img/common/bg_paper-texture.jpg) repeat;
     background-size: 200px;
-    // border: 0.125rem solid rgba($body-color, 1);
+    border: 0.125rem solid rgba($body-color, 1);
     padding: 0.125rem;
     margin-bottom: 0.5rem;
     height: 100%;
     &.connect-wallet {
-      margin-top: 3rem;
+      background: transparent;
+      border: 0.125rem solid rgba($white, 0.5);
+      .box-inner {
+        border: 1px solid rgba($white, 05);
+      }
       h2,
       p {
-        color: $black;
+        color: $body-color;
       }
       .btn-connect {
-        background-color: $purple;
+        // background-color: $pußrple;
       }
     }
     .box-inner {
@@ -414,6 +418,35 @@
     &.metamask {
       img {
         max-width: 170px;
+      }
+    }
+  }
+}
+.sc-stake-info {
+  position: relative;
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  .col-text {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+    }
+  }
+  p {
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      text-align: left;
+      font-size: 1.25rem;
+      margin-bottom: 0;
+    }
+  }
+  .heading {
+    img {
+      width: 150px;
+      @include media-breakpoint-up(md) {
+        width: 200px;
       }
     }
   }

@@ -74,7 +74,7 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                 onClick={() => handleCloseMenu("", "/vortem")}
               >
                 <Link className="nav-link anim-5" activeClassName="active">
-                  $VORTEM
+                  In Game Currency
                 </Link>
               </li>
               <li
