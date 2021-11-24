@@ -42,12 +42,12 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
           </li> */}
           <li className="nav-item">
             <Link className="nav-link" activeClassName="active" to="/vortem">
-              $VORTEM
+              In Game Currency
             </Link>
           </li>
           {/* <li className="nav-item">
-            <Link className="nav-link" activeClassName="active" to="/token">
-              Token
+            <Link className="nav-link" activeClassName="active" to="/stake">
+              Stake
             </Link>
           </li> */}
         </ul>

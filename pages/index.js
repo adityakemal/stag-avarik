@@ -12,7 +12,7 @@ import HomeCharacters from "components/pages/home/home-characters"
 // import HomeLitePaper from "components/pages/home/home-litepaper"
 import HomeTeam from "components/pages/home/home-team"
 import HomeSocial from "components/pages/home/home-social"
-// import HomeVortem from "components/pages/home/home-vortem"
+import HomeVortem from "components/pages/home/home-vortem"
 
 const HomePage = () => {
   return (
@@ -27,7 +27,7 @@ const HomePage = () => {
         <HomeCharacters />
         {/* <HomeRoadmap /> */}
         {/* <HomeLitePaper /> */}
-        {/* <HomeVortem /> */}
+        <HomeVortem />
         <HomeTeam />
         <HomeSocial />
       </Layout>

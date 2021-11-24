@@ -1,10 +1,8 @@
-import React from "react"
-
-import imgStaking from "assets/img/token/img_staking.png"
-import imgPlaying from "assets/img/token/img_playing-the-game.png"
-import imgBuying from "assets/img/token/img_buying-ava-token.png"
-
+import logo from "assets/img/vortem/1_logo.png"
+import whatMain from "assets/img/vortem/2a_what_main.png"
+import { Button } from "components/anti"
 import { useScrollAnim } from "components/hooks/hooks"
+import React from "react"
 
 const HomeVortem = () => {
   const [trigger, anim] = useScrollAnim()
@@ -12,141 +10,61 @@ const HomeVortem = () => {
   const [trigger3, anim3] = useScrollAnim()
 
   return (
-    <>
-      <div className="sc-home-vortem sc-dark pt-main" ref={trigger}>
+    <section className="sc-home-vortem">
+      <div className="py-main">
         <div className="container">
           <div className="heading">
-            <h2 className={anim(1)}>$VORTEM Token</h2>
-            <p>Avarik Saga In Game Currency</p>
+            <h2 className={`${anim(1)} text-white`}>In Game Currency</h2>
           </div>
-          <div className={`box box-light ${anim(2)}`}>
+          <div className="box mb-3">
             <div className="box-inner">
-              <div className="content">
-                <p className={`${anim(3)}`}>
-                  <strong>
-                    VORTEM is the official Avarik Saga in-game currency
-                  </strong>
-                  , where you can{" "}
-                  <strong>
-                    purchase game ingredients, weapons, armors and breed.
-                  </strong>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="sc-home-vortem-claim sc-dark pt-main-sm" ref={trigger2}>
-        <div className="container">
-          <div className="heading">
-            <h4 className={anim2(1)}>How to Claim $VORTEM Token</h4>
-          </div>
-          <div className="row">
-            <div className="col-lg-4">
-              <div className={`box box-light ${anim2(2)}`}>
-                <div className="box-inner">
-                  <div className="content content-sm">
-                    <img src={imgStaking} className="img-fluid" alt="Staking" />
-                    <div className="info">
-                      <h3>Staking</h3>
-                      <p className="mb-0">
-                        By staking the Avarik NFT you will get the VORTEM token.
-                      </p>
+              <div className="sc-main sc-dark sc-vortem-logo" ref={trigger}>
+                <div className="container">
+                  <div className="row mb-3">
+                    <div className="col-md-8 col-6 d-flex align-items-center">
+                      <div className="logo-text">
+                        <p className={`title ${anim(1)}`}>Avarik Saga In Game Currency</p>
+                        <h1 className={anim(2)}>
+                          <span>$Vortem</span> Token
+                        </h1>
+                        <p className={`d-none d-md-block ${anim(3)}`}>
+                          $VORTEM is the official Avarik Saga in-game currency, which you can use for upgrading weapons and armors, recruit new Avariks and purchase ingredient
+                        </p>
+                        <Button
+                          variant="outline-white mx-1"
+                          className={`d-none d-md-block mb-sm-down-2 mt-3 ${anim(4)}`}
+                          link="/vortem"
+                        >
+                          Click here to learn more about $VORTEM»
+                        </Button>
+                      </div>
+                    </div>
+                    <div className="col-md-4 col-6 d-flex align-items-center">
+                      <img src={logo} className={anim(3)} alt="Vortem" />
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className={`box box-light box-play ${anim2(3)}`}>
-                <div className="box-inner">
-                  <div className="content content-sm">
-                    <img src={imgPlaying} className="img-fluid" alt="Playing" />
-                    <div className="info">
-                      <h3>Play the Game</h3>
-                      <p className="mb-0">
-                        Player v. Environment (PvE), Player v. Player (PvP),
-                        Match Making Rating (MMR) PvP, Dungeon Raid, Faction
-                        War, Tournament Rewards
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className={`box box-light ${anim2(4)}`}>
-                <div className="box-inner">
-                  <div className="content content-sm">
-                    <img src={imgBuying} className="img-fluid" alt="Buying" />
-                    <div className="info">
-                      <h3>Buying from Various Exchanges</h3>
-                      <p className="mb-0">To be announced end of 2021</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="sc-home-vortem-rec sc-dark pt-main-sm" ref={trigger3}>
-        <div className="container">
-          <div className="heading">
-            <h4 className={anim3(1)}>Recruit & Staking Mechanics</h4>
-          </div>
-          <div className={`box box-light ${anim3(2)}`}>
-            <div className="box-inner">
-              <div className="content">
-                <div className="row">
-                  <div className="col-md-5"></div>
-                  <div className="col-md-7">
-                    <h5 className={anim(3)}>Recruit Mechanics</h5>
-                    <p className={`${anim3(4)}`}>
-                      The cost in the VORTEM token is a function of the recruit
-                      count of the parent's Avarik. Meaning, the higher the
-                      recruit count, the more VORTEM token you will need.
+                  <div className="row mb-3">
+                    <p className={`d-block d-md-none ${anim(3)}`}>
+                      $VORTEM is the official Avarik Saga in-game currency, which you can use for upgrading weapons and armors, recruit new Avariks and purchase ingredient
                     </p>
-                    <ol className={`${anim(5)}`}>
-                      <li>
-                        Must have <strong>2 Avarik NFT</strong>, both Male &
-                        Female.
-                      </li>
-                      <li>
-                        The <strong>cost to recruit</strong> will vary based on
-                        the number of times the Avarik has bred.
-                      </li>
-                      <li>
-                        We are planning to{" "}
-                        <strong>
-                          introduce the Avarik Saga Governance Token ($AVRK)
-                        </strong>
-                        , which will be required for recruiting additional to
-                        the in-game utility token (Phase 2).
-                      </li>
-                      <li>
-                        We are setting up a{" "}
-                        <strong>
-                          model to decide on the duration of recruiting with a
-                          chance to lower the duration through in-game rewards
-                        </strong>{" "}
-                        such as recruiting stones and scrolls.
-                      </li>
-                    </ol>
+                  </div>
+                  {/* <div className="w-100 d-flex justify-content-start" ref={trigger3}> */}
+                  <Button
+                    variant="outline-white mx-1"
+                    className={`d-block d-md-none mb-sm-down-2 ${anim(4)}`}
+                    link="/vortem"
+                  >
+                    Click here to learn more about $VORTEM »
+                  </Button>
+                  {/* </div> */}
+                </div>
+              </div>
+            </div>
+          </div>
 
-                    <h5 className={`${anim(6)} mt-5`}>Staking Mechanics</h5>
-                    <p className={`${anim3(7)} mb-0`}>
-                      Each Avarik NFT in the staking smart contracts will earn
-                      10 $VORTEM per day.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-    </>
+    </section>
   )
 }
 

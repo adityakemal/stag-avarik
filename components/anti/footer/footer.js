@@ -31,7 +31,8 @@ export const Footer = () => {
     { title: "Weapons", link: "/weapons" },
     { title: "Armors", link: "/armors" },
     // { title: "$AVRK", link: "/avrk" },
-    { title: "$VORTEM", link: "/vortem" },
+    { title: "In Game Currency", link: "/vortem" },
+    // { title: "Stake", link: "/stake" },
   ]
 
   const social = [
@@ -96,7 +97,7 @@ export const Footer = () => {
                             <div
                               className="nav-item"
                               key={i}
-                              // onClick={() => handleClick(link.link)}
+                            // onClick={() => handleClick(link.link)}
                             >
                               <Link className="nav-link" to={link.link}>
                                 {link.title}

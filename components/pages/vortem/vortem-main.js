@@ -142,7 +142,7 @@ const WeaponsMain = () => {
           </div>
         </div>
       </section>
-      <section
+      {/* <section
         className="sc-main sc-dark sc-vortem-recruit py-main"
         ref={trigger1}
       >
@@ -221,7 +221,7 @@ const WeaponsMain = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section
         className="sc-main sc-dark sc-vortem-staking py-main"
         ref={trigger2}
