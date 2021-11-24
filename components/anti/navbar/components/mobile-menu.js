@@ -77,14 +77,14 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                   In Game Currency
                 </Link>
               </li>
-              <li
+              {/* <li
                 className="nav-item"
                 onClick={() => handleCloseMenu("", "/stake")}
               >
                 <Link className="nav-link anim-6" activeClassName="active">
                   Stake
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
