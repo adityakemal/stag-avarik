@@ -116,7 +116,7 @@ const StakeMain = ({ }) => {
     return (
         <>
             <section className="sc-stake-main pb-main" ref={trigger}>
-                <div className={`container ${account ? 'mw-xl' : 'mw-md'}`}>
+                <div className="container mw-xl">
                     <Link to="/" className="stake-logo">
                         <img src={logoMain} className={`img-fluid ${anim(1)}`} alt="Logo" />
                     </Link>
