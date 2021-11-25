@@ -2,7 +2,7 @@ import { Button } from "components/anti/buttons/buttons"
 import { Modal } from "components/anti/modal/modal"
 
 
-export const ModalWithdraw = ({ modal, setModal, earned }) => {
+export const ModalWithdraw = ({ modal, setModal, onConfirm }) => {
     return (
         <Modal
             id="modalWithdraw"
@@ -18,7 +18,7 @@ export const ModalWithdraw = ({ modal, setModal, earned }) => {
                 <Button
                     variant="primary"
                     className="w-100 mb-1"
-                    onClick={() => setModal(null)}
+                    onClick={onConfirm}
                 >
                     CLAIM
                 </Button>

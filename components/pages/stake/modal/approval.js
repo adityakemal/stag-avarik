@@ -25,10 +25,7 @@ export const ModalApproval = ({ modal, setModal, setApproved }) => {
                     <Button
                         variant="success"
                         className="w-100 mb-1"
-                        onClick={() => {
-                            setApproved(true)
-                            setModal(null)
-                        }}
+                        onClick={setApproved}
                     >
                         Approve
                     </Button>
