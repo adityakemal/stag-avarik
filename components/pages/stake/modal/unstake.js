@@ -1,15 +1,16 @@
+import cogoToast from "cogo-toast"
 import { Card } from "components/anti"
 import { Button } from "components/anti/buttons/buttons"
 import { Modal } from "components/anti/modal/modal"
 
 
-export const ModalUnstake = ({ modal, setModal, data, onConfirm }) => {
+export const ModalUnstake = ({ modal, setModal, data, onConfirm, loading }) => {
     return (
         <Modal
             id="modalUnstake"
             isShowing={modal}
             className={`modal-stake`}
-            hide={() => setModal(null)}
+            hide={() => loading === "unstake" ? cogoToast.info("Please wait until your transaction is finished") : setModal(null)}
         >
             <div className="modal-inner-content">
                 <div className="heading">
@@ -35,6 +36,8 @@ export const ModalUnstake = ({ modal, setModal, data, onConfirm }) => {
                 <Button
                     variant="primary"
                     className="w-100 mb-1"
+                    loader={loading === "unstake"}
+                    className={`w-100 mb-1 ${loading === "unstake" ? "loading" : ""}`}
                     onClick={() => onConfirm(data)}
                 >
                     Confirm

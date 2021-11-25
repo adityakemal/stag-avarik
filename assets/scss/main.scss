@@ -136,6 +136,8 @@
 @import "../../components/anti/page-transition/page-transition-custom";
 @import "../../components/anti/post/post";
 @import "../../components/anti/post/post-custom";
+@import "../../components/anti/skeleton/skeleton";
+@import "../../components/anti/skeleton/skeleton-custom";
 @import "../../components/anti/social/social";
 @import "../../components/anti/social/social-custom";
 @import "../../components/anti/tabs/tabs";
@@ -171,3 +173,21 @@
 // ==========================================================================
 
 // Insert custom style here
+
+.error-msg {
+    position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+    background: $red;
+    padding: 1rem 1rem;
+    border-radius: 9px;
+    color: white;
+    z-index: 1032;
+    max-width: 27rem;
+    @include media-breakpoint-down(sm) {
+        position: relative;
+        margin: 0 2rem;
+        max-width: 100%;
+        text-align: center;
+    }
+}

@@ -1,15 +1,16 @@
+import cogoToast from "cogo-toast"
 import { Card } from "components/anti"
 import { Button } from "components/anti/buttons/buttons"
 import { Modal } from "components/anti/modal/modal"
 
 
-export const ModalStake = ({ modal, setModal, data, onConfirm }) => {
+export const ModalStake = ({ modal, setModal, data, onConfirm, loading }) => {
     return (
         <Modal
             id="modalStake"
             isShowing={modal}
             className={`modal-stake`}
-            hide={() => setModal(null)}
+            hide={() => loading === "stake" ? cogoToast.info("Please wait until your transaction is finished") : setModal(null)}
         >
             <div className="modal-inner-content">
                 <div className="heading">
@@ -26,7 +27,6 @@ export const ModalStake = ({ modal, setModal, data, onConfirm }) => {
                                     img={item.img}
                                     imgRatio="r-1-1"
                                     text={item.id}
-                                    onClick={() => selectToStake(item)}
                                     cardBodyClassName="py-0 px-1"
                                 />
                             </div>
@@ -35,7 +35,8 @@ export const ModalStake = ({ modal, setModal, data, onConfirm }) => {
                 </div>
                 <Button
                     variant="primary"
-                    className="w-100 mb-1"
+                    loader={loading === "stake"}
+                    className={`w-100 mb-1 ${loading === "stake" ? "loading" : ""}`}
                     onClick={() => onConfirm(data)}
                 >
                     Confirm

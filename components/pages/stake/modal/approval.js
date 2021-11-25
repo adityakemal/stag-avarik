@@ -9,7 +9,7 @@ export const ModalApproval = ({ modal, setModal, setApproved }) => {
             id="modalApproval"
             isShowing={modal}
             className={`modal-stake modal-approval modal-lg`}
-            hide={() => cogoToast.info("You have to approve this transaction to continue", { hideAfter: 5, heading: '' })}
+            hide={() => setModal(false)}
         >
             <div className="modal-inner-content">
                 <div className="heading">
@@ -25,10 +25,7 @@ export const ModalApproval = ({ modal, setModal, setApproved }) => {
                     <Button
                         variant="success"
                         className="w-100 mb-1"
-                        onClick={() => {
-                            setApproved(true)
-                            setModal(null)
-                        }}
+                        onClick={setApproved}
                     >
                         Approve
                     </Button>

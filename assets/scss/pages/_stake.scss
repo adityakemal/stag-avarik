@@ -451,3 +451,36 @@
     }
   }
 }
+.loading-modal {
+  display: flex;
+  justify-content: center;
+  .modal-wrapper {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+    .modal-content {
+      background: transparent;
+    }
+    .close {
+      display: none;
+    }
+    .loader {
+      &.loader-stake-spinner {
+        width: fit-content;
+        height: fit-content;
+        position: unset;
+        .img-spinner-wrapper {
+          // animation: loaderSpinner infinite 0.5s ease-in-out both;
+          visibility: visible; // Prevent flashing element
+          .img-spinner {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear;
+            animation-iteration-count: infinite;
+          }
+        }
+      }
+    }
+  }
+}

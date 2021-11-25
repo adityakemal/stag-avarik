@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 
 import { Navbar, Footer, Loader } from "components/anti"
 import { LoadingContext } from "context/loading-context"
+import { ErrorStateContext } from "context/error-msg-context"
 
 // const navigate = (to) => {
 //   const router = useRouter()
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
   // Loader Context
   // allows loader only shown when directly visited via URL
   const { initialLoading } = useContext(LoadingContext)
+  const { errorMsg } = useContext(ErrorStateContext);
   const router = useRouter()
 
   // Mobile viewport height workaround
@@ -79,6 +81,14 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      {errorMsg && (
+        <>
+          <div className="error-msg d-none d-md-block">{errorMsg}</div>
+          <div className="container d-block d-md-none">
+            <div className="error-msg">{errorMsg}</div>
+          </div>
+        </>
+      )}
       {/* <Loader variant="image" theme="dark" effect="fadeOut" /> */}
       <Navbar />
       <main>

@@ -1,50 +1,39 @@
-import { useWeb3React } from "@web3-react/core"
+import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core"
+import {
+    NoEthereumProviderError,
+    UserRejectedRequestError as UserRejectedRequestErrorInjected
+} from "@web3-react/injected-connector"
 import logoMain from "assets/img/common/logo_main-title.png"
-import glacia1 from "assets/img/mint/glacia-1.jpg"
-import ignis1 from "assets/img/mint/ignis-1.jpg"
-import tenebris1 from "assets/img/mint/tenebris-1.jpg"
-import terra1 from "assets/img/mint/terra-1.jpg"
-import stakingTitle from "assets/img/vortem/5a_staking_title.png"
 import stakingImage from "assets/img/vortem/5b_staking_image.png"
 import cogoToast from "cogo-toast"
-import { Card } from "components/anti"
+import { Card, Modal } from "components/anti"
 import { Button } from "components/anti/buttons/buttons"
 import { Link } from "components/anti/link/link"
 import { useScrollAnim } from "components/hooks/hooks"
 import useEagerConnect from "components/hooks/useEagerConnect"
 import useInactiveListener from "components/hooks/useInactiveListener"
+import useNft from "components/hooks/useNft"
+import useStaking from "components/hooks/useStaking"
 import { injected, walletconnect } from "components/utils/connecters"
-import React, { useEffect, useState } from "react"
+import {
+    setApprovalForAll
+} from "components/utils/nft-contract"
+import {
+    claimRewards, deposit,
+    withdraw
+} from "components/utils/staking-contract"
+import { ErrorStateContext } from "context/error-msg-context"
+import React, { useContext, useEffect, useState } from "react"
+import { ModalApproval } from "./modal/approval"
 import { ModalConnect } from "./modal/connect"
 import { ModalStake } from "./modal/stake"
 import { ModalUnstake } from "./modal/unstake"
 import { ModalWithdraw } from "./modal/withdraw"
 
-
-const token = [
-    {
-        img: ignis1,
-        id: "1024",
-    },
-    {
-        img: glacia1,
-        id: "1025",
-    },
-    {
-        img: tenebris1,
-        id: "1026",
-    },
-    {
-        img: terra1,
-        id: "1027",
-    },
-]
-
-
 const StakeMain = ({ }) => {
+    const { setErrorMsg } = useContext(ErrorStateContext);
     const [modal, setModal] = useState("")
-    // const [approved, setApproved] = useState(false);
-    const { connector, account, activate, error } = useWeb3React();
+    const { library, connector, account, activate, error } = useWeb3React();
     const [loading, setLoading] = useState("");
     const [activatingConnector, setActivatingConnector] = useState();
 
@@ -53,13 +42,32 @@ const StakeMain = ({ }) => {
     const [triggerStake, animStake] = useScrollAnim()
     const [triggerEarned, animEarned] = useScrollAnim()
 
-    const [listToken, setListToken] = useState(token)
-    const [listTokenTemp, setListTokenTemp] = useState(token)
+    const [listToken, setListToken] = useState([])
+    const [listTokenTemp, setListTokenTemp] = useState([])
     const [tokenStakeSelected, setTokenStakeSelected] = useState([])
     const [tokenUnstakeSelected, setTokenUnstakeSelected] = useState([])
     const [listStaked, setListStaked] = useState([])
     const [listStakedTemp, setListStakedTemp] = useState([])
-    const [earned, setEarned] = useState(0)
+    const { isLoading, tokens, isApprovedForAll, refresh } = useNft(account);
+    const { isLoading: isUseStakingLoading, stakedTokens, earned, refresh: refreshStaking } = useStaking(account);
+
+    useEffect(() => {
+        setListToken(tokens);
+        setListTokenTemp(tokens);
+        setTokenStakeSelected([]);
+    }, [tokens])
+    useEffect(() => {
+        setListStaked(stakedTokens);
+        setListStakedTemp(stakedTokens);
+        setTokenUnstakeSelected([]);
+    }, [stakedTokens])
+    useEffect(() => {
+        if (error) {
+            getErrorMessage(error)
+        } else {
+            setErrorMsg("")
+        }
+    }, [error])
 
     const triedEagerConnect = useEagerConnect();
     useInactiveListener(!triedEagerConnect || !!activatingConnector);
@@ -75,15 +83,9 @@ const StakeMain = ({ }) => {
             await activate(connector === "walletconnect" ? walletconnect : injected);
         } catch (error) {
             cogoToast.error(error, { hideAfter: 3, heading: '' })
-            console.log('error connect', error);
         }
         setLoading(null)
         setModal(null)
-        // if (!approved) {
-        //     setModal("modalApproval")
-        // } else {
-        //     setModal(null);
-        // }
     };
     const selectToStake = (item) => {
         const staked = [...tokenStakeSelected]
@@ -92,12 +94,27 @@ const StakeMain = ({ }) => {
         const token = listToken.filter((itemToken) => itemToken !== item)
         setListToken(token)
     }
-    const onStake = (data) => {
-        setListStaked([...listStaked, ...data])
-        setListStakedTemp([...listStaked, ...data])
-        setListTokenTemp(listToken)
-        setTokenStakeSelected([])
-        setModal(null)
+    const setApproved = async () => {
+        const txn = await setApprovalForAll(library)
+        const tx = await txn.wait();
+        await refresh(account);
+        setModal("modalStake");
+    }
+    const onStake = async (data) => {
+        try {
+            setLoading("stake")
+            const tokenIds = data.map(val => val.id)
+            console.log(tokenIds)
+            const txn = await deposit(library, tokenIds);
+            const tx = await txn.wait();
+            await refresh(account);
+            await refreshStaking(account);
+            setModal(null)
+        } catch (error) {
+            console.log({ error });
+        } finally {
+            setLoading("")
+        }
     }
     const selectToUnstake = (item) => {
         const unstaked = [...tokenUnstakeSelected]
@@ -106,15 +123,61 @@ const StakeMain = ({ }) => {
         const staked = listStaked.filter((itemStaked) => itemStaked !== item)
         setListStaked(staked)
     }
-    const onUnstake = (data) => {
-        setListToken([...listToken, ...data])
-        setListTokenTemp([...listToken, ...data])
-        setListStakedTemp(listStaked)
-        setTokenUnstakeSelected([])
-        setModal(null)
+    const onUnstake = async (data) => {
+        try {
+            setLoading("unstake")
+            const tokenIds = data.map(val => val.id)
+            console.log(tokenIds)
+            const txn = await withdraw(library, tokenIds);
+            const tx = await txn.wait();
+            await refresh(account);
+            await refreshStaking(account);
+            setModal(null)
+        } catch (error) {
+            console.log({ error });
+        } finally {
+            setLoading("")
+        }
     }
+    const onClaim = async () => {
+        try {
+            setLoading("claim")
+            const tokenIds = listStakedTemp.map(val => val.id)
+            console.log(tokenIds)
+            const txn = await claimRewards(library, tokenIds);
+            const tx = await txn.wait();
+            await refresh(account);
+            await refreshStaking(account);
+            setModal(null)
+        } catch (error) {
+            console.log({ error });
+        } finally {
+            setLoading("")
+        }
+    }
+    const getErrorMessage = (error) => {
+        if (error instanceof NoEthereumProviderError) {
+            setErrorMsg(
+                "No Ethereum browser extension detected, install MetaMask on desktop or visit from a App browser on mobile."
+            );
+        } else if (error instanceof UnsupportedChainIdError) {
+            setErrorMsg("You're connected to an unsupported network.");
+        } else if (
+            error instanceof UserRejectedRequestErrorInjected ||
+            error instanceof UserRejectedRequestErrorWalletConnect
+        ) {
+            setErrorMsg("Please authorize this website to access your Ethereum account.");
+        } else {
+            setErrorMsg("An unknown error occurred. Check the console for more details.");
+        }
+    };
     return (
         <>
+            <Modal id="loading" isShowing={isUseStakingLoading ? "loading" : ""} className={`loading-modal fadeIn ${anim(5, "fadeIn")}`}>
+                <div className={`loader loader-stake-spinner loader-light loader-exit`}>
+                    <div className="img-spinner-wrapper"><div className="img-spinner" /></div>
+                </div>
+            </Modal>
             <section className="sc-stake-main pb-main" ref={trigger}>
                 <div className="container mw-xl">
                     <Link to="/" className="stake-logo">
@@ -258,7 +321,7 @@ const StakeMain = ({ }) => {
                                                                                 <Button
                                                                                     variant="primary"
                                                                                     className={`w-100 mb-2 ${anim(2)}`}
-                                                                                    onClick={() => setModal("modalStake")}
+                                                                                    onClick={() => setModal(isApprovedForAll ? "modalStake" : "modalApproval")}
                                                                                 >
                                                                                     Confirm Stake
                                                                                 </Button>
@@ -266,7 +329,7 @@ const StakeMain = ({ }) => {
                                                                                     variant="outline-primary"
                                                                                     className={`w-100 ${anim(3)}`}
                                                                                     onClick={() => {
-                                                                                        setListToken([...token])
+                                                                                        setListToken([...tokens])
                                                                                         setTokenStakeSelected([])
                                                                                     }}
                                                                                 >
@@ -348,7 +411,7 @@ const StakeMain = ({ }) => {
                                                                         <div className={`stake-data earned ${animEarned(3)}`}>
                                                                             <span className="label">Total Earned</span>
                                                                             <span className="value">
-                                                                                <strong>{earned} </strong>
+                                                                                <strong>{earned.toFixed(5)} </strong>
                                                                                 <small> $VORTEM</small>
                                                                             </span>
                                                                         </div>
@@ -419,23 +482,27 @@ const StakeMain = ({ }) => {
                     )}
                 </div>
             </section>
-            {/* <ModalApproval modal={modal} setModal={setModal} setApproved={setApproved} /> */}
+            <ModalApproval modal={modal} setModal={setModal} setApproved={setApproved} />
             <ModalConnect modal={modal} setModal={setModal} loading={loading} onConnect={onConnect} />
             <ModalStake
                 modal={modal}
                 setModal={setModal}
                 data={tokenStakeSelected}
                 onConfirm={onStake}
+                loading={loading}
             />
             <ModalUnstake
                 modal={modal}
                 setModal={setModal}
                 data={tokenUnstakeSelected}
                 onConfirm={onUnstake}
+                loading={loading}
             />
             <ModalWithdraw
                 modal={modal}
+                onConfirm={onClaim}
                 setModal={setModal}
+                loading={loading}
             />
 
         </>
