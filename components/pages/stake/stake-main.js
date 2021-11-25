@@ -24,7 +24,6 @@ import {
 } from "components/utils/staking-contract"
 import { ErrorStateContext } from "context/error-msg-context"
 import React, { useContext, useEffect, useState } from "react"
-import Skeleton from 'react-loading-skeleton'
 import { ModalApproval } from "./modal/approval"
 import { ModalConnect } from "./modal/connect"
 import { ModalStake } from "./modal/stake"
@@ -174,7 +173,7 @@ const StakeMain = ({ }) => {
     };
     return (
         <>
-            <Modal id="loading" isShowing={isUseStakingLoading ? "loading" : ""} className="loading-modal">
+            <Modal id="loading" isShowing={isUseStakingLoading ? "loading" : ""} className={`loading-modal fadeIn ${anim(5, "fadeIn")}`}>
                 <div className={`loader loader-stake-spinner loader-light loader-exit`}>
                     <div className="img-spinner-wrapper"><div className="img-spinner" /></div>
                 </div>

@@ -21,7 +21,7 @@ const useStaking = (account) => {
       const _tokenURIs = await Promise.all(
         _stakedTokens.map((val) => getTokenURI(val))
       )
-      const metadatas = _tokenURIs.map(() => "");
+      let metadatas = _tokenURIs.map(() => "");
       try {
         metadatas = await Promise.all(
           _tokenURIs.map(item => fetcher.get(item))

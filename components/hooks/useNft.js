@@ -27,7 +27,7 @@ const useNft = (account) => {
         _tokenIds.map(getTokenURI)
       )
 
-      const metadatas = _tokenURIs.map(() => "");
+      let metadatas = _tokenURIs.map(() => "");
       try {
         metadatas = await Promise.all(
           _tokenURIs.map(item => fetcher.get(item))
