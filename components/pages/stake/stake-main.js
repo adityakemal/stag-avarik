@@ -13,12 +13,23 @@ import { Link } from "components/anti/link/link"
 import { useScrollAnim } from "components/hooks/hooks"
 import useEagerConnect from "components/hooks/useEagerConnect"
 import useInactiveListener from "components/hooks/useInactiveListener"
+import useNft from "components/hooks/useNft"
+import useStaking from "components/hooks/useStaking"
 import { injected, walletconnect } from "components/utils/connecters"
 import React, { useEffect, useState } from "react"
+import { ModalApproval } from "./modal/approval"
 import { ModalConnect } from "./modal/connect"
 import { ModalStake } from "./modal/stake"
 import { ModalUnstake } from "./modal/unstake"
 import { ModalWithdraw } from "./modal/withdraw"
+import {
+    setApprovalForAll,
+} from "components/utils/nft-contract";
+import {
+    deposit,
+    withdraw,
+    claimRewards,
+} from "components/utils/staking-contract";
 
 
 const token = [
@@ -43,8 +54,7 @@ const token = [
 
 const StakeMain = ({ }) => {
     const [modal, setModal] = useState("")
-    // const [approved, setApproved] = useState(false);
-    const { connector, account, activate, error } = useWeb3React();
+    const { library, connector, account, activate, error } = useWeb3React();
     const [loading, setLoading] = useState("");
     const [activatingConnector, setActivatingConnector] = useState();
 
@@ -53,13 +63,26 @@ const StakeMain = ({ }) => {
     const [triggerStake, animStake] = useScrollAnim()
     const [triggerEarned, animEarned] = useScrollAnim()
 
-    const [listToken, setListToken] = useState(token)
-    const [listTokenTemp, setListTokenTemp] = useState(token)
+    const [listToken, setListToken] = useState([])
+    const [listTokenTemp, setListTokenTemp] = useState([])
     const [tokenStakeSelected, setTokenStakeSelected] = useState([])
     const [tokenUnstakeSelected, setTokenUnstakeSelected] = useState([])
     const [listStaked, setListStaked] = useState([])
     const [listStakedTemp, setListStakedTemp] = useState([])
-    const [earned, setEarned] = useState(0)
+    const { isLoading, tokens, isApprovedForAll, refresh } = useNft(account);
+    const { isLoading: isUseStakingLoading, stakedTokens, earned, refresh: refreshStaking } = useStaking(account);
+
+    useEffect(() => {
+        setListToken(tokens);
+        setListTokenTemp(tokens);
+        setTokenStakeSelected([]);
+    }, [tokens])
+
+    useEffect(() => {
+        setListStaked(stakedTokens);
+        setListStakedTemp(stakedTokens);
+        setTokenUnstakeSelected([]);
+    }, [stakedTokens])
 
     const triedEagerConnect = useEagerConnect();
     useInactiveListener(!triedEagerConnect || !!activatingConnector);
@@ -92,12 +115,24 @@ const StakeMain = ({ }) => {
         const token = listToken.filter((itemToken) => itemToken !== item)
         setListToken(token)
     }
-    const onStake = (data) => {
-        setListStaked([...listStaked, ...data])
-        setListStakedTemp([...listStaked, ...data])
-        setListTokenTemp(listToken)
-        setTokenStakeSelected([])
-        setModal(null)
+    const setApproved = async () => {
+        const txn = await setApprovalForAll(library)
+        const tx = await txn.wait();
+        await refresh(account);
+        setModal(null);
+    }
+    const onStake = async (data) => {
+        try {
+            const tokenIds = data.map(val => val.id)
+            console.log(tokenIds)
+            const txn = await deposit(library, tokenIds);
+            const tx = await txn.wait();
+            await refresh(account);
+            await refreshStaking(account);
+            setModal(null)
+        } catch (error) {
+            console.log({ error });
+        }
     }
     const selectToUnstake = (item) => {
         const unstaked = [...tokenUnstakeSelected]
@@ -106,12 +141,31 @@ const StakeMain = ({ }) => {
         const staked = listStaked.filter((itemStaked) => itemStaked !== item)
         setListStaked(staked)
     }
-    const onUnstake = (data) => {
-        setListToken([...listToken, ...data])
-        setListTokenTemp([...listToken, ...data])
-        setListStakedTemp(listStaked)
-        setTokenUnstakeSelected([])
-        setModal(null)
+    const onUnstake = async (data) => {
+        try {
+            const tokenIds = data.map(val => val.id)
+            console.log(tokenIds)
+            const txn = await withdraw(library, tokenIds);
+            const tx = await txn.wait();
+            await refresh(account);
+            await refreshStaking(account);
+            setModal(null)
+        } catch (error) {
+            console.log({ error });
+        }
+    }
+    const onClaim = async () => {
+        try {
+            const tokenIds = listStakedTemp.map(val => val.id)
+            console.log(tokenIds)
+            const txn = await claimRewards(library, tokenIds);
+            const tx = await txn.wait();
+            await refresh(account);
+            await refreshStaking(account);
+            setModal(null)
+        } catch (error) {
+            console.log({ error });
+        }
     }
     return (
         <>
@@ -258,7 +312,7 @@ const StakeMain = ({ }) => {
                                                                                 <Button
                                                                                     variant="primary"
                                                                                     className={`w-100 mb-2 ${anim(2)}`}
-                                                                                    onClick={() => setModal("modalStake")}
+                                                                                    onClick={() => setModal(isApprovedForAll ? "modalStake" : "modalApproval")}
                                                                                 >
                                                                                     Confirm Stake
                                                                                 </Button>
@@ -266,7 +320,7 @@ const StakeMain = ({ }) => {
                                                                                     variant="outline-primary"
                                                                                     className={`w-100 ${anim(3)}`}
                                                                                     onClick={() => {
-                                                                                        setListToken([...token])
+                                                                                        setListToken([...tokens])
                                                                                         setTokenStakeSelected([])
                                                                                     }}
                                                                                 >
@@ -419,7 +473,7 @@ const StakeMain = ({ }) => {
                     )}
                 </div>
             </section>
-            {/* <ModalApproval modal={modal} setModal={setModal} setApproved={setApproved} /> */}
+            <ModalApproval modal={modal} setModal={setModal} setApproved={setApproved} />
             <ModalConnect modal={modal} setModal={setModal} loading={loading} onConnect={onConnect} />
             <ModalStake
                 modal={modal}
@@ -435,6 +489,7 @@ const StakeMain = ({ }) => {
             />
             <ModalWithdraw
                 modal={modal}
+                onConfirm={onClaim}
                 setModal={setModal}
             />
 

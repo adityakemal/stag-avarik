@@ -26,7 +26,6 @@ export const ModalStake = ({ modal, setModal, data, onConfirm }) => {
                                     img={item.img}
                                     imgRatio="r-1-1"
                                     text={item.id}
-                                    onClick={() => selectToStake(item)}
                                     cardBodyClassName="py-0 px-1"
                                 />
                             </div>
