@@ -1,14 +1,15 @@
+import cogoToast from "cogo-toast"
 import { Button } from "components/anti/buttons/buttons"
 import { Modal } from "components/anti/modal/modal"
 
 
-export const ModalWithdraw = ({ modal, setModal, onConfirm }) => {
+export const ModalWithdraw = ({ modal, setModal, onConfirm, loading }) => {
     return (
         <Modal
             id="modalWithdraw"
             isShowing={modal}
             className={`modal-stake`}
-            hide={() => setModal(null)}
+            hide={() => loading === "claim" ? cogoToast.info("Please wait until your transaction is finished") : setModal(null)}
         >
             <div className="modal-inner-content">
                 <div className="heading">
@@ -17,7 +18,8 @@ export const ModalWithdraw = ({ modal, setModal, onConfirm }) => {
                 </div>
                 <Button
                     variant="primary"
-                    className="w-100 mb-1"
+                    loader={loading === "claim"}
+                    className={`w-100 mb-1 ${loading === "claim" ? "loading" : ""}`}
                     onClick={onConfirm}
                 >
                     CLAIM

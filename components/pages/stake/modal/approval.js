@@ -9,7 +9,7 @@ export const ModalApproval = ({ modal, setModal, setApproved }) => {
             id="modalApproval"
             isShowing={modal}
             className={`modal-stake modal-approval modal-lg`}
-            hide={() => cogoToast.info("You have to approve this transaction to continue", { hideAfter: 5, heading: '' })}
+            hide={() => setModal(false)}
         >
             <div className="modal-inner-content">
                 <div className="heading">

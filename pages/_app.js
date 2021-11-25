@@ -2,6 +2,7 @@ import { Web3Provider } from "@ethersproject/providers"
 import { Web3ReactProvider } from "@web3-react/core"
 import "assets/scss/main.scss"
 
+import { ErrorStateProvider } from "context/error-msg-context"
 import { LoadingProvider } from "context/loading-context"
 import { useEffect } from "react"
 import TagManager from "react-gtm-module"
@@ -19,7 +20,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
       <LoadingProvider>
-        <Component {...pageProps} />
+        <ErrorStateProvider>
+          <Component {...pageProps} />
+        </ErrorStateProvider>
       </LoadingProvider>
     </Web3ReactProvider>
 

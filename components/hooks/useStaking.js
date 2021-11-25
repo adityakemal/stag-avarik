@@ -9,7 +9,7 @@ import {
 import fetcher from 'components/utils/fetcher';
 
 const useStaking = (account) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [stakedTokens, setStakedTokens] = useState([]);
   const [earned, setEarned] = useState(0);
 
@@ -21,12 +21,14 @@ const useStaking = (account) => {
       const _tokenURIs = await Promise.all(
         _stakedTokens.map((val) => getTokenURI(val))
       )
-      const metadatas = await Promise.all(
-        _tokenURIs.map(fetcher.get)
-      ).catch((error) => {
-        console.log(error);
-        return _tokenURIs.map(() => '');
-      })
+      const metadatas = _tokenURIs.map(() => "");
+      try {
+        metadatas = await Promise.all(
+          _tokenURIs.map(item => fetcher.get(item))
+        )
+      } catch (err) {
+        console.log("err metadata", err)
+      }
 
       const tokens = _stakedTokens.map((val, i) => ({ id: val, img: metadatas[i].image }));
       setStakedTokens(tokens);

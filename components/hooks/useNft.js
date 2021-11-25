@@ -26,12 +26,17 @@ const useNft = (account) => {
       const _tokenURIs = await Promise.all(
         _tokenIds.map(getTokenURI)
       )
-      const metadatas = await Promise.all(
-        _tokenURIs.map(fetcher.get)
-      ).catch((error) => {
-        console.log(error);
-        return _tokenURIs.map(() => '');
-      })
+
+      const metadatas = _tokenURIs.map(() => "");
+      try {
+        metadatas = await Promise.all(
+          _tokenURIs.map(item => fetcher.get(item))
+        )
+      } catch (err) {
+        console.log("err metadata", err)
+      }
+
+
 
       const tokens = _tokenIds.map((val, i) => ({ id: val, img: metadatas[i].image }));
       setTokens(tokens);
@@ -39,7 +44,7 @@ const useNft = (account) => {
       const _isApprovedForAll = await getIsApprovedForAll(account);
       setIsApprovedForAll(_isApprovedForAll);
     } catch (error) {
-      console.error(error);
+      console.log("err 1", error);
       //
     }
     setIsLoading(false);
