@@ -1,0 +1,374 @@
+//
+// Stake
+//
+
+.bd-collect-in-game-currency {
+    .container {
+        @include media-breakpoint-down(xs) {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+    .navbar,
+    footer {
+        display: none;
+    }
+    &:after {
+        content: "";
+        background: $purple url(../../img/common/bg_mint.jpg) no-repeat center center;
+        background-size: cover;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: -1;
+        animation: fadeInUp 1s 0.4s ease-in-out both;
+    }
+    p {
+        color: rgba($white, 0.75);
+    }
+}
+
+.sc-collect-in-game-curency-main {
+    .stake-logo {
+        display: block;
+        max-width: 200px;
+        text-align: center;
+        margin: -1.5rem auto 1.5rem;
+        @include media-breakpoint-up(md) {
+            max-width: 400px;
+        }
+    }
+    .box-stake {
+        > .box-inner {
+            > .content {
+                position: relative;
+                @include media-breakpoint-down(xs) {
+                    padding: 0.5rem;
+                }
+                &:before {
+                    animation: cameraPan 75s infinite;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    content: "";
+                    background: $black url(../../img/knights/bg_mobile.jpg) no-repeat center center;
+                    background-size: cover;
+                    @include media-breakpoint-up(md) {
+                        background: $black url(../../img/knights/bg_desktop.jpg) no-repeat center center;
+                    }
+                }
+                .image {
+                    &:after {
+                        background: $purple;
+                    }
+                }
+            }
+        }
+    }
+    .col-image {
+        @include media-breakpoint-down(md) {
+            margin-bottom: 1.25rem;
+            .row {
+                margin-left: -0.25rem;
+                margin-right: -0.25rem;
+                .col-6 {
+                    padding-left: 0.25rem;
+                    padding-right: 0.25rem;
+                }
+            }
+        }
+        .col-6:nth-child(1),
+        .col-6:nth-child(2) {
+            margin-bottom: 1.25rem;
+            @include media-breakpoint-down(md) {
+                margin-bottom: 0.5rem;
+            }
+        }
+        .img-wrapper {
+            position: relative;
+            .img-flag {
+                z-index: 2;
+                position: absolute;
+                width: 37.5px;
+                left: 0.5rem;
+                top: 0.25rem;
+                opacity: 0;
+                transition: $transition-base;
+            }
+            @include hover {
+                .img-flag {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .col-forms {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        form {
+            border: 1px solid $gray-100;
+            padding: 1rem;
+            height: 100%;
+        }
+        .heading {
+            margin-bottom: 0.75rem;
+        }
+        .btn-stake {
+            border: 1px solid rgba($white, 0.5);
+            padding: 0.125rem;
+            .btn {
+                padding: 1rem;
+                font-size: 1.125rem;
+                @extend .hover-blockRight;
+                &:disabled,
+                .disabled {
+                    color: $gray-400;
+                    background: $gray-100;
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .stake-data {
+            border: 1px solid rgba($body-color, 0.5);
+            padding: 0.5rem 0.1rem;
+            color: $body-color;
+            text-align: center;
+            display: flex;
+            // justify-content: space-between;
+            align-items: center;
+            font-size: 1.25rem;
+            flex-wrap: wrap;
+            .card-item-token {
+                margin-bottom: 1rem;
+                cursor: pointer;
+                .col-body {
+                    height: 20px;
+                    .card-body {
+                        padding: 0;
+                        .card-text {
+                            font-size: 0.625rem;
+                        }
+                    }
+                }
+            }
+            &.earned {
+                width: 100%;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                justify-content: space-between;
+                .label,
+                .value {
+                    color: $dark;
+                    margin-bottom: 0;
+                    // font-size: 1rem;
+                    small {
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+        }
+        .stake-total {
+            padding: 1rem;
+            color: $body-color;
+            font-size: 1.25rem;
+            color: $body-color;
+            display: flex;
+            justify-content: space-between;
+            .col-left {
+                display: flex;
+                align-items: center;
+                text-transform: lowercase;
+                color: rgba($body-color, 0.875);
+            }
+            .col-right {
+                display: flex;
+                align-items: center;
+                strong {
+                    font-weight: $font-weight-bold;
+                    font-size: 1.375rem;
+                    display: inline-block;
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+    .box {
+        background: $white url(../../img/common/bg_paper-texture.jpg) repeat;
+        background-size: 200px;
+        border: 0.125rem solid rgba($body-color, 1);
+        padding: 0.125rem;
+        margin-bottom: 0.5rem;
+        height: 100%;
+        &.connect-wallet {
+            background: transparent;
+            border: 0.125rem solid rgba($white, 0.5);
+            .box-inner {
+                border: 1px solid rgba($white, 05);
+            }
+            h2,
+            p {
+                color: $body-color;
+            }
+            .btn-connect {
+                // background-color: $pußrple;
+            }
+        }
+        .box-inner {
+            border: 1px solid rgba($body-color, 1);
+            padding: 0.25rem;
+            height: 100%;
+            .content {
+                padding: 1rem;
+                background: transparent;
+            }
+            &.staked-empty {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                padding: 1rem;
+            }
+            &.box-earned {
+                padding: 1rem;
+                min-height: 150px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+        .img-wrapper {
+            border: 1px solid rgba($body-color, 0.5);
+            padding: 0.25rem;
+        }
+    }
+}
+
+.modal-stake {
+    .modal-stake-icon {
+        max-width: 10%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    .modal-stake-teaser {
+        img {
+            width: 100%;
+        }
+    }
+    .card-item-token {
+        margin-bottom: 1rem;
+        cursor: pointer;
+        .col-body {
+            height: 20px;
+            .card-body {
+                padding: 0;
+                .card-text {
+                    font-size: 0.625rem;
+                    text-align: center;
+                    color: $body-color-secondary;
+                }
+            }
+        }
+    }
+}
+
+.modal-wallet {
+    text-align: center;
+    .btn {
+        border: 1px solid rgba($black, 0.5);
+        padding: 0.125rem;
+        min-width: 275px;
+        @include hover-focus-active {
+            box-shadow: none;
+            background: $white;
+        }
+        + .btn {
+            margin-top: 0.5rem;
+        }
+        .btn-inner {
+            border: 1px solid rgba($black, 0.25);
+            padding: 1rem 2rem;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            max-width: 200px;
+        }
+        &.metamask {
+            img {
+                max-width: 170px;
+            }
+        }
+    }
+}
+.sc-stake-info {
+    position: relative;
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    .col-text {
+        @include media-breakpoint-up(md) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    p {
+        text-align: center;
+        @include media-breakpoint-up(md) {
+            text-align: left;
+            font-size: 1.25rem;
+            margin-bottom: 0;
+        }
+    }
+    .heading {
+        img {
+            width: 150px;
+            @include media-breakpoint-up(md) {
+                width: 200px;
+            }
+        }
+    }
+}
+.loading-modal {
+    display: flex;
+    justify-content: center;
+    .modal-wrapper {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        width: fit-content;
+        .modal-content {
+            background: transparent;
+        }
+        .close {
+            display: none;
+        }
+        .loader {
+            &.loader-stake-spinner {
+                width: fit-content;
+                height: fit-content;
+                position: unset;
+                .img-spinner-wrapper {
+                    // animation: loaderSpinner infinite 0.5s ease-in-out both;
+                    visibility: visible; // Prevent flashing element
+                    .img-spinner {
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                        animation: spin 1s linear;
+                        animation-iteration-count: infinite;
+                    }
+                }
+            }
+        }
+    }
+}
