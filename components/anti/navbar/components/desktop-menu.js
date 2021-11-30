@@ -45,9 +45,14 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               In Game Currency
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="nav-link" activeClassName="active" to="/stake">
               Stake
+            </Link>
+          </li> */}
+          <li className="nav-item">
+            <Link className="nav-link" activeClassName="active" to="/collect-in-game-currency">
+              Collect your In-Game Currency
             </Link>
           </li>
         </ul>
