@@ -81,6 +81,7 @@ const HoldToEarnMain = ({ }) => {
         setLoading(null)
         setModal(null)
     };
+    console.log("is loading", isLoading)
     const getErrorMessage = (error) => {
         if (error instanceof NoEthereumProviderError) {
             setErrorMsg(
@@ -99,11 +100,13 @@ const HoldToEarnMain = ({ }) => {
     };
     return (
         <>
-            <Modal id="loading" isShowing={isLoading ? "loading" : ""} className={`loading-modal ${anim(5, "fadeIn")}`}>
-                <div className={`loader loader-stake-spinner loader-light loader-exit`}>
-                    <div className="img-spinner-wrapper"><div className="img-spinner" /></div>
-                </div>
-            </Modal>
+            {account ? (
+                <Modal id="loading" isShowing={isLoading ? "loading" : ""} className={`loading-modal ${anim(5, "fadeIn")}`}>
+                    <div className={`loader loader-stake-spinner loader-light loader-exit`}>
+                        <div className="img-spinner-wrapper"><div className="img-spinner" /></div>
+                    </div>
+                </Modal>
+            ) : null}
             <section className="sc-collect-in-game-curency-main pb-main" ref={trigger}>
                 <div className="container mw-xl">
                     <Link to="/" className="stake-logo">
