@@ -3,7 +3,7 @@ import {
     NoEthereumProviderError,
     UserRejectedRequestError as UserRejectedRequestErrorInjected
 } from "@web3-react/injected-connector"
-import holdToEarnImage from "assets/img/common/img_hold-to-earn.png"
+import holdToEarnImage from "assets/img/vortem/5b_staking_image.png"
 import logoMain from "assets/img/common/logo_main-title.png"
 import cogoToast from "cogo-toast"
 import { Card, Modal } from "components/anti"
@@ -154,27 +154,22 @@ const HoldToEarnMain = ({ }) => {
                                                                             </h4>
                                                                         </div>
                                                                         <div className="content">
-                                                                            <div className="stake-data justify-content-center">
+                                                                            <div className={`stake-data justify-content-center ${animToken(2)} py-3`}>
                                                                                 {truncate(account, width > 576 ? 30 : 20)}
                                                                             </div>
                                                                         </div>
                                                                         <div className="heading mb-0">
-                                                                            <h4 className={`mt-2 ${animToken(1)}`}>
+                                                                            <h4 className={`mt-2 ${animToken(3)}`}>
                                                                                 Token
                                                                             </h4>
                                                                         </div>
                                                                         <div className="content">
-                                                                            <div className="stake-data">
-                                                                                {listToken.map((item, i) => (
-                                                                                    <div className="col-md-2 col-4" key={i}>
-                                                                                        <Card
-                                                                                            className={`card-item-token ${animToken(i + 2)}`}
-                                                                                            img={item.img}
-                                                                                            imgRatio="r-1-1"
-                                                                                            text={item.id}
-                                                                                        />
-                                                                                    </div>
-                                                                                ))}
+                                                                            <div className={`stake-data earned ${animToken(4)}`}>
+                                                                                <span className="label">Avarik Saga in Wallet</span>
+                                                                                <span className="value">
+                                                                                    <strong>{listToken.length}</strong>
+                                                                                    <small> NFT</small>
+                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -188,18 +183,25 @@ const HoldToEarnMain = ({ }) => {
                                                     <div className={`box ${anim(5)}`} ref={triggerEarned}>
                                                         <div className="box-inner box-earned">
                                                             <div className="heading mb-0">
-                                                                <h5 className={`mt-2 ${animToken(1)}`}>
+                                                                <h5 className={`mt-2 ${animEarned(1)}`}>
                                                                     You will earn approximately {3 * listToken.length} $VORTEM /Day for holding {listToken.length} NFT Token
                                                                 </h5>
                                                             </div>
                                                             <div className="h-100 w-100 d-flex align-items-center justify-content-center">
-                                                                <div className={`stake-data earned ${animEarned(3)}`}>
-                                                                    <span className="label">Total Earned</span>
+                                                                <div className={`stake-data earned ${animEarned(2)}`}>
+                                                                    <span className="label">Daily Earning Rate</span>
                                                                     <span className="value">
                                                                         <strong>{earned.toFixed(5)} </strong>
                                                                         <small> $VORTEM</small>
                                                                     </span>
                                                                 </div>
+                                                            </div>
+                                                            <div className={`stake-data earned ${animEarned(3)}`}>
+                                                                <span className="label">Total Earned</span>
+                                                                <span className="value">
+                                                                    <strong>{earned.toFixed(5)} </strong>
+                                                                    <small> $VORTEM</small>
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -223,7 +225,7 @@ const HoldToEarnMain = ({ }) => {
                                                 <div className="row">
                                                     <div className="col-md-6 col-xl-5 col-text">
                                                         <p className={`text-white fadeInUp d2`}>
-                                                            Each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
+                                                            For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
                                                         </p>
                                                     </div>
                                                     <div className="col-md-6 col-xl-7">
