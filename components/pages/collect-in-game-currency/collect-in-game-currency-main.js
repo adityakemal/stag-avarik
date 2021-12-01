@@ -119,7 +119,7 @@ const HoldToEarnMain = ({ }) => {
                                     Collect your In-Game Currency
                                 </h3>
                                 <p>
-                                    Hold your Avariksaga NFT and Earn Approximately 3 $VORTEM/NFT/day
+                                    For each Avarik Saga NFT, you will earn approximately 3 $VORTEM per day.
                                 </p>
                             </div>
                             <div className={`box ${anim(3)} box-stake`}>
