@@ -13,7 +13,7 @@ import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 import useEagerConnect from "components/hooks/useEagerConnect"
 import useInactiveListener from "components/hooks/useInactiveListener"
 import useNft from "components/hooks/useNft"
-import useStaking from "components/hooks/useStaking"
+import useClaimableToken from "components/hooks/useClaimableToken"
 import { injected, walletconnect } from "components/utils/connecters"
 import { ErrorStateContext } from "context/error-msg-context"
 import React, { useContext, useEffect, useState } from "react"
@@ -50,7 +50,7 @@ const HoldToEarnMain = ({ }) => {
 
     const [listToken, setListToken] = useState([])
     const { isLoading, tokens, isApprovedForAll, refresh } = useNft(account);
-    const { earned } = useStaking(account);
+    const { earned } = useClaimableToken(listToken.length);
 
     useEffect(() => {
         setListToken(tokens);
