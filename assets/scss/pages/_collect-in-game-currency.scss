@@ -163,6 +163,9 @@
                 padding-left: 0.5rem;
                 padding-right: 0.5rem;
                 justify-content: space-between;
+                @include media-breakpoint-down(sm) {
+                    flex-direction: column;
+                }
                 .label,
                 .value {
                     color: $dark;
@@ -170,6 +173,11 @@
                     // font-size: 1rem;
                     small {
                         font-size: 0.875rem;
+                    }
+                }
+                .label {
+                    @include media-breakpoint-down(sm) {
+                        margin-bottom: 1rem;
                     }
                 }
             }
