@@ -50,7 +50,7 @@ const HoldToEarnMain = ({ }) => {
 
     const [listToken, setListToken] = useState([])
     const { isLoading, tokens, isApprovedForAll, refresh } = useNft(account);
-    const { earned } = useClaimableToken(listToken.length);
+    const { earned, earningRate } = useClaimableToken(listToken.length, account);
 
     useEffect(() => {
         setListToken(tokens);
@@ -191,7 +191,7 @@ const HoldToEarnMain = ({ }) => {
                                                                 <div className={`stake-data earned ${animEarned(2)}`}>
                                                                     <span className="label">Daily Earning Rate</span>
                                                                     <span className="value">
-                                                                        <strong>{earned.toFixed(5)} </strong>
+                                                                        <strong>{earningRate.toFixed(5)} </strong>
                                                                         <small> $VORTEM</small>
                                                                     </span>
                                                                 </div>
