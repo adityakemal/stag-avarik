@@ -93,7 +93,6 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                   Collect your In-Game Currency
                 </Link>
               </li>
-
             </ul>
           </div>
         </div>

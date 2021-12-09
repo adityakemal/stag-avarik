@@ -18,6 +18,7 @@ steps:
   commands:
   - cd /prod/avariksaga-v2
   - sudo git pull
+  - sudo npm i
   when:
    event:
     - push
@@ -28,10 +29,40 @@ steps:
   commands:
   - cd /prod/avariksaga-v2
   - sudo npm run build
-  - sudo pm2 reload 0
+  - sudo pm2 reload 0 --update-env
   when:
    event:
     - push
     - custom
    branch:
     - master
+
+---
+kind: pipeline
+type: docker
+name: notify-avariksaga-v2
+
+clone:
+  disable: true
+
+steps:
+- name: notify
+  image: plugins/slack
+  settings:
+    webhook: 
+      from_secret: drone-status
+    channel: nft-avariksaga
+    template: >
+      {{#success build.status}}
+       Project: {{repo.name}} 
+       Branch: {{build.branch}}
+       Commit: {{build.commit}}
+       Event: {{build.event}} 
+       Status: {{build.status}}
+      {{else}}
+       Project: {{repo.name}} 
+       Branch: {{build.branch}}
+       Commit: {{build.commit}}
+       Event: {{build.event}} 
+       Status: {{build.status}}
+      {{/success}}
