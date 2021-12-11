@@ -90,7 +90,7 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                 onClick={() => handleCloseMenu("", "/collect-in-game-currency")}
               >
                 <Link className="nav-link anim-6" activeClassName="active">
-                  Collect your In-Game Currency
+                  Hold to Earn
                 </Link>
               </li>
 

@@ -327,7 +327,9 @@
     .col-text {
         @include media-breakpoint-up(md) {
             display: flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
     }
     p {
@@ -337,6 +339,9 @@
             font-size: 1.25rem;
             margin-bottom: 0;
         }
+    }
+    .img-hold-to-earn {
+        width: 90%;
     }
     .heading {
         img {
