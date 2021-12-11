@@ -52,7 +52,7 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
           </li> */}
           <li className="nav-item">
             <Link className="nav-link" activeClassName="active" to="/collect-in-game-currency">
-              Collect your In-Game Currency
+              Hold to Earn
             </Link>
           </li>
         </ul>

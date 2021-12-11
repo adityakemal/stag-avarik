@@ -9,6 +9,7 @@ import whatMain from "assets/img/vortem/2a_what_main.png"
 import whatExtra from "assets/img/vortem/2b_what_extra.png"
 import claimTitle from "assets/img/vortem/3a_claim_title.png"
 import claimStaking from "assets/img/vortem/3b_claim_staking.png"
+import claimHolding from "assets/img/vortem/3b_claim_holding.png"
 import claimPlay from "assets/img/vortem/3c_claim_play.png"
 import claimExchange from "assets/img/vortem/3d_claim_exchange.png"
 import recruitTitle from "assets/img/vortem/4a_recruit_title.png"
@@ -17,6 +18,7 @@ import recruit2 from "assets/img/vortem/4b_recruit-2.png"
 import recruit3 from "assets/img/vortem/4b_recruit-3.png"
 import recruit4 from "assets/img/vortem/4b_recruit-4.png"
 import stakingTitle from "assets/img/vortem/5a_staking_title.png"
+import holdingTitle from "assets/img/vortem/5a_holding_title.png"
 import stakingImage from "assets/img/vortem/5b_staking_image.png"
 
 const WeaponsMain = () => {
@@ -67,12 +69,12 @@ const WeaponsMain = () => {
               <div className="row">
                 <div className="col-12">
                   <img
-                    src={claimStaking}
+                    src={claimHolding}
                     className={`img-fluid claim-1 ${anim(4)}`}
                     alt="Vortem"
                   />
                   <p className={`mb-0 ${anim(5)}`}>
-                    By staking the Avarik NFT you will get the $VORTEM token.
+                    By holding the Avarik NFT you can earn $VORTEM Tokens.
                   </p>
                 </div>
                 <div className="col-12">
@@ -105,12 +107,12 @@ const WeaponsMain = () => {
             <div className="claim-desktop d-none d-xl-flex">
               <div className="claim-item claim-item-1">
                 <img
-                  src={claimStaking}
+                  src={claimHolding}
                   className={`img-fluid claim-1 ${anim(2)}`}
                   alt="Vortem"
                 />
                 <p className={`mb-0 ${anim(3)}`}>
-                  By staking the Avarik NFT you will get the $VORTEM token.
+                  By holding the Avarik NFT you can earn $VORTEM Tokens.
                 </p>
               </div>
               <div className="claim-item claim-item-2">
@@ -229,7 +231,7 @@ const WeaponsMain = () => {
         <div className="container mw-xl">
           <div className="heading">
             <img
-              src={stakingTitle}
+              src={holdingTitle}
               className={`img-fluid ${anim2(1)}`}
               alt="Staking"
             />
@@ -237,14 +239,16 @@ const WeaponsMain = () => {
           <div className="row">
             <div className="col-md-6 col-xl-5 col-text">
               <p className={`${anim2(2)}`}>
-                Each Avarik NFT in the staking smart contracts will earn 3
-                $VORTEM per day.
+                For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
+              </p>
+              <p className={`${anim2(3)}`}>
+                You can claim your $VORTEM tokens once the game is officially launched.
               </p>
             </div>
             <div className="col-md-6 col-xl-7">
               <img
                 src={stakingImage}
-                className={`img-fluid ${anim2(3)}`}
+                className={`img-fluid ${anim2(4)}`}
                 alt="Vortem"
               />
             </div>

@@ -224,14 +224,16 @@ const HoldToEarnMain = ({ }) => {
                                             <div className="container mw-xl">
                                                 <div className="row">
                                                     <div className="col-md-6 col-xl-5 col-text">
-                                                        <p className={`text-white fadeInUp d2`}>
+                                                        <p className={`text-white fadeInUp d2 mb-3`}>
                                                             For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
                                                         </p>
+                                                        <p className={`text-white fadeInUp d3`}>
+                                                            You can claim your $VORTEM tokens once the game is officially launched.                                                        </p>
                                                     </div>
-                                                    <div className="col-md-6 col-xl-7">
+                                                    <div className="col-md-6 col-xl-7 text-right">
                                                         <img
                                                             src={holdToEarnImage}
-                                                            className={`img-fluid fadeInUp d3`}
+                                                            className={`img-fluid img-hold-to-earn fadeInUp d3`}
                                                             alt="Vortem"
                                                         />
                                                     </div>

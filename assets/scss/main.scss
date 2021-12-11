@@ -176,7 +176,7 @@
 // Insert custom style here
 
 .error-msg {
-    position: absolute;
+    position: fixed;
     right: 1rem;
     top: 1.5rem;
     background: $red;
@@ -186,7 +186,7 @@
     z-index: 1032;
     max-width: 27rem;
     @include media-breakpoint-down(sm) {
-        position: relative;
+        right: 0;
         margin: 0 2rem;
         max-width: 100%;
         text-align: center;
