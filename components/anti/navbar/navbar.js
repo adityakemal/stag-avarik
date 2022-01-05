@@ -14,8 +14,8 @@ import DesktopMenu from "./components/desktop-menu"
 import MobileMenu from "./components/mobile-menu"
 import SearchMenu from "./components/search-menu"
 
-import logoDark from "assets/img/common/logo_main-dark.png"
-import logoLight from "assets/img/common/logo_main-light.png"
+import logoDark from "assets/img/common/logo_main-icon-rounded.png"
+import logoLight from "assets/img/common/logo_main-icon-rounded.png"
 
 export const Navbar = () => {
   // Navbar expand config
@@ -168,14 +168,14 @@ export const Navbar = () => {
       >
         <div className="navbar-main">
           <div className="container">
-            {/* <ul className="col-left">
+            <ul className="col-left">
               <li className="nav-item-brand">
                 <Link className="navbar-brand absolute" to="/">
                   <img src={logoLight} className="logo-light img-fluid" alt="Logo"/>
                   <img src={logoDark} className="logo-dark img-fluid" alt="Logo"/>
                 </Link>
               </li>
-            </ul> */}
+            </ul>
 
             {/* Mobile */}
             <ul className={`col-right d-${navExpand}-none`}>

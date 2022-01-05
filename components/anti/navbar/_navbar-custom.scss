@@ -150,7 +150,7 @@
 
 .navbar-main {
   .container {
-    justify-content: center;
+    justify-content: space-between;
   }
   .desktop-menu {
     position: relative;
@@ -163,12 +163,84 @@
         padding-right: 0;
         margin-right: 0.5rem;
         margin-left: 0.5rem;
+        .ic-dropdown {
+          width: 20px;
+          margin-left: 0.25rem;
+          margin-bottom: 0.25rem;
+        }
         &:before {
           height: 1px;
         }
         i {
           font-size: 1.125rem;
         }
+        &:hover {
+          & ~ .nav-item-dropdown {
+            visibility: visible;
+            opacity: 1;
+            height: 270px;
+            .img-paper {
+              height: 270px;
+            }
+          }
+        }
+      }
+      .nav-item-dropdown {
+        transition: all 0.5s ease;
+        visibility: hidden;
+        opacity: 0;
+        padding: 1.5rem 0.5rem;
+        top: 80%;
+        left: -1.75rem;
+        z-index: 2;
+        position: absolute;
+        min-width: 188px;
+        background-color: transparent;
+        height: 0px;
+        &:hover {
+          visibility: visible;
+          opacity: 1;
+          .img-paper {
+            height: 270px;
+          }
+        }
+        li {
+          list-style: none;
+          a {
+            color: $black;
+            text-decoration: none;
+            transition: all 0.1s ease;
+            border-radius: 2px;
+            font-size: 0.875rem;
+            padding: 0.25rem 0.5rem;
+            display: block;
+            text-align: center;
+            font-weight: 500;
+            &:hover {
+              font-weight: $font-weight-bold;
+            }
+          }
+          hr {
+            margin: 0.25rem 0;
+            border-top: none;
+            height: 1px;
+            background: linear-gradient(90deg, rgba($black, 0), $black, rgba($black, 0));
+          }
+        }
+        .img-paper {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 188px;
+          height: 0;
+          transition: all 0.5s ease 0s;
+          z-index: -1;
+        }
+      }
+      .ic-music {
+        font-size: 1.5rem;
+        color: $white;
+        cursor: pointer;
       }
     }
   }
