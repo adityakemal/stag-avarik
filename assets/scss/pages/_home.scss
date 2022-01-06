@@ -107,8 +107,6 @@ body {
       height: 100vh !important; // fallback option
       // height: calc(var(--vh, 1vh) * 100) !important;
       animation: cameraPan 30s $home-anim-cover-delay infinite;
-      // prettier-ignore
-      @keyframes cameraPan { 0% { background-position: 0% 0%; } 25% { background-position: 20% 10%; } 50% { background-position: 0% 10%; } 75% { background-position: 10% 20%; } 100% { background-position: 0% 0%; } }
     }
     .scroll-hint {
       animation: fadeInDown 1s #{$home-anim-delay + 0.2s} ease-in-out both;
@@ -254,7 +252,7 @@ body {
     position: absolute;
     width: 100%;
     height: 200px;
-    z-index: 1;
+    z-index: 0;
     bottom: 0;
     left: 0;
   }
@@ -280,6 +278,81 @@ body {
   }
 }
 
+//classes
+.sc-home-classes {
+  height: 400px;
+  margin-top: -5rem;
+  background: linear-gradient(180deg, #301a1a 0%, #301a1a 71.72%, rgba(48, 26, 26, 0.05) 100%);
+  .title {
+    color: $white;
+    text-align: center;
+    z-index: 1;
+  }
+  .description {
+    color: $white;
+    text-align: center;
+    font-weight: 400;
+    width: 80%;
+  }
+  .row-content {
+    .col-item {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+//battle
+.sc-home-battle {
+  height: 650px;
+  background: url("../../img/home/bg_battle.png") center center no-repeat;
+  background-size: cover;
+  animation: cameraPan 30s $home-anim-cover-delay infinite;
+  position: relative;
+  z-index: -1;
+  margin-top: -7.5rem;
+  &:before {
+    content: "";
+    @include gradient-y-to-bottom(#301a1a, rgba(#301a1a, 0), 5%, 100%);
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+  &:after {
+    content: "";
+    @include gradient-y-to-top(#301a1a, rgba(#301a1a, 0), 5%, 100%);
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    .content {
+      width: 50%;
+      .title {
+        color: $white;
+        text-align: start;
+        z-index: 1;
+      }
+      .description {
+        color: $white;
+        text-align: start;
+        font-weight: 300;
+        width: 80%;
+      }
+    }
+  }
+}
 // Roadmap
 .sc-home-roadmap {
   .box {
