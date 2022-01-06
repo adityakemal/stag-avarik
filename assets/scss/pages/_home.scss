@@ -190,11 +190,22 @@ body {
   .container {
     display: flex;
     justify-content: flex-end;
+    @include media-breakpoint-down(sm) {
+      height: 90%;
+      align-items: flex-end;
+    }
     .content {
       position: relative;
       width: 40%;
       padding: 3.5rem;
       z-index: 1;
+      @include media-breakpoint-down(lg) {
+        width: 60%;
+      }
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        padding: 2rem;
+      }
       h1 {
         color: $black;
       }
@@ -225,6 +236,7 @@ body {
   height: 650px;
   @include media-breakpoint-down(sm) {
     padding-top: 3.75rem !important;
+    height: 500px;
   }
   &:before {
     content: "";
@@ -256,7 +268,7 @@ body {
     margin-right: auto;
   }
   .story-factions {
-    margin-top: 1.5rem;
+    margin-top: 7.5rem;
     @include media-breakpoint-up(md) {
       margin-top: 2.25rem;
       margin-left: auto;
