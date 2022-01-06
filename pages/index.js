@@ -13,6 +13,7 @@ import HomeCharacters from "components/pages/home/home-characters"
 import HomeTeam from "components/pages/home/home-team"
 import HomeSocial from "components/pages/home/home-social"
 import HomeVortem from "components/pages/home/home-vortem"
+import HomeFactions from "components/pages/home/home-factions"
 
 const HomePage = () => {
   return (
@@ -24,6 +25,7 @@ const HomePage = () => {
       <Layout>
         <HomeCover />
         <HomeSaga />
+        <HomeFactions />
         <HomeCharacters />
         {/* <HomeRoadmap /> */}
         {/* <HomeLitePaper /> */}

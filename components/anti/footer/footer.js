@@ -16,7 +16,7 @@ import logoDark from "assets/img/common/logo_footer.png"
 
 export const Footer = () => {
   const [modal, setModal] = useState(null)
-
+  const year = new Date().getFullYear()
   // const handleClick = (content) => {
   //   scroller.scrollTo(content, {
   //     duration: 500,
@@ -130,7 +130,7 @@ export const Footer = () => {
           <div className="container">
             <div className="row w-100">
               <div className="col-md-6 col-left">
-                © 2021 Avarik Saga. Site by{" "}
+                © {year} Avarik Saga. Site by{" "}
                 <a href="https://www.antikode.com/" target="_blank">
                   Antikode
                 </a>
