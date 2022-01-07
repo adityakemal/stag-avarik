@@ -22,19 +22,19 @@ const HomeFactions = () => {
                     </div>
                     <div className={`story-factions ${anim(3)}`}>
                         <div className="row w-100">
-                            <div className={`col-3 ${anim(4)}`}>
-                                <img src={ignis} className="img-fluid" alt="Ignis" />
+                            <div className={`col-3`}>
+                                <img src={ignis} className={`img-fluid ${anim(4, "revealInDown")}`} alt="Ignis" />
                             </div>
-                            <div className={`col-3 ${anim(5)}`}>
-                                <img src={terra} className="img-fluid" alt="Terra" />
+                            <div className={`col-3`}>
+                                <img src={terra} className={`img-fluid ${anim(5, "revealInDown")}`} alt="Terra" />
                             </div>
-                            <div className={`col-3 ${anim(6)}`}>
-                                <img src={glacia} className="img-fluid" alt="Glacia" />
+                            <div className={`col-3`}>
+                                <img src={glacia} className={`img-fluid ${anim(6, "revealInDown")}`} alt="Glacia" />
                             </div>
-                            <div className={`col-3 ${anim(7)}`}>
+                            <div className={`col-3`}>
                                 <img
                                     src={tenebris}
-                                    className="img-fluid"
+                                    className={`img-fluid ${anim(7, "revealInDown")}`}
                                     alt="Tenebris"
                                 />
                             </div>
