@@ -10,6 +10,9 @@ import HomeSaga from "components/pages/home/home-saga"
 import HomeFactions from "components/pages/home/home-factions"
 import HomeClasses from "components/pages/home/home-classes"
 import HomeBattle from "components/pages/home/home-battle"
+import HomeEquipment from "components/pages/home/home-equipment"
+import HomePlayToEarn from "components/pages/home/home-play-to-earn"
+import HomeFooter from "components/pages/home/home-footer"
 
 const HomePage = () => {
   return (
@@ -24,6 +27,9 @@ const HomePage = () => {
         <HomeFactions />
         <HomeClasses />
         <HomeBattle />
+        <HomeEquipment />
+        <HomePlayToEarn />
+        <HomeFooter />
       </Layout>
     </>
   )

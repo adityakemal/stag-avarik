@@ -19,8 +19,11 @@
         }
     }
     &:hover {
-        .overlay-img {
-            opacity: 1;
+        .img-wrapper {
+            animation: float 2s infinite ease-in-out 0s;
+            .overlay-img {
+                opacity: 1;
+            }
         }
         .avarik-cards {
             .overlay-hover {
