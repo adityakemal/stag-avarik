@@ -6,7 +6,7 @@ import terra from "assets/img/common/flag_terra.png"
 import glacia from "assets/img/common/flag_glacia.png"
 
 import { useScrollAnim } from "components/hooks/hooks"
-import paper from "assets/img/home/paper.png"
+import paper from "assets/img/home/paper-4.png"
 
 import { Element } from "react-scroll"
 
