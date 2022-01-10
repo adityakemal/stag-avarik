@@ -7,7 +7,7 @@ import iconDropdown from "assets/img/common/icon_dropdown.png"
 
 const gameInfo = [
   { name: "Class", link: "/" },
-  { name: "Faction", link: "/" },
+  { name: "Faction", link: "/factions" },
   { name: "Weapons", link: "/" },
   { name: "Armors", link: "/" },
   { name: "Game Demo Info", link: "/" },
@@ -38,13 +38,18 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               <img src={paper} alt="" className="img-paper img-fluid" />
               {gameInfo.map((item, i) => (
                 <li key={i}>
-                  <Link to="/">
+                  <Link to={item.link}>
                     {item.name}
                   </Link>
                   {i !== (gameInfo.length - 1) ? <hr /> : null}
                 </li>
               ))}
             </ul>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" activeClassName="active" to="lands">
+              Land
+            </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" activeClassName="active" to="https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/">
