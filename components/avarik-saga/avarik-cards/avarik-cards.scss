@@ -34,6 +34,7 @@
             }
             p {
                 font-weight: $font-weight-bold;
+                color: $black;
             }
         }
     }
@@ -88,6 +89,7 @@
             text-align: center;
             z-index: 3;
             font-size: 1rem;
+            color: $white;
         }
     }
 }

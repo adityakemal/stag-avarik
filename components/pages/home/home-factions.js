@@ -1,43 +1,81 @@
-import React from "react"
+import React, { useState } from "react"
 
 import ignis from "assets/img/common/flag_ignis.png"
 import tenebris from "assets/img/common/flag_tenebris.png"
 import terra from "assets/img/common/flag_terra.png"
 import glacia from "assets/img/common/flag_glacia.png"
+import paperModal from "assets/img/home/paper-5.png"
 
 import { useScrollAnim } from "components/hooks/hooks"
 
 import { Element } from "react-scroll"
+import { Modal } from "components/anti"
+
+const data = [
+    {
+        name: "Ignis",
+        descriptions: "The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake.",
+        img: ignis
+    },
+    {
+        name: "Terra",
+        descriptions: "The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake.",
+        img: terra
+    },
+    {
+        name: "Glacia",
+        descriptions: "The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake.",
+        img: glacia
+    },
+    {
+        name: "Tenebris",
+        descriptions: "The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake.",
+        img: tenebris
+    },
+]
 
 const HomeFactions = () => {
     const [trigger, anim] = useScrollAnim()
+    const [modal, setModal] = useState(null)
+    const [selectedFactions, setSelectedFactions] = useState(null)
 
     return (
         <Element name="factions-content">
+            <Modal id="modal-factions" className="modal-factions" isShowing={modal} hide={() => setModal(null)}>
+                <div className="heading">
+                    <h5 className="title text-white">Factions</h5>
+                </div>
+                <div className="row mw-md">
+                    <div className="col-4 col-img">
+                        <img className="img-fluid" src={selectedFactions?.img} />
+                    </div>
+                    <div className="col-8 col-text">
+                        <h1 className="title">{selectedFactions?.name}</h1>
+                        <p className="description">{selectedFactions?.descriptions}</p>
+                    </div>
+                </div>
+            </Modal>
             <div className="sc-home-factions sc-dark pt-main" id="factions" ref={trigger}>
+                <div className="overlay"></div>
                 <div className="container">
                     <div className="heading">
                         <h1 className={anim(1)}>Factions</h1>
                         <p className={`text-white ${anim(2)}`}>May the best faction bask in glory</p>
                     </div>
-                    <div className={`story-factions ${anim(3)}`}>
+                    <div className={`story-factions`}>
                         <div className="row w-100">
-                            <div className={`col-3`}>
-                                <img src={ignis} className={`img-fluid ${anim(5, "revealInDown")}`} alt="Ignis" />
-                            </div>
-                            <div className={`col-3`}>
-                                <img src={terra} className={`img-fluid ${anim(7, "revealInDown")}`} alt="Terra" />
-                            </div>
-                            <div className={`col-3`}>
-                                <img src={glacia} className={`img-fluid ${anim(9, "revealInDown")}`} alt="Glacia" />
-                            </div>
-                            <div className={`col-3`}>
-                                <img
-                                    src={tenebris}
-                                    className={`img-fluid ${anim(11, "revealInDown")}`}
-                                    alt="Tenebris"
-                                />
-                            </div>
+                            {data?.map((item, i) => (
+                                <div
+                                    key={i}
+                                    className={`col-3 faction-item`}
+                                    onClick={() => {
+                                        setSelectedFactions(item)
+                                        setModal("modal-factions")
+                                    }}
+                                >
+                                    <img src={item.img} className={`img-fluid ${anim(i + 5, "revealInDown")}`} alt={item.name} />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

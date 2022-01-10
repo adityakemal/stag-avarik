@@ -16,14 +16,14 @@ const HomeEquipment = () => {
                         Explore the weapons and armors at your Hero’s disposal
                     </p>
                     <div className="row row-content">
-                        <div className="col-4 col-item">
+                        <div className="col-md-4 col-item">
                             <AvarikCards
                                 image={knight}
                                 imgClassName={`icon ${anim(3)}`}
                                 label="Weapon"
                             />
                         </div>
-                        <div className="col-4 col-item">
+                        <div className="col-md-4 col-item">
                             <AvarikCards
                                 image={knight}
                                 imgClassName={`icon ${anim(4)}`}

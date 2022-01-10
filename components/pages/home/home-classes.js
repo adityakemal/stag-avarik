@@ -16,21 +16,21 @@ const HomeClasses = () => {
                         From chivalrous knights to notorious wizards and cunning marksmen, these 3 classes in the Avarik Kingdom have to work hand-in-hand to achieve glory.
                     </p>
                     <div className="row row-content">
-                        <div className="col-4 col-item">
+                        <div className="col-md-4 col-item">
                             <AvarikCards
                                 image={knight}
                                 imgClassName={`icon ${anim(3)}`}
                                 label="Knight"
                             />
                         </div>
-                        <div className="col-4 col-item">
+                        <div className="col-md-4 col-item">
                             <AvarikCards
                                 image={wizard}
                                 imgClassName={`icon ${anim(4)}`}
                                 label="Wizard"
                             />
                         </div>
-                        <div className="col-4 col-item">
+                        <div className="col-md-4 col-item">
                             <AvarikCards
                                 image={marksman}
                                 imgClassName={`icon ${anim(5)}`}
