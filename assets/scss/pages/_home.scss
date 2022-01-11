@@ -67,38 +67,11 @@ body {
         margin-bottom: 2rem;
       }
     }
-    .btn-wrapper {
-      animation: fadeInUp 1s #{$home-anim-delay + 0.1s} ease-in-out both;
-      .btn-outline-white {
-        background: rgba($black, 0.25);
-        @include media-breakpoint-up(md) {
-          background: rgba($black, 0.5);
-        }
-      }
-      .btn-primary {
-        border-color: rgba($white, 1);
-        min-width: 250px;
-        &:before,
-        &:after {
-          content: "";
-          position: absolute;
-          height: 100%;
-          width: 1px;
-          top: 0;
-          background: rgba($white, 0.5);
-        }
-        &:before {
-          left: 0.25rem;
-        }
-        &:after {
-          right: 0.25rem;
-        }
-        &:disabled,
-        &.disabled {
-          background: rgba($black, 0.5) !important;
-          min-width: auto !important;
-        }
-      }
+    .side-left-btn-cover {
+      left: -28px;
+    }
+    .side-right-btn-cover {
+      right: -28.5px;
     }
   }
   .cover {

@@ -1,0 +1,89 @@
+.avarik-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba($white, 0.5);
+    border-bottom: 1px solid rgba($white, 0.5);
+    margin-left: 28px;
+    padding: 1rem 2rem;
+    width: fit-content;
+    color: $orange-light;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover {
+        color: $white;
+        .side-left,
+        .side-right {
+            transition: all 0.5s ease 0.25s;
+            &.gold {
+                opacity: 1;
+            }
+            &.white {
+                opacity: 0;
+            }
+        }
+        .overlay-gold {
+            width: 100%;
+            left: 0;
+            transition: all 0.5s ease 0s;
+        }
+    }
+    &::after {
+        content: "";
+        height: 2px;
+        background-color: rgba($golden, 0.5);
+        position: absolute;
+        bottom: -8px;
+        width: 100%;
+    }
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba($black, 0.5);
+        z-index: -1;
+        transition: all 0.5s ease 0s;
+    }
+    .overlay-gold {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transition: all 0.5s ease 0.25s;
+        width: 0;
+        background: radial-gradient(50% 757.72% at 50% 50%, rgba(241, 181, 101, 0.7) 0%, rgba(184, 105, 0, 0.7) 100%);
+        z-index: -1;
+    }
+    .side-left {
+        position: absolute;
+        top: 0;
+        left: -29px;
+        height: 115%;
+        object-fit: contain;
+        transition: all 0.5s ease 0s;
+        &.white {
+            opacity: 1;
+        }
+        &.gold {
+            opacity: 0;
+        }
+    }
+    .side-right {
+        position: absolute;
+        top: 0;
+        right: -30px;
+        height: 115%;
+        object-fit: contain;
+        transition: all 0.5s ease 0s;
+        &.white {
+            opacity: 1;
+        }
+        &.gold {
+            opacity: 0;
+        }
+    }
+}

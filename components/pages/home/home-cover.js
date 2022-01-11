@@ -6,6 +6,7 @@ import { Button } from "components/anti/buttons/buttons"
 import bgMain from "assets/img/common/bg_main-desktop.jpeg"
 import bgMainMobile from "assets/img/common/bg_main-mobile.jpg"
 import logoMain from "assets/img/home/logo_main-title.png"
+import AvarikButton from "components/avarik-saga/avarik-button"
 
 const HomeCover = () => {
   return (
@@ -16,7 +17,7 @@ const HomeCover = () => {
           <div className="early-access-box">
             Early Access
           </div>
-          <Button
+          {/* <Button
             variant="outline-white mx-1"
             className="mb-sm-down-2"
             link="https://opensea.io/collection/avariksagauniverse"
@@ -29,7 +30,21 @@ const HomeCover = () => {
             link="https://opensea.io/collection/avarikweapons"
           >
             Trailer
-          </Button>
+          </Button> */}
+          <div className="row justify-content-center">
+            <AvarikButton
+              text="Demo"
+              className="mx-5"
+              sideLeftClassName="side-left-btn-cover"
+              sideRightClassName="side-right-btn-cover"
+            />
+            <AvarikButton
+              text="Trailer"
+              className="mx-5"
+              sideLeftClassName="side-left-btn-cover"
+              sideRightClassName="side-right-btn-cover"
+            />
+          </div>
         </div>
       </div>
       <Cover
