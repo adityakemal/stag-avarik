@@ -1,13 +1,26 @@
 .sc-factions-main {
     height: 100vh !important; // fallback option
     height: calc(var(--vh, 1vh) * 100) !important;
-    background: url("../../img/factions/ignis-bg.png") no-repeat center center;
-    background-size: cover;
+    background-size: cover !important;
+    transition: all 0.5s;
+    &.ignis {
+        background: url("../../img/factions/ignis-bg.png") no-repeat center center;
+    }
+    &.glacia {
+        background: url("../../img/factions/glacia-bg.png") no-repeat center center;
+    }
+    &.terra {
+        background: url("../../img/factions/terra-bg.png") no-repeat center center;
+    }
+    &.tenebris {
+        background: url("../../img/factions/tenebris-bg.png") no-repeat center center;
+    }
+    position: relative;
     .container {
         height: 100%;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        flex-direction: column;
         .col-text {
             width: 40%;
             .label {
@@ -26,6 +39,16 @@
             justify-content: center;
             .flag-factions {
                 max-height: 300px;
+            }
+        }
+        .row-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            width: 90%;
+            justify-content: space-between;
+            .indicator-img {
+                width: 75px;
+                object-fit: contain;
             }
         }
     }

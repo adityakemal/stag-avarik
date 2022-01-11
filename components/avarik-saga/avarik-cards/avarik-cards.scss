@@ -16,9 +16,11 @@
             opacity: 0;
             transition: all 1s ease;
             background: radial-gradient(circle at center, $orange-light 10%, rgba(255, 255, 255, 0) 60%);
+            z-index: -1;
         }
     }
-    &:hover {
+    &:hover,
+    &.active {
         .img-wrapper {
             animation: float 2s infinite ease-in-out 0s;
             .overlay-img {
