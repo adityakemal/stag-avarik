@@ -11,7 +11,7 @@ const gameInfo = [
   { name: "Weapons", link: "/" },
   { name: "Armors", link: "/" },
   { name: "Game Demo Info", link: "/" },
-  { name: "Game Currency", link: "/" },
+  { name: "Game Currency", link: "/vortem" },
 ]
 
 const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {

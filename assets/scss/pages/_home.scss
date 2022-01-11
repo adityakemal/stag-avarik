@@ -5,6 +5,8 @@
 $home-anim-cover-delay: 0s; // default 2.5s
 $home-anim-delay: 1s; // default 3s
 
+@import "./home-modal";
+
 body {
   @include gradient-y-to-bottom($purple, $purple-alt);
   &:after {
@@ -747,61 +749,6 @@ body {
           }
         }
       }
-    }
-  }
-}
-
-// modal
-
-.modal-factions {
-  position: relative;
-  background: transparent;
-  max-width: fit-content !important;
-  .modal-wrapper {
-    background: rgba($black, 0) url("../../img/home/paper-5.png") no-repeat center center;
-    background-size: cover;
-    width: 100%;
-    margin: auto;
-    .close {
-      top: 1rem;
-      right: 5rem;
-      @include media-breakpoint-down(sm) {
-        top: 2rem;
-        right: 1rem;
-      }
-    }
-    .modal-content {
-      background: rgba($black, 0);
-      // background-size: cover;
-      padding: 5rem 8rem !important;
-      @include media-breakpoint-down(sm) {
-        padding: 2rem !important;
-      }
-      .col-img {
-        display: flex;
-        align-items: center;
-        img {
-          max-height: 350px;
-          object-fit: contain;
-        }
-      }
-      .col-text {
-        text-align: left;
-        .description {
-          font-size: 1.1rem;
-          @include media-breakpoint-down(sm) {
-            font-size: 0.85rem;
-          }
-        }
-      }
-    }
-    .img-paper {
-      position: absolute;
-      object-fit: contain;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
     }
   }
 }
