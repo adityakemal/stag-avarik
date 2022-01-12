@@ -18,6 +18,7 @@ import { injected, walletconnect } from "components/utils/connecters"
 import { ErrorStateContext } from "context/error-msg-context"
 import React, { useContext, useEffect, useState } from "react"
 import { ModalConnect } from "./modal/connect"
+import AvarikButton from "components/avarik-saga/avarik-button"
 
 const truncate = (string, length) => {
     if (string?.length <= length) return string
@@ -108,10 +109,7 @@ const HoldToEarnMain = ({ }) => {
                 </Modal>
             ) : null}
             <section className="sc-collect-in-game-curency-main pb-main" ref={trigger}>
-                <div className="container mw-xl">
-                    <Link to="/" className="stake-logo">
-                        <img src={logoMain} className={`img-fluid ${anim(1)}`} alt="Logo" />
-                    </Link>
+                <div className="container h-100 mw-xl py-main">
                     {account ? (
                         <>
                             <div className={`heading ${anim(2)}`}>
@@ -214,46 +212,40 @@ const HoldToEarnMain = ({ }) => {
                         </>
                     ) : (
                         <>
-                            <div className="heading mt-5">
-                                <h4 className="text-white fadeInUp d1">Hold Your Token to Earn $VORTEM</h4>
-                            </div>
-                            <div className="box connect-wallet fadeInUp d1">
-                                <div className="box-inner">
-                                    <div className="content">
-                                        <div className="sc-stake-info">
-                                            <div className="container mw-xl">
-                                                <div className="row">
-                                                    <div className="col-md-6 col-xl-5 col-text">
-                                                        <p className={`text-white fadeInUp d2 mb-3`}>
-                                                            For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
-                                                        </p>
-                                                        <p className={`text-white fadeInUp d3`}>
-                                                            You can claim your $VORTEM tokens once the game is officially launched.                                                        </p>
-                                                    </div>
-                                                    <div className="col-md-6 col-xl-7 text-right">
-                                                        <img
-                                                            src={holdToEarnImage}
-                                                            className={`img-fluid img-hold-to-earn fadeInUp d3`}
-                                                            alt="Vortem"
-                                                        />
-                                                    </div>
-                                                </div>
+                            <div className="content fadeInUp d1">
+                                <div className="sc-stake-info">
+                                    <div className="container mw-xl">
+                                        <div className="row">
+                                            <div className="col-md-6 col-xl-5 col-text">
+                                                <h1 className="text-white fadeInUp d1">Hold Your Token to Earn $VORTEM</h1>
+                                                <p className={`text-white fadeInUp d2 mb-3`}>
+                                                    For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
+                                                </p>
+                                                <p className={`text-white fadeInUp d3`}>
+                                                    You can claim your $VORTEM tokens once the game is officially launched.
+                                                </p>
+                                                <h6 className={`text-white fadeInUp d4 mb-4 mt-3`}>
+                                                    To see how much $VORTEM you can earn, please connect by clicking on the button below.
+                                                </h6>
+                                                <AvarikButton
+                                                    className="fadeInUp d5 btn-connect w-250px"
+                                                    onClick={() => setModal("modalConnect")}
+                                                    text="Connect Wallet"
+                                                />
+                                            </div>
+                                            <div className="col-md-6 col-xl-7 text-right">
+                                                <img
+                                                    src={holdToEarnImage}
+                                                    className={`img-fluid img-hold-to-earn fadeInUp d3`}
+                                                    alt="Vortem"
+                                                />
                                             </div>
                                         </div>
-                                        <div className={"heading"}>
-                                            {/* <h2 className="fadeInUp d2">Avarik Saga Stake</h2> */}
-                                            <p className={`text-white fadeInUp d4 mb-4 mt-3`}>
-                                                To see how much $VORTEM you can earn, please connect by clicking on the button below.
-                                            </p>
-                                        </div>
-                                        <Button
-                                            variant="outline-white"
-                                            className="w-100 fadeInUp d5 btn-connect"
-                                            onClick={() => setModal("modalConnect")}
-                                        >
-                                            Connect
-                                        </Button>
                                     </div>
+                                </div>
+                                <div className={"heading"}>
+                                    {/* <h2 className="fadeInUp d2">Avarik Saga Stake</h2> */}
+
                                 </div>
                             </div>
                         </>

@@ -12,7 +12,7 @@ const AvarikButton = ({
     sideRightClassName
 }) => {
     return (
-        <div className={`avarik-button ${variant} ${className}`}>
+        <div className={`avarik-button ${variant} ${className}`} onClick={onClick}>
             <div className="overlay" />
             <div className="overlay-gold" />
             <img src={sideLeft} className={`side-left white ${sideLeftClassName}`} alt="" />

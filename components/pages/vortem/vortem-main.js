@@ -20,6 +20,7 @@ import recruit4 from "assets/img/vortem/4b_recruit-4.png"
 import stakingTitle from "assets/img/vortem/5a_staking_title.png"
 import holdingTitle from "assets/img/vortem/5a_holding_title.png"
 import stakingImage from "assets/img/vortem/5b_staking_image.png"
+import AvarikButton from "components/avarik-saga/avarik-button"
 
 const WeaponsMain = () => {
   const [trigger, anim] = useScrollAnim()
@@ -32,24 +33,25 @@ const WeaponsMain = () => {
       <section className="sc-main sc-dark sc-vortem-logo py-main">
         <div className="container">
           <div className="logo-text">
-            <p className="fadeInUp d1">Avarik Saga In Game Currency</p>
-            <h1 className="fadeInUp d2">
-              <span>$Vortem</span> <br />
-              Token
-            </h1>
+            <p className="fadeInUp d1 text-warning">Avarik Saga In Game Currency</p>
+            <h1 className="fadeInUp d2">$Vortem Token</h1>
           </div>
           <img src={logo} className="img-fluid fadeInUp d3" alt="Vortem" />
         </div>
       </section>
-      <section className="sc-main sc-dark sc-vortem-what pb-main">
-        <div className="container">
-          <div className="heading">
-            <p className="fadeInUp d3 mb-1">What Is</p>
-            <h2 className="fadeInUp d4 h1">
-              <span>$Vortem</span>
-            </h2>
+      <section className="sc-main sc-dark sc-vortem-what py-main">
+        <div className="container mw-lg">
+          <div className="row">
+            <div className="col-md-6 d-flex flex-column justify-content-center text-center text-md-left">
+              <h1>What is <br /> $VORTEM </h1>
+              <p className="mw-350px">
+                $VORTEM is the official Avarik Saga in-game currency, which you can use for upgrading weapons & armors, recruit new avariks and purchase ingredients
+              </p>
+            </div>
+            <div className="col-md-6">
+              <img src={whatMain} className="img-fluid fadeInUp d5" alt="Vortem" />
+            </div>
           </div>
-          <img src={whatMain} className="img-fluid fadeInUp d5" alt="Vortem" />
         </div>
       </section>
       <section
@@ -144,113 +146,29 @@ const WeaponsMain = () => {
           </div>
         </div>
       </section>
-      {/* <section
-        className="sc-main sc-dark sc-vortem-recruit py-main"
-        ref={trigger1}
-      >
-        <div className="container">
-          <div className="heading">
-            <img
-              src={recruitTitle}
-              className={`img-fluid ${anim1(1)}`}
-              alt="Vortem"
-            />
-            <p className="my-5 mw-lg mx-auto">
-              The $VORTEM token is the major currency for recruiting new
-              Avariks. The cost to recruit ($VORTEM) will rise every time you
-              recruit more. This is calculated based on the recruit count of the
-              parent's Avarik.
-            </p>
-          </div>
-          <div className="recruit-list">
-            <img
-              src={whatExtra}
-              className={`img-fluid img-extra ${anim(5)}`}
-              alt="Vortem Char"
-            />
-            <div className="row">
-              <div className="col-md-6">
-                <p className={`mb-3 d-none d-md-block ${anim1(1)}`}>
-                  Must have 2 Avarik NFT, <br /> both Male & Female
-                </p>
-                <img
-                  src={recruit1}
-                  className={`img-fluid ${anim1(2)}`}
-                  alt="Vortem"
-                />
-                <p className={`mb-0 d-block d-md-none ${anim1(3)}`}>
-                  Must have 2 Avarik NFT, both Male & Female
-                </p>
-              </div>
-              <div className="col-md-6">
-                <p className={`mb-3 d-none d-md-block ${anim1(3)}`}>
-                  The cost to recruit will use a number of $VORTEM (to be
-                  confirmed) & vary based on the number of times the Avarik has
-                  been recruited
-                </p>
-                <img
-                  src={recruit2}
-                  className={`img-fluid ${anim1(4)} `}
-                  alt="Vortem"
-                />
-                <p className={`mb-0 d-block d-md-none ${anim1(5)}`}>
-                  The cost to recruit will use a number of $VORTEM (to be
-                  confirmed) & vary based on the number of times the Avarik has
-                  been recruited
-                </p>
-              </div>
-              <div className="col-md-6">
-                <img
-                  src={recruit3}
-                  className={`img-fluid ${anim1(6)}`}
-                  alt="Vortem"
-                />
-                <p className={`mb-0 ${anim1(7)}`}>
-                  Once the Avarik Saga Governance Token ($AVRK) is introduced,
-                  it will be required as part of the recruitment fee.
-                </p>
-              </div>
-              <div className="col-md-6">
-                <img
-                  src={recruit4}
-                  className={`img-fluid ${anim1(8)}`}
-                  alt="Vortem"
-                />
-                <p className={`mb-0 ${anim1(9)}`}>
-                  There will be some duration in the recruitment process
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
       <section
         className="sc-main sc-dark sc-vortem-staking py-main"
         ref={trigger2}
       >
         <div className="container mw-xl">
-          <div className="heading">
-            <img
-              src={holdingTitle}
-              className={`img-fluid ${anim2(1)}`}
-              alt="Staking"
-            />
-          </div>
+          <h1 className={`mb-4 ${anim(2)} d-block d-md-none text-center`}>Hold to Earn Mechanic</h1>
           <div className="row">
-            <div className="col-md-6 col-xl-5 col-text">
-              <p className={`${anim2(2)}`}>
-                For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
-              </p>
-              <p className={`${anim2(3)}`}>
-                You can claim your $VORTEM tokens once the game is officially launched.
-              </p>
-            </div>
-            <div className="col-md-6 col-xl-7">
+            <div className="col-md-6 col-xl-7 mb-4">
               <img
                 src={stakingImage}
                 className={`img-fluid ${anim2(4)}`}
                 alt="Vortem"
               />
+            </div>
+            <div className="col-md-6 col-xl-5 col-text">
+              <h1 className={`mb-4 ${anim(2)} d-none d-md-block`}>Hold to Earn Mechanic</h1>
+              <p className={`${anim2(3)}`}>
+                For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
+              </p>
+              <p className={`${anim2(4)}`}>
+                You can claim your $VORTEM tokens once the game is officially launched.
+              </p>
+              <AvarikButton text="Learn More" className="px-5 ml-0" />
             </div>
           </div>
         </div>
