@@ -8,9 +8,9 @@ import iconDropdown from "assets/img/common/icon_dropdown.png"
 const gameInfo = [
   { name: "Class", link: "/class" },
   { name: "Faction", link: "/factions" },
-  { name: "Weapons", link: "/" },
-  { name: "Armors", link: "/" },
-  { name: "Game Demo Info", link: "/" },
+  { name: "Weapons", link: "/weapons" },
+  { name: "Armors", link: "/armors" },
+  { name: "Game Demo Info", link: "/game-demo-info" },
   { name: "Game Currency", link: "/vortem" },
 ]
 
