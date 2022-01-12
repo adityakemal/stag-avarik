@@ -15,23 +15,23 @@ import ModalFactions from "./modal/modal-factions"
 const data = [
     {
         name: "Ignis",
-        descriptions: "The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake.",
+        description: "The feisty Ignis proudly bear their faction’s fire insignia. Much like the scorching desert they call home, they are the life and soul of any party - an Ignis never backs down from a challenge.",
         img: ignis
     },
     {
-        name: "Terra",
-        descriptions: "The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake.",
-        img: terra
+        name: "Glacia",
+        img: glacia,
+        description: "The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake."
     },
     {
-        name: "Glacia",
-        descriptions: "The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake.",
-        img: glacia
+        name: "Terra",
+        img: terra,
+        description: "Vowing to be true friends of Nature, the benevolent Terrans’ loyalties to their insignia are as sturdy as their resolve; they will stand their ground no matter what stands before them."
     },
     {
         name: "Tenebris",
-        descriptions: "The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake.",
-        img: tenebris
+        img: tenebris,
+        description: " Little is known of the Tenebris, a faction of mysterious beings said to have made a pact with the Dark World which aids them in achieving their deepest desires. Where others drown in the darkness, the Tenebris thrives."
     },
 ]
 

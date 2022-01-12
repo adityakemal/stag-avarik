@@ -15,25 +15,25 @@ const indicator = [
         name: "Ignis",
         image: ignisIcon,
         flag: ignis,
-        description: " The feisty Ignis proudly bear their faction’s fire insignia. Much like the scorching desert they call home, they are the life and soul of any party - an Ignis never backs down from a challenge."
+        description: "The feisty Ignis proudly bear their faction’s fire insignia. Much like the scorching desert they call home, they are the life and soul of any party - an Ignis never backs down from a challenge."
     },
     {
         name: "Glacia",
         image: glaciaIcon,
         flag: glacia,
-        description: " The feisty Ignis proudly bear their faction’s fire insignia. Much like the scorching desert they call home, they are the life and soul of any party - an Ignis never backs down from a challenge."
+        description: "The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake."
     },
     {
         name: "Terra",
         image: terraIcon,
         flag: terra,
-        description: " The feisty Ignis proudly bear their faction’s fire insignia. Much like the scorching desert they call home, they are the life and soul of any party - an Ignis never backs down from a challenge."
+        description: "Vowing to be true friends of Nature, the benevolent Terrans’ loyalties to their insignia are as sturdy as their resolve; they will stand their ground no matter what stands before them."
     },
     {
         name: "Tenebris",
         image: tenebrisIcon,
         flag: tenebris,
-        description: " The feisty Ignis proudly bear their faction’s fire insignia. Much like the scorching desert they call home, they are the life and soul of any party - an Ignis never backs down from a challenge."
+        description: " Little is known of the Tenebris, a faction of mysterious beings said to have made a pact with the Dark World which aids them in achieving their deepest desires. Where others drown in the darkness, the Tenebris thrives."
     },
 ]
 

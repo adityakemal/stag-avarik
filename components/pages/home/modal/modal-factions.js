@@ -1,4 +1,5 @@
 import { Modal } from "components/anti"
+import AvarikButton from "components/avarik-saga/avarik-button"
 
 
 const ModalFactions = ({ modal, setModal, selectedFactions }) => {
@@ -14,6 +15,12 @@ const ModalFactions = ({ modal, setModal, selectedFactions }) => {
                 <div className="col-8 col-text">
                     <h1 className="title">{selectedFactions?.name}</h1>
                     <p className="description">{selectedFactions?.descriptions}</p>
+                    <AvarikButton
+                        variant="gold"
+                        text="Learn More"
+                        className="px-5"
+                        link="/factions"
+                    />
                 </div>
             </div>
         </Modal>

@@ -216,7 +216,7 @@ const HoldToEarnMain = ({ }) => {
                                 <div className="sc-stake-info">
                                     <div className="container mw-xl">
                                         <div className="row">
-                                            <div className="col-md-6 col-xl-5 col-text">
+                                            <div className="col-md-5 col-text">
                                                 <h1 className="text-white fadeInUp d1">Hold Your Token to Earn $VORTEM</h1>
                                                 <p className={`text-white fadeInUp d2 mb-3`}>
                                                     For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
@@ -224,16 +224,16 @@ const HoldToEarnMain = ({ }) => {
                                                 <p className={`text-white fadeInUp d3`}>
                                                     You can claim your $VORTEM tokens once the game is officially launched.
                                                 </p>
-                                                <h6 className={`text-white fadeInUp d4 mb-4 mt-3`}>
+                                                <h5 className={`text-white fadeInUp d4 mb-4 mt-3`}>
                                                     To see how much $VORTEM you can earn, please connect by clicking on the button below.
-                                                </h6>
+                                                </h5>
                                                 <AvarikButton
                                                     className="fadeInUp d5 btn-connect w-250px"
                                                     onClick={() => setModal("modalConnect")}
                                                     text="Connect Wallet"
                                                 />
                                             </div>
-                                            <div className="col-md-6 col-xl-7 text-right">
+                                            <div className="col-md-7 text-right">
                                                 <img
                                                     src={holdToEarnImage}
                                                     className={`img-fluid img-hold-to-earn fadeInUp d3`}
