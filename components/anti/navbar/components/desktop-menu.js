@@ -6,7 +6,7 @@ import paper from "assets/img/home/paper-3.png"
 import iconDropdown from "assets/img/common/icon_dropdown.png"
 
 const gameInfo = [
-  { name: "Class", link: "/" },
+  { name: "Class", link: "/class" },
   { name: "Faction", link: "/factions" },
   { name: "Weapons", link: "/" },
   { name: "Armors", link: "/" },

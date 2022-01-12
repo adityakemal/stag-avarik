@@ -1,7 +1,4 @@
-import knight from "assets/img/home/icon_knight.png"
-import wizard from "assets/img/home/icon_wizard.png"
-import marksman from "assets/img/home/icon_marksmen.png"
-import bgCard from "assets/img/common/bg_card-avarik.png"
+import knight from "assets/img/common/icon_knight.png"
 import { useScrollAnim } from "components/hooks/hooks"
 import AvarikCards from "components/avarik-saga/avarik-cards"
 
