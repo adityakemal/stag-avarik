@@ -186,7 +186,7 @@
 .error-msg {
     position: fixed;
     right: 1rem;
-    top: 1.5rem;
+    top: 3.5rem;
     background: $red;
     padding: 1rem 1rem;
     border-radius: 9px;
@@ -198,5 +198,9 @@
         margin: 0 2rem;
         max-width: 100%;
         text-align: center;
+    }
+    .ai-times {
+        cursor: pointer;
+        margin-left: 10px;
     }
 }

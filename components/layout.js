@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
   // Loader Context
   // allows loader only shown when directly visited via URL
   const { initialLoading } = useContext(LoadingContext)
-  const { errorMsg } = useContext(ErrorStateContext);
+  const { errorMsg, setErrorMsg } = useContext(ErrorStateContext);
   const router = useRouter()
 
   // Mobile viewport height workaround
@@ -83,9 +83,14 @@ const Layout = ({ children }) => {
     <>
       {errorMsg && (
         <>
-          <div className="error-msg d-none d-md-block">{errorMsg}</div>
+          <div className="error-msg d-none d-md-block slideInRight">
+            {errorMsg}
+            <i className="air ai-times" onClick={() => setErrorMsg(null)}></i>
+          </div>
           <div className="container d-block d-md-none">
-            <div className="error-msg">{errorMsg}</div>
+            <div className="error-msg slideInDown">
+              {errorMsg}<i className="air ai-times" onClick={() => setErrorMsg(null)}></i>
+            </div>
           </div>
         </>
       )}
