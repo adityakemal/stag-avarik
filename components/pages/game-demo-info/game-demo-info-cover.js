@@ -16,6 +16,7 @@ const GameDemoInfoCover = () => {
                             variant="gold"
                             link="https://game-avariksaga-stag.agatedev.net/"
                             target="_blank"
+                            className={anim(3)}
                         />
                     </div>
                 </div>
