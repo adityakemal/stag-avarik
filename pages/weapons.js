@@ -8,7 +8,7 @@ import WeaponsMain from "components/pages/weapons/weapons-main"
 const WeaponsPage = () => {
   return (
     <>
-      <Seo title="Avarik Saga NFT" />
+      <Seo title="Weapons" />
       <Layout>
         <Helmet>
           <body className="bd-weapons" />

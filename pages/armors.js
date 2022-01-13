@@ -8,10 +8,10 @@ import ArmorsMain from "components/pages/armors/armors-main"
 const ArmorsPage = () => {
   return (
     <>
-      <Seo title="Avarik Saga NFT" />
+      <Seo title="Armors" />
       <Layout>
         <Helmet>
-          <body className="bd-litepaper" />
+          <body className="bd-armors" />
         </Helmet>
         <ArmorsMain />
       </Layout>
