@@ -19,6 +19,7 @@ import { ErrorStateContext } from "context/error-msg-context"
 import React, { useContext, useEffect, useState } from "react"
 import { ModalConnect } from "./modal/connect"
 import AvarikButton from "components/avarik-saga/avarik-button"
+import BeforeConnect from "./before-connect"
 
 const truncate = (string, length) => {
     if (string?.length <= length) return string
@@ -48,6 +49,7 @@ const HoldToEarnMain = ({ }) => {
     const [trigger, anim] = useScrollAnim()
     const [triggerToken, animToken] = useScrollAnim()
     const [triggerEarned, animEarned] = useScrollAnim()
+    const [triggerRewards, animRewards] = useScrollAnim()
 
     const [listToken, setListToken] = useState([])
     const { isLoading, tokens, isApprovedForAll, refresh } = useNft(account);
@@ -113,143 +115,112 @@ const HoldToEarnMain = ({ }) => {
                     {account ? (
                         <>
                             <div className={`heading ${anim(2)}`}>
-                                <h3 className="text-white">
+                                <h1 className="text-white">
                                     Collect your In-Game Currency
-                                </h3>
+                                </h1>
                                 <p>
                                     For each Avarik Saga NFT, you will earn approximately 3 $VORTEM per day.
                                 </p>
                             </div>
-                            <div className={`box ${anim(3)} box-stake`}>
-                                <div className="box-inner">
-                                    <div className="content">
-                                        <div className="row row-3 mb-3">
-                                            <div className="col-lg-6 col-forms">
-                                                <form>
-                                                    <div className={`box ${anim(4)}`} ref={triggerToken}>
-                                                        {
-                                                            !listToken.length ? (
-                                                                <div className="box-inner staked-empty">
-                                                                    <div className="heading">
-                                                                        <h4 className={`mt-2 ${animToken(1)}`}>
-                                                                            No Avarik Saga NFT Token
-                                                                        </h4>
-                                                                    </div>
-                                                                    <Button
-                                                                        variant="primary"
-                                                                        className={`w-100 ${animToken(2)}`}
-                                                                        link="https://opensea.io/collection/avariksagauniverse"
-                                                                    >
-                                                                        Buy on Opensea
-                                                                    </Button>
-                                                                </div>
-                                                            ) :
-                                                                (
-                                                                    <div className="box-inner">
-                                                                        <div className="heading mb-0">
-                                                                            <h4 className={`mt-2 ${animToken(1)}`}>
-                                                                                Wallet Address
-                                                                            </h4>
-                                                                        </div>
-                                                                        <div className="content">
-                                                                            <div className={`stake-data justify-content-center ${animToken(2)} py-3`}>
-                                                                                {truncate(account, width > 576 ? 30 : 20)}
-                                                                            </div>
-                                                                        </div>
-                                                                        <div className="heading mb-0">
-                                                                            <h4 className={`mt-2 ${animToken(3)}`}>
-                                                                                Token
-                                                                            </h4>
-                                                                        </div>
-                                                                        <div className="content">
-                                                                            <div className={`stake-data earned ${animToken(4)}`}>
-                                                                                <span className="label">Avarik Saga in Wallet</span>
-                                                                                <span className="value">
-                                                                                    <strong>{listToken.length}</strong>
-                                                                                    <small> NFT</small>
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                )
-                                                        }
+                            <div className="content">
+                                <div className="row row-3 mb-3">
+                                    <div className="col-lg-6">
+                                        <div className={`box-hold-to-earn ${anim(4)}`} ref={triggerToken}>
+                                            {
+                                                !listToken.length ? (
+                                                    <div className="staked-empty">
+                                                        <div className="heading">
+                                                            <p className={`mt-2 ${animToken(1)}`}>
+                                                                No Avarik Saga NFT Token
+                                                            </p>
+                                                        </div>
+                                                        <AvarikButton
+                                                            text="Buy on Opensea"
+                                                            className={`${animToken(2)}`}
+                                                            link="https://opensea.io/collection/avariksagauniverse"
+                                                            target="_blank"
+                                                        />
                                                     </div>
-                                                </form>
-                                            </div>
-                                            <div className="col-lg-6 col-forms">
-                                                <form>
-                                                    <div className={`box ${anim(5)}`} ref={triggerEarned}>
-                                                        <div className="box-inner box-earned">
+                                                ) :
+                                                    (
+                                                        <div className="box-inner">
                                                             <div className="heading mb-0">
-                                                                <h5 className={`mt-2 ${animEarned(1)}`}>
-                                                                    You will earn approximately {3 * listToken.length} $VORTEM /Day for holding {listToken.length} NFT Token
-                                                                </h5>
+                                                                <h4 className={`mt-2 ${animToken(1)}`}>
+                                                                    Wallet Address
+                                                                </h4>
                                                             </div>
-                                                            <div className="h-100 w-100 d-flex align-items-center justify-content-center">
-                                                                <div className={`stake-data earned ${animEarned(2)}`}>
-                                                                    <span className="label">Daily Earning Rate</span>
+                                                            <div className="content">
+                                                                <div className={`stake-data justify-content-center ${animToken(2)} py-3`}>
+                                                                    {truncate(account, width > 576 ? 30 : 20)}
+                                                                </div>
+                                                            </div>
+                                                            <div className="heading mb-0">
+                                                                <h4 className={`mt-2 ${animToken(3)}`}>
+                                                                    Token
+                                                                </h4>
+                                                            </div>
+                                                            <div className="content">
+                                                                <div className={`stake-data earned ${animToken(4)}`}>
+                                                                    <span className="label">Avarik Saga in Wallet</span>
                                                                     <span className="value">
-                                                                        <strong>{earningRate.toFixed(5)} </strong>
-                                                                        <small> $VORTEM</small>
+                                                                        <strong>{listToken.length}</strong>
+                                                                        <small> NFT</small>
                                                                     </span>
                                                                 </div>
                                                             </div>
-                                                            <div className={`stake-data earned ${animEarned(3)}`}>
-                                                                <span className="label">Total Earned</span>
-                                                                <span className="value">
-                                                                    <strong>{earned.toFixed(5)} </strong>
-                                                                    <small> $VORTEM</small>
-                                                                </span>
-                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </form>
+                                                    )
+                                            }
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-6">
+                                        <div className={`box-hold-to-earn ${anim(5)}`} ref={triggerEarned}>
+                                            <div className="box-earned">
+                                                <p className={`${animEarned(1)}`}>
+                                                    You will earn approximately {3 * listToken.length} $VORTEM /Day for holding {listToken.length} NFT Token
+                                                </p>
+                                                <hr />
+                                                <div className={`stake-data earned ${animEarned(2)}`}>
+                                                    <span className="label">Daily Earning Rate</span>
+                                                    <span className="value">
+                                                        <strong>{earningRate.toFixed(5)} </strong>
+                                                        <small> $VORTEM</small>
+                                                    </span>
+                                                </div>
+                                                <div className={`stake-data earned ${animEarned(3)}`}>
+                                                    <span className="label">Total Earned</span>
+                                                    <span className="value">
+                                                        <strong>{earned.toFixed(5)} </strong>
+                                                        <small> $VORTEM</small>
+                                                    </span>
+                                                </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row" ref={triggerRewards}>
+                                    <div className="col-12">
+                                        <div className={`box-hold-to-earn box-rewards ${animRewards(1)}`}>
+                                            <h5 className={`text-warning ${animRewards(2)}`}>Game Demo Rewards</h5>
+                                            {!listToken.length ? (
+                                                <div className="empty">
+                                                    <p className={`label ${animRewards(3)}`}>
+                                                        Get Avarik Saga NFT Token to see your progress
+                                                    </p>
+                                                    <AvarikButton
+                                                        text="Buy on Opensea"
+                                                        className={`px-5 ${animRewards(4)}`}
+                                                        link="https://opensea.io/collection/avariksagauniverse"
+                                                        target="_blank"
+                                                    />
+                                                </div>
+                                            ) : null}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </>
-                    ) : (
-                        <>
-                            <div className="content fadeInUp d1">
-                                <div className="sc-stake-info">
-                                    <div className="container mw-xl">
-                                        <div className="row">
-                                            <div className="col-md-5 col-text">
-                                                <h1 className="text-white fadeInUp d1">Hold Your Token to Earn $VORTEM</h1>
-                                                <p className={`text-white fadeInUp d2 mb-3`}>
-                                                    For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
-                                                </p>
-                                                <p className={`text-white fadeInUp d3`}>
-                                                    You can claim your $VORTEM tokens once the game is officially launched.
-                                                </p>
-                                                <h5 className={`text-white fadeInUp d4 mb-4 mt-3`}>
-                                                    To see how much $VORTEM you can earn, please connect by clicking on the button below.
-                                                </h5>
-                                                <AvarikButton
-                                                    className="fadeInUp d5 btn-connect w-250px"
-                                                    onClick={() => setModal("modalConnect")}
-                                                    text="Connect Wallet"
-                                                />
-                                            </div>
-                                            <div className="col-md-7 text-right">
-                                                <img
-                                                    src={holdToEarnImage}
-                                                    className={`img-fluid img-hold-to-earn fadeInUp d3`}
-                                                    alt="Vortem"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className={"heading"}>
-                                    {/* <h2 className="fadeInUp d2">Avarik Saga Stake</h2> */}
-
-                                </div>
-                            </div>
-                        </>
-                    )}
+                    ) : <BeforeConnect />}
                 </div>
             </section>
             <ModalConnect modal={modal} setModal={setModal} loading={loading} onConnect={onConnect} />
