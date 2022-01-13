@@ -32,19 +32,21 @@ const WeaponsMain = () => {
     <>
       <section className="sc-main sc-dark sc-vortem-logo py-main">
         <div className="container">
-          <div className="logo-text">
+          <div className="col-6 logo-text">
             <p className="fadeInUp d1 text-warning">Avarik Saga In Game Currency</p>
             <h1 className="fadeInUp d2">$Vortem Token</h1>
           </div>
-          <img src={logo} className="img-fluid fadeInUp d3" alt="Vortem" />
+          <div className="col-6 d-flex justify-content-center">
+            <img src={logo} className="img-fluid fadeInUp d3" alt="Vortem" />
+          </div>
         </div>
       </section>
       <section className="sc-main sc-dark sc-vortem-what py-main">
-        <div className="container mw-lg">
+        <div className="container">
           <div className="row">
             <div className="col-md-6 d-flex flex-column justify-content-center text-center text-md-left">
-              <h1>What is <br /> $VORTEM </h1>
-              <p className="mw-350px">
+              <h1 className="title">What is <br /> $VORTEM </h1>
+              <p className="description mw-350px">
                 $VORTEM is the official Avarik Saga in-game currency, which you can use for upgrading weapons & armors, recruit new avariks and purchase ingredients
               </p>
             </div>
@@ -153,7 +155,7 @@ const WeaponsMain = () => {
         <div className="container mw-xl">
           <h1 className={`mb-4 ${anim(2)} d-block d-md-none text-center`}>Hold to Earn Mechanic</h1>
           <div className="row">
-            <div className="col-md-6 col-xl-7 mb-4">
+            <div className="col-md-6 col-xl-7 mb-4 col-img">
               <img
                 src={stakingImage}
                 className={`img-fluid ${anim2(4)}`}
@@ -168,7 +170,7 @@ const WeaponsMain = () => {
               <p className={`${anim2(4)}`}>
                 You can claim your $VORTEM tokens once the game is officially launched.
               </p>
-              <AvarikButton text="Learn More" className="px-5 ml-0" />
+              <AvarikButton text="Learn More" className="px-5" link="/collect-in-game-currency" />
             </div>
           </div>
         </div>

@@ -104,4 +104,7 @@
             opacity: 0;
         }
     }
+    &.w-100 {
+        max-width: 90% !important;
+    }
 }

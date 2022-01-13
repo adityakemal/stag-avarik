@@ -64,6 +64,7 @@ const ArmorsMain = () => {
                 label={item.name}
                 image={item.image}
                 imgClassName="indicator-img"
+                className="mx-4"
                 isActive={selectedFaction === item}
                 onClick={() => setSelectedFaction(item)}
               />

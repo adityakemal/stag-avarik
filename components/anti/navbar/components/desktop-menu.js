@@ -46,11 +46,11 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               ))}
             </ul>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="nav-link" activeClassName="active" to="/land">
               Land
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link className="nav-link" activeClassName="active" to="https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/">
               Whitepaper

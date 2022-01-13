@@ -17,30 +17,16 @@ const HomeCover = () => {
           <div className="early-access-box">
             Early Access
           </div>
-          {/* <Button
-            variant="outline-white mx-1"
-            className="mb-sm-down-2"
-            link="https://opensea.io/collection/avariksagauniverse"
-          >
-            Demo
-          </Button>
-          <Button
-            variant="outline-white"
-            className="mb-sm-down-2 mx-1"
-            link="https://opensea.io/collection/avarikweapons"
-          >
-            Trailer
-          </Button> */}
           <div className="row justify-content-center">
             <AvarikButton
               text="Demo"
-              className="mx-5"
+              className="mx-5 mb-sm-4"
               sideLeftClassName="side-left-btn-cover"
               sideRightClassName="side-right-btn-cover"
             />
             <AvarikButton
               text="Trailer"
-              className="mx-5"
+              className="mx-5 mb-sm-4"
               sideLeftClassName="side-left-btn-cover"
               sideRightClassName="side-right-btn-cover"
             />
@@ -48,7 +34,7 @@ const HomeCover = () => {
         </div>
       </div>
       <Cover
-        img={bgMainMobile}
+        img={bgMain}
         imgMd={bgMain}
         imgOverlay={20}
         imgHeight="h-vh-100"

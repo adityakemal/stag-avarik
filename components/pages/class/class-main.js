@@ -46,7 +46,7 @@ const ClassMain = () => {
                             </p>
                         </div>
                         <div className="col-8 col-img">
-                            <Parallax className="parallax-character" x={[60, 30]} tagOuter="figure">
+                            <Parallax className="parallax-character" x={[30, 0]} tagOuter="figure">
                                 <img
                                     src={selectedFaction.char}
                                     className={`character ${anim(4, "revealInDown")}`}
@@ -60,6 +60,7 @@ const ClassMain = () => {
                             <AvarikCards
                                 label={item.name}
                                 image={item.image}
+                                className="mx-4"
                                 imgClassName="indicator-img"
                                 isActive={selectedFaction === item}
                                 onClick={() => setSelectedFaction(item)}

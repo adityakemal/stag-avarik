@@ -57,6 +57,7 @@ const WeaponsMain = () => {
               <AvarikCards
                 label={item.name}
                 image={item.image}
+                className="mx-4"
                 imgClassName="indicator-img"
                 isActive={selectedFaction === item}
                 onClick={() => setSelectedFaction(item)}
