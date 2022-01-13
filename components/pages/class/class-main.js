@@ -30,7 +30,7 @@ const indicator = [
     },
 ]
 
-const FactionsMain = () => {
+const ClassMain = () => {
     const [trigger, anim] = useScrollAnim()
     const [selectedFaction, setSelectedFaction] = useState(indicator[0])
     return (
@@ -72,4 +72,4 @@ const FactionsMain = () => {
     )
 }
 
-export default FactionsMain
+export default ClassMain

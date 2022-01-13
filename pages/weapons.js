@@ -11,7 +11,7 @@ const WeaponsPage = () => {
       <Seo title="Avarik Saga NFT" />
       <Layout>
         <Helmet>
-          <body className="bd-litepaper" />
+          <body className="bd-weapons" />
         </Helmet>
         <WeaponsMain />
       </Layout>
