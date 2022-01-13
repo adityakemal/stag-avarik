@@ -47,7 +47,7 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
             </ul>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" activeClassName="active" to="lands">
+            <Link className="nav-link" activeClassName="active" to="/land">
               Land
             </Link>
           </li>
@@ -59,11 +59,6 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
           <li className="nav-item">
             <Link className="nav-link" activeClassName="active" to="/collect-in-game-currency">
               Hold to Earn
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" activeClassName="active" to="/">
-              Team
             </Link>
           </li>
           <li className="nav-item">
