@@ -15,6 +15,7 @@ import { injected, walletconnect } from "components/utils/connecters"
 import { ErrorStateContext } from "context/error-msg-context"
 import React, { useContext, useEffect, useState } from "react"
 import BeforeConnect from "./before-connect"
+import FrequentlyAskedQuestion from "./frequently-asked-question"
 import { ModalConnect } from "./modal/connect"
 
 const truncate = (string, length) => {
@@ -269,7 +270,7 @@ const HoldToEarnMain = ({ }) => {
                                 </div>
                             </div>
                         </>
-                    ) : <BeforeConnect setModal={setModal} />}
+                    ) : null}
                 </div>
             </section>
             <ModalConnect modal={modal} setModal={setModal} loading={loading} onConnect={onConnect} />
