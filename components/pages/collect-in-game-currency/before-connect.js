@@ -1,7 +1,7 @@
 import AvarikButton from "components/avarik-saga/avarik-button"
 import holdToEarnImage from "assets/img/vortem/5b_staking_image.png"
 
-const BeforeConnect = () => {
+const BeforeConnect = ({ setModal }) => {
     return (
         <div className="content fadeInUp d1">
             <div className="sc-stake-info">

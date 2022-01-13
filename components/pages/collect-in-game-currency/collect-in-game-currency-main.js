@@ -269,7 +269,7 @@ const HoldToEarnMain = ({ }) => {
                                 </div>
                             </div>
                         </>
-                    ) : <BeforeConnect />}
+                    ) : <BeforeConnect setModal={setModal} />}
                 </div>
             </section>
             <ModalConnect modal={modal} setModal={setModal} loading={loading} onConnect={onConnect} />
