@@ -260,6 +260,10 @@ const HoldToEarnMain = ({ }) => {
                                                     </div>
                                                 </div>
                                             )}
+                                            <AvarikButton
+                                                text="Play Game Demo Now"
+                                                link="https://game-avariksaga-stag.agatedev.net/"
+                                            />
                                         </div>
                                     </div>
                                 </div>

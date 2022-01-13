@@ -34,7 +34,7 @@
         position: absolute;
         width: 100%;
         height: 15%;
-        z-index: 1;
+        z-index: 0;
         bottom: 0;
     }
     &:after {
@@ -246,6 +246,7 @@
             }
         }
         &.box-rewards {
+            position: relative;
             .empty {
                 width: 100%;
                 height: 100%;
@@ -258,6 +259,16 @@
                 .label {
                     font-size: 1.25rem;
                 }
+            }
+            .avarik-button {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -2rem;
+                margin-left: auto;
+                margin-right: auto;
+                width: 300px;
+                z-index: 2;
             }
         }
     }
