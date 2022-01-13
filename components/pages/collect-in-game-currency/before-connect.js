@@ -1,4 +1,5 @@
 import AvarikButton from "components/avarik-saga/avarik-button"
+import holdToEarnImage from "assets/img/vortem/5b_staking_image.png"
 
 const BeforeConnect = () => {
     return (
