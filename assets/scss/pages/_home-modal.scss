@@ -36,9 +36,16 @@
             .col-img {
                 display: flex;
                 align-items: center;
+                @include media-breakpoint-down(sm) {
+                    align-items: center;
+                    justify-content: flex-end;
+                }
                 img {
                     max-height: 350px;
                     object-fit: contain;
+                    @include media-breakpoint-down(sm) {
+                        max-width: 65%;
+                    } 
                 }
             }
             .col-text {
@@ -46,7 +53,7 @@
                 .description {
                     font-size: 1.1rem;
                     @include media-breakpoint-down(sm) {
-                        font-size: 0.85rem;
+                        font-size: 0.75rem;
                     }
                 }
                 .avarik-button {
