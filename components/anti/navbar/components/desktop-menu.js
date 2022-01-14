@@ -61,9 +61,9 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               Hold to Earn
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <i className="air ai-volume ic-music"></i>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>

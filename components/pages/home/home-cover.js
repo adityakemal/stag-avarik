@@ -15,7 +15,7 @@ const HomeCover = () => {
         <img src={logoMain} className="cover-logo" alt="Logo" />
         <div className="cta-content">
           <div className="early-access-box">
-            Early Access
+            Coming Soon
           </div>
           <div className="row justify-content-center">
             {/* <AvarikButton
