@@ -14,9 +14,12 @@
         z-index: 0;
         bottom: 0;
         left: 0;
+        @include media-breakpoint-down(sm) {
+            height: 50%;
+        }
     }
     &.knight {
-        background: url("../../img/knights/bg_knight.jpg") no-repeat center center;
+        background: url("../../img/knights/bg_knight.jpeg") no-repeat center center;
     }
     &.wizard {
         background: url("../../img/wizards/bg_wizard.jpeg") no-repeat center center;
@@ -44,11 +47,20 @@
                 .title {
                     font-size: 2.5rem;
                 }
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    order: 1;
+                    margin-bottom: -5rem;
+                    z-index: 1;
+                }
             }
             .col-img {
                 display: flex;
                 justify-content: center;
                 position: relative;
+                @include media-breakpoint-down(sm) {
+                    order: 0;
+                }
                 .parallax-character {
                     position: absolute;
                     top: -45%;
@@ -56,6 +68,14 @@
                     .character {
                         transition: all 0.5s ease;
                         max-height: 600px !important;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        position: unset;
+                        .character {
+                            margin-bottom: -7.5rem;
+                            z-index: -1;
+                            max-height: 450px !important;
+                        }
                     }
                 }
             }
@@ -65,9 +85,29 @@
             bottom: 2.5rem;
             width: 90%;
             justify-content: center;
-            .indicator-img {
-                width: 75px;
-                object-fit: contain;
+            @include media-breakpoint-down(sm) {
+                width: 95%;
+                bottom: 1.5rem;
+                z-index: 2;
+            }
+            .avarik-cards-wrapper {
+                .indicator-img {
+                    width: 75px;
+                    object-fit: contain;
+                    @include media-breakpoint-down(sm) {
+                        width: 65px;
+                    }
+                }
+                @include media-breakpoint-down(sm) {
+                    .avarik-cards {
+                        padding: 0.5rem 1.5rem;
+                        width: auto;
+                        p {
+                            font-size: 0.75rem;
+                        }
+                        // height: auto;
+                    }
+                }
             }
         }
     }

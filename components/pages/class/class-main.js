@@ -5,7 +5,7 @@ import knight from "assets/img/knights/knight-character.png"
 import marksman from "assets/img/marksmen/marksman-character.png"
 import wizard from "assets/img/wizards/wizard-character.png"
 import AvarikCards from "components/avarik-saga/avarik-cards"
-import { useScrollAnim } from "components/hooks/hooks"
+import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 import { useState } from "react"
 import { Parallax } from "react-scroll-parallax"
 
@@ -33,20 +33,21 @@ const indicator = [
 const ClassMain = () => {
     const [trigger, anim] = useScrollAnim()
     const [selectedFaction, setSelectedFaction] = useState(indicator[0])
+    const { width } = useWindowSize()
     return (
         <section className={`sc-class-main cover-full ${selectedFaction.name.toLowerCase()}`} ref={trigger}>
             <div className="py-main h-100">
                 <div className="container">
                     <div className="row justify-content-between">
-                        <div className="col-4 col-text">
+                        <div className="col-md-4 col-text">
                             <h5 className={`label ${anim(1)}`}>Class</h5>
                             <h1 className={`title ${anim(2)}`}>{selectedFaction.name}</h1>
                             <p className={`description ${anim(3)}`}>
                                 {selectedFaction.description}
                             </p>
                         </div>
-                        <div className="col-8 col-img">
-                            <Parallax className="parallax-character" x={[30, 0]} tagOuter="figure">
+                        <div className="col-md-8 col-img">
+                            <Parallax className="parallax-character" x={width > 576 ? [30, 0] : [0, -10]} tagOuter="figure">
                                 <img
                                     src={selectedFaction.char}
                                     className={`character ${anim(4, "revealInDown")}`}
@@ -57,14 +58,16 @@ const ClassMain = () => {
                     </div>
                     <div className="row row-indicator">
                         {indicator.map((item) => (
-                            <AvarikCards
-                                label={item.name}
-                                image={item.image}
-                                className="mx-4"
-                                imgClassName="indicator-img"
-                                isActive={selectedFaction === item}
-                                onClick={() => setSelectedFaction(item)}
-                            />
+                            <div className="col-4">
+                                <AvarikCards
+                                    label={item.name}
+                                    image={item.image}
+                                    className="mx-4"
+                                    imgClassName="indicator-img"
+                                    isActive={selectedFaction === item}
+                                    onClick={() => setSelectedFaction(item)}
+                                />
+                            </div>
                         ))}
                     </div>
                 </div>
