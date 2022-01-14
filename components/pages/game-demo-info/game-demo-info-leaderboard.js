@@ -1,4 +1,4 @@
-import image from "assets/img/home/img_play-to-earn.png"
+import image from "assets/img/game-demo/img-leaderboard.png"
 import AvarikButton from "components/avarik-saga/avarik-button"
 import { useScrollAnim } from "components/hooks/hooks"
 
