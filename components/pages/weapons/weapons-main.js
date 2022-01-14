@@ -37,14 +37,14 @@ const WeaponsMain = () => {
       <div className="py-main h-100">
         <div className="container">
           <div className="row justify-content-between">
-            <div className="col-4 col-text">
+            <div className="col-md-4 col-text">
               <h5 className={`label ${anim(1)}`}>Equipment</h5>
               <h1 className={`title ${anim(2)}`}>{selectedFaction.name}</h1>
               <p className={`description ${anim(3)}`}>
                 {selectedFaction.description}
               </p>
             </div>
-            <div className="col-8 col-img">
+            <div className="col-md-8 col-img">
               <img
                 src={selectedFaction.char}
                 className={`character ${anim(4, "revealInDown")}`}
@@ -54,14 +54,16 @@ const WeaponsMain = () => {
           </div>
           <div className="row row-indicator">
             {indicator.map((item) => (
-              <AvarikCards
-                label={item.name}
-                image={item.image}
-                className="mx-4"
-                imgClassName="indicator-img"
-                isActive={selectedFaction === item}
-                onClick={() => setSelectedFaction(item)}
-              />
+              <div className="col-4">
+                <AvarikCards
+                  label={item.name}
+                  image={item.image}
+                  className="mx-4"
+                  imgClassName="indicator-img"
+                  isActive={selectedFaction === item}
+                  onClick={() => setSelectedFaction(item)}
+                />
+              </div>
             ))}
           </div>
         </div>

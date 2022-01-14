@@ -5,7 +5,7 @@
     transition: all 0.5s;
     position: relative;
     transition: all 0.5s ease;
-    background: url("../../img/armors/armors-bg.png") no-repeat center center;
+    background: url("../../img/armors/armors-bg.jpeg") no-repeat center center;
     position: relative;
     &:after {
         content: "";
@@ -16,6 +16,9 @@
         z-index: 0;
         bottom: 0;
         left: 0;
+        @include media-breakpoint-down(sm) {
+            height: 75%;
+        }
     }
     .container {
         height: 100%;
@@ -24,6 +27,9 @@
         flex-direction: column;
         .row {
             margin-top: -10rem;
+            @include media-breakpoint-down(sm) {
+                margin-top: 0rem;
+            }
             .col-text {
                 width: 40%;
                 .label {
@@ -36,14 +42,24 @@
                 .title {
                     font-size: 2.5rem;
                 }
-                .avarik-button {
-                    width: 80%;
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    order: 1;
+                    margin-bottom: -15rem;
+                    z-index: 1;
+                    .avarik-button {
+                        width: 85%;
+                    }
                 }
             }
             .col-img {
                 display: flex;
                 justify-content: center;
                 position: relative;
+                @include media-breakpoint-down(sm) {
+                    order: 0;
+                    margin-top: -15rem;
+                }
                 .character {
                     position: absolute;
                     top: -15%;
@@ -51,6 +67,11 @@
                     z-index: 0;
                     transition: all 0.5s ease;
                     max-height: 400px !important;
+                    @include media-breakpoint-down(sm) {
+                        margin-bottom: -7.5rem;
+                        z-index: 0;
+                        max-height: 300px !important;
+                    }
                 }
             }
         }
@@ -59,9 +80,27 @@
             bottom: 2.5rem;
             width: 90%;
             justify-content: center;
+            @include media-breakpoint-down(sm) {
+                width: 95%;
+                bottom: 1.5rem;
+                z-index: 2;
+            }
             .indicator-img {
                 width: 75px;
                 object-fit: contain;
+                @include media-breakpoint-down(sm) {
+                    width: 65px;
+                }
+            }
+            @include media-breakpoint-down(sm) {
+                .avarik-cards {
+                    padding: 0.5rem 1.5rem;
+                    width: auto;
+                    p {
+                        font-size: 0.75rem;
+                    }
+                    // height: auto;
+                }
             }
         }
     }
