@@ -33,6 +33,7 @@ const HomeSaga = () => {
                 text="Watch Video Lore"
                 variant="gold"
                 className="w-100"
+                link="https://www.youtube.com/watch?v=W5-WfcZdCew"
               />
             </div>
           </Parallax>
