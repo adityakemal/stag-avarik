@@ -14,11 +14,12 @@ const HomeFooter = () => {
                     <p className={`description ${anim(2, "revealInUp")} mb-5`}>
                         View the official <strong>Avarik Saga Universe </strong> on <strong> OpenSea </strong>
                     </p>
-                    <div className="row w-75 justify-content-between">
+                    <div className="row w-100 justify-content-center">
                         <AvarikButton
                             link="https://opensea.io/collection/avariksagauniverse"
                             target="_blank"
                             text="Main collection"
+                            className={`ml-md-0 ${anim(3)}`}
                         />
                         {/* <AvarikButton
                             link="https://game-avariksaga-stag.agatedev.net/"

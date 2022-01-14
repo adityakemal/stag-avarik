@@ -31,7 +31,7 @@ export const Footer = () => {
     { title: "Weapons", link: "/weapons" },
     { title: "Armors", link: "/armors" },
     // { title: "$AVRK", link: "/avrk" },
-    { title: "In Game Currency", link: "/vortem" },
+    { title: "Game Info", link: "/vortem" },
     // { title: "Stake", link: "/stake" },
     { title: "Hold to Earn", link: "/collect-in-game-currency" },
   ]
