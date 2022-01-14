@@ -3,6 +3,16 @@ import { Link } from "components/anti/link/link"
 import { Accordion } from "components/anti/accordion/accordion"
 import { useRouter } from "next/router"
 import { scroller, Element } from "react-scroll"
+import iconDropdown from "assets/img/common/icon_dropdown.png"
+
+const gameInfo = [
+  { name: "Class", link: "/class" },
+  { name: "Faction", link: "/factions" },
+  { name: "Weapons", link: "/weapons" },
+  { name: "Armors", link: "/armors" },
+  { name: "Game Demo Info", link: "/game-demo-info" },
+  { name: "Game Currency", link: "/vortem" },
+]
 
 const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
   const Router = useRouter()
@@ -37,6 +47,26 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                   Home
                 </Link>
               </li>
+              <li className="nav-item">
+                <Accordion
+                  className="anim-3 w-100 mobile-menu-accordion"
+                  title="Game Info"
+                  titleClassName="nav-link"
+                  expandIcon={<img src={iconDropdown} className="img-fluid icon-dropdown" />}
+                  defaultExpanded={false}
+                >
+                  <ul className="list-unstyled">
+                    {gameInfo.map((item, i) => (
+                      <li key={i}>
+                        <Link to={item.link}>
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </Accordion>
+              </li>
+
               <li
                 className="nav-item"
                 onClick={() => handleCloseMenu("", "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/")}

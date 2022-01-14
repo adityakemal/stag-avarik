@@ -117,6 +117,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      .mobile-menu-accordion {
+        background-color: rgba($black, 0);
+        border: none;
+        .accordion-title {
+          font-family: $font-family-hk-grotesk;
+        }
+        .accordion-content {
+          justify-content: center;
+          a {
+            font-size: 1.25rem;
+            color: $white;
+          }
+        }
+      }
     }
   }
   .nav-item {

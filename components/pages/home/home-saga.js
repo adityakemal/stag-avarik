@@ -1,10 +1,5 @@
 import React from "react"
 
-import ignis from "assets/img/common/flag_ignis.png"
-import tenebris from "assets/img/common/flag_tenebris.png"
-import terra from "assets/img/common/flag_terra.png"
-import glacia from "assets/img/common/flag_glacia.png"
-
 import { useScrollAnim } from "components/hooks/hooks"
 import paper from "assets/img/home/paper-4.png"
 
