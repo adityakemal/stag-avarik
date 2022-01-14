@@ -17,7 +17,7 @@ const indicator = [
     description: "Armors hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for armors. The rarity influences 2 key principles in the game: Greater base stats on the armor. Enhances the skill power of both active and passive skills of the Hero."
   },
   {
-    name: "Weapon",
+    name: "Wizard",
     image: wizardIcon,
     char: wizard,
     description: "Armors hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for armors. The rarity influences 2 key principles in the game: Greater base stats on the armor. Enhances the skill power of both active and passive skills of the Hero."
