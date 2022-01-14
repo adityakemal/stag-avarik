@@ -1,4 +1,5 @@
 import knight from "assets/img/common/icon_knight.png"
+import armors from "assets/img/armors/icon-armor.png"
 import { useScrollAnim } from "components/hooks/hooks"
 import AvarikCards from "components/avarik-saga/avarik-cards"
 import router from "next/router"
@@ -24,7 +25,7 @@ const HomeEquipment = () => {
                         </div>
                         <div className="col-md-4 col-item">
                             <AvarikCards
-                                image={knight}
+                                image={armors}
                                 imgClassName={`icon ${anim(4)}`}
                                 label="Armors"
                                 onClick={() => router.push("/armors")}
