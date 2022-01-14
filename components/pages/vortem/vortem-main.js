@@ -103,7 +103,7 @@ const WeaponsMain = () => {
                     alt="Vortem"
                   />
                   <p className={`mb-0 ${anim(7)}`}>
-                    To be announced end of 2021.
+                    To be announced end of 2022.
                   </p>
                 </div>
               </div>
@@ -141,7 +141,7 @@ const WeaponsMain = () => {
                   alt="Vortem"
                 />
                 <p className={`mb-0 ${anim(7)}`}>
-                  To be announced end of 2021.
+                  To be announced end of 2022.
                 </p>
               </div>
             </div>
