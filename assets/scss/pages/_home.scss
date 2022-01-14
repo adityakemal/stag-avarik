@@ -190,6 +190,9 @@ body {
           color: $black;
         }
         color: $black;
+        @include media-breakpoint-down(sm) {
+          font-size: 0.875rem;
+        }
       }
       .img-paper {
         position: absolute;

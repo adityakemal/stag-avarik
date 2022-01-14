@@ -10,7 +10,7 @@ const ModalClasses = ({ modal, setModal, selectedClasses }) => {
     return (
         <Modal id="modal-classes" className="modal-classes" isShowing={modal} hide={() => setModal(null)}>
             <div className="heading">
-                <h5 className="title text-white">{selectedClasses?.name} Class</h5>
+                <h5 className="title">{selectedClasses?.name} Class</h5>
             </div>
             <NavTabs
                 wrapperClassName="modal-class-tabs-wrapper"

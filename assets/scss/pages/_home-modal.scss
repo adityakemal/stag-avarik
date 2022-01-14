@@ -9,9 +9,12 @@
         background-size: cover;
         width: 100%;
         margin: auto;
+        @include media-breakpoint-down(sm) {
+            // background: rgba($black, 0) url("../../img/home/paper-4.png") no-repeat center center;
+        }
         .close {
-            top: 1rem;
-            right: 5rem;
+            top: 5rem;
+            right: 4rem;
             @include media-breakpoint-down(sm) {
                 top: 2rem;
                 right: 1rem;
@@ -20,9 +23,15 @@
         .modal-content {
             background: rgba($black, 0);
             // background-size: cover;
-            padding: 5rem 8rem !important;
+            padding: 10rem 8rem !important;
             @include media-breakpoint-down(sm) {
-                padding: 2rem !important;
+                padding: 1rem !important;
+            }
+            .heading {
+                @include media-breakpoint-down(sm) {
+                    margin-bottom: 0;
+                    margin-top: 1rem;
+                }
             }
             .col-img {
                 display: flex;
@@ -42,6 +51,21 @@
                 }
                 .avarik-button {
                     width: 90%;
+                }
+            }
+            .avarik-button {
+                @include media-breakpoint-down(sm) {
+                    // width: 85%;
+                    text-align: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 2rem;
+                }
+                .side-left {
+                    left: -29px;
+                }
+                .side-right {
+                    right: -29px;
                 }
             }
         }

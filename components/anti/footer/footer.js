@@ -28,12 +28,13 @@ export const Footer = () => {
   const menuLinks = [
     { title: "Home", link: "/" },
     { title: "Whitepaper", link: "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/" },
+    // { title: "Class", link: "/class" },
+    // { title: "Faction", link: "/factions" },
     { title: "Weapons", link: "/weapons" },
     { title: "Armors", link: "/armors" },
-    // { title: "$AVRK", link: "/avrk" },
-    { title: "Game Info", link: "/vortem" },
-    // { title: "Stake", link: "/stake" },
+    // { title: "Game Demo Info", link: "/game-demo-info" },
     { title: "Hold to Earn", link: "/collect-in-game-currency" },
+    { title: "In Game Currency", link: "/vortem" },
   ]
 
   const social = [

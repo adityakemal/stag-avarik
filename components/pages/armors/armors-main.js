@@ -11,19 +11,19 @@ import { useState } from "react"
 
 const indicator = [
   {
-    name: "Armors",
+    name: "Knight",
     image: knightIcon,
     char: knight,
     description: "Armors hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for armors. The rarity influences 2 key principles in the game: Greater base stats on the armor. Enhances the skill power of both active and passive skills of the Hero."
   },
   {
-    name: "Armors",
+    name: "Weapon",
     image: wizardIcon,
     char: wizard,
     description: "Armors hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for armors. The rarity influences 2 key principles in the game: Greater base stats on the armor. Enhances the skill power of both active and passive skills of the Hero."
   },
   {
-    name: "Armors",
+    name: "Marksman",
     image: marksmanIcon,
     char: marksman,
     description: "Armors hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for armors. The rarity influences 2 key principles in the game: Greater base stats on the armor. Enhances the skill power of both active and passive skills of the Hero."
