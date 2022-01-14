@@ -6,7 +6,7 @@ const ModalFactions = ({ modal, setModal, selectedFactions }) => {
     return (
         <Modal id="modal-factions" className="modal-factions" isShowing={modal} hide={() => setModal(null)}>
             <div className="heading">
-                <h5 className="title">Factions</h5>
+                <h5 className="title mb-0 mb-md-2">Factions</h5>
             </div>
             <div className="row mw-md">
                 <div className="col-4 col-img">
