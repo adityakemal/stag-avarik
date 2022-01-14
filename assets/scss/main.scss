@@ -203,6 +203,12 @@
     .ai-times {
         cursor: pointer;
         margin-left: 10px;
+        @include media-breakpoint-down(sm) {
+            position: absolute;
+            top: 0rem;
+            right: 0.5rem;
+            font-size: 1.25rem;
+        }
     }
 }
 

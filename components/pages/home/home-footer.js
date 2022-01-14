@@ -20,11 +20,11 @@ const HomeFooter = () => {
                             target="_blank"
                             text="Main collection"
                         />
-                        <AvarikButton
+                        {/* <AvarikButton
                             link="https://game-avariksaga-stag.agatedev.net/"
                             target="_blank"
                             text="Try Game Demo"
-                        />
+                        /> */}
                     </div>
                 </div>
             </div>

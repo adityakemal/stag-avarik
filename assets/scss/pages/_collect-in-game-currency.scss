@@ -362,13 +362,18 @@
             align-items: flex-start;
             text-align: left;
         }
-    }
-    p {
-        text-align: center;
-        @include media-breakpoint-up(md) {
-            text-align: left;
-            font-size: 1.25rem;
-            margin-bottom: 0;
+        .avarik-button {
+            @include media-breakpoint-down(sm) {
+                margin-left: 0;
+            }
+        }
+        p {
+            text-align: center;
+            @include media-breakpoint-up(md) {
+                text-align: left;
+                font-size: 1.25rem;
+                margin-bottom: 0;
+            }
         }
     }
     .img-hold-to-earn {

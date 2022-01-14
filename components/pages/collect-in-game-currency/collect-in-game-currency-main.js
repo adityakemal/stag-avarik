@@ -1,22 +1,10 @@
-import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core"
-import {
-    NoEthereumProviderError,
-    UserRejectedRequestError as UserRejectedRequestErrorInjected
-} from "@web3-react/injected-connector"
-import cogoToast from "cogo-toast"
+import { useWeb3React } from "@web3-react/core"
 import { Modal } from "components/anti"
 import AvarikButton from "components/avarik-saga/avarik-button"
 import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 import useClaimableToken from "components/hooks/useClaimableToken"
-import useEagerConnect from "components/hooks/useEagerConnect"
-import useInactiveListener from "components/hooks/useInactiveListener"
 import useNft from "components/hooks/useNft"
-import { injected, walletconnect } from "components/utils/connecters"
-import { ErrorStateContext } from "context/error-msg-context"
-import React, { useContext, useEffect, useState } from "react"
-import BeforeConnect from "./before-connect"
-import FrequentlyAskedQuestion from "./frequently-asked-question"
-import { ModalConnect } from "./modal/connect"
+import React, { useEffect, useState } from "react"
 
 const truncate = (string, length) => {
     if (string?.length <= length) return string
@@ -35,12 +23,8 @@ const truncate = (string, length) => {
     )
 }
 
-const HoldToEarnMain = ({ }) => {
-    const { setErrorMsg } = useContext(ErrorStateContext);
-    const [modal, setModal] = useState("")
-    const { library, connector, account, activate, error } = useWeb3React();
-    const [loading, setLoading] = useState("");
-    const [activatingConnector, setActivatingConnector] = useState();
+const HoldToEarnMain = () => {
+    const { account } = useWeb3React();
     const { width } = useWindowSize()
 
     const [trigger, anim] = useScrollAnim()
@@ -55,49 +39,7 @@ const HoldToEarnMain = ({ }) => {
     useEffect(() => {
         setListToken(tokens);
     }, [tokens])
-    useEffect(() => {
-        if (error) {
-            getErrorMessage(error)
-        } else {
-            setErrorMsg("")
-        }
-    }, [error])
 
-    const triedEagerConnect = useEagerConnect();
-    useInactiveListener(!triedEagerConnect || !!activatingConnector);
-    useEffect(() => {
-        if (activatingConnector && activatingConnector === connector) {
-            setActivatingConnector(undefined);
-        }
-    }, [activatingConnector, connector]);
-
-    const onConnect = async (connector) => {
-        setLoading(connector);
-        try {
-            await activate(connector === "walletconnect" ? walletconnect : injected);
-        } catch (error) {
-            cogoToast.error(error, { hideAfter: 3, heading: '' })
-        }
-        setLoading(null)
-        setModal(null)
-    };
-    console.log("is loading", isLoading)
-    const getErrorMessage = (error) => {
-        if (error instanceof NoEthereumProviderError) {
-            setErrorMsg(
-                "No Ethereum browser extension detected, install MetaMask on desktop or visit from a App browser on mobile."
-            );
-        } else if (error instanceof UnsupportedChainIdError) {
-            setErrorMsg("You're connected to an unsupported network.");
-        } else if (
-            error instanceof UserRejectedRequestErrorInjected ||
-            error instanceof UserRejectedRequestErrorWalletConnect
-        ) {
-            setErrorMsg("Please authorize this website to access your Ethereum account.");
-        } else {
-            setErrorMsg("An unknown error occurred. Check the console for more details.");
-        }
-    };
     return (
         <>
             {account ? (
@@ -261,10 +203,10 @@ const HoldToEarnMain = ({ }) => {
                                                     </div>
                                                 </div>
                                             )}
-                                            <AvarikButton
+                                            {/* <AvarikButton
                                                 text="Play Game Demo Now"
                                                 link="https://game-avariksaga-stag.agatedev.net/"
-                                            />
+                                            /> */}
                                         </div>
                                     </div>
                                 </div>
@@ -273,7 +215,6 @@ const HoldToEarnMain = ({ }) => {
                     ) : null}
                 </div>
             </section>
-            <ModalConnect modal={modal} setModal={setModal} loading={loading} onConnect={onConnect} />
         </>
     )
 }

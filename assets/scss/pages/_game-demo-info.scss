@@ -33,6 +33,10 @@
         align-items: flex-start;
         flex-direction: column;
         height: 100%;
+        @include media-breakpoint-down(sm) {
+            justify-content: flex-end;
+            padding-bottom: 5rem;
+        }
         .content {
             width: 50%;
             @include media-breakpoint-down(sm) {
@@ -48,6 +52,23 @@
                 text-align: start;
                 font-weight: 300;
                 width: 80%;
+            }
+            .coming-soon-box {
+                padding: 1rem 2rem;
+                width: 80%;
+                background: linear-gradient(
+                    270deg,
+                    rgba($white, 0) 5.67%,
+                    rgba($white, 0.63) 24.19%,
+                    rgba($white, 0.7) 50.31%,
+                    rgba($white, 0.63) 72.6%,
+                    rgba($white, 0) 94.6%
+                );
+                font-size: 1.25rem;
+                font-weight: $font-weight-bold;
+                color: $black;
+                font-family: $font-family-sans-serif;
+                text-align: center;
             }
         }
     }

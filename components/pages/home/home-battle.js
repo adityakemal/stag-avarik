@@ -10,13 +10,13 @@ const HomeBattle = () => {
                     <div className="content">
                         <h1 className={`title ${anim(1)}`}>Battle</h1>
                         <p className={`description mb-5 ${anim(2)}`}>
-                            The Avarik Saga battle system is a thrilling adventure that requires strategy and finesse, where players must utilize their heroes’ skills to achieve the best of this riveting world.
+                            The Avarik Saga battle system is a thrilling adventure that requires strategy and finesse, where players must utilize their Avarik's skills to achieve the best of this riveting world.
                         </p>
-                        <AvarikButton
+                        {/* <AvarikButton
                             text="Try Game Demo Now"
                             link="https://game-avariksaga-stag.agatedev.net/"
                             target="_blank"
-                        />
+                        /> */}
                     </div>
                 </div>
             </div>

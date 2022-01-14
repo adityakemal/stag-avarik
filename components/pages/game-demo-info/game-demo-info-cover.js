@@ -11,13 +11,16 @@ const GameDemoInfoCover = () => {
                         <h1 className={`title ${anim(1)}`}>Game Demo</h1>
                         <p className={`description mb-5 ${anim(2)}`}>
                             Try the exclusive Avarik Saga Game Demo and experience the immersive world of Avarus and its valorous warriors. This demo showcases the best that this fresh, exciting universe has to offer. Train Heroes and unleash your creativity by developing the expansive lands, and lead your faction to victory.                        </p>
-                        <AvarikButton
+                        {/* <AvarikButton
                             text="Try Game Demo"
                             variant="gold"
                             link="https://game-avariksaga-stag.agatedev.net/"
                             target="_blank"
                             className={anim(3)}
-                        />
+                        /> */}
+                        <div className="coming-soon-box">
+                            Coming Soon
+                        </div>
                     </div>
                 </div>
             </div>

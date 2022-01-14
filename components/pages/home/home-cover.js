@@ -18,12 +18,12 @@ const HomeCover = () => {
             Early Access
           </div>
           <div className="row justify-content-center">
-            <AvarikButton
+            {/* <AvarikButton
               text="Demo"
               className="mx-5 mb-sm-4"
               sideLeftClassName="side-left-btn-cover"
               sideRightClassName="side-right-btn-cover"
-            />
+            /> */}
             <AvarikButton
               text="Trailer"
               className="mx-5 mb-sm-4"

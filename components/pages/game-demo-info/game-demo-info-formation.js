@@ -15,7 +15,7 @@ const GameDemoInfoFormation = () => {
                         <div className="col-md-5 col-text">
                             <h1 className={anim(2, "fadeInDown")}>Character & Team Formation</h1>
                             <p className={`text-justify w-100 ${anim(3, "fadeInDown")}`}>
-                                Each player has the opportunity to build their own unique Heroes formation. With individual traits and rarity, each character represents a distinctive set of skill, power, and individuality. Create the team that will lead you to glory.
+                                Each player has the opportunity to build their own unique Avariks formation. With individual traits and rarity, each character represents a distinctive set of skill, power, and individuality. Create the team that will lead you to glory.
                             </p>
                         </div>
                     </div>

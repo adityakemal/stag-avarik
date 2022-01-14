@@ -1,9 +1,39 @@
-import AvarikButton from "components/avarik-saga/avarik-button"
+import { useWeb3React } from "@web3-react/core"
 import holdToEarnImage from "assets/img/vortem/5b_staking_image.png"
+import cogoToast from "cogo-toast"
+import AvarikButton from "components/avarik-saga/avarik-button"
+import useEagerConnect from "components/hooks/useEagerConnect"
+import useInactiveListener from "components/hooks/useInactiveListener"
+import { injected, walletconnect } from "components/utils/connecters"
+import { useEffect, useState } from "react"
+import { ModalConnect } from "./modal/connect"
 
-const BeforeConnect = ({ setModal }) => {
+const BeforeConnect = () => {
+    const { activate, connector } = useWeb3React();
+    const [modal, setModal] = useState(null)
+    const [loading, setLoading] = useState(null)
+    const triedEagerConnect = useEagerConnect();
+    const [activatingConnector, setActivatingConnector] = useState();
+    useInactiveListener(!triedEagerConnect || !!activatingConnector);
+    useEffect(() => {
+        if (activatingConnector && activatingConnector === connector) {
+            setActivatingConnector(undefined);
+        }
+    }, [activatingConnector, connector]);
+    const onConnect = async (connector) => {
+        setLoading(connector);
+        try {
+            await activate(connector === "walletconnect" ? walletconnect : injected);
+        } catch (error) {
+            console.log("err", error)
+            cogoToast.error(error, { hideAfter: 3, heading: '' })
+        }
+        setLoading(null)
+        setModal(null)
+    };
     return (
         <section className="sc-before-connect">
+            <ModalConnect modal={modal} setModal={setModal} loading={loading} onConnect={onConnect} />
             <div className="py-main container mw-xl">
                 <div className="row">
                     <div className="col-md-5 col-text">
