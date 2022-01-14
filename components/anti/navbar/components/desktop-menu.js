@@ -27,9 +27,6 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
       <div className={`desktop-menu d-none d-${navExpand}-flex`}>
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            {/* <Link className="nav-link" activeClassName="active" to="/">
-              Game Info
-            </Link> */}
             <div className="nav-link">
               Game Info
               <img src={iconDropdown} alt="" className="img-fluid ic-dropdown" />

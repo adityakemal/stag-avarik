@@ -1,6 +1,7 @@
 import knight from "assets/img/common/icon_knight.png"
 import { useScrollAnim } from "components/hooks/hooks"
 import AvarikCards from "components/avarik-saga/avarik-cards"
+import router from "next/router"
 
 const HomeEquipment = () => {
     const [trigger, anim] = useScrollAnim()
@@ -18,6 +19,7 @@ const HomeEquipment = () => {
                                 image={knight}
                                 imgClassName={`icon ${anim(3)}`}
                                 label="Weapon"
+                                onClick={() => router.push("/weapons")}
                             />
                         </div>
                         <div className="col-md-4 col-item">
@@ -25,6 +27,7 @@ const HomeEquipment = () => {
                                 image={knight}
                                 imgClassName={`icon ${anim(4)}`}
                                 label="Armors"
+                                onClick={() => router.push("/armors")}
                             />
                         </div>
                     </div>
