@@ -30,7 +30,7 @@
             .heading {
                 @include media-breakpoint-down(sm) {
                     margin-bottom: 0;
-                    margin-top: 1rem;
+                    margin-top: 1.5rem;
                 }
             }
             .col-img {
@@ -58,18 +58,29 @@
                 }
             }
             .avarik-button {
+                .side-left {
+                    left: -29px;
+                }
+                .side-right {
+                    right: -29px;
+                }
                 @include media-breakpoint-down(sm) {
                     // width: 85%;
                     text-align: center;
                     margin-left: auto;
                     margin-right: auto;
                     margin-bottom: 2rem;
-                }
-                .side-left {
-                    left: -29px;
-                }
-                .side-right {
-                    right: -29px;
+                    width: 175px;
+                    height: 45px;
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                    font-size: 0.75rem;
+                    .side-left {
+                        left: -24px;
+                    }
+                    .side-right {
+                        right: -24px;
+                    }
                 }
             }
         }
@@ -110,6 +121,9 @@
                 @include media-breakpoint-down(sm) {
                     margin-bottom: 0;
                     margin-top: 2rem;
+                    .title {
+                        color: $white;
+                    }
                 }
             }
 
@@ -162,15 +176,17 @@
             .col-text {
                 text-align: left;
                 .description {
-                    &.squire,
-                    &.swordman,
-                    &.knight {
-                        margin-bottom: 3.5rem;
-                    }
-                    &.archer,
-                    &.marksman,
-                    &.fletcher {
-                        margin-bottom: 3.75rem;
+                    @include media-breakpoint-up(md) {
+                        &.squire,
+                        &.swordman,
+                        &.knight {
+                            margin-bottom: 3.5rem;
+                        }
+                        &.archer,
+                        &.marksman,
+                        &.fletcher {
+                            margin-bottom: 3.75rem;
+                        }
                     }
                     font-size: 1.1rem;
                     @include media-breakpoint-down(sm) {
