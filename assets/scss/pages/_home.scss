@@ -191,7 +191,7 @@ body {
         }
         color: $black;
         @include media-breakpoint-down(sm) {
-          font-size: 0.875rem;
+          font-size: 0.75rem;
         }
       }
       .img-paper {
@@ -201,6 +201,11 @@ body {
         top: 0;
         left: 0;
         z-index: -1;
+      }
+      .avarik-button {
+        @include media-breakpoint-down(sm) {
+          width: 85% !important;
+        }
       }
     }
   }
