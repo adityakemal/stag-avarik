@@ -184,6 +184,9 @@ body {
       }
       h1 {
         color: $black;
+        @include media-breakpoint-down(sm) {
+          font-size: 1.25rem;
+        }
       }
       p {
         strong {
@@ -202,9 +205,27 @@ body {
         left: 0;
         z-index: -1;
       }
+      // .avarik-button {
+      //   @include media-breakpoint-down(sm) {
+      //     width: 85% !important;
+      //   }
+      // }
       .avarik-button {
         @include media-breakpoint-down(sm) {
-          width: 85% !important;
+          // width: 85%;
+          margin-left: auto;
+          margin-right: auto;
+          width: 175px !important;
+          height: 45px;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          font-size: 0.75rem;
+          .side-left {
+            left: -24px;
+          }
+          .side-right {
+            right: -24px;
+          }
         }
       }
     }
