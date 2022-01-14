@@ -225,9 +225,9 @@
   }
   p {
     text-align: center;
+    font-size: 1rem;
     @include media-breakpoint-up(md) {
       text-align: left;
-      font-size: 1.25rem;
       margin-bottom: 0.5rem;
     }
   }

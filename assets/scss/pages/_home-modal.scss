@@ -51,6 +51,10 @@
                 }
                 .avarik-button {
                     width: 90%;
+                    text-align: center;
+                    &::after {
+                        left: 0;
+                    }
                 }
             }
             .avarik-button {
@@ -60,6 +64,7 @@
                     margin-left: auto;
                     margin-right: auto;
                     margin-bottom: 2rem;
+
                 }
                 .side-left {
                     left: -29px;

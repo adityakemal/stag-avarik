@@ -163,11 +163,11 @@ const WeaponsMain = () => {
               />
             </div>
             <div className="col-md-6 col-xl-5 col-text">
-              <h1 className={`mb-4 ${anim(2)} d-none d-md-block`}>Hold to Earn Mechanic</h1>
+              <h1 className={`${anim(2)} d-none d-md-block`}>Hold to Earn Mechanic</h1>
               <p className={`${anim2(3)}`}>
                 For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
               </p>
-              <p className={`${anim2(4)}`}>
+              <p className={`mb-4 ${anim2(4)}`}>
                 You can claim your $VORTEM tokens once the game is officially launched.
               </p>
               <AvarikButton text="Learn More" className="px-5" link="/collect-in-game-currency" />
