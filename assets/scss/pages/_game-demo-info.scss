@@ -86,25 +86,28 @@
             padding: 7.5rem 3.5rem;
             display: flex !important;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             text-align: center;
+            background: url("../../img/game-demo/bg_demo-tutorial.png") no-repeat center center;
+            background-size: contain;
             @include media-breakpoint-down(md) {
                 height: 500px;
             }
+            @include media-breakpoint-down(sm) {
+                justify-content: center;
+            }
         }
-        .tutorial-1 {
-            background: url("../../img/game-demo/paper-1.png") no-repeat center center;
-            background-size: cover;
-        }
-        .tutorial-2 {
-            background: url("../../img/game-demo/paper-2.png") no-repeat center center;
-            background-size: cover;
-        }
-        .tutorial-3 {
-            background: url("../../img/game-demo/paper-3.png") no-repeat center center;
-            background-size: cover;
-        }
+        // .tutorial-1 {
+        // }
+        // .tutorial-2 {
+        //     background: url("../../img/game-demo/paper-2.png") no-repeat center center;
+        //     background-size: cover;
+        // }
+        // .tutorial-3 {
+        //     background: url("../../img/game-demo/paper-3.png") no-repeat center center;
+        //     background-size: cover;
+        // }
     }
 }
 

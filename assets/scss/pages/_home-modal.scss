@@ -64,7 +64,6 @@
                     margin-left: auto;
                     margin-right: auto;
                     margin-bottom: 2rem;
-
                 }
                 .side-left {
                     left: -29px;
@@ -93,7 +92,7 @@
         width: 100%;
         margin: auto;
         .close {
-            top: 1rem;
+            top: 2rem;
             right: 5rem;
             @include media-breakpoint-down(sm) {
                 top: 3rem;
@@ -163,6 +162,16 @@
             .col-text {
                 text-align: left;
                 .description {
+                    &.squire,
+                    &.swordman,
+                    &.knight {
+                        margin-bottom: 3.5rem;
+                    }
+                    &.archer,
+                    &.marksman,
+                    &.fletcher {
+                        margin-bottom: 3.75rem;
+                    }
                     font-size: 1.1rem;
                     @include media-breakpoint-down(sm) {
                         font-size: 0.85rem;

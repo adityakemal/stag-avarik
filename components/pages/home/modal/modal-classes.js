@@ -25,8 +25,8 @@ const ModalClasses = ({ modal, setModal, selectedClasses }) => {
                                 <img className="img-fluid" src={item?.img} />
                             </div>
                             <div className="col-7 col-text">
-                                <h1 className="title">{item?.title}</h1>
-                                <p className="description">{item?.text}</p>
+                                <h1 className={`title ${item.id}`}>{item?.title}</h1>
+                                <p className={`description ${item.id}`}>{item?.text}</p>
                                 <div className="d-flex flex-row align-items-center mb-2">
                                     <img src={star} alt="" className="icon-star" />
                                     <h5 className="mb-0 ml-2 mt-auto">
