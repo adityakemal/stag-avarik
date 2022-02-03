@@ -4,6 +4,7 @@ import { Button } from "components/anti/buttons/buttons"
 import { scroller } from "react-scroll"
 import paper from "assets/img/home/paper-3.png"
 import iconDropdown from "assets/img/common/icon_dropdown.png"
+import AvarikButton from "components/avarik-saga/avarik-button"
 
 const gameInfo = [
   { name: "Class", link: "/class" },
@@ -58,6 +59,13 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               Hold to Earn
             </Link>
           </li>
+          {/* <AvarikButton
+            variant="white"
+            text="Connect Wallet"
+            // className="mx-5 mb-sm-4"
+            // sideLeftClassName="side-left-btn-cover"
+            // sideRightClassName="side-right-btn-cover"
+          /> */}
           {/* <li className="nav-item">
             <i className="air ai-volume ic-music"></i>
           </li> */}

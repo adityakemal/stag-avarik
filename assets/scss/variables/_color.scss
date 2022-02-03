@@ -73,6 +73,9 @@ $teal:        #20c997 !default;
 $cyan:        #17a2b8 !default;
 $golden:      #cba67d !default; // Antikode
 $golden-dark: #939087 !default; // Avarik Saga
+$brown:       #423B38 !default; // Avarik Saga Revamp
+$brown-light: #D8D3C4 !default; // Avarik Saga Revamp
+
 
 
 // Brand Colors
@@ -127,7 +130,7 @@ $colors: map-merge(
   $colors
 );
 
-$primary:     $purple; // Shark Outlaw Squad
+$primary:     $brown; // Avarik Saga
 $secondary:   $gray-500; // Antikode
 $success:     $green;
 $info:        $cyan;

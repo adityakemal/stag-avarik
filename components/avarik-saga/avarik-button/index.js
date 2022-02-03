@@ -1,5 +1,7 @@
 import sideLeft from "assets/img/common/side-button-left.png"
 import sideRight from "assets/img/common/side-button-right.png"
+import sideLeftLight from "assets/img/common/side-button-left-light.png"
+import sideRightLight from "assets/img/common/side-button-right-light.png"
 import sideLeftGold from "assets/img/common/side-button-left-gold.png"
 import sideRightGold from "assets/img/common/side-button-right-gold.png"
 import { Link } from "components/anti"
@@ -21,6 +23,8 @@ const AvarikButton = ({
                 <div className="overlay-gold" />
                 <img src={sideLeft} className={`side-left white ${sideLeftClassName}`} alt="" />
                 <img src={sideRight} className={`side-right white ${sideRightClassName}`} alt="" />
+                <img src={sideLeftLight} className={`side-left light ${sideLeftClassName}`} alt="" />
+                <img src={sideRightLight} className={`side-right light ${sideRightClassName}`} alt="" />
                 <img src={sideLeftGold} className={`side-left gold ${sideLeftClassName}`} alt="" />
                 <img src={sideRightGold} className={`side-right gold ${sideRightClassName}`} alt="" />
                 {text}
@@ -33,6 +37,8 @@ const AvarikButton = ({
             <div className="overlay-gold" />
             <img src={sideLeft} className={`side-left white ${sideLeftClassName}`} alt="" />
             <img src={sideRight} className={`side-right white ${sideRightClassName}`} alt="" />
+            <img src={sideLeftLight} className={`side-left light ${sideLeftClassName}`} alt="" />
+            <img src={sideRightLight} className={`side-right light ${sideRightClassName}`} alt="" />
             <img src={sideLeftGold} className={`side-left gold ${sideLeftClassName}`} alt="" />
             <img src={sideRightGold} className={`side-right gold ${sideRightClassName}`} alt="" />
             {text}

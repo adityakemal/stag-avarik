@@ -14,8 +14,8 @@ import DesktopMenu from "./components/desktop-menu"
 import MobileMenu from "./components/mobile-menu"
 import SearchMenu from "./components/search-menu"
 
-import logoDark from "assets/img/common/logo_main-icon-rounded.png"
-import logoLight from "assets/img/common/logo_main-icon-rounded.png"
+import logoDark from "assets/img/common/logo-navbar.png"
+import logoLight from "assets/img/common/logo-navbar.png"
 
 export const Navbar = () => {
   // Navbar expand config
@@ -162,7 +162,7 @@ export const Navbar = () => {
       {/* When giving .navbar-expand-*, don't forget to modify the variables on _navbar.scss */}
       <nav
         className={`
-          navbar ${navTheme} navbar-expand-${navExpand} ${navPosition} transparent
+          navbar ${navTheme} navbar-expand-${navExpand} ${navPosition}
           ${navScroll ? "is-scrolled" : ""}
         `}
       >

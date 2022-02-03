@@ -22,19 +22,19 @@
     }
   }
   .navbar-main {
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      height: 125px;
-      width: 100%;
-      left: 0;
-      opacity: 0;
-      transition: $transition-base;
-      z-index: 1;
-      pointer-events: none;
-      @include gradient-y-to-bottom($black, rgba($black, 0));
-    }
+    // &:after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   height: 125px;
+    //   width: 100%;
+    //   left: 0;
+    //   opacity: 0;
+    //   transition: $transition-base;
+    //   z-index: 1;
+    //   pointer-events: none;
+    //   @include gradient-y-to-bottom($black, rgba($black, 0));
+    // }
     .container {
       position: relative;
       z-index: 2;
@@ -366,7 +366,7 @@
       }
     }
     .navbar-main {
-      background: $dark; 
+      background: $primary; 
       .nav-item {
         .nav-toggler .icon-bar { 
           background: $white;

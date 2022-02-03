@@ -13,6 +13,7 @@ import { Link, Social, Modal } from "components/anti"
 import { scroller } from "react-scroll"
 
 import logoDark from "assets/img/common/logo_footer.png"
+import ornament from "assets/img/common/ornament.png"
 
 export const Footer = () => {
   const [modal, setModal] = useState(null)
@@ -129,6 +130,7 @@ export const Footer = () => {
         </section>
         <section className="footer-bottom">
           <div className="container">
+            <img src={ornament} className="img-fluid img-ornamen mb-4" alt="" />
             <div className="row w-100">
               <div className="col-md-6 col-left">
                 © {year} Avarik Saga. Site by{" "}
@@ -136,28 +138,15 @@ export const Footer = () => {
                   Antikode
                 </a>
                 .
-                <div className="d-none d-md-block">
+              </div>
+              <div className="col-md-6 col-right">
+                <div className="d-none d-md-block mt-3">
                   <a
                     href="https://etherscan.io/address/0x127e479ac59a1ea76afdedf830fecc2909aa4cae"
                     target="_blank"
                   >
                     https://etherscan.io/address/0x127e479ac59a1ea76afdedf830fecc2909aa4cae
                   </a>
-                </div>
-              </div>
-              <div className="col-md-6 col-right">
-                <div
-                  className="btn btn-link"
-                  onClick={() => setModal("modal-privacy")}
-                >
-                  Privacy Policy
-                </div>
-                <span className="divider">|</span>
-                <div
-                  className="btn btn-link"
-                  onClick={() => setModal("modal-terms")}
-                >
-                  Terms & Conditions
                 </div>
               </div>
             </div>
