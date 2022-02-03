@@ -7,7 +7,7 @@ $home-anim-delay: 1s; // default 3s
 
 @import "./home-modal";
 
-body {
+body.bd-home {
   @include gradient-y-to-bottom($purple, $purple-alt);
   &:after {
     content: "";

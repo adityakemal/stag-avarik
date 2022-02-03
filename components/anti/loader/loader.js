@@ -14,8 +14,8 @@ import Lottie from "react-lottie";
 
 import { LoadingContext } from "context/loading-context";
 
-import logoDark from "assets/img/common/logo_main-dark.png";
-import logoLight from "assets/img/common/logo_main-light.png";
+import logoDark from "assets/img/common/logo_main-icon.png";
+import logoLight from "assets/img/common/logo_main-icon.png";
 import loadingJSON from "assets/lottie/loading.json";
 
 export const Loader = ({ theme, variant, className, effect }) => {

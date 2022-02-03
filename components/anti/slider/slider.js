@@ -11,6 +11,8 @@
 import React from "react"
 
 import ReactSlick from "react-slick"
+import arrowRight from "assets/img/common/arrow-right.png"
+import arrowLeft from "assets/img/common/arrow-left.png"
 
 export const Slider = ({
   forwardKey,
@@ -57,10 +59,14 @@ export const Slider = ({
   rowsSmDown,
   className,
   children,
+  customPaging,
+  nextArrow,
+  prevArrow,
 }) => {
   const settings = {
     key: forwardKey,
     ref: forwardRef,
+    customPaging,
     className: `slider ${className} 
       ${noGutter && "slick-px-0"}
       ${visibleInitial ? "show-initial" : ""} 
@@ -77,6 +83,8 @@ export const Slider = ({
     slidesToShow: showInitial,
     slidesToScroll: scrollInitial,
     rows: rowsInitial,
+    nextArrow: nextArrow,
+    prevArrow: prevArrow,
     responsive: [
       {
         breakpoint: 1399,
@@ -138,6 +146,7 @@ Slider.defaultProps = {
   infinite: false,
   fade: false,
   noGutter: false,
+  customPaging: (i) => <button>{i + 1}</button>,
   visibleInitial: true,
   visibleXxlDown: true,
   visibleXlDown: true,
@@ -156,6 +165,8 @@ Slider.defaultProps = {
   arrowsLgDown: true,
   arrowsMdDown: false,
   arrowsSmDown: false,
+  nextArrow: <img src={arrowRight} />,
+  prevArrow: <img src={arrowLeft} />,
   showInitial: 4,
   showXxlDown: 4,
   showXlDown: 4,
