@@ -9,11 +9,17 @@
     position: relative;
     padding-top: 7.5rem;
     padding-bottom: 7.5rem;
+    @include media-breakpoint-down(lg) {
+        height: fit-content !important;
+    }
     .container {
         .col-text {
             position: relative;
             text-align: center;
             padding: 3rem 3rem;
+            @include media-breakpoint-down(sm) {
+                padding: 1rem;
+            }
             .title-wrapper {
                 position: relative;
                 display: flex;
@@ -42,6 +48,9 @@
         .col-img {
             position: relative;
             width: 100%;
+            @include media-breakpoint-down(sm) {
+                margin-top: -2.5rem;
+            }
             .img-book {
                 position: absolute;
                 width: auto;
@@ -61,7 +70,13 @@
                         height: 350px;
                         margin-left: auto;
                         margin-right: auto;
-                        .col-text {
+                        @include media-breakpoint-down(lg) {
+                            width: 90% !important;
+                        }
+                        @include media-breakpoint-down(sm) {
+                            width: 100% !important;
+                        }
+                        > .col-text {
                             color: $white;
                             display: flex;
                             flex-direction: column;
@@ -70,20 +85,40 @@
                             padding: 0;
                             padding-left: 3.5rem;
                             padding-right: 1.5rem;
+                            @include media-breakpoint-down(md) {
+                                padding-left: 2.85rem;
+                                padding-top: 2rem;
+                                p {
+                                    font-size: 0.875rem;
+                                }
+                            }
+                            @include media-breakpoint-down(sm) {
+                                padding: 2rem 1rem 0 1.75rem;
+                                p {
+                                    font-size: 0.65rem;
+                                }
+                            }
                             .title-wrapper {
                                 .logo {
                                     width: 10%;
                                     top: -1.75rem;
+                                    @include media-breakpoint-down(sm) {
+                                        top: -1.5rem;
+                                    }
                                 }
                                 h4 {
                                     margin-bottom: 0;
                                 }
+                                @include media-breakpoint-down(md) {
+                                    margin-bottom: 0.5rem;
+                                }
                             }
                         }
-                        .col-img {
+                        > .col-img {
                             padding: 1rem 1rem 2rem 1rem;
                             display: flex;
                             align-items: center;
+                            margin: 0 !important;
                         }
                     }
                 }
@@ -91,19 +126,41 @@
                 .slick-next {
                     top: 117.5%;
                     z-index: 2;
+                    @include media-breakpoint-down(md) {
+                        top: 115%;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        top: 100%;
+                    }
                 }
                 .slick-prev {
                     left: 25%;
+                    @include media-breakpoint-down(md) {
+                        left: 15%;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        left: 5%;
+                    }
                 }
                 .slick-next {
                     right: 25%;
+                    @include media-breakpoint-down(md) {
+                        right: 15%;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        right: 5%;
+                    }
                 }
                 .slick-dots {
                     text-align: center;
                     bottom: -25%;
                     margin-top: 2rem;
+                    @include media-breakpoint-down(md) {
+                        bottom: -22%;
+                    }
                     @include media-breakpoint-down(sm) {
                         width: 100% !important;
+                        bottom: -7%;
                     }
                     li {
                         width: 70px;

@@ -36,11 +36,11 @@ const data = [
 const WeaponsMain = () => {
   const [trigger, anim] = useScrollAnim()
   return (
-    <section className="sc-weapons-main" ref={trigger}>
+    <section className="sc-weapons-main cover-full" ref={trigger}>
       <div className="py-main h-100">
         <div className="container">
           <div className="row">
-            <div className="col-md-5 col-text">
+            <div className="col-lg-5 col-text">
               <div className="title-wrapper">
                 <img src={logo} className="logo" alt="" />
                 <img src={left} className="left" alt="" />
@@ -53,7 +53,7 @@ const WeaponsMain = () => {
                 Weapons hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for weapons. The rarity influences 2 key principles in the game: Greater base stats on the weapon. Enhances the skill power of both active and passive skills of the Hero.
               </p>
             </div>
-            <div className="col-md-7 col-img">
+            <div className="col-lg-7 col-img">
               <img src={book} className="img-fluid img-book" alt="" />
               <Slider
                 fade
