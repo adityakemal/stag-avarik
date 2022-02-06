@@ -14,16 +14,16 @@ const HomeCover = () => {
       <div className="cover-cta">
         <img src={logoMain} className="cover-logo" alt="Logo" />
         <div className="cta-content">
-          <div className="early-access-box">
+          {/* <div className="early-access-box">
             Coming Soon
-          </div>
+          </div> */}
           <div className="row justify-content-center">
-            {/* <AvarikButton
+            <AvarikButton
               text="Demo"
               className="mx-5 mb-sm-4"
               sideLeftClassName="side-left-btn-cover"
               sideRightClassName="side-right-btn-cover"
-            /> */}
+            />
             <AvarikButton
               text="Trailer"
               className="mx-5 mb-sm-4"
@@ -41,9 +41,6 @@ const HomeCover = () => {
         imgHeight="h-vh-100"
         title=""
         text=""
-        scrollHint
-        scrollHintText="Scroll to Explore"
-        scrollHintLink="saga-content"
       />
     </div>
   )

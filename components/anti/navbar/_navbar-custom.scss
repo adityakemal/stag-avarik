@@ -56,9 +56,9 @@
 
 .navbar-brand {
   padding-left: 0.75rem;
-  width: 85px;
+  width: 135px;
   @include media-breakpoint-up($navbar-expand-up) {
-    width: 100px;
+    width: 150px;
   }
 }
 
