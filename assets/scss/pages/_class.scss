@@ -5,28 +5,9 @@
     transition: all 0.5s;
     position: relative;
     transition: all 0.5s ease;
-    &:after {
-        content: "";
-        @include gradient-y-to-top($black, rgba($black, 0), 5%, 100%);
-        position: absolute;
-        width: 100%;
-        height: 20%;
-        z-index: 0;
-        bottom: 0;
-        left: 0;
-        @include media-breakpoint-down(sm) {
-            height: 50%;
-        }
-    }
-    &.knight {
-        background: url("../../img/knights/bg_knight.jpeg") no-repeat center center;
-    }
-    &.wizard {
-        background: url("../../img/wizards/bg_wizard.jpeg") no-repeat center center;
-    }
-    &.marksman {
-        background: url("../../img/marksmen/bg_marksman.jpeg") no-repeat center center;
-    }
+    background: url("../../img/common/bg_class.png") no-repeat center center;
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
     position: relative;
     .container {
         height: 100%;
@@ -34,78 +15,154 @@
         justify-content: center;
         flex-direction: column;
         .row {
-            margin-top: -10rem;
             .col-text {
-                width: 40%;
-                .label {
-                    color: $orange-light;
-                }
-                .title,
-                .description {
-                    color: $white;
-                }
-                .title {
-                    font-size: 2.5rem;
-                }
+                position: relative;
+                text-align: center;
+                padding: 3rem 3rem;
                 @include media-breakpoint-down(sm) {
-                    width: 100%;
-                    order: 1;
-                    margin-bottom: -5rem;
-                    z-index: 1;
+                    padding: 1rem;
+                }
+                .title-wrapper {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                    .left,
+                    .right {
+                        width: 15%;
+                        object-fit: contain;
+                    }
+                    .logo {
+                        position: absolute;
+                        width: 25%;
+                        left: 0;
+                        right: 0;
+                        margin-left: auto;
+                        margin-right: auto;
+                        text-align: center;
+                    }
+                    h1 {
+                        margin-bottom: 0;
+                    }
                 }
             }
             .col-img {
                 display: flex;
-                justify-content: center;
+                justify-content: space-around;
                 position: relative;
-                @include media-breakpoint-down(sm) {
-                    order: 0;
-                }
-                .parallax-character {
-                    position: absolute;
-                    top: -45%;
-                    z-index: 0;
-                    .character {
-                        transition: all 0.5s ease;
-                        max-height: 600px !important;
-                    }
-                    @include media-breakpoint-down(sm) {
-                        position: unset;
-                        .character {
-                            margin-bottom: -7.5rem;
-                            z-index: -1;
-                            max-height: 450px !important;
-                        }
-                    }
+                .img-char {
+                    width: 25%;
+                    cursor: pointer;
                 }
             }
         }
-        .row-indicator {
-            position: absolute;
-            bottom: 2.5rem;
-            width: 90%;
-            justify-content: center;
-            @include media-breakpoint-down(sm) {
-                width: 95%;
-                bottom: 1.5rem;
-                z-index: 2;
+    }
+}
+
+// modal
+
+.modal-classes {
+    overflow: visible;
+    max-width: 720px !important;
+    .modal-wrapper {
+        background: rgba($black, 0) url("../../img/common/paper.png") no-repeat center center;
+        background-size: contain;
+        .close {
+            i {
+                color: $white;
             }
-            .avarik-cards-wrapper {
-                .indicator-img {
-                    width: 75px;
-                    object-fit: contain;
-                    @include media-breakpoint-down(sm) {
-                        width: 65px;
-                    }
+            // top: 2rem;
+            // right: 2rem;
+            @include media-breakpoint-up(md) {
+                top: 3rem;
+                right: 3rem;
+            }
+            @include media-breakpoint-up(lg) {
+                top: 2rem;
+                right: -1rem;
+            }
+        }
+        .modal-body {
+            .modal-content {
+                background: rgba($black, 0);
+                padding: 2rem !important;
+                @include media-breakpoint-down(xs) {
+                    padding: 0.25rem !important;
                 }
-                @include media-breakpoint-down(sm) {
-                    .avarik-cards {
-                        padding: 0.5rem 1.5rem;
-                        width: auto;
-                        p {
-                            font-size: 0.75rem;
+                .title-wrapper {
+                    width: fit-content;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 2.5rem;
+                }
+                .content {
+                    .row {
+                        @include media-breakpoint-down(xs) {
+                            margin: 0.5rem 0 !important;
                         }
-                        // height: auto;
+                        .col-text {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            p {
+                                color: $dark;
+                            }
+                            .population-wrapper {
+                                width: 50%;
+                                display: flex;
+                                flex-direction: column;
+                                .img-rarity-label {
+                                    margin-bottom: 1rem;
+                                    @include media-breakpoint-down(xs) {
+                                        margin-bottom: 0.25rem;
+                                    }
+                                }
+                                .population {
+                                    text-align: center;
+                                }
+                            }
+                            @include media-breakpoint-down(xs) {
+                                .title {
+                                    font-size: 0.875rem;
+                                }
+                                .description {
+                                    font-size: 0.65rem;
+                                }
+                                .population {
+                                    font-size: 0.5rem;
+                                }
+                            }
+                        }
+                        .col-img {
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            .img-frame {
+                                position: absolute;
+                                z-index: 1;
+                                width: 90%;
+                                left: 0;
+                                right: 0;
+                                top: 0;
+                                bottom: 0;
+                                margin: auto;
+                                object-fit: contain;
+                            }
+                            .img-rarity {
+                                width: 90%;
+                                object-fit: contain;
+                            }
+                            @include media-breakpoint-down(xs) {
+                                .img-frame {
+                                    width: 75%;
+                                }
+                                .img-rarity {
+                                    width: 75%;
+                                    height: auto;
+                                }
+                            }
+                        }
                     }
                 }
             }

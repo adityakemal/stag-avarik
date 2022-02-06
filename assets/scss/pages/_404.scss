@@ -1,3 +1,7 @@
+.bd-notfound {
+    background: url("../../img/common/bg_common.jpg") center center no-repeat;
+    background-size: cover;
+}
 .sc-notfound {
     height: 100vh !important; // fallback option
     height: calc(var(--vh, 1vh) * 100) !important;

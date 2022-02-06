@@ -1,74 +1,275 @@
-import knightIcon from "assets/img/common/icon_knight.png"
-import marksmanIcon from "assets/img/common/icon_marksmen.png"
-import wizardIcon from "assets/img/common/icon_wizard.png"
-import knight from "assets/img/knights/knight-character.png"
-import marksman from "assets/img/marksmen/marksman-character.png"
-import wizard from "assets/img/wizards/wizard-character.png"
-import AvarikCards from "components/avarik-saga/avarik-cards"
-import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 import { useState } from "react"
-import { Parallax } from "react-scroll-parallax"
 
-const indicator = [
+import { useScrollAnim } from "components/hooks/hooks"
+import { Modal } from "components/anti"
+
+import knightsCommonImg from "assets/img/knights/char_common.jpg"
+import knightsUncommonImg from "assets/img/knights/char_uncommon.jpg"
+import knightsRareImg from "assets/img/knights/char_rare.jpg"
+import knightsEpicImg from "assets/img/knights/char_epic.jpg"
+import wizardsCommonImg from "assets/img/wizards/char_common.jpg"
+import wizardsUncommonImg from "assets/img/wizards/char_uncommon.jpg"
+import wizardsRareImg from "assets/img/wizards/char_rare.jpg"
+import wizardsEpicImg from "assets/img/wizards/char_epic.jpg"
+import marksmenCommonImg from "assets/img/marksmen/char_common.jpg"
+import marksmenUncommonImg from "assets/img/marksmen/char_uncommon.jpg"
+import marksmenRareImg from "assets/img/marksmen/char_rare.jpg"
+import marksmenEpicImg from "assets/img/marksmen/char_epic.jpg"
+import logo from "assets/img/common/logo_main-icon.png"
+import left from "assets/img/common/ornament-left.png"
+import right from "assets/img/common/ornament-right.png"
+import knight from "assets/img/knights/knight.png"
+import marksman from "assets/img/marksmen/marksman.png"
+import wizard from "assets/img/wizards/wizard.png"
+import frame from "assets/img/common/frame-rarity.png"
+import rarityCommon from "assets/img/common/rarity-common.png"
+import rarityUncommon from "assets/img/common/rarity-uncommon.png"
+import rarityRare from "assets/img/common/rarity-rare.png"
+import rarityLegendary from "assets/img/common/rarity-legendary.png"
+
+
+const data = [
     {
         name: "Knight",
-        image: knightIcon,
-        char: knight,
-        description: "Each pledging their allegiance to their own faction, the courageous Knights have survived lethal battles and weathered the worst of storms in this world consumed by indulgence, oppression, and vengeance."
+        img: knight,
+        type: [
+            {
+                title: "Squire",
+                id: "squire",
+                text: "There's more to knighthood than making a mark on the battlefield, like loyalty and chivalry that all Squires possess.",
+                img: knightsCommonImg,
+                population: {
+                    number: "1,656",
+                    percentage: "18.63%",
+                    type: "Common",
+                },
+            },
+            {
+                title: "Swordman",
+                id: "swordman",
+                text: "Take charge and command your garrison as a true, dependable Swordmans hungry for glory and gore.",
+                img: knightsUncommonImg,
+                population: {
+                    number: "1,150",
+                    percentage: "12.94%",
+                    type: "Uncommon",
+                },
+            },
+            {
+                title: "Knight",
+                id: "knight",
+                text: "A title of honour only bestowed to the worthy - roam the lands with your kins to expand your territory.",
+                img: knightsRareImg,
+                population: {
+                    number: "140",
+                    percentage: "1.58%",
+                    type: "Rare",
+                },
+            },
+            {
+                title: "Legendary Knights",
+                id: "legendary-knight",
+                text: "Highly coveted Legendary Knights radiate fearsome auras that will stun even the mightiest of Avarik.",
+                img: knightsEpicImg,
+                population: {
+                    number: "16",
+                    percentage: "0.18%",
+                    type: "Legendary",
+                },
+            },
+        ]
     },
     {
         name: "Wizard",
-        image: wizardIcon,
-        char: wizard,
-        description: "Known as the paragon of magic, the Wizards are a devoted class who dedicate their entire lives to the pursuit of arcane knowledge and mastery. It is their sole resolve to remain superior amid the greedy and the wicked in this realm."
+        img: wizard,
+        type: [
+            {
+                title: "Mage",
+                id: "mage",
+                text: "Mages have devoted their lives to the study and practice of the mystique. An experienced mage can be a deadly force to reckon with.",
+                img: wizardsCommonImg,
+                population: {
+                    number: "1,612",
+                    percentage: "18.13%",
+                    type: "Common",
+                },
+            },
+            {
+                title: "Sorcerer",
+                id: "sorcerer",
+                text: "Seers of Avarik who choose to hide their mysterious powers for themselves, born out of sacred unions of spirits.",
+                img: wizardsUncommonImg,
+                population: {
+                    number: "1,186",
+                    percentage: "13.34%",
+                    type: "Uncommon",
+                },
+            },
+            {
+                title: "Wizard",
+                id: "wizard",
+                text: "Their frenzied dabbles in the supernatural grants them power that transcends the rules of the universe.",
+                img: wizardsRareImg,
+                population: {
+                    number: "140",
+                    percentage: "1.58%",
+                    type: "Rare",
+                },
+            },
+            {
+                title: "Legendary Wizard",
+                id: "legendary-wizard",
+                text: "Born with intelligence and wreathed in Spiritual powers, Legendary Wizards have the power to create and destroy fabrics of Nature and strings of Fate.",
+                img: wizardsEpicImg,
+                population: {
+                    number: "16",
+                    percentage: "0.18%",
+                    type: "Legendary",
+                },
+            },
+        ]
     },
     {
         name: "Marksman",
-        image: marksmanIcon,
-        char: marksman,
-        description: "Though they fight the wars from an unseen distance, one must never overlook them, for they are constantly plotting devious schemes and crafting wily ruses. The Marksmen of Avarik are a snarky, cunning bunch whose aim is always true."
-    },
+        img: marksman,
+        type: [
+            {
+                title: "Archer",
+                id: "archer",
+                text: "With uncanny senses and sharp wit, Archers are the feared, invisible enemy most would first warn newcomers about.",
+                img: marksmenCommonImg,
+                population: {
+                    number: "1,621",
+                    percentage: "18.23%",
+                    type: "Common",
+                },
+            },
+            {
+                title: "Fletcher",
+                id: "fletcher",
+                text: "Masters of their own craft, Fletchers know what it takes for an arrow to always hit its target.",
+                img: marksmenUncommonImg,
+                population: {
+                    number: "1,195",
+                    percentage: "13.44%",
+                    type: "Uncommon",
+                },
+            },
+            {
+                title: "Marksman",
+                id: "marksman",
+                text: "Seasoned warriors and assassins of the land, stealthy Marksman are rarely noticed, until their target falls.",
+                img: marksmenRareImg,
+                population: {
+                    number: "140",
+                    percentage: "1.58%",
+                    type: "Rare",
+                },
+            },
+            {
+                title: "Legendary Marksman",
+                id: "legendary-marksman",
+                text: "Legendary Marksman have the blessings of the True Aim, amplified even more with first-rate tools; their arrogance with the bows and arrows is not without reason.",
+                img: marksmenEpicImg,
+                population: {
+                    number: "16",
+                    percentage: "0.18%",
+                    type: "Legendary",
+                },
+            },
+        ]
+    }
 ]
+
+const rarityLabel = (rarity) => {
+    switch (rarity) {
+        case "Common":
+            return rarityCommon
+        case "Uncommon":
+            return rarityUncommon
+        case "Rare":
+            return rarityRare
+        case "Legendary":
+            return rarityLegendary
+    }
+}
 
 const ClassMain = () => {
     const [trigger, anim] = useScrollAnim()
-    const [selectedFaction, setSelectedFaction] = useState(indicator[0])
-    const { width } = useWindowSize()
+    const [modal, setModal] = useState("modal-classes")
+    const [selectedClasses, setSelectedClasses] = useState(null)
     return (
-        <section className={`sc-class-main cover-full ${selectedFaction.name.toLowerCase()}`} ref={trigger}>
+        <section className={`sc-class-main cover-full`} ref={trigger}>
+            <Modal
+                id="modal-classes"
+                isShowing={modal}
+                hide={() => setModal(null)}
+                className="modal-classes"
+            >
+                <div className="title-wrapper">
+                    <img src={logo} className="logo" alt="" />
+                    <img src={left} className="left" alt="" />
+                    <h1 className={anim(1)}>
+                        {selectedClasses?.name}
+                    </h1>
+                    <img src={right} className="right" alt="" />
+                </div>
+                <div className="content">
+                    {selectedClasses?.type?.map((item, i) => (
+                        <div className="row w-100 mx-0 my-4" key={i}>
+                            <div className="col-7 col-text">
+                                <h4 className={`title ${anim(i + 2)}`}>{item.title}</h4>
+                                <p className={`description ${anim(i + 3)}`}>{item.text}</p>
+                                <div className="population-wrapper">
+                                    <img
+                                        src={rarityLabel(item.population.type)}
+                                        className={`img-fluid img-rarity-label ${anim(i + 4, "revealInUp")}`}
+                                        alt=""
+                                    />
+                                    <h6
+                                        className={`population ${anim(i + 5)}`}>
+                                        {item.population.number} ({item.population.percentage})
+                                    </h6>
+                                </div>
+                            </div>
+                            <div className="col-5 col-img">
+                                <img src={frame} className="img-fluid img-frame" />
+                                <img src={item.img} className={`img-fluid img-rarity ${anim(i + 5, "revealInUp")}`} />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </Modal>
             <div className="py-main h-100">
                 <div className="container">
                     <div className="row justify-content-between">
-                        <div className="col-md-4 col-text">
-                            <h5 className={`label ${anim(1)}`}>Class</h5>
-                            <h1 className={`title ${anim(2)}`}>{selectedFaction.name}</h1>
-                            <p className={`description ${anim(3)}`}>
-                                {selectedFaction.description}
+                        <div className="col-lg-5 col-text">
+                            <div className="title-wrapper">
+                                <img src={logo} className="logo" alt="" />
+                                <img src={left} className="left" alt="" />
+                                <h1 className={anim(1)}>
+                                    Classes
+                                </h1>
+                                <img src={right} className="right" alt="" />
+                            </div>
+                            <p className={anim(2)}>
+                                From chivalrous knights to notorious wizards and cunning marksmen,
+                                these 3 classes in the Avarik Kingdom have to work hand-in-hand to achieve glory.
                             </p>
                         </div>
-                        <div className="col-md-8 col-img">
-                            <Parallax className="parallax-character" x={width > 576 ? [30, 0] : [0, -10]} tagOuter="figure">
+                        <div className="col-lg-7 col-img">
+                            {data.map((item, i) => (
                                 <img
-                                    src={selectedFaction.char}
-                                    className={`character ${anim(4, "revealInDown")}`}
-                                    alt=""
+                                    key={i}
+                                    src={item.img}
+                                    onClick={() => {
+                                        setSelectedClasses(item)
+                                        setModal("modal-classes")
+                                    }}
+                                    className={`img-fluid img-char ${anim(i + 3, "revealInDown")}`}
                                 />
-                            </Parallax>
+                            ))}
                         </div>
-                    </div>
-                    <div className="row row-indicator">
-                        {indicator.map((item) => (
-                            <div className="col-4">
-                                <AvarikCards
-                                    label={item.name}
-                                    image={item.image}
-                                    className="mx-4"
-                                    imgClassName="indicator-img"
-                                    isActive={selectedFaction === item}
-                                    onClick={() => setSelectedFaction(item)}
-                                />
-                            </div>
-                        ))}
                     </div>
                 </div>
             </div>

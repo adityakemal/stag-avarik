@@ -20,30 +20,6 @@
             @include media-breakpoint-down(sm) {
                 padding: 1rem;
             }
-            .title-wrapper {
-                position: relative;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1rem;
-                .left,
-                .right {
-                    width: 15%;
-                    object-fit: contain;
-                }
-                .logo {
-                    position: absolute;
-                    width: 25%;
-                    left: 0;
-                    right: 0;
-                    margin-left: auto;
-                    margin-right: auto;
-                    text-align: center;
-                }
-                h1 {
-                    margin-bottom: 0;
-                }
-            }
         }
         .col-img {
             position: relative;
