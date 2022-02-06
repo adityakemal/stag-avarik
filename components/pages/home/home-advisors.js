@@ -11,9 +11,7 @@ import ireneUmar from "assets/img/advisor/irene-umar.jpeg"
 import pangXueKai from "assets/img/advisor/pang-xue-kai.jpeg"
 import partners from "assets/img/advisor/guilds-and-partners.png"
 import investors from "assets/img/advisor/investors.png"
-import left from "assets/img/common/ornament-left.png"
-import right from "assets/img/common/ornament-right.png"
-import logo from "assets/img/common/logo_main-icon.png"
+import ornament from "assets/img/common/ornament.png"
 
 import { Element } from "react-scroll"
 import AvarikTitle from "components/avarik-saga/avarik-title"
@@ -166,6 +164,7 @@ const HomeAdvisors = () => {
                             ))}
                         </div>
                     </div>
+                    <img src={ornament} className="img-fluid img-ornamen my-4" alt="" />
                     <div className="py-main" ref={trigger2}>
                         <div className={`heading mb-5 ${anim2(1)}`}>
                             <AvarikTitle title="Investors" titleClassName="h2" className="mx-auto" />
@@ -174,7 +173,8 @@ const HomeAdvisors = () => {
                             <img src={investors} className={`img-fluid ${anim2(2)}`} />
                         </div>
                     </div>
-                    <div className="pb-main" ref={trigger2}>
+                    <img src={ornament} className="img-fluid img-ornamen mb-4" alt="" />
+                    <div className="py-main" ref={trigger2}>
                         <div className={`heading mb-5 ${anim2(3)}`}>
                             <AvarikTitle title="Guilds and Partners" titleClassName="h2" className="mx-auto" />
                         </div>
