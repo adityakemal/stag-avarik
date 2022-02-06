@@ -15,17 +15,11 @@ import marksmenCommonImg from "assets/img/marksmen/char_common.jpg"
 import marksmenUncommonImg from "assets/img/marksmen/char_uncommon.jpg"
 import marksmenRareImg from "assets/img/marksmen/char_rare.jpg"
 import marksmenEpicImg from "assets/img/marksmen/char_epic.jpg"
-import logo from "assets/img/common/logo_main-icon.png"
-import left from "assets/img/common/ornament-left.png"
-import right from "assets/img/common/ornament-right.png"
 import knight from "assets/img/knights/knight.png"
 import marksman from "assets/img/marksmen/marksman.png"
 import wizard from "assets/img/wizards/wizard.png"
-import frame from "assets/img/common/frame-rarity.png"
-import rarityCommon from "assets/img/common/rarity-common.png"
-import rarityUncommon from "assets/img/common/rarity-uncommon.png"
-import rarityRare from "assets/img/common/rarity-rare.png"
-import rarityLegendary from "assets/img/common/rarity-legendary.png"
+import AvarikTitle from "components/avarik-saga/avarik-title"
+import ModalRarity from "./modal/modal-rarity"
 
 
 const data = [
@@ -181,77 +175,18 @@ const data = [
     }
 ]
 
-const rarityLabel = (rarity) => {
-    switch (rarity) {
-        case "Common":
-            return rarityCommon
-        case "Uncommon":
-            return rarityUncommon
-        case "Rare":
-            return rarityRare
-        case "Legendary":
-            return rarityLegendary
-    }
-}
-
 const ClassMain = () => {
     const [trigger, anim] = useScrollAnim()
-    const [modal, setModal] = useState("modal-classes")
+    const [modal, setModal] = useState(null)
     const [selectedClasses, setSelectedClasses] = useState(null)
     return (
         <section className={`sc-class-main cover-full`} ref={trigger}>
-            <Modal
-                id="modal-classes"
-                isShowing={modal}
-                hide={() => setModal(null)}
-                className="modal-classes"
-            >
-                <div className="title-wrapper">
-                    <img src={logo} className="logo" alt="" />
-                    <img src={left} className="left" alt="" />
-                    <h1 className={anim(1)}>
-                        {selectedClasses?.name}
-                    </h1>
-                    <img src={right} className="right" alt="" />
-                </div>
-                <div className="content">
-                    {selectedClasses?.type?.map((item, i) => (
-                        <div className="row w-100 mx-0 my-4" key={i}>
-                            <div className="col-7 col-text">
-                                <h4 className={`title ${anim(i + 2)}`}>{item.title}</h4>
-                                <p className={`description ${anim(i + 3)}`}>{item.text}</p>
-                                <div className="population-wrapper">
-                                    <img
-                                        src={rarityLabel(item.population.type)}
-                                        className={`img-fluid img-rarity-label ${anim(i + 4, "revealInUp")}`}
-                                        alt=""
-                                    />
-                                    <h6
-                                        className={`population ${anim(i + 5)}`}>
-                                        {item.population.number} ({item.population.percentage})
-                                    </h6>
-                                </div>
-                            </div>
-                            <div className="col-5 col-img">
-                                <img src={frame} className="img-fluid img-frame" />
-                                <img src={item.img} className={`img-fluid img-rarity ${anim(i + 5, "revealInUp")}`} />
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </Modal>
+            <ModalRarity modal={modal} setModal={setModal} selectedClasses={selectedClasses} />
             <div className="py-main h-100">
                 <div className="container">
                     <div className="row justify-content-between">
                         <div className="col-lg-5 col-text">
-                            <div className="title-wrapper">
-                                <img src={logo} className="logo" alt="" />
-                                <img src={left} className="left" alt="" />
-                                <h1 className={anim(1)}>
-                                    Classes
-                                </h1>
-                                <img src={right} className="right" alt="" />
-                            </div>
+                            <AvarikTitle title="Class" className="w-100" />
                             <p className={anim(2)}>
                                 From chivalrous knights to notorious wizards and cunning marksmen,
                                 these 3 classes in the Avarik Kingdom have to work hand-in-hand to achieve glory.

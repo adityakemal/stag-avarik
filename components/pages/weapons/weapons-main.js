@@ -1,8 +1,5 @@
 import { useScrollAnim } from "components/hooks/hooks"
 import book from "assets/img/common/book.png"
-import left from "assets/img/common/ornament-left.png"
-import right from "assets/img/common/ornament-right.png"
-import logo from "assets/img/common/logo_main-icon.png"
 import logoLight from "assets/img/knights/icon_light.png"
 import knightIcon from "assets/img/common/icon_knight.png"
 import marksmanIcon from "assets/img/common/icon_marksmen.png"
@@ -10,6 +7,7 @@ import wizardIcon from "assets/img/common/icon_wizard.png"
 import knight from "assets/img/weapon/weapon-knight.png"
 import arrowRight from "assets/img/common/arrow-right.png"
 import { Slider } from "components/anti"
+import AvarikTitle from "components/avarik-saga/avarik-title"
 
 const data = [
   {
@@ -41,14 +39,7 @@ const WeaponsMain = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-5 col-text">
-              <div className="title-wrapper">
-                <img src={logo} className="logo" alt="" />
-                <img src={left} className="left" alt="" />
-                <h1 className={anim(1)}>
-                  Weapons
-                </h1>
-                <img src={right} className="right" alt="" />
-              </div>
+              <AvarikTitle title="Weapons" className="w-100" />
               <p className={anim(2)}>
                 Weapons hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for weapons. The rarity influences 2 key principles in the game: Greater base stats on the weapon. Enhances the skill power of both active and passive skills of the Hero.
               </p>
@@ -87,14 +78,7 @@ const WeaponsMain = () => {
                       <img src={item.image} className={`img-fluid ${anim(i + 2, "revealInDown")}`} alt="" />
                     </div>
                     <div className="col-6 col-text">
-                      <div className="title-wrapper">
-                        <img src={logoLight} className="logo" alt="" />
-                        <img src={left} className="left" alt="" />
-                        <h4 className={anim(i + 3)}>
-                          {item.name}
-                        </h4>
-                        <img src={right} className="right" alt="" />
-                      </div>
+                      <AvarikTitle title={item.name} titleClassName="h4" logo={logoLight} />
                       <p className={anim(i + 4)}>{item.description}</p>
                     </div>
                   </div>

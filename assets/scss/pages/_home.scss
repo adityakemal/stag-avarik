@@ -119,6 +119,11 @@ body.bd-home {
     strong {
       color: $white;
     }
+    .avarik-button {
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 1rem;
+      }
+    }
   }
 }
 
@@ -279,6 +284,53 @@ body.bd-home {
           }
         }
       }
+    }
+  }
+}
+
+// advisors
+
+// Team
+.sc-home-advisors {
+  position: relative;
+  z-index: 2;
+  margin-bottom: -1.25rem;
+  padding-top: 7.5rem !important;
+  background: $primary;
+  @include media-breakpoint-up(md) {
+    margin-bottom: -1.5rem;
+  }
+  .team-item {
+    margin-bottom: 1.25rem;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 1.5rem;
+    }
+    .img-wrapper {
+      border: 1px solid rgba($brown-light, 0.5);
+      padding: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .title {
+      margin-bottom: 0.25rem;
+      @include text-truncate-multiline(1);
+      @include media-breakpoint-down(sm) {
+        font-size: 0.8rem;
+      }
+    }
+    .text {
+      display: block;
+      color: $gray-400;
+      @include text-truncate-multiline(1);
+      font-size: 0.7rem;
+    }
+    .social {
+      margin-top: 0.5rem;
+    }
+  }
+  .col {
+    @include media-breakpoint-up(xl) {
+      flex: 0 0 20%;
+      max-width: 20%;
     }
   }
 }

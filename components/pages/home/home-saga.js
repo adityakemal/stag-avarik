@@ -9,6 +9,7 @@ import borderBottom from "assets/img/home/ripped-paper-bottom.png"
 import { Element } from "react-scroll"
 import { Parallax } from "react-scroll-parallax"
 import AvarikButton from "components/avarik-saga/avarik-button"
+import AvarikTitle from "components/avarik-saga/avarik-title"
 
 const HomeSaga = () => {
   const [trigger, anim] = useScrollAnim()
@@ -26,7 +27,8 @@ const HomeSaga = () => {
             <div className="row justify-content-end">
               <div className="col-lg-6 col-md-8 col-sm-12">
                 <div className="content">
-                  <h1 className={anim(7, "fadeInDown")}>The Saga</h1>
+                  <AvarikTitle title="The Saga" titleClassName={anim(7, "fadeInDown")} logo={null} />
+                  {/* <h1 className={anim(7, "fadeInDown")}>The Saga</h1> */}
                   <p className={`desc ${anim(8, "fadeInDown")}`}>
                     <strong>Avarik Saga</strong> is a chronicle of <strong>8,888 generative NFT personas</strong>  depicting Knights, Archers, and Wizards from 4 clashing factions, each a unique combination of over<strong> 400+ uniquely hand-drawn traits.</strong>
                   </p>

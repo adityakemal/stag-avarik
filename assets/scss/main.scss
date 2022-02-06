@@ -177,6 +177,7 @@
 
 @import "../../components/avarik-saga/avarik-cards/avarik-cards";
 @import "../../components/avarik-saga/avarik-button/avarik-button";
+@import "../../components/avarik-saga/avarik-title/avarik-title";
 
 // ==========================================================================
 // General
@@ -214,29 +215,4 @@
 
 .icon-dropdown {
     width: 75%;
-}
-
-.title-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    .left,
-    .right {
-        width: 15%;
-        object-fit: contain;
-    }
-    .logo {
-        position: absolute;
-        width: 25%;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
-    h1 {
-        margin-bottom: 0;
-    }
 }
