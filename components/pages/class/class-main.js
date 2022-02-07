@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import { useScrollAnim } from "components/hooks/hooks"
-import { Modal } from "components/anti"
+import AvarikTitle from "components/avarik-saga/avarik-title"
 
 import knightsCommonImg from "assets/img/knights/char_common.jpg"
 import knightsUncommonImg from "assets/img/knights/char_uncommon.jpg"
@@ -18,15 +18,13 @@ import marksmenEpicImg from "assets/img/marksmen/char_epic.jpg"
 import knight from "assets/img/knights/knight.png"
 import marksman from "assets/img/marksmen/marksman.png"
 import wizard from "assets/img/wizards/wizard.png"
-import AvarikTitle from "components/avarik-saga/avarik-title"
-import ModalRarity from "./modal/modal-rarity"
-
+import ModalRarity from "components/avarik-saga/modal-rarity"
 
 const data = [
     {
         name: "Knight",
         img: knight,
-        type: [
+        rarity: [
             {
                 title: "Squire",
                 id: "squire",
@@ -76,7 +74,7 @@ const data = [
     {
         name: "Wizard",
         img: wizard,
-        type: [
+        rarity: [
             {
                 title: "Mage",
                 id: "mage",
@@ -126,7 +124,7 @@ const data = [
     {
         name: "Marksman",
         img: marksman,
-        type: [
+        rarity: [
             {
                 title: "Archer",
                 id: "archer",
@@ -181,7 +179,7 @@ const ClassMain = () => {
     const [selectedClasses, setSelectedClasses] = useState(null)
     return (
         <section className={`sc-class-main cover-full`} ref={trigger}>
-            <ModalRarity modal={modal} setModal={setModal} selectedClasses={selectedClasses} />
+            <ModalRarity modal={modal} setModal={setModal} selected={selectedClasses} />
             <div className="py-main h-100">
                 <div className="container">
                     <div className="row justify-content-between">
@@ -199,7 +197,7 @@ const ClassMain = () => {
                                     src={item.img}
                                     onClick={() => {
                                         setSelectedClasses(item)
-                                        setModal("modal-classes")
+                                        setModal("modal-rarity")
                                     }}
                                     className={`img-fluid img-char ${anim(i + 3, "revealInDown")}`}
                                 />

@@ -21,6 +21,7 @@ const AvarikButton = ({
             <Link className={`avarik-button ${variant} ${className}`} onClick={onClick} target={target} to={link}>
                 <div className="overlay" />
                 <div className="overlay-gold" />
+                <div className="overlay-light" />
                 <img src={sideLeft} className={`side-left white ${sideLeftClassName}`} alt="" />
                 <img src={sideRight} className={`side-right white ${sideRightClassName}`} alt="" />
                 <img src={sideLeftLight} className={`side-left light ${sideLeftClassName}`} alt="" />
@@ -35,6 +36,7 @@ const AvarikButton = ({
         <div className={`avarik-button ${variant} ${className}`} onClick={onClick}>
             <div className="overlay" />
             <div className="overlay-gold" />
+            <div className="overlay-light" />
             <img src={sideLeft} className={`side-left white ${sideLeftClassName}`} alt="" />
             <img src={sideRight} className={`side-right white ${sideRightClassName}`} alt="" />
             <img src={sideLeftLight} className={`side-left light ${sideLeftClassName}`} alt="" />

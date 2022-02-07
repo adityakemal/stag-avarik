@@ -89,6 +89,18 @@
                                     margin-bottom: 0.5rem;
                                 }
                             }
+                            .avarik-button {
+                                padding: 0.5rem 1.5rem;
+                                &::after {
+                                    bottom: -5px;
+                                }
+                                .side-left {
+                                    left: -20px;
+                                }
+                                .side-right {
+                                    right: -20px;
+                                }
+                            }
                         }
                         > .col-img {
                             padding: 1rem 1rem 2rem 1rem;

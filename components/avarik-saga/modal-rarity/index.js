@@ -8,7 +8,7 @@ import rarityUncommon from "assets/img/common/rarity-uncommon.png"
 import rarityRare from "assets/img/common/rarity-rare.png"
 import rarityLegendary from "assets/img/common/rarity-legendary.png"
 
-const ModalRarity = ({ modal, setModal, selectedClasses }) => {
+const ModalRarity = ({ modal, setModal, selected }) => {
     const [trigger, anim] = useScrollAnim()
     const rarityLabel = (rarity) => {
         switch (rarity) {
@@ -25,14 +25,14 @@ const ModalRarity = ({ modal, setModal, selectedClasses }) => {
 
     return (
         <Modal
-            id="modal-classes"
+            id="modal-rarity"
             isShowing={modal}
             hide={() => setModal(null)}
-            className="modal-classes"
+            className="modal-rarity"
         >
-            <AvarikTitle title={selectedClasses?.name} />
+            <AvarikTitle title={selected?.name} />
             <div className="content" ref={trigger}>
-                {selectedClasses?.type?.map((item, i) => (
+                {selected?.rarity?.map((item, i) => (
                     <div className="row w-100 mx-0 my-4" key={i}>
                         <div className="col-7 col-text">
                             <h4 className={`title ${anim(i + 2)}`}>{item.title}</h4>
@@ -43,10 +43,12 @@ const ModalRarity = ({ modal, setModal, selectedClasses }) => {
                                     className={`img-fluid img-rarity-label ${anim(i + 4, "revealInUp")}`}
                                     alt=""
                                 />
-                                <h6
-                                    className={`population ${anim(i + 5)}`}>
-                                    {item.population.number} ({item.population.percentage})
-                                </h6>
+                                {item.population.number && item.population.percentage ? (
+                                    <h6
+                                        className={`population ${anim(i + 5)}`}>
+                                        {item.population.number} ({item.population.percentage})
+                                    </h6>
+                                ) : null}
                             </div>
                         </div>
                         <div className="col-5 col-img">
