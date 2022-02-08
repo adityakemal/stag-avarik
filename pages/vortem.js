@@ -3,7 +3,9 @@ import Helmet from "react-helmet"
 import Seo from "components/seo"
 import Layout from "components/layout"
 
-import VortemMain from "components/pages/vortem/vortem-main"
+import VortemCover from "components/pages/vortem/vortem-cover"
+import VortemClaim from "components/pages/vortem/vortem-claim"
+import VortemHoldToEarn from "components/pages/vortem/vortem-hold-to-earn"
 
 const VortemPage = () => {
   return (
@@ -13,7 +15,9 @@ const VortemPage = () => {
         <Helmet>
           <body className="bd-vortem" />
         </Helmet>
-        <VortemMain />
+        <VortemCover />
+        <VortemClaim />
+        <VortemHoldToEarn />
       </Layout>
     </>
   )

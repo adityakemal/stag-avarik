@@ -43,6 +43,7 @@
     "react-lottie": "^1.2.3",
     "react-markdown": "^6.0.1",
     "react-modal": "^3.13.1",
+    "react-parallax": "^3.3.0",
     "react-scroll": "^1.8.4",
     "react-scroll-parallax": "^2.4.3",
     "react-select": "^4.3.0",
