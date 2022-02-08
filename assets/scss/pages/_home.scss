@@ -127,15 +127,44 @@ body.bd-home {
   }
 }
 
-// Story
+// Saga
 .sc-home-saga {
   position: relative;
   text-align: center;
-  height: 650px;
+  height: 750px;
   background-color: $brown-light;
   background-size: cover;
   @include media-breakpoint-down(sm) {
     padding-top: 3.75rem !important;
+  }
+  .kurseye {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    animation: float 7.5s infinite ease-in-out;
+    width: 125px;
+    z-index: 2;
+  }
+  .bug {
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+    animation: float 7.5s infinite ease-in-out;
+    animation-delay: 0.5s;
+    width: 125px;
+    z-index: 2;
+  }
+  .slimey {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    animation: float 7.5s infinite ease-in-out;
+    animation-delay: 1s;
+    width: 125px;
+    z-index: 2;
   }
   .border-paper-top {
     position: absolute;
@@ -150,7 +179,7 @@ body.bd-home {
   .border-paper-bottom {
     position: absolute;
     width: 100%;
-    bottom: -15%;
+    bottom: -30%;
     left: 0;
     z-index: 1;
     @include media-breakpoint-down(md) {
@@ -166,8 +195,8 @@ body.bd-home {
     bottom: 0;
     margin-top: auto;
     margin-bottom: auto;
-    left: 0;
-    width: 60%;
+    left: 10%;
+    width: 50%;
     z-index: 0;
     @include media-breakpoint-down(md) {
       width: 90%;
@@ -191,13 +220,29 @@ body.bd-home {
       height: 90%;
       align-items: flex-end;
     }
+    .title-wrapper {
+      position: absolute;
+      width: fit-content;
+      left: 0;
+      right: 0;
+      top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      .title {
+        color: $dark;
+      }
+    }
+    .parallax {
+      z-index: 2;
+    }
     .img-paper {
       position: absolute;
       width: 50%;
       height: auto;
       object-fit: contain;
-      top: -7.5rem;
-      right: -5rem;
+      top: -4.5rem;
+      right: 0;
+      z-index: 2;
       @include media-breakpoint-down(md) {
         width: 90%;
         right: -9rem;
@@ -213,9 +258,9 @@ body.bd-home {
     }
     .content {
       position: relative;
-      width: 80%;
-      padding: 3.5rem 2rem 3.5rem 7.5rem;
-      z-index: 1;
+      width: 70%;
+      padding: 7.5rem 2rem 3.5rem 2rem;
+      z-index: 3;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -230,15 +275,6 @@ body.bd-home {
       @include media-breakpoint-down(xs) {
         padding-left: 0;
         padding-right: 4rem;
-      }
-      h1 {
-        color: $black;
-        @include media-breakpoint-down(sm) {
-          font-size: 1.25rem;
-        }
-        @include media-breakpoint-down(xs) {
-          font-size: 1rem;
-        }
       }
       p.desc {
         strong {
@@ -260,12 +296,12 @@ body.bd-home {
         padding-left: 3rem;
         padding-right: 3rem;
         @include media-breakpoint-up(lg) {
-          .side-left {
-            left: -29px;
-          }
-          .side-right {
-            right: -29px;
-          }
+          // .side-left {
+          //   left: -29px;
+          // }
+          // .side-right {
+          //   right: -29px;
+          // }
         }
         @include media-breakpoint-down(sm) {
           // width: 85%;
@@ -289,8 +325,6 @@ body.bd-home {
 }
 
 // advisors
-
-// Team
 .sc-home-advisors {
   position: relative;
   z-index: 2;
@@ -339,24 +373,43 @@ body.bd-home {
 .sc-home-factions {
   position: relative;
   text-align: center;
-  background: url("../../img/home/bg_factions.png") center center no-repeat;
-  background-size: cover;
-  height: 650px;
+  background: $brown-light;
+  height: 750px;
   @include media-breakpoint-down(sm) {
     padding-top: 3.75rem !important;
     height: 500px;
   }
-  .overlay {
+  .phoenix {
+    position: absolute;
+    width: 20%;
+    left: 0;
+    top: 5rem;
+    z-index: 2;
+    animation: float 7.5s infinite ease-in-out;
+  }
+  .dragon {
+    position: absolute;
+    width: 10%;
+    right: 0;
+    top: 7.5rem;
+    z-index: 2;
+    animation: float 7.5s infinite ease-in-out;
+  }
+  .gate {
     position: absolute;
     width: 100%;
-    height: 100%;
-    top: 0;
     left: 0;
-    background-color: rgba($black, 0.5);
+    bottom: -30%;
+    z-index: 3;
   }
   .heading {
     position: relative;
     z-index: 2;
+    .title-wrapper {
+      h1 {
+        color: $dark;
+      }
+    }
   }
   p {
     max-width: 750px;
@@ -375,6 +428,7 @@ body.bd-home {
       justify-content: center;
     }
     .faction-item {
+      z-index: 3;
       cursor: pointer;
       img {
         max-height: 300px;
@@ -383,201 +437,19 @@ body.bd-home {
   }
 }
 
-//classes
-.sc-home-classes {
-  height: 500px;
-  margin-top: -5rem;
-  background: linear-gradient(180deg, $black 0%, $black 71.72%, rgba(48, 26, 26, 0.05) 100%);
-  @include media-breakpoint-down(sm) {
-    height: auto;
-  }
-  .title {
-    color: $white;
-    text-align: center;
-    z-index: 1;
-  }
-  .description {
-    color: $white;
-    text-align: center;
-    font-weight: 400;
-    width: 80%;
-  }
-  .row-content {
-    .col-item {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-}
-
-//battle
-.sc-home-battle {
-  height: 650px;
-  background: url("../../img/home/bg_battle.png") center center no-repeat;
-  background-size: cover;
-  animation: cameraPan 30s $home-anim-cover-delay infinite;
+//game features
+.sc-home-game-features {
+  height: 750px;
+  margin-top: 7.5rem;
   position: relative;
-  z-index: -1;
-  margin-top: -7.5rem;
-  &:before {
-    content: "";
-    @include gradient-y-to-bottom($black, rgba($black, 0), 5%, 100%);
-    position: absolute;
-    width: 100%;
-    height: 200px;
-    z-index: 1;
-    top: 0;
-    left: 0;
-  }
-  &:after {
-    content: "";
-    @include gradient-y-to-top($black, rgba($black, 0), 5%, 100%);
-    position: absolute;
-    width: 100%;
-    height: 200px;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    height: 100%;
-    .content {
-      width: 50%;
-      @include media-breakpoint-down(sm) {
-        width: 100%;
-      }
-      .title {
-        color: $white;
-        text-align: start;
-        z-index: 1;
-      }
-      .description {
-        color: $white;
-        text-align: start;
-        font-weight: 300;
-        width: 80%;
-      }
-    }
-  }
-}
-
-// equipment
-.sc-home-equipment {
-  height: 550px;
-  margin-top: -8rem;
-  background: linear-gradient(
-    0deg,
-    rgba(28, 30, 74, 0.05) 0%,
-    $black 30.89%,
-    $black 75.39%,
-    rgba(48, 26, 26, 0.05) 100%
-  );
-  @include media-breakpoint-down(sm) {
-    height: auto;
-  }
-  .title {
-    color: $white;
-    text-align: center;
-    z-index: 1;
-  }
-  .description {
-    color: $white;
-    text-align: center;
-    font-weight: 400;
-    width: 80%;
-  }
-  .row-content {
-    justify-content: center;
-    .col-item {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      img {
-        max-width: 125px;
-      }
-    }
-  }
-}
-
-//play to earn
-.sc-play-to-earn {
-  position: relative;
-  margin-top: -10rem;
-  z-index: -1;
   padding-top: 5rem;
-  height: 650px;
-  background: url("../../img/home/bg_play-to-earn.png") center center no-repeat;
+  background: url("../../img/home/bg_game-features.png") center center no-repeat;
   background-size: cover;
-  position: relative;
-  @include media-breakpoint-down(sm) {
-    padding-top: 7.5rem;
-  }
-  &:before {
-    content: "";
-    @include gradient-y-to-bottom($black, rgba($black, 0), 5%, 100%);
+  .separator {
     position: absolute;
     width: 100%;
-    height: 200px;
-    z-index: 1;
-    top: 0;
-    left: 0;
-  }
-  &:after {
-    content: "";
-    @include gradient-y-to-top($black, rgba($black, 0), 5%, 100%);
-    position: absolute;
-    width: 100%;
-    height: 200px;
-    z-index: 1;
     bottom: 0;
     left: 0;
-  }
-  .overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: linear-gradient(90deg, rgba($black, 0) 0%, rgba($black, 0.8) 45%, rgba($black, 1) 100%);
-    @include media-breakpoint-down(sm) {
-      background: linear-gradient(215deg, rgba($black, 0) 0%, rgba($black, 0.8) 60%, rgba($black, 1) 100%);
-    }
-  }
-  .container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    .col-text {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-      @include media-breakpoint-down(sm) {
-        margin-top: 1rem;
-      }
-      h1,
-      p {
-        color: $white;
-        width: 80%;
-      }
-      .avarik-button {
-        width: 90%;
-      }
-      .link-game-demo {
-        font-family: $font-family-sans-serif;
-        color: $orange-light;
-        text-align: center;
-        cursor: pointer;
-        z-index: 2;
-      }
-    }
   }
 }
 

@@ -161,7 +161,7 @@ const WeaponsMain = () => {
   const [selectedWeapons, setSelectedWeapons] = useState(null)
   return (
     <section className="sc-weapons-main cover-full" ref={trigger}>
-      <ModalRarity modal={modal} setModal={setModal} selected={selectedWeapons} />
+      <ModalRarity modal={modal} setModal={setModal} selected={selectedWeapons} imgWithFrame={false} />
       <div className="py-main h-100">
         <div className="container">
           <div className="row">

@@ -1,15 +1,18 @@
 import React from "react"
+import { Element } from "react-scroll"
+import { Parallax, useParallax } from "react-scroll-parallax"
 
 import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
+import AvarikButton from "components/avarik-saga/avarik-button"
+import AvarikTitle from "components/avarik-saga/avarik-title"
+
 import paper from "assets/img/home/paper-4.png"
 import saga from "assets/img/home/bg_the-saga.png"
 import borderTop from "assets/img/home/ripped-paper-top.png"
-import borderBottom from "assets/img/home/ripped-paper-bottom.png"
-
-import { Element } from "react-scroll"
-import { Parallax } from "react-scroll-parallax"
-import AvarikButton from "components/avarik-saga/avarik-button"
-import AvarikTitle from "components/avarik-saga/avarik-title"
+import borderBottom from "assets/img/home/separator-thesaga.png"
+import kurseye from "assets/img/home/kurseye.png"
+import bug from "assets/img/home/bug.png"
+import slimey from "assets/img/home/slimey.png"
 
 const HomeSaga = () => {
   const [trigger, anim] = useScrollAnim()
@@ -18,17 +21,21 @@ const HomeSaga = () => {
   return (
     <Element name="saga-content">
       <div className="sc-home-saga sc-dark pt-main" id="saga" ref={trigger}>
+        <img src={kurseye} className="kurseye" alt="" />
+        <img src={bug} className="bug" alt="" />
+        <img src={slimey} className="slimey" alt="" />
         <img src={borderTop} className="border-paper-top" alt="" />
-        <img src={borderBottom} className="border-paper-bottom" alt="" />
+        {/* <Parallax y={[5, -25]} className="border-paper-bottom"> */}
+        <img src={borderBottom} className="border-paper-bottom img-fluid" alt="" />
+        {/* </Parallax> */}
         <img src={saga} className="img-fluid img-saga" alt="" />
         <div className="container">
-          <Parallax className="parallax" y={width > 786 ? [15, -15] : width > 576 ? [-50, -75] : [25, 0]} tagOuter="figure">
+          <AvarikTitle title="The Saga" titleClassName={`title ${anim(7, "fadeInDown")}`} />
+          <Parallax className="parallax" y={width > 786 ? [-5, -25] : width > 576 ? [-50, -75] : [25, 0]} tagOuter="figure">
             <img src={paper} alt="" className={`img-paper ${anim(1, "revealInDown")}`} />
             <div className="row justify-content-end">
               <div className="col-lg-6 col-md-8 col-sm-12">
                 <div className="content">
-                  <AvarikTitle title="The Saga" titleClassName={anim(7, "fadeInDown")} logo={null} />
-                  {/* <h1 className={anim(7, "fadeInDown")}>The Saga</h1> */}
                   <p className={`desc ${anim(8, "fadeInDown")}`}>
                     <strong>Avarik Saga</strong> is a chronicle of <strong>8,888 generative NFT personas</strong>  depicting Knights, Archers, and Wizards from 4 clashing factions, each a unique combination of over<strong> 400+ uniquely hand-drawn traits.</strong>
                   </p>

@@ -14,6 +14,7 @@ import HomeEquipment from "components/pages/home/home-equipment"
 import HomePlayToEarn from "components/pages/home/home-play-to-earn"
 import HomeFooter from "components/pages/home/home-footer"
 import HomeAdvisors from "components/pages/home/home-advisors"
+import HomeGameFeatures from "components/pages/home/home-game-features"
 
 const HomePage = () => {
   return (
@@ -26,6 +27,7 @@ const HomePage = () => {
         <HomeCover />
         <HomeSaga />
         <HomeFactions />
+        <HomeGameFeatures />
         <HomeAdvisors />
         {/* <HomeClasses /> */}
         {/* <HomeBattle /> */}

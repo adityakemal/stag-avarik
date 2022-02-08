@@ -57,8 +57,8 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                 >
                   <ul className="list-unstyled">
                     {gameInfo.map((item, i) => (
-                      <li key={i}>
-                        <Link to={item.link}>
+                      <li key={i} onClick={() => handleCloseMenu("", item.link)}>
+                        <Link>
                           {item.name}
                         </Link>
                       </li>
@@ -73,38 +73,6 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
               >
                 <Link className="nav-link anim-2" activeClassName="active">
                   Whitepaper
-                </Link>
-              </li>
-              <li
-                className="nav-item"
-                onClick={() => handleCloseMenu("", "/weapons")}
-              >
-                <Link className="nav-link anim-3" activeClassName="active">
-                  Weapons
-                </Link>
-              </li>
-              <li
-                className="nav-item"
-                onClick={() => handleCloseMenu("", "/armors")}
-              >
-                <Link className="nav-link anim-4" activeClassName="active">
-                  Armors
-                </Link>
-              </li>
-              {/* <li
-                className="nav-item"
-                onClick={() => handleCloseMenu("", "/avrk")}
-              >
-                <Link className="nav-link anim-5" activeClassName="active">
-                  $AVRK
-                </Link>
-              </li> */}
-              <li
-                className="nav-item"
-                onClick={() => handleCloseMenu("", "/vortem")}
-              >
-                <Link className="nav-link anim-5" activeClassName="active">
-                  In Game Currency
                 </Link>
               </li>
               {/* <li

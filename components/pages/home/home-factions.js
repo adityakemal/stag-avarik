@@ -1,16 +1,17 @@
 import React, { useState } from "react"
+import { Element } from "react-scroll"
 
 import ignis from "assets/img/common/flag_ignis.png"
 import tenebris from "assets/img/common/flag_tenebris.png"
 import terra from "assets/img/common/flag_terra.png"
 import glacia from "assets/img/common/flag_glacia.png"
-import paperModal from "assets/img/home/paper-5.png"
+import phoenix from "assets/img/home/phoenix.png"
+import dragon from "assets/img/home/dragon.png"
+import gate from "assets/img/home/separator-faction.png"
 
-import { useScrollAnim } from "components/hooks/hooks"
-
-import { Element } from "react-scroll"
-import { Modal } from "components/anti"
 import ModalFactions from "./modal/modal-factions"
+import { useScrollAnim } from "components/hooks/hooks"
+import AvarikTitle from "components/avarik-saga/avarik-title"
 
 const data = [
     {
@@ -43,12 +44,14 @@ const HomeFactions = () => {
     return (
         <Element name="factions-content">
             <ModalFactions modal={modal} setModal={setModal} selectedFactions={selectedFactions} />
-            <div className="sc-home-factions sc-dark pt-main" id="factions" ref={trigger}>
-                <div className="overlay"></div>
+            <div className="sc-home-factions pt-main" id="factions" ref={trigger}>
+                <img src={phoenix} className="phoenix" alt="" />
+                <img src={dragon} className="dragon" alt="" />
+                <img src={gate} className="gate" alt="" />
                 <div className="container">
                     <div className="heading">
-                        <h1 className={anim(1)}>Factions</h1>
-                        <p className={`text-white ${anim(2)}`}>May the best faction bask in glory</p>
+                        <AvarikTitle title="Factions" titleClassName={anim(1)} className="mx-auto" />
+                        <p className={`${anim(2)}`}>May the best faction bask in glory</p>
                     </div>
                     <div className={`story-factions`}>
                         <div className="row w-100">

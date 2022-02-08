@@ -158,17 +158,17 @@ const ArmorsMain = () => {
   const [selectedArmors, setSelectedArmors] = useState(null)
   return (
     <section className="sc-armors-main cover-full" ref={trigger}>
-      <ModalRarity modal={modal} setModal={setModal} selected={selectedArmors} />
+      <ModalRarity modal={modal} setModal={setModal} selected={selectedArmors} imgWithFrame={false} />
       <div className="py-main h-100">
         <div className="container">
           <div className="row">
-            <div className="col-md-5 col-text">
+            <div className="col-lg-5 col-text">
               <AvarikTitle title="Armors" className="w-100" />
               <p className={anim(2)}>
                 Armors hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for armors. The rarity influences 2 key principles in the game: Greater base stats on the armor. Enhances the skill power of both active and passive skills of the Hero.
               </p>
             </div>
-            <div className="col-md-7 col-img">
+            <div className="col-lg-7 col-img">
               <img src={book} className="img-fluid img-book" alt="" />
               <Slider
                 fade
