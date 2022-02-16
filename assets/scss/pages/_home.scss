@@ -57,12 +57,12 @@ body.bd-home {
         margin-bottom: 2rem;
       }
     }
-    .side-left-btn-cover {
-      left: -28px;
-    }
-    .side-right-btn-cover {
-      right: -28.5px;
-    }
+    // .side-left-btn-cover {
+    //   left: -27px;
+    // }
+    // .side-right-btn-cover {
+    //   right: -28.5px;
+    // }
   }
   .cover {
     .cover-bg-wrapper {
@@ -221,7 +221,7 @@ body.bd-home {
       align-items: flex-end;
     }
     .title-wrapper {
-      position: absolute;
+      // position: absolute;
       width: fit-content;
       left: 0;
       right: 0;
@@ -235,66 +235,69 @@ body.bd-home {
     .parallax {
       z-index: 2;
     }
-    .img-paper {
-      position: absolute;
-      width: 50%;
-      height: auto;
-      object-fit: contain;
-      top: -4.5rem;
-      right: 0;
-      z-index: 2;
-      @include media-breakpoint-down(md) {
-        width: 90%;
-        right: -9rem;
-      }
-      @include media-breakpoint-down(sm) {
-        width: 125%;
-        top: -100%;
-      }
-      @include media-breakpoint-down(xs) {
-        right: -3rem;
-        top: -10rem;
-      }
-    }
     .content {
       position: relative;
-      width: 70%;
-      padding: 7.5rem 2rem 3.5rem 2rem;
+      width: 80%;
+      padding: 2.5rem 2rem 2.5rem 2rem;
       z-index: 3;
       display: flex;
       flex-direction: column;
       align-items: center;
+      @include media-breakpoint-down(lg) {
+        padding-top: 1.5rem;
+        width: 90%;
+      }
       @include media-breakpoint-down(md) {
-        width: 95%;
         padding: 2rem;
       }
       @include media-breakpoint-down(sm) {
-        padding-top: 0;
-        margin-top: -2rem;
+        padding-top: 3rem;
       }
       @include media-breakpoint-down(xs) {
-        padding-left: 0;
-        padding-right: 4rem;
+        width: 100%;
+        padding-top: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .img-paper {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        top: -4.5rem;
+        left: 0;
+        z-index: 0;
+        @include media-breakpoint-down(md) {
+          width: 100%;
+          right: -9rem;
+        }
+        @include media-breakpoint-down(sm) {
+          width: 100%;
+        }
+        @include media-breakpoint-down(xs) {
+          width: 100%;
+        }
       }
       p.desc {
         strong {
           color: $black;
         }
         color: $black;
-        font-size: 0.75rem;
+        font-size: 1rem;
         @include media-breakpoint-down(sm) {
-          font-size: 0.65rem;
+          font-size: 0.75rem;
           width: 90%;
           margin-left: auto;
           margin-right: auto;
         }
         @include media-breakpoint-down(xs) {
-          font-size: 0.55rem;
+          font-size: 0.65rem;
         }
       }
       .avarik-button {
         padding-left: 3rem;
         padding-right: 3rem;
+        margin-left: 0;
         @include media-breakpoint-up(lg) {
           // .side-left {
           //   left: -29px;

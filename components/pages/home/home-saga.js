@@ -24,18 +24,20 @@ const HomeSaga = () => {
         <img src={kurseye} className="kurseye" alt="" />
         <img src={bug} className="bug" alt="" />
         <img src={slimey} className="slimey" alt="" />
-        <img src={borderTop} className="border-paper-top" alt="" />
+        <Parallax y={width > 1200 ? [0, -25] : [50, 30]} className="border-paper-top">
+          <img src={borderTop} className="img-fluid" alt="" />
+        </Parallax>
         {/* <Parallax y={[5, -25]} className="border-paper-bottom"> */}
         <img src={borderBottom} className="border-paper-bottom img-fluid" alt="" />
         {/* </Parallax> */}
         <img src={saga} className="img-fluid img-saga" alt="" />
         <div className="container">
-          <AvarikTitle title="The Saga" titleClassName={`title ${anim(7, "fadeInDown")}`} />
           <Parallax className="parallax" y={width > 786 ? [-5, -25] : width > 576 ? [-50, -75] : [25, 0]} tagOuter="figure">
-            <img src={paper} alt="" className={`img-paper ${anim(1, "revealInDown")}`} />
             <div className="row justify-content-end">
               <div className="col-lg-6 col-md-8 col-sm-12">
                 <div className="content">
+                  <img src={paper} alt="" className={`img-paper ${anim(1, "revealInDown")}`} />
+                  <AvarikTitle title="The Saga" titleClassName={`title ${anim(7, "fadeInDown")}`} />
                   <p className={`desc ${anim(8, "fadeInDown")}`}>
                     <strong>Avarik Saga</strong> is a chronicle of <strong>8,888 generative NFT personas</strong>  depicting Knights, Archers, and Wizards from 4 clashing factions, each a unique combination of over<strong> 400+ uniquely hand-drawn traits.</strong>
                   </p>
@@ -43,6 +45,7 @@ const HomeSaga = () => {
                     War has torn the once prosperous kingdom of Avarik into a land of violence and despair. And now there are whispers about a hero who will soon arise to guide their faction to triumph, finally ceasing the endless battles among the feisty <strong>Ignis</strong>, the benevolent <strong>Terra</strong>, the fluid <strong>Glacia</strong>, and the mystical <strong>Tenebris.</strong>
                   </p>
                   <AvarikButton
+                    variant="dark"
                     text="Video Lore"
                     link="https://www.youtube.com/watch?v=W5-WfcZdCew"
                   />

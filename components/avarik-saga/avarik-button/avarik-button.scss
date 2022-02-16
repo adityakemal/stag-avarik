@@ -3,34 +3,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid rgba($white, 0.5);
-    border-bottom: 1px solid rgba($white, 0.5);
     margin-left: 28px;
-    padding: 1rem 2rem;
+    padding: 0.65rem 2rem;
     width: fit-content;
-    color: $orange-light;
     cursor: pointer;
     transition: all 0.5s ease;
     font-family: $font-family-sans-serif;
     z-index: 2;
+    color: $primary;
+    border-top: 1px solid $primary;
+    border-bottom: 1px solid $primary;
     .side-left,
     .side-right {
         opacity: 0;
     }
     &:hover,
-    &.gold {
+    &.dark {
         color: $white;
+        border-top: 0.5px solid $brown-light;
+        border-bottom: 0.5px solid $brown-light;
         .side-left,
         .side-right {
             transition: all 0.5s ease 0.25s;
-            &.gold {
+            &.dark {
                 opacity: 1;
             }
-            &.white {
+            &.light {
                 opacity: 0;
             }
         }
-        .overlay-gold {
+        .overlay-dark {
             width: 100%;
             left: 0;
             transition: all 0.5s ease 0s;
@@ -42,7 +44,7 @@
             width: 0;
         }
     }
-    &.gold {
+    &.dark {
         &:hover {
             .overlay {
                 opacity: 0.25;
@@ -51,55 +53,12 @@
             }
         }
     }
-    &.light {
-        color: $primary;
-        border-top: 1px solid $primary;
-        border-bottom: 1px solid $primary;
-        &::after {
-            content: "";
-            height: 2px;
-            background-color: rgba($primary, 0.5);
-            position: absolute;
-            bottom: -8px;
-            width: 100%;
-        }
-        .overlay-light {
-            left: 0;
-            width: 100%;
-        }
-        .side-left,
-        .side-right {
-            &.gold,
-            &.white {
-                opacity: 0;
-            }
-            &.light {
-                opacity: 1;
-            }
-        }
-        &:hover {
-            .side-left,
-            .side-right {
-                &.gold,
-                &.white {
-                    opacity: 0;
-                }
-            }
-            .overlay-light {
-                left: 0;
-                width: 100%;
-            }
-            .overlay-gold {
-                width: 0;
-            }
-        }
-    }
     &::after {
         content: "";
         height: 2px;
-        background-color: rgba($golden, 0.5);
+        background-color: rgba($primary, 0.5);
         position: absolute;
-        bottom: -8px;
+        bottom: -6px;
         width: 100%;
     }
     .overlay {
@@ -108,11 +67,11 @@
         height: 100%;
         top: 0;
         left: 0;
-        background-color: rgba($black, 0.65);
+        background: $brown-light;
         z-index: -1;
         transition: all 0s ease 0s;
     }
-    .overlay-gold {
+    .overlay-dark {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -120,45 +79,36 @@
         top: 0;
         transition: all 0.5s ease 0.25s;
         width: 0;
-        background: radial-gradient(50% 757.72% at 50% 50%, rgba(241, 181, 101, 0.7) 0%, rgba(184, 105, 0, 0.7) 100%);
-        z-index: -1;
-    }
-    .overlay-light {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 50%;
-        top: 0;
-        transition: all 0.5s ease 0.25s;
-        width: 0;
-        background: $brown-light;
+        background: $primary;
         z-index: -1;
     }
     .side-left {
         position: absolute;
         top: 0;
-        left: -30px;
+        transform: scaleX(-1);
+        left: -21px;
         height: 115%;
         object-fit: contain;
         transition: all 0.5s ease 0s;
-        &.white {
+        &.light {
             opacity: 1;
         }
-        &.gold {
+        &.dark {
             opacity: 0;
         }
     }
     .side-right {
         position: absolute;
         top: 0;
-        right: -30px;
+        transform: scaleX(-1);
+        right: -21px;
         height: 115%;
         object-fit: contain;
         transition: all 0.5s ease 0s;
-        &.white {
+        &.light {
             opacity: 1;
         }
-        &.gold {
+        &.dark {
             opacity: 0;
         }
     }
