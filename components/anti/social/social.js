@@ -59,6 +59,8 @@ export const Social = ({ data, className, size, shape, variant, stacked }) => {
       return "social-white"
     } else if (variant === "outline-white") {
       return "social-outline-white"
+    } else if (variant === "outline-primary") {
+      return "social-outline-primary"
     } else {
       return ""
     }
@@ -66,11 +68,9 @@ export const Social = ({ data, className, size, shape, variant, stacked }) => {
 
   return (
     <ul
-      className={`social ${
-        size && socialSize()
-      } ${socialShape()} ${socialVariant()} ${className} ${
-        stacked && "stacked"
-      }`}
+      className={`social ${size && socialSize()
+        } ${socialShape()} ${socialVariant()} ${className} ${stacked && "stacked"
+        }`}
     >
       {data.map((item, i) => {
         return (
@@ -85,16 +85,16 @@ export const Social = ({ data, className, size, shape, variant, stacked }) => {
                 </a>
               </li>
             )) || (
-              <li key={i} className="social-item">
-                <a
-                  href={item.url}
-                  target="_blank"
-                  className={`social-link social-${item.type}`}
-                >
-                  <i className={item.icon || socialType(item.type)} />
-                </a>
-              </li>
-            )}
+                <li key={i} className="social-item">
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    className={`social-link social-${item.type}`}
+                  >
+                    <i className={item.icon || socialType(item.type)} />
+                  </a>
+                </li>
+              )}
           </>
         )
       })}
@@ -109,7 +109,8 @@ Social.propTypes = {
     "primary",
     "primary-inverse",
     "white",
-    "outline-white"
+    "outline-white",
+    "outline-primary"
   ),
   data: PropTypes.any,
   className: PropTypes.string,

@@ -1,10 +1,14 @@
 import React from "react"
-import { Link } from "components/anti/link/link"
-import { Button } from "components/anti/buttons/buttons"
+import { useWeb3React } from "@web3-react/core"
+import cogoToast from "cogo-toast"
 import { scroller } from "react-scroll"
+import { Link } from "components/anti/link/link"
+import AvarikButton from "components/avarik-saga/avarik-button"
+import { injected, walletconnect } from "components/utils/connecters"
+
 import paper from "assets/img/home/paper-3.png"
 import iconDropdown from "assets/img/common/icon_dropdown.png"
-import AvarikButton from "components/avarik-saga/avarik-button"
+import { truncate } from "components/utils/helpers"
 
 const gameInfo = [
   { name: "Class", link: "/class" },
@@ -16,6 +20,7 @@ const gameInfo = [
 ]
 
 const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
+  const { activate, connector, account } = useWeb3React();
   const handleClick = (content) => {
     scroller.scrollTo(content, {
       duration: 500,
@@ -23,6 +28,15 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
       smooth: true,
     })
   }
+  const onConnect = async (connector) => {
+    try {
+      await activate(connector === "walletconnect" ? walletconnect : injected);
+    } catch (error) {
+      console.log("err", error)
+      cogoToast.error(error, { hideAfter: 3, heading: '' })
+    }
+  };
+
   return (
     <>
       <div className={`desktop-menu d-none d-${navExpand}-flex`}>
@@ -59,13 +73,14 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               Hold to Earn
             </Link>
           </li>
-          {/* <AvarikButton
-            variant="white"
-            text="Connect Wallet"
-            // className="mx-5 mb-sm-4"
-            // sideLeftClassName="side-left-btn-cover"
-            // sideRightClassName="side-right-btn-cover"
-          /> */}
+          <AvarikButton
+            variant="light"
+            text={account ? truncate(account, 15) : "Connect Wallet"}
+            onClick={() => onConnect()}
+            disabled={account}
+            sideLeftClassName="side-left-btn-navbar"
+            sideRightClassName="side-right-btn-navbar"
+          />
           {/* <li className="nav-item">
             <i className="air ai-volume ic-music"></i>
           </li> */}

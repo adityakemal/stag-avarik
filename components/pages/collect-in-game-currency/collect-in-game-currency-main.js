@@ -4,24 +4,9 @@ import AvarikButton from "components/avarik-saga/avarik-button"
 import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 import useClaimableToken from "components/hooks/useClaimableToken"
 import useNft from "components/hooks/useNft"
+import { truncate } from "components/utils/helpers"
 import React, { useEffect, useState } from "react"
 
-const truncate = (string, length) => {
-    if (string?.length <= length) return string
-
-    let separator = "......"
-
-    let sepLen = separator.length,
-        charsToShow = length - sepLen,
-        frontChars = Math.ceil(charsToShow / 2),
-        backChars = Math.floor(charsToShow / 2)
-
-    return (
-        string?.substr(0, frontChars) +
-        separator +
-        string?.substr(string?.length - backChars)
-    )
-}
 
 const HoldToEarnMain = () => {
     const { account } = useWeb3React();

@@ -17,6 +17,10 @@
     .side-right {
         opacity: 0;
     }
+    &.disabled {
+        cursor: initial;
+        pointer-events: none;
+    }
     &:hover,
     &.dark {
         color: $white;
@@ -87,7 +91,7 @@
         top: 0;
         transform: scaleX(-1);
         left: -21px;
-        height: 115%;
+        height: 118%;
         object-fit: contain;
         transition: all 0.5s ease 0s;
         &.light {
@@ -102,7 +106,7 @@
         top: 0;
         transform: scaleX(-1);
         right: -21px;
-        height: 115%;
+        height: 118%;
         object-fit: contain;
         transition: all 0.5s ease 0s;
         &.light {

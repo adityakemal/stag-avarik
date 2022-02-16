@@ -8,15 +8,21 @@ const AvarikButton = ({
     text,
     onClick,
     variant = "light",
-    className,
+    className = "",
     sideLeftClassName,
     sideRightClassName,
     target,
-    link
+    link,
+    disabled
 }) => {
     if (link) {
         return (
-            <Link className={`avarik-button ${variant} ${className}`} onClick={onClick} target={target} to={link}>
+            <Link
+                className={`avarik-button ${variant} ${className} ${disabled ? "disabled" : ""}`}
+                onClick={onClick}
+                target={target}
+                to={!disabled && link}
+            >
                 <div className="overlay" />
                 <div className="overlay-dark" />
                 <img src={sideRightLight} className={`side-left light ${sideLeftClassName}`} alt="" />
@@ -28,7 +34,10 @@ const AvarikButton = ({
         )
     }
     return (
-        <div className={`avarik-button ${variant} ${className}`} onClick={onClick}>
+        <div
+            className={`avarik-button ${variant} ${className} ${disabled ? "disabled" : ""}`}
+            onClick={() => !disabled && onClick()}
+        >
             <div className="overlay" />
             <div className="overlay-dark" />
             <img src={sideRightLight} className={`side-left light ${sideLeftClassName}`} alt="" />
@@ -36,7 +45,7 @@ const AvarikButton = ({
             <img src={sideRightDark} className={`side-left dark ${sideLeftClassName}`} alt="" />
             <img src={sideLeftDark} className={`side-right dark ${sideRightClassName}`} alt="" />
             {text}
-        </div>
+        </div >
     )
 }
 

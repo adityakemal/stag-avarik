@@ -28,6 +28,23 @@ export const parseRandom = (state) => {
    return haveIt
 }
 
+export const truncate = (string, length) => {
+   if (string?.length <= length) return string
+
+   let separator = "......"
+
+   let sepLen = separator.length,
+      charsToShow = length - sepLen,
+      frontChars = Math.ceil(charsToShow / 2),
+      backChars = Math.floor(charsToShow / 2)
+
+   return (
+      string?.substr(0, frontChars) +
+      separator +
+      string?.substr(string?.length - backChars)
+   )
+}
+
 
 export const computeEarning = ({ results, STARTING_BLOCK, ENDING_BLOCK, RATE, to }) => {
    const everyHolds = results.reduce((acc, val) => {

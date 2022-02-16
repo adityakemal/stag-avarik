@@ -12,7 +12,6 @@ import pangXueKai from "assets/img/advisor/pang-xue-kai.jpeg"
 import partners from "assets/img/advisor/guilds-and-partners.png"
 import investors from "assets/img/advisor/investors.png"
 import ornament from "assets/img/common/ornament.png"
-import separator from "assets/img/home/separator-partners.png"
 
 import { Element } from "react-scroll"
 import AvarikTitle from "components/avarik-saga/avarik-title"
@@ -21,10 +20,6 @@ import { Parallax, useParallax } from "react-scroll-parallax"
 const HomeAdvisors = () => {
     const [trigger, anim] = useScrollAnim()
     const [trigger2, anim2] = useScrollAnim()
-
-    const { ref } = useParallax({
-        scale: [1, 1.2, 'easeInQuad']
-    });
 
     const team = [
         {
@@ -188,7 +183,6 @@ const HomeAdvisors = () => {
                     </div>
                 </div>
             </div>
-            <img ref={ref} src={separator} className="separator img-fluid" alt="" />
         </section>
     )
 }

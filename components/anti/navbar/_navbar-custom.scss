@@ -259,6 +259,15 @@
         cursor: pointer;
       }
     }
+    .avarik-button {
+      .side-left-btn-navbar {
+        height: 118%;
+      }
+      .side-right-btn-navbar {
+        height: 118%;
+        right: -23px;
+      }
+    }
   }
 }
 
