@@ -24,7 +24,7 @@ const HomeSaga = () => {
         <img src={kurseye} className="kurseye" alt="" />
         <img src={bug} className="bug" alt="" />
         <img src={slimey} className="slimey" alt="" />
-        <Parallax y={width > 1200 ? [0, -25] : [50, 30]} className="border-paper-top">
+        <Parallax translateY={width > 1200 ? [0, -25] : [50, 30]} className="border-paper-top">
           <img src={borderTop} className="img-fluid" alt="" />
         </Parallax>
         {/* <Parallax y={[5, -25]} className="border-paper-bottom"> */}
@@ -32,7 +32,7 @@ const HomeSaga = () => {
         {/* </Parallax> */}
         <img src={saga} className="img-fluid img-saga" alt="" />
         <div className="container">
-          <Parallax className="parallax" y={width > 786 ? [-5, -25] : width > 576 ? [-50, -75] : [25, 0]} tagOuter="figure">
+          <Parallax className="parallax" translateY={width > 786 ? [0, -25] : width > 576 ? [-50, -75] : [25, 0]} tagOuter="figure">
             <div className="row justify-content-end">
               <div className="col-lg-6 col-md-8 col-sm-12">
                 <div className="content">
