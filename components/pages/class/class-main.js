@@ -184,7 +184,7 @@ const ClassMain = () => {
                 <div className="container">
                     <div className="row justify-content-between">
                         <div className="col-lg-5 col-text">
-                            <AvarikTitle title="Class" className="w-100" />
+                            <AvarikTitle title="Class" className="w-100" variant="white"/>
                             <p className={anim(2)}>
                                 From chivalrous knights to notorious wizards and cunning marksmen,
                                 these 3 classes in the Avarik Kingdom have to work hand-in-hand to achieve glory.
