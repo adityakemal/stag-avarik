@@ -8,6 +8,7 @@ import claim1 from "assets/img/vortem/claim-1.png"
 import claim2 from "assets/img/vortem/claim-2.png"
 import claim3 from "assets/img/vortem/claim-3.png"
 import hr from "assets/img/vortem/horizontal-line.png"
+import bg from "assets/img/vortem/bg_claim-full.png"
 import ornament from "assets/img/common/ornament.png"
 
 
@@ -15,6 +16,7 @@ const VortemClaim = () => {
     const [trigger, anim] = useScrollAnim()
     return (
         <section className="sc-vortem-claim" ref={trigger}>
+            <img src={bg} className="bg" alt="" />
             <div className="py-main">
                 <div className="container">
                     <AvarikTitle title="How to Claim" className="mx-auto" titleClassName={anim(1)} />
@@ -33,7 +35,7 @@ const VortemClaim = () => {
                         <div className="col-lg-4 col-item text-center">
                             <img src={claimPlay} className={`img-icon img-fluid ${anim(3)}`} />
                             <div className="claim-card">
-                            <img src={claim2} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
+                                <img src={claim2} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
                                 <h5 className={anim(9)}>Play <br /> the Game</h5>
                                 <img src={hr} className={`img-fluid hr ${anim(12)}`} />
                                 <ul className="list-unstyled">
@@ -49,7 +51,7 @@ const VortemClaim = () => {
                         <div className="col-lg-4 col-item text-center">
                             <img src={claimExchange} className={`img-icon img-fluid ${anim(4)}`} />
                             <div className="claim-card">
-                            <img src={claim3} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
+                                <img src={claim3} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
                                 <h5 className={anim(10)}>Buy & Sell on <br /> Exchanger</h5>
                                 <img src={hr} className={`img-fluid hr ${anim(13)}`} />
                                 <p className={anim(16)}>

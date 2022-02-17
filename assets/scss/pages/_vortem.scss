@@ -3,7 +3,7 @@
 //
 .sc-vortem-cover {
   position: relative;
-  z-index: 1;
+  z-index: 0;
   .cover {
     height: 650px;
     .react-parallax-content {
@@ -63,8 +63,17 @@
 .sc-vortem-claim {
   background: $brown-light;
   position: relative;
-  background: url("../../img/vortem/bg_claim.png") center center no-repeat;
-  background-size: cover;
+  // background: url("../../img/vortem/bg_claim.png") center center no-repeat;
+  // background-size: cover;
+  .bg {
+    position: absolute;
+    width: auto;
+    height: 110%;
+    object-fit: cover;
+    top: -10%;
+    left: 0;
+    z-index: 1;
+  }
   .img-ornamen {
     position: absolute;
     width: 90%;
@@ -73,15 +82,18 @@
     bottom: 2.5rem;
     margin-left: auto;
     margin-right: auto;
+    z-index: 2;
   }
-  h1 {
-    color: $white;
+  .title-wrapper {
+    z-index: 2;
   }
   .col-item {
+    z-index: 2;
     .img-icon {
       width: 60%;
       margin-left: auto;
       margin-right: auto;
+      z-index: 2;
       @include media-breakpoint-down(lg) {
         width: 70%;
       }

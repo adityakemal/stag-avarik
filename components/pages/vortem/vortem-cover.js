@@ -11,9 +11,9 @@ const VortemCover = () => {
     const [trigger, anim] = useScrollAnim()
     return (
         <section className="sc-vortem-cover cover-full" ref={trigger}>
-            <ParallaxScroll y={[10, 0]} className="separator">
+            {/* <ParallaxScroll y={[10, 0]} className="separator">
                 <img className="img-fluid" alt="" src={separator} />
-            </ParallaxScroll>
+            </ParallaxScroll> */}
             <Parallax
                 blur={0}
                 bgImage={bgCover}
