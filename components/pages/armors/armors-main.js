@@ -191,8 +191,11 @@ const ArmorsMain = () => {
                 nextArrow={<img src={arrowRight} />}
                 customPaging={(i) => (
                   <button>
-                    <div className="overlay-hover" />
-                    <img src={data[i].icon} className={`dots-img ${anim(i + 2)}`} />
+                    {/* <div className="overlay-hover" /> */}
+                    <div className="dots-btn">
+                      <div className="dots-active"></div>
+                      <img src={data[i].icon} className={`img-fluid ${anim(i + 2)}`} />
+                    </div>
                   </button>
                 )}
               >
