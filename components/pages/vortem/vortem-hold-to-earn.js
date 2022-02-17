@@ -4,11 +4,17 @@ import { useScrollAnim } from "components/hooks/hooks"
 
 import stakingImage from "assets/img/vortem/5b_staking_image.png"
 import bg from "assets/img/vortem/bg_hold-to-earn.png"
+import coin1 from "assets/img/vortem/coin-1.png"
+import coin2 from "assets/img/vortem/coin-2.png"
+import coin3 from "assets/img/vortem/coin-3.png"
 
 const VortemHoldToEarn = () => {
     const [trigger, anim] = useScrollAnim()
     return (
         <section className="sc-vortem-hold-to-earn" ref={trigger}>
+            <img src={coin1} className="coin-1" alt="" />
+            <img src={coin2} className="coin-2" alt="" />
+            <img src={coin3} className="coin-3" alt="" />
             <Parallax
                 blur={0}
                 bgImage={bg}
@@ -23,7 +29,7 @@ const VortemHoldToEarn = () => {
                         <div className="row h-100 justify-content-center">
                             <div className="col-md-6 col-xl-5 col-text">
                                 <h1 className={`${anim(2)} d-none d-md-block text-white`}>Hold to Earn Mechanic</h1>
-                                <p className={`${anim(3)} text-white`}>
+                                <p className={`${anim(3)} text-white mb-4`}>
                                     For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day. You can claim your $VORTEM tokens once the game is officially launched.
                                 </p>
                                 <AvarikButton text="Learn More" className="px-5" link="/collect-in-game-currency" />

@@ -3,8 +3,9 @@
 //
 .sc-vortem-cover {
   position: relative;
+  z-index: 1;
   .cover {
-    height: 600px;
+    height: 650px;
     .react-parallax-content {
       height: 100%;
     }
@@ -23,7 +24,7 @@
     @include media-breakpoint-up(md) {
       justify-content: space-between;
     }
-    .logo-text {
+    .col-text {
       @include media-breakpoint-up(md) {
         margin-right: 4rem;
       }
@@ -34,32 +35,36 @@
         color: $white;
         margin-bottom: 0.5rem;
       }
-      h1 {
-        color: $white;
-        @include media-breakpoint-up(md) {
-          font-size: 3rem;
-        }
-        span {
-          color: #e86dbd;
-          font-size: 125%;
+      .title-wrapper {
+        width: 80%;
+        h1 {
+          color: $white;
+          text-align: center;
+          @include media-breakpoint-up(md) {
+            font-size: 3rem;
+          }
         }
       }
     }
-    img {
-      width: 150px;
-      @include media-breakpoint-up(md) {
-        width: 200px;
-      }
-      @include media-breakpoint-up(lg) {
-        width: 275px;
+    .col-img {
+      img {
+        width: 150px;
+        @include media-breakpoint-up(md) {
+          width: 200px;
+        }
+        @include media-breakpoint-up(lg) {
+          width: 275px;
+        }
       }
     }
   }
 }
 
 .sc-vortem-claim {
-  background: $primary;
+  background: $brown-light;
   position: relative;
+  background: url("../../img/vortem/bg_claim.png") center center no-repeat;
+  background-size: cover;
   .img-ornamen {
     position: absolute;
     width: 90%;
@@ -73,9 +78,6 @@
     color: $white;
   }
   .col-item {
-    @include media-breakpoint-down(md) {
-      margin-bottom: 7.5rem;
-    }
     .img-icon {
       width: 60%;
       margin-left: auto;
@@ -102,36 +104,25 @@
       justify-content: flex-start;
       align-items: center;
       padding: 3rem;
+      padding-top: 4rem;
       @include media-breakpoint-down(lg) {
         padding: 2rem;
+        padding-top: 4rem;
       }
       @include media-breakpoint-down(md) {
-        padding-top: 3rem;
+        padding-top: 5rem;
       }
       @include media-breakpoint-down(sm) {
-        padding-top: 2rem;
+        padding-top: 5rem;
       }
-      .bg {
+      .claim-number {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
-        z-index: 0;
-        @include media-breakpoint-down(lg) {
-          width: 100%;
-        }
-        @include media-breakpoint-down(md) {
-          width: 70%;
-        }
-        @include media-breakpoint-down(sm) {
-          width: 85%;
-        }
-        @include media-breakpoint-down(xs) {
-          width: 100%;
-        }
+        width: 50px;
       }
       .hr {
         z-index: 1;
@@ -176,6 +167,43 @@
 .sc-vortem-hold-to-earn {
   position: relative;
   height: 800px;
+  .coin-1 {
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+    width: 100px;
+    z-index: 1;
+    animation: float 2s infinite ease-in-out 0s;
+    @include media-breakpoint-down(md) {
+      top: 20%;
+      left: 5%;
+    }
+  }
+  .coin-2 {
+    position: absolute;
+    top: -2.5rem;
+    right: 10rem;
+    z-index: 1;
+    width: 100px;
+    animation: float 2s infinite ease-in-out 0.5s;
+    @include media-breakpoint-down(md) {
+      right: 5%;
+    }
+    @include media-breakpoint-down(xs) {
+      top: -5rem;
+    }
+  }
+  .coin-3 {
+    position: absolute;
+    right: 10rem;
+    bottom: 0;
+    z-index: 1;
+    width: 125px;
+    animation: float 2s infinite ease-in-out 1s;
+    @include media-breakpoint-down(md) {
+      right: 5%;
+    }
+  }
   .bg {
     width: 100%;
     height: 800px;
@@ -229,4 +257,3 @@
     }
   }
 }
-

@@ -4,7 +4,8 @@ import { useScrollAnim } from "components/hooks/hooks"
 
 import logo from "assets/img/vortem/1_logo.png"
 import bgCover from "assets/img/vortem/bg_cover.png"
-import separator from "assets/img/home/separator-advisors.png"
+import AvarikTitle from "components/avarik-saga/avarik-title"
+import separator from "assets/img/home/ripped-paper-top.png"
 
 const VortemCover = () => {
     const [trigger, anim] = useScrollAnim()
@@ -21,11 +22,15 @@ const VortemCover = () => {
             >
                 <div className="py-main h-100">
                     <div className="container h-100">
-                        <div className="col-6 logo-text">
-                            <h1 className={`fadeInUp d2 ${anim(1)}`}>$Vortem Token</h1>
-                            <p className={`fadeInUp d1 ${anim(2)}`}>$VORTEM is the official Avarik Saga in-game currency, which you can use for upgrading weapons & armors, recruit new avariks and purchase ingredients</p>
+                        <div className="col-6 col-text">
+                            <AvarikTitle
+                                title="$Vortem Token"
+                                titleClassName={`${anim(1)}`}
+                                variant="white"
+                            />
+                            <p className={`${anim(2)}`}>$VORTEM is the official Avarik Saga in-game currency, which you can use for upgrading weapons & armors, recruit new avariks and purchase ingredients</p>
                         </div>
-                        <div className="col-6 d-flex justify-content-center">
+                        <div className="col-6 col-img d-flex justify-content-center">
                             <img src={logo} className={`img-fluid fadeInUp d3 ${anim(3)}`} alt="Vortem" />
                         </div>
                     </div>
