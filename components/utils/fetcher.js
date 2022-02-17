@@ -1,8 +1,11 @@
 import axios from "axios";
 
 const fetcher = axios.create({
-  baseURL: '',
-  timeout: 1000,
+  baseURL: process.env.NEXT_PUBLIC_API_LEADERBORD,
+  timeout: 5000,
+  headers: {
+    'Authorization': `Bearer ${process.env.NEXT_PUBLIC_LEADERBOARD_SECRET_KEY}`
+  }
 });
 
 export default fetcher;

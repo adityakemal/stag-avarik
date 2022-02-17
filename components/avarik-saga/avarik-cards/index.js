@@ -1,16 +1,17 @@
 
 
 const AvarikCards = ({
-    wrapperClassName,
-    imgClassName,
-    className,
+    wrapperClassName = "",
+    imgClassName = "",
+    className = "",
     image,
     label,
     onClick,
-    isActive
+    isActive,
+    variant = "light",
 }) => {
     return (
-        <div className={`avarik-cards-wrapper ${wrapperClassName} ${isActive ? "active" : ""}`} onClick={onClick}>
+        <div className={`avarik-cards-wrapper ${wrapperClassName} ${isActive ? "active" : ""} ${variant} `} onClick={onClick}>
             <div className="img-wrapper mb-4">
                 <div className="overlay-img" />
                 <img src={image} className={`img-fluid ${imgClassName}`} />

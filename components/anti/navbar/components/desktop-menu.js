@@ -17,6 +17,7 @@ const gameInfo = [
   { name: "Armors", link: "/armors" },
   { name: "Game Demo Info", link: "/game-demo-info" },
   { name: "Game Currency", link: "/vortem" },
+  { name: "Leaderboard", link: "/leaderboard" },
 ]
 
 const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {

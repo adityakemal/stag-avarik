@@ -7,7 +7,6 @@ import claimExchange from "assets/img/vortem/3d_claim_exchange.png"
 import claim1 from "assets/img/vortem/claim-1.png"
 import claim2 from "assets/img/vortem/claim-2.png"
 import claim3 from "assets/img/vortem/claim-3.png"
-import card from "assets/img/vortem/claim-card.png"
 import hr from "assets/img/vortem/horizontal-line.png"
 import ornament from "assets/img/common/ornament.png"
 

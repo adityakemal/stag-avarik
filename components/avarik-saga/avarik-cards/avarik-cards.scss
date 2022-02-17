@@ -95,4 +95,18 @@
             color: $white;
         }
     }
+    &.dark {
+        .avarik-cards {
+            background: url("../../../assets/img/common/bg_card-avarik-dark.png") center center no-repeat;
+            background-size: cover;
+            min-height: 63px;
+            p {
+                color: $white !important;
+            }
+        }
+        .overlay-hover,
+        .overlay {
+            background: rgba($color: $white, $alpha: 0);
+        }
+    }
 }
