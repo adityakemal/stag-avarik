@@ -170,6 +170,7 @@ const WeaponsMain = () => {
               <p className={anim(2)}>
                 Weapons hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for weapons. The rarity influences 2 key principles in the game: Greater base stats on the weapon. Enhances the skill power of both active and passive skills of the Hero.
               </p>
+              <AvarikButton text="Buy Now on Opensea" variant="dark" link="https://opensea.io/collection/avarikweapons" />
             </div>
             <div className="col-lg-7 col-img">
               <img src={book} className="img-fluid img-book" alt="" />
@@ -194,8 +195,11 @@ const WeaponsMain = () => {
                 nextArrow={<img src={arrowRight} />}
                 customPaging={(i) => (
                   <button>
-                    <div className="overlay-hover" />
-                    <img src={data[i].icon} className={`dots-img ${anim(i + 2)}`} />
+                    {/* <div className="overlay-hover" /> */}
+                    <div className="dots-btn">
+                      <div className="dots-active"></div>
+                      <img src={data[i].icon} className={`img-fluid ${anim(i + 2)}`} />
+                    </div>
                   </button>
                 )}
               >

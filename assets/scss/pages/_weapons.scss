@@ -12,8 +12,14 @@
             position: relative;
             text-align: center;
             padding: 3rem 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             @include media-breakpoint-down(sm) {
                 padding: 1rem;
+                .avarik-button {
+                    margin-left: 0;
+                }
             }
         }
         .col-img {
@@ -79,6 +85,7 @@
                                     }
                                 }
                                 h1 {
+                                    color: $white;
                                     margin-bottom: 0;
                                 }
                                 @include media-breakpoint-down(lg) {
@@ -139,7 +146,7 @@
                             }
                         }
                         > .col-img {
-                            padding: 1rem 1rem 2rem 1rem;
+                            padding: 1rem 2rem 2rem 1rem;
                             display: flex;
                             align-items: center;
                             margin: 0 !important;
@@ -215,8 +222,36 @@
                             .overlay-hover {
                                 opacity: 1;
                             }
+                            .dots-btn {
+                                .dots-active {
+                                    border: 2px solid $primary;
+                                    opacity: 1;
+                                }
+                            }
                         }
                         button {
+                            .dots-btn {
+                                width: 60px;
+                                height: 60px;
+                                background-color: $brown-light;
+                                border-radius: 100%;
+                                position: absolute;
+                                bottom: 0;
+                                border: 1px solid rgba(0, 0, 0, 0.4);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                .dots-active {
+                                    width: 55px;
+                                    height: 55px;
+                                    background-color: rgba($white, 0);
+                                    border-radius: 100%;
+                                    position: absolute;
+                                    border: 2px solid $primary;
+                                    transition: all 0.5s ease-in-out;
+                                    opacity: 0;
+                                }
+                            }
                             .dots-img {
                                 display: block;
                                 width: 70px;
@@ -240,6 +275,13 @@
                             button {
                                 .dots-img {
                                     animation: float 2s infinite ease-in-out 0s;
+                                }
+                                .dots-btn {
+                                    animation: float 2s infinite ease-in-out 0s;
+                                    .dots-active {
+                                        border: 2px solid $primary;
+                                        opacity: 1;
+                                    }
                                 }
                             }
                         }
