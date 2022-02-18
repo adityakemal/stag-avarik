@@ -23,9 +23,9 @@
             .modal-content {
                 background: rgba($black, 0);
                 padding: 2rem !important;
-                @include media-breakpoint-down(xs) {
-                    padding: 0.25rem !important;
-                }
+                // @include media-breakpoint-down(xs) {
+                //     padding: 0.25rem !important;
+                // }
                 .title-wrapper {
                     width: fit-content;
                     margin-left: auto;

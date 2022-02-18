@@ -7,16 +7,16 @@ import { Slider } from "components/anti"
 import separator from "assets/img/home/separator-advisors.png"
 import bg from "assets/img/home/bg_game-features.png"
 import features1 from "assets/img/home/features-1.png"
+import features2 from "assets/img/home/features-2.jpeg"
+import features3 from "assets/img/home/features-3.jpeg"
 import frame from "assets/img/home/feature-game-frame.png"
 import arrowRight from "assets/img/common/arrow-right.png"
 import arrowLeft from "assets/img/common/arrow-left.png"
 
 const features = [
     { img: features1 },
-    { img: features1 },
-    { img: features1 },
-    { img: features1 },
-    { img: features1 },
+    { img: features2 },
+    { img: features3 },
 ]
 
 const HomeGameFeatures = () => {
