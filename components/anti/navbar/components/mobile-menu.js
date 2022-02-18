@@ -91,6 +91,14 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                   Hold to Earn
                 </Link>
               </li>
+              <li
+                className="nav-item"
+                onClick={() => handleCloseMenu("", "/teams")}
+              >
+                <Link className="nav-link anim-6" activeClassName="active">
+                  Teams
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

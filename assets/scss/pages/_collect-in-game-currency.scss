@@ -309,6 +309,7 @@
 }
 .sc-before-connect {
     position: relative;
+    background: $primary;
     padding-top: $navbar-main-height-mobile;
     @include media-breakpoint-up($navbar-expand-up) {
         padding-top: $navbar-main-height-desktop;

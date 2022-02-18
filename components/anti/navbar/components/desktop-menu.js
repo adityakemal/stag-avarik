@@ -74,6 +74,11 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               Hold to Earn
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" activeClassName="active" to="/teams">
+              Team
+            </Link>
+          </li>
           <AvarikButton
             variant="light"
             text={account ? truncate(account, 15) : "Connect Wallet"}
