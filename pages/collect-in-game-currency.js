@@ -43,10 +43,10 @@ const HoldToEarnPage = () => {
     return (
         <>
             <Seo title="Collect your In-Game Currency" />
+            <Helmet>
+                <body className="bd-collect-in-game-currency" />
+            </Helmet>
             <Layout>
-                <Helmet>
-                    <body className="bd-collect-in-game-currency" />
-                </Helmet>
                 {account ? (
                     <CollectInGameCurrency />
                 ) : (

@@ -6,7 +6,7 @@ import { Link } from "components/anti/link/link"
 import AvarikButton from "components/avarik-saga/avarik-button"
 import { injected, walletconnect } from "components/utils/connecters"
 
-import paper from "assets/img/home/paper-3.png"
+import paper from "assets/img/common/paper-3.png"
 import iconDropdown from "assets/img/common/icon_dropdown.png"
 import { truncate } from "components/utils/helpers"
 

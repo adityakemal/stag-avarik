@@ -1,6 +1,9 @@
 import { Accordion } from "components/anti"
-import { useScrollAnim } from "components/hooks/hooks"
-import iconDropdown from "assets/img/common/icon_dropdown.png"
+import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
+
+import iconDropdown from "assets/img/common/icon_dropdown-black.png"
+import bg from "assets/img/common/bg_faq.png"
+import bgMobile from "assets/img/vortem/bg_claim-full-mobile.png"
 
 const faq = [
     {
@@ -23,22 +26,24 @@ const faq = [
 
 const FrequentlyAskedQuestion = () => {
     const [trigger, anim] = useScrollAnim()
-    const ExpandIcon = () => <img src={iconDropdown} className="img-fluid icon-dropdown" />
+    const { width } = useWindowSize()
 
+    const ExpandIcon = () => <img src={iconDropdown} className="img-fluid icon-dropdown" />
     return (
         <section className="sc-frequently-asked-question" ref={trigger}>
+            <img src={bg} className="bg" alt="" />
             <div className="py-main">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-5">
                             <div className=""></div>
-                            <h1 className={`title d-none d-md-block text-white ${anim(1)}`}>
+                            <h1 className={`title d-none d-md-block ${anim(1)}`}>
                                 Frequently <br /> Asked <br /> Question
                             </h1>
-                            <h1 className={`title d-block d-md-none text-white ${anim(1)}`}>
+                            <h1 className={`title d-block d-md-none ${anim(1)}`}>
                                 Frequently Asked Question
                             </h1>
-                            <p className={`text-white mb-5 ${anim(2)}`}>
+                            <p className={`mb-5 text-dark ${anim(2)}`}>
                                 Explore the vast world of Avarik Saga
                             </p>
                         </div>

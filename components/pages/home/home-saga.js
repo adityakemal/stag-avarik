@@ -6,7 +6,7 @@ import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 import AvarikButton from "components/avarik-saga/avarik-button"
 import AvarikTitle from "components/avarik-saga/avarik-title"
 
-import paper from "assets/img/home/paper-4.png"
+import paper from "assets/img/common/paper-4.png"
 import saga from "assets/img/home/bg_the-saga.png"
 import borderTop from "assets/img/home/ripped-paper-top.png"
 import borderBottom from "assets/img/home/separator-thesaga.png"

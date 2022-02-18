@@ -5,13 +5,10 @@
     background: transparent;
     max-width: fit-content !important;
     .modal-wrapper {
-        background: rgba($black, 0) url("../../img/home/paper-5.png") no-repeat center center;
+        background: rgba($black, 0) url("../../img/common/paper-5.png") no-repeat center center;
         background-size: cover;
         width: 100%;
         margin: auto;
-        @include media-breakpoint-down(sm) {
-            // background: rgba($black, 0) url("../../img/home/paper-4.png") no-repeat center center;
-        }
         .close {
             top: 5rem;
             right: 4rem;
@@ -106,7 +103,7 @@
 //         }
 //     }
 //     .modal-wrapper {
-//         background: rgba($black, 0) url("../../img/home/paper-5.png") no-repeat center center;
+//         background: rgba($black, 0) url("../../img/common/paper-5.png") no-repeat center center;
 //         background-size: cover;
 //         width: 100%;
 //         margin: auto;

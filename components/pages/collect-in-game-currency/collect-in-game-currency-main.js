@@ -1,6 +1,7 @@
 import { useWeb3React } from "@web3-react/core"
 import { Modal } from "components/anti"
 import AvarikButton from "components/avarik-saga/avarik-button"
+import AvarikTitle from "components/avarik-saga/avarik-title"
 import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 import useClaimableToken from "components/hooks/useClaimableToken"
 import useNft from "components/hooks/useNft"
@@ -39,10 +40,12 @@ const HoldToEarnMain = () => {
                     {account ? (
                         <>
                             <div className={`heading ${anim(2)}`}>
-                                <h1 className="text-white">
-                                    Collect your In-Game Currency
-                                </h1>
-                                <p>
+                                <AvarikTitle
+                                    title="Collect your In-Game Currency"
+                                    variant="white"
+                                    className="mx-auto"
+                                />
+                                <p className="text-white">
                                     For each Avarik Saga NFT, you will earn approximately 3 $VORTEM per day.
                                 </p>
                             </div>
@@ -50,6 +53,7 @@ const HoldToEarnMain = () => {
                                 <div className="row row-3 mb-3">
                                     <div className="col-lg-6">
                                         <div className={`box-hold-to-earn ${anim(4)}`} ref={triggerToken}>
+                                            <div className="border"></div>
                                             {
                                                 !listToken.length ? (
                                                     <div className="staked-empty">
@@ -63,6 +67,7 @@ const HoldToEarnMain = () => {
                                                             className={`${animToken(2)}`}
                                                             link="https://opensea.io/collection/avariksagauniverse"
                                                             target="_blank"
+                                                            variant="dark"
                                                         />
                                                     </div>
                                                 ) :
@@ -95,6 +100,7 @@ const HoldToEarnMain = () => {
                                     </div>
                                     <div className="col-lg-6">
                                         <div className={`box-hold-to-earn ${anim(5)}`} ref={triggerEarned}>
+                                            <div className="border"></div>
                                             <div className="box-earned">
                                                 <p className={`${animEarned(1)}`}>
                                                     You will earn approximately {3 * listToken.length} $VORTEM /Day for holding {listToken.length} NFT Token
@@ -121,8 +127,11 @@ const HoldToEarnMain = () => {
                                 <div className="row" ref={triggerRewards}>
                                     <div className="col-12">
                                         <div className={`box-hold-to-earn box-rewards ${animRewards(1)}`}>
-                                            <div className="d-flex justify-content-between">
-                                                <h5 className={`text-warning ${animRewards(2)}`}>Game Demo Rewards</h5>
+                                            <div className="border"></div>
+                                            <div
+                                                className={`d-flex justify-content-${listToken?.length ? "between" : "center"}`}
+                                            >
+                                                <h5 className={`${animRewards(2)}`}>Game Demo Rewards</h5>
                                                 {listToken.length ? (
                                                     <p className="text-white">
                                                         You have earn approximately 67.58267 $VORTEM from playing the demo game
@@ -139,6 +148,7 @@ const HoldToEarnMain = () => {
                                                         className={`px-5 ${animRewards(4)}`}
                                                         link="https://opensea.io/collection/avariksagauniverse"
                                                         target="_blank"
+                                                        variant="dark"
                                                     />
                                                 </div>
                                             ) : (
