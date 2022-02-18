@@ -1,4 +1,4 @@
-import avarikIcon from "assets/img/common/logo_main-icon-dark.png"
+import avarikIcon from "assets/img/common/logo_main-icon.png"
 import cogoToast from "cogo-toast"
 import { Button } from "components/anti/buttons/buttons"
 import { Modal } from "components/anti/modal/modal"

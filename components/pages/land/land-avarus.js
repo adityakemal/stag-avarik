@@ -1,5 +1,5 @@
 import { useScrollAnim } from "components/hooks/hooks"
-import avarikIcon from "assets/img/common/logo_main-icon-light.png"
+import avarikIcon from "assets/img/common/logo_main-icon.png"
 import avarusLand from "assets/img/land/avarus-land.png"
 
 

@@ -22,16 +22,19 @@ const VortemCover = () => {
             >
                 <div className="py-main h-100">
                     <div className="container h-100">
-                        <div className="col-6 col-text">
-                            <AvarikTitle
-                                title="$Vortem Token"
-                                titleClassName={`${anim(1)}`}
-                                variant="white"
-                            />
-                            <p className={`${anim(2)}`}>$VORTEM is the official Avarik Saga in-game currency, which you can use for upgrading weapons & armors, recruit new avariks and purchase ingredients</p>
-                        </div>
-                        <div className="col-6 col-img d-flex justify-content-center">
-                            <img src={logo} className={`img-fluid fadeInUp d3 ${anim(3)}`} alt="Vortem" />
+                        <div className="row">
+                            <div className="col-md-6 col-text">
+                                <AvarikTitle
+                                    title="$Vortem Token"
+                                    titleClassName={`${anim(1)}`}
+                                    variant="white"
+                                    className="mx-auto"
+                                />
+                                <p className={`${anim(2)}`}>$VORTEM is the official Avarik Saga in-game currency, which you can use for upgrading weapons & armors, recruit new avariks and purchase ingredients</p>
+                            </div>
+                            <div className="col-md-6 col-img d-flex justify-content-center">
+                                <img src={logo} className={`img-fluid fadeInUp d3 ${anim(3)}`} alt="Vortem" />
+                            </div>
                         </div>
                     </div>
                 </div>

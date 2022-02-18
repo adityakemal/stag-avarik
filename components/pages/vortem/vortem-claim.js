@@ -1,5 +1,5 @@
 import AvarikTitle from "components/avarik-saga/avarik-title"
-import { useScrollAnim } from "components/hooks/hooks"
+import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 
 import claimHolding from "assets/img/vortem/3b_claim_holding.png"
 import claimPlay from "assets/img/vortem/3c_claim_play.png"
@@ -9,14 +9,16 @@ import claim2 from "assets/img/vortem/claim-2.png"
 import claim3 from "assets/img/vortem/claim-3.png"
 import hr from "assets/img/vortem/horizontal-line.png"
 import bg from "assets/img/vortem/bg_claim-full.png"
+import bgMobile from "assets/img/vortem/bg_claim-full-mobile.png"
 import ornament from "assets/img/common/ornament.png"
 
 
 const VortemClaim = () => {
     const [trigger, anim] = useScrollAnim()
+    const { width } = useWindowSize()
     return (
         <section className="sc-vortem-claim" ref={trigger}>
-            <img src={bg} className="bg" alt="" />
+            <img src={width > 576 ? bg : bgMobile} className="bg" alt="" />
             <div className="py-main">
                 <div className="container">
                     <AvarikTitle title="How to Claim" className="mx-auto" titleClassName={anim(1)} />

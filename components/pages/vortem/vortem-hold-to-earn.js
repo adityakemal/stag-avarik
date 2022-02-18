@@ -23,12 +23,12 @@ const VortemHoldToEarn = () => {
             >
                 <div className="py-main h-100">
                     <div className="container h-100">
-                        <h1 className={`mb-4 ${anim(2)} d-block d-md-none text-center text-white`}>
+                        {/* <h1 className={`mb-4 ${anim(2)} d-block d-md-none text-center text-white`}>
                             Hold to Earn Mechanic
-                        </h1>
+                        </h1> */}
                         <div className="row h-100 justify-content-center">
                             <div className="col-md-6 col-xl-5 col-text">
-                                <h1 className={`${anim(2)} d-none d-md-block text-white`}>Hold to Earn Mechanic</h1>
+                                <h1 className={`${anim(2)} text-white`}>Hold to Earn Mechanic</h1>
                                 <p className={`${anim(3)} text-white mb-4`}>
                                     For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day. You can claim your $VORTEM tokens once the game is officially launched.
                                 </p>
