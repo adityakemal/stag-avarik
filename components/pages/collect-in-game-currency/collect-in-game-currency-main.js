@@ -131,7 +131,7 @@ const HoldToEarnMain = () => {
                                             <div
                                                 className={`d-flex justify-content-${listToken?.length ? "between" : "center"}`}
                                             >
-                                                <h5 className={`${animRewards(2)}`}>Game Demo Rewards</h5>
+                                                <h5 className={`${animRewards(2)}`}>Mini Game Rewards</h5>
                                                 {listToken.length ? (
                                                     <p className="text-white">
                                                         You have earn approximately 67.58267 $VORTEM from playing the demo game
@@ -199,7 +199,7 @@ const HoldToEarnMain = () => {
                                                 </div>
                                             )}
                                             {/* <AvarikButton
-                                                text="Play Game Demo Now"
+                                                text="Play Mini Game Now"
                                                 link="https://game-avariksaga-stag.agatedev.net/"
                                             /> */}
                                         </div>

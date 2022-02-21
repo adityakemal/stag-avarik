@@ -33,7 +33,7 @@ export const Footer = () => {
     // { title: "Faction", link: "/factions" },
     { title: "Weapons", link: "/weapons" },
     { title: "Armors", link: "/armors" },
-    // { title: "Game Demo Info", link: "/game-demo-info" },
+    // { title: "Mini Game Info", link: "/mini-game-info" },
     { title: "Hold to Earn", link: "/collect-in-game-currency" },
     { title: "In Game Currency", link: "/vortem" },
   ]

@@ -1,10 +1,10 @@
 import image from "assets/img/home/img_play-to-earn.png"
 import { useScrollAnim } from "components/hooks/hooks"
 
-const GameDemoInfoSystem = () => {
+const MiniGameInfoSystem = () => {
     const [trigger, anim] = useScrollAnim()
     return (
-        <section className="sc-game-demo-info-system" ref={trigger}>
+        <section className="sc-mini-game-info-system" ref={trigger}>
             <div className="overlay"></div>
             <div className="py-main h-100">
                 <div className="container">
@@ -25,4 +25,4 @@ const GameDemoInfoSystem = () => {
     )
 }
 
-export default GameDemoInfoSystem
+export default MiniGameInfoSystem

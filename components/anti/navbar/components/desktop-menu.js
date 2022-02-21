@@ -15,7 +15,7 @@ const gameInfo = [
   { name: "Faction", link: "/factions" },
   { name: "Weapons", link: "/weapons" },
   { name: "Armors", link: "/armors" },
-  { name: "Game Demo Info", link: "/game-demo-info" },
+  { name: "Mini Game Info", link: "/mini-game-info" },
   { name: "Game Currency", link: "/vortem" },
   { name: "Leaderboard", link: "/leaderboard" },
 ]

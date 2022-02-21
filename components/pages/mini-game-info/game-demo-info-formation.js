@@ -1,10 +1,10 @@
-import image from "assets/img/game-demo/characters.png"
+import image from "assets/img/mini-game/characters.png"
 import { useScrollAnim } from "components/hooks/hooks"
 
-const GameDemoInfoFormation = () => {
+const MiniGameInfoFormation = () => {
     const [trigger, anim] = useScrollAnim()
     return (
-        <section className="sc-game-demo-info-formation" ref={trigger}>
+        <section className="sc-mini-game-info-formation" ref={trigger}>
             <div className="overlay"></div>
             <div className="py-main h-100">
                 <div className="container">
@@ -25,5 +25,5 @@ const GameDemoInfoFormation = () => {
     )
 }
 
-export default GameDemoInfoFormation
+export default MiniGameInfoFormation
 
