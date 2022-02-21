@@ -32,7 +32,11 @@ const HomeSaga = () => {
         {/* </Parallax> */}
         <img src={saga} className="img-fluid img-saga" alt="" />
         <div className="container">
-          <Parallax className="parallax" translateY={width > 786 ? [0, -25] : width > 576 ? [-50, -75] : [25, 0]} tagOuter="figure">
+          <Parallax
+            className="parallax"
+            translateY={width > 786 ? [0, -25] : width > 576 ? [-50, -75] : [5, -20]}
+            tagOuter="figure"
+          >
             <div className="row justify-content-end">
               <div className="col-lg-6 col-md-8 col-sm-12">
                 <div className="content">

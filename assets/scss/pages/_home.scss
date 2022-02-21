@@ -144,6 +144,9 @@ body.bd-home {
     animation: float 7.5s infinite ease-in-out;
     width: 125px;
     z-index: 2;
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
   }
   .bug {
     position: absolute;
@@ -153,6 +156,9 @@ body.bd-home {
     animation-delay: 0.5s;
     width: 125px;
     z-index: 2;
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
   }
   .slimey {
     position: absolute;
@@ -165,6 +171,9 @@ body.bd-home {
     animation-delay: 1s;
     width: 125px;
     z-index: 2;
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
   }
   .border-paper-top {
     position: absolute;
@@ -200,6 +209,7 @@ body.bd-home {
     z-index: 0;
     @include media-breakpoint-up(xl) {
       height: 100%;
+      object-fit: contain;
     }
     @include media-breakpoint-down(md) {
       width: 90%;
@@ -350,6 +360,9 @@ body.bd-home {
     top: 5rem;
     z-index: 2;
     animation: float 7.5s infinite ease-in-out;
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
   }
   .dragon {
     position: absolute;
@@ -358,6 +371,9 @@ body.bd-home {
     top: 7.5rem;
     z-index: 2;
     animation: float 7.5s infinite ease-in-out;
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
   }
   .gate {
     position: absolute;
@@ -365,6 +381,9 @@ body.bd-home {
     left: 0;
     bottom: -30%;
     z-index: 3;
+    @include media-breakpoint-down(sm) {
+      bottom: -20%;
+    }
   }
   .heading {
     position: relative;
@@ -544,7 +563,7 @@ body.bd-home {
     width: 100%;
     left: 0;
     top: -70%;
-    @include media-breakpoint-up(xxl) {
+    @media (min-width: 1800px) {
       top: -110%;
     }
     @include media-breakpoint-down(lg) {
