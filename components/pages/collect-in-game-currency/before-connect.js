@@ -9,6 +9,7 @@ import { Parallax } from "react-parallax"
 import { ModalConnect } from "./modal/connect"
 
 import paper from "assets/img/common/paper-2.png"
+import img from "assets/img/vortem/img_hold-to-earn.png"
 import bgCover from "assets/img/common/bg_hold-to-earn.jpeg"
 import AvarikTitle from "components/avarik-saga/avarik-title"
 
@@ -69,9 +70,14 @@ const BeforeConnect = () => {
                                 variant="dark"
                             />
                         </div>
-                        <div className="col-md-7 text-center">
+                        <div className="col-md-7 col-img">
                             <img
                                 src={paper}
+                                className={`img-fluid img-paper fadeInUp d3`}
+                                alt="Paper"
+                            />
+                            <img
+                                src={img}
                                 className={`img-fluid img-hold-to-earn fadeInUp d3`}
                                 alt="Vortem"
                             />

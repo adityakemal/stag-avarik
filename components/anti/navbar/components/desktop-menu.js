@@ -12,11 +12,16 @@ import { truncate } from "components/utils/helpers"
 
 const gameInfo = [
   { name: "Class", link: "/class" },
-  { name: "Faction", link: "/factions" },
+  // { name: "Faction", link: "/factions" },
   { name: "Weapons", link: "/weapons" },
   { name: "Armors", link: "/armors" },
   { name: "Mini Game Info", link: "/mini-game-info" },
   { name: "Game Currency", link: "/vortem" },
+]
+
+const miniGame = [
+  { name: "About Mini Game", link: "/mini-game-info" },
+  { name: "Launch Mini Game", link: "https://minigame.avariksaga.com/" },
   { name: "Leaderboard", link: "/leaderboard" },
 ]
 
@@ -43,11 +48,11 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
       <div className={`desktop-menu d-none d-${navExpand}-flex`}>
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <div className="nav-link">
+            <div className="nav-link game-info">
               Game Info
               <img src={iconDropdown} alt="" className="img-fluid ic-dropdown" />
             </div>
-            <ul className="nav-item-dropdown">
+            <ul className="nav-item-dropdown game-info">
               <img src={paper} alt="" className="img-paper img-fluid" />
               {gameInfo.map((item, i) => (
                 <li key={i}>
@@ -78,6 +83,23 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
             <Link className="nav-link" activeClassName="active" to="/teams">
               Team
             </Link>
+          </li>
+          <li className="nav-item">
+            <div className="nav-link mini-game">
+              Mini Game
+              <img src={iconDropdown} alt="" className="img-fluid ic-dropdown" />
+            </div>
+            <ul className="nav-item-dropdown mini-game">
+              <img src={paper} alt="" className="img-paper img-fluid" />
+              {miniGame.map((item, i) => (
+                <li key={i}>
+                  <Link to={item.link}>
+                    {item.name}
+                  </Link>
+                  {i !== (miniGame.length - 1) ? <hr /> : null}
+                </li>
+              ))}
+            </ul>
           </li>
           <AvarikButton
             variant="light"

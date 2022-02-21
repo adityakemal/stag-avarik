@@ -352,8 +352,21 @@
             }
         }
     }
-    .img-hold-to-earn {
-        width: 90%;
+    .col-img {
+        position: relative;
+        text-align: center;
+        .img-paper {
+            width: 90%;
+        }
+        .img-hold-to-earn {
+            position: absolute;
+            width: 90%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
     }
     .heading {
         img {

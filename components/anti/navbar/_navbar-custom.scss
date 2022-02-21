@@ -189,13 +189,27 @@
         i {
           font-size: 1.125rem;
         }
-        &:hover {
-          & ~ .nav-item-dropdown {
-            visibility: visible;
-            opacity: 1;
-            height: 300px;
-            .img-paper {
-              height: 300px;
+        &.game-info {
+          &:hover {
+            & ~ .nav-item-dropdown.game-info {
+              visibility: visible;
+              opacity: 1;
+              height: 225px;
+              .img-paper {
+                height: 225px;
+              }
+            }
+          }
+        }
+        &.mini-game {
+          &:hover {
+            & ~ .nav-item-dropdown.mini-game {
+              visibility: visible;
+              opacity: 1;
+              height: 150px;
+              .img-paper {
+                height: 150px;
+              }
             }
           }
         }
@@ -216,7 +230,7 @@
           visibility: visible;
           opacity: 1;
           .img-paper {
-            height: 300px;
+            height: 225px;
           }
         }
         li {
@@ -251,6 +265,15 @@
           height: 0;
           transition: all 0.5s ease 0s;
           z-index: -1;
+        }
+        &.mini-game {
+          left: unset;
+          right: 12rem;
+          &:hover {
+            .img-paper {
+              height: 150px;
+            }
+          }
         }
       }
       .ic-music {
