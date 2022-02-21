@@ -198,6 +198,9 @@ body.bd-home {
     left: 10%;
     width: 50%;
     z-index: 0;
+    @include media-breakpoint-up(xl) {
+      height: 100%;
+    }
     @include media-breakpoint-down(md) {
       width: 90%;
       right: 0;
@@ -243,6 +246,9 @@ body.bd-home {
       display: flex;
       flex-direction: column;
       align-items: center;
+      @include media-breakpoint-up(xxl) {
+        margin-left: auto;
+      }
       @include media-breakpoint-down(lg) {
         padding-top: 1.5rem;
         width: 90%;
@@ -475,6 +481,9 @@ body.bd-home {
   padding-top: 7.5rem !important;
   background: $primary;
   padding-bottom: 40rem;
+  @include media-breakpoint-up(xxl) {
+    padding-bottom: 50rem;
+  }
   @include media-breakpoint-up(md) {
     margin-bottom: -1.5rem;
   }
@@ -535,6 +544,9 @@ body.bd-home {
     width: 100%;
     left: 0;
     top: -70%;
+    @include media-breakpoint-up(xxl) {
+      top: -110%;
+    }
     @include media-breakpoint-down(lg) {
       top: -60%;
     }

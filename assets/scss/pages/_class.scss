@@ -1,6 +1,4 @@
 .sc-class-main {
-    height: 100vh !important; // fallback option
-    height: calc(var(--vh, 1vh) * 100) !important;
     background-size: cover !important;
     transition: all 0.5s;
     position: relative;
@@ -10,15 +8,14 @@
     padding-bottom: 7.5rem;
     position: relative;
     .container {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
         .row {
             .col-text {
                 position: relative;
                 text-align: center;
                 padding: 3rem 3rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 @include media-breakpoint-down(sm) {
                     padding: 1rem;
                 }

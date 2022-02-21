@@ -50,10 +50,30 @@
     }
     &.dark {
         &:hover {
+            color: $dark;
+            border-top: 1px solid $primary;
+            border-bottom: 1px solid $primary;
             .overlay {
-                opacity: 0.25;
+                opacity: 1;
                 left: 0;
                 width: 100%;
+                transition: all 0.5s ease 0s;
+            }
+            .overlay-dark {
+                opacity: 0;
+                left: 50%;
+                transition: all 0.5s ease 0.25s;
+                width: 0;
+            }
+            .side-left,
+            .side-right {
+                transition: all 0.5s ease 0.25s;
+                &.dark {
+                    opacity: 0;
+                }
+                &.light {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -90,7 +110,7 @@
         position: absolute;
         top: 0;
         transform: scaleX(-1);
-        left: -21px;
+        left: -22px;
         height: 118%;
         object-fit: contain;
         transition: all 0.5s ease 0s;
@@ -105,7 +125,7 @@
         position: absolute;
         top: 0;
         transform: scaleX(-1);
-        right: -21px;
+        right: -22px;
         height: 118%;
         object-fit: contain;
         transition: all 0.5s ease 0s;

@@ -26,7 +26,7 @@ const MiniGameInfoCover = () => {
                             <p className={`description ${anim(2)}`}>
                                 Try the exclusive Avarik Saga Mini Game and experience the immersive world of Avarus and its valorous warriors. This demo showcases the best that this fresh, exciting universe has to offer. Train Heroes and unleash your creativity by developing the expansive lands, and lead your faction to victory.                        </p>
                             <AvarikButton
-                                text="Go to Mini Game"
+                                text="Play Now"
                                 variant="dark"
                                 link="https://minigame.avariksaga.com/"
                                 target="_blank"

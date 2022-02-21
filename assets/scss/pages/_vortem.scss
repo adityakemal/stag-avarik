@@ -37,8 +37,8 @@
       p {
         color: $white;
         margin-bottom: 0.5rem;
+        text-align: center;
         @include media-breakpoint-down(sm) {
-          text-align: center;
           margin-bottom: 2.5rem;
         }
       }
