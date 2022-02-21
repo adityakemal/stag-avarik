@@ -99,7 +99,7 @@ const HomeAdvisors = () => {
                                     />
                                 </div>
                                 <h6 className={`title ${anim(3 + i)}`}>{item.title}</h6>
-                                <h6 className={`text ${anim(4 + i)}`}>{item.text}</h6>
+                                <p className={`text ${anim(4 + i)}`}>{item.text}</p>
                                 <Social
                                     size="sm"
                                     shape="square"

@@ -14,6 +14,7 @@ import { scroller } from "react-scroll"
 
 import logoDark from "assets/img/common/logo_footer.png"
 import ornament from "assets/img/common/ornament.png"
+import ornamentFooter from "assets/img/common/ornament-footer.png"
 
 export const Footer = () => {
   const [modal, setModal] = useState(null)
@@ -69,6 +70,7 @@ export const Footer = () => {
   return (
     <>
       <footer>
+        <img src={ornamentFooter} className="img-fluid img-ornament-footer" alt="" />
         <section className="footer-main py-main">
           <div className="container">
             <div className="row row-main">

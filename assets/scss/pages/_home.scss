@@ -220,6 +220,8 @@ body.bd-home {
     @include media-breakpoint-down(sm) {
       width: 100%;
       top: 0;
+      left: 0;
+      right: 0;
       margin: 0 auto;
     }
   }
@@ -349,6 +351,9 @@ body.bd-home {
   text-align: center;
   background: $brown-light;
   height: 750px;
+  @media (min-width: 1800px) {
+    height: 1000px;
+  }
   @include media-breakpoint-down(sm) {
     padding-top: 3.75rem !important;
     height: 500px;
@@ -371,6 +376,23 @@ body.bd-home {
     top: 7.5rem;
     z-index: 2;
     animation: float 7.5s infinite ease-in-out;
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+  }
+  .wolf {
+    position: absolute;
+    width: 12%;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 5rem;
+    z-index: 4;
+    animation: float 7.5s infinite ease-in-out;
+    @media (min-width: 1800px) {
+      bottom: 10rem;
+    }
     @include media-breakpoint-down(xs) {
       display: none;
     }
@@ -441,7 +463,7 @@ body.bd-home {
       width: 100%;
       height: 500px;
       &:not(.active) {
-       opacity: 0.5;
+        opacity: 0.5;
       }
       @include media-breakpoint-down(sm) {
         height: 250px;
@@ -490,8 +512,6 @@ body.bd-home {
   }
 }
 
-
-
 // advisors
 .sc-home-advisors {
   position: relative;
@@ -511,7 +531,7 @@ body.bd-home {
   }
   @include media-breakpoint-down(sm) {
     padding-bottom: 15rem;
-  } 
+  }
   .team-item {
     margin-bottom: 1.25rem;
     @include media-breakpoint-up(md) {
@@ -611,7 +631,7 @@ body.bd-home {
         position: absolute;
         width: 150%;
         height: 2px;
-        background-color: #A59480;
+        background-color: #a59480;
         right: -125%;
         top: 30%;
         z-index: -1;
@@ -628,7 +648,7 @@ body.bd-home {
         position: absolute;
         width: 150%;
         height: 2px;
-        background-color: #A59480;
+        background-color: #a59480;
         right: -127%;
         top: 30%;
         z-index: -1;

@@ -31,6 +31,7 @@ import glaciaChar4 from "assets/img/factions/glacia-character-4.png"
 
 import phoenix from "assets/img/home/phoenix.png"
 import dragon from "assets/img/home/dragon.png"
+import wolf from "assets/img/home/wolf.png"
 import gate from "assets/img/home/separator-faction.png"
 
 import ModalFactions from "./modal/modal-factions"
@@ -91,6 +92,7 @@ const HomeFactions = () => {
             <div className="sc-home-factions pt-main" id="factions" ref={trigger}>
                 <img src={phoenix} className="phoenix" alt="" />
                 <img src={dragon} className="dragon" alt="" />
+                <img src={wolf} className="wolf" alt="" />
                 <img src={gate} className="gate" alt="" />
                 <div className="container">
                     <div className="heading">
@@ -108,7 +110,8 @@ const HomeFactions = () => {
                                         setModal("modal-factions")
                                     }}
                                 >
-                                    <img src={item.img} className={`img-fluid ${anim(i + 5, "revealInDown")}`} alt={item.name} />
+                                    <img src={item.img} className={`img-fluid mb-4 ${anim(i + 5, "revealInDown")}`} alt={item.name} />
+                                    <h5 className={anim(i + 6)}>{item.name}</h5>
                                 </div>
                             ))}
                         </div>

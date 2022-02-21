@@ -85,6 +85,7 @@ export const Slider = ({
     rows: rowsInitial,
     nextArrow: nextArrow,
     prevArrow: prevArrow,
+    slidesPerRow: 4,
     responsive: [
       {
         breakpoint: 1399,

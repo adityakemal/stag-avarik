@@ -25,13 +25,6 @@ const TeamsMain = () => {
 
     const team = [
         {
-            img: joel,
-            title: "Joel Handojo",
-            text: "Art Director",
-            social: [],
-            // social: [{ type: "instagram", url: "https://instagram.com/jhandojo" }],
-        },
-        {
             img: kevinCahya,
             title: "Kevin Cahya",
             text: "CEO",
@@ -54,6 +47,13 @@ const TeamsMain = () => {
             text: "CPO",
             social: [],
             // social: []
+        },
+        {
+            img: joel,
+            title: "Joel Handojo",
+            text: "Art Director",
+            social: [],
+            // social: [{ type: "instagram", url: "https://instagram.com/jhandojo" }],
         },
         {
             img: hans,
@@ -107,14 +107,12 @@ const TeamsMain = () => {
             // ],
         },
         {
-            img: kevinSusanto,
-            title: "Kevin Susanto",
-            text: "Advisor",
+            img: maik,
+            titleMobile: "Michael Chrsynt",
+            title: "Michael Chrisyanto",
+            text: "Story Teller",
             social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/kevinsusanto" },
-            //     { type: "instagram", url: "https://instagram.com/kevinsusanto" },
-            // ],
+            // social: [{ type: "instagram", url: "https://instagram.com/mchlchrsynt" }],
         },
         {
             img: nick,
@@ -124,6 +122,16 @@ const TeamsMain = () => {
             // social: [
             //     { type: "twitter", url: "https://twitter.com/nickyudha" },
             //     { type: "instagram", url: "https://instagram.com/nickyudha" },
+            // ],
+        },
+        {
+            img: brandon,
+            title: "Brandon Salim",
+            text: "Advisor",
+            social: [],
+            // social: [
+            //     { type: "twitter", url: "https://twitter.com/brandonicholas" },
+            //     { type: "instagram", url: "https://instagram.com/brandonsalim" },
             // ],
         },
         {
@@ -137,12 +145,14 @@ const TeamsMain = () => {
             // ],
         },
         {
-            img: maik,
-            titleMobile: "Michael Chrsynt",
-            title: "Michael Chrisyanto",
-            text: "Story Teller",
+            img: kevinSusanto,
+            title: "Kevin Susanto",
+            text: "Advisor",
             social: [],
-            // social: [{ type: "instagram", url: "https://instagram.com/mchlchrsynt" }],
+            // social: [
+            //     { type: "twitter", url: "https://twitter.com/kevinsusanto" },
+            //     { type: "instagram", url: "https://instagram.com/kevinsusanto" },
+            // ],
         },
         {
             img: handi,
@@ -151,16 +161,6 @@ const TeamsMain = () => {
             social: [],
             // social: [{ type: "instagram", url: "https://instagram.com/handi_hj" }],
         },
-        {
-            img: brandon,
-            title: "Brandon Salim",
-            text: "Advisor",
-            social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/brandonicholas" },
-            //     { type: "instagram", url: "https://instagram.com/brandonsalim" },
-            // ],
-        },
     ]
 
     return (
@@ -168,7 +168,7 @@ const TeamsMain = () => {
             <div className="py-main">
                 <div className="container">
                     <AvarikTitle title="Team" titleClassName="text-white" className="mx-auto mb-5" />
-                    <div className="d-block d-lg-none">
+                    {/* <div className="d-block d-lg-none">
                         <Slider
                             arrowsInitial={false}
                             arrowsXxlDown={false}
@@ -176,15 +176,15 @@ const TeamsMain = () => {
                             arrowsLgDown={false}
                             arrowsMdDown={false}
                             arrowsSmDown={false}
-                            showInitial={5}
-                            showXxlDown={5}
-                            showXlDown={4}
-                            showLgDown={3}
-                            showMdDown={3}
-                            showSmDown={2.15}
-                            scrollInitial={3}
-                            scrollXxlDown={3}
-                            scrollXlDown={3}
+                            showInitial={2}
+                            showXxlDown={2}
+                            showXlDown={2}
+                            showLgDown={2}
+                            showMdDown={2}
+                            showSmDown={2}
+                            scrollInitial={2}
+                            scrollXxlDown={2}
+                            scrollXlDown={2}
                             scrollLgDown={2}
                             scrollMdDown={2}
                             scrollSmDown={2}
@@ -223,35 +223,35 @@ const TeamsMain = () => {
                                 </div>
                             ))}
                         </Slider>
-                    </div>
-                    <div className="d-none d-lg-block">
-                        <div className="row">
-                            {team.map((item, i) => (
-                                <div className="col-lg-3">
-                                    <div className={`team-item ${anim(2 + i)}`} key={i}>
-                                        <div className="img-wrapper">
-                                            <Image
-                                                ratio="r-1-1"
-                                                src={item.img}
-                                                className={`w-100 ${anim(2 + i, "revealInUp")}`}
-                                                alt={item.title}
-                                            />
-                                        </div>
-                                        <h6 className={anim(3 + i)}>{item.title}</h6>
-                                        <small className={anim(4 + i)}>{item.text}</small>
-                                        <Social
-                                            size="sm"
-                                            shape="square"
-                                            variant="outline-white"
-                                            size="sm"
-                                            className={anim(4 + i)}
-                                            data={item.social}
+                    </div> */}
+                    {/* <div className="d-none d-lg-block"> */}
+                    <div className="row">
+                        {team.map((item, i) => (
+                            <div className="col-lg-3 col-6">
+                                <div className={`team-item ${anim(2 + i)}`} key={i}>
+                                    <div className="img-wrapper">
+                                        <Image
+                                            ratio="r-1-1"
+                                            src={item.img}
+                                            className={`w-100 ${anim(2 + i, "revealInUp")}`}
+                                            alt={item.title}
                                         />
                                     </div>
+                                    <h6 className={anim(3 + i)}>{item.title}</h6>
+                                    <small className={anim(4 + i)}>{item.text}</small>
+                                    <Social
+                                        size="sm"
+                                        shape="square"
+                                        variant="outline-white"
+                                        size="sm"
+                                        className={anim(4 + i)}
+                                        data={item.social}
+                                    />
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
+                    {/* </div> */}
                 </div>
             </div>
         </section>

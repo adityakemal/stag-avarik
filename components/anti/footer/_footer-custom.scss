@@ -3,6 +3,15 @@
 // ========================================================================================================================================
 
 footer {
+  position: relative;
+  .img-ornament-footer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 5%;
+    width: auto;
+  }
   h5 {
     @extend .h5;
     color: $white;
@@ -57,6 +66,9 @@ footer {
 }
 
 .footer-about {
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
   img {
     width: 60%;
     margin-bottom: 1rem;

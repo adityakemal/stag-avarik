@@ -4,6 +4,9 @@
     padding-bottom: 35rem;
     background: #6b5641;
     padding-top: $navbar-main-height-mobile;
+    @media (min-width: 1800px) {
+        padding-bottom: 45rem;
+    }
     @include media-breakpoint-up($navbar-expand-up) {
         padding-top: $navbar-main-height-desktop;
     }
