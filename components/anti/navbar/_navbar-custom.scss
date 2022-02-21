@@ -120,14 +120,24 @@
       .mobile-menu-accordion {
         background-color: rgba($black, 0);
         border: none;
-        .accordion-title {
-          font-family: $font-family-hk-grotesk;
+        .accordion-header {
+          padding-top: 0.25rem !important;
+          padding-bottom: 0.25rem !important;
+          .accordion-title {
+            font-family: $font-family-hk-grotesk;
+          }
         }
         .accordion-content {
           justify-content: center;
-          a {
-            font-size: 1.25rem;
-            color: $white;
+          ul {
+            padding-left: 0;
+            li {
+              a {
+                font-size: 1.25rem;
+                color: $white;
+              }
+
+            }
           }
         }
       }

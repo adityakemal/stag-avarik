@@ -7,11 +7,17 @@ import iconDropdown from "assets/img/common/icon_dropdown.png"
 
 const gameInfo = [
   { name: "Class", link: "/class" },
-  { name: "Faction", link: "/factions" },
+  // { name: "Faction", link: "/factions" },
   { name: "Weapons", link: "/weapons" },
   { name: "Armors", link: "/armors" },
   { name: "Mini Game Info", link: "/mini-game-info" },
   { name: "Game Currency", link: "/vortem" },
+]
+
+const miniGame = [
+  { name: "About Mini Game", link: "/mini-game-info" },
+  { name: "Launch Mini Game", link: "https://minigame.avariksaga.com/" },
+  { name: "Leaderboard", link: "/leaderboard" },
 ]
 
 const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
@@ -49,7 +55,7 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
               </li>
               <li className="nav-item">
                 <Accordion
-                  className="anim-3 w-100 mobile-menu-accordion"
+                  className="anim-2 w-100 mobile-menu-accordion"
                   title="Game Info"
                   titleClassName="nav-link"
                   expandIcon={<img src={iconDropdown} className="img-fluid icon-dropdown" />}
@@ -66,28 +72,19 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                   </ul>
                 </Accordion>
               </li>
-
               <li
                 className="nav-item"
                 onClick={() => handleCloseMenu("", "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/")}
               >
-                <Link className="nav-link anim-2" activeClassName="active">
+                <Link className="nav-link anim-3" activeClassName="active">
                   Whitepaper
                 </Link>
               </li>
-              {/* <li
-                className="nav-item"
-                onClick={() => handleCloseMenu("", "/stake")}
-              >
-                <Link className="nav-link anim-6" activeClassName="active">
-                  Stake
-                </Link>
-              </li> */}
               <li
                 className="nav-item"
                 onClick={() => handleCloseMenu("", "/collect-in-game-currency")}
               >
-                <Link className="nav-link anim-6" activeClassName="active">
+                <Link className="nav-link anim-4" activeClassName="active">
                   Hold to Earn
                 </Link>
               </li>
@@ -95,9 +92,28 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
                 className="nav-item"
                 onClick={() => handleCloseMenu("", "/teams")}
               >
-                <Link className="nav-link anim-6" activeClassName="active">
+                <Link className="nav-link anim-5" activeClassName="active">
                   Teams
                 </Link>
+              </li>
+              <li className="nav-item">
+                <Accordion
+                  className="anim-6 w-100 mobile-menu-accordion"
+                  title="Mini Game"
+                  titleClassName="nav-link"
+                  expandIcon={<img src={iconDropdown} className="img-fluid icon-dropdown" />}
+                  defaultExpanded={false}
+                >
+                  <ul className="list-unstyled">
+                    {miniGame.map((item, i) => (
+                      <li key={i} onClick={() => handleCloseMenu("", item.link)}>
+                        <Link>
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </Accordion>
               </li>
             </ul>
           </div>

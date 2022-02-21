@@ -25,6 +25,16 @@ const TeamsMain = () => {
 
     const team = [
         {
+            img: jejouw,
+            title: "Jejouw",
+            text: "Conceptor",
+            social: [],
+            // social: [
+            //     { type: "twitter", url: "https://twitter.com/jejouw" },
+            //     { type: "instagram", url: "https://instagram.com/jejouw" },
+            // ],
+        },
+        {
             img: kevinCahya,
             title: "Kevin Cahya",
             text: "CEO",
@@ -66,16 +76,16 @@ const TeamsMain = () => {
             // ],
         },
         {
-            img: alita,
-            title: "Alita Christanto",
-            text: "Project Manager",
+            img: hunter,
+            title: "Hunter",
+            text: "Blockchain Lead",
             social: [],
             // social: [],
         },
         {
-            img: hunter,
-            title: "Hunter",
-            text: "Blockchain Lead",
+            img: alita,
+            title: "Alita Christanto",
+            text: "Project Manager",
             social: [],
             // social: [],
         },
@@ -85,34 +95,6 @@ const TeamsMain = () => {
             text: "Creative Lead",
             social: [],
             // social: [],
-        },
-        {
-            img: jejouw,
-            title: "Jejouw",
-            text: "Conceptor",
-            social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/jejouw" },
-            //     { type: "instagram", url: "https://instagram.com/jejouw" },
-            // ],
-        },
-        {
-            img: agathaCarolina,
-            title: "Agatha Carolina",
-            text: "Story Teller",
-            social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/agatha_carolina" },
-            //     { type: "instagram", url: "https://instagram.com/agathacarolina" },
-            // ],
-        },
-        {
-            img: maik,
-            titleMobile: "Michael Chrsynt",
-            title: "Michael Chrisyanto",
-            text: "Story Teller",
-            social: [],
-            // social: [{ type: "instagram", url: "https://instagram.com/mchlchrsynt" }],
         },
         {
             img: nick,
@@ -135,16 +117,6 @@ const TeamsMain = () => {
             // ],
         },
         {
-            img: benz,
-            title: "Benz Budiman",
-            text: "Advisor",
-            social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/bzjb" },
-            //     { type: "instagram", url: "https://instagram.com/benzbudiman" },
-            // ],
-        },
-        {
             img: kevinSusanto,
             title: "Kevin Susanto",
             text: "Advisor",
@@ -152,6 +124,34 @@ const TeamsMain = () => {
             // social: [
             //     { type: "twitter", url: "https://twitter.com/kevinsusanto" },
             //     { type: "instagram", url: "https://instagram.com/kevinsusanto" },
+            // ],
+        },
+        {
+            img: agathaCarolina,
+            title: "Agatha Carolina",
+            text: "Story Teller",
+            social: [],
+            // social: [
+            //     { type: "twitter", url: "https://twitter.com/agatha_carolina" },
+            //     { type: "instagram", url: "https://instagram.com/agathacarolina" },
+            // ],
+        },
+        {
+            img: maik,
+            titleMobile: "Michael Chrsynt",
+            title: "Michael Chrisyanto",
+            text: "Story Teller",
+            social: [],
+            // social: [{ type: "instagram", url: "https://instagram.com/mchlchrsynt" }],
+        },
+        {
+            img: benz,
+            title: "Benz Budiman",
+            text: "Advisor",
+            social: [],
+            // social: [
+            //     { type: "twitter", url: "https://twitter.com/bzjb" },
+            //     { type: "instagram", url: "https://instagram.com/benzbudiman" },
             // ],
         },
         {
