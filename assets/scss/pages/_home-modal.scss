@@ -4,6 +4,42 @@
     position: relative;
     background: transparent;
     max-width: fit-content !important;
+    .img-char-mobile {
+        display: none;
+    }
+    @include media-breakpoint-down(sm) {
+        height: 100%;
+        margin-bottom: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        .img-char-mobile {
+            display: block;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            .img-char-top {
+                position: absolute;
+                top: unset;
+                bottom: 0;
+                width: 100px;
+                object-fit: contain;
+                &.left-1 {
+                    left: 90px;
+                    transform: scaleX(-1);
+                }
+                &.left-2 {
+                    left: 0;
+                    transform: scaleX(-1);
+                }
+                &.right-1 {
+                    right: 90px;
+                }
+                &.right-2 {
+                    right: 0;
+                }
+            }
+        }
+    }
     .modal-wrapper {
         background: rgba($black, 0) url("../../img/common/paper-5.png") no-repeat center center;
         background-size: contain;
@@ -11,6 +47,8 @@
         @include media-breakpoint-down(sm) {
             background: rgba($black, 0) url("../../img/common/paper-6.png") no-repeat center center;
             background-size: contain;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
         }
         .close {
             top: -5rem;
@@ -25,6 +63,10 @@
             position: relative;
             background: rgba($black, 0);
             padding: 12rem 7.5rem 7.5rem 7.5rem !important;
+            @include media-breakpoint-up(xxl) {
+                padding-left: 20rem !important;
+                padding-right: 20rem !important;
+            }
             .img-flag {
                 position: absolute;
                 top: -10%;

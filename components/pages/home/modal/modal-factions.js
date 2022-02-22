@@ -5,7 +5,19 @@ import AvarikTitle from "components/avarik-saga/avarik-title"
 
 const ModalFactions = ({ modal, setModal, selectedFactions }) => {
     return (
-        <Modal id="modal-factions" className="modal-factions" isShowing={modal} hide={() => setModal(null)}>
+        <Modal
+            id="modal-factions"
+            className="modal-factions"
+            isShowing={modal} hide={() => setModal(null)}
+            anotherComponent={
+                <div className="img-char-mobile">
+                    <img className="img-char-top left-1" src={selectedFactions?.characterTop1} alt="" />
+                    <img className="img-char-top left-2" src={selectedFactions?.characterTop2} alt="" />
+                    <img className="img-char-top right-1" src={selectedFactions?.characterTop3} alt="" />
+                    <img className="img-char-top right-2" src={selectedFactions?.characterTop4} alt="" />
+                </div>
+            }
+        >
             <img className="img-char-top left-1" src={selectedFactions?.characterTop1} alt="" />
             <img className="img-char-top left-2" src={selectedFactions?.characterTop2} alt="" />
             <img className="img-fluid img-flag" src={selectedFactions?.img} />

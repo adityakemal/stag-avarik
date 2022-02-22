@@ -28,6 +28,7 @@ export const Modal = ({
   contentClassName,
   className,
   children,
+  anotherComponent,
 }) => {
   return (
     <ReactModal
@@ -38,6 +39,7 @@ export const Modal = ({
       className={`modal ${className}`}
       ariaHideApp={false}
     >
+      {anotherComponent}
       <div className={`modal-wrapper ${wrapperClassName}`}>
         <div onClick={hide} className="close">
           <i className="ail ai-times" />
