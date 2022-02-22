@@ -7,22 +7,6 @@ $home-anim-delay: 1s; // default 3s
 
 @import "./home-modal";
 
-body.bd-home {
-  @include gradient-y-to-bottom($purple, $purple-alt);
-  &:after {
-    content: "";
-    background: $purple url(../../../assets/img/common/bg_common.jpg) no-repeat center center;
-    background-size: cover;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: -1;
-    animation: fadeInUp 1s 0.4s ease-in-out both;
-  }
-}
-
 .navbar {
   animation: fadeInDown 1s #{$home-anim-delay + 0.2s} ease-in-out both;
 }
@@ -350,7 +334,7 @@ body.bd-home {
   position: relative;
   text-align: center;
   background: $brown-light;
-  height: 750px;
+  height: 800px;
   @media (min-width: 1800px) {
     height: 1000px;
   }
