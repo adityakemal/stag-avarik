@@ -110,6 +110,7 @@
                                 }
                             }
                             p {
+                                color: $white;
                                 @include media-breakpoint-down(lg) {
                                     margin-bottom: 0.5rem;
                                     font-size: 0.75rem;

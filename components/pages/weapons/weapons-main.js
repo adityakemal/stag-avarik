@@ -168,8 +168,7 @@ const WeaponsMain = () => {
             <div className="col-lg-5 col-text">
               <AvarikTitle title="Weapons" className="w-100" variant="dark" />
               <p className={anim(2)}>
-                Weapons hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for weapons. The rarity influences 2 key principles in the game: Greater base stats on the weapon. Enhances the skill power of both active and passive skills of the Hero.
-              </p>
+                Weapons hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for weapons.              </p>
               <AvarikButton text="Buy Now on Opensea" variant="dark" link="https://opensea.io/collection/avarikweapons" />
             </div>
             <div className="col-lg-7 col-img">

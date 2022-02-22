@@ -27,8 +27,7 @@ const MiniGameInfoContent = () => {
                                         className="mx-auto"
                                     />
                                     <p className={`w-100 ${anim1(2, "fadeInDown")}`}>
-                                        In this turn-based RPG game, players can test out one another’s strategic prowess by facing off against Avarik’s renowned warriors. Heroes, be prepared to conceive the best team formation, composition, and battle strategy. Each battle rewards $VORTEM to the winners.
-                                    </p>
+                                        In this turn-based RPG game, players can test out one another’s strategic prowess by facing off against Avarik’s renowned warriors. Each season provides various rewards, including Avarik Saga NFTs, Armors, Weapons, and more!                                    </p>
                                 </div>
                                 <div className="col-md-6 col-image">
                                     <img src={image1} className={`img-fluid ${anim1(3, "revealInDown")}`} alt="play-to-earn" />
@@ -74,8 +73,7 @@ const MiniGameInfoContent = () => {
                                         className="mx-auto"
                                     />
                                     <p className={`text-justify w-100 ${anim3(2, "fadeInDown")}`}>
-                                        The top 100 players participating in the Mini Game trial will have their names etched on our wall of fame. Earn your ranks by winning battles and fighting Heroes of similar rank. Rise through the MMR to gain honor and climb up the leaderboard for special rewards such as $VORTEM.
-                                    </p>
+                                        The Top 100 players participating in the mini game will have their names etched on our wall of fame. Earn your ranks by winning battles and fighting Heroes of similar rank. Rise through the MMR to gain honor and climb up the leaderboard for special rewards.                                    </p>
                                     <AvarikButton
                                         text="See Leaderboard"
                                         link="/leaderboard"

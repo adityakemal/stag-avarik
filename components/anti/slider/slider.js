@@ -62,6 +62,7 @@ export const Slider = ({
   customPaging,
   nextArrow,
   prevArrow,
+  slidesPerRow,
 }) => {
   const settings = {
     key: forwardKey,
@@ -85,7 +86,7 @@ export const Slider = ({
     rows: rowsInitial,
     nextArrow: nextArrow,
     prevArrow: prevArrow,
-    slidesPerRow: 4,
+    slidesPerRow: slidesPerRow,
     responsive: [
       {
         breakpoint: 1399,
@@ -186,5 +187,6 @@ Slider.defaultProps = {
   rowsLgDown: 1,
   rowsMdDown: 1,
   rowsSmDown: 1,
+  slidesPerRow: 1,
   className: "",
 }
