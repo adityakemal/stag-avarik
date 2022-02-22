@@ -12,25 +12,25 @@ import bgMobile from "assets/img/leaderboard/bg-leaderboard-mobile.png"
 const LeaderboardMain = () => {
     const [trigger, anim] = useScrollAnim()
     const [listLeaderboard, setListLeaderboard] = useState([])
-    const [seasonName, setSeasonName] = useState("")
+    const [listSeason, setListSeason] = useState([])
+    const [selectedSeason, setSelectedSeason] = useState()
     const { width } = useWindowSize()
 
-    const getSeasonName = (id) => {
-        fetcher.post('/api/public/season/get').then((res) => {
-            const seasonName = res?.data?.seasons?.find((item) => item.id === id)?.name
-            setSeasonName(seasonName)
+    const getUserLeaderboard = (season) => {
+        const request = new FormData()
+        request.append("season_id", season?.id)
+        request.append("limit", 100)
+        fetcher.post('/api/public/leaderboard/1/user/get', request).then((res) => {
+            setListLeaderboard(res?.data?.result?.data)
         }).catch((err) => {
             cogoToast.error(`${err?.response?.data?.message || err?.message}`)
         })
     }
-
-    const getUserLeaderboard = () => {
-        const request = new FormData()
-        request.append("limit", 100)
-        fetcher.post('/api/public/leaderboard/1/user/get', request).then((res) => {
-            setListLeaderboard(res?.data?.result?.data)
-            getSeasonName(res?.data?.season_id)
-
+    const getListSeason = () => {
+        fetcher.post('/api/public/season/get').then((res) => {
+            const result = res?.data?.seasons.sort((a, b) => a.id - b.id)
+            setListSeason(result)
+            setSelectedSeason(result[0])
         }).catch((err) => {
             cogoToast.error(`${err?.response?.data?.message || err?.message}`)
         })
@@ -65,20 +65,40 @@ const LeaderboardMain = () => {
     )
 
     useEffect(() => {
-        getUserLeaderboard()
+        getListSeason()
     }, [])
 
+    useEffect(() => {
+        if (selectedSeason) {
+            getUserLeaderboard(selectedSeason)
+        }
+    }, [selectedSeason])
+    const isMobile = width < 576
     return (
         <section className="sc-leaderboard-main" ref={trigger}>
-            <img src={width > 576 ? bg : bgMobile} className="bg" alt="" />
+            <img src={isMobile ? bg : bgMobile} className="bg" alt="" />
             <div className="py-main">
-                <div className="container mx-auto mw-lg">
+                <div className={`container${isMobile ? "-null" : ""} mx-auto mw-lg`}>
                     <div className="heading">
                         <AvarikTitle title="Leaderboard" className="text-center" />
                         <p className={anim(2)}>Glory comes to people who seeks</p>
-                        <AvarikCards label={`${seasonName}`} isActive wrapperClassName={`${anim(3)}`} variant="dark" />
                     </div>
-                    <LeaderboardTable columns={columns} data={data} />
+                    <div className="season-row">
+                        {listSeason?.map((item, i) => (
+                            <div
+                                key={i}
+                                className={
+                                    `season-box ${anim(3 + i)} ${selectedSeason?.id === item?.id ? "selected" : ""}`
+                                }
+                                onClick={() => setSelectedSeason(item)}
+                            >
+                                {item.name}
+                            </div>
+                        ))}
+                    </div>
+                    <div className="content">
+                        <LeaderboardTable columns={columns} data={data} />
+                    </div>
                 </div>
             </div>
         </section>
