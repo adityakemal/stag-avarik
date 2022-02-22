@@ -359,25 +359,8 @@
     .col-img {
         position: relative;
         text-align: center;
-        .img-paper {
-            width: 90%;
-        }
         .img-hold-to-earn {
-            position: absolute;
             width: 90%;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            margin: auto;
-            @include media-breakpoint-up(sm) {
-                top: 2rem;
-                margin: 0 auto;
-            }
-            @include media-breakpoint-up(lg) {
-                top: 0;
-                margin: auto;
-            }
         }
     }
     .heading {

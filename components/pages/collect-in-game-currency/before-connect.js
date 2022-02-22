@@ -72,11 +72,6 @@ const BeforeConnect = () => {
                         </div>
                         <div className="col-md-7 col-img">
                             <img
-                                src={paper}
-                                className={`img-fluid img-paper fadeInUp d3`}
-                                alt="Paper"
-                            />
-                            <img
                                 src={img}
                                 className={`img-fluid img-hold-to-earn fadeInUp d3`}
                                 alt="Vortem"
