@@ -9,6 +9,9 @@
 
 import React, { useState, useEffect } from "react"
 import { Link } from "components/anti"
+import useEagerConnect from "components/hooks/useEagerConnect"
+import useInactiveListener from "components/hooks/useInactiveListener"
+import { useWeb3React } from "@web3-react/core"
 
 import DesktopMenu from "./components/desktop-menu"
 import MobileMenu from "./components/mobile-menu"
@@ -16,6 +19,12 @@ import SearchMenu from "./components/search-menu"
 
 import logoDark from "assets/img/common/logo-navbar.png"
 import logoLight from "assets/img/common/logo-navbar.png"
+import logoMobile from "assets/img/common/logo_main-icon-rounded.png"
+import { truncate } from "components/utils/helpers"
+import cogoToast from "cogo-toast"
+import { ModalConnect } from "components/pages/collect-in-game-currency/modal/connect"
+import { injected, walletconnect } from "components/utils/connecters"
+
 
 export const Navbar = () => {
   // Navbar expand config
@@ -157,6 +166,33 @@ export const Navbar = () => {
     }
   }, [search])
 
+  // connect wallet
+  const { activate, connector, account } = useWeb3React();
+  const [modal, setModal] = useState(null)
+  const [loading, setLoading] = useState(false)
+
+  const onConnect = async (connector) => {
+    setLoading(connector)
+    try {
+      await activate(connector === "walletconnect" ? walletconnect : injected);
+      setLoading(false)
+      setModal(null)
+    } catch (error) {
+      cogoToast.error(error, { hideAfter: 3, heading: '' })
+      setModal(null)
+      setLoading(false)
+    }
+  };
+
+  const triedEagerConnect = useEagerConnect();
+  const [activatingConnector, setActivatingConnector] = useState();
+  useInactiveListener(!triedEagerConnect || !!activatingConnector);
+  useEffect(() => {
+    if (activatingConnector && activatingConnector === connector) {
+      setActivatingConnector(undefined);
+    }
+  }, [activatingConnector, connector]);
+
   return (
     <>
       {/* When giving .navbar-expand-*, don't forget to modify the variables on _navbar.scss */}
@@ -166,17 +202,24 @@ export const Navbar = () => {
           ${navScroll ? "is-scrolled" : ""}
         `}
       >
+        <ModalConnect modal={modal} setModal={setModal} loading={loading} onConnect={onConnect} />
         <div className="navbar-main">
           <div className="container">
             <ul className="col-left">
               <li className="nav-item-brand">
                 <Link className="navbar-brand absolute" to="/">
-                  <img src={logoLight} className="logo-light img-fluid" alt="Logo"/>
-                  <img src={logoDark} className="logo-dark img-fluid" alt="Logo"/>
+                  {/* <img src={logoLight} className={`d-none d-${navExpand}-block logo-light img-fluid`} alt="Logo" /> */}
+                  <img src={logoDark} className={`d-none d-${navExpand}-block logo-dark img-fluid`} alt="Logo" />
+                  <img src={logoMobile} className={`d-block d-${navExpand}-none logo-dark img-fluid`} alt="Logo" />
                 </Link>
               </li>
             </ul>
-
+            {account ? (
+              <div className={`wallet-address-box d-block d-${navExpand}-none`}>
+                <div className="border"></div>
+                {truncate(account, 15)}
+              </div>
+            ) : null}
             {/* Mobile */}
             <ul className={`col-right d-${navExpand}-none`}>
               <li className="nav-item">
@@ -197,6 +240,8 @@ export const Navbar = () => {
               disabledSearch={disabledSearch}
               handleSearch={handleSearch}
               navExpand={navExpand}
+              account={account}
+              onConnect={() => setModal("modalConnect")}
             />
           </div>
           <SearchMenu handleSearch={handleSearch} variant="expand" />
@@ -207,6 +252,8 @@ export const Navbar = () => {
           mobileMenu={mobileMenu}
           navExpand={navExpand}
           variant="slide-down"
+          account={account}
+          onConnect={() => setModal("modalConnect")}
         />
         <div className="menu-bg" />
       </nav>

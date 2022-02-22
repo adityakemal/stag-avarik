@@ -328,12 +328,22 @@
       transition-property: all;
       transition-duration: 0;
       transition-timing-function: $mobile-menu-ease;
+      &::before {
+        transform: translateY(100%);
+        transition-property: all;
+        transition-duration: 0;
+        transition-timing-function: $mobile-menu-ease;
+      }
     }
     // Hide
     &.hide {
       .anim-#{$i} {
         transition-duration: $mobile-menu-duration;
         transition-delay: #{($mobile-menu-anim-count / 10) - $i * 0.1}s;
+        &::before {
+          transition-duration: $mobile-menu-duration;
+          transition-delay: #{($mobile-menu-anim-count / 10) - $i * 0.1}s;
+        }
       }
     }
     // Show
@@ -344,6 +354,13 @@
         transition-duration: $mobile-menu-duration;
         transition-delay: #{$mobile-menu-delay + ($i * 0.1)}s;
         transition-timing-function: $mobile-menu-ease;
+        &::before {
+          transform: translateY(0);
+          transition-property: all;
+          transition-duration: $mobile-menu-duration;
+          transition-delay: #{$mobile-menu-delay + ($i * 0.1)}s;
+          transition-timing-function: $mobile-menu-ease;
+        }
       }
     }
   }

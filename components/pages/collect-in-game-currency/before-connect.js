@@ -60,7 +60,7 @@ const BeforeConnect = () => {
                             <p className={`text-white fadeInUp d3`}>
                                 You can claim your $VORTEM tokens once the game is officially launched.
                             </p>
-                            <p className={`text-white fadeInUp d4 mb-4 mt-3`}>
+                            <p className={`text-white fadeInUp d4 mb-4 mt-3 h6`}>
                                 To see how much $VORTEM you can earn, please connect by clicking on the button below.
                             </p>
                             <AvarikButton

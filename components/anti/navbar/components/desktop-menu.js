@@ -25,24 +25,7 @@ const miniGame = [
   { name: "Leaderboard", link: "/leaderboard" },
 ]
 
-const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
-  const { activate, connector, account } = useWeb3React();
-  const handleClick = (content) => {
-    scroller.scrollTo(content, {
-      duration: 500,
-      delay: 0,
-      smooth: true,
-    })
-  }
-  const onConnect = async (connector) => {
-    try {
-      await activate(connector === "walletconnect" ? walletconnect : injected);
-    } catch (error) {
-      console.log("err", error)
-      cogoToast.error(error, { hideAfter: 3, heading: '' })
-    }
-  };
-
+const DesktopMenu = ({ navExpand, handleSearch, disabledSearch, onConnect, account }) => {
   return (
     <>
       <div className={`desktop-menu d-none d-${navExpand}-flex`}>
@@ -101,14 +84,21 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch }) => {
               ))}
             </ul>
           </li>
-          <AvarikButton
-            variant="light"
-            text={account ? truncate(account, 15) : "Connect Wallet"}
-            onClick={() => onConnect()}
-            disabled={account}
-            sideLeftClassName="side-left-btn-navbar"
-            sideRightClassName="side-right-btn-navbar"
-          />
+          {account ? (
+            <div className="wallet-address-box">
+              <div className="border"></div>
+              {truncate(account, 15)}
+            </div>
+          ) : (
+            <AvarikButton
+              variant="light"
+              text="Connect Wallet"
+              onClick={() => onConnect()}
+              disabled={account}
+              sideLeftClassName="side-left-btn-navbar"
+              sideRightClassName="side-right-btn-navbar"
+            />
+          )}
           {/* <li className="nav-item">
             <i className="air ai-volume ic-music"></i>
           </li> */}

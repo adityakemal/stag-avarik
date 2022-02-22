@@ -73,23 +73,23 @@ const HoldToEarnMain = () => {
                                                 ) :
                                                     (
                                                         <>
-                                                            <div className="d-flex justify-content-between py-4">
-                                                                <h6 className={`text-white ${animToken(1)}`}>
+                                                            <div className="d-flex justify-content-between py-3">
+                                                                <h6 className={`text-dark ${animToken(1)}`}>
                                                                     Wallet Address
                                                                 </h6>
-                                                                <p className={`text-white font-weight-bold ${animToken(2)}`}>
+                                                                <p className={`text-dark font-weight-bold ${animToken(2)}`}>
                                                                     {truncate(account, width > 576 ? 30 : 20)}
                                                                 </p>
                                                             </div>
                                                             <hr />
-                                                            <h4 className={`mt-4 text-warning ${animToken(3)}`}>
+                                                            <h4 className={`mt-4 text-primary ${animToken(3)}`}>
                                                                 Token
                                                             </h4>
                                                             <div className="d-flex justify-content-between mt-4">
-                                                                <h6 className={`text-white ${animToken(1)}`}>
+                                                                <h6 className={`text-dark ${animToken(1)}`}>
                                                                     Avarik Saga in Wallet
                                                                 </h6>
-                                                                <p className={`text-white font-weight-bold ${animToken(2)}`}>
+                                                                <p className={`text-dark font-weight-bold ${animToken(2)}`}>
                                                                     {listToken.length} NFT
                                                                 </p>
                                                             </div>
@@ -133,8 +133,8 @@ const HoldToEarnMain = () => {
                                             >
                                                 <h5 className={`${animRewards(2)}`}>Mini Game Rewards</h5>
                                                 {listToken.length ? (
-                                                    <p className="text-white">
-                                                        You have earn approximately 67.58267 $VORTEM from playing the demo game
+                                                    <p className="text-dark">
+                                                        You have earn approximately 0 $VORTEM from playing the mini game
                                                     </p>
                                                 ) : null}
                                             </div>
@@ -155,43 +155,43 @@ const HoldToEarnMain = () => {
                                                 <div className="row">
                                                     <div className="col-md-6">
                                                         <div className="d-flex justify-content-between py-2">
-                                                            <h5 className={`text-white ${animRewards(5)}`}>
+                                                            <h5 className={`text-dark ${animRewards(5)}`}>
                                                                 Seasons Played
                                                             </h5>
-                                                            <p className={`text-white ${animRewards(6)}`}>1</p>
+                                                            <p className={`text-dark ${animRewards(6)}`}>-</p>
                                                         </div>
                                                         <div className="d-flex justify-content-between py-2">
-                                                            <h5 className={`text-white ${animRewards(5)}`}>
+                                                            <h5 className={`text-dark ${animRewards(5)}`}>
                                                                 Your Rank
                                                             </h5>
-                                                            <p className={`text-white ${animRewards(6)}`}>
-                                                                55
+                                                            <p className={`text-dark ${animRewards(6)}`}>
+                                                                -
                                                             </p>
                                                         </div>
                                                         <div className="d-flex justify-content-between py-2">
-                                                            <h5 className={`text-white ${animRewards(5)}`}>
+                                                            <h5 className={`text-dark ${animRewards(5)}`}>
                                                                 MMR
                                                             </h5>
-                                                            <p className={`text-white ${animRewards(6)}`}>
-                                                                2520
+                                                            <p className={`text-dark ${animRewards(6)}`}>
+                                                                -
                                                             </p>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-6">
                                                         <div className="d-flex justify-content-between py-2">
-                                                            <h5 className={`text-white ${animRewards(5)}`}>
+                                                            <h5 className={`text-dark ${animRewards(5)}`}>
                                                                 Average Winrate
                                                             </h5>
-                                                            <p className={`text-white ${animRewards(6)}`}>
-                                                                67%
+                                                            <p className={`text-dark ${animRewards(6)}`}>
+                                                                -
                                                             </p>
                                                         </div>
                                                         <div className="d-flex justify-content-between py-2">
-                                                            <h5 className={`text-white ${animRewards(5)}`}>
+                                                            <h5 className={`text-dark ${animRewards(5)}`}>
                                                                 Total Earned
                                                             </h5>
-                                                            <p className={`text-white ${animRewards(6)}`}>
-                                                                <strong>67.58267</strong>
+                                                            <p className={`text-dark ${animRewards(6)}`}>
+                                                                <strong>0</strong>
                                                                 {" "}$VORTEM
                                                             </p>
                                                         </div>

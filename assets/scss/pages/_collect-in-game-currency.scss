@@ -340,6 +340,11 @@
         @include media-breakpoint-up(md) {
             align-items: flex-start;
         }
+        .title-wrapper {
+            h1 {
+                @extend .h2;
+            }
+        }
         .avarik-button {
             margin-left: auto;
             margin-right: auto;
@@ -347,7 +352,6 @@
         p {
             text-align: center;
             @include media-breakpoint-up(md) {
-                font-size: 1.25rem;
                 margin-bottom: 0;
             }
         }
@@ -366,6 +370,14 @@
             bottom: 0;
             left: 0;
             margin: auto;
+            @include media-breakpoint-up(sm) {
+                top: 2rem;
+                margin: 0 auto;
+            }
+            @include media-breakpoint-up(lg) {
+                top: 0;
+                margin: auto;
+            }
         }
     }
     .heading {

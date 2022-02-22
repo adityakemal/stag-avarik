@@ -80,7 +80,7 @@ const MiniGameInfoContent = () => {
                                         text="See Leaderboard"
                                         link="/leaderboard"
                                         variant="dark"
-                                        className={`mb-4 px-5 ${anim3(3)}`}
+                                        className={`mb-4 px-5 mx-auto ${anim3(3)}`}
                                     />
                                 </div>
                                 <div className="col-md-6 col-image">

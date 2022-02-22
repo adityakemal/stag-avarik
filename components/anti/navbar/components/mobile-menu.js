@@ -4,6 +4,7 @@ import { Accordion } from "components/anti/accordion/accordion"
 import { useRouter } from "next/router"
 import { scroller, Element } from "react-scroll"
 import iconDropdown from "assets/img/common/icon_dropdown.png"
+import AvarikButton from "components/avarik-saga/avarik-button"
 
 const gameInfo = [
   { name: "Class", link: "/class" },
@@ -20,7 +21,16 @@ const miniGame = [
   { name: "Leaderboard", link: "/leaderboard" },
 ]
 
-const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
+const menu = [
+  { name: "Home", link: "/" },
+  { name: "Game Info", menu: gameInfo },
+  { name: "Whitepaper", link: "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/" },
+  { name: "Hold to Earn", link: "/collect-in-game-currency" },
+  { name: "Team", link: "/teams" },
+  { name: "Mini Game", menu: miniGame }
+]
+
+const MobileMenu = ({ navExpand, variant, handleMenuMobile, onConnect, account }) => {
   const Router = useRouter()
 
   const handleClick = (content, url) => {
@@ -48,76 +58,53 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile }) => {
         <div className="mobile-menu-content">
           <div className="container">
             <ul className="navbar-nav">
-              <li className="nav-item" onClick={() => handleCloseMenu("", "/")}>
-                <Link className="nav-link anim-1" activeClassName="active">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Accordion
-                  className="anim-2 w-100 mobile-menu-accordion"
-                  title="Game Info"
-                  titleClassName="nav-link"
-                  expandIcon={<img src={iconDropdown} className="img-fluid icon-dropdown" />}
-                  defaultExpanded={false}
-                >
-                  <ul className="list-unstyled">
-                    {gameInfo.map((item, i) => (
-                      <li key={i} onClick={() => handleCloseMenu("", item.link)}>
-                        <Link>
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </Accordion>
-              </li>
-              <li
-                className="nav-item"
-                onClick={() => handleCloseMenu("", "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/")}
-              >
-                <Link className="nav-link anim-3" activeClassName="active">
-                  Whitepaper
-                </Link>
-              </li>
-              <li
-                className="nav-item"
-                onClick={() => handleCloseMenu("", "/collect-in-game-currency")}
-              >
-                <Link className="nav-link anim-4" activeClassName="active">
-                  Hold to Earn
-                </Link>
-              </li>
-              <li
-                className="nav-item"
-                onClick={() => handleCloseMenu("", "/teams")}
-              >
-                <Link className="nav-link anim-5" activeClassName="active">
-                  Teams
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Accordion
-                  className="anim-6 w-100 mobile-menu-accordion"
-                  title="Mini Game"
-                  titleClassName="nav-link"
-                  expandIcon={<img src={iconDropdown} className="img-fluid icon-dropdown" />}
-                  defaultExpanded={false}
-                >
-                  <ul className="list-unstyled">
-                    {miniGame.map((item, i) => (
-                      <li key={i} onClick={() => handleCloseMenu("", item.link)}>
-                        <Link>
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </Accordion>
-              </li>
+              {menu.map((item, i) => {
+                if (item.link) {
+                  return (
+                    <li className={`nav-item nav-item-anim-${i + 1}`} onClick={() => handleCloseMenu("", item.link)}>
+                      <Link className={`nav-link anim-${i + 1}`} activeClassName="active">
+                        {item.name}
+                      </Link>
+                    </li>
+                  )
+                } else {
+                  return (
+                    <li className={`nav-item nav-item-anim-${i + 1}`}>
+                      <Accordion
+                        className={`anim-${i + 1} w-100 mobile-menu-accordion`}
+                        title={item.name}
+                        titleClassName="nav-link"
+                        expandIcon={<img src={iconDropdown} className="img-fluid icon-dropdown" />}
+                        defaultExpanded={false}
+                      >
+                        <ul className="list-unstyled">
+                          {item?.menu?.map((itemMenu, indexMenu) => (
+                            <li key={indexMenu} onClick={() => handleCloseMenu("", itemMenu.link)}>
+                              <Link>
+                                {itemMenu.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </Accordion>
+                    </li>
+                  )
+                }
+              })}
             </ul>
           </div>
         </div>
+        {!account ? (
+          <div className="overflow-hidden btn-wrapper">
+            <AvarikButton
+              variant="light"
+              text="Connect Wallet"
+              onClick={() => onConnect()}
+              disabled={account}
+              className="btn-connect-wallet anim-7"
+            />
+          </div>
+        ) : null}
       </div>
     </>
   )
