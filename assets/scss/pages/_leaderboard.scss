@@ -36,11 +36,12 @@
     }
     .season-row {
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         flex-wrap: nowrap;
         overflow-x: scroll;
         @include media-breakpoint-down(sm) {
+            justify-content: flex-start;
             padding-left: $container-padding-sm-down;
         }
         .season-box {

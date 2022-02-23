@@ -76,7 +76,7 @@ const LeaderboardMain = () => {
     const isMobile = width < 576
     return (
         <section className="sc-leaderboard-main" ref={trigger}>
-            <img src={isMobile ? bg : bgMobile} className="bg" alt="" />
+            <img src={isMobile ? bgMobile : bg} className="bg" alt="" />
             <div className="py-main">
                 <div className={`container${isMobile ? "-null" : ""} mx-auto mw-lg`}>
                     <div className="heading">
