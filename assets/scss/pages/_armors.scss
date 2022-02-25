@@ -89,6 +89,7 @@
                                     }
                                 }
                                 h1 {
+                                    color: $white;
                                     margin-bottom: 0;
                                 }
                                 @include media-breakpoint-down(lg) {

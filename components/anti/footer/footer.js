@@ -65,6 +65,11 @@ export const Footer = () => {
       title: "Avarik Saga",
       url: "https://medium.com/@Avariksaga",
     },
+    {
+      type: "youtube",
+      title: "Avarik Saga",
+      url: "https://www.youtube.com/channel/UCc8Rc_5LTEZO2fcem1WEOyw"
+    }
   ]
 
   return (

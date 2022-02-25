@@ -54,7 +54,7 @@ const VortemClaim = () => {
                             <img src={claimExchange} className={`img-icon img-fluid ${anim(4)}`} />
                             <div className="claim-card">
                                 <img src={claim3} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
-                                <h5 className={anim(10)}>Buy & Sell on <br /> Exchanger</h5>
+                                <h5 className={anim(10)}>Buy & Sell on <br /> Exchange</h5>
                                 <img src={hr} className={`img-fluid hr ${anim(13)}`} />
                                 <p className={anim(16)}>
                                     To be announced in Q3 2022

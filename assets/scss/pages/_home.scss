@@ -13,6 +13,11 @@ $home-anim-delay: 1s; // default 3s
 
 .bd-home {
   background: $black;
+  .container {
+    @media (min-width: 2000px) {
+      max-width: 1560px;
+    }
+  }
 }
 
 // Cover
@@ -33,6 +38,13 @@ $home-anim-delay: 1s; // default 3s
       margin-left: -300px;
       margin-top: -70px;
     }
+    @media (min-width: 2000px) {
+      width: 900px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .cover-logo {
       animation: fadeInUp 1s #{$home-anim-delay + 0s} ease-in-out both;
       width: 100%;
@@ -41,62 +53,11 @@ $home-anim-delay: 1s; // default 3s
         margin-bottom: 2rem;
       }
     }
-    // .side-left-btn-cover {
-    //   left: -27px;
-    // }
-    // .side-right-btn-cover {
-    //   right: -28.5px;
-    // }
-  }
-  .cover {
-    .cover-bg-wrapper {
-      animation: zoomInSm 1.5s $home-anim-cover-delay ease(in-out-quart) both;
-    }
-    .cover-bg {
-      height: 100vh !important; // fallback option
-      // height: calc(var(--vh, 1vh) * 100) !important;
-      animation: cameraPan 30s $home-anim-cover-delay infinite;
-    }
-    .scroll-hint {
-      animation: fadeInDown 1s #{$home-anim-delay + 0.2s} ease-in-out both;
-      font-family: $headings-font-family;
-      text-transform: lowercase;
-      font-size: 0.9rem;
-    }
-  }
-  .join-discord {
-    animation: fadeInUp 1s #{$home-anim-delay + 0.2s} ease-in-out both;
-    margin-top: 1rem;
-    text-align: center;
-    font-size: 0.8rem;
-    color: rgba($white, 0.65);
-    a {
-      color: $white;
-    }
-    .ai-discord {
-      margin-right: 0.25rem;
-      position: relative;
-      top: 0.075rem;
-    }
-    .ai-angle-right {
-      margin-left: 0.25rem;
-      position: relative;
-      top: 0.1rem;
-    }
   }
   .cta-content {
     animation: fadeInUp 1s #{$home-anim-delay + 0.2s} ease-in-out both;
     margin-top: 5rem;
     width: 100%;
-    .early-access-box {
-      padding: 1rem 2rem;
-      background: linear-gradient(90deg, rgba($white, 0) 5.67%, rgba($white, 0.7) 50.43%, rgba($white, 0) 94.6%);
-      color: $dark;
-      margin-bottom: 2rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      font-family: $font-family-sans-serif;
-    }
     text-align: center;
     font-size: 0.8rem;
     color: rgba($white, 0.65);
@@ -107,6 +68,30 @@ $home-anim-delay: 1s; // default 3s
       @include media-breakpoint-down(sm) {
         margin-bottom: 1rem;
       }
+      @media (min-width: 2000px) {
+        font-size: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        &::after {
+          bottom: -10px;
+        }
+        .side-left {
+          left: -37px;
+        }
+        .side-right {
+          right: -37px;
+        }
+      }
+    }
+  }
+  .cover {
+    .cover-bg-wrapper {
+      animation: zoomInSm 1.5s $home-anim-cover-delay ease(in-out-quart) both;
+    }
+    .cover-bg {
+      height: 100vh !important; // fallback option
+      // height: calc(var(--vh, 1vh) * 100) !important;
+      animation: cameraPan 30s $home-anim-cover-delay infinite;
     }
   }
 }
@@ -120,6 +105,9 @@ $home-anim-delay: 1s; // default 3s
   background-size: cover;
   @include media-breakpoint-down(sm) {
     padding-top: 3.75rem !important;
+  }
+  @media (min-width: 2000px) {
+    height: 950px;
   }
   .kurseye {
     position: absolute;
@@ -295,6 +283,9 @@ $home-anim-delay: 1s; // default 3s
         @include media-breakpoint-down(xs) {
           font-size: 0.65rem;
         }
+        @media (min-width: 2000px) {
+          font-size: 1.25rem;
+        }
       }
       .avarik-button {
         padding-left: 3rem;
@@ -337,6 +328,9 @@ $home-anim-delay: 1s; // default 3s
   height: 800px;
   @media (min-width: 1800px) {
     height: 1000px;
+  }
+  @media (min-width: 2000px) {
+    height: 1100px;
   }
   @include media-breakpoint-down(sm) {
     padding-top: 3.75rem !important;
@@ -435,6 +429,10 @@ $home-anim-delay: 1s; // default 3s
   @include media-breakpoint-down(sm) {
     height: 600px;
   }
+  @media (min-width: 2000px) {
+    height: 1000px;
+    margin-top: 10rem;
+  }
   .separator {
     position: absolute;
     width: 100%;
@@ -504,17 +502,28 @@ $home-anim-delay: 1s; // default 3s
   padding-top: 7.5rem !important;
   background: $primary;
   padding-bottom: 40rem;
-  @include media-breakpoint-up(xxl) {
-    padding-bottom: 50rem;
-  }
-  @include media-breakpoint-up(md) {
-    margin-bottom: -1.5rem;
-  }
   @include media-breakpoint-down(lg) {
     padding-bottom: 25rem;
   }
   @include media-breakpoint-down(sm) {
     padding-bottom: 15rem;
+  }
+  @include media-breakpoint-up(md) {
+    margin-bottom: -1.5rem;
+  }
+  @include media-breakpoint-up(xxl) {
+    padding-bottom: 50rem;
+  }
+  @media (min-width: 2000px) {
+    padding-bottom: 55rem;
+    .container {
+      .mw-xl {
+        max-width: 100% !important;
+      }
+      .mw-lg {
+        max-width: 85% !important;
+      }
+    }
   }
   .team-item {
     margin-bottom: 1.25rem;
@@ -562,6 +571,9 @@ $home-anim-delay: 1s; // default 3s
   margin-top: -10rem;
   z-index: 2;
   padding-top: 5rem;
+  @media (min-width: 2000px) {
+    height: 850px;
+  }
   .separator {
     position: absolute;
     width: 100%;
@@ -588,6 +600,9 @@ $home-anim-delay: 1s; // default 3s
   .description {
     color: $dark;
     text-align: center;
+    @media (min-width: 2000px) {
+      font-size: 1.25rem;
+    }
   }
   .avarik-button {
     .side-left {
@@ -654,6 +669,9 @@ $home-anim-delay: 1s; // default 3s
     }
     p {
       text-align: center;
+      @media (min-width: 2000px) {
+        font-size: 1.25rem;
+      }
     }
   }
 }
