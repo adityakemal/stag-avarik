@@ -4,14 +4,17 @@
     padding-bottom: 35rem;
     background: #6b5641;
     padding-top: $navbar-main-height-mobile;
-    @media (min-width: 1800px) {
-        padding-bottom: 45rem;
+    @include media-breakpoint-down(sm) {
+        padding-bottom: 15rem;
     }
     @include media-breakpoint-up($navbar-expand-up) {
         padding-top: $navbar-main-height-desktop;
     }
-    @include media-breakpoint-down(sm) {
-        padding-bottom: 15rem;
+    @media (min-width: 1800px) {
+        padding-bottom: 45rem;
+    }
+    @media (min-width: 2000px) {
+        padding-bottom: 55rem;
     }
     .team-item {
         margin-bottom: 1.25rem;

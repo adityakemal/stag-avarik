@@ -40,6 +40,9 @@ html {
     padding-left: $container-padding-md-up;
     padding-right: $container-padding-md-up;
   }
+  @media (min-width: 2000px) {
+    max-width: 1560px;
+  }
 }
 
 // Row with zero gutter

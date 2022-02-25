@@ -28,7 +28,9 @@ const LeaderboardMain = () => {
     }
     const getListSeason = () => {
         fetcher.post('/api/public/season/get').then((res) => {
-            const result = res?.data?.seasons.sort((a, b) => a.id - b.id)
+            const result = res?.data?.seasons.sort((a, b) =>
+                a.id - b.id)?.filter((item) =>
+                    !item.is_hidden)
             setListSeason(result)
             setSelectedSeason(result[0])
         }).catch((err) => {
