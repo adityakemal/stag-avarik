@@ -1,9 +1,9 @@
 import AvarikTitle from "components/avarik-saga/avarik-title"
 import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 
-import claimHolding from "assets/img/vortem/3b_claim_holding.png"
-import claimPlay from "assets/img/vortem/3c_claim_play.png"
-import claimExchange from "assets/img/vortem/3d_claim_exchange.png"
+import tutorial1 from "assets/img/mini-game/tutorial-1.png"
+import tutorial2 from "assets/img/mini-game/tutorial-2.png"
+import tutorial3 from "assets/img/mini-game/tutorial-3.png"
 import claim1 from "assets/img/vortem/claim-1.png"
 import claim2 from "assets/img/vortem/claim-2.png"
 import claim3 from "assets/img/vortem/claim-3.png"
@@ -24,7 +24,7 @@ const MiniGameInfoTutorial = () => {
                     <AvarikTitle title="Mini Game Tutorial" className="mx-auto" titleClassName={`text-center ${anim(1)}`} />
                     <div className="row mt-5">
                         <div className="col-lg-4 col-item text-center">
-                            <img src={claimHolding} className={`img-icon img-fluid ${anim(2)}`} />
+                            <img src={tutorial1} className={`img-icon img-fluid ${anim(2)}`} />
                             <div className="claim-card">
                                 <img src={claim1} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
                                 <h5 className={anim(8)}>Login to <br /> Metamask</h5>
@@ -35,7 +35,7 @@ const MiniGameInfoTutorial = () => {
                             </div>
                         </div>
                         <div className="col-lg-4 col-item text-center">
-                            <img src={claimPlay} className={`img-icon img-fluid ${anim(3)}`} />
+                            <img src={tutorial2} className={`img-icon img-fluid ${anim(3)}`} />
                             <div className="claim-card">
                                 <img src={claim2} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
                                 <h5 className={anim(9)}>Set Your <br /> Formation</h5>
@@ -46,7 +46,7 @@ const MiniGameInfoTutorial = () => {
                             </div>
                         </div>
                         <div className="col-lg-4 col-item text-center">
-                            <img src={claimExchange} className={`img-icon img-fluid ${anim(4)}`} />
+                            <img src={tutorial3} className={`img-icon img-fluid ${anim(4)}`} />
                             <div className="claim-card">
                                 <img src={claim3} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
                                 <h5 className={anim(10)}>Join the <br /> Battle</h5>

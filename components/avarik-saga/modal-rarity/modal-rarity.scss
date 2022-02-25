@@ -8,8 +8,6 @@
             i {
                 color: $white;
             }
-            // top: 2rem;
-            // right: 2rem;
             @include media-breakpoint-up(md) {
                 top: 3rem;
                 right: 3rem;
@@ -23,9 +21,6 @@
             .modal-content {
                 background: rgba($black, 0);
                 padding: 2rem !important;
-                // @include media-breakpoint-down(xs) {
-                //     padding: 0.25rem !important;
-                // }
                 .title-wrapper {
                     width: fit-content;
                     margin-left: auto;
@@ -94,7 +89,7 @@
                         .col-img {
                             position: relative;
                             display: flex;
-                            justify-content: center;
+                            justify-content: flex-end;
                             .img-frame {
                                 position: absolute;
                                 z-index: 1;
