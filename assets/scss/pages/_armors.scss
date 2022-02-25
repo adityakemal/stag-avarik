@@ -3,7 +3,7 @@
     transition: all 0.5s;
     position: relative;
     transition: all 0.5s ease;
-    background: url("../../img/weapon/weapon-bg.png") no-repeat center center;
+    background: url("../../img/weapon/weapon-bg.jpeg") no-repeat center center;
     position: relative;
     padding-top: 7.5rem;
     padding-bottom: 7.5rem;
@@ -68,7 +68,7 @@
                             justify-content: center;
                             align-items: center;
                             position: relative;
-                            padding: 1rem 1.5rem 0 3.5rem;
+                            padding: 1rem 1.5rem 0 4rem;
                             @include media-breakpoint-down(lg) {
                                 padding-top: 2rem;
                                 padding-left: 2.5rem;
@@ -87,11 +87,11 @@
                             }
                             .title-wrapper {
                                 position: absolute;
-                                top: 4rem;
+                                top: 5rem;
                                 width: 85%;
                                 .logo {
                                     width: 10%;
-                                    top: -1.75rem;
+                                    top: -2rem;
                                     @include media-breakpoint-down(sm) {
                                         top: -1.5rem;
                                     }

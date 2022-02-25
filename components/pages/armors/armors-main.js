@@ -3,7 +3,9 @@ import { Slider } from "components/anti"
 import AvarikTitle from "components/avarik-saga/avarik-title"
 
 import book from "assets/img/common/book.png"
-import logoLight from "assets/img/knights/icon_light.png"
+import knightLogo from "assets/img/knights/icon_light.png"
+import wizardLogo from "assets/img/wizards/icon_light.png"
+import marksmenLogo from "assets/img/marksmen/icon_light.png"
 import knightIcon from "assets/img/common/icon_knight.png"
 import marksmanIcon from "assets/img/common/icon_marksmen.png"
 import wizardIcon from "assets/img/common/icon_wizard.png"
@@ -31,6 +33,7 @@ import AvarikButton from "components/avarik-saga/avarik-button"
 const data = [
   {
     name: "Knight",
+    logo: knightLogo,
     icon: knightIcon,
     image: knight,
     description: "A symbol of defense, honor, and courage, the Knight’s Armor protects the mighty warrior as they fight ferociously.",
@@ -71,6 +74,7 @@ const data = [
   },
   {
     name: "Wizard",
+    logo: wizardLogo,
     icon: wizardIcon,
     image: wizard,
     description: "Magical Robes and Cloaks with an affinity for considerable magical presence that will serve as magical protection.",
@@ -111,6 +115,7 @@ const data = [
   },
   {
     name: "Marksman",
+    logo: marksmenLogo,
     icon: marksmanIcon,
     image: marksman,
     description: "Specially built to accommodate the nimble Marksmen and their sprightly attacks, these Armors must also defend them for their angry foes.",
@@ -204,7 +209,7 @@ const ArmorsMain = () => {
                       <img src={item.image} className={`img-fluid ${anim(i + 2, "revealInDown")}`} alt="" />
                     </div>
                     <div className="col-6 col-text">
-                      <AvarikTitle title={item.name} titleClassName="h4" logo={logoLight} />
+                      <AvarikTitle title={item.name} titleClassName="h4" logo={item.logo} />
                       <p className={anim(i + 4)}>{item.description}</p>
                       <AvarikButton
                         text="View Rarity"

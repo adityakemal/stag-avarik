@@ -18,7 +18,6 @@ import MobileMenu from "./components/mobile-menu"
 import SearchMenu from "./components/search-menu"
 
 import logoDark from "assets/img/common/logo-navbar.png"
-import logoLight from "assets/img/common/logo-navbar.png"
 import logoMobile from "assets/img/common/logo_main-icon-rounded.png"
 import { truncate } from "components/utils/helpers"
 import cogoToast from "cogo-toast"
@@ -209,8 +208,8 @@ export const Navbar = () => {
               <li className="nav-item-brand">
                 <Link className="navbar-brand absolute" to="/">
                   {/* <img src={logoLight} className={`d-none d-${navExpand}-block logo-light img-fluid`} alt="Logo" /> */}
+                  <img src={logoMobile} className={`d-block logo-mobile logo-dark img-fluid`} alt="Logo" />
                   <img src={logoDark} className={`d-none d-${navExpand}-block logo-dark img-fluid`} alt="Logo" />
-                  <img src={logoMobile} className={`d-block d-${navExpand}-none logo-dark img-fluid`} alt="Logo" />
                 </Link>
               </li>
             </ul>

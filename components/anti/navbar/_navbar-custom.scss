@@ -56,7 +56,9 @@
 
 .navbar-brand {
   padding-left: 0.75rem;
-  width: 65px;
+  .logo-mobile {
+    width: 50px;
+  }
   @include media-breakpoint-up($navbar-expand-up) {
     width: 150px;
   }

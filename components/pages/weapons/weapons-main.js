@@ -6,7 +6,9 @@ import { useState } from "react"
 import ModalRarity from "components/avarik-saga/modal-rarity"
 
 import book from "assets/img/common/book.png"
-import logoLight from "assets/img/knights/icon_light.png"
+import knightLogo from "assets/img/knights/icon_light.png"
+import wizardLogo from "assets/img/wizards/icon_light.png"
+import marksmenLogo from "assets/img/marksmen/icon_light.png"
 import knightIcon from "assets/img/common/icon_knight.png"
 import marksmanIcon from "assets/img/common/icon_marksmen.png"
 import wizardIcon from "assets/img/common/icon_wizard.png"
@@ -33,6 +35,7 @@ import marksmenLegendaryImg from "assets/img/marksmen/weapon_legendary.jpg"
 const data = [
   {
     name: "Knight",
+    logo: knightLogo,
     icon: knightIcon,
     image: knight,
     description: "A weapon of varying weight, strength and agility, Knights’ weapons are lethal in the right hands of those who strike fast, unnerved by death.",
@@ -73,6 +76,7 @@ const data = [
   },
   {
     name: "Wizard",
+    logo: wizardLogo,
     icon: wizardIcon,
     image: wizard,
     description: "Mysterious items imbued with magical energy that awakens a Wizard’s sorcery gift and channels different levels and types of Mana for destructive, dark, or elusive powers.",
@@ -114,6 +118,7 @@ const data = [
   },
   {
     name: "Marksman",
+    logo: marksmenLogo,
     icon: marksmanIcon,
     image: marksman,
     description: "The sly and sneaky Marksmen’s choice of weapon — its long range vantage and the unique craftsmanship of each weapon is critical for the different classes of masters.",
@@ -208,7 +213,7 @@ const WeaponsMain = () => {
                       <img src={item.image} className={`img-fluid ${anim(i + 2, "revealInDown")}`} alt="" />
                     </div>
                     <div className="col-6 col-text">
-                      <AvarikTitle title={item.name} titleClassName="h4" logo={logoLight} />
+                      <AvarikTitle title={item.name} titleClassName="h4" logo={item.logo} />
                       <p className={anim(i + 4)}>{item.description}</p>
                       <AvarikButton
                         text="View Rarity"
