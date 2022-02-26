@@ -30,7 +30,7 @@ const MiniGameInfoTutorial = () => {
                                 <h5 className={anim(8)}>Login to <br /> Metamask</h5>
                                 <img src={hr} className={`img-fluid hr ${anim(11)}`} />
                                 <p className={anim(14)}>
-                                    Connect to your MetaMask wallet. You need at least 3 Avarik Heroes to play.
+                                    Connect to your MetaMask wallet. You need at least *3 Avarik Heroes to play.
                                 </p>
                             </div>
                         </div>

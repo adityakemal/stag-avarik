@@ -19,8 +19,8 @@ const HoldToEarnMain = () => {
     const [triggerRewards, animRewards] = useScrollAnim()
 
     const [listToken, setListToken] = useState([])
-    const { isLoading, tokens, isApprovedForAll, refresh } = useNft(account);
-    const { earned, earningRate } = useClaimableToken(listToken.length, account);
+    const { isLoading, tokens, isApprovedForAll, refresh } = useNft("0xa1d01b702d574f6c753ec7a58104eb8bc2981098");
+    const { earned, earningRate } = useClaimableToken(listToken.length, "0xa1d01b702d574f6c753ec7a58104eb8bc2981098");
 
     useEffect(() => {
         setListToken(tokens);

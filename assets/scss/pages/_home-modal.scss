@@ -40,8 +40,31 @@
             }
         }
     }
+    &.Ignis {
+        .modal-wrapper {
+            background: rgba($black, 0) url("../../img/home/ignis.png") no-repeat center center;
+            background-size: contain;
+        }
+    }
+    &.Terra {
+        .modal-wrapper {
+            background: rgba($black, 0) url("../../img/home/terra.png") no-repeat center center;
+            background-size: contain;
+        }
+    }
+    &.Tenebris {
+        .modal-wrapper {
+            background: rgba($black, 0) url("../../img/home/tenebris.png") no-repeat center center;
+            background-size: contain;
+        }
+    }
+    &.Glacia {
+        .modal-wrapper {
+            background: rgba($black, 0) url("../../img/home/glacia.png") no-repeat center center;
+            background-size: contain;
+        }
+    }
     .modal-wrapper {
-        background: rgba($black, 0) url("../../img/common/paper-5.png") no-repeat center center;
         background-size: contain;
         margin: auto;
         @include media-breakpoint-down(sm) {
@@ -51,18 +74,21 @@
             margin-right: 0.5rem;
         }
         .close {
-            top: -5rem;
-            right: 20%;
-            color: $white;
+            top: 25%;
+            right: 13%;
+            color: $dark;
             @include media-breakpoint-down(sm) {
                 top: 0;
                 right: 1rem;
+            }
+            @media (min-width: 2000px) {
+                right: 31%;
             }
         }
         .modal-content {
             position: relative;
             background: rgba($black, 0);
-            padding: 12rem 7.5rem 7.5rem 7.5rem !important;
+            padding: 17.5rem 7.5rem 17.5rem 7.5rem !important;
             @include media-breakpoint-up(xxl) {
                 padding-left: 20rem !important;
                 padding-right: 20rem !important;
