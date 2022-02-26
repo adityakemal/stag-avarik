@@ -89,4 +89,7 @@ export const computeEarning = ({ results, STARTING_BLOCK, ENDING_BLOCK, RATE, to
    return response * RATE;
 }
 
+export const replaceIpfsOrigin = (url) => url?.replace('ipfs://', 'https://ipfs.io/ipfs/')
+
+
 

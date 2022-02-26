@@ -6,6 +6,7 @@ import {
   getIsApprovedForAll,
 } from "components/utils/nft-contract";
 import fetcher from 'components/utils/fetcher';
+import { replaceIpfsOrigin } from "components/utils/helpers";
 
 const useNft = (account) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,22 +24,23 @@ const useNft = (account) => {
         _tokenIds.push(_tokenId);
       }
 
-      const _tokenURIs = await Promise.all(
-        _tokenIds.map(getTokenURI)
-      )
+      /** no need metadata */
 
-      let metadatas = _tokenURIs.map(() => "");
-      try {
-        metadatas = await Promise.all(
-          _tokenURIs.map(item => fetcher.get(item))
-        )
-      } catch (err) {
-        console.log("err metadata", err)
-      }
+      // const _tokenURIs = await Promise.all(
+      //   _tokenIds.map(getTokenURI)
+      // )
 
+      // let metadatas = _tokenURIs.map(() => "");
+      // try {
+      //   metadatas = await Promise.all(
+      //     _tokenURIs.map(item => fetcher.get(replaceIpfsOrigin(item)))
+      //   )
+      // } catch (err) {
+      //   console.log("err metadata", err)
+      // }
 
-
-      const tokens = _tokenIds.map((val, i) => ({ id: val, img: metadatas[i].image }));
+      // const tokens = _tokenIds.map((val, i) => ({ id: val, img: metadatas[i].image }));
+      const tokens = _tokenIds.map((val, i) => ({ id: val }));
       setTokens(tokens);
 
       const _isApprovedForAll = await getIsApprovedForAll(account);

@@ -2,7 +2,7 @@ import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 import { useEffect, useMemo, useState } from "react"
 import cogoToast from "cogo-toast"
 import AvarikCards from "components/avarik-saga/avarik-cards"
-import fetcher from "components/utils/fetcher"
+import leaderboardFetcher from "components/utils/leaderboard-fetcher"
 import AvarikTitle from "components/avarik-saga/avarik-title"
 import LeaderboardTable from "./leaderboard-table"
 
@@ -20,14 +20,14 @@ const LeaderboardMain = () => {
         const request = new FormData()
         request.append("season_id", season?.id)
         request.append("limit", 100)
-        fetcher.post('/api/public/leaderboard/1/user/get', request).then((res) => {
+        leaderboardFetcher.post('/api/public/leaderboard/1/user/get', request).then((res) => {
             setListLeaderboard(res?.data?.result?.data)
         }).catch((err) => {
             cogoToast.error(`${err?.response?.data?.message || err?.message}`)
         })
     }
     const getListSeason = () => {
-        fetcher.post('/api/public/season/get').then((res) => {
+        leaderboardFetcher.post('/api/public/season/get').then((res) => {
             const result = res?.data?.seasons.sort((a, b) =>
                 a.id - b.id)?.filter((item) =>
                     !item.is_hidden)
