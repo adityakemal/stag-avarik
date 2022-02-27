@@ -38,7 +38,7 @@ const data = [
   {
     name: "Knight",
     logo: knightLogo,
-    logoDar: knightLogoDark,
+    logoDark: knightLogoDark,
     icon: knightIcon,
     image: knight,
     description: "A weapon of varying weight, strength and agility, Knights’ weapons are lethal in the right hands of those who strike fast, unnerved by death.",
@@ -80,7 +80,7 @@ const data = [
   {
     name: "Wizard",
     logo: wizardLogo,
-    logoDar: wizardLogoDark,
+    logoDark: wizardLogoDark,
     icon: wizardIcon,
     image: wizard,
     description: "Mysterious items imbued with magical energy that awakens a Wizard’s sorcery gift and channels different levels and types of Mana for destructive, dark, or elusive powers.",
@@ -123,7 +123,7 @@ const data = [
   {
     name: "Marksman",
     logo: marksmenLogo,
-    logoDar: marksmenLogoDark,
+    logoDark: marksmenLogoDark,
     icon: marksmanIcon,
     image: marksman,
     description: "The sly and sneaky Marksmen’s choice of weapon — its long range vantage and the unique craftsmanship of each weapon is critical for the different classes of masters.",

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "components/anti/link/link"
 import { Accordion } from "components/anti/accordion/accordion"
 import { useRouter } from "next/router"
@@ -32,6 +32,11 @@ const menu = [
 
 const MobileMenu = ({ navExpand, variant, handleMenuMobile, onConnect, account }) => {
   const Router = useRouter()
+
+  const [expanded, setExpanded] = useState(false)
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+};
 
   const handleClick = (content, url) => {
     if (url) {
@@ -76,6 +81,9 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile, onConnect, account }
                         titleClassName="nav-link"
                         expandIcon={<img src={iconDropdown} className="img-fluid icon-dropdown" />}
                         defaultExpanded={false}
+                        expandedKey={i}
+                        expanded={expanded === i}
+                        onChange={handleChange(i)}
                       >
                         <ul className="list-unstyled">
                           {item?.menu?.map((itemMenu, indexMenu) => (

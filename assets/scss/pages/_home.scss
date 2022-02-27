@@ -474,7 +474,7 @@ $home-anim-delay: 1s; // default 3s
         opacity: 0.5;
       }
       @include media-breakpoint-down(sm) {
-        height: 250px;
+        height: 245px;
       }
       .img-frame {
         position: absolute;
@@ -504,6 +504,7 @@ $home-anim-delay: 1s; // default 3s
     @include media-breakpoint-down(sm) {
       top: unset;
       bottom: 20%;
+      width: 50px;
     }
     &.left {
       left: 12rem;
