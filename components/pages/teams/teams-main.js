@@ -1,5 +1,8 @@
 import { useScrollAnim } from "components/hooks/hooks"
+import AvarikTitle from "components/avarik-saga/avarik-title"
+import { Image, Social } from "components/anti"
 
+import bg from "assets/img/team/bg_teams.png"
 import joel from "assets/img/team/joel.jpeg"
 import kevinCahya from "assets/img/team/kevin-cahya.jpeg"
 import kyuwonKim from "assets/img/team/kyuwon-kim.jpeg"
@@ -17,8 +20,6 @@ import maik from "assets/img/team/maik.jpeg"
 import handi from "assets/img/team/handi.jpeg"
 import brandon from "assets/img/team/brandon.jpeg"
 
-import AvarikTitle from "components/avarik-saga/avarik-title"
-import { Image, Slider, Social } from "components/anti"
 
 const TeamsMain = () => {
     const [trigger, anim] = useScrollAnim()
@@ -165,66 +166,10 @@ const TeamsMain = () => {
 
     return (
         <section className="sc-teams-main cover-full" ref={trigger}>
+            <img src={bg} className="bg" alt="" />
             <div className="py-main">
                 <div className="container">
                     <AvarikTitle title="Team" titleClassName="text-white" className="mx-auto mb-5" />
-                    {/* <div className="d-block d-lg-none">
-                        <Slider
-                            arrowsInitial={false}
-                            arrowsXxlDown={false}
-                            arrowsXlDown={false}
-                            arrowsLgDown={false}
-                            arrowsMdDown={false}
-                            arrowsSmDown={false}
-                            showInitial={2}
-                            showXxlDown={2}
-                            showXlDown={2}
-                            showLgDown={2}
-                            showMdDown={2}
-                            showSmDown={2}
-                            scrollInitial={2}
-                            scrollXxlDown={2}
-                            scrollXlDown={2}
-                            scrollLgDown={2}
-                            scrollMdDown={2}
-                            scrollSmDown={2}
-                            rowsInitial={4}
-                            rowsXxlDown={4}
-                            rowsXlDown={4}
-                            rowsLgDown={4}
-                            rowsMdDown={4}
-                            rowsSmDown={4}
-                            className="slider-team"
-                        >
-                            {team.map((item, i) => (
-                                <div className={`team-item`} key={i}>
-                                    <div className={`img-wrapper ${anim(1, "fadeIn")}`}>
-                                        <Image
-                                            ratio="r-1-1"
-                                            src={item.img}
-                                            className={`w-100 ${anim(2 + i, "revealInUp")}`}
-                                            alt={item.title}
-                                        />
-                                    </div>
-                                    <h6 className={anim(3 + i)}>
-                                        {item.titleMobile || item.title}
-                                    </h6>
-                                    <small className={anim(4 + i)}>
-                                        {item.textMobile || item.text}
-                                    </small>
-                                    <Social
-                                        size="sm"
-                                        shape="square"
-                                        variant="outline-white"
-                                        size="sm"
-                                        className={anim(4 + i)}
-                                        data={item.social}
-                                    />
-                                </div>
-                            ))}
-                        </Slider>
-                    </div> */}
-                    {/* <div className="d-none d-lg-block"> */}
                     <div className="row">
                         {team.map((item, i) => (
                             <div className="col-lg-3 col-6">
@@ -251,7 +196,6 @@ const TeamsMain = () => {
                             </div>
                         ))}
                     </div>
-                    {/* </div> */}
                 </div>
             </div>
         </section>

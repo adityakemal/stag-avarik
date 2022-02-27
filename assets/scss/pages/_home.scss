@@ -621,6 +621,9 @@ $home-anim-delay: 1s; // default 3s
       top: -40%;
     }
     @include media-breakpoint-down(sm) {
+      top: -15%;
+    }
+    @include media-breakpoint-down(xs) {
       top: -10%;
     }
   }
