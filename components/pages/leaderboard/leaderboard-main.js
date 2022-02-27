@@ -83,7 +83,7 @@ const LeaderboardMain = () => {
                 <div className={`container${isMobile ? "-null" : ""} mx-auto mw-lg`}>
                     <div className="heading">
                         <AvarikTitle title="Leaderboard" className="text-center" />
-                        <p className={anim(2)}>Glory comes to people who seeks</p>
+                        <p className={anim(2)}>Glory belongs to those who strive</p>
                     </div>
                     <div className="season-row">
                         {listSeason?.map((item, i) => (

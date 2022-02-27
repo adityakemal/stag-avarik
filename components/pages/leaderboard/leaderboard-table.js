@@ -36,7 +36,6 @@ const LeaderboardTable = ({ columns, data }) => {
                             </tr>
                         ))}
                     </thead>
-                    <img src={ornament} className="img-fluid img-ornamen mb-4" alt="" />
                     <tbody {...getTableBodyProps()}>
                         {page.map(row => {
                             prepareRow(row)
