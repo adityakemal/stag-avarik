@@ -11,7 +11,9 @@ import { ModalConnect } from "./modal/connect"
 import paper from "assets/img/common/paper-2.png"
 import img from "assets/img/vortem/img_hold-to-earn.png"
 import bgCover from "assets/img/common/bg_hold-to-earn.jpeg"
+import bgCoverMobile from "assets/img/common/bg_hold-to-earn-mobile.jpeg"
 import AvarikTitle from "components/avarik-saga/avarik-title"
+import { useWindowSize } from "components/hooks/hooks"
 
 const BeforeConnect = () => {
     const { activate, connector } = useWeb3React();
@@ -36,12 +38,13 @@ const BeforeConnect = () => {
         setLoading(null)
         setModal(null)
     };
+    const { width } = useWindowSize()
     return (
         <section className="sc-before-connect cover-full">
             <ModalConnect modal={modal} setModal={setModal} loading={loading} onConnect={onConnect} />
             <Parallax
                 blur={0}
-                bgImage={bgCover}
+                bgImage={width > 576 ? bgCover : bgCoverMobile}
                 strength={200}
                 className="cover"
             >

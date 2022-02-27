@@ -635,6 +635,7 @@ $home-anim-delay: 1s; // default 3s
     color: $primary;
     margin-bottom: 0 !important;
     text-align: center;
+    white-space: nowrap;
   }
   .description {
     color: $dark;
@@ -693,7 +694,7 @@ $home-anim-delay: 1s; // default 3s
         @include media-breakpoint-down(sm) {
           width: 145%;
           top: 25%;
-          right: -115%;
+          right: -95%;
         }
       }
     }
