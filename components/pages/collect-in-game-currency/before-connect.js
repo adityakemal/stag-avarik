@@ -54,21 +54,23 @@ const BeforeConnect = () => {
                                 className="mx-auto"
                                 titleClassName="fadeInUp d1"
                             />
-                            <p className={`text-white fadeInUp d2 mb-3`}>
-                                For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
-                            </p>
-                            <p className={`text-white fadeInUp d3`}>
-                                You can claim your $VORTEM tokens once the game is officially launched.
-                            </p>
-                            <p className={`text-white fadeInUp d4 mb-4 mt-3 h6`}>
-                                To see how much $VORTEM you can earn, please connect by clicking on the button below.
-                            </p>
-                            <AvarikButton
-                                className="fadeInUp d5 btn-connect w-250px"
-                                onClick={() => setModal("modalConnect")}
-                                text="Connect Wallet"
-                                variant="dark"
-                            />
+                            <div className="d-none d-md-block">
+                                <p className={`text-white fadeInUp d2 mb-3`}>
+                                    For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
+                                </p>
+                                <p className={`text-white fadeInUp d3`}>
+                                    You can claim your $VORTEM tokens once the game is officially launched.
+                                </p>
+                                <p className={`text-white fadeInUp d4 mb-4 mt-3 h6`}>
+                                    To see how much $VORTEM you can earn, please connect by clicking on the button below.
+                                </p>
+                                <AvarikButton
+                                    className="fadeInUp d5 btn-connect w-250px"
+                                    onClick={() => setModal("modalConnect")}
+                                    text="Connect Wallet"
+                                    variant="dark"
+                                />
+                            </div>
                         </div>
                         <div className="col-md-7 col-img">
                             <img
@@ -76,6 +78,23 @@ const BeforeConnect = () => {
                                 className={`img-fluid img-hold-to-earn fadeInUp d3`}
                                 alt="Vortem"
                             />
+                            <div className="d-flex d-md-none flex-column align-items-center">
+                                <p className={`text-white fadeInUp d2 my-3`}>
+                                    For each Avarik Saga NFT that you hold will earn approximately 3 $VORTEM per day.
+                                </p>
+                                <p className={`text-white fadeInUp d3`}>
+                                    You can claim your $VORTEM tokens once the game is officially launched.
+                                </p>
+                                <p className={`text-white fadeInUp d4 mb-4 mt-3 h6`}>
+                                    To see how much $VORTEM you can earn, please connect by clicking on the button below.
+                                </p>
+                                <AvarikButton
+                                    className="fadeInUp d5 btn-connect w-250px ml-0"
+                                    onClick={() => setModal("modalConnect")}
+                                    text="Connect Wallet"
+                                    variant="dark"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
