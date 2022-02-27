@@ -677,15 +677,15 @@ $home-anim-delay: 1s; // default 3s
       &::after {
         content: "";
         position: absolute;
-        width: 150%;
+        width: 160%;
         height: 2px;
         background-color: #a59480;
-        right: -125%;
+        right: -135%;
         top: 30%;
         z-index: -1;
         @include media-breakpoint-down(sm) {
-          width: 145%;
-          right: -115%;
+          width: 155%;
+          right: -120%;
           top: 25%;
         }
       }
@@ -694,15 +694,19 @@ $home-anim-delay: 1s; // default 3s
       &::after {
         content: "";
         position: absolute;
-        width: 150%;
+        width: 175%;
         height: 2px;
         background-color: #a59480;
-        right: -127%;
+        right: -150%;
         top: 30%;
         z-index: -1;
         @include media-breakpoint-down(sm) {
-          width: 145%;
+          width: 155%;
+          right: -120%;
           top: 25%;
+        }
+        @media (max-width: 450px) {
+          width: 145%;
           right: -95%;
         }
       }
