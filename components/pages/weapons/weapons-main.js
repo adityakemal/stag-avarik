@@ -1,11 +1,12 @@
-import { useScrollAnim } from "components/hooks/hooks"
+import { useState } from "react"
+import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 import { Slider } from "components/anti"
 import AvarikTitle from "components/avarik-saga/avarik-title"
 import AvarikButton from "components/avarik-saga/avarik-button"
-import { useState } from "react"
 import ModalRarity from "components/avarik-saga/modal-rarity"
 
 import book from "assets/img/common/book.png"
+import bookMobile from "assets/img/common/book-mobile.png"
 import knightLogo from "assets/img/knights/icon_light.png"
 import wizardLogo from "assets/img/wizards/icon_light.png"
 import marksmenLogo from "assets/img/marksmen/icon_light.png"
@@ -29,8 +30,6 @@ import marksmenCommonImg from "assets/img/marksmen/weapon_common.jpg"
 import marksmenUncommonImg from "assets/img/marksmen/weapon_uncommon.jpg"
 import marksmenRareImg from "assets/img/marksmen/weapon_rare.jpg"
 import marksmenLegendaryImg from "assets/img/marksmen/weapon_legendary.jpg"
-
-
 
 const data = [
   {
@@ -164,6 +163,7 @@ const WeaponsMain = () => {
   const [trigger, anim] = useScrollAnim()
   const [modal, setModal] = useState(false)
   const [selectedWeapons, setSelectedWeapons] = useState(null)
+  const { width } = useWindowSize()
   return (
     <section className="sc-weapons-main cover-full" ref={trigger}>
       <ModalRarity modal={modal} setModal={setModal} selected={selectedWeapons} imgWithFrame={false} />
@@ -171,13 +171,18 @@ const WeaponsMain = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-5 col-text">
-              <AvarikTitle title="Weapons" className="w-100" variant="dark" />
+              <AvarikTitle title="Weapons" className="w-100" variant="white" logo={null} />
               <p className={anim(2)}>
                 Weapons hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for weapons.              </p>
-              <AvarikButton text="Buy Now on Opensea" variant="dark" link="https://opensea.io/collection/avarikweapons" />
+              <AvarikButton
+                text="Buy Now on Opensea"
+                variant="dark"
+                className="d-none d-lg-block"
+                link="https://opensea.io/collection/avarikweapons"
+              />
             </div>
             <div className="col-lg-7 col-img">
-              <img src={book} className="img-fluid img-book" alt="" />
+              <img src={width > 576 ? book : bookMobile} className="img-fluid img-book" alt="" />
               <Slider
                 fade
                 infinite
@@ -209,10 +214,10 @@ const WeaponsMain = () => {
               >
                 {data?.map((item, i) => (
                   <div className="row book-wrapper" key={i}>
-                    <div className="col-6 col-img">
+                    <div className="col-md-6 col-img">
                       <img src={item.image} className={`img-fluid ${anim(i + 2, "revealInDown")}`} alt="" />
                     </div>
-                    <div className="col-6 col-text">
+                    <div className="col-md-6 col-text">
                       <AvarikTitle title={item.name} titleClassName="h4" logo={item.logo} />
                       <p className={anim(i + 4)}>{item.description}</p>
                       <AvarikButton
@@ -228,6 +233,12 @@ const WeaponsMain = () => {
                   </div>
                 ))}
               </Slider>
+              <AvarikButton
+                text="Buy Now on Opensea"
+                variant="dark"
+                className="d-block d-lg-none"
+                link="https://opensea.io/collection/avarikweapons"
+              />
             </div>
           </div>
         </div>
