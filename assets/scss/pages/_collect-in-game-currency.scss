@@ -402,11 +402,6 @@
             object-fit: fill;
         }
     }
-    .title {
-        @include media-breakpoint-up(md) {
-            font-size: 3rem;
-        }
-    }
     .faq-accordion {
         background-color: rgba($black, 0);
         color: $dark;
