@@ -8,7 +8,7 @@
 // Modal
 // ========================================================================================================================================
 
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import ReactModal from "react-modal"
 
@@ -30,6 +30,17 @@ export const Modal = ({
   children,
   anotherComponent,
 }) => {
+  useEffect(() => {
+    const html = document.querySelector("html")
+    const body = document.querySelector("body")
+    if (isShowing === id) {
+      body.classList.add("no-scroll")
+      html.classList.add("no-scroll")
+    } else {
+      body.classList.remove("no-scroll")
+      html.classList.remove("no-scroll")
+    }
+  }, [isShowing])
   return (
     <ReactModal
       closeTimeoutMS={500}

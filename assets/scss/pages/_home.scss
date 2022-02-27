@@ -529,23 +529,23 @@ $home-anim-delay: 1s; // default 3s
   position: relative;
   z-index: 2;
   margin-bottom: -1.25rem;
-  padding-top: 7.5rem !important;
+  // padding-top: 7.5rem !important;
   background: $primary;
-  padding-bottom: 40rem;
+  padding-bottom: 40rem !important;
   @include media-breakpoint-down(lg) {
-    padding-bottom: 25rem;
+    padding-bottom: 25rem !important;
   }
   @include media-breakpoint-down(sm) {
-    padding-bottom: 15rem;
+    padding-bottom: 15rem !important;
   }
   @include media-breakpoint-up(md) {
     margin-bottom: -1.5rem;
   }
   @include media-breakpoint-up(xxl) {
-    padding-bottom: 50rem;
+    padding-bottom: 50rem !important;
   }
   @media (min-width: 2000px) {
-    padding-bottom: 55rem;
+    padding-bottom: 55rem !important;
     .container {
       .mw-xl {
         max-width: 100% !important;
@@ -557,6 +557,9 @@ $home-anim-delay: 1s; // default 3s
   }
   @media (min-width: 3500px) {
     padding-bottom: 70rem;
+  }
+  .title-wrapper {
+    margin-bottom: 5rem;
   }
   .team-item {
     margin-bottom: 1.25rem;

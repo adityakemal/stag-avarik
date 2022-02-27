@@ -27,7 +27,8 @@ const MiniGameInfoContent = () => {
                                         className="mx-auto"
                                     />
                                     <p className={`w-100 ${anim1(2, "fadeInDown")}`}>
-                                        In this turn-based RPG game, players can test out one another’s strategic prowess by facing off against Avarik’s renowned warriors. Each season provides various rewards, including Avarik Saga NFTs, Armors, Weapons, and more!                                    </p>
+                                        In this turn-based RPG game, players can test out one another’s strategic prowess by facing off against Avarik’s renowned warriors. Each season provides various rewards, including Avarik Saga NFTs, Armors, Weapons, and more!
+                                    </p>
                                 </div>
                                 <div className="col-md-6 col-image">
                                     <img src={image1} className={`img-fluid ${anim1(3, "revealInDown")}`} alt="play-to-earn" />
@@ -52,9 +53,8 @@ const MiniGameInfoContent = () => {
                                         titleClassName={`text-center ${anim2(2, "fadeInDown")}`}
                                         className="mx-auto"
                                     />
-                                    <p className={`text-justify w-100 ${anim2(3, "fadeInDown")}`}>
-                                        Each player has the opportunity to build their own unique Avariks formation. With individual traits and rarity, each character represents a distinctive set of skill, power, and individuality. Create the team that will lead you to glory.
-                                    </p>
+                                    <p className={`text-center w-100 ${anim2(3, "fadeInDown")}`}>
+                                        In this turn-based RPG game, players can test out one another’s strategic prowess by facing off against Avarik’s renowned warriors. Each season provides various rewards, including Avarik Saga NFTs, Armors, Weapons, and more!                                    </p>
                                 </div>
                             </div>
                         </Parallax>
@@ -72,8 +72,9 @@ const MiniGameInfoContent = () => {
                                         titleClassName={anim3(1, "fadeInDown")}
                                         className="mx-auto"
                                     />
-                                    <p className={`text-justify w-100 ${anim3(2, "fadeInDown")}`}>
-                                        The Top 100 players participating in the mini game will have their names etched on our wall of fame. Earn your ranks by winning battles and fighting Heroes of similar rank. Rise through the MMR to gain honor and climb up the leaderboard for special rewards.                                    </p>
+                                    <p className={`text-center w-100 ${anim3(2, "fadeInDown")}`}>
+                                        In this turn-based RPG game, players can test out one another’s strategic prowess by facing off against Avarik’s renowned warriors. Each season provides various rewards, including Avarik Saga NFTs, Armors, Weapons, and more!
+                                    </p>
                                     <AvarikButton
                                         text="See Leaderboard"
                                         link="/leaderboard"

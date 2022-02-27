@@ -78,7 +78,7 @@ const HomeAdvisors = () => {
 
     return (
         <section
-            className="sc-home-advisors sc-dark py-main"
+            className="sc-home-advisors sc-dark pb-main pt-4"
             id="advisors"
             ref={trigger}
         >
