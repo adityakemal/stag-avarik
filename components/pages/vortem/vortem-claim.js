@@ -30,7 +30,7 @@ const VortemClaim = () => {
                                 <h5 className={anim(8)}>Staking <br /> Rewards</h5>
                                 <img src={hr} className={`img-fluid hr ${anim(11)}`} />
                                 <p className={anim(14)}>
-                                    By holding the Avarik NFT you can earn $VORTEM Tokens.
+                                    You can earn $VORTEM by holding an Avarik NFT, also known as staking.
                                 </p>
                             </div>
                         </div>
@@ -40,14 +40,9 @@ const VortemClaim = () => {
                                 <img src={claim2} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
                                 <h5 className={anim(9)}>Play <br /> the Game</h5>
                                 <img src={hr} className={`img-fluid hr ${anim(12)}`} />
-                                <ul className="list-unstyled">
-                                    <li>- Player v. Environment (PvE)</li>
-                                    <li>- Player v. Player (PvP) </li>
-                                    <li>- Match Making Rating (MMR) PvP</li>
-                                    <li>- Dungeon Raid</li>
-                                    <li>- Faction War</li>
-                                    <li>- Tournament Rewards</li>
-                                </ul>
+                                <p className={anim(15)}>
+                                    Win $VORTEM in the game by engaging in PvE and PvP battles, Faction Wars, Dungeon Raids, and Tournaments.
+                                </p>
                             </div>
                         </div>
                         <div className="col-lg-4 col-item text-center">
@@ -57,7 +52,7 @@ const VortemClaim = () => {
                                 <h5 className={anim(10)}>Buy & Sell on <br /> Exchange</h5>
                                 <img src={hr} className={`img-fluid hr ${anim(13)}`} />
                                 <p className={anim(16)}>
-                                    To be announced in Q3 2022
+                                    More details coming soon!
                                 </p>
                             </div>
                         </div>

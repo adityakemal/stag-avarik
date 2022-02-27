@@ -183,7 +183,7 @@ const ArmorsMain = () => {
               <AvarikButton
                 text="Buy Now on Opensea"
                 variant="dark"
-                className="d-none d-lg-block"
+                className="d-none d-lg-flex"
                 link="https://opensea.io/collection/avarik-saga-armors"
               />
             </div>
@@ -242,7 +242,7 @@ const ArmorsMain = () => {
               <AvarikButton
                 text="Buy Now on Opensea"
                 variant="dark"
-                className="d-block d-lg-none"
+                className="btn-opensea d-flex d-lg-none"
                 link="https://opensea.io/collection/avarik-saga-armors"
               />
             </div>

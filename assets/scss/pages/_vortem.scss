@@ -140,6 +140,7 @@
       }
       @include media-breakpoint-down(sm) {
         padding-top: 5rem;
+        min-height: 275px;
       }
       .claim-number {
         position: absolute;
@@ -250,6 +251,7 @@
     > img {
       width: 100%;
       object-fit: contain;
+      animation: float 10s infinite ease-in-out 1.25s;
       @include media-breakpoint-up(lg) {
         width: 90%;
       }
