@@ -29,6 +29,8 @@ export const Accordion = ({
   contentClassName,
   defaultExpanded,
   children,
+  expanded,
+  onChange
 }) => {
   const accordionVariant = () => {
     return `accordion-${variant}`
@@ -41,6 +43,8 @@ export const Accordion = ({
       ref={forwardRef}
       defaultExpanded={defaultExpanded === expandedKey}
       expandedKey={expandedKey}
+      expanded={expanded}
+      onChange={onChange}
     >
       <AccordionSummary
         expandIcon={expandIcon}

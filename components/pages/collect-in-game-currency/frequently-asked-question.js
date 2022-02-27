@@ -3,7 +3,8 @@ import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 
 import iconDropdown from "assets/img/common/icon_dropdown-black.png"
 import bg from "assets/img/common/bg_faq.png"
-import bgMobile from "assets/img/vortem/bg_claim-full-mobile.png"
+import bgMobile from "assets/img/common/bg_faq-mobile.png"
+import AccordionWrapper from "components/avarik-saga/accordion-wraper"
 
 const faq = [
     {
@@ -31,7 +32,7 @@ const FrequentlyAskedQuestion = () => {
     const ExpandIcon = () => <img src={iconDropdown} className="img-fluid icon-dropdown" />
     return (
         <section className="sc-frequently-asked-question" ref={trigger}>
-            <img src={bg} className="bg" alt="" />
+            <img src={width > 576 ? bg : bgMobile} className="bg" alt="" />
             <div className="py-main">
                 <div className="container">
                     <div className="row">
@@ -48,19 +49,13 @@ const FrequentlyAskedQuestion = () => {
                             </p>
                         </div>
                         <div className="col-lg-7">
-                            {faq.map((item, i) => (
-                                <Accordion
-                                    className={`faq-accordion accordion-${i + 1} ${anim(3 + i)}`}
-                                    variant="line"
-                                    title={item.question}
-                                    titleClassName={`faq-item-title`}
-                                    expandIcon={<ExpandIcon />}
-                                    defaultExpanded={0}
-                                    expandedKey={i}
-                                >
-                                    {item.answer}
-                                </Accordion>
-                            ))}
+                            <AccordionWrapper
+                                list={faq}
+                                className="faq-accordion"
+                                titleClassName="faq-item-title"
+                                variant="line"
+                                expandIcon={<ExpandIcon />}
+                            />
                         </div>
                     </div>
                 </div>
