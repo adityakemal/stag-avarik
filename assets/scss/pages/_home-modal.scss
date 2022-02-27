@@ -89,7 +89,7 @@
                 right: 25%;
             }
             @media (max-width: 450px) {
-                right: 10%;
+                right: 12.5%;
                 & {
                     @media (max-height: 850px) {
                         top: 5rem;
@@ -104,6 +104,9 @@
             position: relative;
             background: rgba($black, 0);
             padding: 12.5rem 0rem 5rem 0rem !important;
+            @include media-breakpoint-down(sm) {
+                padding: 10rem 2.5rem 5rem 2.5rem !important;
+            }
             .img-flag {
                 position: absolute;
                 top: -10%;
@@ -177,9 +180,7 @@
                     display: none;
                 }
             }
-            @include media-breakpoint-down(sm) {
-                padding: 15rem 2.5rem 5rem 2.5rem !important;
-            }
+
             .content {
                 width: 50%;
                 display: flex;

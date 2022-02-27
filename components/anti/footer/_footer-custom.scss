@@ -11,6 +11,9 @@ footer {
     object-fit: cover;
     height: 5%;
     width: 100%;
+    @include media-breakpoint-down(sm) {
+      height: 4%;
+    }
   }
   h5 {
     @extend .h5;

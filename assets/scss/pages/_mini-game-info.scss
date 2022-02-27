@@ -55,7 +55,7 @@
         z-index: 1;
         @include media-breakpoint-down(sm) {
             top: -2%;
-            height: 105%;
+            height: 102%;
         }
         @include media-breakpoint-up(xl) {
             object-fit: fill;
@@ -106,8 +106,9 @@
                 padding-top: 5rem;
             }
             @include media-breakpoint-down(sm) {
-                padding-top: 5rem;
-                min-height: 275px;
+                padding-top: 4.5rem;
+                padding-bottom: 0;
+                min-height: 250px;
             }
             .claim-number {
                 position: absolute;
