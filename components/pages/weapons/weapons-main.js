@@ -41,11 +41,11 @@ const data = [
     logoDark: knightLogoDark,
     icon: knightIcon,
     image: knight,
-    description: "A weapon of varying weight, strength and agility, Knights’ weapons are lethal in the right hands of those who strike fast, unnerved by death.",
+    description: "Varying in weight, strength, and agility, these weapons can be lethal when wielded by the skillful hands of a knight: fast to strike and unnerved by death.",
     rarity: [
       {
         title: "Common Weapons",
-        text: "This weapon may look plain, but in the hands of skilled and crafty Knights, it has won many impossible wars and rightful victories.",
+        text: "This weapon may look plain, but in the hands of skilled and crafty Knights, it will be the key to winning impossible wars and claiming victories.",
         img: knightsCommonImg,
         population: {
           type: "Common",
@@ -53,7 +53,7 @@ const data = [
       },
       {
         title: "Uncommon Weapons",
-        text: "A balanced weapon that grants its Knight fluid movement, wind speed, and mighty blows that will bring your foe to the ground in no time.",
+        text: "A balanced weapon that grants its Knight fluidity, astounding speed, and swift blows, enough to bring any foe to the ground in a flash.",
         img: knightsUncommonImg,
         population: {
           type: "Uncommon",
@@ -61,7 +61,7 @@ const data = [
       },
       {
         title: "Rare Weapons",
-        text: "It’s origin and trade is a mystery, only that it holds a bloody history and is ready to claim more prey. The wielder of the Rare Knight Weapon is a formidable Knight that tames the most vicious monsters.",
+        text: "Its origin remains a mystery; we know only that it's ready to claim more prey, and that its wielder is a formidable slayer of vicious monsters.",
         img: knightsRareImg,
         population: {
           type: "Rare",
@@ -69,7 +69,7 @@ const data = [
       },
       {
         title: "Legendary Weapons",
-        text: "The most powerful blade welded by the best craftsman and the power of the universe, a Legendary Knight Weapon perfectly encapsulates its Knight’s infinite potential and reverberates it a thousand times fold.",
+        text: "Welded by the best craftsmen and nature's force, the Legendary Knight's Weapon captures infinite potential and multiples it one thousandfold.",
         img: knightsLegendaryImg,
         population: {
           type: "Legendary",
@@ -83,11 +83,11 @@ const data = [
     logoDark: wizardLogoDark,
     icon: wizardIcon,
     image: wizard,
-    description: "Mysterious items imbued with magical energy that awakens a Wizard’s sorcery gift and channels different levels and types of Mana for destructive, dark, or elusive powers.",
+    description: "Mysterious items imbued with magic that can awaken a Wizard’s sorcery gift as well as channel different types of mana points to grant dark, destructive, and elusive powers.",
     rarity: [
       {
         title: "Common Weapons",
-        text: "The root of all things magic, passed down through generations from the eldest, most powerful wizards to younger, gifted disciples. ",
+        text: "The Common Wizard Weapon is the root of all things magic. It is passed down from the wisest, most powerful wizards to their gifted disciples.",
         img: wizardsCommonImg,
         population: {
           type: "Common",
@@ -95,7 +95,7 @@ const data = [
       },
       {
         title: "Uncommon Weapons",
-        text: "Weapons fitting for skilled Wizards who have awakened their aptitude for the mysterious arts of magic and sorcery. ",
+        text: "Weapons fit for the land’s most skilled Wizards who have awakened their aptitude for the mysterious arts of spell and sorcery.",
         img: wizardsUncommonImg,
         population: {
           type: "Uncommon",
@@ -103,7 +103,7 @@ const data = [
       },
       {
         title: "Rare Weapons",
-        text: "Forged by pooling immense amounts of magic (sometimes from questionable sources), these magical items only have affinity to a select few Wizards who will not succumb to the arcane powers.",
+        text: "Bearing immense magical power, sometimes of disreputable sources, it can only be wielded by Wizards who can resist arcane temptations.",
         img: wizardsRareImg,
         population: {
           type: "Rare",
@@ -111,7 +111,7 @@ const data = [
       },
       {
         title: "Legendary Weapons",
-        text: "The Elders claim that these are relics with a sliver of something sinisterly immortal, lending it and its holders an infinite source of power and a peek into its otherworldly knowledge.",
+        text: "The Elders talk of a Legendary Weapon from a sinister past, lending its bearer infinite power and a glimpse into otherworldly wisdom.",
         img: wizardsLegendaryImg,
         population: {
           type: "Legendary",
@@ -126,11 +126,11 @@ const data = [
     logoDark: marksmenLogoDark,
     icon: marksmanIcon,
     image: marksman,
-    description: "The sly and sneaky Marksmen’s choice of weapon — its long range vantage and the unique craftsmanship of each weapon is critical for the different classes of masters.",
+    description: "The weapon of choice for the sly and sneaky Marksman flaunts long range and discretion above all. With unique craftsmanship and utter care, each weapon bears a special significance for its master.",
     rarity: [
       {
         title: "Common Weapons",
-        text: "The origin of it all — a common Marksmen weapon carries the historical birth of Marksmen hunters. Who has the skills of a true Marksman?",
+        text: "The origin of it all — a Common Marksman Weapon carries the historical birth of these cunning hunters. Who has the skills of a true Marksman?",
         img: marksmenCommonImg,
         population: {
           type: "Common",
@@ -138,7 +138,7 @@ const data = [
       },
       {
         title: "Uncommon Weapons",
-        text: "An uncommon weapon desired by many for its precision and silence as it slices through the air — perfect for distraction or assasination.",
+        text: "Desired by many for its precision and silence, it sends lethal arrows slicing through the air — perfect for secret operations and assassinations.",
         img: marksmenUncommonImg,
         population: {
           type: "Uncommon",
@@ -146,7 +146,7 @@ const data = [
       },
       {
         title: "Rare Weapons",
-        text: "The uncannily perfect weight and balance of these rare bows and arrows are said to be crafted by a legendary marksman, who promised an unfair advantage to its wielders.",
+        text: "The Rare Marksman Weapon embodies the peak of craftsmanship. Fashioned by a fabled marksman, it promises a formidable edge to its wielder.",
         img: marksmenRareImg,
         population: {
           type: "Rare",
@@ -154,7 +154,7 @@ const data = [
       },
       {
         title: "Legendary Weapons",
-        text: "Ripping through the air and all that stands its way, wielders of the legendary Marksman bow must be ready to harness, shoot, and aim this almighty arrow with nerves of steel.",
+        text: "Ripping through the air with incredible speed, this almighty arrow yields only to those with precision in their blood and nerves of steel.",
         img: marksmenLegendaryImg,
         population: {
           type: "Legendary",
@@ -179,7 +179,8 @@ const WeaponsMain = () => {
             <div className="col-lg-5 col-text">
               <AvarikTitle title="Weapons" className="w-100" variant="white" logo={null} />
               <p className={anim(2)}>
-                Weapons hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for weapons.              </p>
+                Just like our notorious Avariks, there are 4 rarity levels to the weapons in Avarik Saga. The rarity of a weapon determines its base stats, which enhances both the active and passive skills of the Hero.
+              </p>
               <AvarikButton
                 text="Buy Now on Opensea"
                 variant="dark"

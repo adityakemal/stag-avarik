@@ -41,11 +41,11 @@ const data = [
     logoDark: knightLogoDark,
     icon: knightIcon,
     image: knight,
-    description: "A symbol of defense, honor, and courage, the Knight’s Armor protects the mighty warrior as they fight ferociously.",
+    description: "A symbol of defense, honor, and courage, the Knight’s Armor protects its mighty wearer as they descend into battle ferociously.",
     rarity: [
       {
         title: "Common Armors",
-        text: "The Knight’s Common Armor is beset with bloody myths and deep-rooted history. Its immense durability allows it’s Knight in shining armor to throw devastating punches",
+        text: "The Common Knight Armor carries a bloody myth and history. Its immense durability allows its Knight to move with grace, speed, and boldness.",
         img: knightsCommonImg,
         population: {
           type: "Common",
@@ -53,7 +53,7 @@ const data = [
       },
       {
         title: "Uncommon Armors",
-        text: "The Uncommon Knight Armor is the symbol of hope and resilience of a swift Knight who fights with wit.",
+        text: "The Uncommon Knight Armor symbolizes the hope and resilience of a swift Knight who fights with wit and acuity to dominate the battlefield.",
         img: knightsUncommonImg,
         population: {
           type: "Uncommon",
@@ -61,7 +61,7 @@ const data = [
       },
       {
         title: "Rare Armors",
-        text: "The Rare Armor is made for the Knight’s shining glory, fiery strength, and immense speed that is amplified a hundred-fold.",
+        text: "The Rare Armor is made to escort the Knight to his final glory, making sure that any natural strength and speed are amplified one hundredfold.",
         img: knightsRareImg,
         population: {
           type: "Rare",
@@ -69,7 +69,7 @@ const data = [
       },
       {
         title: "Legendary Armors",
-        text: "Forged by the smithing God himself, one look at the Legendary Armor will bring any foe weak on their knees.",
+        text: "Forged by the Smith God himself, one look at the Legendary Armor will bring even the most formidable foe folding to their knees.",
         img: knightsLegendaryImg,
         population: {
           type: "Legendary",
@@ -83,11 +83,11 @@ const data = [
     logoDark: wizardLogoDark,
     icon: wizardIcon,
     image: wizard,
-    description: "Magical Robes and Cloaks with an affinity for considerable magical presence that will serve as magical protection.",
+    description: "These magical Robes and Cloaks oozes with the essence of magic, and the threads of these mythical fabric are permeated in divine enchantments.",
     rarity: [
       {
         title: "Common Armors",
-        text: "The Wizard’s Common Robe has been passed down from generations fashioned from elven leather that holds mysterious magical defense.",
+        text: "Passed down through generations, the Common Wizard Robe is fashioned from elven leather and carries a magical defense that can protect its wearer.",
         img: wizardsCommonImg,
         population: {
           type: "Common",
@@ -95,7 +95,7 @@ const data = [
       },
       {
         title: "Uncommon Armors",
-        text: "The Uncommon Robe can dispel a wide range of attacks and reduce its damage to the veiled Wizard.",
+        text: "The Uncommon Robe can dispel a wide range of attacks and reduce any damage to the Wizard who dons its sophisticated silhouette.",
         img: wizardsUncommonImg,
         population: {
           type: "Uncommon",
@@ -103,7 +103,7 @@ const data = [
       },
       {
         title: "Rare Armors",
-        text: "Made from the power of darkness, the Rare Robe shrouds the Wizard in mystical darkness. When the sun goes down, they turn invisible.",
+        text: "Laced with the power of darkness, the Rare Robe shrouds the Wizard in the shadows, so that they become invisible when the sun goes down.",
         img: wizardsRareImg,
         population: {
           type: "Rare",
@@ -111,7 +111,7 @@ const data = [
       },
       {
         title: "Legendary Armors",
-        text: "A Legendary Robe made from the indestructibletentacle skin of the Kraken that is the ultimate defense against physical and magical attacks.",
+        text: "The Legendary Wizard Robe is woven from the indestructible Kraken skin, the ultimate defense against even the most vicious attacks.",
         img: wizardsLegendaryImg,
         population: {
           type: "Legendary",
@@ -125,11 +125,11 @@ const data = [
     logoDark: marksmenLogoDark,
     icon: marksmanIcon,
     image: marksman,
-    description: "Specially built to accommodate the nimble Marksmen and their sprightly attacks, these Armors must also defend them for their angry foes.",
+    description: "Specially fabricated to don the nimble Marksmen and their sprightly attacks, these Armors also oozes with the mystical charms to defend them from their angry foes.",
     rarity: [
       {
         title: "Common Armors",
-        text: "An efficient comfortable Common Armor, excellentfor camouflage and stealthy movements of agile marksmen.",
+        text: "Don’t let its simple design fool anyone, for its sleek cut and efficient silhouette is the perfect camouflage for a Marksman’s deadly stealth.",
         img: marksmenCommonImg,
         population: {
           type: "Common",
@@ -137,7 +137,7 @@ const data = [
       },
       {
         title: "Uncommon Armors",
-        text: "A protective coat of arms with no room forweak spots, the Marksmen’s Uncommon Armor is slightly heavy but shields against most classes.",
+        text: "A protective shield with no weak spot, the Uncommon Marksman Armor is slightly heavy but guarantees protection against most classes.",
         img: marksmenUncommonImg,
         population: {
           type: "Uncommon",
@@ -145,7 +145,7 @@ const data = [
       },
       {
         title: "Rare Armors",
-        text: "Light and silent as a feather, with discreet silhouette day or night, the Rare Marksmen Armor is indispensable for seasoned marksmen to execute stealth or guerrilla attacks.",
+        text: "Light and silent as a feather, the Rare Marksman Armor is an indispensable cloak for stealth, and grants its wearer discretion day and night.",
         img: marksmenRareImg,
         population: {
           type: "Rare",
@@ -153,7 +153,7 @@ const data = [
       },
       {
         title: "Legendary Armors",
-        text: "A daunting Legendary Armor that will unnerveall enemies, it serves as a taunt to all unworthy foes. Crafted with a rare metal of the lands by an ancient master, this armor protects from all types of attacks and cuts the damage significantly.",
+        text: "The Legendary Armor unnerves all enemies. Crafted from the rarest metal by an ancient master, it shields all attacks and curtails any damage.",
         img: marksmenLegendaryImg,
         population: {
           type: "Legendary",
@@ -178,7 +178,7 @@ const ArmorsMain = () => {
             <div className="col-lg-5 col-text">
               <AvarikTitle title="Armors" className="w-100" variant="white" logo={null} />
               <p className={anim(2)}>
-                Armors hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for armors.
+              Armors hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for armors. The rarity influences 2 key principles in the game: Greater base stats on the armor. Enhances the skill power of both active and passive skills of the Hero.
               </p>
               <AvarikButton
                 text="Buy Now on Opensea"
