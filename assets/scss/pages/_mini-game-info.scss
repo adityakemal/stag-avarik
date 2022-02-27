@@ -77,13 +77,10 @@
     .col-item {
         z-index: 2;
         .img-icon {
-            width: 60%;
+            width: 75%;
             margin-left: auto;
             margin-right: auto;
             z-index: 2;
-            @include media-breakpoint-down(lg) {
-                width: 70%;
-            }
             @include media-breakpoint-down(md) {
                 width: 90%;
             }

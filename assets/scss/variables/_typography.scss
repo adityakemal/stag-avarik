@@ -18,6 +18,7 @@ $font-weight-bolder:          bolder; // Antikode
 @include font-face('Trajan Pro', 'TrajanPro-Regular', $font-weight-normal);
 @include font-face('Trajan Pro', 'TrajanPro-Bold', $font-weight-bold);
 @include font-face('HK Grotesk', 'HKGrotesk-Regular', $font-weight-normal);
+@include font-face('D-DIN', 'D-DIN', $font-weight-normal);
 
 // Font default / fallback (DO NOT EDIT)
 $font-default-sans-serif:     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default; // Antikode
@@ -27,12 +28,13 @@ $font-default-monospace:      SFMono-Regular, Menlo, Monaco, Consolas, "Liberati
 // Add custom font in front of the $font-default-
 // e.g. "Proxima Nova", $font-default-sans-serif
 $font-family-sans-serif:        'Trajan Pro', $font-default-sans-serif; // Avarik Saga
-$font-family-hk-grotesk:       'HK Grotesk', $font-family-sans-serif, $font-default-sans-serif; // Avarik Saga
+$font-family-hk-grotesk:        'HK Grotesk', $font-family-sans-serif, $font-default-sans-serif; // Avarik Saga
+$font-family-din:               'D-DIN', $font-family-sans-serif, $font-default-sans-serif; // Avarik Saga
 $font-family-serif:             $font-default-serif; // Antikode
 $font-family-monospace:         $font-default-monospace; // Antikode
 
 // After setting the custom font, set the $font-family-base & $headings-font-family here
-$font-family-base:            $font-family-hk-grotesk; // Antikode
+$font-family-base:            $font-family-din; // Antikode
 $headings-font-family:        $font-family-sans-serif; // Antikode
 
 // Set options for headings here

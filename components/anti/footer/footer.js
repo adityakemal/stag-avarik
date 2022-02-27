@@ -84,7 +84,7 @@ export const Footer = () => {
                     className="img-fluid footer-logo"
                     alt="Logo"
                   />
-                  <p>
+                  <p className="text-white">
                     Avarik Saga is a metaverse where blockchain-based RPG converges with art to present an open-world community. Uncover endless possibilities as you journey through this war-ridden realm featuring 8,888 generative personas of over 400+ hand-drawn attributes of loyal Knights, crafty Archers, and arcane Wizards from 4 distinctive factions.
                   </p>
                 </div>
