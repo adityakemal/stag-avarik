@@ -160,7 +160,7 @@ $home-anim-delay: 1s; // default 3s
   .border-paper-top {
     position: absolute;
     width: 100%;
-    top: -12%;
+    top: -10%;
     left: 0;
     z-index: 1;
     @include media-breakpoint-down(sm) {
@@ -274,9 +274,13 @@ $home-anim-delay: 1s; // default 3s
         top: -4.5rem;
         left: 0;
         z-index: 0;
+        @include media-breakpoint-down(lg) {
+          // top: 0;
+        }
         @include media-breakpoint-down(md) {
           width: 100%;
           right: -9rem;
+          top: -4.5rem;
         }
         @include media-breakpoint-down(sm) {
           width: 100%;
@@ -291,8 +295,10 @@ $home-anim-delay: 1s; // default 3s
         }
         color: $black;
         font-size: 1rem;
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(lg) {
           font-size: 0.75rem;
+        }
+        @include media-breakpoint-down(sm) {
           width: 90%;
           margin-left: auto;
           margin-right: auto;

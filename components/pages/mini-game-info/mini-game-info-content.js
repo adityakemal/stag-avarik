@@ -79,11 +79,17 @@ const MiniGameInfoContent = () => {
                                         text="See Leaderboard"
                                         link="/leaderboard"
                                         variant="dark"
-                                        className={`mb-4 px-5 mx-auto ${anim3(3)}`}
+                                        className={`d-none d-md-flex mb-4 px-5 mx-auto ${anim3(3)}`}
                                     />
                                 </div>
                                 <div className="col-md-6 col-image">
                                     <img src={image3} className={`img-fluid ${anim3(4, "revealInDown")}`} alt="play-to-earn" />
+                                    <AvarikButton
+                                        text="See Leaderboard"
+                                        link="/leaderboard"
+                                        variant="dark"
+                                        className={`d-flex d-md-none mb-4 px-5 mx-auto ${anim3(3)}`}
+                                    />
                                 </div>
                             </div>
                         </Parallax>

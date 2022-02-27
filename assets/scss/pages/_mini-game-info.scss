@@ -258,16 +258,13 @@
                     width: 80%;
                     text-align: center;
                 }
+            }
+            .col-image {
                 .avarik-button {
-                    @include media-breakpoint-down(sm) {
-                        width: 85%;
-                    }
+                    margin-top: 2rem;
+                    width: 85%;
                 }
             }
         }
     }
 }
-
-
-
-
