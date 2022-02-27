@@ -20,6 +20,7 @@ const HomeCover = () => {
               className="mx-5 mb-sm-4"
               sideLeftClassName="side-left-btn-cover"
               sideRightClassName="side-right-btn-cover"
+              link="https://minigame.avariksaga.com/"
               variant="dark"
             />
             <AvarikButton
