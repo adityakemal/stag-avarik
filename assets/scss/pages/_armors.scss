@@ -11,7 +11,7 @@
         background-position: 20% 50%;
     }
     @include media-breakpoint-down(sm) {
-        background-position: 20% 50%;
+        padding-top: $navbar-main-height-mobile;
     }
     .container {
         .col-text {
@@ -33,6 +33,7 @@
             }
             @include media-breakpoint-down(sm) {
                 padding: 1rem;
+                padding-top: 0;
             }
         }
         .col-img {

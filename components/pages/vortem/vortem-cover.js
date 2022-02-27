@@ -1,14 +1,14 @@
 import { Parallax } from "react-parallax"
-import { Parallax as ParallaxScroll } from "react-scroll-parallax"
-import { useScrollAnim } from "components/hooks/hooks"
+import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 
 import logo from "assets/img/vortem/1_logo.png"
 import bgCover from "assets/img/vortem/bg_cover.png"
+import bgCoverMobile from "assets/img/vortem/bg_cover-mobile.png"
 import AvarikTitle from "components/avarik-saga/avarik-title"
-import separator from "assets/img/home/ripped-paper-top.png"
 
 const VortemCover = () => {
     const [trigger, anim] = useScrollAnim()
+    const { width } = useWindowSize()
     return (
         <section className="sc-vortem-cover cover-full" ref={trigger}>
             {/* <ParallaxScroll y={[10, 0]} className="separator">
@@ -16,7 +16,7 @@ const VortemCover = () => {
             </ParallaxScroll> */}
             <Parallax
                 blur={0}
-                bgImage={bgCover}
+                bgImage={width > 576 ? bgCover : bgCoverMobile}
                 strength={200}
                 className="cover"
             >

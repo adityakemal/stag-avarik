@@ -18,6 +18,9 @@
     position: relative;
     background: url("../../img/common/bg_hold-to-earn-2.jpeg") no-repeat center center;
     background-size: cover;
+    @include media-breakpoint-down(sm) {
+        background: url("../../img/common/bg_hold-to-earn-mobile.jpeg") no-repeat center center;
+    }
     .heading {
         .title-wrapper {
             @include media-breakpoint-up(lg) {
@@ -329,6 +332,9 @@
         display: flex;
         align-items: center;
         height: 100%;
+        @include media-breakpoint-down(sm) {
+            align-items: flex-start;
+        }
     }
     .col-text {
         display: flex;

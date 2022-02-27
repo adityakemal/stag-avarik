@@ -1,15 +1,18 @@
 import { Parallax } from "react-parallax"
 import AvarikButton from "components/avarik-saga/avarik-button"
-import { useScrollAnim } from "components/hooks/hooks"
+import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 
 import stakingImage from "assets/img/vortem/5b_staking_image.png"
 import bg from "assets/img/vortem/bg_hold-to-earn.png"
+import bgMobile from "assets/img/vortem/bg_hold-to-earn-mobile.png"
 import coin1 from "assets/img/vortem/coin-1.png"
 import coin2 from "assets/img/vortem/coin-2.png"
 import coin3 from "assets/img/vortem/coin-3.png"
 
 const VortemHoldToEarn = () => {
     const [trigger, anim] = useScrollAnim()
+    const { width } = useWindowSize()
+
     return (
         <section className="sc-vortem-hold-to-earn" ref={trigger}>
             <img src={coin1} className="coin-1" alt="" />
@@ -17,7 +20,7 @@ const VortemHoldToEarn = () => {
             <img src={coin3} className="coin-3" alt="" />
             <Parallax
                 blur={0}
-                bgImage={bg}
+                bgImage={width > 576 ? bg : bgMobile}
                 strength={200}
                 className="bg"
             >

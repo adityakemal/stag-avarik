@@ -2,7 +2,8 @@
     background-color: $black;
     position: relative;
     @include media-breakpoint-down(sm) {
-        padding-top: 5rem;
+        margin-top: -$navbar-main-height-mobile;
+        padding-top: $navbar-main-height-mobile;
     }
     .bg {
         position: absolute;

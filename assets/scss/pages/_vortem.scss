@@ -4,10 +4,13 @@
 .sc-vortem-cover {
   position: relative;
   z-index: 0;
+  @include media-breakpoint-down(sm) {
+    padding-top: $navbar-main-height-mobile;
+}
   .cover {
     height: 650px;
     @include media-breakpoint-down(sm) {
-      height: 750px;
+      height: 550px;
     }
     .react-parallax-content {
       height: 100%;
@@ -23,9 +26,10 @@
   .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     @include media-breakpoint-up(md) {
       justify-content: space-between;
+      align-items: center;
     }
     .col-text {
       // @include media-breakpoint-up(md) {

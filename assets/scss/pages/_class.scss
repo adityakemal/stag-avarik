@@ -8,6 +8,7 @@
     padding-bottom: 7.5rem;
     position: relative;
     @include media-breakpoint-down(sm) {
+        padding-top: $navbar-main-height-mobile;
         background: url("../../img/common/bg_class-mobile.jpeg") no-repeat center center;
     }
     .container {
@@ -21,6 +22,7 @@
                 align-items: center;
                 @include media-breakpoint-down(sm) {
                     padding: 1rem;
+                    padding-top: 0;
                 }
                 .title-wrapper {
                     position: relative;
