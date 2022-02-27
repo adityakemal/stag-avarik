@@ -625,8 +625,8 @@ $home-anim-delay: 1s; // default 3s
     }
   }
   .title {
-    color: $dark;
-    font-size: 2.5rem;
+    color: $primary;
+    margin-bottom: 0 !important;
     text-align: center;
   }
   .description {

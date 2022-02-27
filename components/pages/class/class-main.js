@@ -19,11 +19,15 @@ import knight from "assets/img/knights/knight.png"
 import marksman from "assets/img/marksmen/marksman.png"
 import wizard from "assets/img/wizards/wizard.png"
 import ModalRarity from "components/avarik-saga/modal-rarity"
+import knightLogo from "assets/img/knights/icon_dark.png"
+import wizardLogo from "assets/img/wizards/icon_dark.png"
+import marksmenLogo from "assets/img/marksmen/icon_dark.png"
 
 const data = [
     {
         name: "Knight",
         img: knight,
+        logo: knightLogo,
         rarity: [
             {
                 title: "Squire",
@@ -74,6 +78,7 @@ const data = [
     {
         name: "Wizard",
         img: wizard,
+        logo: wizardLogo,
         rarity: [
             {
                 title: "Mage",
@@ -124,6 +129,7 @@ const data = [
     {
         name: "Marksman",
         img: marksman,
+        logo: marksmenLogo,
         rarity: [
             {
                 title: "Archer",

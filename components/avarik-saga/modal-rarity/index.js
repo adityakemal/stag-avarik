@@ -7,6 +7,7 @@ import rarityCommon from "assets/img/common/rarity-common.png"
 import rarityUncommon from "assets/img/common/rarity-uncommon.png"
 import rarityRare from "assets/img/common/rarity-rare.png"
 import rarityLegendary from "assets/img/common/rarity-legendary.png"
+import border from "assets/img/common/border-paper.png"
 
 const ModalRarity = ({ modal, setModal, selected, imgWithFrame = true }) => {
     const [trigger, anim] = useScrollAnim()
@@ -30,12 +31,14 @@ const ModalRarity = ({ modal, setModal, selected, imgWithFrame = true }) => {
             hide={() => setModal(null)}
             className="modal-rarity"
         >
-            <AvarikTitle title={selected?.name} />
+            <img src={border} className="border-top" alt="" />
+            <img src={border} className="border-bottom" alt="" />
+            <AvarikTitle title={selected?.name} logo={selected?.logo} />
             <div className="content" ref={trigger}>
                 {selected?.rarity?.map((item, i) => (
                     <>
                         <div className="row w-100 mx-0 my-4" key={i}>
-                            <div className="col-7 col-text">
+                            <div className="col-md-7 col-text">
                                 <h4 className={`title ${anim(i + 2)}`}>{item.title}</h4>
                                 <p className={`description ${anim(i + 3)}`}>{item.text}</p>
                                 <div className="population-wrapper">
@@ -52,7 +55,7 @@ const ModalRarity = ({ modal, setModal, selected, imgWithFrame = true }) => {
                                     ) : null}
                                 </div>
                             </div>
-                            <div className="col-5 col-img">
+                            <div className="col-md-5 col-img">
                                 <img src={frame} className={`img-fluid img-frame ${imgWithFrame ? "d-block" : "d-none"}`} />
                                 <img src={item.img} className={`img-fluid img-rarity ${anim(i + 5, "revealInUp")}`} />
                             </div>
