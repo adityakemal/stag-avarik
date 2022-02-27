@@ -24,7 +24,7 @@ $navbar-height-desktop: $navbar-top-height-desktop + $navbar-main-height-desktop
 // e.g. .navbar-expand-xl pairings = xl, lg
 // e.g. .navbar-expand-xxl pairings = xxl, xl
 // e.g. no navbar expand used = ""
-$navbar-expand-up: "lg"; // Specify the navbar expand used
+$navbar-expand-up: "xl"; // Specify the navbar expand used
 
 // prettier-ignore
 $navbar-expand-down: map-get($grid-breakpoints-pairs, $navbar-expand-up); // Specify the navbar expand used

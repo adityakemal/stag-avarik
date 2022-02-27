@@ -29,28 +29,29 @@
                 padding: 2rem !important;
                 position: relative;
                 @include media-breakpoint-down(sm) {
-                    background: $brown-light;
-                    border-left: 0.5rem solid $brown-alt;
-                    border-right: 0.5rem solid $brown-alt;
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        width: 99.5%;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        margin: auto;
-                        border-left: 3.5px solid $brown-alt;
-                        border-right: 3.5px solid $brown-alt;
-                    }
+                    background: rgba($black, 0) url("../../../assets/img/common/bg_modal-rarity.png") no-repeat center center;
+                    background-size: cover;
+                    // border-left: 0.5rem solid $brown-alt;
+                    // border-right: 0.5rem solid $brown-alt;
+                    // &::before {
+                    //     content: "";
+                    //     position: absolute;
+                    //     width: 99.5%;
+                    //     top: 0;
+                    //     left: 0;
+                    //     right: 0;
+                    //     bottom: 0;
+                    //     margin: auto;
+                    //     border-left: 3.5px solid $brown-alt;
+                    //     border-right: 3.5px solid $brown-alt;
+                    // }
                 }
                 .border-top {
                     position: absolute;
                     border-top: none !important;
-                    width: calc(100% + 1rem);
-                    left: -0.5rem;
-                    right: -0.5rem;
+                    width: 100%;
+                    left: 0rem;
+                    right: 0rem;
                     top: -2rem;
                     @include media-breakpoint-up(md) {
                         display: none;
@@ -59,9 +60,9 @@
                 .border-bottom {
                     position: absolute;
                     border-bottom: none !important;
-                    width: calc(100% + 1rem);
-                    left: -0.5rem;
-                    right: -0.5rem;
+                    width: 100%;
+                    left: 0rem;
+                    right: 0rem;
                     bottom: -2rem;
                     transform: rotate(180deg);
                     @include media-breakpoint-up(md) {
@@ -190,6 +191,11 @@
                 padding-left: 0.625rem !important;
                 padding-right: 0.625rem !important;
             }
+        }
+    }
+    &.class {
+        .modal-wrapper .modal-body .modal-content .content .row .col-img {
+            justify-content: center;
         }
     }
 }

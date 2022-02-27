@@ -3,10 +3,13 @@
     transition: all 0.5s;
     position: relative;
     transition: all 0.5s ease;
-    background: url("../../img/common/bg_class.jpeg") no-repeat center center;
+    background: url("../../img/common/bg_class.jpeg") no-repeat 50% 100%;
     padding-top: 7.5rem;
     padding-bottom: 7.5rem;
     position: relative;
+    @include media-breakpoint-down(sm) {
+        background: url("../../img/common/bg_class-mobile.jpeg") no-repeat center center;
+    }
     .container {
         .row {
             .col-text {
@@ -22,12 +25,11 @@
                 .title-wrapper {
                     position: relative;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: center;
                     align-items: center;
                     margin-bottom: 1rem;
                     .left,
                     .right {
-                        width: 15%;
                         object-fit: contain;
                     }
                     .logo {

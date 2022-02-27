@@ -184,8 +184,8 @@ const ClassMain = () => {
     const [modal, setModal] = useState(null)
     const [selectedClasses, setSelectedClasses] = useState(null)
     return (
-        <section className={`sc-class-main cover-full`} ref={trigger}>
-            <ModalRarity modal={modal} setModal={setModal} selected={selectedClasses} />
+        <section className={`sc-class-main`} ref={trigger}>
+            <ModalRarity modal={modal} setModal={setModal} selected={selectedClasses} className="class" />
             <div className="py-main h-100">
                 <div className="container">
                     <div className="row justify-content-between">
