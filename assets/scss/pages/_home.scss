@@ -170,7 +170,6 @@ $home-anim-delay: 1s; // default 3s
       top: -20%;
       img {
         width: 100%;
-
       }
     }
   }
@@ -453,7 +452,7 @@ $home-anim-delay: 1s; // default 3s
 
 //game features
 .sc-home-game-features {
-  height: 850px;
+  height: 875px;
   margin-top: 7.5rem;
   position: relative;
   padding-top: 5rem;
@@ -485,6 +484,9 @@ $home-anim-delay: 1s; // default 3s
       @include media-breakpoint-down(sm) {
         height: 245px;
       }
+      @include media-breakpoint-down(xs) {
+        height: 220px;
+      }
       .img-frame {
         position: absolute;
         width: 100%;
@@ -493,7 +495,7 @@ $home-anim-delay: 1s; // default 3s
       }
       .img-features-slider {
         position: absolute;
-        width: 75%;
+        width: 80%;
         height: 75%;
         top: 0;
         bottom: 0;
@@ -515,16 +517,45 @@ $home-anim-delay: 1s; // default 3s
       bottom: 20%;
       width: 50px;
     }
+    @include media-breakpoint-down(xs) {
+      bottom: 24%;
+    }
     &.left {
       left: 12rem;
       @include media-breakpoint-down(lg) {
         left: 5rem;
+      }
+      @include media-breakpoint-down(xs) {
+        left: 4rem;
       }
     }
     &.right {
       right: 12rem;
       @include media-breakpoint-down(lg) {
         right: 5rem;
+      }
+      @include media-breakpoint-down(xs) {
+        right: 4rem;
+      }
+    }
+  }
+  .pagination {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    @include media-breakpoint-down(xs) {
+      margin-top: 2.5rem;
+    }
+    .item {
+      width: 1rem;
+      height: 1rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      border: 1px solid $white;
+      transition: all 0.5s ease-in-out;
+      transform: rotate(45deg);
+      &.active {
+        background-color: $white;
       }
     }
   }

@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import { Parallax } from "react-parallax"
 import AvarikTitle from "components/avarik-saga/avarik-title"
 import { StackedCarousel, ResponsiveContainer, StackedCarouselSlideProps } from 'react-stacked-center-carousel';
@@ -20,9 +20,16 @@ const features = [
 ]
 
 const HomeGameFeatures = () => {
+    const ref = useRef()
+    const [index, setIndex] = useState(0)
+
+    const onSlide = (newIndex) => {
+        setIndex(newIndex)
+    }
+
     const Slide = React.memo(
         function (props) {
-            const { data, dataIndex, isCenterSlide } = props;
+            const { data, dataIndex, isCenterSlide, swipeTo } = props;
             const { img } = data[dataIndex];
             return (
                 <div className={`slider-item ${isCenterSlide ? "active" : ""}`}>
@@ -37,7 +44,6 @@ const HomeGameFeatures = () => {
         }
     );
 
-    const ref = useRef()
     return (
         <Parallax
             blur={0}
@@ -68,9 +74,18 @@ const HomeGameFeatures = () => {
                                         className="features-slider"
                                         customScales={[1, 0.7, 0.5, 0.2]}
                                         fadeDistance={0.3}
+                                        onActiveSlideChange={onSlide}
                                     />
                                 )
                             }} />
+                        <div className="pagination">
+                            {features.map((item, i) => (
+                                <div
+                                    // onClick={() => ref.current.swipeTo(i)}
+                                    className={`item ${i === index ? "active" : ""}`}
+                                />
+                            ))}
+                        </div>
                         <div onClick={() => ref.current.goBack()} className="arrow left">
                             <img src={arrowLeft} className="img-fluid" />
                         </div>
