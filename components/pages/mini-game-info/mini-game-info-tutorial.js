@@ -18,7 +18,7 @@ const MiniGameInfoTutorial = () => {
     const { width } = useWindowSize()
     return (
         <section className="sc-mini-game-info-tutorial" ref={trigger}>
-            <img src={width > 576 ? bg : bgMobile} className="bg" alt="" />
+            <img src={width > 992 ? bg : bgMobile} className="bg" alt="" />
             <div className="py-main">
                 <div className="container">
                     <AvarikTitle title="Mini Game Tutorial" className="mx-auto" titleClassName={`text-center ${anim(1)}`} />
@@ -30,8 +30,7 @@ const MiniGameInfoTutorial = () => {
                                 <h5 className={anim(8)}>Login to <br /> Metamask</h5>
                                 <img src={hr} className={`img-fluid hr ${anim(11)}`} />
                                 <p className={anim(14)}>
-                                    Connect to your MetaMask wallet. You need at least *3 Avarik Heroes to play.
-                                </p>
+                                    Connect to your MetaMask wallet. You need at least *3 Avariks to play.                                </p>
                             </div>
                         </div>
                         <div className="col-lg-4 col-item text-center">
@@ -41,8 +40,7 @@ const MiniGameInfoTutorial = () => {
                                 <h5 className={anim(9)}>Set Your <br /> Formation</h5>
                                 <img src={hr} className={`img-fluid hr ${anim(12)}`} />
                                 <p className={anim(15)}>
-                                    Set up your formation by selecting ‘Teams’ and your chosen Heroes. Each formation consists of 3 characters. Create the dream team and earn Formation Bonus.
-                                </p>
+                                    Set up your formation by selecting ‘Teams’ and your chosen Heroes. Each formation consists of 3 characters. Create the dream team and earn Formation Bonus.                                </p>
                             </div>
                         </div>
                         <div className="col-lg-4 col-item text-center">
@@ -52,8 +50,7 @@ const MiniGameInfoTutorial = () => {
                                 <h5 className={anim(10)}>Join the <br /> Battle</h5>
                                 <img src={hr} className={`img-fluid hr ${anim(13)}`} />
                                 <p className={anim(16)}>
-                                    Join the battleground and fight your way to the victor’s throne!
-                                </p>
+                                    Join the battleground and fight your way to the victor’s throne!                                </p>
                             </div>
                         </div>
                     </div>
