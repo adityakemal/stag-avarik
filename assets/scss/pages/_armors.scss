@@ -65,6 +65,9 @@
                         height: 350px;
                         margin-left: auto;
                         margin-right: auto;
+                        @include media-breakpoint-down(xl) {
+                            width: 95% !important;
+                        }
                         @include media-breakpoint-down(lg) {
                             width: 90% !important;
                         }
@@ -72,6 +75,9 @@
                             width: 100% !important;
                             height: auto;
                             margin-bottom: 7.5rem;
+                        }
+                        @media (min-width: 2000px) {
+                            width: 69% !important;
                         }
                         > .col-text {
                             color: $white;
@@ -171,6 +177,9 @@
                             display: flex;
                             align-items: center;
                             margin: 0 !important;
+                            @include media-breakpoint-down(xl) {
+                                padding-left: 2rem;
+                            }
                             @include media-breakpoint-down(sm) {
                                 padding-right: 1rem;
                             }
