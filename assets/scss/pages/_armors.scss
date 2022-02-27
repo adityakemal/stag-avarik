@@ -7,6 +7,12 @@
     position: relative;
     padding-top: 7.5rem;
     padding-bottom: 7.5rem;
+    @include media-breakpoint-down(md) {
+        background-position: 20% 50%;
+    }
+    @include media-breakpoint-down(sm) {
+        background-position: 20% 50%;
+    }
     .container {
         .col-text {
             position: relative;
@@ -20,7 +26,7 @@
             }
             h1,
             p {
-                color: $primary;
+                color: $white;
             }
             @include media-breakpoint-down(sm) {
                 padding: 1rem;
@@ -30,7 +36,7 @@
             position: relative;
             width: 100%;
             @include media-breakpoint-down(sm) {
-                margin-top: -2.5rem;
+                padding-bottom: 10rem;
             }
             .img-book {
                 position: absolute;
@@ -42,9 +48,9 @@
                 top: 0;
                 margin-left: auto;
                 margin-right: auto;
-                @media (min-width: 2000px) {
-                    height: 400px;
-                    top: -1rem;
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    height: auto;
                 }
             }
             .book-slider {
@@ -60,6 +66,7 @@
                         }
                         @include media-breakpoint-down(sm) {
                             width: 100% !important;
+                            height: auto;
                         }
                         > .col-text {
                             color: $white;
@@ -80,41 +87,39 @@
                                 padding-right: 1rem;
                             }
                             @include media-breakpoint-down(sm) {
+                                margin-top: 5rem;
                                 padding: 2rem 1rem 0 1.75rem;
+                                margin-bottom: 7.5rem;
                             }
-                            @include media-breakpoint-down(sm) {
-                                padding-top: 1.5rem;
+                            @include media-breakpoint-down(xs) {
+                                padding-top: 0.875rem;
                             }
                             .title-wrapper {
                                 position: absolute;
                                 top: 5rem;
                                 width: 85%;
+                                justify-content: center;
+                                @include media-breakpoint-down(lg) {
+                                    margin-bottom: 0.5rem;
+                                }
                                 @include media-breakpoint-down(sm) {
-                                    top: 7.5rem;
+                                    top: 0;
+                                    margin-bottom: 2rem;
                                 }
                                 .logo {
-                                    width: 10%;
-                                    top: -2rem;
+                                    width: 15px;
+                                    top: -4rem;
                                     @include media-breakpoint-down(sm) {
-                                        top: -1.5rem;
+                                        top: -3rem;
                                     }
+                                }
+                                .left,
+                                .right {
+                                    width: 25px;
                                 }
                                 h1 {
                                     color: $white;
                                     margin-bottom: 0;
-                                }
-                                @include media-breakpoint-down(lg) {
-                                    margin-bottom: 0.5rem;
-                                }
-                                @include media-breakpoint-down(md) {
-                                    // margin-bottom: 0.5rem;
-                                }
-                                @include media-breakpoint-down(xs) {
-                                    margin-top: 0;
-                                    margin-bottom: 0.25rem;
-                                    h1 {
-                                        font-size: 0.875rem;
-                                    }
                                 }
                             }
                             p {
@@ -123,22 +128,22 @@
                                     margin-bottom: 0.5rem;
                                     font-size: 0.75rem;
                                 }
-                                @include media-breakpoint-down(md) {
-                                    font-size: 0.95rem;
-                                }
                                 @include media-breakpoint-down(sm) {
-                                    font-size: 0.65rem;
-                                }
-                                @include media-breakpoint-down(xs) {
-                                    margin-bottom: 0.25rem;
+                                    padding-top: 2rem;
+                                    font-size: 1rem;
                                 }
                             }
                             .avarik-button {
+                                padding: 0.5rem 1.5rem;
                                 position: absolute;
                                 bottom: 3rem;
-                                padding: 0.5rem 1.5rem;
                                 @include media-breakpoint-down(sm) {
-                                    bottom: 6rem;
+                                    bottom: -5rem;
+                                    width: 80%;
+                                    left: 0;
+                                    right: 0;
+                                    margin-left: auto !important;
+                                    margin-right: auto;
                                 }
                                 &::after {
                                     bottom: -5px;
@@ -154,25 +159,15 @@
                                         left: -19.5px;
                                     }
                                 }
-                                @include media-breakpoint-down(xs) {
-                                    padding: 0.25rem 0.5rem;
-                                    font-size: 0.65rem;
-                                    .side-left {
-                                        left: -12px;
-                                    }
-                                    .side-right {
-                                        right: -12px;
-                                    }
-                                }
                             }
                         }
                         > .col-img {
-                            padding: 1rem 1rem 2rem 0.5rem;
+                            padding: 1rem 2rem 2rem 1rem;
                             display: flex;
                             align-items: center;
                             margin: 0 !important;
                             @include media-breakpoint-down(sm) {
-                                padding-left: 1.5rem;
+                                padding-right: 1rem;
                             }
                         }
                     }
@@ -185,7 +180,8 @@
                         top: 115%;
                     }
                     @include media-breakpoint-down(sm) {
-                        top: 100%;
+                        top: unset;
+                        bottom: -17%;
                     }
                 }
                 .slick-prev {
@@ -221,7 +217,7 @@
                     }
                     @include media-breakpoint-down(sm) {
                         width: 100% !important;
-                        bottom: -7%;
+                        bottom: -15%;
                     }
                     li {
                         width: 70px;
@@ -311,6 +307,17 @@
                         }
                     }
                 }
+            }
+            .avarik-button {
+                margin-top: 5rem;
+                width: 85%;
+                text-align: center;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -2rem;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }

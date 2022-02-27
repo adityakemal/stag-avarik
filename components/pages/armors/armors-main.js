@@ -1,11 +1,17 @@
-import { useScrollAnim } from "components/hooks/hooks"
+import { useState } from "react"
+import AvarikButton from "components/avarik-saga/avarik-button"
+import { useScrollAnim, useWindowSize } from "components/hooks/hooks"
 import { Slider } from "components/anti"
 import AvarikTitle from "components/avarik-saga/avarik-title"
 
 import book from "assets/img/common/book.png"
+import bookMobile from "assets/img/common/book-mobile.png"
 import knightLogo from "assets/img/knights/icon_light.png"
 import wizardLogo from "assets/img/wizards/icon_light.png"
 import marksmenLogo from "assets/img/marksmen/icon_light.png"
+import knightLogoDark from "assets/img/knights/icon_dark.png"
+import wizardLogoDark from "assets/img/wizards/icon_dark.png"
+import marksmenLogoDark from "assets/img/marksmen/icon_dark.png"
 import knightIcon from "assets/img/common/icon_knight.png"
 import marksmanIcon from "assets/img/common/icon_marksmen.png"
 import wizardIcon from "assets/img/common/icon_wizard.png"
@@ -27,13 +33,12 @@ import marksmenUncommonImg from "assets/img/marksmen/armor_uncommon.jpg"
 import marksmenRareImg from "assets/img/marksmen/armor_rare.jpg"
 import marksmenLegendaryImg from "assets/img/marksmen/armor_legendary.jpg"
 import ModalRarity from "components/avarik-saga/modal-rarity"
-import { useState } from "react"
-import AvarikButton from "components/avarik-saga/avarik-button"
 
 const data = [
   {
     name: "Knight",
     logo: knightLogo,
+    logoDark: knightLogoDark,
     icon: knightIcon,
     image: knight,
     description: "A symbol of defense, honor, and courage, the Knight’s Armor protects the mighty warrior as they fight ferociously.",
@@ -75,6 +80,7 @@ const data = [
   {
     name: "Wizard",
     logo: wizardLogo,
+    logoDark: wizardLogoDark,
     icon: wizardIcon,
     image: wizard,
     description: "Magical Robes and Cloaks with an affinity for considerable magical presence that will serve as magical protection.",
@@ -116,6 +122,7 @@ const data = [
   {
     name: "Marksman",
     logo: marksmenLogo,
+    logoDark: marksmenLogoDark,
     icon: marksmanIcon,
     image: marksman,
     description: "Specially built to accommodate the nimble Marksmen and their sprightly attacks, these Armors must also defend them for their angry foes.",
@@ -161,19 +168,27 @@ const ArmorsMain = () => {
   const [trigger, anim] = useScrollAnim()
   const [modal, setModal] = useState(null)
   const [selectedArmors, setSelectedArmors] = useState(null)
+  const { width } = useWindowSize()
   return (
     <section className="sc-armors-main cover-full" ref={trigger}>
-      <ModalRarity modal={modal} setModal={setModal} selected={selectedArmors} imgWithFrame={false} />
+      <ModalRarity modal={modal} setModal={setModal} selected={selectedArmors} imgWithFrame={false} className="armors" />
       <div className="py-main h-100">
         <div className="container">
           <div className="row">
             <div className="col-lg-5 col-text">
-              <AvarikTitle title="Armors" className="w-100" variant="dark" />
+              <AvarikTitle title="Armors" className="w-100" variant="white" logo={null} />
               <p className={anim(2)}>
-                Armors hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for armors.              </p>
+                Armors hold rarities similar to the model for Avarik Heroes themselves. There are 4 rarities for armors.
+              </p>
+              <AvarikButton
+                text="Buy Now on Opensea"
+                variant="dark"
+                className="d-none d-lg-block"
+                link="https://opensea.io/collection/avarik-saga-armors"
+              />
             </div>
             <div className="col-lg-7 col-img">
-              <img src={book} className="img-fluid img-book" alt="" />
+              <img src={width > 576 ? book : bookMobile} className="img-fluid img-book" alt="" />
               <Slider
                 fade
                 infinite
@@ -205,10 +220,10 @@ const ArmorsMain = () => {
               >
                 {data?.map((item, i) => (
                   <div className="row book-wrapper" key={i}>
-                    <div className="col-6 col-img">
+                    <div className="col-md-6 col-img">
                       <img src={item.image} className={`img-fluid ${anim(i + 2, "revealInDown")}`} alt="" />
                     </div>
-                    <div className="col-6 col-text">
+                    <div className="col-md-6 col-text">
                       <AvarikTitle title={item.name} titleClassName="h4" logo={item.logo} />
                       <p className={anim(i + 4)}>{item.description}</p>
                       <AvarikButton
@@ -224,6 +239,12 @@ const ArmorsMain = () => {
                   </div>
                 ))}
               </Slider>
+              <AvarikButton
+                text="Buy Now on Opensea"
+                variant="dark"
+                className="d-block d-lg-none"
+                link="https://opensea.io/collection/avarik-saga-armors"
+              />
             </div>
           </div>
         </div>

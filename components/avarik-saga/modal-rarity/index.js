@@ -9,7 +9,7 @@ import rarityRare from "assets/img/common/rarity-rare.png"
 import rarityLegendary from "assets/img/common/rarity-legendary.png"
 import border from "assets/img/common/border-paper.png"
 
-const ModalRarity = ({ modal, setModal, selected, imgWithFrame = true }) => {
+const ModalRarity = ({ modal, setModal, selected, imgWithFrame = true, className }) => {
     const [trigger, anim] = useScrollAnim()
     const rarityLabel = (rarity) => {
         switch (rarity) {
@@ -29,11 +29,11 @@ const ModalRarity = ({ modal, setModal, selected, imgWithFrame = true }) => {
             id="modal-rarity"
             isShowing={modal}
             hide={() => setModal(null)}
-            className="modal-rarity"
+            className={`modal-rarity ${className}`}
         >
             <img src={border} className="border-top" alt="" />
             <img src={border} className="border-bottom" alt="" />
-            <AvarikTitle title={selected?.name} logo={selected?.logo} />
+            <AvarikTitle title={selected?.name} logo={selected?.logoDark || selected?.logo} />
             <div className="content" ref={trigger}>
                 {selected?.rarity?.map((item, i) => (
                     <>

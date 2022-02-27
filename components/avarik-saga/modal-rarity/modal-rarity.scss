@@ -182,4 +182,12 @@
             }
         }
     }
+    &.armors {
+        .modal-wrapper .modal-body .modal-content .content .row .col-text {
+            @include media-breakpoint-down(sm) {
+                padding-left: 0.625rem !important;
+                padding-right: 0.625rem !important;
+            }
+        }
+    }
 }
