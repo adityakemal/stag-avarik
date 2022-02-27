@@ -88,6 +88,12 @@ footer {
 }
 
 .footer-contact {
+  .social-item {
+    @extend .col-2;
+    @extend .col-md-4;
+    margin: 0 0 1rem 0 !important;
+    padding-left: 0;
+  }
   h5 {
     margin-bottom: 1rem;
   }
@@ -103,22 +109,4 @@ footer {
 .footer-bottom {
   color: rgba($white, 0.75);
   font-size: 0.75rem;
-  .col-right {
-    text-transform: lowercase;
-  }
-  .btn-link {
-    color: rgba($white, 0.75);
-    font-size: 0.75rem;
-    text-transform: lowercase;
-    padding: 0;
-    line-height: 1;
-    @include hover-focus-active {
-      color: $white;
-    }
-    &:before {
-      bottom: -0.25rem;
-      height: 1px;
-      background: $white;
-    }
-  }
 }

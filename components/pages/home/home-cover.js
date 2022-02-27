@@ -16,14 +16,14 @@ const HomeCover = () => {
         <div className="cta-content">
           <div className="row justify-content-center">
             <AvarikButton
-              text="Demo"
+              text="Try Mini Game"
               className="mx-5 mb-sm-4"
               sideLeftClassName="side-left-btn-cover"
               sideRightClassName="side-right-btn-cover"
               variant="dark"
             />
             <AvarikButton
-              text="Watch Trailer"
+              text={<><i className="ais ai-play-circle mr-2"></i> Watch Trailer</>}
               className="mx-5 mb-sm-4"
               sideLeftClassName="side-left-btn-cover"
               sideRightClassName="side-right-btn-cover"

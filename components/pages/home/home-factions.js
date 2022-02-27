@@ -104,14 +104,14 @@ const HomeFactions = () => {
                             {data?.map((item, i) => (
                                 <div
                                     key={i}
-                                    className={`col-3 faction-item`}
+                                    className={`col-6 col-md-3 faction-item`}
                                     onClick={() => {
                                         setSelectedFactions(item)
                                         setModal("modal-factions")
                                     }}
                                 >
                                     <img src={item.img} className={`img-fluid mb-4 ${anim(i + 5, "revealInDown")}`} alt={item.name} />
-                                    <h5 className={anim(i + 6)}>{item.name}</h5>
+                                    <h3 className={anim(i + 6)}>{item.name}</h3>
                                 </div>
                             ))}
                         </div>

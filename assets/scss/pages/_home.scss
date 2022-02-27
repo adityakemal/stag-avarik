@@ -67,6 +67,7 @@ $home-anim-delay: 1s; // default 3s
     .avarik-button {
       @include media-breakpoint-down(sm) {
         margin-bottom: 1rem;
+        width: 100%;
       }
       @media (min-width: 2000px) {
         font-size: 2rem;
@@ -92,6 +93,9 @@ $home-anim-delay: 1s; // default 3s
       height: 100vh !important; // fallback option
       // height: calc(var(--vh, 1vh) * 100) !important;
       animation: cameraPan 30s $home-anim-cover-delay infinite;
+      @include media-breakpoint-down(sm) {
+        animation: cameraPanFull 50s $home-anim-cover-delay infinite;
+      }
     }
   }
 }
@@ -347,7 +351,7 @@ $home-anim-delay: 1s; // default 3s
   }
   @include media-breakpoint-down(sm) {
     padding-top: 3.75rem !important;
-    height: 500px;
+    height: fit-content;
   }
   .phoenix {
     position: absolute;
@@ -395,7 +399,7 @@ $home-anim-delay: 1s; // default 3s
     bottom: -30%;
     z-index: 3;
     @include media-breakpoint-down(sm) {
-      bottom: -20%;
+      bottom: -17%;
     }
   }
   .heading {
@@ -413,7 +417,7 @@ $home-anim-delay: 1s; // default 3s
     margin-right: auto;
   }
   .story-factions {
-    margin-top: 7.5rem;
+    padding-bottom: 2.5rem;
     @include media-breakpoint-up(md) {
       margin-top: 2.25rem;
       margin-left: auto;
@@ -428,6 +432,11 @@ $home-anim-delay: 1s; // default 3s
       cursor: pointer;
       img {
         max-height: 300px;
+      }
+      h3 {
+        @include media-breakpoint-down(sm) {
+          font-size: 1rem;
+        }
       }
     }
   }

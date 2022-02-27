@@ -507,6 +507,23 @@ $animation-directions: "Up", "Right", "Down", "Left";
     background-position: 0% 0%;
   }
 }
+@keyframes cameraPanFull {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 50% 10%;
+  }
+  50% {
+    background-position: 100% 10%;
+  }
+  75% {
+    background-position: 50% 10%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
 
 //
 // Hover Animations

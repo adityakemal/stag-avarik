@@ -7,8 +7,12 @@
     width: fit-content;
     .left,
     .right {
-        width: 15%;
+        width: 50px;
         object-fit: contain;
+        @extend .mx-3;
+        @include media-breakpoint-down(sm) {
+            width: 35px;
+        }
     }
     .logo {
         position: absolute;
