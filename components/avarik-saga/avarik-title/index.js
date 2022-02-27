@@ -12,11 +12,19 @@ const AvarikTitle = ({ title, logo = logoImg, className, titleClassName, variant
     return (
         <div className={`title-wrapper ${className} ${variant}`} ref={trigger}>
             <img src={logo} className={`logo`} alt="" />
-            <img src={variant === "dark" ? leftDark : variant === "white" ? leftWhite : left} className="left" alt="" />
+            <img
+                src={variant === "dark" ? leftDark : variant === "white" ? leftWhite : left}
+                className={`left ${anim(1)}`}
+                alt=""
+            />
             <h1 className={`${anim(1)} ${titleClassName}`}>
                 {title}
             </h1>
-            <img src={variant === "dark" ? rightDark : variant === "white" ? rightWhite : right} className="right" alt="" />
+            <img
+                src={variant === "dark" ? rightDark : variant === "white" ? rightWhite : right}
+                className={`right ${anim(1)}`}
+                alt=""
+            />
         </div>
     )
 }

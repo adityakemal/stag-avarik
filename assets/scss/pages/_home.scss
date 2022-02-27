@@ -65,6 +65,9 @@ $home-anim-delay: 1s; // default 3s
       color: $white;
     }
     .avarik-button {
+      .side-right {
+        right: -21px;
+      }
       @include media-breakpoint-down(sm) {
         margin-bottom: 1rem;
         width: 100%;
