@@ -188,7 +188,7 @@ const ArmorsMain = () => {
               />
             </div>
             <div className="col-lg-7 col-img">
-              <img src={width > 576 ? book : bookMobile} className="img-fluid img-book" alt="" />
+              <img src={width > 756 ? book : bookMobile} className="img-fluid img-book" alt="" />
               <Slider
                 fade
                 infinite
