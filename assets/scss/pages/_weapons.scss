@@ -67,6 +67,7 @@
                         @include media-breakpoint-down(sm) {
                             width: 100% !important;
                             height: auto;
+                            margin-bottom: 7.5rem;
                         }
                         > .col-text {
                             color: $white;
@@ -89,7 +90,6 @@
                             @include media-breakpoint-down(sm) {
                                 margin-top: 5rem;
                                 padding: 2rem 1rem 0 1.75rem;
-                                padding-bottom: 7.5rem;
                             }
                             @include media-breakpoint-down(xs) {
                                 padding-top: 0.875rem;
@@ -138,11 +138,14 @@
                                 position: absolute;
                                 bottom: 3rem;
                                 @include media-breakpoint-down(sm) {
+                                    bottom: unset;
+                                    top: 12.5rem;
                                     width: 80%;
                                     left: 0;
                                     right: 0;
                                     margin-left: auto !important;
                                     margin-right: auto;
+                                    margin-top: 0;
                                 }
                                 &::after {
                                     bottom: -5px;

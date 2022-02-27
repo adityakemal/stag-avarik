@@ -10,6 +10,9 @@ import bookMobile from "assets/img/common/book-mobile.png"
 import knightLogo from "assets/img/knights/icon_light.png"
 import wizardLogo from "assets/img/wizards/icon_light.png"
 import marksmenLogo from "assets/img/marksmen/icon_light.png"
+import knightLogoDark from "assets/img/knights/icon_dark.png"
+import wizardLogoDark from "assets/img/wizards/icon_dark.png"
+import marksmenLogoDark from "assets/img/marksmen/icon_dark.png"
 import knightIcon from "assets/img/common/icon_knight.png"
 import marksmanIcon from "assets/img/common/icon_marksmen.png"
 import wizardIcon from "assets/img/common/icon_wizard.png"
@@ -35,6 +38,7 @@ const data = [
   {
     name: "Knight",
     logo: knightLogo,
+    logoDar: knightLogoDark,
     icon: knightIcon,
     image: knight,
     description: "A weapon of varying weight, strength and agility, Knights’ weapons are lethal in the right hands of those who strike fast, unnerved by death.",
@@ -76,6 +80,7 @@ const data = [
   {
     name: "Wizard",
     logo: wizardLogo,
+    logoDar: wizardLogoDark,
     icon: wizardIcon,
     image: wizard,
     description: "Mysterious items imbued with magical energy that awakens a Wizard’s sorcery gift and channels different levels and types of Mana for destructive, dark, or elusive powers.",
@@ -118,6 +123,7 @@ const data = [
   {
     name: "Marksman",
     logo: marksmenLogo,
+    logoDar: marksmenLogoDark,
     icon: marksmanIcon,
     image: marksman,
     description: "The sly and sneaky Marksmen’s choice of weapon — its long range vantage and the unique craftsmanship of each weapon is critical for the different classes of masters.",
