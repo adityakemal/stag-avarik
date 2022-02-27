@@ -402,6 +402,9 @@
             object-fit: fill;
         }
     }
+    .title {
+        color: $primary;
+    }
     .faq-accordion {
         background-color: rgba($black, 0);
         color: $dark;
