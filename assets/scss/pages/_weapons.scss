@@ -6,7 +6,7 @@
     background: url("../../img/weapon/weapon-bg.jpeg") no-repeat center center;
     position: relative;
     padding-top: 7.5rem;
-    padding-bottom: 7.5rem;
+    padding-bottom: 2.5rem;
     @include media-breakpoint-down(md) {
         background-position: 20% 50%;
     }
@@ -74,7 +74,7 @@
                         @include media-breakpoint-down(sm) {
                             width: 100% !important;
                             height: auto;
-                            margin-bottom: 7.5rem;
+                            margin-bottom: 5rem;
                         }
                         @media (min-width: 2000px) {
                             width: 69% !important;
@@ -150,7 +150,7 @@
                                 bottom: 3rem;
                                 @include media-breakpoint-down(sm) {
                                     bottom: unset;
-                                    top: 12.5rem;
+                                    top: 11.5rem;
                                     width: 65%;
                                     left: 0;
                                     right: 0;

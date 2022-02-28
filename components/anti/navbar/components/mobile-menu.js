@@ -40,7 +40,7 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile, onConnect, account }
   const handleClick = (content, url) => {
     if (url) {
       if (url.includes("https")) {
-        window.open(url)
+        window.open(url, "_blank")
       } else {
         Router.push(url)
       }
