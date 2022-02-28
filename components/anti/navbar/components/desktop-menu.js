@@ -19,7 +19,7 @@ const gameInfo = [
 ]
 
 const miniGame = [
-  { name: "About Mini Game", link: "/mini-game-info" },
+  { name: "About Mini Game", link: "/about-mini-game" },
   { name: "Launch Mini Game", link: "https://minigame.avariksaga.com/" },
   { name: "Leaderboard", link: "/leaderboard" },
 ]

@@ -15,7 +15,7 @@ const gameInfo = [
 ]
 
 const miniGame = [
-  { name: "About Mini Game", link: "/mini-game-info" },
+  { name: "About Mini Game", link: "/about-mini-game" },
   { name: "Launch Mini Game", link: "https://minigame.avariksaga.com/" },
   { name: "Leaderboard", link: "/leaderboard" },
 ]
@@ -40,7 +40,7 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile, onConnect, account }
   const handleClick = (content, url) => {
     if (url) {
       if (url.includes("https")) {
-        window.open(url, "_blank")
+        window.location.assign(url, "_blank")
       } else {
         Router.push(url)
       }

@@ -208,7 +208,7 @@ export const Navbar = () => {
               <li className="nav-item-brand">
                 <Link className="navbar-brand absolute" to="/">
                   {/* <img src={logoLight} className={`d-none d-${navExpand}-block logo-light img-fluid`} alt="Logo" /> */}
-                  <img src={logoMobile} className={`d-block logo-mobile logo-dark img-fluid`} alt="Logo" />
+                  <img src={logoMobile} className={`d-block logo-mobile logo-dark img-fluid mr-2`} alt="Logo" />
                   <img src={logoDark} className={`d-none d-${navExpand}-block logo-dark img-fluid`} alt="Logo" />
                 </Link>
               </li>
