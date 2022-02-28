@@ -44,7 +44,7 @@ const HomeFooter = () => {
                             variant="outline-primary"
                             data={[
                                 { type: "twitter", title: "", url: "https://twitter.com/avariksaga" },
-                                { type: "facebook", title: "", url: "https://www.instagram.com/avariksaga" },
+                                { type: "instagram", title: "", url: "https://www.instagram.com/avariksaga" },
                                 { type: "discord", title: "", url: "https://t.co/QjHTk9f6NN" },
                                 { type: "medium", title: "", url: "https://medium.com/@Avariksaga" },
                                 { type: "youtube", title: "", url: "https://www.youtube.com/channel/UCc8Rc_5LTEZO2fcem1WEOyw" },

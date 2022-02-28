@@ -19,6 +19,10 @@ import benz from "assets/img/team/benz.jpeg"
 import maik from "assets/img/team/maik.jpeg"
 import handi from "assets/img/team/handi.jpeg"
 import brandon from "assets/img/team/brandon.jpeg"
+import christian from "assets/img/team/chris-rijanto.jpeg"
+import antony from "assets/img/team/antony-liem.jpeg"
+import gene from "assets/img/team/gene-richard.jpeg"
+import jason from "assets/img/team/jason-jonathan.jpeg"
 
 
 const TeamsMain = () => {
@@ -154,6 +158,30 @@ const TeamsMain = () => {
             //     { type: "twitter", url: "https://twitter.com/bzjb" },
             //     { type: "instagram", url: "https://instagram.com/benzbudiman" },
             // ],
+        },
+        {
+            img: christian,
+            title: "Christian Rijanto",
+            text: "Advisor",
+            social: [],
+        },
+        {
+            img: antony,
+            title: "Antony Liem",
+            text: "Advisor",
+            social: [],
+        },
+        {
+            img: gene,
+            title: "Gene Richard",
+            text: "Advisor",
+            social: [],
+        },
+        {
+            img: jason,
+            title: "Jason Jonathan",
+            text: "Advisor",
+            social: [],
         },
         {
             img: handi,
