@@ -203,7 +203,7 @@
     top: 5rem;
     left: 5rem;
     width: 100px;
-    z-index: 1;
+    z-index: 2;
     animation: float 2s infinite ease-in-out 0s;
     @include media-breakpoint-down(md) {
       top: 5%;
@@ -211,11 +211,10 @@
     }
   }
   .coin-2 {
-    z-index: 2;
     position: absolute;
     top: -2.5rem;
     right: 10rem;
-    z-index: 1;
+    z-index: 2;
     width: 100px;
     animation: float 2s infinite ease-in-out 0.5s;
     @include media-breakpoint-down(md) {
@@ -229,7 +228,7 @@
     position: absolute;
     right: 10rem;
     bottom: 0;
-    z-index: 1;
+    z-index: 2;
     width: 125px;
     animation: float 2s infinite ease-in-out 1s;
     @include media-breakpoint-down(md) {
