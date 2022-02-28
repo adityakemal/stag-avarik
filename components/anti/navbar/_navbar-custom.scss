@@ -184,6 +184,7 @@
                 padding-right: 1.25rem;
                 li {
                   margin-top: 0.75rem;
+                  cursor: pointer;
                   &:not(:last-child) {
                     border-bottom: 1px solid $primary;
                   }
@@ -359,6 +360,9 @@
         &.mini-game {
           left: unset;
           right: 12rem;
+          &.connected {
+            right: 5rem;
+          }
           &:hover {
             .img-paper {
               height: 150px;

@@ -71,7 +71,7 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch, onConnect, accou
               Mini Game
               <img src={iconDropdown} alt="" className="img-fluid ic-dropdown" />
             </div>
-            <ul className="nav-item-dropdown mini-game">
+            <ul className={`nav-item-dropdown mini-game ${account ? "connected" : ""}`}>
               <img src={paper} alt="" className="img-paper img-fluid" />
               {miniGame.map((item, i) => (
                 <li key={i}>
