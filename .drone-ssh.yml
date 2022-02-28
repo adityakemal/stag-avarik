@@ -36,3 +36,4 @@ steps:
     - custom
    branch:
     - master
+    - master-revamp
