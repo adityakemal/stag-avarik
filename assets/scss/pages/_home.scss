@@ -396,6 +396,9 @@ $home-anim-delay: 1s; // default 3s
     @media (min-width: 1800px) {
       bottom: 10rem;
     }
+    @media (min-width: 2000px) {
+      bottom: 15rem;
+    }
     @include media-breakpoint-down(xs) {
       display: none;
     }
