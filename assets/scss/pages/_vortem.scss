@@ -163,12 +163,9 @@
           width: 60%;
         }
       }
-      h5 {
+      h3 {
         z-index: 1;
         text-align: center;
-        @include media-breakpoint-down(md) {
-          font-size: 1.5rem;
-        }
       }
       p {
         text-align: center;

@@ -11,6 +11,7 @@ import hr from "assets/img/vortem/horizontal-line.png"
 import bg from "assets/img/vortem/bg_claim-full.png"
 import bgMobile from "assets/img/vortem/bg_claim-full-mobile.png"
 import ornament from "assets/img/common/ornament.png"
+import ornamentMobile from "assets/img/common/ornament-mobile.png"
 
 
 const MiniGameInfoTutorial = () => {
@@ -56,7 +57,7 @@ const MiniGameInfoTutorial = () => {
                     </div>
                 </div>
             </div>
-            <img src={ornament} className="img-fluid img-ornamen mb-4" alt="" />
+            <img src={width > 576 ? ornament : ornamentMobile} className="img-fluid img-ornamen mb-4" alt="" />
         </section>
     )
 }

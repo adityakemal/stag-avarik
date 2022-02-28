@@ -27,7 +27,7 @@ const VortemClaim = () => {
                             <img src={claimHolding} className={`img-icon img-fluid ${anim(2)}`} />
                             <div className="claim-card">
                                 <img src={claim1} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
-                                <h5 className={anim(8)}>Staking <br /> Rewards</h5>
+                                <h3 className={anim(8)}>Staking <br /> Rewards</h3>
                                 <img src={hr} className={`img-fluid hr ${anim(11)}`} />
                                 <p className={anim(14)}>
                                     You can earn $VORTEM by holding an Avarik NFT, also known as staking.
@@ -38,7 +38,7 @@ const VortemClaim = () => {
                             <img src={claimPlay} className={`img-icon img-fluid ${anim(3)}`} />
                             <div className="claim-card">
                                 <img src={claim2} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
-                                <h5 className={anim(9)}>Play <br /> the Game</h5>
+                                <h3 className={anim(9)}>Play <br /> the Game</h3>
                                 <img src={hr} className={`img-fluid hr ${anim(12)}`} />
                                 <p className={anim(15)}>
                                     Win $VORTEM in the game by engaging in PvE and PvP battles, Faction Wars, Dungeon Raids, and Tournaments.
@@ -49,7 +49,7 @@ const VortemClaim = () => {
                             <img src={claimExchange} className={`img-icon img-fluid ${anim(4)}`} />
                             <div className="claim-card">
                                 <img src={claim3} className={`img-fluid claim-number ${anim(5, "revealInUp")}`} />
-                                <h5 className={anim(10)}>Buy & Sell on <br /> Exchange</h5>
+                                <h3 className={anim(10)}>Buy & Sell on <br /> Exchange</h3>
                                 <img src={hr} className={`img-fluid hr ${anim(13)}`} />
                                 <p className={anim(16)}>
                                     More details coming soon!
