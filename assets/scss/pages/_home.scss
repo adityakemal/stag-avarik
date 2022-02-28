@@ -249,7 +249,7 @@ $home-anim-delay: 1s; // default 3s
       @include media-breakpoint-up(xxl) {
         margin-left: auto;
       }
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
         padding-top: 1.5rem;
         width: 90%;
       }

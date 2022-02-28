@@ -25,6 +25,7 @@ steps:
     - custom
    branch:
     - master
+    - master-revamp
 - name: Build
   commands:
   - cd /prod/avariksaga-v2
