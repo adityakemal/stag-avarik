@@ -167,7 +167,7 @@ const TeamsMain = () => {
         },
         {
             img: antony,
-            title: "Antony Liem",
+            title: "Antonny Liem",
             text: "Advisor",
             social: [],
         },
