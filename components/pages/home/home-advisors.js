@@ -15,6 +15,7 @@ import investors from "assets/img/advisor/investors.png"
 import partnersMobile from "assets/img/advisor/guilds-and-partners-mobile.png"
 import investorsMobile from "assets/img/advisor/investors-mobile.png"
 import ornament from "assets/img/common/ornament.png"
+import ornamentMobile from "assets/img/common/ornament-mobile.png"
 
 const HomeAdvisors = () => {
     const [trigger, anim] = useScrollAnim()
@@ -113,7 +114,7 @@ const HomeAdvisors = () => {
                     ))}
                 </div>
                 {/* </div> */}
-                <img src={ornament} className="img-fluid img-ornamen my-4" alt="" />
+                <img src={isMobile ? ornamentMobile : ornament} className="img-fluid img-ornamen my-4" alt="" />
                 <div className="py-main" ref={trigger2}>
                     <div className={`heading mb-5 ${anim2(1)}`}>
                         <AvarikTitle title="Investors" titleClassName="h2" className="mx-auto" />
@@ -122,7 +123,7 @@ const HomeAdvisors = () => {
                         <img src={isMobile ? investorsMobile : investors} className={`img-fluid ${anim2(2)}`} />
                     </div>
                 </div>
-                <img src={ornament} className="img-fluid img-ornamen mb-4" alt="" />
+                <img src={isMobile ? ornamentMobile : ornament} className="img-fluid img-ornamen mb-4" alt="" />
                 <div className="py-main" ref={trigger2}>
                     <div className={`heading mb-5 ${anim2(3)}`}>
                         <AvarikTitle title="Guilds and Partners" titleClassName="h2" className="mx-auto" />

@@ -286,6 +286,14 @@ $home-anim-delay: 1s; // default 3s
         }
         @include media-breakpoint-down(xs) {
           width: 100%;
+          & {
+            @media (min-height: 815px) {
+              top: -5rem;
+            }
+            @media (min-height: 850px) {
+              top: -6rem;
+            }
+          }
         }
       }
       p.desc {
