@@ -30,31 +30,20 @@ const TeamsMain = () => {
 
     const team = [
         {
-            img: jejouw,
-            title: "Jejouw",
-            text: "Conceptor",
-            social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/jejouw" },
-            //     { type: "instagram", url: "https://instagram.com/jejouw" },
-            // ],
-        },
-        {
             img: kevinCahya,
             title: "Kevin Cahya",
             text: "CEO",
             social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/skevinc" },
-            //     { type: "instagram", url: "https://instagram.com/skevinc" },
-            // ],
+            social: [
+                { type: "twitter", url: "https://twitter.com/skevinc" },
+                { type: "instagram", url: "https://instagram.com/skevinc" },
+            ],
         },
         {
             img: kyuwonKim,
             title: "Kyuwon Kim (Sean)",
             text: "CMO",
-            social: [],
-            // social: []
+            social: [{ type: "twitter", url: "https://twitter.com/avocadosMoon" }]
         },
         {
             img: seanEdbert,
@@ -64,21 +53,31 @@ const TeamsMain = () => {
             // social: []
         },
         {
+            img: jejouw,
+            title: "Jejouw",
+            text: "Conceptor",
+            social: [],
+            social: [
+                { type: "twitter", url: "https://twitter.com/jejouw" },
+                { type: "instagram", url: "https://instagram.com/jejouw" },
+            ],
+        },
+        {
             img: joel,
             title: "Joel Handojo",
             text: "Art Director",
             social: [],
-            // social: [{ type: "instagram", url: "https://instagram.com/jhandojo" }],
+            social: [{ type: "instagram", url: "https://instagram.com/jhandojo" }],
         },
         {
             img: hans,
             title: "Hans Yonathan",
             text: "Product Manager",
             social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/blade_heaven" },
-            //     { type: "instagram", url: "https://instagram.com/hansyona" },
-            // ],
+            social: [
+                { type: "twitter", url: "https://twitter.com/blade_heaven" },
+                { type: "instagram", url: "https://instagram.com/hansyona" },
+            ],
         },
         {
             img: hunter,
@@ -106,40 +105,40 @@ const TeamsMain = () => {
             title: "Nick Yudha",
             text: "Product Advisor",
             social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/nickyudha" },
-            //     { type: "instagram", url: "https://instagram.com/nickyudha" },
-            // ],
+            social: [
+                { type: "twitter", url: "https://twitter.com/nickyudha" },
+                { type: "instagram", url: "https://instagram.com/nickyudha" },
+            ],
         },
         {
             img: brandon,
             title: "Brandon Salim",
             text: "Advisor",
             social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/brandonicholas" },
-            //     { type: "instagram", url: "https://instagram.com/brandonsalim" },
-            // ],
+            social: [
+                { type: "twitter", url: "https://twitter.com/brandonicholas" },
+                { type: "instagram", url: "https://instagram.com/brandonsalim" },
+            ],
         },
         {
             img: kevinSusanto,
             title: "Kevin Susanto",
             text: "Advisor",
             social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/kevinsusanto" },
-            //     { type: "instagram", url: "https://instagram.com/kevinsusanto" },
-            // ],
+            social: [
+                { type: "twitter", url: "https://twitter.com/kevinsusanto" },
+                { type: "instagram", url: "https://instagram.com/kevinsusanto" },
+            ],
         },
         {
             img: agathaCarolina,
             title: "Agatha Carolina",
             text: "Story Teller",
             social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/agatha_carolina" },
-            //     { type: "instagram", url: "https://instagram.com/agathacarolina" },
-            // ],
+            social: [
+                { type: "twitter", url: "https://twitter.com/agatha_carolina" },
+                { type: "instagram", url: "https://instagram.com/agathacarolina" },
+            ],
         },
         {
             img: maik,
@@ -147,23 +146,23 @@ const TeamsMain = () => {
             title: "Michael Chrisyanto",
             text: "Story Teller",
             social: [],
-            // social: [{ type: "instagram", url: "https://instagram.com/mchlchrsynt" }],
+            social: [{ type: "instagram", url: "https://instagram.com/mchlchrsynt" }],
         },
         {
             img: benz,
             title: "Benz Budiman",
             text: "Advisor",
             social: [],
-            // social: [
-            //     { type: "twitter", url: "https://twitter.com/bzjb" },
-            //     { type: "instagram", url: "https://instagram.com/benzbudiman" },
-            // ],
+            social: [
+                { type: "twitter", url: "https://twitter.com/bzjb" },
+                { type: "instagram", url: "https://instagram.com/benzbudiman" },
+            ],
         },
         {
             img: christian,
             title: "Christian Rijanto",
             text: "Advisor",
-            social: [],
+            social: [{ type: "twitter", url: "https://twitter.com/ChrisRijanto" }],
         },
         {
             img: antony,
@@ -188,7 +187,7 @@ const TeamsMain = () => {
             title: "Handi Jaya",
             text: "Advisor",
             social: [],
-            // social: [{ type: "instagram", url: "https://instagram.com/handi_hj" }],
+            social: [{ type: "instagram", url: "https://instagram.com/handi_hj" }],
         },
     ]
 
