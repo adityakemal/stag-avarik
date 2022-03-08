@@ -184,7 +184,7 @@ const ArmorsMain = () => {
                 text="Buy Now on Opensea"
                 variant="dark"
                 className="d-none d-lg-flex"
-                link="https://opensea.io/collection/avarik-saga-armors"
+                link="https://opensea.io/collection/avarik-saga-armor"
               />
             </div>
             <div className="col-lg-7 col-img">
