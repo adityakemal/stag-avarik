@@ -243,7 +243,7 @@ const ArmorsMain = () => {
                 text="Buy Now on Opensea"
                 variant="dark"
                 className="btn-opensea d-flex d-lg-none"
-                link="https://opensea.io/collection/avarik-saga-armors"
+                link="https://opensea.io/collection/avarik-saga-armor"
               />
             </div>
           </div>
