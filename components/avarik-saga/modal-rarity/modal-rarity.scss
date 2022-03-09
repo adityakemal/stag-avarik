@@ -84,6 +84,21 @@
                     }
                 }
                 .content {
+                    .color-common {
+                        color: $common !important;
+
+                    }
+                    .color-uncommon {
+                        color: $uncommon !important;
+
+                    }
+                    .color-rare {
+                        color: $rare !important;
+                    }
+                    .color-legendary {
+                        color: $legendary !important;
+                    }
+                    
                     hr {
                         margin-top: 0.5rem;
                         margin-bottom: 0.5rem;
@@ -140,11 +155,14 @@
                                 .title {
                                     margin-bottom: 0.25rem;
                                 }
+                                .title-rarity {
+                                    margin-bottom: 0.25rem;
+                                }
                                 .description {
                                     margin-bottom: 0.25rem;
                                 }
-                                .population {
-                                }
+                           
+                                
                             }
                         }
                         .col-img {
