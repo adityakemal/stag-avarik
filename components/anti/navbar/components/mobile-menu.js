@@ -26,6 +26,7 @@ const menu = [
   { name: "Whitepaper", link: "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/" },
   { name: "Hold to Earn", link: "/collect-in-game-currency" },
   { name: "Team", link: "/teams" },
+  { name: "Blog", link: "https://medium.com/@Avariksaga" },
   { name: "Mini Game", menu: miniGame }
 ]
 

@@ -67,6 +67,11 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch, onConnect, accou
             </Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" activeClassName="active" to="https://medium.com/@Avariksaga">
+              Blog
+            </Link>
+          </li>
+          <li className="nav-item">
             <div className="nav-link mini-game">
               Mini Game
               <img src={iconDropdown} alt="" className="img-fluid ic-dropdown" />
