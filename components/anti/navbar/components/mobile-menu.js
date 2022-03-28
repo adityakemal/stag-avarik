@@ -12,6 +12,7 @@ const gameInfo = [
   { name: "Weapons", link: "/weapons" },
   { name: "Armors", link: "/armors" },
   { name: "Game Currency", link: "/vortem" },
+  { name: "Vesting AVRK", link: "/vesting-avrk" },
 ]
 
 const miniGame = [
@@ -36,7 +37,7 @@ const MobileMenu = ({ navExpand, variant, handleMenuMobile, onConnect, account }
   const [expanded, setExpanded] = useState(false)
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
-};
+  };
 
   const handleClick = (content, url) => {
     if (url) {
