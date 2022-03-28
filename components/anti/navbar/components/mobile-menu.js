@@ -13,6 +13,7 @@ const gameInfo = [
   { name: "Armors", link: "/armors" },
   { name: "Game Currency", link: "/vortem" },
   { name: "Vesting AVRK", link: "/vesting-avrk" },
+  { name: "Staking AVRK", link: "/staking-avrk" },
 ]
 
 const miniGame = [
