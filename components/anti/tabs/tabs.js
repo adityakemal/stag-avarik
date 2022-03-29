@@ -212,17 +212,17 @@ TabPane.defaultProps = {
 // █░█ █▀█ █░█░█   ▀█▀ █▀█   █░█ █▀ █▀▀
 // █▀█ █▄█ ▀▄▀▄▀   ░█░ █▄█   █▄█ ▄█ ██▄
 
-//<NavTabs
-//  data={[
-//    { name: "Tab 1", target: "tab-1" },
-//    { name: "Tab 2", target: "tab-2" },
-//  ]}
-// />
-// <TabContent>
-//  <TabPane id="tab-1" className="active">
-//    Content 1
-//  </TabPane>
-//  <TabPane id="tab-1">
-//    Content 2
-//  </TabPane>
-//</TabContent>
+{/* <NavTabs
+ data={[
+   { name: "Tab 1", target: "tab-1" },
+   { name: "Tab 2", target: "tab-2" },
+ ]}
+/>
+<TabContent>
+ <TabPane id="tab-1" className="active">
+   Content 1
+ </TabPane>
+ <TabPane id="tab-1">
+   Content 2
+ </TabPane>
+</TabContent> */}

@@ -221,4 +221,83 @@
             }
         }
     }
+    .sc-stake-avrk {
+        .box {
+            width: 100%;
+            height: fit-content;
+            justify-content: flex-start;
+            &::before {
+                z-index: 0;
+            }
+            .stake-tabs-wrapper {
+                z-index: 1;
+                width: 100%;
+                .stake-tabs {
+                    justify-content: center;
+                    border: 1px solid $primary;
+                    padding: 0.25rem;
+                    .nav-item {
+                        width: 50%;
+                        .nav-link {
+                            text-align: center;
+                            font-family: $font-family-sans-serif;
+                            &.active {
+                                background: $brown-alt;
+                            }
+                        }
+                    }
+                }
+            }
+            .stake-tabs-content {
+                width: 100%;
+                margin-top: 2.5rem;
+                .input-stake-wrapper {
+                    position: relative;
+                    height: 50px;
+                    margin-bottom: 1rem;
+                    .input-stake {
+                        position: absolute;
+                        width: 100%;
+                        .form-control-wrapper {
+                            input {
+                                background: rgba($color: $black, $alpha: 0);
+                                border: 1px solid $primary;
+                                font-weight: $font-weight-bold;
+                                font-size: 1.125rem;
+                            }
+                        }
+                    }
+                    span {
+                        position: absolute;
+                        right: 1rem;
+                        bottom: 50%;
+                        transform: translateY(50%);
+                        cursor: pointer;
+                    }
+                }
+                .warning-text {
+                  text-align: center;
+                  margin-top: 1.5rem;
+                }
+                .avarik-button {
+                    margin-left: 28px;
+                }
+                .lock-slider {
+                    color: $primary;
+                    .MuiSlider-rail {
+                        height: 0.25rem;
+                        border-radius: $border-radius-sm;
+                    }
+                    .MuiSlider-track {
+                        border-radius: $border-radius-sm;
+                        height: 0.25rem;
+                    }
+                    .MuiSlider-thumb {
+                        transform: rotate(45deg);
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+    }
 }
