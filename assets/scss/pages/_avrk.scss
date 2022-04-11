@@ -28,7 +28,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 1.5rem;
-        padding-bottom: 2.5rem;
+        // padding-bottom: 2.5rem;
         height: 250px;
         max-width: 90%;
         &::before {
@@ -64,6 +64,14 @@
             &::after {
                 bottom: -7px;
             }
+        }
+        .ornamen {
+            margin-bottom: 1rem;
+            padding-top: 0.75rem;
+        }
+        &.box-unclaimed {
+            margin-left: auto;
+            margin-right: auto;
         }
         &.box-schedule {
             display: flex;
@@ -114,6 +122,14 @@
                 }
             }
         }
+        &.box-balance {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            h1,
+            p {
+                margin-bottom: 0;
+            }
+        }
     }
 }
 
@@ -147,9 +163,9 @@
         justify-content: space-between;
         align-items: center;
         padding: 1.5rem;
-        padding-bottom: 2.5rem;
+        // padding-bottom: 2.5rem;
         height: 250px;
-        max-width: 90%;
+        max-width: 100%;
         &::before {
             content: "";
             position: absolute;
@@ -170,26 +186,50 @@
             font-family: $font-family-sans-serif;
             font-weight: $font-weight-light;
         }
-        .avarik-button {
-            margin-left: 0;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            .side-left {
-                left: -21px;
+        .ornamen {
+            margin-bottom: 1rem;
+            padding-top: 0.75rem;
+        }
+        &:not(.box-unclaimed):not(.box-staked) {
+            .avarik-button {
+                margin-left: 0;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                .side-left {
+                    left: -21px;
+                }
+                .side-right {
+                    right: -20px;
+                }
+                &::after {
+                    bottom: -7px;
+                }
             }
-            .side-right {
-                right: -20px;
+        }
+        &.box-balance {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            .label {
+                margin-bottom: 0;
+                font-family: $font-family-sans-serif;
+                font-weight: $font-weight-semibold;
             }
-            &::after {
-                bottom: -7px;
+            .value {
+                margin-bottom: 0;
+                font-family: $font-family-sans-serif;
+                font-weight: $font-weight-bold;
+                font-size: 1.25rem;
             }
+        }
+        &.box-staked,
+        &.box-earned {
+            margin-bottom: 1rem;
         }
         &.box-market {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
-            max-width: 95% !important;
             .title {
                 font-weight: $font-weight-bold;
                 margin-bottom: 1rem;

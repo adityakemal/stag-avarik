@@ -2,6 +2,8 @@ import AvarikButton from "components/avarik-saga/avarik-button"
 import AvarikTitle from "components/avarik-saga/avarik-title"
 import { useScrollAnim } from "components/hooks/hooks"
 
+import ornamentMobile from "assets/img/common/ornament-mobile.png"
+
 const VestingAvrkMain = () => {
     const [trigger, anim] = useScrollAnim()
     return (
@@ -23,8 +25,11 @@ const VestingAvrkMain = () => {
                         <div className="col-md-4">
                             <div className={`box box-locked ${anim(2)}`}>
                                 <p className="label">Locked Balance</p>
-                                <h1 className="value">59 K</h1>
-                                <p className="avrk">AVRK</p>
+                                <div className="text-center">
+                                    <h1 className="value">59 K</h1>
+                                    <p className="avrk">AVRK</p>
+                                </div>
+                                <img src={ornamentMobile} className="img-fluid ornamen" />
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -40,8 +45,11 @@ const VestingAvrkMain = () => {
                         <div className="col-md-4">
                             <div className={`box box-wallet ${anim(4)}`}>
                                 <p className="label">Locked Balance</p>
-                                <h1 className="value">59 K</h1>
-                                <p className="avrk">AVRK</p>
+                                <div className="text-center">
+                                    <h1 className="value">59 K</h1>
+                                    <p className="avrk">AVRK</p>
+                                </div>
+                                <img src={ornamentMobile} className="img-fluid ornamen" />
                             </div>
                         </div>
                     </div>
