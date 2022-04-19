@@ -36,7 +36,7 @@ const AvarikButton = ({
     return (
         <div
             className={`avarik-button ${variant} ${className} ${disabled ? "disabled" : ""}`}
-            onClick={() => !disabled && onClick()}
+            onClick={() => !disabled && onClick && onClick()}
         >
             <div className="overlay" />
             <div className="overlay-dark" />

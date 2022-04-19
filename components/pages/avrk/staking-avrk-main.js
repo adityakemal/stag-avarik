@@ -6,7 +6,7 @@ import { useScrollAnim } from "components/hooks/hooks"
 import StakeAvrk from "./stake-avrk"
 
 import logo from "assets/img/common/logo_main-icon-rounded.png"
-import ornamentMobile from "assets/img/common/ornament-mobile.png"
+import ornamentMobile from "assets/img/common/ornament-mobile-2.png"
 
 const StakingAvrkMain = () => {
     const [trigger, anim] = useScrollAnim()
@@ -88,7 +88,7 @@ const StakingAvrkMain = () => {
                             <div className="row justify-content-between mt-4">
                                 <div className="col-md-12">
                                     <div className={`box box-market ${anim(5)}`}>
-                                        <h6 className="title">Current AVRK Market Price</h6>
+                                        <h6 className="title text-center w-md-100">Current AVRK Market Price</h6>
                                         <div className="market-header">
                                             <div className="row">
                                                 <div className="col-4">

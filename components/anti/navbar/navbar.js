@@ -29,7 +29,7 @@ export const Navbar = () => {
   // Navbar expand config
   // Change the const below & config on variables/navbar.scss when setting the .navbar-expand-*
   // e.g. sm, md, lg, xl, xxl
-  const navExpand = "xl"
+  const navExpand = "lg"
 
   // Default theme
   // Options: "navbar-dark", "navbar-light"

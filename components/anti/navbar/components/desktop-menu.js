@@ -11,19 +11,31 @@ import iconDropdown from "assets/img/common/icon_dropdown.png"
 import { truncate } from "components/utils/helpers"
 
 const gameInfo = [
-  { name: "Class", link: "/class" },
+  // { name: "Gallery", link: "/gallery" },
   // { name: "Faction", link: "/factions" },
+  { name: "Class", link: "/class" },
   { name: "Weapons", link: "/weapons" },
   { name: "Armors", link: "/armors" },
-  { name: "Game Currency", link: "/vortem" },
-  { name: "Vesting AVRK", link: "/vesting-avrk" },
-  { name: "Staking AVRK", link: "/staking-avrk" },
+  // { name: "Lands", link: "/land" },
+]
+
+const aboutUs = [
+  { name: "Team", link: "/teams" },
+  { name: "Lore", link: "/https://medium.com/@Avariksaga" },
+  { name: "Whitepaper", link: "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/" },
 ]
 
 const miniGame = [
   { name: "About Mini Game", link: "/about-mini-game" },
   { name: "Launch Mini Game", link: "https://minigame.avariksaga.com/" },
   { name: "Leaderboard", link: "/leaderboard" },
+]
+
+const currency = [
+  { name: "Game Currency", link: "/vortem" },
+  { name: "Hold to Earn", link: "/collect-in-game-currency" },
+  { name: "Vesting AVRK", link: "/vesting-avrk" },
+  { name: "Staking AVRK", link: "/staking-avrk" },
 ]
 
 const DesktopMenu = ({ navExpand, handleSearch, disabledSearch, onConnect, account }) => {
@@ -48,31 +60,6 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch, onConnect, accou
               ))}
             </ul>
           </li>
-          {/* <li className="nav-item">
-            <Link className="nav-link" activeClassName="active" to="/land">
-              Land
-            </Link>
-          </li> */}
-          <li className="nav-item">
-            <Link className="nav-link" activeClassName="active" to="https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/">
-              Whitepaper
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" activeClassName="active" to="/collect-in-game-currency">
-              Hold to Earn
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" activeClassName="active" to="/teams">
-              Team
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" activeClassName="active" to="https://medium.com/@Avariksaga">
-              Blog
-            </Link>
-          </li>
           <li className="nav-item">
             <div className="nav-link mini-game">
               Mini Game
@@ -86,6 +73,40 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch, onConnect, accou
                     {item.name}
                   </Link>
                   {i !== (miniGame.length - 1) ? <hr /> : null}
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="nav-item">
+            <div className="nav-link about-us">
+              About Us
+              <img src={iconDropdown} alt="" className="img-fluid ic-dropdown" />
+            </div>
+            <ul className={`nav-item-dropdown about-us ${account ? "connected" : ""}`}>
+              <img src={paper} alt="" className="img-paper img-fluid" />
+              {aboutUs.map((item, i) => (
+                <li key={i}>
+                  <Link to={item.link}>
+                    {item.name}
+                  </Link>
+                  {i !== (aboutUs.length - 1) ? <hr /> : null}
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="nav-item">
+            <div className="nav-link currency">
+              Currency
+              <img src={iconDropdown} alt="" className="img-fluid ic-dropdown" />
+            </div>
+            <ul className={`nav-item-dropdown currency ${account ? "connected" : ""}`}>
+              <img src={paper} alt="" className="img-paper img-fluid" />
+              {currency.map((item, i) => (
+                <li key={i}>
+                  <Link to={item.link}>
+                    {item.name}
+                  </Link>
+                  {i !== (currency.length - 1) ? <hr /> : null}
                 </li>
               ))}
             </ul>

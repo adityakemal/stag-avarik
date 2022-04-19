@@ -2,7 +2,7 @@ import AvarikButton from "components/avarik-saga/avarik-button"
 import AvarikTitle from "components/avarik-saga/avarik-title"
 import { useScrollAnim } from "components/hooks/hooks"
 
-import ornamentMobile from "assets/img/common/ornament-mobile.png"
+import ornamentMobile from "assets/img/common/ornament-mobile-2.png"
 
 const VestingAvrkMain = () => {
     const [trigger, anim] = useScrollAnim()
@@ -56,7 +56,7 @@ const VestingAvrkMain = () => {
                     <div className="row justify-content-between mt-4">
                         <div className="col-md-8">
                             <div className={`box box-schedule ${anim(5)}`}>
-                                <p className="title">Vesting Token Schedule</p>
+                                <p className="title text-center w-md-100">Vesting Token Schedule</p>
                                 <div className="progress-row">
                                     <p className="label">Days to Unlock: &nbsp;<strong>2D : 23H</strong></p>
                                     <div className="progress-box">
@@ -73,7 +73,7 @@ const VestingAvrkMain = () => {
                                         <h6 className="label">Vesting Time</h6>
                                         <p className="value">1 years 183 days</p>
                                     </div>
-                                    <div className="text-right">
+                                    <div className="text-md-right">
                                         <h6 className="label">Ends at</h6>
                                         <p className="value">2023/12/12</p>
                                     </div>

@@ -285,9 +285,9 @@
             & ~ .nav-item-dropdown.game-info {
               visibility: visible;
               opacity: 1;
-              height: 265px;
+              height: 145px;
               .img-paper {
-                height: 265px;
+                height: 145px;
               }
             }
           }
@@ -297,9 +297,33 @@
             & ~ .nav-item-dropdown.mini-game {
               visibility: visible;
               opacity: 1;
-              height: 150px;
+              height: 145px;
               .img-paper {
-                height: 150px;
+                height: 145px;
+              }
+            }
+          }
+        }
+        &.about-us {
+          &:hover {
+            & ~ .nav-item-dropdown.about-us {
+              visibility: visible;
+              opacity: 1;
+              height: 145px;
+              .img-paper {
+                height: 145px;
+              }
+            }
+          }
+        }
+        &.currency {
+          &:hover {
+            & ~ .nav-item-dropdown.currency {
+              visibility: visible;
+              opacity: 1;
+              height: 185px;
+              .img-paper {
+                height: 185px;
               }
             }
           }
@@ -321,7 +345,7 @@
           visibility: visible;
           opacity: 1;
           .img-paper {
-            height: 265px;
+            height: 145px;
           }
         }
         li {
@@ -358,6 +382,27 @@
           z-index: -1;
         }
         &.mini-game {
+          left: 7.5rem;
+          right: unset;
+          &:hover {
+            .img-paper {
+              height: 145px;
+            }
+          }
+        }
+        &.about-us {
+          left: unset;
+          right: 20.5rem;
+          &.connected {
+            right: 13.5rem;
+          }
+          &:hover {
+            .img-paper {
+              height: 145px;
+            }
+          }
+        }
+        &.currency {
           left: unset;
           right: 12rem;
           &.connected {
@@ -365,7 +410,7 @@
           }
           &:hover {
             .img-paper {
-              height: 150px;
+              height: 185px;
             }
           }
         }

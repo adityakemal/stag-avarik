@@ -7,13 +7,12 @@ import iconDropdown from "assets/img/common/icon_dropdown.png"
 import AvarikButton from "components/avarik-saga/avarik-button"
 
 const gameInfo = [
-  { name: "Class", link: "/class" },
+  // { name: "Gallery", link: "/gallery" },
   // { name: "Faction", link: "/factions" },
+  { name: "Class", link: "/class" },
   { name: "Weapons", link: "/weapons" },
   { name: "Armors", link: "/armors" },
-  { name: "Game Currency", link: "/vortem" },
-  { name: "Vesting AVRK", link: "/vesting-avrk" },
-  { name: "Staking AVRK", link: "/staking-avrk" },
+  // { name: "Lands", link: "/land" },
 ]
 
 const miniGame = [
@@ -22,14 +21,26 @@ const miniGame = [
   { name: "Leaderboard", link: "/leaderboard" },
 ]
 
+const aboutUs = [
+  { name: "Team", link: "/teams" },
+  { name: "Lore", link: "/https://medium.com/@Avariksaga" },
+  { name: "Whitepaper", link: "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/" },
+]
+
+const currency = [
+  { name: "Game Currency", link: "/vortem" },
+  { name: "Hold to Earn", link: "/collect-in-game-currency" },
+  { name: "Vesting AVRK", link: "/vesting-avrk" },
+  { name: "Staking AVRK", link: "/staking-avrk" },
+]
+
 const menu = [
   { name: "Home", link: "/" },
-  { name: "Game Info", menu: gameInfo },
-  { name: "Whitepaper", link: "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/" },
-  { name: "Hold to Earn", link: "/collect-in-game-currency" },
-  { name: "Team", link: "/teams" },
   { name: "Blog", link: "https://medium.com/@Avariksaga" },
-  { name: "Mini Game", menu: miniGame }
+  { name: "Game Info", menu: gameInfo },
+  { name: "Mini Game", menu: miniGame },
+  { name: "About Us", menu: aboutUs },
+  { name: "Currency", menu: currency },
 ]
 
 const MobileMenu = ({ navExpand, variant, handleMenuMobile, onConnect, account }) => {
