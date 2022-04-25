@@ -163,6 +163,7 @@ export default function App() {
           background: "#eee",
           padding: "3%",
           height: `100%`,
+          minHeight: "90vh",
         }}
       >
         <InfiniteScroll
@@ -221,10 +222,10 @@ const LoadImage = ({ imgSrc = "", alt = "" }) => {
         style={{
           width: "100%",
           height: "100%",
-          objectFit: "contain",
+          objectFit: "cover",
           border: `1px solid #eee`,
-          //   background: loaded ? "#eee" : "transparent",
-          opacity: loaded ? 1 : 0,
+          background: loaded ? "#eee" : "transparent",
+          // opacity: loaded ? 1 : 0,
           cursor: "pointer",
         }}
       />
