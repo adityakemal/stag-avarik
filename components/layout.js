@@ -11,11 +11,11 @@ import { ErrorStateContext } from "context/error-msg-context"
 //   router.push(to)
 // }
 
-const Layout = ({ children }) => {
+const Layout = ({ children, hasFooter = true }) => {
   // Loader Context
   // allows loader only shown when directly visited via URL
   const { initialLoading } = useContext(LoadingContext)
-  const { errorMsg, setErrorMsg } = useContext(ErrorStateContext);
+  const { errorMsg, setErrorMsg } = useContext(ErrorStateContext)
   const router = useRouter()
 
   // Mobile viewport height workaround
@@ -89,7 +89,8 @@ const Layout = ({ children }) => {
           </div>
           <div className="container d-block d-md-none">
             <div className="error-msg slideInDown">
-              {errorMsg}<i className="air ai-times" onClick={() => setErrorMsg(null)}></i>
+              {errorMsg}
+              <i className="air ai-times" onClick={() => setErrorMsg(null)}></i>
             </div>
           </div>
         </>
@@ -99,7 +100,7 @@ const Layout = ({ children }) => {
       <main>
         {/* {!initialLoading ? children : <div className="h-vh-100 w-vw-100" />} */}
         {children}
-        <Footer />
+        {hasFooter && <Footer />}
       </main>
     </>
   )
