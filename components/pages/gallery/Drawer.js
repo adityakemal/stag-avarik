@@ -87,7 +87,9 @@ const ValueTrait = ({
   addFilter,
 }) => {
   const isChecked = () => {
-    // const checkType = obj => obj.trait_type === type;
+    const checkType = (obj) => obj.trait_type === trait_type
+    if (!selectedFilterArray.some(checkType)) return false
+    
     const checkValue = (obj) => obj.values?.includes(item?.trait_value)
 
     return selectedFilterArray.some(checkValue)
@@ -148,7 +150,7 @@ const ValueTrait = ({
             } else {
               //
               addFilter([
-                ...selectedFilterArray,
+                ...arrWithoutCurrentType,
                 {
                   trait_type,
                   values: [item?.trait_value],
