@@ -97,7 +97,7 @@ export default function App() {
   const goNext = () => {
     setTimeout(() => {
       setRange(range + 9)
-    }, 700)
+    }, 100)
   }
 
   const usedArr = () => {
@@ -223,7 +223,7 @@ const LoadImage = ({ imgSrc = "", alt = "" }) => {
           height: "100%",
           objectFit: "contain",
           border: `1px solid #eee`,
-          background: loaded ? "#eee" : "transparent",
+          //   background: loaded ? "#eee" : "transparent",
           opacity: loaded ? 1 : 0,
           cursor: "pointer",
         }}
