@@ -29,32 +29,35 @@ import dataerror7000_b from "./data_1/dataerror7000_b.json"
 import dataerror8000_b from "./data_1/dataerror8000_b.json"
 import dataerror8888_b from "./data_1/dataerror8888_b.json"
 
+import avarikMetadata from "components/utils/opensea_avarik8888.json"
+
 import Skeleton from "@mui/material/Skeleton"
 const allArrx = [
-  ...avarik1000,
-  ...avarik2000,
-  ...avarik3000,
-  ...avarik4000,
-  ...avarik5000,
-  ...avarik6000,
-  ...avarik7000,
-  ...avarik8000,
-  ...avarik8888,
-  //
-  ...dataerror1000_b,
-  ...dataerror2000_b,
-  ...dataerror2000_c,
-  ...dataerror3000_b,
-  ...dataerror3000_c,
-  ...dataerror4000_b,
-  ...dataerror4000_c,
-  ...dataerror5000_b,
+  // ...avarik1000,
+  // ...avarik2000,
+  // ...avarik3000,
+  // ...avarik4000,
+  // ...avarik5000,
+  // ...avarik6000,
+  // ...avarik7000,
+  // ...avarik8000,
+  // ...avarik8888,
+  // //
+  // ...dataerror1000_b,
+  // ...dataerror2000_b,
+  // ...dataerror2000_c,
+  // ...dataerror3000_b,
+  // ...dataerror3000_c,
+  // ...dataerror4000_b,
+  // ...dataerror4000_c,
+  // ...dataerror5000_b,
 
-  ...dataerror5000_c,
-  ...dataerror6000_b,
-  ...dataerror7000_b,
-  ...dataerror8000_b,
-  ...dataerror8888_b,
+  // ...dataerror5000_c,
+  // ...dataerror6000_b,
+  // ...dataerror7000_b,
+  // ...dataerror8000_b,
+  // ...dataerror8888_b,
+  ...avarikMetadata,
 ]
 
 function shuffleArray(array) {
@@ -67,9 +70,9 @@ function shuffleArray(array) {
   return array
 }
 
-const replaceIpfsOrigin = (url) =>
-  // url.replace("ipfs://", " https://ipfs/ipfs/");
-  url.replace("ipfs://", " https://opensea.mypinata.cloud/ipfs/")
+const replaceIpfsOrigin = (url) => url
+// url.replace("ipfs://", " https://ipfs/ipfs/");
+// url.replace("ipfs://", " https://opensea.mypinata.cloud/ipfs/")
 
 export default function App() {
   console.log(allArrx.length)
@@ -164,13 +167,14 @@ export default function App() {
           padding: "3%",
           height: `100%`,
           minHeight: "90vh",
+          marginBottom: "10%",
         }}
       >
         <InfiniteScroll
           pageStart={0}
           loadMore={goNext}
           hasMore={true || false}
-          loader={null}
+          // loader={<div>loading...</div>}
         >
           <div
             className=""
@@ -190,7 +194,8 @@ export default function App() {
                 >
                   <span style={{ color: "orange" }}> {item?.id}</span>
                   <LoadImage
-                    imgSrc={replaceIpfsOrigin(item?.image)}
+                    imgSrc={item?.image}
+                    // imgSrc={item?.image_preview}
                     alt={item?.name}
                   />
                 </div>
@@ -217,14 +222,16 @@ const LoadImage = ({ imgSrc = "", alt = "" }) => {
           setError(true)
         }}
         onLoad={() => setLoaded(true)}
-        src={loaded ? imgSrc || placeholder : placeholder}
+        // src={loaded ? imgSrc || placeholder : placeholder}
+        src={imgSrc}
         alt={alt}
         style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",
           border: `1px solid #eee`,
-          background: loaded ? "#eee" : "transparent",
+          // background: loaded ? "#eee" : "transparent",
+          background: "gray",
           // opacity: loaded ? 1 : 0,
           cursor: "pointer",
         }}

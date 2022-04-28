@@ -21,12 +21,13 @@ export default function Drawer({
 }) {
   return (
     <div style={{ paddingBottom: 20 }}>
-      {TRAITS.map(({ trait_type, options }, i) => {
+      {TRAITS.map(({ trait_type, options, total }, i) => {
         return (
           <TraitType
             key={i}
             {...{
               trait_type,
+              total,
               options,
               selectedFilterArray,
               addFilter,
@@ -43,6 +44,7 @@ const TraitType = ({
   options,
   selectedFilterArray = [],
   addFilter,
+  total,
 }) => {
   return (
     <Accordion
@@ -55,7 +57,9 @@ const TraitType = ({
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography>{trait_type}</Typography>
+        <Typography>
+          {trait_type} ({total})
+        </Typography>
       </AccordionSummary>
       <AccordionDetails
         style={{
@@ -89,7 +93,7 @@ const ValueTrait = ({
   const isChecked = () => {
     const checkType = (obj) => obj.trait_type === trait_type
     if (!selectedFilterArray.some(checkType)) return false
-    
+
     const checkValue = (obj) => obj.values?.includes(item?.trait_value)
 
     return selectedFilterArray.some(checkValue)
@@ -173,7 +177,10 @@ const ValueTrait = ({
             inputProps={{ "aria-labelledby": `labelId` }}
           />
         </ListItemIcon>
-        <ListItemText id={`labelId`} primary={item?.trait_value} />
+        <ListItemText
+          id={`labelId`}
+          primary={`${item?.trait_value} (${item?.total})`}
+        />
       </ListItemButton>
     </ListItem>
   )
