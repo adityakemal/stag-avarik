@@ -1,64 +1,16 @@
 import * as React from "react"
 // import InfiniteScroll from "react-infinite-scroll-component";
-
 import InfiniteScroll from "react-infinite-scroller"
 import Drawer from "./Drawer"
-
-import avarik1000 from "./data_1/data1000.json"
-import avarik2000 from "./data_1/data2000.json"
-import avarik3000 from "./data_1/data3000.json"
-import avarik4000 from "./data_1/data4000.json"
-import avarik5000 from "./data_1/data5000.json"
-import avarik6000 from "./data_1/data6000.json"
-import avarik7000 from "./data_1/data7000.json"
-import avarik8000 from "./data_1/data8000.json"
-import avarik8888 from "./data_1/data8888.json"
-
-import dataerror1000_b from "./data_1/dataerror1000_b.json"
-import dataerror2000_b from "./data_1/dataerror2000_b.json"
-import dataerror2000_c from "./data_1/dataerror2000_c.json"
-import dataerror3000_b from "./data_1/dataerror3000_b.json"
-import dataerror3000_c from "./data_1/dataerror3000_c.json"
-
-import dataerror4000_b from "./data_1/dataerror4000_b.json"
-import dataerror4000_c from "./data_1/dataerror4000_c.json"
-import dataerror5000_b from "./data_1/dataerror5000_b.json"
-import dataerror5000_c from "./data_1/dataerror5000_c.json"
-import dataerror6000_b from "./data_1/dataerror6000_b.json"
-import dataerror7000_b from "./data_1/dataerror7000_b.json"
-import dataerror8000_b from "./data_1/dataerror8000_b.json"
-import dataerror8888_b from "./data_1/dataerror8888_b.json"
-
+import Image from "next/image"
 import avarikMetadata from "components/utils/opensea_avarik8888.json"
-
+import Modal from "@mui/material/Modal"
 import Skeleton from "@mui/material/Skeleton"
-const allArrx = [
-  // ...avarik1000,
-  // ...avarik2000,
-  // ...avarik3000,
-  // ...avarik4000,
-  // ...avarik5000,
-  // ...avarik6000,
-  // ...avarik7000,
-  // ...avarik8000,
-  // ...avarik8888,
-  // //
-  // ...dataerror1000_b,
-  // ...dataerror2000_b,
-  // ...dataerror2000_c,
-  // ...dataerror3000_b,
-  // ...dataerror3000_c,
-  // ...dataerror4000_b,
-  // ...dataerror4000_c,
-  // ...dataerror5000_b,
+import Chip from "@mui/material/Chip"
+import Stack from "@mui/material/Stack"
+import { getPercentageMeta } from "./filter"
 
-  // ...dataerror5000_c,
-  // ...dataerror6000_b,
-  // ...dataerror7000_b,
-  // ...dataerror8000_b,
-  // ...dataerror8888_b,
-  ...avarikMetadata,
-]
+const allArrx = avarikMetadata
 
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -70,13 +22,7 @@ function shuffleArray(array) {
   return array
 }
 
-const replaceIpfsOrigin = (url) => url
-// url.replace("ipfs://", " https://ipfs/ipfs/");
-// url.replace("ipfs://", " https://opensea.mypinata.cloud/ipfs/")
-
 export default function App() {
-  console.log(allArrx.length)
-
   const [_options, addFilter] = React.useState([
     // {
     //     "trait_type": "Background",
@@ -100,7 +46,7 @@ export default function App() {
   const goNext = () => {
     setTimeout(() => {
       setRange(range + 9)
-    }, 100)
+    }, 3)
   }
 
   const usedArr = () => {
@@ -121,25 +67,85 @@ export default function App() {
     return B
   }
 
+  const [open, setOpen] = React.useState(false)
+  const [currentItem, setCurrentItem] = React.useState(null)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+
   return (
     <div
       style={{
         width: "100vw",
         height: "100%",
-        background: "#eee",
+        // background: "#eee",
         display: "inline-flex",
         padding: "5%",
       }}
     >
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        style={{
+          display: "inline-flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            background: "#eee",
+            // height: "50%",
+            width: "50%",
+            padding: "3%",
+          }}
+        >
+          {!!currentItem && (
+            <div>
+              ID: {currentItem?.id}
+              <br />
+              Name: {currentItem?.name}
+              <br />
+              Description: {currentItem?.description}
+            </div>
+          )}
+          <hr />
+          {!!currentItem &&
+            currentItem?.traits?.map((_item, i) => (
+              <div>
+                {_item?.trait_type} : {_item?.value} (
+                {getPercentageMeta(_item?.trait_type, _item?.value)}%)
+              </div>
+            ))}
+          <br />
+          {!!currentItem && (
+            //
+            <a
+              style={{ color: "blue" }}
+              href={`https://opensea.io/assets/0x127e479ac59a1ea76afdedf830fecc2909aa4cae/${currentItem?.id}`}
+            >
+              opensea
+            </a>
+          )}
+        </div>
+      </Modal>
+
       {/* <img src={`./logo.png`} style={{ width: 200, height: 300 }} /> */}
-      <div className="" style={{ width: "30%", background: "#eee" }}></div>
       <div
         className=""
         style={{
-          height: "80vh",
-
           width: "30%",
-          background: "#eee",
+          // background: "#eee"
+        }}
+      ></div>
+      <div
+        className="text-white"
+        style={{
+          height: "80vh",
+          width: "30%",
+          // background: "#eee",
           position: "fixed",
           zIndex: 200,
           marginTop: "3%",
@@ -149,7 +155,13 @@ export default function App() {
         }}
       >
         {usedArr().length} items
-        <br />
+        {/* <br />
+        <Tags
+          {...{
+            selectedFilterArray: _options,
+            addFilter,
+          }}
+        /> */}
         {/* Test */}
         <Drawer
           {...{
@@ -163,7 +175,7 @@ export default function App() {
         className=""
         style={{
           width: "70%",
-          background: "#eee",
+          // background: "#eee",
           padding: "3%",
           height: `100%`,
           minHeight: "90vh",
@@ -185,19 +197,30 @@ export default function App() {
               .map((item, i) => (
                 <div
                   onClick={() => {
-                    window.open(
-                      `https://opensea.io/assets/0x127e479ac59a1ea76afdedf830fecc2909aa4cae/${item?.id}`
-                    )
+                    //
+                    setCurrentItem(item)
+                    handleOpen(true)
+                    // window.open(
+                    //   `https://opensea.io/assets/0x127e479ac59a1ea76afdedf830fecc2909aa4cae/${item?.id}`
+                    // )
                   }}
                   key={item?.id}
-                  style={{ width: 250, height: 250, margin: 6 }}
+                  style={{
+                    // width: 250, height: 250,
+                    margin: 6,
+                    cursor: "pointer",
+                  }}
                 >
-                  <span style={{ color: "orange" }}> {item?.id}</span>
                   <LoadImage
                     imgSrc={item?.image}
                     // imgSrc={item?.image_preview}
                     alt={item?.name}
                   />
+                  <br />
+                  <span style={{ color: "orange", textAlign: "center" }}>
+                    {" "}
+                    {item?.id}
+                  </span>
                 </div>
               ))}
           </div>
@@ -207,6 +230,46 @@ export default function App() {
   )
 }
 
+//filter
+const Tags = ({ selectedFilterArray = [], addFilter }) => {
+  const handleDelete = (item) => {
+    console.info("You clicked the delete icon.")
+    const arrWithoutCurrentType = selectedFilterArray.filter(
+      (k) => k?.trait_type !== trait_type
+    )
+
+    let arrayNonZero = null
+    // const newArr = selectedFilterArray.filter(i => i !== item?.trait_value)
+    let newArr = selectedFilterArray.filter((i) => {
+      //straight return based on type because it's only 1
+      if (i?.values?.length === 1) return i?.trait_type !== trait_type
+
+      const values = i?.values?.filter((j) => j !== item?.trait_value)
+      arrayNonZero = {
+        ...i,
+        values,
+      }
+
+      // bugs on return, so use finalArray instead
+      return arrayNonZero
+    })
+
+    const finalArray = !arrayNonZero
+      ? newArr
+      : [...arrWithoutCurrentType, arrayNonZero]
+
+    addFilter(finalArray)
+  }
+  return (
+    <Stack direction="row" spacing={1}>
+      {selectedFilterArray?.map((k, i) => {
+        return <Chip onDelete={() => handleDelete(k)} />
+      })}
+      <Chip label="Deletable" onDelete={handleDelete} />
+      <Chip label="Deletable" variant="outlined" onDelete={handleDelete} />
+    </Stack>
+  )
+}
 const placeholder = "./icons/apple-icon.png"
 const LoadImage = ({ imgSrc = "", alt = "" }) => {
   // const [state, setState] = React.useState(imgSrc)
@@ -215,7 +278,9 @@ const LoadImage = ({ imgSrc = "", alt = "" }) => {
   return (
     <>
       {isError && <div style={{ position: "absolute" }}>{} </div>}
-      <img
+      <Image
+        width="250"
+        height="250"
         onError={({ currentTarget }) => {
           currentTarget.onerror = null // prevents looping
           currentTarget.src = placeholder

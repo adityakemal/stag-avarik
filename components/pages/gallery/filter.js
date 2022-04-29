@@ -1,4 +1,12 @@
-export default [
+export const getPercentageMeta = (type, value) => {
+  const total = META_FILTER.find(
+    (item) => item?.trait_type === type
+  )?.options?.find((item) => item.trait_value === value)?.total
+
+  return Math.floor((Number(total) / 8888) * 100)
+}
+
+const META_FILTER = [
   {
     trait_type: "Faction",
     options: [
@@ -574,3 +582,5 @@ export default [
   },
 ]
 //without weapon, armor, head: 48
+
+export default META_FILTER

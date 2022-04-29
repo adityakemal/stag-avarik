@@ -10,7 +10,7 @@ import ListItemButton from "@mui/material/ListItemButton"
 import ListItemIcon from "@mui/material/ListItemIcon"
 import ListItemText from "@mui/material/ListItemText"
 import Checkbox from "@mui/material/Checkbox"
-import TRAITS from "./data_1/filter"
+import TRAITS from "./filter"
 
 // {"image":"ipfs://QmRRPWG96cmgTn2qSzjwr2qvfNEuhunv6FNeMFGa9bx6mQ","attributes":[{"trait_type":"Earring","value":"Silver Hoop"},{"trait_type":"Background","value":"Orange"},{"trait_type":"Fur","value":"Robot"},
 
