@@ -104,6 +104,7 @@ const ValueTrait = ({
       <ListItemButton
         role={undefined}
         onClick={(e) => {
+
           const arrWithoutCurrentType = selectedFilterArray.filter(
             (k) => k?.trait_type !== trait_type
           )

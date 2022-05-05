@@ -3,7 +3,7 @@ import * as React from "react"
 import InfiniteScroll from "react-infinite-scroller"
 import Drawer from "./Drawer"
 import Image from "next/image"
-import avarikMetadata from "components/utils/opensea_avarik8888.json"
+import avarikMetadata from "components/utils/opensea_avarik_stats.json"
 import Modal from "@mui/material/Modal"
 import Skeleton from "@mui/material/Skeleton"
 import Chip from "@mui/material/Chip"
@@ -41,11 +41,12 @@ export default function App() {
   //     },
 
   const allArr = React.useMemo(() => shuffleArray(allArrx), [])
+  // const allArr = React.useMemo(() => avarikMetadata, [])
   const [range, setRange] = React.useState(9)
 
   const goNext = () => {
     setTimeout(() => {
-      setRange(range + 9)
+      setRange(range + 9 * 2)
     }, 3)
   }
 
@@ -96,29 +97,65 @@ export default function App() {
       >
         <div
           style={{
-            background: "#eee",
+            // background: "#eee",
             // height: "50%",
             width: "50%",
             padding: "3%",
           }}
         >
-          {!!currentItem && (
-            <div>
-              ID: {currentItem?.id}
-              <br />
-              Name: {currentItem?.name}
-              <br />
-              Description: {currentItem?.description}
+          <div
+            className=""
+            style={{ display: "inline-flex", justifyContent: "space-between" }}
+          >
+            <div className="">
+              {!!currentItem && (
+                <div>
+                  ID: {currentItem?.id}
+                  <br />
+                  Name: {currentItem?.name}
+                  <br />
+                  Description: {currentItem?.description}
+                </div>
+              )}
             </div>
-          )}
+            <img src={currentItem?.image} style={{ width: 100, height: 100 }} />
+          </div>
+
           <hr />
-          {!!currentItem &&
-            currentItem?.traits?.map((_item, i) => (
-              <div>
-                {_item?.trait_type} : {_item?.value} (
-                {getPercentageMeta(_item?.trait_type, _item?.value)}%)
-              </div>
-            ))}
+          <div className="row">
+            <div className="col">
+              {!!currentItem &&
+                currentItem?.traits?.map((_item, i) => (
+                  <div>
+                    {_item?.trait_type} : {_item?.value} (
+                    {getPercentageMeta(_item?.trait_type, _item?.value)}%)
+                  </div>
+                ))}
+            </div>
+            <div className="col">
+              {!!currentItem &&
+                [
+                  "HP",
+                  "ATK",
+                  "DEF",
+                  "SUM Stat",
+                  "Counter Rate",
+                  "Evasion",
+                  "Accuracy",
+                  "Critical Rate",
+                  "Critical Damage",
+                  "Multi Hit",
+                  "Block Rate",
+                  "Pierce Rate",
+                ].map((L, iL) => (
+                  <div>
+                    {L}: {currentItem?.battle_stats[L]}
+                    {iL > 3 ? "%" : ""}
+                  </div>
+                ))}
+            </div>
+          </div>
+
           <br />
           {!!currentItem && (
             //
@@ -137,7 +174,7 @@ export default function App() {
         className=""
         style={{
           width: "30%",
-          // background: "#eee"
+          // background: "#eee",
         }}
       ></div>
       <div
@@ -196,6 +233,7 @@ export default function App() {
               .slice(0, range)
               .map((item, i) => (
                 <div
+                  className="transition"
                   onClick={() => {
                     //
                     setCurrentItem(item)
@@ -223,8 +261,24 @@ export default function App() {
                   </span>
                 </div>
               ))}
+            {[1, 1, 1].map((item) => {
+              return (
+                <Skeleton
+                  variant="rectangular"
+                  width={250}
+                  height={250}
+                  style={{ margin: 6 }}
+                />
+              )
+            })}
           </div>
         </InfiniteScroll>
+        <style jsx>{`
+          .transition {
+            transition-duration: 0.3s;
+            -webkit-animation: fadeIn 1s ease-in-out;
+          }
+        `}</style>
       </div>
     </div>
   )
@@ -279,6 +333,9 @@ const LoadImage = ({ imgSrc = "", alt = "" }) => {
     <>
       {isError && <div style={{ position: "absolute" }}>{} </div>}
       <Image
+        // lazyBoundary=""
+        placeholder="blur"
+        blurDataURL="./icons/apple-icon.png"
         width="250"
         height="250"
         onError={({ currentTarget }) => {
