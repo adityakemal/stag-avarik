@@ -6,6 +6,38 @@ export const getPercentageMeta = (type, value) => {
   return Math.floor((Number(total) / 8888) * 100)
 }
 
+export const BATTLE_STATS = [
+  "HP",
+  "ATK",
+  "DEF",
+  // "SUM Stat",
+  "Counter Rate",
+  "Evasion",
+  "Accuracy",
+  "Critical Rate",
+  "Critical Damage",
+  "Multi Hit",
+  "Block Rate",
+  "Pierce Rate",
+]
+
+export function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1))
+    var temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+  }
+  return array
+}
+
+export const filterObj = (array = [], query) =>
+  array?.filter((o) =>
+    Object?.keys(o)?.some((k) =>
+      String(o[k]).toLowerCase().includes(query.toLowerCase())
+    )
+  )
+
 const META_FILTER = [
   {
     trait_type: "Faction",

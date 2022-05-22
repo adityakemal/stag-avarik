@@ -15,8 +15,8 @@ import TRAITS from "./filter"
 // {"image":"ipfs://QmRRPWG96cmgTn2qSzjwr2qvfNEuhunv6FNeMFGa9bx6mQ","attributes":[{"trait_type":"Earring","value":"Silver Hoop"},{"trait_type":"Background","value":"Orange"},{"trait_type":"Fur","value":"Robot"},
 
 export default function Drawer({
-  data = [],
-  selectedFilterArray = ["Glacian III", "Marksman", "Male"],
+  filteredArray = [],
+  selectedFilterArray = [],
   addFilter = () => {},
 }) {
   return (
@@ -31,6 +31,7 @@ export default function Drawer({
               options,
               selectedFilterArray,
               addFilter,
+              filteredArray,
             }}
           />
         )
@@ -45,6 +46,7 @@ const TraitType = ({
   selectedFilterArray = [],
   addFilter,
   total,
+  filteredArray,
 }) => {
   return (
     <Accordion
@@ -68,17 +70,24 @@ const TraitType = ({
           flexDirection: "column",
         }}
       >
-        {options.map((item, i) => (
-          <ValueTrait
-            key={i}
-            {...{
-              item,
-              trait_type,
-              selectedFilterArray,
-              addFilter,
-            }}
-          />
-        ))}
+        {options.map((item, i) => {
+          const checkValue = (obj) => item?.trait_value?.includes(obj.value)
+          const isExisted = filteredArray.find((o) =>
+            o?.traits?.some(checkValue)
+          )
+
+          return isExisted ? (
+            <ValueTrait
+              key={i}
+              {...{
+                item,
+                trait_type,
+                selectedFilterArray,
+                addFilter,
+              }}
+            />
+          ) : null
+        })}
       </AccordionDetails>
     </Accordion>
   )
