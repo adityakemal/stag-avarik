@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState, useTransition } from "react"
 import SearchIcon from "@mui/icons-material/Search"
 import { styled, alpha } from "@mui/material/styles"
 import InputBase from "@mui/material/InputBase"
-import { filterObj } from "./filter"
+import { filterObj } from "./filter-helpers"
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
@@ -16,11 +16,8 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
+  borderRadius: 20,
+  backgroundColor: "white",
   // marginLeft: 0,
   marginBottom: 6,
   width: "100%",
