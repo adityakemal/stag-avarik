@@ -6,7 +6,7 @@ const Leaderboard = () => {
   return (
     <>
       <SEO title="Gallery" />
-      <Layout hasFooter={false}>
+      <Layout>
         <Gallery />
       </Layout>
     </>
