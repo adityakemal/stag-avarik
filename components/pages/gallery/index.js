@@ -37,6 +37,16 @@ export default function App() {
     [_options]
   )
 
+  const handleSortByName = () => {
+    startTransition(() => {
+      const arrSorter = allArr.sort((a, b) => a.name.localeCompare(b.name))
+      console.log(arrSorter)
+      setAllArr(arrSorter)
+    })
+  }
+
+
+
   const [open, setOpen] = React.useState(false)
   const [currentItem, setCurrentItem] = React.useState(null)
   const handleOpen = () => setOpen(true)
@@ -69,12 +79,12 @@ export default function App() {
         className="bg-gallery"
         src={bgGallery}
         layout="fill"
-        // style={{
-        //   objectFit: "contain",
-        //   position: "fixed",
-        //   zIndex: `-1 !important`,
-        //   border: `3px solid red`,
-        // }}
+      // style={{
+      //   objectFit: "contain",
+      //   position: "fixed",
+      //   zIndex: `-1 !important`,
+      //   border: `3px solid red`,
+      // }}
       />
 
       <h1
@@ -86,8 +96,7 @@ export default function App() {
       <div className="container p-auto ">
         <div className="w-100 row  position-sticky zindex-sticky m-auto">
           <TopDrawer onClick={() => addFilter([])} />
-          <LeftHeader {...{ startTransition, allArr, setAllArr }}>
-            {" "}
+          <LeftHeader {...{ startTransition, allArr, setAllArr, handleSortByName }}>
             {usedArr(allArr).length} ITEMS
           </LeftHeader>
         </div>
@@ -138,7 +147,7 @@ export default function App() {
                       variant="rectangular"
                       width={175}
                       height={200}
-                      style={{ margin: 6, background: `#423B38`}}
+                      style={{ margin: 6, background: `#423B38` }}
                     />
                   )
                 })}
@@ -183,19 +192,24 @@ const TopDrawer = ({ onClick }) => (
   </div>
 )
 
-const LeftHeader = ({ startTransition, allArr, setAllArr, children }) => (
+const LeftHeader = ({ startTransition, allArr, setAllArr, children, handleSortByName }) => (
   <div className="col-12 col-md-8  header-content ">
     <div
-      className="d-flex justify-content-between w-100 "
+      className="d-flex justify-content-between align-items-center w-100 "
       style={{ paddingLeft: 0 }}
     >
       <h5
-        className="text-white title  border-0 bg-transparent mb-2"
+        className="text-white title  border-0 bg-transparent m-0"
         style={{ marginTop: 14 }}
       >
         {children}
       </h5>
-      {/* <h6>Sort By Name</h6> */}
+      <h6 className="text-white title  border-0 bg-transparent m-0 cursor-pointer" onClick={() => handleSortByName()}>
+        Sort By Name
+      </h6>
+      {/* <pre>
+        {JSON.stringify(allArr, null, 2)}
+      </pre> */}
     </div>
 
     <br />
@@ -218,7 +232,7 @@ const LoadImage = ({ imgSrc = "", alt = "" }) => {
   const [loaded, setLoaded] = React.useState(false)
   return (
     <>
-      {isError && <div style={{ position: "absolute" }}>{} </div>}
+      {isError && <div style={{ position: "absolute" }}>{ } </div>}
       <Image
         ratio="r-1-1"
         objectFit="cover"

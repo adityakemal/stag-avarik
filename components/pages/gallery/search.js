@@ -72,11 +72,11 @@ export default function SearchBar({ startTransition, allArr = [], setAllArr }) {
         inputProps={{ "aria-label": "search" }}
         // onChange={(e) => setSearch(e.target.value)}
         onChange={handleSearch}
-        // onKeyPress={(event) => {
-        //   if (event.key === "Enter") {
-        //     handleSearch(search)
-        //   }
-        // }}
+      // onKeyPress={(event) => {
+      //   if (event.key === "Enter") {
+      //     handleSearch(search)
+      //   }
+      // }}
       />
     </Search>
   )

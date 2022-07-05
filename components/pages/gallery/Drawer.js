@@ -18,7 +18,7 @@ import Image from "next/image"
 export default function Drawer({
   filteredArray = [],
   selectedFilterArray = [],
-  addFilter = () => {},
+  addFilter = () => { },
 }) {
   return (
     <div className="col-12 col-md-4 d-none d-md-block p-0">
@@ -124,15 +124,18 @@ const TraitType = ({
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
+          className='my-0'
           style={{
             backgroundImage: `url(./assets/AccordionItem.svg)`,
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
             paddingRight: 30,
             paddingLeft: 25,
+
           }}
         >
-          <div className="d-inline-flex justify-content-between align-items-center">
+          <div className="d-inline-flex justify-content-between align-items-center" >
             <Image width={20} height={20} src={icon} />
             <h6 className="title ml-2 mt-2">
               {trait_type} ({total})
