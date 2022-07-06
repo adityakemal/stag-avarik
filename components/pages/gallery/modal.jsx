@@ -100,64 +100,7 @@ const Traits = ({ currentItem }) => {
     </>
   )
 }
-const BattleStats = ({ battle_stats }) => {
-  return (
-    <>
 
-      {/* <hr />
-      <div className="row d-flex" >
-        <div className="col-6 col-sm-3">
-          <BoxStat
-            imgSrc={`/assets/modal/counter.svg`}
-            title="Counter Rate"
-            value={battle_stats["Counter Rate"]}
-          />
-          <BoxStat
-            imgSrc={`/assets/modal/evasion.svg`}
-            title="Evasion"
-            value={battle_stats["Evasion"]}
-          />
-        </div>
-        <div className="col-6 col-sm-3">
-          <BoxStat
-            imgSrc={`/assets/modal/acc.svg`}
-            title="Accuracy"
-            value={battle_stats["Accuracy"]}
-          />
-          <BoxStat
-            imgSrc={`/assets/modal/crit-rate.svg`}
-            title="Critical Rate"
-            value={battle_stats["Critical Rate"]}
-          />
-        </div>
-        <div className="col-6 col-sm-3">
-          <BoxStat
-            imgSrc={`/assets/modal/block.svg`}
-            title="Block Rate"
-            value={battle_stats["Block Rate"]}
-          />{" "}
-          <BoxStat
-            imgSrc={`/assets/modal/crit-dmg.svg`}
-            title="Critical Damage"
-            value={battle_stats["Critical Damage"]}
-          />
-        </div>
-        <div className="col-6 col-sm-3">
-          <BoxStat
-            imgSrc={`/assets/modal/multi.svg`}
-            title="Multi Hit"
-            value={battle_stats["Multi Hit"]}
-          />
-          <BoxStat
-            imgSrc={`/assets/modal/pierce.svg`}
-            title="Pierce Rate"
-            value={battle_stats["Pierce Rate"]}
-          />
-        </div>
-      </div> */}
-    </>
-  )
-}
 
 const BoxStat = ({ imgSrc, title, value, isPercentage = true, alignStart }) => {
   return (
@@ -201,7 +144,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
       }}
     >
       <div
-        // className="modal-gallery"
+        // className="border-gallery"
         style={{
           // backgroundImage: `url(/assets/modal/gallery-modal.svg)`,
           // background: 'skyblue',
@@ -217,7 +160,12 @@ export default function ModalPic({ open, handleClose, currentItem }) {
           overflow: 'auto'
         }}
       >
-        <div className="container-fluid">
+        {/* <div className="top-frame">
+          <img src="/assets/modal/topFrame.png" alt="" />
+        </div> */}
+        <div className="container-fluid border-gallery ">
+          <img className="rightbot" src="/assets/modal/rightBot.png" alt="" />
+          <img className="leftbot" src="/assets/modal/leftBot.png" alt="" />
           <div className="row px-sm-5  px-xs-3 py-sm-5 py-xs-3" style={{ backgroundColor: '#423B38' }}>
             {/* //HEADER  */}
             <div className="col-md-8 text-white">
