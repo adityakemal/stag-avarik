@@ -12,14 +12,19 @@ import ListItemText from "@mui/material/ListItemText"
 import Checkbox from "@mui/material/Checkbox"
 import TRAITS from "./filter-helpers"
 import Image from "next/image"
+import { useSelector } from "react-redux"
+import { resolveHref } from "next/dist/shared/lib/router/router"
 
 // {"image":"ipfs://QmRRPWG96cmgTn2qSzjwr2qvfNEuhunv6FNeMFGa9bx6mQ","attributes":[{"trait_type":"Earring","value":"Silver Hoop"},{"trait_type":"Background","value":"Orange"},{"trait_type":"Fur","value":"Robot"},
 
 export default function Drawer({
   filteredArray = [],
-  selectedFilterArray = [],
+  // selectedFilterArray = [],
   addFilter = () => { },
 }) {
+  const { filterList } = useSelector(state => state.gallery)
+
+  var selectedFilterArray = filterList
   return (
     <div className="col-12 col-md-4 d-none d-md-block p-0">
       <div className="text-white box-drawer">
@@ -180,76 +185,31 @@ const ValueTrait = ({
   selectedFilterArray = [],
   addFilter,
 }) => {
-  const isChecked = () => {
-    const checkType = (obj) => obj.trait_type === trait_type
-    if (!selectedFilterArray.some(checkType)) return false
 
-    const checkValue = (obj) => obj.values?.includes(item?.trait_value)
+  const { filterList } = useSelector(state => state.gallery)
 
-    return selectedFilterArray.some(checkValue)
-  }
-  // console.log(isChecked())
+  const handleClick = () => {
+    const isExist = filterList.some((e) => e.trait_type === trait_type && e.value === item?.trait_value)
+    console.log(isExist, 'is Exisgt')
+    if (isExist) {
 
-  const handleClick = React.useCallback((e) => {
-    const arrWithoutCurrentType = selectedFilterArray.filter(
-      (k) => k?.trait_type !== trait_type
-    )
-
-    if (isChecked()) {
-      /** REMOVE */
-
-      let arrayNonZero = null
-      // const newArr = selectedFilterArray.filter(i => i !== item?.trait_value)
-      let newArr = selectedFilterArray.filter((i) => {
-        // i =    {  "trait_type": "Background",   "values": ["Glacian IV", "Ignisian IV"]   },
-
-        //straight return based on type because it's only 1
-        if (i?.values?.length === 1) return i?.trait_type !== trait_type
-
-        const values = i?.values?.filter((j) => j !== item?.trait_value)
-        arrayNonZero = {
-          ...i,
-          values,
-        }
-
-        // bugs on return, so use finalArray instead
-        return arrayNonZero
-      })
-
-      const finalArray = !arrayNonZero
-        ? newArr
-        : [...arrWithoutCurrentType, arrayNonZero]
-
-      addFilter(finalArray)
+      const filtered = filterList.filter(res => res.value !== item?.trait_value)
+      // console.log(filtered, 'filter')
+      addFilter(filtered)
     } else {
-      //check typeExisted?
-      const checkType = (obj) => obj.trait_type === trait_type
-
-      if (selectedFilterArray?.some(checkType)) {
-        const newArr = selectedFilterArray.find(
-          (k) => k?.trait_type === trait_type
-        )?.values
-
-        // use prev property
-        addFilter([
-          ...arrWithoutCurrentType,
-          {
-            trait_type,
-            values: [...newArr, item?.trait_value],
-          },
-        ])
-      } else {
-        //
-        addFilter([
-          ...arrWithoutCurrentType,
-          {
-            trait_type,
-            values: [item?.trait_value],
-          },
-        ])
+      const data = {
+        trait_type: trait_type,
+        value: item?.trait_value
       }
+      console.log('noncheck')
+      addFilter([
+        ...filterList,
+        data
+      ])
+
     }
-  }, [])
+  }
+
   return (
     <ListItem disablePadding>
       <ListItemButton role={undefined} onClick={handleClick} dense>
@@ -258,7 +218,7 @@ const ValueTrait = ({
             edge="start"
             checked={
               // selectedFilterArray.includes(item?.trait_value)
-              isChecked()
+              filterList.some((e) => e.trait_type === trait_type && e.value === item?.trait_value)
             }
             tabIndex={-1}
             disableRipple

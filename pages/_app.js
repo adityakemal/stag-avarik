@@ -2,11 +2,14 @@ import { ErrorStateProvider } from "context/error-msg-context"
 import { LoadingProvider } from "context/loading-context"
 import "assets/scss/main.scss"
 
+
 import { Web3Provider } from "@ethersproject/providers"
 import { Web3ReactProvider } from "@web3-react/core"
 import { useEffect, useState } from "react"
 import TagManager from "react-gtm-module"
 import { ParallaxProvider } from "react-scroll-parallax"
+import { Provider } from 'react-redux';
+import { store } from "redux/store";
 
 const getLibrary = (provider) => {
   return new Web3Provider(provider)
@@ -37,11 +40,13 @@ function MyApp({ Component, pageProps }) {
         <ParallaxProvider>
           <LoadingProvider>
             <ErrorStateProvider>
-              <Component {...pageProps} />
+              <Provider store={store}>
+                <Component {...pageProps} />
+              </Provider>
             </ErrorStateProvider>
           </LoadingProvider>
         </ParallaxProvider>
-      </Web3ReactProvider>
+      </Web3ReactProvider >
     )
   }
 }

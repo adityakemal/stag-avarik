@@ -13,37 +13,38 @@ import Tags from "./tags"
 import bgGallery from "assets/img/gallery/bg-gallery.png"
 import filterTitle from "assets/img/gallery/filter-title.svg"
 import { useInView } from "react-intersection-observer"
+import { useDispatch, useSelector } from "react-redux"
+import { filterEngine, getInitialData, handleFilterData, handleResetData, handleSortName } from "redux/gallery/gallery.reducer"
+
 const avarikMetadata = shuffleArray(avarikMetadatax)
 
 export default function App() {
-  const [allArr, setAllArr] = React.useState(avarikMetadata)
-  const [_options, addFilter] = React.useState([])
+  const dispatch = useDispatch()
+
+  const { galleryList, filterList } = useSelector(state => state.gallery)
+
+
+  const [allArr, setAllArr] = React.useState([])
+  // const [_options, addFilter] = React.useState([])
+  const [_options] = React.useState([])
   const [range, setRange] = React.useState(16)
   const [isPending, startTransition] = React.useTransition()
 
-  const usedArr = React.useCallback(
-    (A) => {
-      if (!_options.length) return A
-      let B = []
-      _options.map((o) => {
-        // console.log(A.filter(item => item?.traits?.some(checkValue)))
-        // const checkValue = obj => obj.value === o?.trait_type;
-        const checkValue = (obj) => o?.values?.includes(obj.value)
-        const X = !!B.length ? B : A
-        B = X.filter((item) => item?.traits?.some(checkValue))
-      })
-      return B
-    },
-    [_options]
-  )
-
-  const handleSortByName = () => {
+  React.useEffect(() => {
     startTransition(() => {
-      const arrSorter = allArr.sort((a, b) => a.name.localeCompare(b.name))
-      console.log(arrSorter)
-      setAllArr(arrSorter)
+      setAllArr(galleryList)
     })
-  }
+  }, [galleryList, filterList])
+
+
+  React.useEffect(() => {
+    dispatch(filterEngine())
+  }, [filterList])
+
+
+  const addFilter = (v) => dispatch(handleFilterData(v))
+
+  const handleSortByName = () => dispatch(handleSortName())
 
 
 
@@ -64,12 +65,7 @@ export default function App() {
       })
     }
   }, [inView])
-  // const goNext = () => {
-  //   // setTimeout(() => {
-  //   startTransition(() => {
-  //     setRange(range + 8 * 2)
-  //   })
-  // }
+
 
   //1200 width
   return (
@@ -93,28 +89,32 @@ export default function App() {
       >
         Gallery
       </h1>
+      {/* <pre>
+        {JSON.stringify(filterList, null, 2)}
+      </pre> */}
+
       <div className="container p-auto ">
         <div className="w-100 row  position-sticky zindex-sticky m-auto">
-          <TopDrawer onClick={() => addFilter([])} />
+          <TopDrawer handleReset={() => dispatch(handleResetData())} />
           <LeftHeader {...{ startTransition, allArr, setAllArr, handleSortByName }}>
-            {usedArr(allArr).length} ITEMS
+            {galleryList?.length} ITEMS
+            {/* <button onClick={() => dispatch(getInitialData())}>test</button> */}
+
           </LeftHeader>
         </div>
-        {/* <Tags {...{ selectedFilterArray: _options, addFilter }} /> */}
 
         <div className="w-100 h-100 row ">
           <Drawer
             {...{
               selectedFilterArray: _options,
               addFilter,
-              filteredArray: usedArr(allArr),
+              filteredArray: galleryList,
             }}
           />
 
           <div className="col-12 col-md-8 content-images ">
             <div className="d-inline-flex flex-wrap">
-              {usedArr(allArr)
-                .slice(0, range)
+              {allArr.slice(0, range)
                 .map((item, i) => (
                   <div
                     className="transition box-nft "
@@ -170,7 +170,7 @@ const placeholder = "./icons/apple-icon.png"
 // https://opensea.mypinata.cloud/ipfs/Qme52CPg96v3JQCyD7tMoRcEdaAY9LrTi2YyBVowocgX8T/avarik-saga_0838.jpg
 // https://ipfs.io/ipfs/Qme52CPg96v3JQCyD7tMoRcEdaAY9LrTi2YyBVowocgX8T/avarik-saga_0832.jpg
 
-const TopDrawer = ({ onClick }) => (
+const TopDrawer = ({ handleReset }) => (
   <div className="col-12 col-md-4 p-0" style={{ paddingRight: "3%" }}>
     <div className="d-inline-flex p-0 justify-content-between w-100 position-relative filter-title-box ">
       <div className="position-relative " style={{ width: 230, height: 48 }}>
@@ -185,7 +185,7 @@ const TopDrawer = ({ onClick }) => (
           }}
         />
       </div>
-      <button className="text-white border-0 bg-transparent " onClick={onClick}>
+      <button className="text-white border-0 bg-transparent " onClick={handleReset}>
         Reset
       </button>
     </div>

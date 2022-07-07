@@ -3,6 +3,8 @@ import SearchIcon from "@mui/icons-material/Search"
 import { styled, alpha } from "@mui/material/styles"
 import InputBase from "@mui/material/InputBase"
 import { filterObj } from "./filter-helpers"
+import { useDispatch } from "react-redux"
+import { getHandleSearch } from "redux/gallery/gallery.reducer"
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
@@ -49,18 +51,23 @@ export default function SearchBar({ startTransition, allArr = [], setAllArr }) {
   // const [search, setSearch] = useState("")
   // const [isPending, startTransition] = useTransition()
 
-  const handleSearch = useCallback((e) => {
-    if (!e.target.value) return
-    e.preventDefault()
+  // const handleSearch = useCallback((e) => {
+  //   if (!e.target.value) return
+  //   e.preventDefault()
 
-    startTransition(() => {
-      const searchResult = filterObj(allArr, e.target.value)
-      setAllArr(searchResult)
-    })
+  //   startTransition(() => {
+  //     const searchResult = filterObj(allArr, e.target.value)
+  //     setAllArr(searchResult)
+  //   })
 
-    // const searchResult = filterObj(allArr, search)
-    // setAllArr(searchResult)
-  }, [])
+  //   // const searchResult = filterObj(allArr, search)
+  //   // setAllArr(searchResult)
+  // }, [])
+
+  const dispatch = useDispatch()
+  const handleSearch = (e) => {
+    dispatch(getHandleSearch(e.target.value))
+  }
 
   return (
     <Search>
