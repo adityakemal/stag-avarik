@@ -43,10 +43,10 @@ const getRarityImage = (Subclass) => {
   }
 }
 
-const RowModal = ({ title, content, icon }) => {
+const RowModal = ({ title, content, icon, rowGutter, titleRow = 'col-7' }) => {
   return (
-    <div className="row mb-2 row-4">
-      <div className="col-7 row ">
+    <div className={`row mb-2 ${rowGutter}`}>
+      <div className={`${titleRow} row `}>
         {icon && icon} &nbsp; &nbsp; {title}
       </div>
       <div className={`col`}>: {content}</div>
@@ -60,6 +60,7 @@ const Traits = ({ currentItem }) => {
       <div className="col-sm-6">
         {currentItem?.traits.slice(0, 5).map((item, i) => (
           <RowModal
+            rowGutter={'row-4'}
             key={i}
             title={<div className="">{item?.trait_type}</div>}
             content={item?.value}
@@ -79,6 +80,7 @@ const Traits = ({ currentItem }) => {
       <div className="col-sm-6">
         {currentItem?.traits.slice(5, 11).map((item, i) => (
           <RowModal
+            rowGutter={'row-4'}
             key={i}
             title={<div className="">{item?.trait_type}</div>}
             // {_item?.trait_type} : {_item?.value}
@@ -172,13 +174,16 @@ export default function ModalPic({ open, handleClose, currentItem }) {
               <RowModal
                 title={<div className="">ID</div>}
                 content={currentItem?.id}
+                titleRow='col-5'
               />
               <RowModal
                 title={<div className="">Description</div>}
                 content={currentItem?.description}
+                titleRow='col-5'
               />
               <RowModal
                 title={<div className="">Rarity</div>}
+                titleRow='col-5'
                 content={
                   <img
                     src={getRarityImage(currentItem?.battle_stats?.Subclass)}
@@ -188,14 +193,17 @@ export default function ModalPic({ open, handleClose, currentItem }) {
               />
             </div>
             <div className="col-md-4 pt-xs-3">
-              <div className="relative">
-                <Image layout="fill" src={`/assets/modal/frame-rarity.svg`} />
+
+              <div className="framerchar">
+                <img
+                  src={currentItem?.image}
+                  className={`img-fluid img-char`}
+                  style={{ width: "100%", height: `100%`, objectFit: "cover" }}
+                />
+                <img className="frame img-fluid" src={`/assets/modal/frame-rarity.svg`} />
+
               </div>
-              <img
-                src={currentItem?.image}
-                className={`img-fluid img-char`}
-                style={{ width: "100%", height: `100%`, objectFit: "cover" }}
-              />
+
             </div>
           </div>
 
