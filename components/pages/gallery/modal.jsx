@@ -45,11 +45,11 @@ const getRarityImage = (Subclass) => {
 
 const RowModal = ({ title, content, icon }) => {
   return (
-    <div className="row mb-2 ">
-      <div className="col-5 row ">
+    <div className="row mb-2 row-4">
+      <div className="col-7 row ">
         {icon && icon} &nbsp; &nbsp; {title}
       </div>
-      <div className={`col `}>: {content}</div>
+      <div className={`col`}>: {content}</div>
     </div>
   )
 }
@@ -57,7 +57,6 @@ const RowModal = ({ title, content, icon }) => {
 const Traits = ({ currentItem }) => {
   return (
     <>
-      {/* <div className="row"> */}
       <div className="col-sm-6">
         {currentItem?.traits.slice(0, 5).map((item, i) => (
           <RowModal
@@ -76,6 +75,7 @@ const Traits = ({ currentItem }) => {
           />
         ))}
       </div>
+
       <div className="col-sm-6">
         {currentItem?.traits.slice(5, 11).map((item, i) => (
           <RowModal
@@ -94,9 +94,8 @@ const Traits = ({ currentItem }) => {
             }
           />
         ))}
+
       </div>
-      {/* </div> */}
-      <hr />
     </>
   )
 }
@@ -206,7 +205,12 @@ export default function ModalPic({ open, handleClose, currentItem }) {
             <div className="col-12 d-flex justify-content-center align-items-center my-4">
               <img src={`/assets/modal/traits.svg`} className='img-fluid' style={{ width: "100%" }} />
             </div>
-            <Traits {...{ currentItem }} />
+
+            <div className="col-md-12">
+              <div className="row row-5">
+                <Traits {...{ currentItem }} />
+              </div>
+            </div>
 
             {/* // CHARACTER STAT  */}
             <div className=" col-12 w-100 d-flex justify-content-center align-items-center my-4" >
