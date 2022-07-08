@@ -208,9 +208,6 @@ export default function ModalPic({ open, handleClose, currentItem }) {
             </div>
             <Traits {...{ currentItem }} />
 
-            <hr className="my-4 w-100" style={{ borderColor: '#A59480' }} />
-
-
             {/* // CHARACTER STAT  */}
             <div className=" col-12 w-100 d-flex justify-content-center align-items-center my-4">
               <img src={`/assets/modal/stats.svg`} className='img-fluid' style={{ width: "100%" }} />

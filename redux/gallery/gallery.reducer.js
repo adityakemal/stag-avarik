@@ -13,8 +13,9 @@ export const gallerySlice = createSlice({
     initialState,
     reducers: {
         getInitialData: (state, { payload }) => {
-            console.log(nftDataJson)
-            state.galleryList = nftDataJson.slice(0, 10)
+            // console.log(nftDataJson)
+            state.galleryList = nftDataJson
+            // state.galleryList = nftDataJson.slice(0, 10)
         },
 
         getHandleSearch: (state, { payload }) => {

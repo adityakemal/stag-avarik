@@ -284,3 +284,32 @@ pre {
 
 
 }
+
+.wrap-search-custom {
+    height: 60px;
+    border-radius: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    svg {
+        margin-left: 16px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .search-input {
+        height: 100%;
+        outline: none;
+        border: 0;
+        width: 100%;
+        background-color: red;
+
+        input {
+            height: 100%;
+            outline: none;
+            border: 0;
+            width: 100%;
+        }
+    }
+}
