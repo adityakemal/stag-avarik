@@ -313,3 +313,19 @@ pre {
         }
     }
 }
+
+
+.modal-gallery {
+    .wrapboxes {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    @include media-breakpoint-down(xs) {
+        .wrapboxes {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+}

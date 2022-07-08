@@ -163,10 +163,10 @@ export default function ModalPic({ open, handleClose, currentItem }) {
         {/* <div className="top-frame">
           <img src="/assets/modal/topFrame.png" alt="" />
         </div> */}
-        <div className="container-fluid border-gallery ">
+        <div className="container-fluid border-gallery modal-gallery">
           <img className="rightbot" src="/assets/modal/rightBot.png" alt="" />
           <img className="leftbot" src="/assets/modal/leftBot.png" alt="" />
-          <div className="row px-sm-5  px-xs-3 py-sm-5 py-xs-3" style={{ backgroundColor: '#423B38' }}>
+          <div style={{ backgroundColor: '#423B38' }} className="row wrapboxes py-sm-5 py-xs-3">
             {/* //HEADER  */}
             <div className="col-md-8 text-white">
               <h2 className="title w-100  ">{currentItem.name}</h2>
@@ -202,14 +202,14 @@ export default function ModalPic({ open, handleClose, currentItem }) {
 
 
           {/* //TRAITS  */}
-          <div className="row px-sm-5  px-xs-3 pb-5" style={{ backgroundColor: '#D9D4C5' }}>
+          <div className="row  wrapboxes pb-5" style={{ backgroundColor: '#D9D4C5' }}>
             <div className="col-12 d-flex justify-content-center align-items-center my-4">
               <img src={`/assets/modal/traits.svg`} className='img-fluid' style={{ width: "100%" }} />
             </div>
             <Traits {...{ currentItem }} />
 
             {/* // CHARACTER STAT  */}
-            <div className=" col-12 w-100 d-flex justify-content-center align-items-center my-4">
+            <div className=" col-12 w-100 d-flex justify-content-center align-items-center my-4" >
               <img src={`/assets/modal/stats.svg`} className='img-fluid' style={{ width: "100%" }} />
             </div>
 
