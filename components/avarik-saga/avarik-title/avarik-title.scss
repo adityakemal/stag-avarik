@@ -1,0 +1,39 @@
+.title-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: fit-content;
+    .left,
+    .right {
+        width: 50px;
+        object-fit: contain;
+        @extend .mx-2;
+        @include media-breakpoint-down(sm) {
+            width: 35px;
+        }
+    }
+    .logo {
+        position: absolute;
+        width: 100px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        text-align: center;
+        @include media-breakpoint-down(sm) {
+            width: 60px;
+        }
+    }
+    h1 {
+        margin-bottom: 0;
+        color: $primary;
+    }
+    &.white {
+        h1 {
+            color: $white;
+        }
+    }
+}

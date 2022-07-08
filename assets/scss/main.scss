@@ -1,0 +1,331 @@
+/*
+ * Antikode main.scss
+ * Version - 3.0.1
+ * Bootstrap - 4.5.0
+ * 2021 Antikode
+ */
+
+// ========================================================================================================================================
+// Import
+// ========================================================================================================================================
+
+// ==========================================================================
+// Bootstrap Base & Custom Variables
+// ==========================================================================
+
+// Required functions / mixins used in variables config
+@import "~bootstrap/scss/functions"; // DO NOT EDIT
+@import "functions/strip-sass"; // e.g. strip unit in SASS
+@import "mixins/fonts-custom"; // DO NOT EDIT
+
+// Custom variables
+// EDIT THESE VARIABLES
+@import "variables/color"; // Set base color variables
+@import "variables/options"; // Enable base rounded / shadows
+@import "variables/spacing-grid";
+@import "variables/border-shadow-modal"; // Set base border, box shadow, and modal variables
+@import "variables/typography"; // Set custom fonts and base typography variables
+@import "variables/buttons-forms"; // Set buttons / forms base padding and other variables
+@import "variables/breadcrumbs";
+@import "variables/transitions";
+@import "variables/animations"; // Set general animation duration
+@import "variables/navbar"; // Set navbar height, animation duration, and other variables
+
+// Base styles
+@import "base/bootstrap.scss"; // Bootstrap 4 base variables, mixins, and styles
+
+// ==========================================================================
+// Optional Plugins
+// ==========================================================================
+
+// Font Awesome 5.13.0
+// @import "../plugins/fontawesome-pro/css/all.min.css";
+// @import "../plugins/fontawesome-pro/scss/fontawesome.scss";
+
+// Locomotive Scroll 4.1.0
+@import "../plugins/locomotive-scroll/locomotive-scroll.scss";
+
+// Anti Icons 1.0.0
+@import "../plugins/anti-icons/variables";
+@import "../plugins/anti-icons/light/style.css";
+@import "../plugins/anti-icons/regular/style.css";
+@import "../plugins/anti-icons/solid/style.css";
+@import "../plugins/anti-icons/brands/style.css";
+
+// // Icomoon
+// @import "../plugins/icomoon/style.css";
+
+// Slick Carousel
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+// ==========================================================================
+// Antikode Custom Mixins, Utilities, Overriders, and Base
+// ==========================================================================
+
+// Custom Mixins
+@import "mixins/gradients"; // Gradients mixns
+@import "mixins/icons"; // Font awesome mixins
+@import "mixins/prefix"; // Vendor-prefixed CSS helper
+@import "mixins/position"; // Shorthandizes position declarations
+@import "mixins/text-truncate"; // Text truncate multiline
+
+// Plugin Style Overrider
+@import "overrider/datatable";
+@import "overrider/select2";
+
+// Utilities
+@import "utilities/background"; // e.g. .bg-overlay
+@import "utilities/buttons"; // e.g. .btn-block-mw-100px, .btn-block-mw-200px, etc.
+@import "utilities/grid"; // e.g. .row-0, .row-1, .row-10px, .row-20px, etc.
+@import "utilities/position"; // e.g. .center-both, etc.
+@import "utilities/sizing"; // e.g. .h-50px, .w-md-100-px, etc.
+@import "utilities/spacing"; // e.g. .py-main, .mb-sm-down-1, etc.
+@import "utilities/text"; // e.g. .text-truncate-twoline, etc.
+
+// SCSS base component
+@import "base/alert";
+@import "base/animations";
+@import "base/background";
+@import "base/dropdown";
+@import "base/forms";
+@import "base/nav";
+@import "base/post";
+@import "base/reboot";
+@import "base/table";
+
+// ==========================================================================
+// Anti Components
+// ==========================================================================
+
+@import "../../components/anti/accordion/accordion";
+@import "../../components/anti/accordion/accordion-custom";
+@import "../../components/anti/breadcrumb/breadcrumb";
+@import "../../components/anti/breadcrumb/breadcrumb-custom";
+@import "../../components/anti/buttons/buttons";
+@import "../../components/anti/buttons/buttons-custom";
+@import "../../components/anti/card/card";
+@import "../../components/anti/card/card-custom";
+@import "../../components/anti/slider/slider";
+@import "../../components/anti/slider/slider-custom";
+@import "../../components/anti/slider-duo/slider-duo";
+@import "../../components/anti/slider-duo/slider-duo-custom";
+@import "../../components/anti/cover/cover";
+@import "../../components/anti/cover/cover-custom";
+@import "../../components/anti/cursor/cursor";
+@import "../../components/anti/cursor/cursor-custom";
+@import "../../components/anti/footer/footer";
+@import "../../components/anti/footer/footer-custom";
+@import "../../components/anti/feature/feature";
+@import "../../components/anti/feature/feature-custom";
+@import "../../components/anti/forms/forms";
+@import "../../components/anti/forms/forms-custom";
+@import "../../components/anti/image/image";
+@import "../../components/anti/image/image-custom";
+@import "../../components/anti/link/link";
+@import "../../components/anti/link/link-custom";
+@import "../../components/anti/loader/loader";
+@import "../../components/anti/loader/loader-custom";
+@import "../../components/anti/modal/modal";
+@import "../../components/anti/modal/modal-custom";
+@import "../../components/anti/navbar/navbar";
+@import "../../components/anti/navbar/navbar-custom";
+@import "../../components/anti/newsletter/newsletter";
+@import "../../components/anti/newsletter/newsletter-custom";
+@import "../../components/anti/page-transition/page-transition";
+@import "../../components/anti/page-transition/page-transition-custom";
+@import "../../components/anti/post/post";
+@import "../../components/anti/post/post-custom";
+@import "../../components/anti/skeleton/skeleton";
+@import "../../components/anti/skeleton/skeleton-custom";
+@import "../../components/anti/social/social";
+@import "../../components/anti/social/social-custom";
+@import "../../components/anti/tabs/tabs";
+@import "../../components/anti/tabs/tabs-custom";
+@import "../../components/anti/timeline/timeline";
+@import "../../components/anti/timeline/timeline-custom";
+@import "../../components/anti/type/type";
+@import "../../components/anti/type/type-custom";
+@import "../../components/anti/utils/utils";
+@import "../../components/anti/video/video";
+
+// ==========================================================================
+// Pages Styles
+// ==========================================================================
+
+// Main Pages
+@import "pages/about";
+@import "pages/common";
+@import "pages/home";
+@import "pages/vortem";
+@import "pages/stake";
+@import "pages/factions";
+@import "pages/weapons";
+@import "pages/armors";
+@import "pages/class";
+@import "pages/mini-game-info";
+@import "pages/land";
+@import "pages/collect-in-game-currency";
+@import "pages/leaderboard";
+@import "pages/teams";
+@import "pages/avrk";
+@import "pages/404";
+@import "pages/gallery";
+
+// ========================================================================================================================================
+// Custom Styles
+// ========================================================================================================================================
+
+@import "../../components/avarik-saga/avarik-cards/avarik-cards";
+@import "../../components/avarik-saga/avarik-button/avarik-button";
+@import "../../components/avarik-saga/avarik-title/avarik-title";
+@import "../../components/avarik-saga/modal-rarity/modal-rarity";
+
+// ==========================================================================
+// General
+// ==========================================================================
+
+// Insert custom style here
+
+.error-msg {
+    position: fixed;
+    right: 1rem;
+    top: 3.5rem;
+    background: $red;
+    padding: 1rem 1rem;
+    border-radius: 9px;
+    color: white;
+    z-index: 1032;
+    max-width: 27rem;
+
+    @include media-breakpoint-down(sm) {
+        right: 0;
+        margin: 0 2rem;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .ai-times {
+        cursor: pointer;
+        margin-left: 10px;
+
+        @include media-breakpoint-down(sm) {
+            position: absolute;
+            top: 0rem;
+            right: 0.5rem;
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.icon-dropdown {
+    width: 75%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.border-gallery {
+    position: relative;
+    border: 12px solid #A49380;
+    padding: 0 10px;
+    position: relative;
+
+    &::before {
+        content: " ";
+        position: absolute;
+        z-index: 2;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        border: 1px solid #D7D3C8;
+    }
+
+
+
+}
+
+pre {
+    background-color: #D7D3C8;
+}
+
+.rightbot {
+    position: absolute;
+    bottom: 12px;
+    z-index: 3;
+    right: 12px;
+    width: 40px;
+}
+
+.leftbot {
+    position: absolute;
+    bottom: 12px;
+    z-index: 3;
+    left: 12px;
+    width: 40px;
+}
+
+.top-frame {
+    position: absolute;
+    // background-color: red;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 49px;
+        top: -20px;
+        position: absolute;
+        z-index: 3;
+    }
+
+
+}
+
+.wrap-search-custom {
+    height: 60px;
+    border-radius: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    svg {
+        margin-left: 16px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .search-input {
+        height: 100%;
+        outline: none;
+        border: 0;
+        width: 100%;
+        background-color: red;
+
+        input {
+            height: 100%;
+            outline: none;
+            border: 0;
+            width: 100%;
+        }
+    }
+}
+
+
+.modal-gallery {
+    .wrapboxes {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    @include media-breakpoint-down(xs) {
+        .wrapboxes {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+}

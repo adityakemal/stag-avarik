@@ -1,0 +1,219 @@
+.modal-rarity {
+    overflow: visible;
+    max-width: 960px !important;
+    @include media-breakpoint-down(sm) {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+    .modal-wrapper {
+        background: rgba($black, 0) url("../../../assets/img/common/paper.png") no-repeat center center;
+        background-size: contain;
+        @include media-breakpoint-down(sm) {
+            // background: $brown-light;
+            // border-left: 0.5rem solid $brown-alt;
+            // border-right: 0.5rem solid $brown-alt;
+            background: rgba($black, 0);
+        }
+        .close {
+            i {
+                color: $primary;
+            }
+            @include media-breakpoint-up(md) {
+                top: 3rem;
+                right: 3rem;
+            }
+        }
+        .modal-body {
+            .modal-content {
+                background: rgba($black, 0);
+                padding: 2rem !important;
+                position: relative;
+                @include media-breakpoint-down(sm) {
+                    background: rgba($black, 0) url("../../../assets/img/common/bg_modal-rarity.png") no-repeat center center;
+                    background-size: cover;
+                    // border-left: 0.5rem solid $brown-alt;
+                    // border-right: 0.5rem solid $brown-alt;
+                    // &::before {
+                    //     content: "";
+                    //     position: absolute;
+                    //     width: 99.5%;
+                    //     top: 0;
+                    //     left: 0;
+                    //     right: 0;
+                    //     bottom: 0;
+                    //     margin: auto;
+                    //     border-left: 3.5px solid $brown-alt;
+                    //     border-right: 3.5px solid $brown-alt;
+                    // }
+                }
+                .border-top {
+                    position: absolute;
+                    border-top: none !important;
+                    width: 100%;
+                    left: 0rem;
+                    right: 0rem;
+                    top: -2rem;
+                    @include media-breakpoint-up(md) {
+                        display: none;
+                    }
+                }
+                .border-bottom {
+                    position: absolute;
+                    border-bottom: none !important;
+                    width: 100%;
+                    left: 0rem;
+                    right: 0rem;
+                    bottom: -2rem;
+                    transform: rotate(180deg);
+                    @include media-breakpoint-up(md) {
+                        display: none;
+                    }
+                }
+                .title-wrapper {
+                    width: fit-content;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 2.5rem;
+                    .logo {
+                        width: 25px;
+                        top: -2rem;
+                        bottom: unset;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        margin-bottom: 2rem;
+                    }
+                }
+                .content {
+                    .color-common {
+                        color: $common !important;
+
+                    }
+                    .color-uncommon {
+                        color: $uncommon !important;
+
+                    }
+                    .color-rare {
+                        color: $rare !important;
+                    }
+                    .color-legendary {
+                        color: $legendary !important;
+                    }
+                    
+                    hr {
+                        margin-top: 0.5rem;
+                        margin-bottom: 0.5rem;
+                        border-top: 1px solid $brown-alt;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        hr {
+                            // margin-top: 0.25rem;
+                            margin-bottom: 2rem;
+                            border-top: 2px solid $brown-alt;
+                        }
+                    }
+                    .row {
+                        @include media-breakpoint-down(xs) {
+                            margin: 0.5rem 0 !important;
+                        }
+                        .col-text {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            @include media-breakpoint-down(sm) {
+                                order: 2;
+                                padding-left: 0 !important;
+                                padding-right: 0 !important;
+                                margin-bottom: 1rem;
+                            }
+                            p {
+                                color: $dark;
+                            }
+                            .population-wrapper {
+                                width: 50%;
+                                display: flex;
+                                flex-direction: column;
+                                @include media-breakpoint-down(sm) {
+                                    flex-direction: row;
+                                    width: 100%;
+                                    align-items: center;
+                                }
+                                .img-rarity-label {
+                                    margin-bottom: 1rem;
+                                    object-fit: contain;
+                                    @include media-breakpoint-down(sm) {
+                                        margin-bottom: 0.25rem;
+                                        width: 45%;
+                                        margin-right: 1rem;
+                                    }
+                                }
+                                .population {
+                                    text-align: center;
+                                    margin-bottom: 0;
+                                }
+                            }
+                            @include media-breakpoint-down(xs) {
+                                .title {
+                                    margin-bottom: 0.25rem;
+                                }
+                                .title-rarity {
+                                    margin-bottom: 0.25rem;
+                                }
+                                .description {
+                                    margin-bottom: 0.25rem;
+                                }
+                           
+                                
+                            }
+                        }
+                        .col-img {
+                            position: relative;
+                            display: flex;
+                            justify-content: flex-end;
+                            @include media-breakpoint-down(sm) {
+                                order: 1;
+                                margin-bottom: 2rem;
+                            }
+                            .img-frame {
+                                position: absolute;
+                                z-index: 1;
+                                width: 90%;
+                                left: 0;
+                                right: 0;
+                                top: 0;
+                                bottom: 0;
+                                margin: auto;
+                                object-fit: contain;
+                            }
+                            .img-rarity {
+                                width: 90%;
+                                object-fit: contain;
+                            }
+                            @include media-breakpoint-down(sm) {
+                                .img-frame {
+                                    width: 100%;
+                                }
+                                .img-rarity {
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.armors {
+        .modal-wrapper .modal-body .modal-content .content .row .col-text {
+            @include media-breakpoint-down(sm) {
+                padding-left: 0.625rem !important;
+                padding-right: 0.625rem !important;
+            }
+        }
+    }
+    &.class {
+        .modal-wrapper .modal-body .modal-content .content .row .col-img {
+            justify-content: center;
+        }
+    }
+}

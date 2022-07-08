@@ -1,0 +1,23 @@
+// ========================================================================================================================================
+// Social - Custom
+// ========================================================================================================================================
+
+// Add custom styles here
+
+.social-outline-primary {
+    @each $brand, $color in $brand-colors {
+      .social-#{$brand} {
+        background: transparent;
+        color: $primary;
+        border: 1px solid $primary;
+      }
+      .social-item {
+        @include hover-focus-active {
+          .social-#{$brand} {
+            background: $primary;
+            color: $brown-light;
+          }
+        }
+      }
+    }
+  }

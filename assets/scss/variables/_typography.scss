@@ -1,0 +1,80 @@
+// Typography
+// Version 2.1.1
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// Responsive font size base
+$rfs-base-font-size:          1rem; // Antikode
+
+// Font weight
+$font-weight-lighter:         lighter;
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-semibold:        600; // Antikode
+$font-weight-bold:            700; // Antikode
+$font-weight-bolder:          bolder; // Antikode
+
+// Custom font import
+@include font-face('Trajan Pro', 'TrajanPro-Regular', $font-weight-normal);
+@include font-face('Trajan Pro', 'TrajanPro-Bold', $font-weight-bold);
+@include font-face('HK Grotesk', 'HKGrotesk-Regular', $font-weight-normal);
+@include font-face('D-DIN', 'D-DIN', $font-weight-normal);
+@include font-face('D-DIN', 'D-DIN-Bold', $font-weight-bold);
+
+// Font default / fallback (DO NOT EDIT)
+$font-default-sans-serif:     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default; // Antikode
+$font-default-serif:          Georgia, serif, "Palatino Linotype", "Book Antiqua", Palatino, serif, "Times New Roman", Times, serif !default; // Antikode
+$font-default-monospace:      SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default; // Antikode
+
+// Add custom font in front of the $font-default-
+// e.g. "Proxima Nova", $font-default-sans-serif
+$font-family-sans-serif:        'Trajan Pro', $font-default-sans-serif; // Avarik Saga
+$font-family-hk-grotesk:        'HK Grotesk', $font-family-sans-serif, $font-default-sans-serif; // Avarik Saga
+$font-family-din:               'D-DIN', $font-family-sans-serif, $font-default-sans-serif; // Avarik Saga
+$font-family-serif:             $font-default-serif; // Antikode
+$font-family-monospace:         $font-default-monospace; // Antikode
+
+// After setting the custom font, set the $font-family-base & $headings-font-family here
+$font-family-base:            $font-family-din; // Avarik Saga
+$headings-font-family:        $font-family-sans-serif; // Avarik Saga
+
+// Set options for headings here
+$headings-font-weight:        $font-weight-bold; // Antikode
+$headings-margin-bottom:      $spacer / 2;
+$headings-line-height:        1.2;
+$headings-color:              null; 
+
+$line-height-base:            1.5;
+$line-height-lg:              1.5;
+$line-height-sm:              1.5;
+
+$font-size-base:              .9rem;
+$font-size-lg:                $font-size-base * 1.25;
+$font-size-sm:                $font-size-base * .875;
+
+$font-weight-base:            $font-weight-normal;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+// prettier-ignore
+@mixin h1 { @include font-size($h1-font-size); }
+@mixin h2 { @include font-size($h2-font-size); }
+@mixin h3 { @include font-size($h3-font-size); }
+@mixin h4 { @include font-size($h4-font-size); }
+@mixin h5 { @include font-size($h5-font-size); }
+@mixin h6 { @include font-size($h6-font-size); }
+
+$lead-font-size:              $font-size-base * 1.125; // Antikode
+$lead-font-weight:            300;
+
+$small-font-size:             87.5%; // Antikode
+
+$text-muted:                  $gray-400; // Antikode
+
+$hr-border-color:             rgba($black, .05); // Antikode
+$hr-border-width:             $border-width;

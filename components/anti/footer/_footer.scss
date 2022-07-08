@@ -1,0 +1,95 @@
+// ░█▀▀▄ ░█▀▀▀█ 　 ░█▄─░█ ░█▀▀▀█ ▀▀█▀▀ 　 ░█▀▀▀ ░█▀▀▄ ▀█▀ ▀▀█▀▀
+// ░█─░█ ░█──░█ 　 ░█░█░█ ░█──░█ ─░█── 　 ░█▀▀▀ ░█─░█ ░█─ ─░█──
+// ░█▄▄▀ ░█▄▄▄█ 　 ░█──▀█ ░█▄▄▄█ ─░█── 　 ░█▄▄▄ ░█▄▄▀ ▄█▄ ─░█──
+// Override style on .footer-custom.scss instead
+// unless you want to upgrade the component version
+
+// ========================================================================================================================================
+// Footer
+// ========================================================================================================================================
+
+footer {
+  .nav-link {
+    display: inline-block;
+    @extend .hover-underline;
+  }
+}
+
+// ==========================================================================
+// Footer Main
+// ==========================================================================
+
+.footer-main {
+  @include media-breakpoint-down(md) {
+    .col-footer {
+      margin-bottom: 2.5rem;
+    }
+    .col-footer:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Footer Col Components
+.footer-about {
+  img {
+    width: 100px;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.footer-menu {
+  .nav-link {
+    color: $body-color;
+    @include media-breakpoint-down(sm) {
+      font-size: 1rem !important;
+    }
+    @include hover-focus-active {
+      color: $primary;
+    }
+  }
+}
+.footer-contact {
+  a {
+    margin-bottom: 0.5rem;
+    font-weight: $font-weight-bold;
+    color: $body-color;
+    display: inline-block;
+    @include hover-focus-active {
+      color: $primary;
+    }
+  }
+}
+
+// ==========================================================================
+// Footer Bottom
+// ==========================================================================
+
+.footer-bottom {
+  padding-top: 0;
+  padding-bottom: 2.5rem;
+  .divider {
+    margin: 0 0.5rem;
+    color: rgba($white, 0.5);
+  }
+  .col-right {
+    @include media-breakpoint-up(md) {
+      text-align: right;
+    }
+  }
+  a {
+    color: rgba($white, 0.75);
+    @include hover-underline;
+    &:before {
+      background: $white;
+      height: 1px;
+      bottom: -0.25rem;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+}

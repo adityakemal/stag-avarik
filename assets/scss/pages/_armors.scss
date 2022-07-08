@@ -1,0 +1,345 @@
+.sc-armors-main {
+    background-size: cover !important;
+    transition: all 0.5s;
+    position: relative;
+    transition: all 0.5s ease;
+    background: url("../../img/weapon/weapon-bg.jpeg") no-repeat center center;
+    position: relative;
+    padding-top: 7.5rem;
+    padding-bottom: 2.5rem;
+    @include media-breakpoint-down(md) {
+        background-position: 20% 50%;
+    }
+    @include media-breakpoint-down(sm) {
+        padding-top: $navbar-main-height-mobile;
+    }
+    .container {
+        .col-text {
+            position: relative;
+            text-align: center;
+            padding: 3rem 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .title-wrapper {
+                justify-content: center;
+            }
+            .avarik-button {
+                margin-left: 0;
+            }
+            h1,
+            p {
+                color: $white;
+            }
+            @include media-breakpoint-down(sm) {
+                padding: 1rem;
+                padding-top: 0;
+            }
+        }
+        .col-img {
+            position: relative;
+            width: 100%;
+            @include media-breakpoint-down(sm) {
+                padding-bottom: 10rem;
+            }
+            .img-book {
+                position: absolute;
+                width: auto;
+                height: 350px;
+                object-fit: contain;
+                left: 0;
+                right: 0;
+                top: 0;
+                margin-left: auto;
+                margin-right: auto;
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .book-slider {
+                .slick-slide {
+                    .book-wrapper {
+                        display: flex !important;
+                        width: 80% !important;
+                        height: 350px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        @include media-breakpoint-down(xl) {
+                            width: 95% !important;
+                        }
+                        @include media-breakpoint-down(lg) {
+                            width: 90% !important;
+                        }
+                        @include media-breakpoint-down(sm) {
+                            width: 100% !important;
+                            height: auto;
+                            margin-bottom: 5rem;
+                        }
+                        @media (min-width: 2000px) {
+                            width: 69% !important;
+                        }
+                        > .col-text {
+                            color: $white;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            position: relative;
+                            padding: 1rem 1.5rem 0 4rem;
+                            @include media-breakpoint-down(lg) {
+                                padding-top: 2rem;
+                                padding-left: 2.5rem;
+                                padding-right: 0rem;
+                            }
+                            @include media-breakpoint-down(md) {
+                                padding-left: 2.85rem;
+                                padding-top: 2rem;
+                                padding-right: 1rem;
+                            }
+                            @include media-breakpoint-down(sm) {
+                                margin-top: 2.5rem;
+                                padding: 2.5rem 2rem 0 2.5rem;
+                            }
+                            @include media-breakpoint-down(xs) {
+                                margin-top: 3rem;
+                                padding-top: 0.875rem;
+                            }
+                            .title-wrapper {
+                                position: absolute;
+                                top: 5rem;
+                                width: 85%;
+                                justify-content: center;
+                                @include media-breakpoint-down(lg) {
+                                    margin-bottom: 0.5rem;
+                                }
+                                @include media-breakpoint-down(sm) {
+                                    top: 0;
+                                    margin-bottom: 2rem;
+                                }
+                                .logo {
+                                    width: 15px;
+                                    top: -4rem;
+                                    @include media-breakpoint-down(sm) {
+                                        top: -3rem;
+                                    }
+                                }
+                                .left,
+                                .right {
+                                    width: 25px;
+                                }
+                                h1 {
+                                    color: $white;
+                                    margin-bottom: 0;
+                                }
+                            }
+                            p {
+                                color: $white;
+                                @include media-breakpoint-down(lg) {
+                                    margin-bottom: 0.5rem;
+                                    font-size: 0.75rem;
+                                }
+                                @include media-breakpoint-down(sm) {
+                                    padding-top: 2rem;
+                                    font-size: 1rem;
+                                }
+                            }
+                            .avarik-button {
+                                padding: 0.5rem 1.5rem;
+                                position: absolute;
+                                bottom: 3rem;
+                                @include media-breakpoint-down(sm) {
+                                    bottom: unset;
+                                    top: 10.5rem;
+                                    width: 65%;
+                                    left: 0;
+                                    right: 0;
+                                    margin-left: auto !important;
+                                    margin-right: auto;
+                                }
+                                @include media-breakpoint-up(xl) {
+                                    bottom: 4rem;
+                                }
+                                &::after {
+                                    bottom: -5px;
+                                }
+                                .side-left {
+                                    left: -20px;
+                                }
+                                .side-right {
+                                    right: -20px;
+                                }
+                                @include media-breakpoint-down(md) {
+                                    .side-left {
+                                        left: -19.5px;
+                                    }
+                                }
+                            }
+                        }
+                        > .col-img {
+                            padding: 1rem 2rem 2rem 1rem;
+                            display: flex;
+                            align-items: center;
+                            margin: 0 !important;
+                            @include media-breakpoint-down(xl) {
+                                padding-left: 2rem;
+                            }
+                            @include media-breakpoint-down(lg) {
+                                padding-left: 1rem;
+                            }
+                            @include media-breakpoint-down(sm) {
+                                padding-right: 1rem;
+                            }
+                        }
+                    }
+                }
+                .slick-prev,
+                .slick-next {
+                    top: 117.5%;
+                    z-index: 2;
+                    @include media-breakpoint-down(md) {
+                        top: 115%;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        top: unset;
+                        bottom: -17%;
+                    }
+                }
+                .slick-prev {
+                    left: 25%;
+                    @include media-breakpoint-down(lg) {
+                        left: 20%;
+                    }
+                    @include media-breakpoint-down(md) {
+                        left: 15%;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        left: 5%;
+                    }
+                }
+                .slick-next {
+                    right: 25%;
+                    @include media-breakpoint-down(lg) {
+                        right: 19.5%;
+                    }
+                    @include media-breakpoint-down(md) {
+                        right: 15%;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        right: 5%;
+                    }
+                }
+                .slick-dots {
+                    text-align: center;
+                    bottom: -25%;
+                    margin-top: 2rem;
+                    @include media-breakpoint-down(md) {
+                        bottom: -22%;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        width: 100% !important;
+                        bottom: -15%;
+                    }
+                    li {
+                        width: 70px;
+                        position: relative;
+                        .overlay-hover {
+                            position: absolute;
+                            width: 100px;
+                            height: 100px;
+                            border-radius: 100%;
+                            left: -0.5rem;
+                            top: -3.5rem;
+                            transition: all 0.5s ease;
+                            background: radial-gradient(
+                                circle at center,
+                                $orange-light 10%,
+                                rgba(255, 255, 255, 0) 60%
+                            );
+                            z-index: 0;
+                            opacity: 0;
+                        }
+                        &:hover {
+                            .overlay-hover {
+                                opacity: 1;
+                            }
+                            .dots-btn {
+                                .dots-active {
+                                    border: 2px solid $primary;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                        button {
+                            .dots-btn {
+                                width: 60px;
+                                height: 60px;
+                                background-color: $brown-light;
+                                border-radius: 100%;
+                                position: absolute;
+                                bottom: 0;
+                                border: 1px solid rgba(0, 0, 0, 0.4);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                .dots-active {
+                                    width: 55px;
+                                    height: 55px;
+                                    background-color: rgba($white, 0);
+                                    border-radius: 100%;
+                                    position: absolute;
+                                    border: 2px solid $primary;
+                                    transition: all 0.5s ease-in-out;
+                                    opacity: 0;
+                                }
+                            }
+                            .dots-img {
+                                display: block;
+                                width: 70px;
+                                height: 70px;
+                                position: absolute;
+                                bottom: -50%;
+                                border-radius: 100%;
+                            }
+                            &::before {
+                                content: "";
+                                width: 0;
+                                height: 0;
+                                opacity: 0;
+                            }
+                        }
+                        &.slick-active {
+                            .overlay-hover {
+                                opacity: 1;
+                                animation: float 2s infinite ease-in-out 0s;
+                            }
+                            button {
+                                .dots-img {
+                                    animation: float 2s infinite ease-in-out 0s;
+                                }
+                                .dots-btn {
+                                    animation: float 2s infinite ease-in-out 0s;
+                                    .dots-active {
+                                        border: 2px solid $primary;
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .avarik-button.btn-opensea {
+                margin-top: 5rem;
+                width: 85%;
+                text-align: center;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -2rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}

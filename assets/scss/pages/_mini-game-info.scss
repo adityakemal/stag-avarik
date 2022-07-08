@@ -1,0 +1,280 @@
+.sc-mini-game-info-cover {
+    position: relative;
+    z-index: -1;
+    @include media-breakpoint-down(sm) {
+        padding-top: $navbar-main-height-mobile;
+    }
+    .cover {
+        height: 700px;
+        @include media-breakpoint-down(sm) {
+            height: 450px;
+        }
+        @include media-breakpoint-down(xs) {
+            height: 375px;
+        }
+        .react-parallax-bgimage,
+        .react-parallax-content {
+            height: 100%;
+        }
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        @include media-breakpoint-down(sm) {
+            padding-bottom: 5rem;
+            justify-content: flex-start;
+        }
+        .content {
+            width: 50%;
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+            .title-wrapper {
+                margin-bottom: 2rem;
+                .title {
+                    text-align: center;
+                    z-index: 1;
+                }
+            }
+            .description {
+                color: $dark;
+                text-align: center;
+                font-weight: 300;
+            }
+            .avarik-button {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+.sc-mini-game-info-tutorial {
+    background: $brown-light;
+    position: relative;
+    .bg {
+        position: absolute;
+        width: 100%;
+        height: 110%;
+        object-fit: cover;
+        top: -10%;
+        left: 0;
+        z-index: 1;
+        @include media-breakpoint-down(sm) {
+            top: -2%;
+            height: 102%;
+        }
+        @include media-breakpoint-up(xl) {
+            object-fit: fill;
+        }
+    }
+    .img-ornamen {
+        position: absolute;
+        width: 90%;
+        left: 0;
+        right: 0;
+        bottom: 2.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 2;
+        @include media-breakpoint-down(sm) {
+            bottom: 1rem;
+        }
+    }
+    .title-wrapper {
+        z-index: 2;
+    }
+    .col-item {
+        z-index: 2;
+        .img-icon {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 2;
+            @include media-breakpoint-down(md) {
+                width: 90%;
+            }
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+        .claim-card {
+            position: relative;
+            width: 100%;
+            min-height: 375px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 3rem;
+            padding-top: 4rem;
+            @include media-breakpoint-down(lg) {
+                padding: 2rem;
+                padding-top: 4rem;
+            }
+            @include media-breakpoint-down(md) {
+                padding-top: 5rem;
+            }
+            @include media-breakpoint-down(sm) {
+                padding-bottom: 1rem;
+                min-height: 250px;
+            }
+            .claim-number {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50px;
+            }
+            .hr {
+                z-index: 1;
+                width: 90%;
+                margin-bottom: 1rem;
+                @include media-breakpoint-down(md) {
+                    width: 60%;
+                }
+            }
+            h5 {
+                z-index: 1;
+                text-align: center;
+                @include media-breakpoint-down(md) {
+                    font-size: 1.5rem;
+                }
+            }
+            p {
+                text-align: center;
+                @include media-breakpoint-down(md) {
+                    max-width: 50%;
+                }
+                @include media-breakpoint-down(xs) {
+                    max-width: 100%;
+                }
+            }
+            ul {
+                z-index: 1;
+                li {
+                    @include media-breakpoint-down(md) {
+                        font-size: 1.25rem;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sc-mini-game-info-content {
+    background: url("../../img/mini-game/bg_content.png") center center no-repeat;
+    background-size: cover;
+    .sc-mini-game-info-system {
+        position: relative;
+        margin-top: -5rem;
+        z-index: 0;
+        padding-top: 7.5rem;
+        height: 650px;
+        position: relative;
+        @include media-breakpoint-down(sm) {
+            padding-top: 7.5rem;
+        }
+        .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            .col-text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                max-width: 40%;
+                @include media-breakpoint-down(sm) {
+                    margin-top: 1rem;
+                    max-width: 100%;
+                }
+                h1,
+                p {
+                    width: 80%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .sc-mini-game-info-formation {
+        background: rgba($black, 0);
+        height: 550px;
+        .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            .col-text {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+                max-width: 40%;
+                @include media-breakpoint-down(sm) {
+                    margin-top: 1rem;
+                    max-width: 100%;
+                    order: 1;
+                }
+                h1,
+                p {
+                    width: 80%;
+                    text-align: center;
+                }
+            }
+            .col-image {
+                @include media-breakpoint-down(sm) {
+                    order: 2;
+                }
+            }
+        }
+    }
+    .sc-mini-game-info-leaderboard {
+        position: relative;
+        margin-top: -5rem;
+        z-index: 0;
+        padding-top: 7.5rem;
+        padding-bottom: 7.5rem;
+        height: 650px;
+        position: relative;
+        @include media-breakpoint-down(sm) {
+            padding-top: 12rem;
+        }
+        .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            .col-text {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+                max-width: 40%;
+                @include media-breakpoint-down(sm) {
+                    margin-top: 1rem;
+                    // order: 2;
+                    max-width: 100%;
+                }
+                h1,
+                p {
+                    width: 80%;
+                    text-align: center;
+                }
+            }
+            .col-image {
+                .avarik-button {
+                    margin-top: 2rem;
+                    width: 85%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+// ░█▀▀▄ ░█▀▀▀█ 　 ░█▄─░█ ░█▀▀▀█ ▀▀█▀▀ 　 ░█▀▀▀ ░█▀▀▄ ▀█▀ ▀▀█▀▀
+// ░█─░█ ░█──░█ 　 ░█░█░█ ░█──░█ ─░█── 　 ░█▀▀▀ ░█─░█ ░█─ ─░█──
+// ░█▄▄▀ ░█▄▄▄█ 　 ░█──▀█ ░█▄▄▄█ ─░█── 　 ░█▄▄▄ ░█▄▄▀ ▄█▄ ─░█──
+// Override style on .type-custom.scss instead
+// unless you want to upgrade the component version
+
+// ========================================================================================================================================
+// Type
+// ========================================================================================================================================
+
+// prettier-ignore
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $headings-font-family; // Edit the variable on variables-custom.scss
+}
+
+// Type style
+// Before changing the style, make sure all the design components & heading styles have been predefined by the designers
+// $h1-font-size: $font-size-base * 2.5;
+// $h2-font-size: $font-size-base * 2;
+// $h3-font-size: $font-size-base * 1.75;
+// $h4-font-size: $font-size-base * 1.5;
+// $h5-font-size: $font-size-base * 1.25;
+// $h6-font-size: $font-size-base;
+
+h1,
+.h1 {
+  @include h1;
+}
+h2,
+.h2 {
+  @include h2;
+}
+h3,
+.h3 {
+  @include h3;
+}
+h4,
+.h4 {
+  @include h4;
+}
+h5,
+.h5 {
+  @include h5;
+}
+h6,
+.h6 {
+  @include h6;
+}
+
+// Caption
+// Usually used as label with text uppercase
+.caption {
+  @include font-size($font-size-base * 1);
+  text-transform: uppercase;
+  color: $body-color-secondary;
+  margin-bottom: 1rem;
+}
+
+// Heading style
+.heading {
+  margin-bottom: 0.75rem;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 1.25rem;
+  }
+  *:last-child {
+    margin-bottom: 0;
+  }
+  &.heading-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    * {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+// Theme
+.sc-light {
+  // prettier-ignore
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { color: $body-color; }
+  // prettier-ignore
+  p, ul, li, .cover-text { color: rgba($body-color, 0.75); }
+}
+
+.sc-dark {
+  // prettier-ignore
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { color: $white; }
+  // prettier-ignore
+  p, ul, li, .cover-text { color: rgba($white, 0.75); }
+  .btn-link {
+    color: $white;
+    &.hover-underline:before {
+      background-color: $white;
+    }
+  }
+}

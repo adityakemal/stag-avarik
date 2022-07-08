@@ -1,0 +1,123 @@
+// ========================================================================================================================================
+// Forms - Custom
+// ========================================================================================================================================
+
+// ==========================================================================
+// Form Check
+// ==========================================================================
+
+.form-check {
+  // Radio
+  .form-check-input[type="radio"],
+  .form-check-input[type="checkbox"] {
+    background: $gray-20;
+    border-color: $gray-100;
+    &:checked {
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+  .form-check-label {
+    img {
+      margin-right: 0.5rem;
+      width: 75px;
+      @include media-breakpoint-up(md) {
+        width: 100px;
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// Select - React Select
+// ==========================================================================
+
+.form-select {
+  &.ic-left {
+    &:before {
+      font-family: "Anti Icons Regular"; // Modify default icon
+      content: var($ai-search); // Modify default icon
+    }
+  }
+  &.ic-right {
+    &:after {
+      font-family: "Anti Icons Regular"; // Modify default icon
+      content: var($ai-circle); // Modify default icon
+    }
+  }
+  // Replace React Select default chevron
+  .select__control {
+    .select__value-container {
+      @include ic-right($icon: $ai-angle-down); // Modify default chevron
+      &:after {
+        opacity: 0.5; // Modify default chevron base opacity
+      }
+    }
+    &.select__control--menu-is-open {
+      .select__value-container {
+        &:after {
+          opacity: 1; // Modify default chevron focus opacity
+        }
+      }
+    }
+  }
+}
+
+// React select dropdown menu
+.select__option {
+  &.select__option--is-focused {
+    background: rgba($primary, 0.1); // Modify menu hover color
+    &:active {
+      background: rgba($primary, 0.1); // Modify menu active color
+    }
+  }
+}
+
+// React select dropdown menu
+.select__menu {
+  box-shadow: $box-shadow-sm !important;
+  border: 1px solid $gray-50;
+  border-radius: 0 !important;
+  @if $enable-rounded {
+    border-radius: $input-border-radius !important;
+  }
+  .select__option {
+    &.select__option--is-focused {
+      background: rgba($primary, 0.1); // Modify menu hover color
+      &:active {
+        background: rgba($primary, 0.1); // Modify menu active color
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// Input - Layer 1
+// ==========================================================================
+
+.field {
+  position: relative;
+  label {
+    @include font-size($font-size-base * 0.875);
+    color: $gray-400;
+  }
+}
+
+// ==========================================================================
+// Form Control / Select Wrapper - Layer 2
+// ==========================================================================
+
+.form-control-wrapper {
+  &.ic-left {
+    &:before {
+      font-family: "Anti Icons Regular"; // Modify default icon
+      content: var($ai-circle); // Modify default icon
+    }
+  }
+  &.ic-right {
+    &:after {
+      font-family: "Anti Icons Regular"; // Modify default icon
+      content: var($ai-circle); // Modify default icon
+    }
+  }
+}

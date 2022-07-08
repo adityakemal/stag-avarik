@@ -1,0 +1,27 @@
+// ░█▀▀▄ ░█▀▀▀█ 　 ░█▄─░█ ░█▀▀▀█ ▀▀█▀▀ 　 ░█▀▀▀ ░█▀▀▄ ▀█▀ ▀▀█▀▀
+// ░█─░█ ░█──░█ 　 ░█░█░█ ░█──░█ ─░█── 　 ░█▀▀▀ ░█─░█ ░█─ ─░█──
+// ░█▄▄▀ ░█▄▄▄█ 　 ░█──▀█ ░█▄▄▄█ ─░█── 　 ░█▄▄▄ ░█▄▄▀ ▄█▄ ─░█──
+// Override style on .newsletter-custom.scss instead
+// unless you want to upgrade the component version
+
+// ========================================================================================================================================
+// Newsletter
+// ========================================================================================================================================
+
+.newsletter {
+  @include media-breakpoint-up(lg) {
+    margin-left: 2rem;
+  }
+  .form-control {
+    width: 100%;
+    color: $black;
+  }
+  .btn {
+    color: $white;
+    background-color: $primary;
+    &:hover {
+      background: darken($primary, 5%);
+      border-color: $primary;
+    }
+  }
+}

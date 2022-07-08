@@ -1,0 +1,191 @@
+.sc-leaderboard-main {
+    background-color: $black;
+    position: relative;
+    @include media-breakpoint-down(sm) {
+        margin-top: -$navbar-main-height-mobile;
+        padding-top: $navbar-main-height-mobile;
+    }
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        &:after {
+            content: "";
+            @include gradient-y-to-top($black, rgba($black, 0), 33%, 100%);
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            z-index: 0;
+            bottom: 0;
+            animation: fadeInUp 1s #{$home-anim-delay + 0.1s} ease-in-out both;
+        }
+    }
+    .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include media-breakpoint-down(sm) {
+            padding-left: $container-padding-sm-down;
+            padding-right: $container-padding-sm-down;
+        }
+    }
+    .season-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        @include media-breakpoint-down(sm) {
+            justify-content: flex-start;
+            padding-left: $container-padding-sm-down;
+        }
+        .season-box {
+            position: relative;
+            white-space: nowrap;
+            border: 2px solid $brown-alt;
+            padding: 0.75rem 1rem;
+            background: $brown-light;
+            color: $primary;
+            z-index: 1;
+            @extend .h6;
+            font-weight: $font-weight-light;
+            cursor: pointer;
+            margin-right: 1rem;
+            transition: all 0.5s ease-in-out;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 99%;
+                height: 96%;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                border: 1.5px solid $brown-alt;
+                z-index: -1;
+                transition: all 0.5s ease-in-out;
+            }
+            &.selected {
+                color: $white;
+                z-index: 1;
+                &::before {
+                    background: $primary;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+    /* table */
+    .content {
+        @include media-breakpoint-down(sm) {
+            padding-left: $container-padding-sm-down;
+            padding-right: $container-padding-sm-down;
+        }
+        .table-wrapper {
+            position: relative;
+            width: 100%;
+            background-color: $brown-light;
+            padding: 5px;
+            border: 5px solid $brown-alt;
+            @include media-breakpoint-down(sm) {
+            }
+            .border {
+                position: absolute;
+                width: 99%;
+                height: 99.5%;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                border: 2px solid $brown-alt !important;
+            }
+            table {
+                width: 100%;
+                position: relative;
+                .img-ornamen {
+                    position: absolute;
+                    width: 100%;
+                    margin-top: -5px;
+                }
+                thead {
+                    background: $primary;
+                    tr {
+                        // border-bottom: 1px solid $black;
+                        th {
+                            @extend .h6;
+                            color: $white;
+                            font-size: 1.125rem;
+                            text-align: center;
+                            padding: 1rem;
+                            @include media-breakpoint-down(sm) {
+                                padding: 1rem 0;
+                                font-size: 1rem;
+                            }
+                            @include media-breakpoint-down(xs) {
+                                font-size: 0.85rem;
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    padding: 2.5rem;
+                    tr {
+                        border-bottom: 2px solid $brown-alt;
+                        td {
+                            padding: 1rem;
+                            color: $black;
+                            text-align: center;
+                            @include media-breakpoint-down(xs) {
+                                font-size: 0.65rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .pagination {
+            width: 100%;
+            padding: 1.5rem 0.5rem 1.5rem 1rem;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            span {
+                margin-left: 0.75rem;
+                padding: 0.5rem 1rem;
+                border-radius: 100%;
+                background-color: $brown-light;
+                cursor: pointer;
+                color: $dark;
+                position: relative;
+                .border {
+                    position: absolute;
+                    width: 85%;
+                    height: 85%;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    border: 1.5px solid $primary !important;
+                    transition: all 0.5s ease-in-out;
+                    border-radius: 100%;
+                    opacity: 0;
+                }
+                &.active,
+                &:hover {
+                    .border {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

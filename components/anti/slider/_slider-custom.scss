@@ -1,0 +1,30 @@
+// ========================================================================================================================================
+// Slider - Custom
+// ========================================================================================================================================
+
+// Add custom styles here
+
+.slider {
+    // Arrow
+    .slick-prev,
+    .slick-next {
+        width: 42px;
+        height: 42px;
+        background: rgba($color: $white, $alpha: 0);
+        transition: $transition-base;
+        &:hover {
+            background: rgba($color: $white, $alpha: 0);
+        }
+        &:before {
+            transition: $transition-base;
+            font-size: $font-size-sm !important;
+        }
+        &.slick-disabled {
+            cursor: default;
+            background: rgba($color: $white, $alpha: 0);
+            &:before {
+                opacity: 0.5;
+            }
+        }
+    }
+}

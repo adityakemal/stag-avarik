@@ -1,0 +1,116 @@
+// ========================================================================================================================================
+// Footer - Custom
+// ========================================================================================================================================
+
+footer {
+  z-index: 3;
+  position: relative;
+  .img-ornament-footer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 5%;
+    width: 100%;
+    @include media-breakpoint-down(sm) {
+      height: 4%;
+    }
+  }
+  h5 {
+    @extend .h5;
+    color: $white;
+  }
+  background: $primary;
+  background-size: cover;
+  position: relative;
+  .footer-main,
+  .footer-bottom {
+    z-index: 3;
+    position: relative;
+  }
+  .footer-main {
+    padding-top: 5rem;
+  }
+}
+
+.footer-main {
+  @include media-breakpoint-up(xl) {
+    .row-main {
+      margin-left: -2rem;
+      margin-right: -2rem;
+      > .col-footer {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    .row-main {
+      margin-left: -3rem;
+      margin-right: -3rem;
+      > .col-footer {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+    }
+  }
+}
+
+.footer-menu {
+  .nav-link {
+    color: rgba($white, 0.75);
+    @include hover-focus-active {
+      color: $white;
+    }
+    &:before {
+      background: $white;
+      height: 1px;
+    }
+  }
+}
+
+.footer-about {
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
+  img {
+    width: 60%;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 0.75rem;
+    color: rgba($white, 0.75);
+  }
+}
+
+.footer-menu {
+  .nav-link {
+    &:before {
+      bottom: 0.5rem; // underline effect position (default: 0)
+    }
+  }
+}
+
+.footer-contact {
+  .social-item {
+    @extend .col-2;
+    @extend .col-md-4;
+    margin: 0 0 1rem 0 !important;
+    padding-left: 0;
+  }
+  h5 {
+    margin-bottom: 1rem;
+  }
+  a {
+    margin-bottom: 0;
+    color: rgba($white, 0.75);
+    @include hover-focus-active {
+      color: $white;
+    }
+  }
+}
+
+.footer-bottom {
+  color: rgba($white, 0.75);
+  font-size: 0.75rem;
+}
