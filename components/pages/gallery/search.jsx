@@ -78,33 +78,6 @@ export default function SearchBar() {
         <SearchIcon />
         <SearchInput className="search-input " onChange={handleChange} />
       </div>
-      {/* {filteredEmails.map((v, i) => {
-        return (
-          <div className="mail" key={i}>
-            <div className="from">{v.name}</div>
-          </div>
-        )
-      })} */}
-      {/* <</div>
-     TextField
-        id="input-with-icon-textfield"
-        className="bg-white w-100"
-        style={{
-          borderRadius: 100,
-          outline: 0,
-          border: 0
-
-        }}
-        onChange={(e) => setSearch(e.target.value)}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SearchIcon />
-            </InputAdornment>
-          ),
-        }}
-        variant="outlined"
-      /> */}
     </form>
     // </Search>
   )
