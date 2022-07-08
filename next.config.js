@@ -6,8 +6,8 @@ module.exports = {
   publicRuntimeConfig,
   webpack,
   images: {
-    loader: 'akamai',
-    path: '/',
+    // loader: 'akamai',
+    // path: '/',
     disableStaticImages: true,
     domains: ["lh3.googleusercontent.com"],
     formats: ["image/avif", "image/webp"],
