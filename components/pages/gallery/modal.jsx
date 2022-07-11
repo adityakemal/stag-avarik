@@ -210,12 +210,14 @@ export default function ModalPic({ open, handleClose, currentItem }) {
 
           {/* //TRAITS  */}
           <div className="row  wrapboxes pb-5" style={{ backgroundColor: '#D9D4C5' }}>
-            <div className="col-12 d-flex justify-content-center align-items-center my-4">
-              <img src={`/assets/modal/leftLine.png`} className='img-fluid' style={{ width: "100%" }} />
-              <h5 className="mx-3 mb-0 pt-1">
-                TRAITS
-              </h5>
-              <img src={`/assets/modal/rightLine.png`} className='img-fluid' style={{ width: "100%" }} />
+            <div className="col-12 d-flex  my-4">
+              <div className="justify-content-center align-items-center">
+                <img src={`/assets/modal/leftLine.png`} className='img-fluid' style={{ width: "100%" }} />
+                <h5 className="mx-3 mb-0 pt-1">
+                  TRAITS
+                </h5>
+                <img src={`/assets/modal/rightLine.png`} className='img-fluid' style={{ width: "100%" }} />
+              </div>
             </div>
 
             <div className="col-md-12">
@@ -226,11 +228,15 @@ export default function ModalPic({ open, handleClose, currentItem }) {
 
             {/* // CHARACTER STAT  */}
             <div className="col-12 d-flex justify-content-center align-items-center my-4">
-              <img src={`/assets/modal/leftLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
+              <div>
+                <img src={`/assets/modal/leftLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
+              </div>
               <h5 className="mx-2 mb-0 pt-1" style={{ whiteSpace: 'nowrap' }}>
                 Character Stats
               </h5>
-              <img src={`/assets/modal/rightLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
+              <div>
+                <img src={`/assets/modal/rightLineChar.png`} className='img-fluid' style={{ width: "100%" }} />s
+              </div>
             </div>
 
             <div className="col-md-12 d-flex justify-content-center mb-4">
