@@ -227,7 +227,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
             {/* // CHARACTER STAT  */}
             <div className="col-12 d-flex justify-content-center align-items-center my-4">
               <img src={`/assets/modal/leftLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
-              <h5 className="mx-3 mb-0 pt-1" style={{ whiteSpace: 'nowrap' }}>
+              <h5 className="mx-2 mb-0 pt-1" style={{ whiteSpace: 'nowrap' }}>
                 Character Stats
               </h5>
               <img src={`/assets/modal/rightLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
