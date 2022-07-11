@@ -212,7 +212,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
           <div className="row  wrapboxes pb-5" style={{ backgroundColor: '#D9D4C5' }}>
             <div className="col-12 d-flex justify-content-center align-items-center my-4">
               <img src={`/assets/modal/leftLine.png`} className='img-fluid' style={{ width: "100%" }} />
-              <h5 className="mx-3 mb-0">
+              <h5 className="mx-3 mb-0 pt-1">
                 TRAITS
               </h5>
               <img src={`/assets/modal/rightLine.png`} className='img-fluid' style={{ width: "100%" }} />
@@ -228,7 +228,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
 
             <div className="col-12 d-flex justify-content-center align-items-center my-4">
               <img src={`/assets/modal/leftLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
-              <h5 className="mx-3 mb-0" style={{ whiteSpace: 'nowrap' }}>
+              <h5 className="mx-3 mb-0 pt-1" style={{ whiteSpace: 'nowrap' }}>
                 Character Stats
               </h5>
               <img src={`/assets/modal/rightLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
