@@ -210,8 +210,8 @@ export default function ModalPic({ open, handleClose, currentItem }) {
 
           {/* //TRAITS  */}
           <div className="row  wrapboxes pb-5" style={{ backgroundColor: '#D9D4C5' }}>
-            <div className="col-12 d-flex  my-4">
-              <div className="justify-content-center align-items-center">
+            <div className="col-12   my-4">
+              <div className=" d-flex justify-content-center align-items-center">
                 <img src={`/assets/modal/leftLine.png`} className='img-fluid' style={{ width: "100%" }} />
                 <h5 className="mx-3 mb-0 pt-1">
                   TRAITS
