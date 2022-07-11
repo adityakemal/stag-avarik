@@ -109,7 +109,7 @@ const BoxStat = ({ imgSrc, title, value, isPercentage = true, alignStart }) => {
       className={`w-100 rows d-inline-flex align-items-center  ${alignStart ? 'justify-content-start' : 'justify-content-center'}`}
       style={{ minWidth: 60 }}
     >
-      <div className="sm-col-6 d-inline-flex align-items-center justify-content-end">
+      <div className="sm-col-6 d-inline-flex align-items-center justify-content-end mr-2">
         <Image width={36} height={36} src={imgSrc} />
       </div>
       <div
@@ -152,7 +152,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           height: "100%",
-          maxHeight: '90vh',
+          maxHeight: '85vh',
           maxWidth: 890,
           width: `100%`,
           // padding: `3%`,
@@ -211,7 +211,11 @@ export default function ModalPic({ open, handleClose, currentItem }) {
           {/* //TRAITS  */}
           <div className="row  wrapboxes pb-5" style={{ backgroundColor: '#D9D4C5' }}>
             <div className="col-12 d-flex justify-content-center align-items-center my-4">
-              <img src={`/assets/modal/traits.svg`} className='img-fluid' style={{ width: "100%" }} />
+              <img src={`/assets/modal/leftLine.png`} className='img-fluid' style={{ width: "100%" }} />
+              <h5 className="mx-3 mb-0">
+                TRAITS
+              </h5>
+              <img src={`/assets/modal/rightLine.png`} className='img-fluid' style={{ width: "100%" }} />
             </div>
 
             <div className="col-md-12">
@@ -221,8 +225,13 @@ export default function ModalPic({ open, handleClose, currentItem }) {
             </div>
 
             {/* // CHARACTER STAT  */}
-            <div className=" col-12 w-100 d-flex justify-content-center align-items-center my-4" >
-              <img src={`/assets/modal/stats.svg`} className='img-fluid' style={{ width: "100%" }} />
+
+            <div className="col-12 d-flex justify-content-center align-items-center my-4">
+              <img src={`/assets/modal/leftLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
+              <h5 className="mx-3 mb-0" style={{ whiteSpace: 'nowrap' }}>
+                Character Stats
+              </h5>
+              <img src={`/assets/modal/rightLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
             </div>
 
             <div className="col-md-12 d-flex justify-content-center mb-4">
