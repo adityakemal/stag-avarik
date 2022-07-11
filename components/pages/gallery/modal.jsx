@@ -192,7 +192,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
                 }
               />
             </div>
-            <div className="col-md-4 pt-xs-3">
+            <div className="col-md-4 py-xs-3 py-md-0">
 
               <div className="framerchar">
                 <img
@@ -225,7 +225,6 @@ export default function ModalPic({ open, handleClose, currentItem }) {
             </div>
 
             {/* // CHARACTER STAT  */}
-
             <div className="col-12 d-flex justify-content-center align-items-center my-4">
               <img src={`/assets/modal/leftLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
               <h5 className="mx-3 mb-0 pt-1" style={{ whiteSpace: 'nowrap' }}>
