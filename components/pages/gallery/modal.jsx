@@ -315,7 +315,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
                 text="Buy Now on Opensea"
                 variant="dark"
                 className="btn-opensea d-flex m-0 "
-                link={`https://opensea.io/assets/0x127e479ac59a1ea76afdedf830fecc2909aa4cae/${currentItem?.id}`}
+                link={`https://opensea.io/assets/0x127e479ac59a1ea76afdedf830fecc2909aa4cae/${parseInt(currentItem?.id)}`}
               />
             </div>
 
