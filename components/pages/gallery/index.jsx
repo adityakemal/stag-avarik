@@ -114,16 +114,19 @@ export default function App() {
 
   //1200 width
   return (
-    <div className="sc-gallery position-relative w-100 h-100 pb-5 mb-5">
+    <div className="sc-gallery position-relative w-100 h-100 pb-5 mb-5"
+    // style={{ backgroundImage: `url(${bgGallery})` }}
+    >
       <ModalPic {...{ open, handleClose, currentItem }} />
       <Image
         className="bg-gallery"
         src={bgGallery}
         layout="fill"
       />
-      <h1 className="w-100 p-5 text-center text-white " style={{ paddingTop: 100, zIndex: 888 }}>
-        Gallery
-      </h1>
+      <div className="w-100 my-5 text-center text-white " style={{ paddingTop: 50, zIndex: 888 }}>
+        {/* Gallery */}
+        <img src="/assets/galleryTitle.svg" alt="" />
+      </div>
       {/* <pre>
         {JSON.stringify(filterList, null, 2)}
       </pre> */}
