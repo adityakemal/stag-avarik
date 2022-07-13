@@ -28,7 +28,7 @@ const HomeCover = () => {
               className="mx-5 mb-sm-4"
               sideLeftClassName="side-left-btn-cover"
               sideRightClassName="side-right-btn-cover"
-              link="https://www.youtube.com/watch?v=AHQAcs5Ml44"
+              link="https://www.youtube.com/watch?v=9UNXRh4xrug"
             />
           </div>
         </div>

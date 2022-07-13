@@ -215,7 +215,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
                 <img src={`/assets/modal/leftLine.png`} className='img-fluid' style={{ width: "100%" }} />
               </div>
               <h5 className="mx-3 mb-0 pt-1">
-                Traits
+                TRAITS
               </h5>
               <div>
                 <img src={`/assets/modal/rightLine.png`} className='img-fluid' style={{ width: "100%" }} />
@@ -234,7 +234,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
                 <img src={`/assets/modal/leftLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
               </div>
               <h5 className="mx-2 mb-0 pt-1" style={{ whiteSpace: 'nowrap' }}>
-                Character Stats
+                CHARACTER STATS
               </h5>
               <div>
                 <img src={`/assets/modal/rightLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
