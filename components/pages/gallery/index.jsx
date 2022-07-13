@@ -177,7 +177,7 @@ export default function App() {
             {/* HEADER END */}
             {
               isPending ?
-                <div style={{ width: '100%', height: '80vh' }} className='row'>
+                <div style={{ width: '100%', height: '85vh' }} className='row'>
                   {[1, 1, 1, 1, 1, 1, 1, 1].map((res, i) => (
                     <div className="col-md-3" key={i}>
                       <Skeleton variant="rectangular" className="w-100" style={{ height: 200 }} />

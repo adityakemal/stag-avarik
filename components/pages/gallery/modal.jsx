@@ -215,7 +215,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
                 <img src={`/assets/modal/leftLine.png`} className='img-fluid' style={{ width: "100%" }} />
               </div>
               <h5 className="mx-3 mb-0 pt-1">
-                TRAITS
+                Traits
               </h5>
               <div>
                 <img src={`/assets/modal/rightLine.png`} className='img-fluid' style={{ width: "100%" }} />
