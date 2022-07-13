@@ -1,4 +1,5 @@
-import * as React from "react"
+import { useEffect, useState } from "react"
+
 import Accordion from "@mui/material/Accordion"
 import AccordionSummary from "@mui/material/AccordionSummary"
 import AccordionDetails from "@mui/material/AccordionDetails"
@@ -18,24 +19,88 @@ import { resolveHref } from "next/dist/shared/lib/router/router"
 // {"image":"ipfs://QmRRPWG96cmgTn2qSzjwr2qvfNEuhunv6FNeMFGa9bx6mQ","attributes":[{"trait_type":"Earring","value":"Silver Hoop"},{"trait_type":"Background","value":"Orange"},{"trait_type":"Fur","value":"Robot"},
 
 export default function Drawer({
-  filteredArray = [],
+  // filteredArray = [],
   // selectedFilterArray = [],
   addFilter = () => { },
 }) {
-  const { filterList } = useSelector(state => state.gallery)
+
+  const { filterList, galleryList, initialGallery } = useSelector(state => state.gallery)
+
+  const [filteredArray, setFilteredArray] = useState([])
+  const [category, setCategory] = useState({
+    "Armor": [],
+    "Background": [],
+    "Body": [],
+    "Class": [],
+    "Faction": [],
+    "Gender": [],
+    "Hair": [],
+    "Head": [],
+    "Subclass": [],
+    "Weapon": [],
+  })
+
+  useEffect(() => {
+    // console.log(galleryList);
+    setFilteredArray(initialGallery)
+  }, [])
 
   var selectedFilterArray = filterList
   return (
-    <div className="col-12 col-md-4 d-none d-md-block p-0">
-      <div className="text-white box-drawer">
-        <div style={{ paddingBottom: 20 }}>
-          <Image
-            src={`/assets/traits/classification.svg`}
-            width={332}
-            height={43}
-            objectFit={`contain`}
-          />
-          {TRAITS.slice(0, 3).map(({ trait_type, options, total, icon }, i) => {
+    <div className="text-white box-drawer">
+      <div style={{ paddingBottom: 20 }}>
+        <Image
+          src={`/assets/traits/classification.svg`}
+          width={332}
+          height={43}
+          objectFit={`contain`}
+        />
+        {TRAITS.slice(0, 4).map(({ trait_type, options, total, icon }, i) => {
+          return (
+            <TraitType
+              key={i}
+              {...{
+                trait_type,
+                total,
+                options,
+                selectedFilterArray,
+                addFilter,
+                filteredArray,
+                icon,
+              }}
+            />
+          )
+        })}
+        <Image
+          src={`/assets/traits/appearance.svg`}
+          width={332}
+          height={43}
+          objectFit={`contain`}
+        />
+        {TRAITS.slice(4, 8).map(({ trait_type, options, total, icon }, i) => {
+          return (
+            <TraitType
+              key={i}
+              {...{
+                trait_type,
+                total,
+                options,
+                selectedFilterArray,
+                addFilter,
+                filteredArray,
+                icon,
+              }}
+            />
+          )
+        })}
+        <Image
+          src={`/assets/traits/equipment.svg`}
+          width={332}
+          height={43}
+          objectFit={`contain`}
+        />
+        {TRAITS.slice(8, 11).map(
+          ({ trait_type, options, total, icon }, i) => {
             return (
               <TraitType
                 key={i}
@@ -50,54 +115,8 @@ export default function Drawer({
                 }}
               />
             )
-          })}
-          <Image
-            src={`/assets/traits/appearance.svg`}
-            width={332}
-            height={43}
-            objectFit={`contain`}
-          />
-          {TRAITS.slice(3, 7).map(({ trait_type, options, total, icon }, i) => {
-            return (
-              <TraitType
-                key={i}
-                {...{
-                  trait_type,
-                  total,
-                  options,
-                  selectedFilterArray,
-                  addFilter,
-                  filteredArray,
-                  icon,
-                }}
-              />
-            )
-          })}
-          <Image
-            src={`/assets/traits/equipment.svg`}
-            width={332}
-            height={43}
-            objectFit={`contain`}
-          />
-          {TRAITS.slice(7, 11).map(
-            ({ trait_type, options, total, icon }, i) => {
-              return (
-                <TraitType
-                  key={i}
-                  {...{
-                    trait_type,
-                    total,
-                    options,
-                    selectedFilterArray,
-                    addFilter,
-                    filteredArray,
-                    icon,
-                  }}
-                />
-              )
-            }
-          )}
-        </div>
+          }
+        )}
       </div>
     </div>
   )
@@ -123,6 +142,8 @@ const TraitType = ({
           // background: "#eee",
           background: "transparent",
           boxShadow: "none",
+          margin: 0,
+          padding: 0
         }}
       >
         <AccordionSummary
@@ -135,7 +156,7 @@ const TraitType = ({
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            paddingRight: 30,
+            paddingRight: '10%',
             paddingLeft: 25,
 
           }}
@@ -153,14 +174,16 @@ const TraitType = ({
             overflowY: "scroll",
             // display: "inline-flex",
             flexDirection: "column",
+            padding: 0,
+            margin: '0 12px 10px 0'
           }}
         >
+
           {options.map((item, i) => {
             const checkValue = (obj) => item?.trait_value?.includes(obj.value)
             const isExisted = filteredArray.find((o) =>
               o?.traits?.some(checkValue)
             )
-
             return isExisted ? (
               <ValueTrait
                 key={i}
@@ -173,6 +196,7 @@ const TraitType = ({
               />
             ) : null
           })}
+
         </AccordionDetails>
       </Accordion>
     </>

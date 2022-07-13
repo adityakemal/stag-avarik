@@ -3,8 +3,19 @@ import { shuffleArray } from "components/pages/gallery/filter-helpers";
 
 import nftDataJson from "../../public/nft-source/opensea_avarik_stats.json"
 
+const flatted = nftDataJson.map(d => {
+    let data = {
+        ...d,
+    }
+    for (const t of d.traits) {
+        data[t.trait_type] = t.value
+    }
+    return data
+})
+
 let initialState = {
-    galleryList: [...nftDataJson],
+    initialGallery: [...nftDataJson],
+    galleryList: [...flatted],
     filterList: [],
 };
 

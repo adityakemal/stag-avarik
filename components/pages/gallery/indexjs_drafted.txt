@@ -27,7 +27,7 @@ export default function App() {
   const [allArr, setAllArr] = React.useState([])
   // const [_options, addFilter] = React.useState([])
   const [_options] = React.useState([])
-  const [range, setRange] = React.useState(16)
+  const [range, setRange] = React.useState(24)
   const [isPending, startTransition] = React.useTransition()
 
   React.useEffect(() => {
@@ -40,6 +40,12 @@ export default function App() {
   React.useEffect(() => {
     dispatch(filterEngine())
   }, [filterList])
+
+
+  const handleLoadMore = (v) => {
+    console.log(v, '====>load more')
+    setRange(range + 12)
+  }
 
 
   const addFilter = (v) => dispatch(handleFilterData(v))
@@ -67,6 +73,48 @@ export default function App() {
   }, [inView])
 
 
+  const compWrapImages = () => (
+    <div className="w-100 content-images ">
+      <InfiniteScroll
+        initialLoad={false}
+        pageStart={0}
+        loadMore={handleLoadMore}
+        hasMore={true || false}
+        // loader={<div className="" key={0}>Loading ...</div>}
+        useWindow={false}
+      >
+        <div className="box-images">
+          {allArr.slice(0, range).map((item, i) => (
+            <div
+              className="wrapfigure transition "
+              onClick={() => {
+                setCurrentItem(item)
+                handleOpen(true)
+              }}
+              key={item?.id}
+            >
+              <div className="p-1 mb-2 cursor-pointer" style={{ border: '1px solid #A59480' }}>
+                <Image
+                  src={item.image}
+                  alt={item.id}
+                  width="100%" height="100%" layout="responsive" objectFit="contain"
+                  placeholder="blur"
+                  blurDataURL="./icons/apple-icon.png"
+                // blurDataURL="https://abstackwp.khingars.com/wp-content/uploads/2021/09/image-blur-placeholder.png"
+                />
+              </div>
+              <h6 className={`title text-white text-break `}>
+                {item?.name}
+              </h6>
+            </div>
+          ))}
+        </div>
+      </InfiniteScroll>
+    </div>
+
+  )
+
+
   //1200 width
   return (
     <div className="sc-gallery position-relative w-100 h-100 pb-5 mb-5">
@@ -75,30 +123,75 @@ export default function App() {
         className="bg-gallery"
         src={bgGallery}
         layout="fill"
-      // style={{
-      //   objectFit: "contain",
-      //   position: "fixed",
-      //   zIndex: `-1 !important`,
-      //   border: `3px solid red`,
-      // }}
       />
-
-      <h1
-        className="w-100 p-5 text-center text-white "
-        style={{ paddingTop: 100, zIndex: 888 }}
-      >
+      <h1 className="w-100 p-5 text-center text-white " style={{ paddingTop: 100, zIndex: 888 }}>
         Gallery
       </h1>
       {/* <pre>
         {JSON.stringify(filterList, null, 2)}
       </pre> */}
 
-      <div className="container p-auto ">
+      <div className="container">
+        <div className="row row-5">
+
+          {/* LEFT CONTENT  */}
+          <div className="col-md-4 bg-info">
+            <div className="d-flex mb-3 justify-content-end align-items-center w-100 bg-warning">
+              <button className="text-white border-0 bg-transparent " onClick={() => dispatch(handleResetData())}>
+                Reset
+              </button>
+            </div>
+
+            <div className="w-100">
+              <img src={filterTitle} className='' />
+            </div>
+
+            <Drawer
+              {...{
+                selectedFilterArray: _options,
+                addFilter,
+                filteredArray: allArr,
+              }}
+            />
+
+          </div>
+
+          {/* RIGHT CONTENT  */}
+          <div className="col-md-8">
+            {/* HEADER  */}
+            <div className="wrap-search pb-5">
+              <div className="d-flex mb-3 justify-content-between align-items-center w-100 ">
+                <h5 className="text-white  border-0 bg-transparent m-0" style={{ marginTop: 14 }} >
+                  {galleryList?.length} ITEMS
+                </h5>
+                <h6 className="text-white  border-0 bg-transparent m-0 cursor-pointer" onClick={() => handleSortByName()}>
+                  Sort By Name
+                </h6>
+              </div>
+              <SearchBar />
+            </div>
+            {/* HEADER END */}
+            {
+              isPending ?
+                <div style={{ width: '100%', height: '80vh' }} className='row'>
+                  {[1, 1, 1, 1].map((res, i) => (
+                    <div className="col-md-3" key={i}>
+                      <Skeleton variant="rectangular" className="w-100" style={{ height: 200 }} />
+                    </div>
+                  ))}
+                </div>
+                :
+                compWrapImages()
+            }
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="container p-auto ">
         <div className="w-100 row  position-sticky zindex-sticky m-auto">
           <TopDrawer handleReset={() => dispatch(handleResetData())} />
           <LeftHeader {...{ startTransition, allArr, setAllArr, handleSortByName }}>
             {galleryList?.length} ITEMS
-            {/* <button onClick={() => dispatch(getInitialData())}>test</button> */}
 
           </LeftHeader>
         </div>
@@ -108,7 +201,7 @@ export default function App() {
             {...{
               selectedFilterArray: _options,
               addFilter,
-              filteredArray: galleryList,
+              filteredArray: [],
             }}
           />
 
@@ -119,12 +212,8 @@ export default function App() {
                   <div
                     className="transition box-nft "
                     onClick={() => {
-                      //
                       setCurrentItem(item)
                       handleOpen(true)
-                      // window.open(
-                      //   `https://opensea.io/assets/0x127e479ac59a1ea76afdedf830fecc2909aa4cae/${item?.id}`
-                      // )
                     }}
                     key={item?.id}
                   >
@@ -161,7 +250,7 @@ export default function App() {
             `}</style>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
@@ -207,9 +296,6 @@ const LeftHeader = ({ startTransition, allArr, setAllArr, children, handleSortBy
       <h6 className="text-white title  border-0 bg-transparent m-0 cursor-pointer" onClick={() => handleSortByName()}>
         Sort By Name
       </h6>
-      {/* <pre>
-        {JSON.stringify(allArr, null, 2)}
-      </pre> */}
     </div>
 
     <br />
@@ -221,7 +307,7 @@ const LeftHeader = ({ startTransition, allArr, setAllArr, children, handleSortBy
         zIndex: 999,
       }}
     >
-      <SearchBar {...{ startTransition, allArr, setAllArr }} />
+      <SearchBar />
     </div>
   </div>
 )
@@ -254,23 +340,11 @@ const LoadImage = ({ imgSrc = "", alt = "" }) => {
         style={{
           width: "100%",
           height: "100%",
-
-          // objectFit: "cover",
-          // border: `1px solid #eee`,
-          // background: loaded ? "#eee" : "transparent",
           background: "gray",
           // opacity: loaded ? 1 : 0,
           cursor: "pointer",
         }}
       />
-      {/* {!loaded && (
-        <Skeleton
-          style={{ position: "absolute" }}
-          variant="rectangular"
-          width={250}
-          height={250}
-        />
-      )} */}
     </>
   )
 }
