@@ -18,6 +18,7 @@ import { filterEngine, getInitialData, handleFilterData, handleResetData, handle
 import AvarikTitle from "components/avarik-saga/avarik-title"
 import { useScrollAnim } from "components/hooks/hooks"
 import MobileDrawer from "./MobileDrawer"
+import SortMenu from "./SortMenu"
 
 const avarikMetadata = shuffleArray(avarikMetadatax)
 
@@ -120,7 +121,7 @@ export default function App() {
   //1200 width
   return (
 
-    <div className={`sc-gallery pb-5 mb-5 ${anim(1)} pt-5 pt-xs-3`}
+    <div className={`sc-gallery pb-5 mb-5 ${anim(1)} pt-5 pt-xs-2`}
       ref={trigger}
       style={{
         backgroundImage: `url(${bgGallery})`,
@@ -137,19 +138,21 @@ export default function App() {
       </pre> */}
 
 
-      <div className="w-100 d-flex justify-content-end ">
-        <MobileDrawer>
-          <Drawer
-            {...{
-              selectedFilterArray: _options,
-              addFilter,
-              filteredArray: [],
-            }}
-          />
-        </MobileDrawer>
-      </div>
 
       <div className="container mt-md-5 mt-3">
+
+        <div className="w-100 d-flex d-md-none mb-3">
+          <MobileDrawer>
+            <Drawer
+              {...{
+                selectedFilterArray: _options,
+                addFilter,
+                filteredArray: [],
+              }}
+            />
+          </MobileDrawer>
+        </div>
+
         <div className="row row-4">
           {/* LEFT CONTENT  */}
           <div className="col-md-4  d-none d-md-block">
@@ -190,9 +193,11 @@ export default function App() {
                   {galleryList?.length} ITEMS
                 </h5>
 
-                <h6 className="text-white  border-0 bg-transparent m-0 cursor-pointer" onClick={() => handleSortByName()}>
+                <SortMenu />
+
+                {/* <h6 className="text-white  border-0 bg-transparent m-0 cursor-pointer" onClick={() => handleSortByName()}>
                   Sort By Name
-                </h6>
+                </h6> */}
               </div>
               <div className="mt-3">
                 <SearchBar />
@@ -203,7 +208,7 @@ export default function App() {
               isPending ?
                 <div style={{ width: '100%', height: '85vh' }} className='row'>
                   {[1, 1, 1, 1, 1, 1, 1, 1].map((res, i) => (
-                    <div className="col-md-3" key={i}>
+                    <div className="col-6 col-md-3" key={i}>
                       <Skeleton variant="rectangular" className="w-100" style={{ height: 200 }} />
                     </div>
                   ))}
