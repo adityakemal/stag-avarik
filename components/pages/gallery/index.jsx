@@ -155,7 +155,7 @@ export default function App() {
 
         <div className="row row-4">
           {/* LEFT CONTENT  */}
-          <div className="col-md-4  d-none d-md-block">
+          <div className="col-md-4  d-none d-lg-block">
             <div className="d-flex justify-content-end align-items-center w-100" style={{ height: 20 }}>
               {/* <h6 className="text-white m-0 cursor-pointer" onClick={() => dispatch(handleResetData())}>
                 Reset
@@ -185,7 +185,7 @@ export default function App() {
           </div>
 
           {/* RIGHT CONTENT  */}
-          <div className="col-md-8">
+          <div className="col-lg-8">
             {/* HEADER  */}
             <div className="wrap-search pb-4">
               <div className="d-flex justify-content-between align-items-center w-100 " style={{ height: 20 }}>
@@ -207,7 +207,7 @@ export default function App() {
             {
               isPending ?
                 <div style={{ width: '100%', height: '85vh' }} className='row'>
-                  {[1, 1, 1, 1, 1, 1, 1, 1].map((res, i) => (
+                  {[1, 1, 1, 1].map((res, i) => (
                     <div className="col-6 col-md-3" key={i}>
                       <Skeleton variant="rectangular" className="w-100" style={{ height: 200 }} />
                     </div>

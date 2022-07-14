@@ -47,7 +47,7 @@ export default function Drawer({
 
   var selectedFilterArray = filterList
   return (
-    <div className="text-white box-drawer">
+    <div className="text-white box-drawer w-100">
       <div style={{ paddingBottom: 20 }}>
         <Image
           src={`/assets/traits/classification.svg`}
@@ -150,19 +150,25 @@ const TraitType = ({
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-          className='my-0'
+          className='my-0 panel1a-header'
           style={{
-            backgroundImage: `url(./assets/AccordionItem.svg)`,
-            backgroundSize: "contain",
+            backgroundImage: `url(./assets/AccordionItemEdited.svg)`,
+            backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            paddingRight: '10%',
+            paddingRight: '10.5%',
             paddingLeft: 25,
+            // height: `100%`,
+            position: "relative",
+            height: 56,
+            minHeight: 56
+
+
 
           }}
         >
-          <div className="d-inline-flex justify-content-between align-items-center" >
+          <div className="d-inline-flex justify-content-between align-items-center m-0" >
             <Image width={20} height={20} src={icon} />
+            {/* <img className="bg-accordion" src='/assets/AccordionItem.svg' /> */}
             <h6 className="title ml-2 mt-2">
               {trait_type} ({total})
             </h6>
@@ -175,7 +181,7 @@ const TraitType = ({
             // display: "inline-flex",
             flexDirection: "column",
             padding: 0,
-            margin: '0 12px 10px 0'
+            margin: '0px 3.77% 0px 0px'
           }}
         >
 

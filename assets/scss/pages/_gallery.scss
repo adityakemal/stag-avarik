@@ -9,7 +9,7 @@
 
   .wrapfigure {
     flex: auto;
-    flex-basis: 175px;
+    flex-basis: 170px;
 
     img {
       width: 100% !important;
@@ -33,6 +33,8 @@
     }
   }
 
+  .bg-accordion {}
+
 
   .img-wrapper {
     border: 1px solid rgba($brown-light, 0.5);
@@ -45,6 +47,14 @@
 
 
   }
+
+  // .panel1a-header {
+  //   height: 50px !important;
+
+  //   .MuiAccordionSummary-content {
+  //     padding: 0 !important;
+  //   }
+  // }
 
   .box-nft {
     margin: 6px;

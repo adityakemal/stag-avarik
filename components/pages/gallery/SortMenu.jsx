@@ -37,16 +37,17 @@ export default function SortMenu({ children }) {
                 open={menuOpen}
                 onClose={closeMenu}
             >
-                <div className="pr-5 pl-2"
+                <ul className="pr-5 pl-2"
                     style={{
-                        background: '#423B38'
+                        background: '#423B38',
+                        width: 100
                     }}>
                     {
                         menuObj.map((res, i) =>
-                            <p className='m-0 py-1 cursor-pointer text-white'>{res.label}</p>
+                            <p key={i} className='m-0 py-1 cursor-pointer text-white'>{res.label}</p>
                         )
                     }
-                </div>
+                </ul>
             </Menu >
         </div >
     );
