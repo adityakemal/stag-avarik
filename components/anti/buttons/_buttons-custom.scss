@@ -9,13 +9,15 @@
 // Set hover darken color (in %)
 $btn-hover-bg-darken-custom: $btn-hover-bg-darken; // EDIT THIS AS NEEDED (Default: 5%)
 
-@each $color, $value in $theme-colors {
+@each $color,
+$value in $theme-colors {
   &.btn-outline-#{$color} {
     @include hover-focus {
       background-color: darken($value, $btn-hover-bg-darken-custom);
       border-color: darken($value, $btn-hover-bg-darken-custom);
     }
   }
+
   &.btn-#{$color} {
     @include hover-focus {
       background-color: darken($value, $btn-hover-bg-darken-custom);
@@ -37,6 +39,7 @@ $btn-hover-bg-darken-custom: $btn-hover-bg-darken; // EDIT THIS AS NEEDED (Defau
 // Toggle hover underline effect for link buttons
 .btn-link {
   @extend .hover-underline;
+
   &:before {
     bottom: 0.5rem; // underline effect position (default: 0)
   }
@@ -52,6 +55,7 @@ $btn-hover-bg-darken-custom: $btn-hover-bg-darken; // EDIT THIS AS NEEDED (Defau
 }
 
 .btn-outline-white {
+
   &:before,
   &:after {
     content: "";
@@ -61,13 +65,17 @@ $btn-hover-bg-darken-custom: $btn-hover-bg-darken; // EDIT THIS AS NEEDED (Defau
     top: 0;
     background: rgba($white, 0.5);
   }
+
   &:before {
     left: 0.25rem;
   }
+
   &:after {
     right: 0.25rem;
   }
+
   &:hover(not:disabled) {
+
     &:before,
     &:after {
       background: $black;
