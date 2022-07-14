@@ -80,6 +80,33 @@ const META_FILTER = [
     icon: "/assets/traits/subclass.svg",
   },
   {
+    trait_type: "Background",
+    options: [
+      { trait_value: "Glacian IV", total: "1194" },
+      { trait_value: "Ignisian IV", total: "1190" },
+      { trait_value: "Tenebrisian IV", total: "1188" },
+      { trait_value: "Terran IV", total: "1188" },
+
+      { trait_value: "Glacian III", total: "900" },
+      { trait_value: "Ignisian III", total: "900" },
+      { trait_value: "Tenebrisian III", total: "900" },
+      { trait_value: "Terran III", total: "900" },
+
+      { trait_value: "Glacian II", total: "120" },
+      { trait_value: "Ignisian II", total: "120" },
+      { trait_value: "Tenebrisian II", total: "120" },
+      { trait_value: "Terran II", total: "120" },
+
+      { trait_value: "Glacian I", total: "12" },
+      { trait_value: "Ignisian I", total: "12" },
+      { trait_value: "Tenebrisian I", total: "12" },
+      { trait_value: "Terran I", total: "12" },
+    ],
+    total: "16",
+    icon: "/assets/traits/background.svg",
+  },
+
+  {
     trait_type: "Gender",
     options: [
       { trait_value: "Male", total: "4445" },
@@ -269,32 +296,7 @@ const META_FILTER = [
     total: "130",
     icon: "/assets/traits/head.svg",
   },
-  {
-    trait_type: "Background",
-    options: [
-      { trait_value: "Glacian IV", total: "1194" },
-      { trait_value: "Ignisian IV", total: "1190" },
-      { trait_value: "Tenebrisian IV", total: "1188" },
-      { trait_value: "Terran IV", total: "1188" },
 
-      { trait_value: "Glacian III", total: "900" },
-      { trait_value: "Ignisian III", total: "900" },
-      { trait_value: "Tenebrisian III", total: "900" },
-      { trait_value: "Terran III", total: "900" },
-
-      { trait_value: "Glacian II", total: "120" },
-      { trait_value: "Ignisian II", total: "120" },
-      { trait_value: "Tenebrisian II", total: "120" },
-      { trait_value: "Terran II", total: "120" },
-
-      { trait_value: "Glacian I", total: "12" },
-      { trait_value: "Ignisian I", total: "12" },
-      { trait_value: "Tenebrisian I", total: "12" },
-      { trait_value: "Terran I", total: "12" },
-    ],
-    total: "16",
-    icon: "/assets/traits/background.svg",
-  },
   {
     trait_type: "Weapon",
     options: [

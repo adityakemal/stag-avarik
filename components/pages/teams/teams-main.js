@@ -215,7 +215,6 @@ const TeamsMain = () => {
                                         size="sm"
                                         shape="square"
                                         variant="outline-white"
-                                        size="sm"
                                         className={anim(4 + i)}
                                         data={item.social}
                                     />

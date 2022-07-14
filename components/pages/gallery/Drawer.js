@@ -77,7 +77,7 @@ export default function Drawer({
           height={43}
           objectFit={`contain`}
         />
-        {TRAITS.slice(4, 8).map(({ trait_type, options, total, icon }, i) => {
+        {TRAITS.slice(4, 7).map(({ trait_type, options, total, icon }, i) => {
           return (
             <TraitType
               key={i}
@@ -99,7 +99,7 @@ export default function Drawer({
           height={43}
           objectFit={`contain`}
         />
-        {TRAITS.slice(8, 11).map(
+        {TRAITS.slice(7, 11).map(
           ({ trait_type, options, total, icon }, i) => {
             return (
               <TraitType
