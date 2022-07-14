@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+
+    commands:
+      # install npm
+      - npm install
+
+  build:
+    commands:
+      # run build script
+      - npm build
+
+artifacts:
+  # include all files required to run application
+  # notably excluded is node_modules, as this will cause overwrite error on deploy
+  files:
+    - assets/**/*
+    - components/**/*
+    - context/**/*
+    - pages/**/*
+    - public/**/*
+    - redux/**/*
+    - scripts/**/*
+    - jsconfig.json
+    - package.json
+    - appspec.yml
+    - next.config.js
