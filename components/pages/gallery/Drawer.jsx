@@ -47,7 +47,7 @@ export default function Drawer({
 
   var selectedFilterArray = filterList
   return (
-    <div className="text-white box-drawer w-100">
+    <div className="text-white box-drawer">
       <div style={{ paddingBottom: 20 }}>
         <Image
           src={`/assets/traits/classification.svg`}
@@ -155,13 +155,20 @@ const TraitType = ({
             backgroundImage: `url(./assets/AccordionItemEdited.svg)`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
-            paddingRight: '10.5%',
-            paddingLeft: 25,
-            // height: `100%`,
-            width: '100%',
-            position: "relative",
+            // paddingRight: '10.5%',
+            // paddingLeft: 25,
+            // // height: `100%`,
+            // width: '100%',
+            // position: "relative",
             height: 56,
-            minHeight: 56
+            minHeight: 56,
+
+            // backgroundImage: `url(./assets/AccordionItem.svg)`,
+            // backgroundSize: "contain",
+            // backgroundRepeat: "no-repeat",
+            // backgroundPosition: "center",
+            paddingRight: '10%',
+            paddingLeft: 25,
 
 
 

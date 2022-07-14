@@ -17,7 +17,7 @@ export default function MobileDrawer({ children }) {
                     open={showMobileModal}
                     onClose={() => setShowMobileModal(!showMobileModal)}
                     PaperProps={{
-                        sx: { width: "fit-content", background: 'black' },
+                        sx: { width: "fit-content", background: '#423B38' },
                     }}
                 >
                     <div>
@@ -27,7 +27,7 @@ export default function MobileDrawer({ children }) {
                                 position: 'sticky',
                                 top: 0,
                                 zIndex: 9999,
-                                background: 'black',
+                                background: '#423B38',
                             }}
                         >
                             <Button onClick={() => setShowMobileModal(!showMobileModal)}> <Close sx={{ color: 'white' }} /></Button>

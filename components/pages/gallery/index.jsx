@@ -141,7 +141,7 @@ export default function App() {
 
       <div className="container mt-md-5 mt-3">
 
-        <div className="w-100 d-flex d-md-none mb-3">
+        <div className="w-100 d-flex d-lg-none mb-3">
           <MobileDrawer>
             <Drawer
               {...{
@@ -192,9 +192,7 @@ export default function App() {
                 <h5 className="text-white  border-0 bg-transparent m-0" style={{ marginTop: 14 }} >
                   {galleryList?.length} ITEMS
                 </h5>
-
                 <SortMenu />
-
                 {/* <h6 className="text-white  border-0 bg-transparent m-0 cursor-pointer" onClick={() => handleSortByName()}>
                   Sort By Name
                 </h6> */}
