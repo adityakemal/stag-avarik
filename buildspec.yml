@@ -7,15 +7,15 @@ phases:
 
     commands:
       - echo update npm...
-      - npm install -g n
+      - npm install -g n --force
       - n latest
-      - npm update -g npm
+      - npm update -g npm --force
       - echo node -v
       - node -v
       - echo npm -v
       - npm -v
       - echo install yarn...
-      - npm install -g yarn
+      - npm install -g yarn --force
       - echo yarn -v
       - yarn -v
   pre_build:
@@ -32,7 +32,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      
+
 artifacts:
   # include all files required to run application
   # notably excluded is node_modules, as this will cause overwrite error on deploy
@@ -43,7 +43,7 @@ artifacts:
     - pages/**/*
     - public/**/*
     - redux/**/*
-    - scripts/**/*
+    - build/**/*
     - jsconfig.json
     - package.json
     - appspec.yml
