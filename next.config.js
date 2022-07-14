@@ -1,7 +1,13 @@
 const withImages = require("next-images");
 const { publicRuntimeConfig, webpack } = withImages();
+const withSass = require('next-dart-sass')
 
-module.exports = {
+module.exports = withSass({
+  cssModules: true,
+  cssLoaderOptions: {
+    importLoaders: 1,
+    localIdentName: "[local]___[hash:base64:5]",
+  },
   reactStrictMode: true,
   publicRuntimeConfig,
   webpack,
@@ -15,4 +21,4 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   }
-}
+})
