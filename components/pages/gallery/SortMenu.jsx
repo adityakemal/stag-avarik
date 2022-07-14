@@ -36,14 +36,14 @@ export default function SortMenu({ children }) {
                 anchorEl={anchorEl}
                 open={menuOpen}
                 onClose={closeMenu}
-                style={{
-
-                }}
             >
-                <div className="pr-5 pl-2">
+                <div className="pr-5 pl-2"
+                    style={{
+                        background: '#423B38'
+                    }}>
                     {
                         menuObj.map((res, i) =>
-                            <p className='m-0 py-1 cursor-pointer'>{res.label}</p>
+                            <p className='m-0 py-1 cursor-pointer text-white'>{res.label}</p>
                         )
                     }
                 </div>
