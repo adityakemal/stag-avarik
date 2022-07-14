@@ -6,14 +6,33 @@ phases:
       nodejs: 16
 
     commands:
-      # install npm
-      - npm install
-
+      - echo update npm...
+      - npm install -g n
+      - n latest
+      - npm update -g npm
+      - echo node -v
+      - node -v
+      - echo npm -v
+      - npm -v
+      - echo install yarn...
+      - npm install -g yarn
+      - echo yarn -v
+      - yarn -v
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - yarn install
+  
   build:
     commands:
-      # run build script
-      - npm build
-
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+      - yarn run build
+    
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      
 artifacts:
   # include all files required to run application
   # notably excluded is node_modules, as this will cause overwrite error on deploy
