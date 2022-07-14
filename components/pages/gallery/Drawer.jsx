@@ -158,6 +158,7 @@ const TraitType = ({
             paddingRight: '10.5%',
             paddingLeft: 25,
             // height: `100%`,
+            width: '100%',
             position: "relative",
             height: 56,
             minHeight: 56

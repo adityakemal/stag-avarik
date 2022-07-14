@@ -29,6 +29,7 @@ export default function SortMenu({ children }) {
                 className='cursor-pointer text-white my-0'
                 id="basic-button"
                 onClick={recordButtonPosition}
+                style={{ marginRight: 1 }}
             >
                 Sort By
             </h6>
