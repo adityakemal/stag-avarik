@@ -7,8 +7,6 @@ phases:
 
     commands:
       - echo update npm...
-      - npm install -g n --force
-      - n latest
       - npm update -g npm --force
       - echo node -v
       - node -v
