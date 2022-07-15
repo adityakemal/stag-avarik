@@ -11,7 +11,8 @@ import ModalPic from "./modal"
 import SearchBar from "./search"
 import Tags from "./tags"
 import bgGallery from "assets/img/gallery/bg-gallery.svg"
-import filterTitle from "assets/img/gallery/filter-title.svg"
+// import filterTitle from "assets/img/gallery/filter-title.svg"
+import filterTitle from "assets/img/gallery/filterTitle.png"
 import { useInView } from "react-intersection-observer"
 import { useDispatch, useSelector } from "react-redux"
 import { filterEngine, getInitialData, handleFilterData, handleResetData, handleSortName } from "redux/gallery/gallery.reducer"
@@ -162,12 +163,22 @@ export default function App() {
               </h6> */}
             </div>
 
-            <div className="w-100 d-flex justify-content-end mt-3">
-              <div className="w-100 d-flex align-items-center justify-content-between " style={{ height: 60, maxWidth: 332 }}>
-                <div><img src={filterTitle} style={{ maxWidth: 230, width: '100%' }} /></div>
-                <h6 className="text-white m-0 cursor-pointer" onClick={() => dispatch(handleResetData())}>
+            <div className="w-100 d-flex justify-content-end mt-3 pr-4">
+              <div className="w-100 d-flex align-items-center justify-content-between" style={{ height: 60, maxWidth: 320, position: 'relative' }}>
+                {/* <div>
+                <img src={filterTitle} style={{ maxWidth: 230, width: '100%' }} />
+                </div> */}
+                <img src={filterTitle} className='w-100 h-100' />
+                <p className="text-white m-0 cursor-pointer"
+                  style={{
+                    position: 'absolute',
+                    right: '12%',
+                    fontSize: '1.24rem',
+                    opacity: 0,
+                  }}
+                  onClick={() => dispatch(handleResetData())}>
                   Reset
-                </h6>
+                </p>
               </div>
             </div>
 

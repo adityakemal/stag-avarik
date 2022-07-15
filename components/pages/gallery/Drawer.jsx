@@ -49,11 +49,9 @@ export default function Drawer({
   return (
     <div className="text-white box-drawer">
       <div style={{ paddingBottom: 20 }}>
-        <Image
+        <img
           src={`/assets/traits/classification.svg`}
-          width={332}
-          height={43}
-          objectFit={`contain`}
+          style={{ paddingRight: 10, marginTop: '-10px', width: '100%' }}
         />
         {TRAITS.slice(0, 4).map(({ trait_type, options, total, icon }, i) => {
           return (
@@ -71,11 +69,9 @@ export default function Drawer({
             />
           )
         })}
-        <Image
+        <img
           src={`/assets/traits/appearance.svg`}
-          width={332}
-          height={43}
-          objectFit={`contain`}
+          style={{ paddingRight: 10, marginTop: '-10px', width: '100%' }}
         />
         {TRAITS.slice(4, 7).map(({ trait_type, options, total, icon }, i) => {
           return (
@@ -93,11 +89,9 @@ export default function Drawer({
             />
           )
         })}
-        <Image
+        <img
           src={`/assets/traits/equipment.svg`}
-          width={332}
-          height={43}
-          objectFit={`contain`}
+          style={{ paddingRight: 10, marginTop: '-10px', width: '100%' }}
         />
         {TRAITS.slice(7, 11).map(
           ({ trait_type, options, total, icon }, i) => {
@@ -261,7 +255,7 @@ const ValueTrait = ({
             tabIndex={-1}
             disableRipple
             inputProps={{ "aria-labelledby": `labelId` }}
-            style={{ filter: `invert(1)` }}
+            style={{ filter: `invert(1)`, paddingLeft: 20 }}
           />
         </ListItemIcon>
         <ListItemText
