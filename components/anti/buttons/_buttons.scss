@@ -17,18 +17,23 @@ button {
 .btn {
   position: relative;
   @include font-size($font-size-base);
+
   .el-loader {
     display: none;
   }
+
   &.loading,
   &.success {
+
     span,
     &:after,
     &:before {
       visibility: hidden;
     }
+
     .el-loader {
       display: block;
+
       &:before,
       &:after {
         height: 1rem;
@@ -43,10 +48,13 @@ button {
       }
     }
   }
+
   &.loading {
     pointer-events: none;
+
     .el-loader {
       animation: fadeIn 0.2s linear;
+
       &:before {
         font-family: "Anti Icons Regular";
         content: var($ai-circle);
@@ -54,6 +62,7 @@ button {
         z-index: 1;
         font-size: 1rem;
       }
+
       &:after {
         font-family: "Anti Icons Regular";
         content: var($ai-spinner-third);
@@ -63,8 +72,10 @@ button {
       }
     }
   }
+
   &.success {
     pointer-events: none;
+
     .el-loader {
       &:after {
         font-family: "Anti Icons Regular";
@@ -79,6 +90,7 @@ button {
 .btn-link {
   padding-left: 0;
   padding-right: 0;
+
   &:focus,
   &:active {
     box-shadow: none;
@@ -89,6 +101,7 @@ button {
 .btn-light,
 .btn-white {
   color: $primary;
+
   @include hover-focus-active {
     color: $primary;
   }
@@ -105,9 +118,11 @@ button {
   &.btn-ic-left {
     padding-left: 2.5rem;
   }
+
   &.btn-ic-right {
     padding-right: 2.5rem;
   }
+
   .el-ai-before {
     &:before {
       top: 50%;
@@ -116,6 +131,7 @@ button {
       position: absolute;
     }
   }
+
   .el-ai-after {
     &:before {
       top: 50%;
@@ -124,6 +140,7 @@ button {
       position: absolute;
     }
   }
+
   &.btn-link {
     .el-ai-before {
       &:before {
@@ -131,17 +148,21 @@ button {
         transition: $transition-base;
       }
     }
+
     .el-ai-after {
       &:before {
         right: 0;
         transition: $transition-base;
       }
     }
+
     &.btn-ic-left {
       padding-left: 1rem;
+
       &:before {
         display: none;
       }
+
       &:hover {
         .el-ai-before {
           &:before {
@@ -150,11 +171,14 @@ button {
         }
       }
     }
+
     &.btn-ic-right {
       padding-right: 1rem;
+
       &:before {
         display: none;
       }
+
       &:hover {
         .el-ai-after {
           &:before {

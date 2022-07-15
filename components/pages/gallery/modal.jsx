@@ -194,13 +194,13 @@ export default function ModalPic({ open, handleClose, currentItem }) {
             </div>
             <div className="col-md-4 py-xs-3 py-md-0">
 
-              <div className="framerchar">
+              <div className="framerchar d-flex justify-content-center">
                 <img
                   src={currentItem?.image}
                   className={`img-fluid img-char`}
-                  style={{ width: "100%", height: `100%`, objectFit: "cover" }}
+                  style={{ width: `160px`, objectFit: "cover" }}
                 />
-                <img className="frame img-fluid" src={`/assets/modal/frame-rarity.svg`} />
+                <img className="frame img-fluid" src={`/assets/modal/frame-rarity.svg`} style={{ width: `160px`, objectFit: "cover" }} />
 
               </div>
 

@@ -192,10 +192,10 @@ export default function App() {
                 <h5 className="text-white  border-0 bg-transparent m-0" style={{ marginTop: 14 }} >
                   {galleryList?.length} ITEMS
                 </h5>
-                <SortMenu />
-                {/* <h6 className="text-white  border-0 bg-transparent m-0 cursor-pointer" onClick={() => handleSortByName()}>
+                {/* <SortMenu /> */}
+                <h6 className="text-white  border-0 bg-transparent m-0 cursor-pointer" onClick={() => handleSortByName()} style={{ marginRight: 2 }}>
                   Sort By Name
-                </h6> */}
+                </h6>
               </div>
               <div className="mt-3">
                 <SearchBar />
