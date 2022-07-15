@@ -198,9 +198,8 @@ export default function ModalPic({ open, handleClose, currentItem }) {
                 <img
                   src={currentItem?.image}
                   className={`img-fluid img-char`}
-                  style={{ width: `160px`, objectFit: "cover" }}
                 />
-                <img className="frame img-fluid" src={`/assets/modal/frame-rarity.svg`} style={{ width: `160px`, objectFit: "cover" }} />
+                <img className="frame img-fluid" src={`/assets/modal/frame-rarity.svg`} />
 
               </div>
 

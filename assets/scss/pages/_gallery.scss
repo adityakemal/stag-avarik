@@ -71,6 +71,10 @@
     height: 100vh;
     overflow-y: auto;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     .box-images {
       // background-color: salmon;
       display: flex;
@@ -146,13 +150,16 @@
 .framerchar {
   position: relative;
 
-  .frame {
-    // width: 100% !important;
-    position: relative;
-  }
-
   .img-char {
+    width: 160px;
     position: absolute;
 
   }
+
+  .frame {
+    // width: 100% !important;
+    position: relative;
+    width: 160px;
+  }
+
 }
