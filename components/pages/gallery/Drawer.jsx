@@ -243,7 +243,7 @@ const ValueTrait = ({
   }
 
   return (
-    <ListItem disablePadding>
+    <ListItem disablePadding style={{ padding: '2px 0' }}>
       <ListItemButton role={undefined} onClick={handleClick} dense>
         <ListItemIcon>
           <Checkbox

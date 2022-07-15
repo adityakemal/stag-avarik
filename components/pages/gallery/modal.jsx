@@ -7,6 +7,7 @@ import rarityCommon from "assets/img/common/rarity-common.png"
 import rarityUncommon from "assets/img/common/rarity-uncommon.png"
 import rarityRare from "assets/img/common/rarity-rare.png"
 import rarityLegendary from "assets/img/common/rarity-legendary.png"
+import { Close } from "@mui/icons-material"
 
 const getRarityImage = (Subclass) => {
   switch (Subclass) {
@@ -165,8 +166,9 @@ export default function ModalPic({ open, handleClose, currentItem }) {
           <img src="/assets/modal/topFrame.png" alt="" />
         </div> */}
         <div className="container-fluid border-gallery modal-gallery">
-          <img className="rightbot" src="/assets/modal/rightBot.png" alt="" />
-          <img className="leftbot" src="/assets/modal/leftBot.png" alt="" />
+
+          <Close sx={{ color: '#A69580' }} onClick={handleClose} style={{ margin: '10px', position: 'absolute', right: '0', cursor: 'pointer', zIndex: 1000 }} />
+
           <div style={{ backgroundColor: '#423B38' }} className="row wrapboxes py-sm-5 py-xs-3">
             {/* //HEADER  */}
             <div className="col-md-8 text-white">
@@ -208,7 +210,13 @@ export default function ModalPic({ open, handleClose, currentItem }) {
 
 
           {/* //TRAITS  */}
-          <div className="row  wrapboxes pb-5" style={{ backgroundColor: '#D9D4C5' }}>
+          <div className="row  wrapboxes pb-5 pt-4" style={{ backgroundColor: '#D9D4C5', position: 'relative' }}>
+
+            <img className="lefttop" src={`/assets/modal/topLeftLineChar.png`} />
+            <img className="righttop" src={`/assets/modal/topRightLineChar.png`} />
+            <img className="rightbot" src="/assets/modal/rightBot.png" alt="" />
+            <img className="leftbot" src="/assets/modal/leftBot.png" alt="" />
+
             <div className="col-12 d-flex justify-content-center align-items-center my-4">
               <div>
                 <img src={`/assets/modal/leftLine.png`} className='img-fluid' style={{ width: "100%" }} />
@@ -222,13 +230,60 @@ export default function ModalPic({ open, handleClose, currentItem }) {
             </div>
 
             <div className="col-md-12">
-              <div className="row row-5">
-                <Traits {...{ currentItem }} />
+              {/* 
+              <pre>
+                {
+                  JSON.stringify(
+                    currentItem?.traits.slice(0, 5).map((item, i) => (
+                      item
+                    ))
+                    , null, 2)
+                }
+              </pre> */}
+              <div className="w-100 boxestraits">
+
+                <div className="boxlist">
+                  {
+                    currentItem?.traits.slice(0, 5).map((item, i) => (
+                      <div className="modal-boxtraits">
+                        <div className="titledesc">
+                          <img src={META_FILTER?.find((j) => j?.trait_type === item?.trait_type)?.icon} alt="" className="mr-2" />
+                          {item?.trait_type}
+                        </div>
+                        <div className="valuedesc">: {item?.value}</div>
+                      </div>
+                    ))
+                  }
+                </div>
+
+                <div className="boxlist">
+                  {
+                    currentItem?.traits.slice(5, 11).map((item, i) => (
+                      <div className="modal-boxtraits">
+                        <div className="titledesc">
+                          <img src={META_FILTER?.find((j) => j?.trait_type === item?.trait_type)?.icon} alt="" className="mr-2" />
+                          {item?.trait_type}
+                        </div>
+                        <div className="valuedesc">: {item?.value}</div>
+                      </div>
+                    ))
+                  }
+                </div>
+
               </div>
+
+
+
+              {/* <div className="w-100 px-2">
+                <div className="d-flex row-5">
+                  <Traits {...{ currentItem }} />
+                </div>
+              </div> */}
             </div>
 
             {/* // CHARACTER STAT  */}
             <div className="col-12 d-flex justify-content-center align-items-center my-4">
+
               <div>
                 <img src={`/assets/modal/leftLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
               </div>
@@ -238,6 +293,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
               <div>
                 <img src={`/assets/modal/rightLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
               </div>
+
             </div>
 
             <div className="col-md-12 d-flex justify-content-center mb-4">
@@ -325,7 +381,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
             </div>
 
 
-            <div className="col-md-12 mt-4 d-flex justify-content-center">
+            <div className="col-md-12 mt-4 d-flex justify-content-center mb-3">
               <AvarikButton
                 text="Buy Now on Opensea"
                 variant="dark"
