@@ -140,7 +140,7 @@ const TraitType = ({
   const ValueTrait = (item) => {
     const handleClickSelectSingle = () => {
       const isExist = filterList.some((e) => e.trait_type === trait_type && e.value === item?.trait_value)
-      console.log(isExist, 'is Exisgt')
+      // console.log(isExist, 'is Exisgt')
       if (isExist) {
 
         const filtered = filterList.filter(res => res.value !== item?.trait_value)
@@ -151,7 +151,7 @@ const TraitType = ({
           trait_type: trait_type,
           value: item?.trait_value
         }
-        console.log(data)
+        // console.log(data)
         addFilter([
           ...filterList,
           data
