@@ -13,16 +13,20 @@ import ListItemText from "@mui/material/ListItemText"
 import Checkbox from "@mui/material/Checkbox"
 import TRAITS from "./filter-helpers"
 import Image from "next/image"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { resolveHref } from "next/dist/shared/lib/router/router"
+import { handleFilterData } from "redux/gallery/gallery.reducer"
 
 // {"image":"ipfs://QmRRPWG96cmgTn2qSzjwr2qvfNEuhunv6FNeMFGa9bx6mQ","attributes":[{"trait_type":"Earring","value":"Silver Hoop"},{"trait_type":"Background","value":"Orange"},{"trait_type":"Fur","value":"Robot"},
 
 export default function Drawer({
   // filteredArray = [],
   // selectedFilterArray = [],
-  addFilter = () => { },
+  // addFilter = () => { },
 }) {
+  const dispatch = useDispatch()
+  const addFilter = (v) => dispatch(handleFilterData(v))
+
 
   const { filterList, galleryList, initialGallery } = useSelector(state => state.gallery)
 
@@ -46,6 +50,7 @@ export default function Drawer({
   }, [])
 
   var selectedFilterArray = filterList
+
   return (
     <div className="text-white box-drawer">
       <div style={{ paddingBottom: 20 }}>
@@ -149,22 +154,10 @@ const TraitType = ({
             backgroundImage: `url(./assets/AccordionItemEdited.svg)`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
-            // paddingRight: '10.5%',
-            // paddingLeft: 25,
-            // // height: `100%`,
-            // width: '100%',
-            // position: "relative",
             height: 56,
             minHeight: 56,
-
-            // backgroundImage: `url(./assets/AccordionItem.svg)`,
-            // backgroundSize: "contain",
-            // backgroundRepeat: "no-repeat",
-            // backgroundPosition: "center",
             paddingRight: '10%',
             paddingLeft: 25,
-
-
 
           }}
         >
@@ -186,6 +179,8 @@ const TraitType = ({
             margin: '0px 3.77% 0px 0px'
           }}
         >
+
+          <ValueTraitSelectAll options={options} trait_type={trait_type} addFilter={addFilter} />
 
           {options.map((item, i) => {
             const checkValue = (obj) => item?.trait_value?.includes(obj.value)
@@ -233,7 +228,7 @@ const ValueTrait = ({
         trait_type: trait_type,
         value: item?.trait_value
       }
-      console.log('noncheck')
+      console.log(data)
       addFilter([
         ...filterList,
         data
@@ -262,6 +257,80 @@ const ValueTrait = ({
           style={{ color: "white" }}
           id={`labelId`}
           primary={`${item?.trait_value} (${item?.total})`}
+        />
+      </ListItemButton>
+    </ListItem>
+  )
+}
+
+
+const ValueTraitSelectAll = ({
+  options,
+  // item,
+  trait_type,
+  // selectedFilterArray = [],
+  addFilter,
+}) => {
+
+  const { filterList } = useSelector(state => state.gallery)
+  // const traitValues = options.map(val => val.trait_value)
+  // console.log('====================================');
+  // console.log(traitValues);
+  // console.log('====================================');
+
+  // const isExist = filterList.every((e) => traitValues.includes(e.value))
+  // console.log(isExist, 'is Exisgt')
+
+  const handleClick = () => {
+
+    const allFilter = options.map(val => ({ trait_type: trait_type, value: val.trait_value }))
+    addFilter([
+      ...filterList,
+      ...allFilter
+    ])
+    // console.log(options.map(val => ({ value: val.trait_value, trait_type: trait_type })))
+
+    // if (isExist) {
+
+    //   const filtered = filterList.filter(res => res.value !== item?.trait_value)
+    //   // console.log(filtered, 'filter')
+    //   addFilter(filtered)
+    // } else {
+    //   const data = {
+    //     trait_type: trait_type,
+    //     value: item?.trait_value
+    //   }
+    //   console.log('noncheck')
+    //   addFilter([
+    //     ...filterList,
+    //     data
+    //   ])
+
+    // }
+  }
+
+  return (
+    <ListItem disablePadding style={{ padding: '2px 0' }}>
+      <ListItemButton role={undefined} onClick={handleClick} dense>
+        <ListItemIcon>
+          <Checkbox
+            edge="start"
+            checked={
+              false
+              // filterList.every((e) => traitValues.includes(e.value))
+              // selectedFilterArray.includes(item?.trait_value)
+              // filterList.some((e) => e.trait_type === trait_type && e.value === item?.trait_value)
+            }
+            tabIndex={-1}
+            disableRipple
+            inputProps={{ "aria-labelledby": `labelId` }}
+            style={{ filter: `invert(1)`, paddingLeft: 20 }}
+          />
+        </ListItemIcon>
+        <ListItemText
+          style={{ color: "white" }}
+          id={`labelId`}
+          primary={`Select All `}
         />
       </ListItemButton>
     </ListItem>
