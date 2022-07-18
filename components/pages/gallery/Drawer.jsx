@@ -138,7 +138,6 @@ const TraitType = ({
   const { filterList } = useSelector(state => state.gallery)
 
   const ValueTrait = (item) => {
-
     const handleClickSelectSingle = () => {
       const isExist = filterList.some((e) => e.trait_type === trait_type && e.value === item?.trait_value)
       console.log(isExist, 'is Exisgt')
@@ -189,9 +188,7 @@ const TraitType = ({
 
 
   const ValueTraitSelectAll = () => {
-
     const handleClickSelectAll = () => {
-
       const isExist = filterList.filter(res => res.trait_type.includes(trait_type)).length === options.length
       if (isExist) {
 
