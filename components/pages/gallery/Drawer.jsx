@@ -196,10 +196,11 @@ const TraitType = ({
         addFilter(filtered)
       } else {
 
-        const allFilter = options.map(val => ({ trait_type: trait_type, value: val.trait_value }))
+        const removeOld = filterList.filter(res => res.trait_type !== trait_type)
+        const addAllTrait = options.map(val => ({ trait_type: trait_type, value: val.trait_value }))
         addFilter([
-          ...filterList,
-          ...allFilter
+          ...removeOld,
+          ...addAllTrait
         ])
 
       }
