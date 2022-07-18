@@ -46,8 +46,7 @@ export const gallerySlice = createSlice({
         },
 
         handleSortName: (state, { payload }) => {
-            alert(payload.data)
-
+            // alert(payload.data)
             const data = state.galleryList.sort((a, b) => a.name.localeCompare(b.name))
             state.galleryList = data
         },
