@@ -1,10 +1,14 @@
 import * as React from 'react';
+import { Close, FilterAlt } from '@mui/icons-material';
+import { handleResetData } from 'redux/gallery/gallery.reducer';
+import { useDispatch } from 'react-redux';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import { Close, FilterAlt } from '@mui/icons-material';
 
 export default function MobileDrawer({ children }) {
     const [showMobileModal, setShowMobileModal] = React.useState(false);
+
+    const dispatch = useDispatch()
 
     return (
         <div>
@@ -22,7 +26,7 @@ export default function MobileDrawer({ children }) {
                 >
                     <div>
                         <div
-                            className="w-100 d-flex justify-content-between pr-3 py-2"
+                            className="w-100 d-flex justify-content-between pr-3 py-2 align-items-center"
                             style={{
                                 position: 'sticky',
                                 top: 0,
@@ -31,7 +35,9 @@ export default function MobileDrawer({ children }) {
                             }}
                         >
                             <Button onClick={() => setShowMobileModal(!showMobileModal)}> <Close sx={{ color: 'white' }} /></Button>
-                            Reset
+                            <div className='text-white cursor-pointer' onClick={() => dispatch(handleResetData())}>
+                                Reset
+                            </div>
                         </div>
 
                         <div className='w-100 px-3 py-2'>
