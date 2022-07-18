@@ -159,12 +159,15 @@ export default function ModalPic({ open, handleClose, currentItem }) {
           // padding: `3%`,
           outline: "none",
           border: 0,
-          overflow: 'auto'
+          overflow: 'auto',
+          paddingTop: 30,
+          position: 'relative',
         }}
       >
         {/* <div className="top-frame">
           <img src="/assets/modal/topFrame.png" alt="" />
         </div> */}
+        <img className="frame-top" src="/assets/modal/frameTopModal.svg" alt="" />
         <div className="container-fluid border-gallery modal-gallery">
 
           <Close sx={{ color: '#A69580' }} onClick={handleClose} style={{ margin: '10px', position: 'absolute', right: '0', cursor: 'pointer', zIndex: 1000 }} />
