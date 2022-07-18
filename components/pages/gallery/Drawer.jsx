@@ -124,6 +124,7 @@ export default function Drawer({
 // MuiButtonBase-root MuiAccordionSummary-root
 // Mui-expanded MuiAccordionSummary-gutters
 // css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root
+
 const TraitType = ({
   trait_type,
   options,
@@ -133,6 +134,104 @@ const TraitType = ({
   filteredArray,
   icon,
 }) => {
+
+  const { filterList } = useSelector(state => state.gallery)
+
+  const ValueTrait = (item) => {
+
+    const handleClickSelectSingle = () => {
+      const isExist = filterList.some((e) => e.trait_type === trait_type && e.value === item?.trait_value)
+      console.log(isExist, 'is Exisgt')
+      if (isExist) {
+
+        const filtered = filterList.filter(res => res.value !== item?.trait_value)
+        // console.log(filtered, 'filter')
+        addFilter(filtered)
+      } else {
+        const data = {
+          trait_type: trait_type,
+          value: item?.trait_value
+        }
+        console.log(data)
+        addFilter([
+          ...filterList,
+          data
+        ])
+
+      }
+    }
+
+    return (
+      <ListItem disablePadding style={{ padding: '2px 0' }}>
+        <ListItemButton role={undefined} onClick={handleClickSelectSingle} dense>
+          <ListItemIcon>
+            <Checkbox
+              edge="start"
+              checked={
+                // selectedFilterArray.includes(item?.trait_value)
+                filterList.some((e) => e.trait_type === trait_type && e.value === item?.trait_value)
+              }
+              tabIndex={-1}
+              disableRipple
+              inputProps={{ "aria-labelledby": `labelId` }}
+              style={{ filter: `invert(1)`, paddingLeft: 20 }}
+            />
+          </ListItemIcon>
+          <ListItemText
+            style={{ color: "white" }}
+            id={`labelId`}
+            primary={`${item?.trait_value} (${item?.total})`}
+          />
+        </ListItemButton>
+      </ListItem>
+    )
+  }
+
+
+  const ValueTraitSelectAll = () => {
+
+    const handleClickSelectAll = () => {
+
+      const isExist = filterList.filter(res => res.trait_type.includes(trait_type)).length === options.length
+      if (isExist) {
+
+        const filtered = filterList.filter(res => res.trait_type !== trait_type)
+        addFilter(filtered)
+      } else {
+
+        const allFilter = options.map(val => ({ trait_type: trait_type, value: val.trait_value }))
+        addFilter([
+          ...filterList,
+          ...allFilter
+        ])
+
+      }
+    }
+    return (
+      <ListItem disablePadding style={{ padding: '2px 0' }}>
+        <ListItemButton role={undefined} onClick={handleClickSelectAll} dense>
+          <ListItemIcon>
+            <Checkbox
+              edge="start"
+              checked={
+                filterList.filter(res => res.trait_type.includes(trait_type)).length === options.length
+              }
+              tabIndex={-1}
+              disableRipple
+              inputProps={{ "aria-labelledby": `labelId` }}
+              style={{ filter: `invert(1)`, paddingLeft: 20 }}
+            />
+          </ListItemIcon>
+          <ListItemText
+            style={{ color: "white" }}
+            id={`labelId`}
+            primary={`Select All `}
+          />
+        </ListItemButton>
+      </ListItem>
+    )
+  }
+
   return (
     <>
       <Accordion
@@ -180,24 +279,15 @@ const TraitType = ({
           }}
         >
 
-          <ValueTraitSelectAll options={options} trait_type={trait_type} addFilter={addFilter} />
+          {/* <ValueTraitSelectAll options={options} trait_type={trait_type} addFilter={addFilter} /> */}
+          {ValueTraitSelectAll()}
 
           {options.map((item, i) => {
             const checkValue = (obj) => item?.trait_value?.includes(obj.value)
             const isExisted = filteredArray.find((o) =>
               o?.traits?.some(checkValue)
             )
-            return isExisted ? (
-              <ValueTrait
-                key={i}
-                {...{
-                  item,
-                  trait_type,
-                  selectedFilterArray,
-                  addFilter,
-                }}
-              />
-            ) : null
+            return isExisted ? ValueTrait(item) : null
           })}
 
         </AccordionDetails>
@@ -206,133 +296,7 @@ const TraitType = ({
   )
 }
 
-const ValueTrait = ({
-  item,
-  trait_type,
-  selectedFilterArray = [],
-  addFilter,
-}) => {
-
-  const { filterList } = useSelector(state => state.gallery)
-
-  const handleClick = () => {
-    const isExist = filterList.some((e) => e.trait_type === trait_type && e.value === item?.trait_value)
-    console.log(isExist, 'is Exisgt')
-    if (isExist) {
-
-      const filtered = filterList.filter(res => res.value !== item?.trait_value)
-      // console.log(filtered, 'filter')
-      addFilter(filtered)
-    } else {
-      const data = {
-        trait_type: trait_type,
-        value: item?.trait_value
-      }
-      console.log(data)
-      addFilter([
-        ...filterList,
-        data
-      ])
-
-    }
-  }
-
-  return (
-    <ListItem disablePadding style={{ padding: '2px 0' }}>
-      <ListItemButton role={undefined} onClick={handleClick} dense>
-        <ListItemIcon>
-          <Checkbox
-            edge="start"
-            checked={
-              // selectedFilterArray.includes(item?.trait_value)
-              filterList.some((e) => e.trait_type === trait_type && e.value === item?.trait_value)
-            }
-            tabIndex={-1}
-            disableRipple
-            inputProps={{ "aria-labelledby": `labelId` }}
-            style={{ filter: `invert(1)`, paddingLeft: 20 }}
-          />
-        </ListItemIcon>
-        <ListItemText
-          style={{ color: "white" }}
-          id={`labelId`}
-          primary={`${item?.trait_value} (${item?.total})`}
-        />
-      </ListItemButton>
-    </ListItem>
-  )
-}
 
 
-const ValueTraitSelectAll = ({
-  options,
-  // item,
-  trait_type,
-  // selectedFilterArray = [],
-  addFilter,
-}) => {
 
-  const { filterList } = useSelector(state => state.gallery)
-  // const traitValues = options.map(val => val.trait_value)
-  // console.log('====================================');
-  // console.log(traitValues);
-  // console.log('====================================');
 
-  // const isExist = filterList.every((e) => traitValues.includes(e.value))
-  // console.log(isExist, 'is Exisgt')
-
-  const handleClick = () => {
-
-    const allFilter = options.map(val => ({ trait_type: trait_type, value: val.trait_value }))
-    addFilter([
-      ...filterList,
-      ...allFilter
-    ])
-    // console.log(options.map(val => ({ value: val.trait_value, trait_type: trait_type })))
-
-    // if (isExist) {
-
-    //   const filtered = filterList.filter(res => res.value !== item?.trait_value)
-    //   // console.log(filtered, 'filter')
-    //   addFilter(filtered)
-    // } else {
-    //   const data = {
-    //     trait_type: trait_type,
-    //     value: item?.trait_value
-    //   }
-    //   console.log('noncheck')
-    //   addFilter([
-    //     ...filterList,
-    //     data
-    //   ])
-
-    // }
-  }
-
-  return (
-    <ListItem disablePadding style={{ padding: '2px 0' }}>
-      <ListItemButton role={undefined} onClick={handleClick} dense>
-        <ListItemIcon>
-          <Checkbox
-            edge="start"
-            checked={
-              false
-              // filterList.every((e) => traitValues.includes(e.value))
-              // selectedFilterArray.includes(item?.trait_value)
-              // filterList.some((e) => e.trait_type === trait_type && e.value === item?.trait_value)
-            }
-            tabIndex={-1}
-            disableRipple
-            inputProps={{ "aria-labelledby": `labelId` }}
-            style={{ filter: `invert(1)`, paddingLeft: 20 }}
-          />
-        </ListItemIcon>
-        <ListItemText
-          style={{ color: "white" }}
-          id={`labelId`}
-          primary={`Select All `}
-        />
-      </ListItemButton>
-    </ListItem>
-  )
-}

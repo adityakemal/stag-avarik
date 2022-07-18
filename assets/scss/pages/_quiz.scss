@@ -1,0 +1,39 @@
+.quiz {
+    .sc-begin {
+        min-height: 100vh;
+        background-image: url(../../img/quiz/swirl.svg), url(../../img/quiz/bgquiz.svg);
+        background-repeat: no-repeat;
+        background-position: center bottom, center bottom;
+        background-size: cover;
+
+        p {
+            max-width: 680px;
+        }
+
+        .flag {
+            width: 100%;
+            max-width: 70px;
+            object-fit: contain;
+            height: 103px;
+            margin-right: 48px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+        .socialquiz {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    }
+
+
+    .quiz-template {
+        height: 100vh;
+
+        h1 {
+            color: red !important;
+        }
+    }
+}
