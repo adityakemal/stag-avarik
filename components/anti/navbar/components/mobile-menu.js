@@ -7,11 +7,11 @@ import iconDropdown from "assets/img/common/icon_dropdown.png"
 import AvarikButton from "components/avarik-saga/avarik-button"
 
 const gameInfo = [
-  // { name: "Gallery", link: "/gallery" },
   // { name: "Faction", link: "/factions" },
   { name: "Class", link: "/class" },
   { name: "Weapons", link: "/weapons" },
   { name: "Armors", link: "/armors" },
+  { name: "Gallery", link: "/gallery" },
   // { name: "Lands", link: "/land" },
 ]
 
