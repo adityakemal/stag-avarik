@@ -17,6 +17,7 @@ let initialState = {
     initialGallery: [...nftDataJson],
     galleryList: [...flatted],
     filterList: [],
+    sortString: '',
 };
 
 export const gallerySlice = createSlice({
@@ -45,8 +46,26 @@ export const gallerySlice = createSlice({
         },
 
         handleSortName: (state, { payload }) => {
+            alert(payload.data)
+
             const data = state.galleryList.sort((a, b) => a.name.localeCompare(b.name))
             state.galleryList = data
+        },
+        getHandleSortBy: (state, { payload }) => {
+            // alert(payload)
+            if (payload === 'name') {
+                const data = state.galleryList.sort((a, b) => a.name.localeCompare(b.name))
+                state.galleryList = data
+                state.sortString = payload
+            }
+            if (payload === 'id') {
+                const data = state.galleryList.sort((a, b) => parseInt(a.id) - parseInt(b.id))
+                state.galleryList = data
+                state.sortString = payload
+            }
+
+            // const data = state.galleryList.sort((a, b) => a.name.localeCompare(b.name))
+            // state.galleryList = data
         },
 
         filterEngine: (state) => {
@@ -68,6 +87,6 @@ export const gallerySlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { getInitialData, handleFilterData, filterEngine, handleSortName, handleResetData, getHandleSearch } = gallerySlice.actions;
+export const { getInitialData, getHandleSortBy, handleFilterData, filterEngine, handleSortName, handleResetData, getHandleSearch } = gallerySlice.actions;
 
 export default gallerySlice.reducer;

@@ -10,7 +10,7 @@ import { getPercentageMeta, shuffleArray } from "./filter-helpers"
 import ModalPic from "./modal"
 import SearchBar from "./search"
 import Tags from "./tags"
-import bgGallery from "assets/img/gallery/bg-gallery.svg"
+import bgGallery from "assets/img/gallery/bghd.svg"
 // import filterTitle from "assets/img/gallery/filter-title.svg"
 import filterTitle from "assets/img/gallery/filterTitle.png"
 import { useInView } from "react-intersection-observer"
@@ -203,10 +203,10 @@ export default function App() {
                 <h5 className="text-white  border-0 bg-transparent m-0" style={{ marginTop: 14 }} >
                   {galleryList?.length} ITEMS
                 </h5>
-                {/* <SortMenu /> */}
-                <h6 className="text-white  border-0 bg-transparent m-0 cursor-pointer" onClick={() => handleSortByName()} style={{ marginRight: 2 }}>
+                <SortMenu />
+                {/* <h6 className="text-white  border-0 bg-transparent m-0 cursor-pointer" onClick={() => handleSortByName()} style={{ marginRight: 2 }}>
                   Sort By Name
-                </h6>
+                </h6> */}
               </div>
               <div className="mt-3">
                 <SearchBar />

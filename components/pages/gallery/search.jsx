@@ -38,10 +38,10 @@ export default function SearchBar() {
     <form onSubmit={handleSubmit}>
       <div className="wrap-search-custom d-flex w-100 bg-white border-circle border-0">
         <SearchIcon />
-        <SearchInput className="search-input " onChange={handleChange} />
+        <SearchInput className="search-input " onChange={handleChange} style={{ background: 'white' }} />
       </div>
     </form>
-    // </Search>
+    // </Search>style
   )
 }
 

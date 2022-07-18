@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import { useDispatch, useSelector } from 'react-redux';
+import { getHandleSortBy } from 'redux/gallery/gallery.reducer';
 
 export default function SortMenu({ children }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState()
+
+    const { sortString } = useSelector(state => state.gallery)
+
+    const dispatch = useDispatch()
 
     const recordButtonPosition = (event) => {
         setAnchorEl(event.currentTarget);
@@ -14,14 +18,20 @@ export default function SortMenu({ children }) {
 
     let closeMenu = () => {
         setMenuOpen(false);
+        setAnchorEl(null);
     }
 
+    const handleSort = (par) => {
+        dispatch(getHandleSortBy(par))
+        closeMenu();
+    }
+
+
     const menuObj = [
-        { id: 'default', label: 'Default' },
+        // { id: 'default', label: 'Default' },
         { id: 'name', label: 'Name' },
         { id: 'id', label: 'ID' },
     ]
-
 
     return (
         <div className='sort-menu'>
@@ -29,9 +39,9 @@ export default function SortMenu({ children }) {
                 className='cursor-pointer text-white my-0'
                 id="basic-button"
                 onClick={recordButtonPosition}
-                style={{ marginRight: 2 }}
+                style={{ marginRight: 2, textTransform: 'capitalize' }}
             >
-                Sort By
+                Sort By {sortString}
             </h6>
             <Menu
                 anchorEl={anchorEl}
@@ -45,7 +55,7 @@ export default function SortMenu({ children }) {
                     }}>
                     {
                         menuObj.map((res, i) =>
-                            <p key={i} className='m-0 py-1 cursor-pointer text-white'>{res.label}</p>
+                            <p key={i} onClick={() => handleSort(res.id)} className='m-0 py-1 cursor-pointer text-white'>{res.label}</p>
                         )
                     }
                 </ul>
