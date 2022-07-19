@@ -31,7 +31,7 @@ const QuizPage = () => {
 
 
 
-    const addTime = () => setTimeLeft(5)
+    const addTime = () => setTimeLeft(10)
 
     return (
         <>

@@ -5,12 +5,12 @@ import logo from "assets/img/quiz/logoAvarik.svg"
 import DoubleQuizTemp from './DoubleQuizTemp'
 import { useScrollAnim } from 'components/hooks/hooks'
 
-const [trigger, anim] = useScrollAnim()
 
 
 
 export default function IntroQuiz() {
     const dispatch = useDispatch()
+    const [trigger, anim] = useScrollAnim()
 
     return (
         <div className={`sc-intro pt-4 ${anim(1)}`} onClick={() => dispatch(getHandleNext())} ref={trigger}>
