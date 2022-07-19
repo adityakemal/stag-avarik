@@ -6,6 +6,7 @@ import Begin from "components/pages/quiz/Begin"
 import { useDispatch, useSelector } from "react-redux"
 import QuizTemplate from "components/pages/quiz/QuizTemplate"
 import { getHandleNext } from "redux/quiz/quiz.reducer"
+import IntroQuiz from "components/pages/quiz/IntroQuiz"
 
 const QuizPage = () => {
     const { quizActive, QuestionQuiz } = useSelector(state => state.quiz)
@@ -38,16 +39,18 @@ const QuizPage = () => {
             <Helmet>
                 <body className="bd-quiz" />
             </Helmet>
-            {/* <Layout> */}
+
             <div className="quiz">
                 {
                     quizActive === 0 ?
-                        <Begin addTime={addTime} />
+                        <Begin />
                         :
-                        <QuizTemplate timeLeft={timeLeft} addTime={addTime} />
+                        quizActive === 1 ?
+                            <IntroQuiz />
+                            :
+                            <QuizTemplate timeLeft={timeLeft} addTime={addTime} />
                 }
             </div>
-            {/* </Layout> */}
         </>
     )
 }

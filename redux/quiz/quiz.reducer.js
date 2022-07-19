@@ -4,16 +4,18 @@ let initialState = {
     quizActive: 0,
     QuestionQuiz: [
         { title: '0' },
+        { title: 'Intro' },
         {
-            title: 'quiz 1',
+            type: 'double',
+            question: 'Which one intrigues you more?',
             answers: [
-                { text: 'A, saya quiz1 ?', point: 30 },
-                { text: 'B, saya quiz1 ?', point: 40 },
-                { text: 'C, saya quiz1 ?', point: 50 },
+                { text: 'Life', point: 30 },
+                { text: 'Death', point: 40 },
             ]
         },
         {
-            title: 'quiz 2',
+            type: 'slide',
+            question: 'quiz 2 question here ?',
             answers: [
                 { text: 'A, saya quiz2 ?', point: 30 },
                 { text: 'B, saya quiz2 ?', point: 40 },
@@ -21,7 +23,8 @@ let initialState = {
             ]
         },
         {
-            title: 'quiz 3',
+            type: 'slide',
+            question: 'quiz 3 question here ?',
             answers: [
                 { text: 'A, saya quiz3 ?', point: 30 },
                 { text: 'B, saya quiz3 ?', point: 40 },

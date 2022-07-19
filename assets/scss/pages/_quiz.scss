@@ -36,4 +36,87 @@
             color: red !important;
         }
     }
+
+    //INTRO
+    .sc-intro {
+        min-height: 100vh;
+        background-image: url(../../img/quiz/shadowIntro.svg), url(../../img/quiz/bgIntro1.png);
+        background-repeat: no-repeat;
+        background-position: center bottom, center bottom;
+        background-size: cover;
+        cursor: pointer;
+
+        .textwrap {
+            min-height: 70vh;
+            // background-color: rgba(250, 128, 114, 0.446);
+
+
+            p {
+                font-family: 'Noto Serif';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+            }
+        }
+
+    }
+
+    .doublequiz-temp {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        .logotitle {
+            position: absolute;
+            // background-color: rgba(255, 0, 0, 0.419);
+            top: 0;
+            font-family: 'Noto Serif';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 33px;
+            z-index: 1;
+
+            .quest {
+                color: white;
+            }
+
+            .note {
+                color: #A69580;
+            }
+
+        }
+
+        .life,
+        .death {
+            font-family: 'Noto Serif';
+            font-style: normal;
+            // font-weight: 700;
+            font-size: 36px;
+            line-height: 49px;
+            color: #D8D3C4;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .life {
+            color: #423B38;
+            background-image: url(../../img/quiz/lifeBg.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .death {
+            color: #D8D3C4;
+            background-image: url(../../img/quiz/deathBg.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
 }

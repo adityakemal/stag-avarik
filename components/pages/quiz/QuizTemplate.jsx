@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getHandleAnswer, getHandleNext } from 'redux/quiz/quiz.reducer'
+import DoubleQuizTemp from './DoubleQuizTemp'
 
 export default function QuizTemplate({
     timeLeft,
@@ -21,40 +22,43 @@ export default function QuizTemplate({
         addTime()
     }
 
+    if (QuestionQuiz[quizActive]?.type === 'double') {
+        return <DoubleQuizTemp addTime={addTime} handleAnswerQuiz={handleAnswerQuiz} timeLeft={timeLeft} />
+    } else {
+        return (
+            <div className='quiz-template container'>
+                <pre>
+                    {JSON.stringify(answerData, null, 2)}
+                </pre>
+                <h1 className=''>
+                    {/* <ul>
+                        <li>{quizActive} - mactive</li>
+                        <li>{QuestionQuiz.length} - question length</li>
+                    </ul> */}
+                    {
+                        quizActive < QuestionQuiz.length &&
+                        <>
+                            {timeLeft} seccond
+                        </>
+                    }
 
-    return (
-        <div className='quiz-template container'>
-            <pre>
-                {JSON.stringify(answerData, null, 2)}
-            </pre>
-            <h1 className=''>
-                {/* <ul>
-                    <li>{quizActive} - mactive</li>
-                    <li>{QuestionQuiz.length} - question length</li>
-                </ul> */}
-                {
-                    quizActive < QuestionQuiz.length &&
-                    <>
-                        {timeLeft} seccond
-                    </>
-                }
-
-            </h1>
-            <h1>
-                {QuestionQuiz[quizActive]?.title}
-            </h1>
-            <div className="row">
-                {
-                    QuestionQuiz[quizActive]?.answers?.map((res, i) => (
-                        <div className="col-md-4" key={i}>
-                            <h4 className='text-white' onClick={() => handleAnswerQuiz(res)}>
-                                {res.text}
-                            </h4>
-                        </div>
-                    ))
-                }
+                </h1>
+                <h1>
+                    {QuestionQuiz[quizActive]?.question}
+                </h1>
+                <div className="row">
+                    {
+                        QuestionQuiz[quizActive]?.answers?.map((res, i) => (
+                            <div className="col-md-4" key={i}>
+                                <h4 className='text-white' onClick={() => handleAnswerQuiz(res)}>
+                                    {res.text}
+                                </h4>
+                            </div>
+                        ))
+                    }
+                </div>
+                <button onClick={() => addTime()}>add time</button>
             </div>
-            <button onClick={() => addTime()}>add time</button>
-        </div>
-    )
+        )
+    }
 }
