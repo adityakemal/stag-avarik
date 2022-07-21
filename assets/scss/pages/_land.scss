@@ -1,6 +1,7 @@
 .sc-land-cover {
     height: 100vh !important; // fallback option
-    height: calc(var(--vh, 1vh) * 100) !important;
+    height: calc(var((--vh, 1vh)) * 100) !important;
+    // height: calc(var(--vh, 1vh) * 100) !important; //original
     background: url("../../img/land/bg-land-cover.png") no-repeat center center;
     background-size: cover;
     &:after {

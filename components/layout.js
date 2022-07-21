@@ -22,7 +22,7 @@ const Layout = ({ children, hasFooter = true }) => {
   // prevent quirky behaviour on mobile when cover is set to 100vh
   useEffect(() => {
     let vh = window.innerHeight * 0.01
-    document.documentElement.style.setProperty("--vh", `${vh}px`)
+    document.documentElement.style.setProperty("", `${vh}px`)
   }, [])
 
   //!EDIT

@@ -11,14 +11,14 @@ $btn-hover-bg-darken-custom: $btn-hover-bg-darken; // EDIT THIS AS NEEDED (Defau
 
 @each $color,
 $value in $theme-colors {
-  &.btn-outline-#{$color} {
+  .btn-outline-#{$color} {
     @include hover-focus {
       background-color: darken($value, $btn-hover-bg-darken-custom);
       border-color: darken($value, $btn-hover-bg-darken-custom);
     }
   }
 
-  &.btn-#{$color} {
+  .btn-#{$color} {
     @include hover-focus {
       background-color: darken($value, $btn-hover-bg-darken-custom);
       border-color: darken($value, $btn-hover-border-darken);
