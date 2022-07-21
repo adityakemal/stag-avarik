@@ -11,14 +11,14 @@
 .slider {
   // Default padding of 10px
   .slick-list {
-    margin-left: -($container-padding / 2);
-    margin-right: -($container-padding / 2);
+    margin-left: -(calc($container-padding / 2));
+    margin-right: -(calc($container-padding / 2));
     .slick-track {
       margin-left: initial;
       margin-right: initial;
       .slick-slide {
-        padding-right: ($container-padding / 2);
-        padding-left: ($container-padding / 2);
+        padding-right: calc($container-padding / 2);
+        padding-left: calc($container-padding / 2);
         outline: none !important;
         * {
           outline: none !important;

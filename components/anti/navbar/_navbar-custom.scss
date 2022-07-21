@@ -779,7 +779,7 @@
         &.nav-item-anim-#{$i} {
           &::before {
             transition-duration: $mobile-menu-duration;
-            transition-delay: #{($mobile-menu-anim-count / 10) - $i * 0.1}s;
+            transition-delay: #{calc(calc($mobile-menu-anim-count / 10) - calc($i * 0.1))}s;
           }
         }
       }

@@ -112,6 +112,28 @@ export default function App() {
               </h6>
             </div>
           ))}
+
+          {/* //dummy  */}
+          {
+            [1, 2, 3, 4].map((v, i) =>
+              <div className="wrapfigure transition " key={i} style={{ opacity: 0 }}>
+                <div className="p-1 mb-2 cursor-pointer" style={{ border: '1px solid #A59480' }}>
+                  {/* <Image
+                src={'https://abstackwp.khingars.com/wp-content/uploads/2021/09/image-blur-placeholder.png'}
+                width="100%" height="100%" layout="responsive" objectFit="contain"
+                placeholder="blur"
+                blurDataURL="./icons/apple-icon.png"
+              // blurDataURL="https://abstackwp.khingars.com/wp-content/uploads/2021/09/image-blur-placeholder.png"
+              /> */}
+                </div>
+                <h6 className={`title text-white text-break `}>
+                  {" "}
+                </h6>
+              </div>
+            )
+
+          }
+
         </div>
       </InfiniteScroll>
     </div>

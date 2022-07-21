@@ -270,7 +270,7 @@
   &.slide-left {
     left: 100%;
     transition-duration: $mobile-menu-duration;
-    transition-delay: #{$mobile-menu-delay + ($mobile-menu-anim-count / 10)}s;
+    transition-delay: #{calc($mobile-menu-delay + calc($mobile-menu-anim-count / 10))}s;
     transition-timing-function: $mobile-menu-ease;
     &.show {
       left: 0;
@@ -282,7 +282,7 @@
   &.slide-right {
     right: 100%;
     transition-duration: $mobile-menu-duration;
-    transition-delay: #{$mobile-menu-delay + ($mobile-menu-anim-count / 10)}s;
+    transition-delay: #{calc($mobile-menu-delay + calc($mobile-menu-anim-count / 10))}s;
     transition-timing-function: $mobile-menu-ease;
     &.show {
       right: 0;
@@ -294,7 +294,7 @@
   &.slide-down {
     height: 0;
     transition-duration: $mobile-menu-duration;
-    transition-delay: #{$mobile-menu-delay + ($mobile-menu-anim-count / 10)}s;
+    transition-delay: #{calc($mobile-menu-delay + calc($mobile-menu-anim-count / 10))}s;
     transition-timing-function: $mobile-menu-ease;
     &.show {
       height: 100vh;
@@ -309,7 +309,7 @@
   visibility: hidden;
   opacity: 0;
   transition-duration: $mobile-menu-duration;
-  transition-delay: #{$mobile-menu-delay + ($mobile-menu-anim-count / 10)}s;
+  transition-delay: #{calc($mobile-menu-delay + calc($mobile-menu-anim-count / 10))}s;
   transition-timing-function: $mobile-menu-ease;
   &.show {
     visibility: visible;
@@ -339,10 +339,10 @@
     &.hide {
       .anim-#{$i} {
         transition-duration: $mobile-menu-duration;
-        transition-delay: #{($mobile-menu-anim-count / 10) - $i * 0.1}s;
+        transition-delay: #{calc($mobile-menu-anim-count / 10) - $i * 0.1}s;
         &::before {
           transition-duration: $mobile-menu-duration;
-          transition-delay: #{($mobile-menu-anim-count / 10) - $i * 0.1}s;
+          transition-delay: #{calc($mobile-menu-anim-count / 10) - $i * 0.1}s;
         }
       }
     }
@@ -560,12 +560,12 @@
     .col-right {
       opacity: 1;
       transition: $transition-opacity;
-      transition-delay: $search-menu-duration * 3/4;
+      transition-delay: calc($search-menu-duration * calc(3/4));
     }
     @include media-breakpoint-up($navbar-expand-up) {
       .nav-link {
         opacity: 1;
-        transition-delay: $search-menu-duration * 3/4;
+        transition-delay: calc($search-menu-duration * calc(3/4));
       }
     }
   }

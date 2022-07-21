@@ -58,7 +58,7 @@ $post-content-multiplier: 1.125;
     margin-bottom: ($paragraph-margin-bottom * $post-content-multiplier);
   }
   li {
-    margin-bottom: (($paragraph-margin-bottom / 2) * $post-content-multiplier);
+    margin-bottom: calc(calc($paragraph-margin-bottom / 2) * $post-content-multiplier);
   }
   // prettier-ignore
   h1, h2, h3, h4, h5, h6 {
