@@ -5,19 +5,25 @@
     transition: all 0.5s;
     position: relative;
     transition: all 0.5s ease;
+
     &.ignis {
         background: url("../../img/factions/ignis-bg.png") no-repeat center center;
     }
+
     &.glacia {
         background: url("../../img/factions/glacia-bg.png") no-repeat center center;
     }
+
     &.terra {
         background: url("../../img/factions/terra-bg.png") no-repeat center center;
     }
+
     &.tenebris {
         background: url("../../img/factions/tenebris-bg.png") no-repeat center center;
     }
+
     position: relative;
+
     &:after {
         content: "";
         @include gradient-y-to-top($black, rgba($black, 0), 5%, 100%);
@@ -27,32 +33,41 @@
         z-index: 0;
         bottom: 0;
         left: 0;
+
         @include media-breakpoint-down(sm) {
             height: 75%;
         }
     }
+
     .container {
         height: 100%;
         display: flex;
         justify-content: center;
         flex-direction: column;
+
         .row {
             margin-top: -10rem;
+
             @include media-breakpoint-down(sm) {
                 margin-top: 5rem;
             }
+
             .col-text {
                 width: 40%;
+
                 .label {
                     color: $orange-light;
                 }
+
                 .title,
                 .description {
                     color: $white;
                 }
+
                 .title {
                     font-size: 2.5rem;
                 }
+
                 @include media-breakpoint-down(sm) {
                     width: 100%;
                     order: 1;
@@ -60,14 +75,17 @@
                     z-index: 1;
                 }
             }
+
             .col-img {
                 display: flex;
                 justify-content: center;
                 position: relative;
+
                 @include media-breakpoint-down(sm) {
                     order: 0;
                     margin-top: -15rem;
                 }
+
                 .flag-factions {
                     position: absolute;
                     top: -15%;
@@ -75,6 +93,7 @@
                     z-index: 0;
                     transition: all 0.5s ease;
                     max-height: 400px !important;
+
                     @include media-breakpoint-down(sm) {
                         margin-bottom: -7.5rem;
                         z-index: 0;
@@ -83,35 +102,43 @@
                 }
             }
         }
+
         .row-indicator {
             position: absolute;
             bottom: 2.5rem;
             width: 90%;
             justify-content: center;
+
             @include media-breakpoint-down(sm) {
                 width: 95%;
                 bottom: 1.5rem;
                 z-index: 2;
                 flex-wrap: nowrap;
                 overflow: auto;
+
                 .item-1 {
                     margin-left: 5rem;
                 }
             }
+
             .indicator-img {
                 width: 75px;
                 object-fit: contain;
+
                 @include media-breakpoint-down(sm) {
                     width: 65px;
                 }
             }
+
             @include media-breakpoint-down(sm) {
                 .avarik-cards {
                     padding: 0.5rem 1.5rem;
                     width: auto;
+
                     p {
                         font-size: 0.75rem;
                     }
+
                     // height: auto;
                 }
             }

@@ -34,7 +34,7 @@ $navbar-expand-down: map-get($grid-breakpoints-pairs, $navbar-expand-up); // Spe
 //
 
 $mobile-menu-duration: 0.75s;
-$mobile-menu-delay: strip-unit($mobile-menu-duration / 2);
+$mobile-menu-delay: strip-unit(calc($mobile-menu-duration / 2));
 $mobile-menu-anim-count: 7; // Enter number of anim on mobile menu
 $mobile-menu-ease: ease(in-out-quart);
 
