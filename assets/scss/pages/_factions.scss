@@ -1,6 +1,7 @@
 .sc-factions-main {
     height: 100vh !important; // fallback option
-    height: calc(var(--vh, 1vh) * 100) !important;
+    height: calc(var((--vh, 1vh)) * 100) !important;
+    // height: calc(var(--vh, 1vh) * 100) !important;
     background-size: cover !important;
     transition: all 0.5s;
     position: relative;

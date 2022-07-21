@@ -14,8 +14,8 @@
   @for $i from 1 through 9 {
     &.bg-overlay-#{$i}0 {
       @include gradient-y(
-        rgba($black, ($i / 10)),
-        rgba($black, ($i / 10)),
+        rgba($black, calc($i / 10)),
+        rgba($black, calc($i / 10)),
         0%,
         100%
       );

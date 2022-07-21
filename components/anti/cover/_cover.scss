@@ -36,7 +36,8 @@
     overflow: hidden;
     &.h-vh-100 {
       height: 100vh;
-      height: calc(var(--vh, 1vh) * 100);
+      height: calc(var((--vh, 1vh)) * 100);
+      // height: calc(var(--vh, 1vh) * 100); //original
       // Use this to in pair with vh logic on layout.js to overcome mobile phone quirky 100vh behaviour due
       // to the browser header & footer, can't be combined with another height utilities classes
     }

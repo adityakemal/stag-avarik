@@ -1,14 +1,14 @@
 const withImages = require("next-images");
 const { publicRuntimeConfig, webpack } = withImages();
-// const path = require('path')
+const path = require('path')
 
 module.exports = {
   reactStrictMode: true,
   publicRuntimeConfig,
   webpack,
-  // sassOptions: {
-  //   includePaths: [path.join(__dirname, 'styles')],
-  // },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
   images: {
     // loader: 'akamai',
     // path: '/',
