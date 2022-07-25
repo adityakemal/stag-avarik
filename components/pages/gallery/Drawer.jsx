@@ -177,9 +177,9 @@ const TraitType = ({
             />
           </ListItemIcon>
           <ListItemText
-            style={{ color: "white" }}
+            style={{ color: "white", fontFamily: 'D-DIN' }}
             id={`labelId`}
-            primary={`${item?.trait_value} (${item?.total})`}
+            primary={<div className='d-flex w-100 justify-content-between'> <span>{item?.trait_value}</span> <span className="mr-2">({item?.total})</span> </div>}
           />
         </ListItemButton>
       </ListItem>
@@ -206,27 +206,32 @@ const TraitType = ({
       }
     }
     return (
-      <ListItem disablePadding style={{ padding: '2px 0' }}>
-        <ListItemButton role={undefined} onClick={handleClickSelectAll} dense>
-          <ListItemIcon>
-            <Checkbox
-              edge="start"
-              checked={
-                filterList.filter(res => res.trait_type.includes(trait_type)).length === options.length
-              }
-              tabIndex={-1}
-              disableRipple
-              inputProps={{ "aria-labelledby": `labelId` }}
-              style={{ filter: `invert(1)`, paddingLeft: 20 }}
+      <>
+        <ListItem disablePadding style={{ padding: '2px 0' }}>
+          <ListItemButton role={undefined} onClick={handleClickSelectAll} dense>
+            <ListItemIcon>
+              <Checkbox
+                edge="start"
+                checked={
+                  filterList.filter(res => res.trait_type.includes(trait_type)).length === options.length
+                }
+                tabIndex={-1}
+                disableRipple
+                inputProps={{ "aria-labelledby": `labelId` }}
+                style={{ filter: `invert(1)`, paddingLeft: 20 }}
+              />
+            </ListItemIcon>
+            <ListItemText
+              style={{ color: "white" }}
+              id={`labelId`}
+              primary={`Select All `}
             />
-          </ListItemIcon>
-          <ListItemText
-            style={{ color: "white" }}
-            id={`labelId`}
-            primary={`Select All `}
-          />
-        </ListItemButton>
-      </ListItem>
+          </ListItemButton>
+        </ListItem>
+        <div className="px-4 w-100">
+          <hr style={{ borderTop: '1px solid #D8D3C4' }} className='my-0 px-4' />
+        </div>
+      </>
     )
   }
 
