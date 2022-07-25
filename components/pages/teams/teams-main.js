@@ -58,8 +58,8 @@ const TeamsMain = () => {
             text: "Conceptor",
             social: [],
             social: [
-                { type: "twitter", url: "https://twitter.com/jejouw" },
-                { type: "instagram", url: "https://instagram.com/jejouw" },
+                // { type: "twitter", url: "https://twitter.com/jejouw" },
+                // { type: "instagram", url: "https://instagram.com/jejouw" },
             ],
         },
         {

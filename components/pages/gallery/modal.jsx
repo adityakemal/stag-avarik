@@ -197,9 +197,9 @@ export default function ModalPic({ open, handleClose, currentItem }) {
                 }
               />
             </div>
-            <div className="col-md-4 py-xs-3 py-md-0">
+            <div className="col-md-4 py-xs-3 py-md-0 pb-2" style={{ postition: 'relative' }}>
 
-              <div className="framerchar d-flex justify-content-center">
+              <div className="framerchar d-flex justify-content-center h-100">
                 <img
                   src={currentItem?.image}
                   className={`img-fluid img-char`}
