@@ -95,47 +95,13 @@
     overflow-y: scroll !important;
 
     &::-webkit-scrollbar-thumb {
-      // background-image: linear-gradient(180deg, #D0368A 0%, #708AD4 99%);
-
-      // background: url('../../img/gallery/scrollbar.svg'),
-      //   url('../../img/gallery/scrollbar.svg'),
-      //   url('../../img/gallery/scrollbar.svg');
-      // background-color: #423B38;
-      // border-left: 1px solid #A69580;
-      // border-right: 1px solid #A69580;
-      // background-repeat: no-repeat, no-repeat;
-      // background-size: contain, ;
-      // background-position: top -10px, bottom;
-
       ///SEMENTARA
       background-color: #423B38;
       border: 1px solid #A69580;
-
-      // background-color: red;
-      // border: 3px solid #00e5ff;
-      // border-top: 10px solid transparent;
-      // border-bottom: 10px solid transparent;
-
-
-      // box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
-      // border-radius: 0;
     }
 
 
   }
-
-  // ::-webkit-scrollbar-thumb {
-  //   -webkit-border-radius: 10px;
-  //   border-radius: 10px;
-  //   background: url('../../img/gallery/scrollbar.svg');
-  //   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-  // }
-
-
-  // .MuiButtonBase-root .MuiAccordionSummary-root .Mui-expanded .MuiAccordionSummary-gutters {
-  //     background: hotpink !important;
-  // }
-
 
   .modal-gallery {
     // background-image: url("/assets/img/gallery/modal/gallery-modal.svg");
@@ -152,13 +118,13 @@
     padding-right: 100px !important;
   }
 
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
+  // ::-webkit-scrollbar {
+  //   width: 10px;
+  // }
 
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
+  // ::-webkit-scrollbar-track {
+  //   background: transparent;
+  // }
 }
 
 
@@ -179,13 +145,22 @@
   .frame {
     position: absolute;
     height: 100%;
-    -o-object-fit: contain;
     // object-fit: contain;
     aspect-ratio: 1/1;
     padding-bottom: 8px;
 
   }
-
+}
+@include media-breakpoint-down(sm) {
+  .framerchar {
+    .frame {
+      position: relative;
+      aspect-ratio: unset;
+      padding-bottom: 8px;
+  
+    }
+  
+  }
 }
 
 
@@ -295,4 +270,13 @@
 
 .MuiList-root.MuiList-padding.MuiMenu-list {
   background: #423B38;
+}
+
+.wrap-modal-gallery{
+  &::-webkit-scrollbar-thumb {
+    ///SEMENTARA
+    background-color: #423B38 !important;
+    border: 1px solid #A69580 !important;
+  }
+
 }
