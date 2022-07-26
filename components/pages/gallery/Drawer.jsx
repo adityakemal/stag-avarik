@@ -244,7 +244,7 @@ const TraitType = ({
           background: "transparent",
           boxShadow: "none",
           margin: 0,
-          padding: 0
+          padding: '0 10px 0 0'
         }}
       >
         <AccordionSummary
