@@ -42,7 +42,7 @@ const HomeCover = () => {
         style={{ position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100vh', flexDirection: 'column' }}
       >
         <div className="w-100 justify-content-center d-flex px-4 pt-5 pt-md-0" style={{ zIndex: 1000, marginBottom: '6%' }}>
-          <img src={logoMain} className="img-fluid avarik-logo" alt="Logo" style={{ maxWidth: '600px', width: '100%' }} />
+          <img src={logoMain} className="img-fluid cover-anim-content" alt="Logo" style={{ maxWidth: '600px', width: '100%' }} />
         </div>
 
         <div
@@ -52,7 +52,7 @@ const HomeCover = () => {
           <div className="col-md-5 col-12 d-flex justify-content-center justify-content-md-end mb-4">
             <AvarikButton
               text={<span style={{ whiteSpace: 'nowrap' }}>Try Mini Game</span>}
-              className="mx-0 w-100 w-md-auto"
+              className="mx-0 w-100 w-md-auto cover-anim-content"
               sideLeftClassName="side-left-btn-cover"
               sideRightClassName="side-right-btn-cover"
               link="https://minigame.avariksaga.com/"
@@ -64,7 +64,7 @@ const HomeCover = () => {
             <AvarikButton
               text={<><i className="aib ai-discord mr-2"></i> <span style={{ whiteSpace: 'nowrap' }}>Join Our Community</span> </>}
               // text={<><i className="ais ai-play-circle mr-2"></i> Watch Trailer</>}
-              className="mx-0 w-100 w-md-auto"
+              className="mx-0 w-100 w-md-auto cover-anim-content"
               sideLeftClassName="side-left-btn-cover"
               sideRightClassName="side-right-btn-cover"
               // link="https://www.youtube.com/watch?v=9UNXRh4xrug"

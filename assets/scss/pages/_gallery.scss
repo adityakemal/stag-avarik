@@ -1,5 +1,12 @@
 .sc-gallery {
 
+  .accordion-header {
+    .accordion-title {
+      font-family: $font-family-din !important;
+      font-weight: lighter !important;
+    }
+  }
+
   //sort lsist overide 
   .css-6hp17o-MuiList-root-MuiMenu-list {
     padding-top: 0 !important;
