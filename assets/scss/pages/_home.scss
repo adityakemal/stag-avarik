@@ -38,13 +38,13 @@ $home-anim-delay: 1s; // default 3s
       margin-left: -300px;
       margin-top: -70px;
     }
-    @media (min-width: 2000px) {
-      width: 900px;
-      left: 0;
-      right: 0;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    // @media (min-width: 2000px) {
+    //   width: 900px;
+    //   left: 0;
+    //   right: 0;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    // }
     .cover-logo {
       animation: fadeInUp 1s #{$home-anim-delay + 0s} ease-in-out both;
       width: 100%;
