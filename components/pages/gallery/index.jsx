@@ -21,7 +21,7 @@ import { useScrollAnim } from "components/hooks/hooks"
 import MobileDrawer from "./MobileDrawer"
 // import SortMenu from "./SortMenu"
 
-const avarikMetadata = shuffleArray(avarikMetadatax)
+// const avarikMetadata = shuffleArray(avarikMetadatax)
 
 export default function App() {
   const dispatch = useDispatch()
