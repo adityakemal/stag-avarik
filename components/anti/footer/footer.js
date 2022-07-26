@@ -39,6 +39,7 @@ export const Footer = () => {
     // { title: "Mini Game Info", link: "/about-mini-game" },
     { title: "Hold to Earn", link: "/collect-in-game-currency" },
     { title: "In Game Currency", link: "/vortem" },
+    { title: "Gallery", link: "/gallery" },
   ]
 
   const social = [

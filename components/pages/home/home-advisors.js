@@ -84,6 +84,17 @@ const HomeAdvisors = () => {
             ref={trigger}
         >
             <div className="container">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
                 <div className={`heading mb-5 ${anim(1)}`}>
                     <AvarikTitle title="Advisors" titleClassName="h2" className="mx-auto" />
                 </div>
@@ -105,7 +116,6 @@ const HomeAdvisors = () => {
                                     size="sm"
                                     shape="square"
                                     variant="outline-white"
-                                    size="sm"
                                     className={anim(4 + i)}
                                     data={item.social}
                                 />

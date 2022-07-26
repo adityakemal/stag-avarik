@@ -23,7 +23,8 @@ const HomePage = () => {
         <HomeCover />
         <HomeSaga />
         <HomeFactions />
-        <HomeGameFeatures />
+        {/* <HomeGameFeatures /> */}
+        {/* temporary in home advisore add nreak for padding !!! while game features hide */}
         <HomeAdvisors />
         <HomeFooter />
       </Layout>

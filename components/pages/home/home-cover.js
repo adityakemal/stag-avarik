@@ -24,11 +24,13 @@ const HomeCover = () => {
               variant="dark"
             />
             <AvarikButton
-              text={<><i className="ais ai-play-circle mr-2"></i> Watch Trailer</>}
+              text={<><i className="aib ai-discord mr-2"></i> Join Our Community</>}
+              // text={<><i className="ais ai-play-circle mr-2"></i> Watch Trailer</>}
               className="mx-5 mb-sm-4"
               sideLeftClassName="side-left-btn-cover"
               sideRightClassName="side-right-btn-cover"
-              link="https://www.youtube.com/watch?v=AHQAcs5Ml44"
+              // link="https://www.youtube.com/watch?v=9UNXRh4xrug"
+              link="https://discord.com/invite/AvarikSaga"
             />
           </div>
         </div>

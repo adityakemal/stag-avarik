@@ -40,7 +40,7 @@ $headings-font-family:        $font-family-sans-serif; // Avarik Saga
 
 // Set options for headings here
 $headings-font-weight:        $font-weight-bold; // Antikode
-$headings-margin-bottom:      $spacer / 2;
+$headings-margin-bottom:      calc($spacer / 2);
 $headings-line-height:        1.2;
 $headings-color:              null; 
 

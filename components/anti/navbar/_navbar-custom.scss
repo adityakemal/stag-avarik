@@ -14,14 +14,18 @@
         margin-left: -0.75rem; // Set depending on hover style & padding
       }
     }
+
     .col-right {
       margin-right: -0.75rem; // Set depending on hover style & padding
+
       @include media-breakpoint-up($navbar-expand-up) {
         margin-right: -0.75rem; // Set depending on hover style & padding
       }
     }
   }
+
   .navbar-main {
+
     // &:after {
     //   content: "";
     //   position: absolute;
@@ -39,14 +43,18 @@
       position: relative;
       z-index: 2;
     }
+
     .col-left {
       margin-left: -0.75rem; // Set depending on hover style & padding
+
       @include media-breakpoint-up($navbar-expand-up) {
         margin-left: -0.75rem; // Set depending on hover style & padding
       }
     }
+
     .col-right {
       margin-right: 0; // Set depending on hover style & padding
+
       @include media-breakpoint-up($navbar-expand-up) {
         margin-right: 0; // Set depending on hover style & padding
       }
@@ -56,9 +64,11 @@
 
 .navbar-brand {
   padding-left: 0.75rem;
+
   .logo-mobile {
     width: 50px;
   }
+
   @include media-breakpoint-up($navbar-expand-up) {
     width: 150px;
   }
@@ -72,17 +82,25 @@
 // Mobile - Navbar Main
 // ==========================================================================
 
-.navbar-main {
+.navbar-main .sc-gallery {
+
   .col-left,
   .col-right {
     .nav-item {
       width: 3rem;
     }
+
     .nav-icon {
+
       // prettier-ignore
-      .ais, .aib, .ail, .air, .icon {
+      .ais,
+      .aib,
+      .ail,
+      .air,
+      .icon {
         top: 1px;
       }
+
       i {
         font-size: 1.125rem;
       }
@@ -111,7 +129,7 @@
       bottom: 0;
       left: 0;
       margin: auto;
-      border: 1px solid $brown-light !important;
+      border: 1px solid $brown-light  !important;
     }
   }
 }
@@ -122,7 +140,8 @@
     border-radius: 2px;
     // height: 2px; // Alt 1
     height: 1px; // Alt 2
-    & + .icon-bar {
+
+    &+.icon-bar {
       // margin-top: 4px; // Alt 1
       margin-top: 5px; // Alt 2
     }
@@ -138,8 +157,10 @@
   width: 100%;
   position: absolute;
   top: 0;
+
   .mobile-menu-content {
     padding: 5rem 0;
+
     .container {
       text-align: center;
       display: flex;
@@ -147,8 +168,10 @@
       justify-content: flex-start;
       padding-left: 0 !important;
       padding-right: 0 !important;
+
       .navbar-nav {
         width: 100%;
+
         .nav-item {
           text-align: left;
           position: relative;
@@ -162,9 +185,11 @@
             bottom: 0;
             // left: -5%;
           }
+
           .mobile-menu-accordion {
             background-color: rgba($black, 0);
             border: none;
+
             .accordion-header {
               padding-top: 0rem !important;
               padding-bottom: 0rem !important;
@@ -182,12 +207,15 @@
                 width: 100%;
                 padding-left: 1.25rem;
                 padding-right: 1.25rem;
+
                 li {
                   margin-top: 0.75rem;
                   cursor: pointer;
+
                   &:not(:last-child) {
                     border-bottom: 1px solid $primary;
                   }
+
                   a {
                     font-size: 1.25rem;
                     color: $primary;
@@ -223,9 +251,11 @@
     width: 80%;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
     .side-left {
       left: -29px;
     }
+
     .side-right {
       right: -29px;
     }
@@ -257,11 +287,14 @@
   .container {
     justify-content: space-between;
   }
+
   .desktop-menu {
     position: relative;
     align-items: center;
+
     .nav-item {
       margin-left: 1rem;
+
       .nav-link {
         @extend .hover-underline;
         padding-left: 0;
@@ -274,54 +307,64 @@
           margin-left: 0.25rem;
           margin-bottom: 0.25rem;
         }
+
         &:before {
           height: 1px;
         }
+
         i {
           font-size: 1.125rem;
         }
+
         &.game-info {
           &:hover {
-            & ~ .nav-item-dropdown.game-info {
+            &~.nav-item-dropdown.game-info {
               visibility: visible;
               opacity: 1;
-              height: 145px;
+              height: 185px !important;
+
               .img-paper {
-                height: 145px;
+                height: 185px !important;
               }
             }
           }
         }
+
         &.mini-game {
           &:hover {
-            & ~ .nav-item-dropdown.mini-game {
+            &~.nav-item-dropdown.mini-game {
               visibility: visible;
               opacity: 1;
               height: 145px;
+
               .img-paper {
                 height: 145px;
               }
             }
           }
         }
+
         &.about-us {
           &:hover {
-            & ~ .nav-item-dropdown.about-us {
+            &~.nav-item-dropdown.about-us {
               visibility: visible;
               opacity: 1;
               height: 145px;
+
               .img-paper {
                 height: 145px;
               }
             }
           }
         }
+
         &.currency {
           &:hover {
-            & ~ .nav-item-dropdown.currency {
+            &~.nav-item-dropdown.currency {
               visibility: visible;
               opacity: 1;
               height: 185px;
+
               .img-paper {
                 height: 185px;
               }
@@ -341,15 +384,19 @@
         min-width: 188px;
         background-color: transparent;
         height: 0px;
+
         &:hover {
           visibility: visible;
           opacity: 1;
+
           .img-paper {
             height: 145px;
           }
         }
+
         li {
           list-style: none;
+
           a {
             color: $black;
             text-decoration: none;
@@ -381,33 +428,52 @@
           transition: all 0.5s ease 0s;
           z-index: -1;
         }
+
+        &.game-info {
+          // left: 7.5rem;
+          right: unset;
+
+          &:hover {
+            .img-paper {
+              height: 185px;
+            }
+          }
+        }
+
         &.mini-game {
           left: 7.5rem;
           right: unset;
+
           &:hover {
             .img-paper {
               height: 145px;
             }
           }
         }
+
         &.about-us {
           left: unset;
           right: 20.5rem;
+
           &.connected {
             right: 13.5rem;
           }
+
           &:hover {
             .img-paper {
               height: 145px;
             }
           }
         }
+
         &.currency {
           left: unset;
           right: 12rem;
+
           &.connected {
             right: 5rem;
           }
+
           &:hover {
             .img-paper {
               height: 185px;
@@ -447,7 +513,7 @@
         bottom: 0;
         left: 0;
         margin: auto;
-        border: 1px solid $brown-light !important;
+        border: 1px solid $brown-light  !important;
       }
     }
   }
@@ -520,64 +586,122 @@
 // prettier-ignore
 .navbar {
   &.navbar-light {
-    .navbar-brand { .logo-light { display: none; } .logo-dark { display: block; } }
-    .nav-toggler { .icon-bar { background-color: $dark; } }
+    .navbar-brand {
+      .logo-light {
+        display: none;
+      }
+
+      .logo-dark {
+        display: block;
+      }
+    }
+
+    .nav-toggler {
+      .icon-bar {
+        background-color: $dark;
+      }
+    }
+
     .navbar-top {
-      background: $gray-100; 
+      background: $gray-100;
+
       .nav-item {
-        .nav-link { 
-          color: $primary; 
-          &:hover { color: darken($primary, 10%); }
+        .nav-link {
+          color: $primary;
+
+          &:hover {
+            color: darken($primary, 10%);
+          }
         }
       }
     }
+
     .navbar-main {
       background: $white;
+
       .nav-item {
-        .nav-toggler .icon-bar { 
+        .nav-toggler .icon-bar {
           background: $primary;
-          &:hover { background: darken($primary, 10%); }
+
+          &:hover {
+            background: darken($primary, 10%);
+          }
         }
-        .nav-link, .nav-icon { 
-          color: $primary; 
-          &:hover { color: darken($primary, 10%); }
+
+        .nav-link,
+        .nav-icon {
+          color: $primary;
+
+          &:hover {
+            color: darken($primary, 10%);
+          }
         }
       }
     }
   }
+
   &.navbar-dark {
-    .navbar-brand { .logo-dark { display: none; } .logo-light { display: block; } }
+    .navbar-brand {
+      .logo-dark {
+        display: none;
+      }
+
+      .logo-light {
+        display: block;
+      }
+    }
+
     .navbar-top {
-      background: $gray-800; 
+      background: $gray-800;
+
       .nav-item {
-        .nav-link { 
-          color: $white; 
-          &:hover { color: $primary; }
+        .nav-link {
+          color: $white;
+
+          &:hover {
+            color: $primary;
+          }
         }
       }
     }
+
     .navbar-main {
-      background: $primary; 
+      background: $primary;
+
       .nav-item {
-        .nav-toggler .icon-bar { 
+        .nav-toggler .icon-bar {
           background: $white;
-          &:hover { background: $white; }
+
+          &:hover {
+            background: $white;
+          }
         }
-        .nav-link, .nav-icon { 
-          color: $white; 
+
+        .nav-link,
+        .nav-icon {
+          color: $white;
+
           &:before {
             background: $white;
           }
-          &:hover { color: $white; }
+
+          &:hover {
+            color: $white;
+          }
         }
       }
     }
   }
+
   &.transparent {
-    .navbar-main { background: transparent; }
+    .navbar-main {
+      background: transparent;
+    }
   }
+
   &.is-scrolled {
     .navbar-main {
+
       // background: $black;
       &:after {
         opacity: 1;
@@ -589,9 +713,11 @@
 .mobile-menu {
   // background: lighten($black, 5%);
   background: $primary;
+
   .nav-item {
     .nav-link {
       color: $white;
+
       // color: $dark;
       &:hover {
         color: $white;
@@ -623,7 +749,7 @@
         &.nav-item-anim-#{$i} {
           &::before {
             transition-duration: $mobile-menu-duration;
-            transition-delay: #{($mobile-menu-anim-count / 10) - $i * 0.1}s;
+            transition-delay: #{calc(calc($mobile-menu-anim-count / 10) - calc($i * 0.1))}s;
           }
         }
       }

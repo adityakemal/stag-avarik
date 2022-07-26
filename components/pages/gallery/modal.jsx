@@ -7,6 +7,7 @@ import rarityCommon from "assets/img/common/rarity-common.png"
 import rarityUncommon from "assets/img/common/rarity-uncommon.png"
 import rarityRare from "assets/img/common/rarity-rare.png"
 import rarityLegendary from "assets/img/common/rarity-legendary.png"
+import { Close } from "@mui/icons-material"
 
 const getRarityImage = (Subclass) => {
   switch (Subclass) {
@@ -43,63 +44,64 @@ const getRarityImage = (Subclass) => {
   }
 }
 
-const RowModal = ({ title, content, icon }) => {
+const RowModal = ({ title, content, icon, rowGutter, titleRow = 'col-7' }) => {
   return (
-    <div className="row mb-2 ">
-      <div className="col-5 row ">
+    <div className={`row mb-2 ${rowGutter}`}>
+      <div className={`${titleRow} row `}>
         {icon && icon} &nbsp; &nbsp; {title}
       </div>
-      <div className={`col `}>: {content}</div>
+      <div className={`col`}>: {content}</div>
     </div>
   )
 }
 
-const Traits = ({ currentItem }) => {
-  return (
-    <>
-      {/* <div className="row"> */}
-      <div className="col-sm-6">
-        {currentItem?.traits.slice(0, 5).map((item, i) => (
-          <RowModal
-            key={i}
-            title={<div className="">{item?.trait_type}</div>}
-            content={item?.value}
-            icon={
-              <img
-                src={
-                  META_FILTER?.find((j) => j?.trait_type === item?.trait_type)
-                    ?.icon
-                }
-                style={{ width: 20, height: 20 }}
-              />
-            }
-          />
-        ))}
-      </div>
-      <div className="col-sm-6">
-        {currentItem?.traits.slice(5, 11).map((item, i) => (
-          <RowModal
-            key={i}
-            title={<div className="">{item?.trait_type}</div>}
-            // {_item?.trait_type} : {_item?.value}
-            content={item?.value}
-            icon={
-              <img
-                src={
-                  META_FILTER?.find((j) => j?.trait_type === item?.trait_type)
-                    ?.icon
-                }
-                style={{ width: 20, height: 20 }}
-              />
-            }
-          />
-        ))}
-      </div>
-      {/* </div> */}
-      <hr />
-    </>
-  )
-}
+// const Traits = ({ currentItem }) => {
+//   return (
+//     <>
+//       <div className="col-sm-6">
+//         {currentItem?.traits.slice(0, 5).map((item, i) => (
+//           <RowModal
+//             rowGutter={'row-4'}
+//             key={i}
+//             title={<div className="">{item?.trait_type}</div>}
+//             content={item?.value}
+//             icon={
+//               <img
+//                 src={
+//                   META_FILTER?.find((j) => j?.trait_type === item?.trait_type)
+//                     ?.icon
+//                 }
+//                 style={{ width: 20, height: 20 }}
+//               />
+//             }
+//           />
+//         ))}
+//       </div>
+
+//       <div className="col-sm-6">
+//         {currentItem?.traits.slice(5, 11).map((item, i) => (
+//           <RowModal
+//             rowGutter={'row-4'}
+//             key={i}
+//             title={<div className="">{item?.trait_type}</div>}
+//             // {_item?.trait_type} : {_item?.value}
+//             content={item?.value}
+//             icon={
+//               <img
+//                 src={
+//                   META_FILTER?.find((j) => j?.trait_type === item?.trait_type)
+//                     ?.icon
+//                 }
+//                 style={{ width: 20, height: 20 }}
+//               />
+//             }
+//           />
+//         ))}
+
+//       </div>
+//     </>
+//   )
+// }
 
 
 const BoxStat = ({ imgSrc, title, value, isPercentage = true, alignStart }) => {
@@ -108,7 +110,7 @@ const BoxStat = ({ imgSrc, title, value, isPercentage = true, alignStart }) => {
       className={`w-100 rows d-inline-flex align-items-center  ${alignStart ? 'justify-content-start' : 'justify-content-center'}`}
       style={{ minWidth: 60 }}
     >
-      <div className="sm-col-6 d-inline-flex align-items-center justify-content-end">
+      <div className="sm-col-6 d-inline-flex align-items-center justify-content-end mr-2">
         <Image width={36} height={36} src={imgSrc} />
       </div>
       <div
@@ -119,7 +121,7 @@ const BoxStat = ({ imgSrc, title, value, isPercentage = true, alignStart }) => {
         }}
       >
         {title}
-        <h6>
+        <h6 style={{ fontSize: 20 }}>
           {value} {isPercentage && `%`}
         </h6>
       </div>
@@ -144,28 +146,32 @@ export default function ModalPic({ open, handleClose, currentItem }) {
       }}
     >
       <div
-        // className="border-gallery"
+        className="wrap-modal-gallery"
         style={{
           // backgroundImage: `url(/assets/modal/gallery-modal.svg)`,
           // background: 'skyblue',
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           height: "100%",
-          maxHeight: '90vh',
+          maxHeight: '85vh',
           maxWidth: 890,
           width: `100%`,
           // padding: `3%`,
           outline: "none",
           border: 0,
-          overflow: 'auto'
+          overflowY: 'auto',
+          paddingTop: 30,
+          position: 'relative',
         }}
       >
         {/* <div className="top-frame">
           <img src="/assets/modal/topFrame.png" alt="" />
         </div> */}
+        <img className="frame-top" src="/assets/modal/frameTopModal.svg" alt="" />
         <div className="container-fluid border-gallery modal-gallery">
-          <img className="rightbot" src="/assets/modal/rightBot.png" alt="" />
-          <img className="leftbot" src="/assets/modal/leftBot.png" alt="" />
+
+          <Close sx={{ color: '#A69580' }} onClick={handleClose} style={{ margin: '10px', position: 'absolute', right: '0', cursor: 'pointer', zIndex: 1000 }} />
+
           <div style={{ backgroundColor: '#423B38' }} className="row wrapboxes py-sm-5 py-xs-3">
             {/* //HEADER  */}
             <div className="col-md-8 text-white">
@@ -173,13 +179,16 @@ export default function ModalPic({ open, handleClose, currentItem }) {
               <RowModal
                 title={<div className="">ID</div>}
                 content={currentItem?.id}
+                titleRow='col-5'
               />
               <RowModal
                 title={<div className="">Description</div>}
                 content={currentItem?.description}
+                titleRow='col-5'
               />
               <RowModal
                 title={<div className="">Rarity</div>}
+                titleRow='col-5'
                 content={
                   <img
                     src={getRarityImage(currentItem?.battle_stats?.Subclass)}
@@ -188,29 +197,108 @@ export default function ModalPic({ open, handleClose, currentItem }) {
                 }
               />
             </div>
-            <div className="col-md-4 pt-xs-3">
-              <div className="relative">
-                <Image layout="fill" src={`/assets/modal/frame-rarity.svg`} />
+            <div className="col-md-4 py-xs-3 py-md-0 pb-2" >
+
+              <div className="framerchar d-flex justify-content-center h-100">
+                <img
+                  src={currentItem?.image}
+                  className={`img-fluid img-char`}
+                />
+                <img className="frame img-fluid" src={`/assets/modal/frame-rarity.svg`} />
+
               </div>
-              <img
-                src={currentItem?.image}
-                className={`img-fluid img-char`}
-                style={{ width: "100%", height: `100%`, objectFit: "cover" }}
-              />
+
             </div>
           </div>
 
 
           {/* //TRAITS  */}
-          <div className="row  wrapboxes pb-5" style={{ backgroundColor: '#D9D4C5' }}>
+          <div className="row  wrapboxes pb-5 pt-4" style={{ backgroundColor: '#D9D4C5', position: 'relative' }}>
+
+            <img className="lefttop" src={`/assets/modal/topLeftLineChar.png`} />
+            <img className="righttop" src={`/assets/modal/topRightLineChar.png`} />
+            <img className="rightbot" src="/assets/modal/rightBot.png" alt="" />
+            <img className="leftbot" src="/assets/modal/leftBot.png" alt="" />
+
             <div className="col-12 d-flex justify-content-center align-items-center my-4">
-              <img src={`/assets/modal/traits.svg`} className='img-fluid' style={{ width: "100%" }} />
+              <div>
+                <img src={`/assets/modal/leftLine.png`} className='img-fluid' style={{ width: "100%" }} />
+              </div>
+              <h5 className="mx-3 mb-0 pt-1">
+                TRAITS
+              </h5>
+              <div>
+                <img src={`/assets/modal/rightLine.png`} className='img-fluid' style={{ width: "100%" }} />
+              </div>
             </div>
-            <Traits {...{ currentItem }} />
+
+            <div className="col-md-12">
+              {/* 
+              <pre>
+                {
+                  JSON.stringify(
+                    currentItem?.traits.slice(0, 5).map((item, i) => (
+                      item
+                    ))
+                    , null, 2)
+                }
+              </pre> */}
+              <div className="w-100 boxestraits">
+
+                <div className="boxlist">
+                  {
+                    currentItem?.traits.slice(0, 5).map((item, i) => (
+                      <div className="modal-boxtraits" key={i}>
+                        <div className="titledesc">
+                          <img src={META_FILTER?.find((j) => j?.trait_type === item?.trait_type)?.icon} alt="" className="mr-2" />
+                          {item?.trait_type}
+                        </div>
+                        <div className="valuedesc">: {item?.value}</div>
+                      </div>
+                    ))
+                  }
+                </div>
+
+                <div className="boxlist">
+                  {
+                    currentItem?.traits.slice(5, 11)?.length !== 0 ?
+                      currentItem?.traits.slice(5, 11).map((item, i) => (
+                        <div className="modal-boxtraits" key={i}>
+                          <div className="titledesc">
+                            <img src={META_FILTER?.find((j) => j?.trait_type === item?.trait_type)?.icon} alt="" className="mr-2" />
+                            {item?.trait_type}
+                          </div>
+                          <div className="valuedesc">: {item?.value}</div>
+                        </div>
+                      ))
+                      : <img src="/assets/modal/legendNull.svg" alt="" className="img-fluid d-sm-none d-md-block" style={{ marginTop: "-20px" }} />
+                  }
+                </div>
+
+              </div>
+
+
+
+              {/* <div className="w-100 px-2">
+                <div className="d-flex row-5">
+                  <Traits {...{ currentItem }} />
+                </div>
+              </div> */}
+            </div>
 
             {/* // CHARACTER STAT  */}
-            <div className=" col-12 w-100 d-flex justify-content-center align-items-center my-4" >
-              <img src={`/assets/modal/stats.svg`} className='img-fluid' style={{ width: "100%" }} />
+            <div className="col-12 d-flex justify-content-center align-items-center mt-0 mt-3 mb-3">
+
+              <div>
+                <img src={`/assets/modal/leftLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
+              </div>
+              <h5 className="mx-2 mb-0 pt-1" style={{ whiteSpace: 'nowrap' }}>
+                CHARACTER STATS
+              </h5>
+              <div>
+                <img src={`/assets/modal/rightLineChar.png`} className='img-fluid' style={{ width: "100%" }} />
+              </div>
+
             </div>
 
             <div className="col-md-12 d-flex justify-content-center mb-4">
@@ -236,7 +324,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
               </div>
             </div>
 
-            <hr className="my-4 w-100" style={{ borderColor: '#A59480' }} />
+            <hr className="mt-0 w-100" style={{ borderColor: '#A59480' }} />
 
             <div className="col-md-12 row" >
               <div className="col-6 col-sm-3">
@@ -298,12 +386,12 @@ export default function ModalPic({ open, handleClose, currentItem }) {
             </div>
 
 
-            <div className="col-md-12 mt-4 d-flex justify-content-center">
+            <div className="col-md-12 d-flex justify-content-center mb-3" style={{ marginTop: 48 }}>
               <AvarikButton
                 text="Buy Now on Opensea"
                 variant="dark"
                 className="btn-opensea d-flex m-0 "
-                link={`https://opensea.io/assets/0x127e479ac59a1ea76afdedf830fecc2909aa4cae/${currentItem?.id}`}
+                link={`https://opensea.io/assets/0x127e479ac59a1ea76afdedf830fecc2909aa4cae/${parseInt(currentItem?.id)}`}
               />
             </div>
 

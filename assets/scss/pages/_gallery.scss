@@ -1,70 +1,291 @@
 .sc-gallery {
-    .bg-gallery {
-      z-index: -1;
+
+  //sort lsist overide 
+  .css-6hp17o-MuiList-root-MuiMenu-list {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+
+  .wrapfigure {
+    flex: auto;
+    flex-basis: 170px;
+
+    img {
+      width: 100% !important;
+      object-fit: fill !important;
+      height: auto !important;
+      aspect-ratio: 1 / 1;
     }
-    .img-wrapper {
-        border: 1px solid rgba($brown-light, 0.5);
-        padding: 0.25rem;
-        padding-bottom: 0px;
-        margin-bottom: 0.5rem;
-        max-width: 175px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .wrapfigure {
+      flex: auto;
+      flex-basis: 150px;
+
+      img {
+        width: 100% !important;
+        object-fit: fill !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
       }
+    }
+  }
+
+
+
+  .img-wrapper {
+    border: 1px solid rgba($brown-light, 0.5);
+    padding: 0.25rem;
+    padding-bottom: 0px;
+    margin-bottom: 0.5rem;
+    // max-width: 175px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  // .panel1a-header {
+  //   height: 50px !important;
+
+  //   .MuiAccordionSummary-content {
+  //     padding: 0 !important;
+  //   }
+  // }
+
+  .box-nft {
+    margin: 6px;
+    width: 100%;
+    // cursor: pointer;
+    // min-height: 200px;
+    // max-width: 175px;
+    flex-basis: 175px;
+    background-color: red;
+  }
+
+  //kemal
+
+  .content-images {
+    // padding-left: 3%;
+    // padding-top: 3%;
+    height: 100vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .box-images {
+      // background-color: salmon;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+
+  .box-drawer {
+    height: 100vh;
+    margin-top: 24px;
+    // width: 100%;
+
+    // margin-top: 3%;
+    // padding-right: 3%;
+    // margin-bottom: 3%;
+    overflow-y: scroll !important;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      ///SEMENTARA
+      background-color: #423B38 !important;
+      border: 1px solid #A69580 !important;
+    }
+
+
+  }
+
+  .modal-gallery {
+    // background-image: url("/assets/img/gallery/modal/gallery-modal.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    max-height: 800px;
+    max-width: 890px;
+    width: 100%;
+    padding: 3%;
+  }
+
+  .filter-title-box {
+    padding-right: 100px !important;
+  }
+
+  
+}
+
+
+.framerchar {
+  position: relative;
+
+  .img-char {
+    // width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+    // padding-bottom: 24px;
+    aspect-ratio: 1/1;
+    padding-bottom: 8px;
     
-      .box-nft {
-          margin: 6px;
-          cursor: pointer;
-          min-height: 200px;
-          max-width: 175px ;
-      }
-    
-      .content-images {
-        padding-left: 3%;
-        padding-top: 3%;
-        height: 80vh;
-        overflow-y: auto;
-      }
-      .box-drawer {
-          min-height: 80vh;
-          position: absolute;
-          height: 100%;
-          z-index: 200;
-          margin-top: 3%;
-          padding-right: 3%;
-          margin-bottom: 3%;
-          overflow-y: auto;
-        
+  }
+  
+  .frame {
+    position: absolute;
+    height: 100%;
+    // object-fit: contain;
+    aspect-ratio: 1/1;
+    padding-bottom: 8px;
+
+  }
+}
+@include media-breakpoint-down(sm) {
+  .framerchar {
+    .frame {
+      position: relative;
+      aspect-ratio: unset;
+      padding-bottom: 8px;
+  
+    }
+  
+  }
+}
+
+
+.border-gallery {
+  position: relative;
+  border-left: 12px solid #A49380;
+  border-right: 12px solid #A49380;
+  border-bottom: 12px solid #A49380;
+  padding: 0 10px;
+  // position: relative;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    z-index: 2;
+    top: -6.25px;
+    left: -6.25px;
+    right: -6.25px;
+    bottom: -6.25px;
+    border-right: 1px solid #D7D3C8;
+    border-left: 1px solid #D7D3C8;
+    border-bottom: 1px solid #D7D3C8;
+  }
+
+}
+
+.frame-top {
+  width: 100%;
+  position: absolute;
+  height: 45px;
+  top: 3px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+
+
+.righttop {
+  position: absolute;
+  top: 12px;
+  z-index: 3;
+  right: 12px;
+  width: 40px;
+}
+
+.lefttop {
+  position: absolute;
+  top: 12px;
+  z-index: 3;
+  left: 12px;
+  width: 40px;
+}
+
+.rightbot {
+  position: absolute;
+  bottom: 12px;
+  z-index: 3;
+  right: 12px;
+  width: 40px;
+}
+
+.leftbot {
+  position: absolute;
+  bottom: 12px;
+  z-index: 3;
+  left: 12px;
+  width: 40px;
+}
+
+
+.boxestraits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .boxlist {
+    width: 100%;
+    max-width: 42%;
+
+    .modal-boxtraits {
+      display: flex;
+      margin-bottom: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .titledesc {
+        flex: auto;
+        max-width: 40%;
       }
 
-      .header-content {
-        padding-left: 3%;
-        padding-right: 6%;
-
+      .valuedesc {
+        flex: 1;
       }
+    }
+  }
+}
 
-      // .MuiButtonBase-root .MuiAccordionSummary-root .Mui-expanded .MuiAccordionSummary-gutters {
-      //     background: hotpink !important;
-      // }
+@include media-breakpoint-down(sm) {
+  .boxestraits {
+    .boxlist {
+      max-width: 100%;
+    }
+  }
+}
 
-      .modal-gallery {
-        // background-image: url("/assets/img/gallery/modal/gallery-modal.svg");
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 100%;
-        max-height: 800px;
-        max-width: 890px;
-        width: 100%;
-        padding: 3%;
 
-      }
-      .filter-title-box {
-        padding-right: 100px !important;
-      }
+.MuiList-root.MuiList-padding.MuiMenu-list {
+  background: #423B38;
+}
 
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
+.wrap-modal-gallery{
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
 
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    ///SEMENTARA
+    background-color: #423B38 !important;
+    border: 1px solid #A69580 !important;
+  }
+
 }

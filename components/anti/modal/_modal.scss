@@ -123,14 +123,14 @@ $modal-padding-lg: 2rem;
     text-align: center;
     top: $modal-padding-sm;
     right: $modal-padding-sm;
-    margin-top: -($modal-padding-sm / 2);
-    margin-right: -($modal-padding-sm / 2);
+    margin-top: -(calc($modal-padding-sm / 2));
+    margin-right: -(calc($modal-padding-sm / 2));
     z-index: 1;
     @include media-breakpoint-up(md) {
       top: $modal-padding-lg;
       right: $modal-padding-lg;
-      margin-top: -($modal-padding-lg / 2);
-      margin-right: -($modal-padding-lg / 2);
+      margin-top: -(calc($modal-padding-lg / 2));
+      margin-right: -(calc($modal-padding-lg / 2));
     }
     @include hover-focus-active {
       opacity: 1 !important;

@@ -1,9 +1,9 @@
 .sc-land-cover {
     height: 100vh !important; // fallback option
-    height: var(--vh, 1vh) * 100 !important;
+    height: calc(var((--vh, 1vh)) * 100) !important;
+    // height: calc(var(--vh, 1vh) * 100) !important; //original
     background: url("../../img/land/bg-land-cover.png") no-repeat center center;
     background-size: cover;
-
     &:after {
         content: "";
         @include gradient-y-to-top($black, rgba($black, 0), 5%, 100%);
@@ -14,7 +14,6 @@
         bottom: 0;
         left: 0;
     }
-
     .container {
         display: flex;
         flex-direction: column;
@@ -22,21 +21,17 @@
         align-items: center;
         text-align: center;
         height: 100%;
-
         h1 {
             font-size: 3rem;
         }
-
         .avarik-button {
             margin-top: 5rem;
             margin-left: 0;
             padding-left: 3.5rem;
             padding-right: 3.5rem;
-
             .side-right {
                 right: -29px;
             }
-
             .side-left {
                 left: -29px;
             }
@@ -48,7 +43,6 @@
     background: url("../../img/home/bg_battle.png") no-repeat center center;
     background-size: cover;
     position: relative;
-
     &:before {
         content: "";
         @include gradient-y-to-bottom($black, rgba($black, 0), 5%, 100%);
@@ -59,7 +53,6 @@
         top: 0;
         left: 0;
     }
-
     &::after {
         content: "";
         @include gradient-y-to-top($black, rgba($black, 0), 5%, 100%);
@@ -70,26 +63,21 @@
         bottom: 0;
         left: 0;
     }
-
     .container {
         h1 {
             text-align: center;
         }
-
         h1,
         p {
             color: $white;
         }
-
         .item {
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             @include media-breakpoint-up(lg) {
                 font-size: 1.1rem;
             }
-
             .avarik-icon {
                 width: 35px;
                 object-fit: contain;

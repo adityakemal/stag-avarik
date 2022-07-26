@@ -58,8 +58,8 @@ const TeamsMain = () => {
             text: "Conceptor",
             social: [],
             social: [
-                { type: "twitter", url: "https://twitter.com/jejouw" },
-                { type: "instagram", url: "https://instagram.com/jejouw" },
+                // { type: "twitter", url: "https://twitter.com/jejouw" },
+                // { type: "instagram", url: "https://instagram.com/jejouw" },
             ],
         },
         {
@@ -215,7 +215,10 @@ const TeamsMain = () => {
                                         size="sm"
                                         shape="square"
                                         variant="outline-white"
+<<<<<<< HEAD
                                         size="sm"
+=======
+>>>>>>> dev
                                         className={anim(4 + i)}
                                         data={item.social}
                                     />

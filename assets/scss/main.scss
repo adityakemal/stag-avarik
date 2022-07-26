@@ -171,6 +171,7 @@
 @import "pages/avrk";
 @import "pages/404";
 @import "pages/gallery";
+@import "pages/quiz";
 
 // ========================================================================================================================================
 // Custom Styles
@@ -226,46 +227,11 @@
     cursor: pointer;
 }
 
-.border-gallery {
-    position: relative;
-    border: 12px solid #A49380;
-    padding: 0 10px;
-    position: relative;
-
-    &::before {
-        content: " ";
-        position: absolute;
-        z-index: 2;
-        top: -4px;
-        left: -4px;
-        right: -4px;
-        bottom: -4px;
-        border: 1px solid #D7D3C8;
-    }
-
-
-
-}
 
 pre {
     background-color: #D7D3C8;
 }
 
-.rightbot {
-    position: absolute;
-    bottom: 12px;
-    z-index: 3;
-    right: 12px;
-    width: 40px;
-}
-
-.leftbot {
-    position: absolute;
-    bottom: 12px;
-    z-index: 3;
-    left: 12px;
-    width: 40px;
-}
 
 .top-frame {
     position: absolute;
@@ -303,9 +269,9 @@ pre {
         outline: none;
         border: 0;
         width: 100%;
-        background-color: red;
 
         input {
+            padding-right: 15px;
             height: 100%;
             outline: none;
             border: 0;
