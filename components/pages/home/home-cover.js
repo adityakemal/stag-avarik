@@ -42,7 +42,7 @@ const HomeCover = () => {
         style={{ position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100vh', flexDirection: 'column' }}
       >
         <div className="w-100 justify-content-center d-flex px-4 pt-5 pt-md-0" style={{ zIndex: 1000, marginBottom: '6%' }}>
-          <img src={logoMain} className="img-fluid cover-anim-content" alt="Logo" style={{ maxWidth: '600px', width: '100%' }} />
+          <img src={logoMain} className="img-fluid cover-anim-content coverlogo" alt="Logo" />
         </div>
 
         <div

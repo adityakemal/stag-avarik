@@ -25,6 +25,35 @@ $home-anim-delay: 1s; // default 3s
   .cover-anim-content{
     animation: fadeInUp 1s #{$home-anim-delay + 0s} ease-in-out both;
   }
+
+  .coverlogo{
+    max-width: 600px;
+    width: 100%;
+  }
+
+  @media (min-width: 2000px) {
+
+      .coverlogo{
+        max-width: 900px;
+      }
+
+      .avarik-button{
+        font-size: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        &::after {
+          bottom: -10px;
+        }
+        .side-left {
+          left: -37px;
+        }
+        .side-right {
+          right: -37px;
+        }
+      }
+
+  }
+
   .cover-cta {
     display: flex;
     flex-direction: column;
