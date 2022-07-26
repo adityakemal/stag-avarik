@@ -274,7 +274,7 @@ const TraitType = ({
         <AccordionDetails
           style={{
             background: "#423B38",
-            overflowY: "scroll",
+            // overflowY: "scroll",
             // display: "inline-flex",
             flexDirection: "column",
             padding: 0,
