@@ -19,7 +19,7 @@ import { filterEngine, getInitialData, handleFilterData, handleResetData, handle
 import AvarikTitle from "components/avarik-saga/avarik-title"
 import { useScrollAnim } from "components/hooks/hooks"
 import MobileDrawer from "./MobileDrawer"
-import SortMenu from "./SortMenu"
+// import SortMenu from "./SortMenu"
 
 const avarikMetadata = shuffleArray(avarikMetadatax)
 
@@ -159,7 +159,6 @@ export default function App() {
       {/* <pre>
         {JSON.stringify(filterList, null, 2)}
       </pre> */}
-
 
 
       <div className="container mt-md-5 mt-3">

@@ -159,7 +159,7 @@ export default function ModalPic({ open, handleClose, currentItem }) {
           // padding: `3%`,
           outline: "none",
           border: 0,
-          overflowY: 'scroll',
+          overflowY: 'auto',
           paddingTop: 30,
           position: 'relative',
         }}

@@ -1,18 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 var jsonQuery = require('json-query')
-import { shuffleArray } from "components/pages/gallery/filter-helpers";
-// import { dataAvarikHeroes } from "public/nft-source/opensea_avarik";
-import nftDataJson from "../../public/nft-source/opensea_avarik_stats.json"
+import nftDataJson from "../../public/nft-source/opensea_avarik.json"
 
-
-
-// const flatted = dataAvarikHeroes.map(d => {
-
-//     for (const t of d.traits) {
-//         d[t.trait_type] = t.value
-//     }
-//     return d
-// })
 
 let initialState = {
     initialGallery: [...nftDataJson],
@@ -71,32 +60,40 @@ export const gallerySlice = createSlice({
         filterEngine: (state) => {
             // console.log(nftDataJson)
 
-            // var data = {
-            //     heroes: nftDataJson
-            // }
-
-            // const results = jsonQuery('heroes[**][*Subclass : Archer]', {
-            //     data: data
-            // }).value
 
 
-            // console.log(results)
-
-
-
-
-            if (state.filterList.length !== 0) {
-
-                let data = []
-                for (var fil of state?.filterList) {
-                    // console.log(JSON.stringify(fil))
-                    const filtered = nftDataJson?.filter(res => res?.traits?.find(val => JSON.stringify(val) === JSON.stringify(fil)))
-                    data.push(...filtered)
+            let filterToQueryString = (name) => {
+                let filterByname = state?.filterList?.filter(res => res.trait_type === name)
+                if (filterByname.length === 0) {
+                    return
                 }
-                state.galleryList = data
-            } else {
-                state.galleryList = [...nftDataJson]
+                let arrToString = filterByname?.map(val => `${name}=${val.value}`).toString().replaceAll(',', ' | ')
+                let finalString = `[*${arrToString}]`
+                return finalString
             }
+
+            const data = nftDataJson
+
+
+            let allQueryString = state?.filterList.map(res => filterToQueryString(res?.trait_type)).toString().replaceAll(',', '')
+
+            // console.log(allQueryString)
+            var result = jsonQuery(allQueryString, { data: data }).value
+            // console.log(result)
+            state.galleryList = result
+
+            // if (state.filterList.length !== 0) {
+
+            //     let data = []
+            //     for (var fil of state?.filterList) {
+            //         // console.log(JSON.stringify(fil))
+            //         const filtered = nftDataJson?.filter(res => res?.traits?.find(val => JSON.stringify(val) === JSON.stringify(fil)))
+            //         data.push(...filtered)
+            //     }
+            //     state.galleryList = data
+            // } else {
+            //     state.galleryList = [...nftDataJson]
+            // }
         }
 
     },

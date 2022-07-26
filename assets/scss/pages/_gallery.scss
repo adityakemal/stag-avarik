@@ -93,13 +93,13 @@
     // padding-right: 3%;
     // margin-bottom: 3%;
     overflow-y: scroll !important;
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
 
- &::-webkit-scrollbar-track {
-    background: transparent;
-  }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
 
     &::-webkit-scrollbar-thumb {
       ///SEMENTARA
@@ -274,6 +274,14 @@
 }
 
 .wrap-modal-gallery{
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
   &::-webkit-scrollbar-thumb {
     ///SEMENTARA
     background-color: #423B38 !important;

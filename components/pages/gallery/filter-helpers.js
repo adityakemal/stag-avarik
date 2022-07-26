@@ -40,6 +40,7 @@ export const filterObj = (array = [], query) =>
 
 const META_FILTER = [
   {
+    id: 1,
     trait_type: "Faction",
     options: [
       { trait_value: "Glacia", total: "2226" },
@@ -51,6 +52,7 @@ const META_FILTER = [
     icon: "/assets/traits/faction.svg",
   },
   {
+    id: 2,
     trait_type: "Class",
     options: [
       { trait_value: "Knight", total: "2963" },
@@ -61,6 +63,7 @@ const META_FILTER = [
     icon: "/assets/traits/class.svg",
   },
   {
+    id: 3,
     trait_type: "Subclass",
     options: [
       { trait_value: "Archer", total: "1587" },
@@ -80,33 +83,7 @@ const META_FILTER = [
     icon: "/assets/traits/subclass.svg",
   },
   {
-    trait_type: "Background",
-    options: [
-      { trait_value: "Glacian IV", total: "1194" },
-      { trait_value: "Ignisian IV", total: "1190" },
-      { trait_value: "Tenebrisian IV", total: "1188" },
-      { trait_value: "Terran IV", total: "1188" },
-
-      { trait_value: "Glacian III", total: "900" },
-      { trait_value: "Ignisian III", total: "900" },
-      { trait_value: "Tenebrisian III", total: "900" },
-      { trait_value: "Terran III", total: "900" },
-
-      { trait_value: "Glacian II", total: "120" },
-      { trait_value: "Ignisian II", total: "120" },
-      { trait_value: "Tenebrisian II", total: "120" },
-      { trait_value: "Terran II", total: "120" },
-
-      { trait_value: "Glacian I", total: "12" },
-      { trait_value: "Ignisian I", total: "12" },
-      { trait_value: "Tenebrisian I", total: "12" },
-      { trait_value: "Terran I", total: "12" },
-    ],
-    total: "16",
-    icon: "/assets/traits/background.svg",
-  },
-
-  {
+    id: 4,
     trait_type: "Gender",
     options: [
       { trait_value: "Male", total: "4445" },
@@ -117,6 +94,7 @@ const META_FILTER = [
   },
 
   {
+    id: 5,
     trait_type: "Body",
     options: [
       { trait_value: "Ginger", total: "1541" },
@@ -132,6 +110,7 @@ const META_FILTER = [
     icon: "/assets/traits/body.svg",
   },
   {
+    id: 6,
     trait_type: "Hair",
     options: [
       { trait_value: "Short Blond", total: "944" },
@@ -160,6 +139,7 @@ const META_FILTER = [
     icon: "/assets/traits/hair.svg",
   },
   {
+    id: 7,
     trait_type: "Head",
     options: [
       { trait_value: "Berret Blue", total: 156 },
@@ -296,8 +276,35 @@ const META_FILTER = [
     total: "130",
     icon: "/assets/traits/head.svg",
   },
-
   {
+    id: 8,
+    trait_type: "Background",
+    options: [
+      { trait_value: "Glacian IV", total: "1194" },
+      { trait_value: "Ignisian IV", total: "1190" },
+      { trait_value: "Tenebrisian IV", total: "1188" },
+      { trait_value: "Terran IV", total: "1188" },
+
+      { trait_value: "Glacian III", total: "900" },
+      { trait_value: "Ignisian III", total: "900" },
+      { trait_value: "Tenebrisian III", total: "900" },
+      { trait_value: "Terran III", total: "900" },
+
+      { trait_value: "Glacian II", total: "120" },
+      { trait_value: "Ignisian II", total: "120" },
+      { trait_value: "Tenebrisian II", total: "120" },
+      { trait_value: "Terran II", total: "120" },
+
+      { trait_value: "Glacian I", total: "12" },
+      { trait_value: "Ignisian I", total: "12" },
+      { trait_value: "Tenebrisian I", total: "12" },
+      { trait_value: "Terran I", total: "12" },
+    ],
+    total: "16",
+    icon: "/assets/traits/background.svg",
+  },
+  {
+    id: 9,
     trait_type: "Weapon",
     options: [
       { trait_value: "Flower Bow", total: 32 },
@@ -443,6 +450,7 @@ const META_FILTER = [
     icon: "/assets/traits/weapon.svg",
   },
   {
+    id: 10,
     trait_type: "Armor",
     options: [
       { trait_value: "Hunter Red", total: 84 },
@@ -580,6 +588,7 @@ const META_FILTER = [
   },
 
   {
+    id: 11,
     trait_type: "Original Set",
     options: [
       { trait_value: "Woodland Green", total: 1 },

@@ -19,18 +19,15 @@ import { handleFilterData } from "redux/gallery/gallery.reducer"
 
 // {"image":"ipfs://QmRRPWG96cmgTn2qSzjwr2qvfNEuhunv6FNeMFGa9bx6mQ","attributes":[{"trait_type":"Earring","value":"Silver Hoop"},{"trait_type":"Background","value":"Orange"},{"trait_type":"Fur","value":"Robot"},
 
-export default function Drawer({
-  // filteredArray = [],
-  // selectedFilterArray = [],
-  // addFilter = () => { },
-}) {
+export default function Drawer() {
   const dispatch = useDispatch()
+
   const addFilter = (v) => dispatch(handleFilterData(v))
 
 
   const { filterList, galleryList, initialGallery } = useSelector(state => state.gallery)
 
-  const [filteredArray, setFilteredArray] = useState([])
+  const [filteredArray, setFilteredArray] = useState(initialGallery)
   const [category, setCategory] = useState({
     "Armor": [],
     "Background": [],
@@ -45,7 +42,6 @@ export default function Drawer({
   })
 
   useEffect(() => {
-    // console.log(galleryList);
     setFilteredArray(initialGallery)
   }, [])
 
@@ -58,63 +54,46 @@ export default function Drawer({
           src={`/assets/traits/classification.svg`}
           style={{ paddingRight: 10, marginTop: '-10px', width: '100%' }}
         />
-        {TRAITS.slice(0, 4).map(({ trait_type, options, total, icon }, i) => {
-          return (
-            <TraitType
-              key={i}
-              {...{
-                trait_type,
-                total,
-                options,
-                selectedFilterArray,
-                addFilter,
-                filteredArray,
-                icon,
-              }}
-            />
-          )
-        })}
+        {TRAITS.slice(0, 4).map((item, i) =>
+          <TraitType
+            key={i}
+            id={item.id}
+            trait_type={item.trait_type}
+            options={item.options}
+            icon={item.icon}
+            total={item.total}
+            addFilter={addFilter}
+          />
+        )}
         <img
           src={`/assets/traits/appearance.svg`}
           style={{ paddingRight: 10, marginTop: '-10px', width: '100%' }}
         />
-        {TRAITS.slice(4, 7).map(({ trait_type, options, total, icon }, i) => {
-          return (
-            <TraitType
-              key={i}
-              {...{
-                trait_type,
-                total,
-                options,
-                selectedFilterArray,
-                addFilter,
-                filteredArray,
-                icon,
-              }}
-            />
-          )
-        })}
+        {TRAITS.slice(4, 7).map((item, i) =>
+          <TraitType
+            key={i}
+            id={item.id}
+            trait_type={item.trait_type}
+            options={item.options}
+            icon={item.icon}
+            total={item.total}
+            addFilter={addFilter}
+          />
+        )}
         <img
           src={`/assets/traits/equipment.svg`}
           style={{ paddingRight: 10, marginTop: '-10px', width: '100%' }}
         />
-        {TRAITS.slice(7, 11).map(
-          ({ trait_type, options, total, icon }, i) => {
-            return (
-              <TraitType
-                key={i}
-                {...{
-                  trait_type,
-                  total,
-                  options,
-                  selectedFilterArray,
-                  addFilter,
-                  filteredArray,
-                  icon,
-                }}
-              />
-            )
-          }
+        {TRAITS.slice(7, 11).map((item, i) =>
+          <TraitType
+            key={i}
+            id={item.id}
+            trait_type={item.trait_type}
+            options={item.options}
+            icon={item.icon}
+            total={item.total}
+            addFilter={addFilter}
+          />
         )}
       </div>
     </div>
@@ -126,12 +105,12 @@ export default function Drawer({
 // css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root
 
 const TraitType = ({
+  id,
   trait_type,
   options,
-  selectedFilterArray = [],
   addFilter,
   total,
-  filteredArray,
+  // filteredArray,
   icon,
 }) => {
 
@@ -148,14 +127,16 @@ const TraitType = ({
         addFilter(filtered)
       } else {
         const data = {
+          id: id || 'okes',
           trait_type: trait_type,
           value: item?.trait_value
         }
-        // console.log(data)
-        addFilter([
+        const sortedFilter = [
           ...filterList,
           data
-        ])
+        ].sort((a, b) => a.id - b.id)
+        // console.log(data)
+        addFilter(sortedFilter)
 
       }
     }
@@ -197,7 +178,7 @@ const TraitType = ({
       } else {
 
         const removeOld = filterList.filter(res => res.trait_type !== trait_type)
-        const addAllTrait = options.map(val => ({ trait_type: trait_type, value: val.trait_value }))
+        const addAllTrait = options.map(val => ({ id: id, trait_type: trait_type, value: val.trait_value }))
         addFilter([
           ...removeOld,
           ...addAllTrait
@@ -286,11 +267,12 @@ const TraitType = ({
           {ValueTraitSelectAll()}
 
           {options.map((item, i) => {
-            const checkValue = (obj) => item?.trait_value?.includes(obj.value)
-            const isExisted = filteredArray.find((o) =>
-              o?.traits?.some(checkValue)
-            )
-            return isExisted ? ValueTrait(item) : null
+            // const checkValue = (obj) => item?.trait_value?.includes(obj.value)
+            // const isExisted = filteredArray.find((o) =>
+            //   o?.traits?.some(checkValue)
+            // )
+            // return isExisted ? ValueTrait(item) : null
+            return ValueTrait(item)
           })}
 
         </AccordionDetails>
