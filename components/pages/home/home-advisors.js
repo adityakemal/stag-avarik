@@ -79,22 +79,13 @@ const HomeAdvisors = () => {
 
     return (
         <section
-            className="sc-home-advisors sc-dark pb-main pt-4"
+            className="sc-home-advisors sc-dark pb-main pt-main"
             id="advisors"
             ref={trigger}
         >
+            <div className="blank my-0 my-lg-5 my-md-4 py-0 py-lg-5 py-md-4" style={{ height: '200px' }}></div>
+
             <div className="container">
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
                 <div className={`heading mb-5 ${anim(1)}`}>
                     <AvarikTitle title="Advisors" titleClassName="h2" className="mx-auto" />
                 </div>

@@ -9,6 +9,12 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  env: {
+    //env here
+    NEXT_PUBLIC_API_LEADERBORD: process.env.NEXT_PUBLIC_API_LEADERBORD,
+    NEXT_PUBLIC_LEADERBOARD_SECRET_KEY: process.env.NEXT_PUBLIC_LEADERBOARD_SECRET_KEY,
+    NEXT_PUBLIC_ETHERSCAN_API: process.env.NEXT_PUBLIC_ETHERSCAN_API,
+  },
   images: {
     // loader: 'akamai',
     // path: '/',
