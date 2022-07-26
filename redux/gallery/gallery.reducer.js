@@ -69,7 +69,7 @@ export const gallerySlice = createSlice({
         },
 
         filterEngine: (state) => {
-            console.log(nftDataJson)
+            // console.log(nftDataJson)
 
             // var data = {
             //     heroes: nftDataJson
@@ -85,18 +85,18 @@ export const gallerySlice = createSlice({
 
 
 
-            // if (state.filterList.length !== 0) {
+            if (state.filterList.length !== 0) {
 
-            //     let data = []
-            //     for (var fil of state?.filterList) {
-            //         // console.log(JSON.stringify(fil))
-            //         const filtered = nftDataJson?.filter(res => res?.traits?.find(val => JSON.stringify(val) === JSON.stringify(fil)))
-            //         data.push(...filtered)
-            //     }
-            //     state.galleryList = data
-            // } else {
-            //     state.galleryList = [...nftDataJson]
-            // }
+                let data = []
+                for (var fil of state?.filterList) {
+                    // console.log(JSON.stringify(fil))
+                    const filtered = nftDataJson?.filter(res => res?.traits?.find(val => JSON.stringify(val) === JSON.stringify(fil)))
+                    data.push(...filtered)
+                }
+                state.galleryList = data
+            } else {
+                state.galleryList = [...nftDataJson]
+            }
         }
 
     },

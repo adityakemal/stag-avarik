@@ -156,9 +156,9 @@ export default function App() {
       <ModalPic {...{ open, handleClose, currentItem }} />
 
       <AvarikTitle title="Gallery" titleClassName="text-white" className="mx-auto mb-5 mt-5" />
-      <pre>
+      {/* <pre>
         {JSON.stringify(filterList, null, 2)}
-      </pre>
+      </pre> */}
 
 
 
