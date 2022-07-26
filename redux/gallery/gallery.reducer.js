@@ -1,21 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
+var jsonQuery = require('json-query')
 import { shuffleArray } from "components/pages/gallery/filter-helpers";
-
+// import { dataAvarikHeroes } from "public/nft-source/opensea_avarik";
 import nftDataJson from "../../public/nft-source/opensea_avarik_stats.json"
 
-const flatted = nftDataJson.map(d => {
-    let data = {
-        ...d,
-    }
-    for (const t of d.traits) {
-        data[t.trait_type] = t.value
-    }
-    return data
-})
+
+
+// const flatted = dataAvarikHeroes.map(d => {
+
+//     for (const t of d.traits) {
+//         d[t.trait_type] = t.value
+//     }
+//     return d
+// })
 
 let initialState = {
     initialGallery: [...nftDataJson],
-    galleryList: [...flatted],
+    galleryList: [...nftDataJson],
     filterList: [],
     sortString: '',
 };
@@ -68,18 +69,34 @@ export const gallerySlice = createSlice({
         },
 
         filterEngine: (state) => {
-            if (state.filterList.length !== 0) {
+            console.log(nftDataJson)
 
-                let data = []
-                for (var fil of state?.filterList) {
-                    // console.log(JSON.stringify(fil))
-                    const filtered = nftDataJson?.filter(res => res?.traits?.find(val => JSON.stringify(val) === JSON.stringify(fil)))
-                    data.push(...filtered)
-                }
-                state.galleryList = data
-            } else {
-                state.galleryList = [...nftDataJson]
-            }
+            // var data = {
+            //     heroes: nftDataJson
+            // }
+
+            // const results = jsonQuery('heroes[**][*Subclass : Archer]', {
+            //     data: data
+            // }).value
+
+
+            // console.log(results)
+
+
+
+
+            // if (state.filterList.length !== 0) {
+
+            //     let data = []
+            //     for (var fil of state?.filterList) {
+            //         // console.log(JSON.stringify(fil))
+            //         const filtered = nftDataJson?.filter(res => res?.traits?.find(val => JSON.stringify(val) === JSON.stringify(fil)))
+            //         data.push(...filtered)
+            //     }
+            //     state.galleryList = data
+            // } else {
+            //     state.galleryList = [...nftDataJson]
+            // }
         }
 
     },

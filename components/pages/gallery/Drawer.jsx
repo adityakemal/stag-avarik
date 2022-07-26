@@ -239,7 +239,7 @@ const TraitType = ({
     <>
       <Accordion
         style={{
-          overflowY: "scroll",
+          // overflowY: "scroll",
           // background: "#eee",
           background: "transparent",
           boxShadow: "none",
