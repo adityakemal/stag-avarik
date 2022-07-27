@@ -47,6 +47,7 @@ export default function Drawer() {
 
   var selectedFilterArray = filterList
 
+
   return (
     <div className="text-white box-drawer">
       <div style={{ paddingBottom: 20 }}>
@@ -216,6 +217,8 @@ const TraitType = ({
     )
   }
 
+  const ignoreSelectAll = ["Head", "Weapon", "Armor"]
+
   return (
     <>
       <Accordion
@@ -262,9 +265,9 @@ const TraitType = ({
             margin: '0px 3.77% 0px 0px'
           }}
         >
-
-          {/* <ValueTraitSelectAll options={options} trait_type={trait_type} addFilter={addFilter} /> */}
-          {ValueTraitSelectAll()}
+          {
+            !ignoreSelectAll.includes(trait_type) && ValueTraitSelectAll()
+          }
 
           {options.map((item, i) => {
             // const checkValue = (obj) => item?.trait_value?.includes(obj.value)
