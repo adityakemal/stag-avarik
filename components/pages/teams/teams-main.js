@@ -4,6 +4,7 @@ import { Image, Social } from "components/anti"
 
 import bg from "assets/img/team/bg_teams.png"
 import joel from "assets/img/team/joel.jpeg"
+
 import kevinCahya from "assets/img/team/kevin-cahya.jpeg"
 import kyuwonKim from "assets/img/team/kyuwon-kim.jpeg"
 import seanEdbert from "assets/img/team/sean-edbert-sanjoto.jpeg"
@@ -23,6 +24,8 @@ import christian from "assets/img/team/chris-rijanto.jpeg"
 import antony from "assets/img/team/antony-liem.jpeg"
 import gene from "assets/img/team/gene-richard.jpeg"
 import jason from "assets/img/team/jason-jonathan.jpeg"
+import clovis from "assets/img/team/clovis.jpeg"
+import qinEn from "assets/img/team/qin-en.jpeg"
 
 
 const TeamsMain = () => {
@@ -188,6 +191,20 @@ const TeamsMain = () => {
             text: "Advisor",
             social: [],
             social: [{ type: "instagram", url: "https://instagram.com/handi_hj" }],
+        },
+        {
+            img: clovis,
+            title: "Clovis",
+            text: "Advisor",
+            social: [],
+            social: [{ type: "linkedin", url: "https://www.linkedin.com/in/cloviswarlop/?original_referer=http%3A%2F%2Favariksaga.com%2F" }],
+        },
+        {
+            img: qinEn,
+            title: "Qin En Looi",
+            text: "Advisor",
+            social: [],
+            social: [],
         },
     ]
 
