@@ -321,10 +321,10 @@
             &~.nav-item-dropdown.game-info {
               visibility: visible;
               opacity: 1;
-              height: 185px !important;
+              height: 225px;
 
               .img-paper {
-                height: 185px !important;
+                height: 225px;
               }
             }
           }
@@ -435,14 +435,15 @@
 
           &:hover {
             .img-paper {
-              height: 185px;
+              // height: 185px + 40px;
+              height: 225px;
             }
           }
         }
 
         &.mini-game {
-          left: 7.5rem;
-          right: unset;
+          left: unset;
+          right: 12rem;
 
           &:hover {
             .img-paper {

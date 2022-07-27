@@ -15,15 +15,16 @@ const gameInfo = [
   { name: "Class", link: "/class" },
   { name: "Weapons", link: "/weapons" },
   { name: "Armors", link: "/armors" },
+  { name: "Game Currency", link: "/vortem" },
   { name: "Gallery", link: "/gallery" },
   // { name: "Lands", link: "/land" },
 ]
 
-const aboutUs = [
-  { name: "Team", link: "/teams" },
-  { name: "Lore", link: "/https://medium.com/@Avariksaga" },
-  { name: "Whitepaper", link: "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/" },
-]
+// const aboutUs = [
+// { name: "Team", link: "/teams" },
+// { name: "Lore", link: "/https://medium.com/@Avariksaga" },
+// { name: "Whitepaper", link: "https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/" },
+// ]
 
 const miniGame = [
   { name: "About Mini Game", link: "/about-mini-game" },
@@ -32,7 +33,6 @@ const miniGame = [
 ]
 
 const currency = [
-  { name: "Game Currency", link: "/vortem" },
   { name: "Hold to Earn", link: "/collect-in-game-currency" },
   { name: "Vesting AVRK", link: "/vesting-avrk" },
   { name: "Staking AVRK", link: "/staking-avrk" },
@@ -60,6 +60,31 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch, onConnect, accou
               ))}
             </ul>
           </li>
+
+          <li className="nav-item">
+            <Link className='nav-link' to={"https://avarik-saga.gitbook.io/avarik-saga/WiD4nmRtrLEcYb3LPkRJ/"}>
+              Whitepaper
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link className='nav-link' to={"/collect-in-game-currency"}>
+              Hold To Earn
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link className='nav-link' to={"/teams"}>
+              Team
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link className='nav-link' to={"https://medium.com/@Avariksaga"}>
+              Blog
+            </Link>
+          </li>
+
           <li className="nav-item">
             <div className="nav-link mini-game">
               Mini Game
@@ -77,7 +102,7 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch, onConnect, accou
               ))}
             </ul>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <div className="nav-link about-us">
               About Us
               <img src={iconDropdown} alt="" className="img-fluid ic-dropdown" />
@@ -93,8 +118,8 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch, onConnect, accou
                 </li>
               ))}
             </ul>
-          </li>
-          <li className="nav-item">
+          </li> */}
+          {/* <li className="nav-item">
             <div className="nav-link currency">
               Currency
               <img src={iconDropdown} alt="" className="img-fluid ic-dropdown" />
@@ -110,7 +135,7 @@ const DesktopMenu = ({ navExpand, handleSearch, disabledSearch, onConnect, accou
                 </li>
               ))}
             </ul>
-          </li>
+          </li> */}
           {account ? (
             <div className="wallet-address-box">
               <div className="border"></div>
