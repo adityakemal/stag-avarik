@@ -366,7 +366,7 @@ export default function LegendSection({ title }) {
                 <div className={`w-100 box-heroes`}>
                     {
                         data[selectedHeroType]?.heroes?.map((res, i) => (
-                            <div className={`wrapimage text-white text-center ${i !== (selectedHeroType + 100) && anim(i + 2, "revealInDown")}`} key={i} >
+                            <div className={`wrapimage text-white text-center ${anim(i + 2, "revealInDown")}`} key={i} >
                                 <img src={legendFrame} className='img-fluid frame ' alt="" />
                                 <img src={res.img} className='img-fluid' alt="" />
                                 <p className="name mt-3">
