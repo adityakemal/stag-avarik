@@ -79,7 +79,7 @@ export const gallerySlice = createSlice({
 
             // console.log(allQueryString)
             var result = jsonQuery(allQueryString, { data: data }).value
-            // console.log(result)
+            // console.log(result.map(res => ({ name: res.name, subclass: res.Subclass, img: res.image })))
             state.galleryList = result
 
             // if (state.filterList.length !== 0) {

@@ -144,7 +144,7 @@ export default function App() {
   //1200 width
   return (
 
-    <div className={`sc-gallery pb-5 mb-5 ${anim(1)} pt-5 pt-xs-2`}
+    <div className={`sc-gallery pb-5 ${anim(1)} pt-5 pt-xs-2`}
       ref={trigger}
       style={{
         backgroundImage: `url(${bgGallery})`,
