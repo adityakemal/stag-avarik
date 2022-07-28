@@ -1,4 +1,3 @@
-import { Slider } from 'components/anti'
 import React, { useState } from 'react'
 
 import { useScrollAnim } from 'components/hooks/hooks'
