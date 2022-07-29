@@ -13,7 +13,7 @@
    // }
 
    .cover-bg-wrap {
-      animation: zoomInSm 1.5s $home-anim-cover-delay ease(in-out-quart) both;
+      // animation: zoomInSm 1.5s $home-anim-cover-delay ease(in-out-quart) both;
       position: relative;
       height: 90vh;
       background-position:bottom center, bottom, left  20px bottom,  center; // bgbottom/ overlay/ flag/ bg
@@ -37,36 +37,48 @@
 
    .lore-section{
       position: relative;
-      height: 100vh;
+      min-height: 100vh;
       background-repeat: no-repeat;
       background-size:cover;
       background-position: center bottom;
-      .desctitle{
-         margin-bottom: 26px;
-      }
-      .desc{
+      .wrapdesc{
          overflow: scroll;
-         height: 466px;
-         max-width: 665px;
-         &::-webkit-scrollbar {
-            width: 10px;
-          }
-      
-          &::-webkit-scrollbar-track {
-            background: transparent;
-          }
-      
-          &::-webkit-scrollbar-thumb {
+         max-height: 466px;
+         &::-webkit-scrollbar-track {
+               background: transparent;
+         }
+         &::-webkit-scrollbar-thumb {
             ///SEMENTARA
             background-color: #423B38 !important;
             border: 1px solid #A69580 !important;
-          }
-         p{
-            font-family: 'D-DIN';
-            font-style: italic;
-            font-size: 24px;
-            line-height: 32px;
-            color: #423B38;
+         }
+         .desctitle{
+            margin-bottom: 26px;
+         }
+         .desc{
+            // height: 100%;
+            // max-height: 466px;
+            max-width: 665px;
+            &::-webkit-scrollbar {
+               width: 10px;
+             }
+         
+             &::-webkit-scrollbar-track {
+               background: transparent;
+             }
+         
+             &::-webkit-scrollbar-thumb {
+               ///SEMENTARA
+               background-color: #423B38 !important;
+               border: 1px solid #A69580 !important;
+             }
+            p{
+               font-family: 'D-DIN';
+               font-style: italic;
+               font-size: 24px;
+               line-height: 32px;
+               color: #423B38;
+            }
          }
       }
 
@@ -74,6 +86,12 @@
 
    .sc-legend{
       min-height: 100vh;
+
+      .subclass{
+         font-weight: 700;
+         margin-bottom: 0;
+         font-size: 24px;
+      }
 
       .buttonslide{
          height: 34px;
@@ -85,7 +103,7 @@
          display: flex;
          flex-wrap: wrap;
          justify-content: center;
-         gap: 24px;
+         gap: 48px;
          margin-bottom: 45px;
          .wrapimage{
             position: relative;
@@ -107,9 +125,23 @@
                margin: 0;
             }
          }
+         @include media-breakpoint-down(sm) {
+            .wrapimage {
+              flex: auto;
+              flex-basis: 150px;
+        
+            //   img {
+            //     width: 100% !important;
+            //     object-fit: fill !important;
+            //     height: auto !important;
+            //     aspect-ratio: 1 / 1;
+            //   }
+            }
+          }
       }
 
       .wrapnavhero{
+         max-width: 392px;
          .navbut{
             position: relative;
             cursor: pointer;
@@ -128,6 +160,7 @@
             transition: all 1s;
             animation: float 2s infinite ease-in-out 0s;
             &::before{
+               transition: all 1s;
                content: " ";
                position: absolute;
                z-index: -1;
@@ -139,6 +172,36 @@
                 border-radius: 100%;
             }
          }
+      }
+   }
+
+   .sc-landmark{
+      min-height: 100vh;
+      .wrapmap{
+         position: relative;
+         .pin-mark{
+            width: 6%;
+            position: absolute;
+            animation: float 2s infinite ease-in-out 0s;
+         }
+         .big-map{
+            width: 100%;
+            object-fit: contain;
+         }
+      }
+      .city{
+         width: 100%;
+         min-height: 276px;
+      }
+      .buttonslide{
+         height:40px;
+         object-fit: contain;
+         cursor: pointer;
+      }
+      .desc{
+         font-size: 24px;
+         line-height: 35px;
+         max-width: 432px ;
       }
    }
 

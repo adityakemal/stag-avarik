@@ -19,6 +19,7 @@ $font-weight-bolder:          bolder; // Antikode
 @include font-face('Trajan Pro', 'TrajanPro-Bold', $font-weight-bold);
 @include font-face('HK Grotesk', 'HKGrotesk-Regular', $font-weight-normal);
 @include font-face('D-DIN', 'D-DIN', $font-weight-normal);
+@include font-face('D-DIN', 'D-DIN', $font-weight-light);
 @include font-face('D-DIN', 'D-DIN-Bold', $font-weight-bold);
 
 // Font default / fallback (DO NOT EDIT)

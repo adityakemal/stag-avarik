@@ -22,29 +22,30 @@ export default function LoreSection({ title, description, logo }) {
 
     return (
         <section
-            className='lore-section pt-5 pb-4'
+            className='lore-section py-main d-flex align-items-center'
             style={{
                 backgroundImage: `url(${loreBg})`,
             }}
         >
-            <div className="container-fluid">
+            <div className="container-xxl">
                 <div className="d-flex justify-content-center w-100 mb-5">
                     <AvarikTitle title={'Lore'} />
                 </div>
                 <div className="row row-5 mb-5">
                     <div
-                        className="col-md-5"
+                        className="col-lg-5"
                         style={{
                             backgroundImage: `url(${imageLogoBg})`,
                             backgroundRepeat: 'no-repeat',
-                            backgroundPosition: 'center'
+                            backgroundPosition: 'center',
+                            height: 500
                         }}
                     >
                         <div className="w-100 d-flex justify-content-center">
                             <img src={imageLogo} alt="" />
                         </div>
                     </div>
-                    <div className="col-md-7 ">
+                    <div className="col-lg-7 wrapdesc" >
                         <h2 className='desctitle'>{title}</h2>
                         <div className="desc" dangerouslySetInnerHTML={{ __html: description }} />
                     </div>

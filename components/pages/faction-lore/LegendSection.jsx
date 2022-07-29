@@ -12,6 +12,8 @@ import leftbutton from 'assets/img/factionLore/legendsSection/leftbutton.png'
 import rightbutton from 'assets/img/factionLore/legendsSection/rightbutton.png'
 import legendFrame from 'assets/img/factionLore/legendsSection/legendFrame.svg'
 
+import bgLegend from 'assets/img/factionLore/legendsSection/bgLegend.jpeg'
+
 const data = [
     {
         type: 'knight',
@@ -357,11 +359,19 @@ export default function LegendSection({ title }) {
     }
 
     return (
-        <section className='sc-legend' ref={trigger}>
+        <section className='sc-legend d-flex align-items-center' ref={trigger}
+            style={{
+                backgroundImage: `url(${bgLegend})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover'
+            }}
+        >
             <div className="container-fluid py-5">
-                <div className="d-flex justify-content-center w-100 mb-5 pt-5">
+                <div className="d-flex justify-content-center w-100 mb-2 pt-5">
                     <AvarikTitle title={title} variant={'white'} />
                 </div>
+                <p className='text-white text-center subclass mb-4'>{data[selectedHeroType]?.heroes[0].subclass}</p>
                 <div className={`w-100 box-heroes`}>
                     {
                         data[selectedHeroType]?.heroes?.map((res, i) => (
@@ -379,21 +389,20 @@ export default function LegendSection({ title }) {
                     }
                 </div>
 
-                <div className="wrapnavhero">
-                    <div className={`d-flex align-items-center justify-content-center w-100`}>
-                        <img className='buttonslide mx-3' src={leftbutton} alt="" onClick={handlePrev} />
+                <div className="w-100 d-flex align-items-center justify-content-center">
+                    <div className={`d-flex align-items-center justify-content-between w-100 wrapnavhero`}>
+                        <img className='buttonslide' src={leftbutton} alt="" onClick={handlePrev} />
                         {data.map((res, i) =>
                             <div
                                 key={i}
-                                className={`navbut mx-3 ${i === selectedHeroType && 'active'} `}
+                                className={`navbut ${i === selectedHeroType && 'active'} `}
                                 onClick={() => setSelectedHeroType(i)}
                             >
                                 <img src={res.icon} alt="" />
                             </div>
                         )}
-                        <img className='buttonslide mx-3' src={rightbutton} alt="" onClick={handleNext} />
+                        <img className='buttonslide' src={rightbutton} alt="" onClick={handleNext} />
                     </div>
-
                 </div>
 
             </div>
