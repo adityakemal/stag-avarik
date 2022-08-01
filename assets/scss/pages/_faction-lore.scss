@@ -79,6 +79,7 @@
 
    .sc-legend{
       min-height: 100vh;
+      padding-bottom: 60px;
 
       .subclass{
          font-weight: 700;
@@ -181,6 +182,7 @@
 
    .sc-landmark{
       min-height: 100vh;
+      margin-top: -60px;
       .wrapmap{
          position: relative;
          .pin-mark{
