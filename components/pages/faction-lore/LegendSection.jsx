@@ -13,168 +13,11 @@ import rightbutton from 'assets/img/factionLore/legendsSection/rightbutton.png'
 import legendFrame from 'assets/img/factionLore/legendsSection/legendFrame.svg'
 
 import bgLegend from 'assets/img/factionLore/legendsSection/bgLegend.jpeg'
+import bgLegendGlacia from 'assets/img/factionLore/legendsSection/bgLegendGlacia.png'
 
-const data = [
-    {
-        type: 'knight',
-        icon: knightButton,
-        heroes: [
-            {
-                "name": "Legionaire",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/gigtp8rqH60mjPucykVgqEJK4P3zXVybjexY2pz2AuVSrD7wj5UUq5NcEdRRsqO5EA-R2Q7oxB0GgSZ6Ju4C2D-ZdUw0Jh_Ak52WVUk"
-            },
-            {
-                "name": "Dragon Knight",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/bQye73RjCdpX57s5jRqgMNcJUwwvMST_eaGtj1oGxyiGv0jY-QLuNQ4sfpF79ikNahfFFurcmm1o0AhNgfG1nECtiyuaVWZT7mrc"
-            },
-            {
-                "name": "Samurai",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/Dhi261_2MnUkDRqDLhcoYFfBFD5e2bRo5f4_VMnKFnbvBdeKVCpJ6xJo6KhCk9edAsql0x1Ocaa_qcymCBwhy4HA61-l2tOVOfGfDQ"
-            },
-            {
-                "name": "Arcane Knight",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/p4Yn_wLbKCvVU6V7QEXhmCmD5GBs0Wc0G1tsgAGLb3MIf8UXnQGWVlMWYQeG5b2MmZl6f6tvRE_-UG0y0t-MCU4AjEn-twBEY1nrfQ"
-            }
-        ],
-    },
-    {
-        type: 'wizard',
-        icon: wizardButton,
-        heroes: [
-            {
-                "name": "Thunder Lord",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/87CReAR3MWty6BU6LuNl5Ti5ZCCs9EjRD4VNQMJdHlB2L_YOeBPg46iRgBvvUEX526d03ApAKHZk0DrvNYm6896r62bt1MRcuyL5iFs"
-            },
-            {
-                "name": "Fire Sorceress",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/VuIXJzAXYgFZOiGBOlSA0bnpjRWpDTkpunAV9O85ntZhzAoth6t4ZqIbXcrR6mjY9drnx-aTtINbNJOI19_DJW__FM-GIFU6xYsO59U"
-            },
-            {
-                "name": "Dragon Mage",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/iOFyN_D4pmSvoSKK7-enUYHMxpzHUYMKCjyRA0PotRGpz2BWrKqBR3-oeujL2qiLr1tHQVqGDsMZNIPY4YtImuY6n8kbFWWeTJJq1g"
-            },
-            {
-                "name": "Time Keeper",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/Hb_AfUw6VjTTm0dfkic9tYDDL7ZqHdyDk8brN7v0c2Wy6s3lMnpA6owU1X8h-wmv9lIRssUM-6QHfjU6TXENu4-xv0QJStac1QS6n1I"
-            }
-        ],
-    },
-    {
-        type: 'marksman',
-        icon: marksmanButton,
-        heroes: [
-            {
-                "name": "Huntress",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/c8zjirY6hUVH2jxPWSCM4bFgnzUmFMXjinQebv0XJqWS-xZOKe47Kbgr1qzatlSO3PBwc1O0AuamUN9Sy6pJ9cPXHC0SnnVJQgAbDS0"
-            },
-            {
-                "name": "Ranger",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/lS_xs8RyPqYjm47t1CpqB9MP5rnhZ3-0nr44asKJ9PE6d3GM2fPNRd9P8lPANArtDOUiK8uPT2tFY8ooooMnUaHsq6oveIui6q5j5g"
-            },
-            {
-                "name": "Assassin",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/vwpdKYS3zsnvLVN0ySHX-Y4WLh87mEzo_NrnJsGgVOSHne8OyQureHbUoIzaQkrnX3Pgg5YsL8VAJlYMjg-CUTnOW-xvnsLEXRszjA"
-            },
-            {
-                "name": "Ninja",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/eS6RZcyF5dLD9pS2YPKrRKrWV2YlUgLK99qlLAFRG57WcC_xM9ep28YTMB42iSypE9543uluVxcCqoQRsgVbPXvuHmMoqZK-t-ePFlY"
-            }
-        ],
-    },
-]
 
-const dataGlacia = [
-    {
-        type: 'knight',
-        icon: knightButton,
-        heroes: [
-            {
-                "name": "High Templar",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/1ZJ5lJKXODLgPYffs3tcftbld6XD4BZIjGKijmNsslHaAwIbnhTfu1RuOAX9XMcHMN7zRGOVZfqiPZzEV_PT--N8zSmpsiX3o4dqy6c"
-            },
-            {
-                "name": "Duelist",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/D_ao1jc715wYoC3UHdvdSfCuaT_qdI9Cjxn_gyDSwTVPipfH175Kn6jLvZR24efUdtStdvpMSKkOlJe9FENkn9JbGbDDvQUUS4wH"
-            },
-            {
-                "name": "Paladin",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/YGIKOjnjjYEIYaI_3uoGshhSig0hbdoNosRofG3v_AaYCuYn8sOSPVligvqAtXUIUQuXCjxJPdvWGy5TaLyb9LJ-uTC1Yv_irzQiIw"
-            },
-            {
-                "name": "Lancer",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/vgQ388fBURs-6ciuCgK-9-oAKhEv5ZuRRQodcSm6-aV1FlDCXpRrIh2Zi_uM5ce7U9aMbU6X7QolCfTADJMI2cAWTaJH07KE4Fqrhw"
-            }
-        ],
-    },
-    {
-        type: 'wizard',
-        icon: wizardButton,
-        heroes: [
-            {
-                "name": "Priest",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/xktrvZCklnlWkPwX8DwKZL_snnyk7V92mOwde8_oS2HmK-e2T2gs0u2jeCtLjAMmNwoyscdRC_5TuzRepnaiGeZ187sQe5pY7gVd"
-            },
-            {
-                "name": "Cleric",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/uFIWvRWohmG-3jps9_GUDZ5ocbktdWmwN3i_zbxsWkOuTGA-RKhKmxIO6zaBJDTs7zesgc9QBnbZvm_4UK-2P_nS_eMxJwJ6X1EvPA"
-            },
-            {
-                "name": "Sealer",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/0frPWJODcKFqc-HD9eyM0vm1P67vfd7jxI5hwRa33DX7Ao7Xy1V3rImjmRRj-yMzSJpOGLTY8ZX1RlJgnNv5_j8n9t921CX7gdQGGHQ"
-            },
-            {
-                "name": "Ice Wizard",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/3xDKqiYlKLEInQS6O6okMt8r1k8B-p7_upmRDCM8dChB4rCNrWVfgaywMlDEv_jU4LxBupttmbPllSarvH-KXEUhynuW6xcmIHTIwQ"
-            }
-        ],
-    },
-    {
-        type: 'marksman',
-        icon: marksmanButton,
-        heroes: [
-            {
-                "name": "Beastmaster",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/fRyICzixIPbKrzImwYVTTdyz96TXyl8FI3yK01xyWo-doWmFx2Oid6q6-UuXnT-mKcYZGDmUxBJxV-jAQk57YTneY54aSF7JbiB6U4A"
-            },
-            {
-                "name": "Seeker",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/yYXTLecPpApv030DfFdG9q1NZ_4J43XojtNUd-cBtNnR9lVGmv8y2DR_GTdZc3EiVcXpJsWy1flUsQr3VzaQrhQXIMkW66pWOfPBSQ"
-            },
-            {
-                "name": "Pirate",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/0ubOl493BsBJhETruI2v_HguHeSlIDzCvivzOMg8mcDjsayEIt8zXCYEYbvzAXvYhc9KsEqhaRLWy2fTsQWM68Y7GFoxo6DoTtliIQ"
-            },
-            {
-                "name": "Bard",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/p36AOVvX7gIlvNYNhSA590cUs8oNVArpPdSCJo4S5trcoq06oz1V0GA8i20KyZoztN7QrGfSTg7iBzk8XGFXO5P4ASTU2HbdJzoiUYo"
-            }
-        ],
-    },
-]
+
+
 
 const dataTerra = [
     {
@@ -340,7 +183,7 @@ const dataTenebris = [
 ]
 
 
-export default function LegendSection({ title }) {
+export default function LegendSection({ title, data }) {
     const [trigger, anim] = useScrollAnim()
 
     const [selectedHeroType, setSelectedHeroType] = useState(0)
@@ -361,7 +204,7 @@ export default function LegendSection({ title }) {
     return (
         <section className='sc-legend d-flex align-items-center' ref={trigger}
             style={{
-                backgroundImage: `url(${bgLegend})`,
+                backgroundImage: `url(${title === 'Ignisians' ? bgLegend : title === 'Glacians' ? bgLegendGlacia : bgLegend})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 backgroundSize: 'cover'
@@ -398,7 +241,7 @@ export default function LegendSection({ title }) {
                                 className={`navbut ${i === selectedHeroType && 'active'} `}
                                 onClick={() => setSelectedHeroType(i)}
                             >
-                                <img src={res.icon} alt="" />
+                                <img src={res?.type === 'knight' ? knightButton : res?.type === 'wizard' ? wizardButton : marksmanButton} alt="" />
                             </div>
                         )}
                         <img className='buttonslide' src={rightbutton} alt="" onClick={handleNext} />

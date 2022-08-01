@@ -42,36 +42,29 @@
       background-size:cover;
       background-position: center bottom;
       .wrapdesc{
-         overflow: scroll;
+         overflow-y: scroll;
          max-height: 466px;
-         &::-webkit-scrollbar-track {
-               background: transparent;
-         }
-         &::-webkit-scrollbar-thumb {
+         &::-webkit-scrollbar {
+            width: 10px;
+          }
+      
+          &::-webkit-scrollbar-track {
+            background: transparent;
+          }
+      
+          &::-webkit-scrollbar-thumb {
             ///SEMENTARA
             background-color: #423B38 !important;
             border: 1px solid #A69580 !important;
-         }
+          }
          .desctitle{
             margin-bottom: 26px;
          }
          .desc{
             // height: 100%;
             // max-height: 466px;
+            width: 100%;
             max-width: 665px;
-            &::-webkit-scrollbar {
-               width: 10px;
-             }
-         
-             &::-webkit-scrollbar-track {
-               background: transparent;
-             }
-         
-             &::-webkit-scrollbar-thumb {
-               ///SEMENTARA
-               background-color: #423B38 !important;
-               border: 1px solid #A69580 !important;
-             }
             p{
                font-family: 'D-DIN';
                font-style: italic;

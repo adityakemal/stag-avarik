@@ -21,24 +21,24 @@ const data = [
         type: 'knight',
         heroes: [
             {
-                "name": "Legionaire",
+                "name": "High Templar",
                 "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/gigtp8rqH60mjPucykVgqEJK4P3zXVybjexY2pz2AuVSrD7wj5UUq5NcEdRRsqO5EA-R2Q7oxB0GgSZ6Ju4C2D-ZdUw0Jh_Ak52WVUk"
+                "img": "https://lh3.googleusercontent.com/1ZJ5lJKXODLgPYffs3tcftbld6XD4BZIjGKijmNsslHaAwIbnhTfu1RuOAX9XMcHMN7zRGOVZfqiPZzEV_PT--N8zSmpsiX3o4dqy6c"
             },
             {
-                "name": "Dragon Knight",
+                "name": "Duelist",
                 "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/bQye73RjCdpX57s5jRqgMNcJUwwvMST_eaGtj1oGxyiGv0jY-QLuNQ4sfpF79ikNahfFFurcmm1o0AhNgfG1nECtiyuaVWZT7mrc"
+                "img": "https://lh3.googleusercontent.com/D_ao1jc715wYoC3UHdvdSfCuaT_qdI9Cjxn_gyDSwTVPipfH175Kn6jLvZR24efUdtStdvpMSKkOlJe9FENkn9JbGbDDvQUUS4wH"
             },
             {
-                "name": "Samurai",
+                "name": "Paladin",
                 "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/Dhi261_2MnUkDRqDLhcoYFfBFD5e2bRo5f4_VMnKFnbvBdeKVCpJ6xJo6KhCk9edAsql0x1Ocaa_qcymCBwhy4HA61-l2tOVOfGfDQ"
+                "img": "https://lh3.googleusercontent.com/YGIKOjnjjYEIYaI_3uoGshhSig0hbdoNosRofG3v_AaYCuYn8sOSPVligvqAtXUIUQuXCjxJPdvWGy5TaLyb9LJ-uTC1Yv_irzQiIw"
             },
             {
-                "name": "Arcane Knight",
+                "name": "Lancer",
                 "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/p4Yn_wLbKCvVU6V7QEXhmCmD5GBs0Wc0G1tsgAGLb3MIf8UXnQGWVlMWYQeG5b2MmZl6f6tvRE_-UG0y0t-MCU4AjEn-twBEY1nrfQ"
+                "img": "https://lh3.googleusercontent.com/vgQ388fBURs-6ciuCgK-9-oAKhEv5ZuRRQodcSm6-aV1FlDCXpRrIh2Zi_uM5ce7U9aMbU6X7QolCfTADJMI2cAWTaJH07KE4Fqrhw"
             }
         ],
     },
@@ -46,24 +46,24 @@ const data = [
         type: 'wizard',
         heroes: [
             {
-                "name": "Thunder Lord",
+                "name": "Priest",
                 "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/87CReAR3MWty6BU6LuNl5Ti5ZCCs9EjRD4VNQMJdHlB2L_YOeBPg46iRgBvvUEX526d03ApAKHZk0DrvNYm6896r62bt1MRcuyL5iFs"
+                "img": "https://lh3.googleusercontent.com/xktrvZCklnlWkPwX8DwKZL_snnyk7V92mOwde8_oS2HmK-e2T2gs0u2jeCtLjAMmNwoyscdRC_5TuzRepnaiGeZ187sQe5pY7gVd"
             },
             {
-                "name": "Fire Sorceress",
+                "name": "Cleric",
                 "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/VuIXJzAXYgFZOiGBOlSA0bnpjRWpDTkpunAV9O85ntZhzAoth6t4ZqIbXcrR6mjY9drnx-aTtINbNJOI19_DJW__FM-GIFU6xYsO59U"
+                "img": "https://lh3.googleusercontent.com/uFIWvRWohmG-3jps9_GUDZ5ocbktdWmwN3i_zbxsWkOuTGA-RKhKmxIO6zaBJDTs7zesgc9QBnbZvm_4UK-2P_nS_eMxJwJ6X1EvPA"
             },
             {
-                "name": "Dragon Mage",
+                "name": "Sealer",
                 "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/iOFyN_D4pmSvoSKK7-enUYHMxpzHUYMKCjyRA0PotRGpz2BWrKqBR3-oeujL2qiLr1tHQVqGDsMZNIPY4YtImuY6n8kbFWWeTJJq1g"
+                "img": "https://lh3.googleusercontent.com/0frPWJODcKFqc-HD9eyM0vm1P67vfd7jxI5hwRa33DX7Ao7Xy1V3rImjmRRj-yMzSJpOGLTY8ZX1RlJgnNv5_j8n9t921CX7gdQGGHQ"
             },
             {
-                "name": "Time Keeper",
+                "name": "Ice Wizard",
                 "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/Hb_AfUw6VjTTm0dfkic9tYDDL7ZqHdyDk8brN7v0c2Wy6s3lMnpA6owU1X8h-wmv9lIRssUM-6QHfjU6TXENu4-xv0QJStac1QS6n1I"
+                "img": "https://lh3.googleusercontent.com/3xDKqiYlKLEInQS6O6okMt8r1k8B-p7_upmRDCM8dChB4rCNrWVfgaywMlDEv_jU4LxBupttmbPllSarvH-KXEUhynuW6xcmIHTIwQ"
             }
         ],
     },
@@ -71,39 +71,39 @@ const data = [
         type: 'marksman',
         heroes: [
             {
-                "name": "Huntress",
+                "name": "Beastmaster",
                 "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/c8zjirY6hUVH2jxPWSCM4bFgnzUmFMXjinQebv0XJqWS-xZOKe47Kbgr1qzatlSO3PBwc1O0AuamUN9Sy6pJ9cPXHC0SnnVJQgAbDS0"
+                "img": "https://lh3.googleusercontent.com/fRyICzixIPbKrzImwYVTTdyz96TXyl8FI3yK01xyWo-doWmFx2Oid6q6-UuXnT-mKcYZGDmUxBJxV-jAQk57YTneY54aSF7JbiB6U4A"
             },
             {
-                "name": "Ranger",
+                "name": "Seeker",
                 "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/lS_xs8RyPqYjm47t1CpqB9MP5rnhZ3-0nr44asKJ9PE6d3GM2fPNRd9P8lPANArtDOUiK8uPT2tFY8ooooMnUaHsq6oveIui6q5j5g"
+                "img": "https://lh3.googleusercontent.com/yYXTLecPpApv030DfFdG9q1NZ_4J43XojtNUd-cBtNnR9lVGmv8y2DR_GTdZc3EiVcXpJsWy1flUsQr3VzaQrhQXIMkW66pWOfPBSQ"
             },
             {
-                "name": "Assassin",
+                "name": "Pirate",
                 "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/vwpdKYS3zsnvLVN0ySHX-Y4WLh87mEzo_NrnJsGgVOSHne8OyQureHbUoIzaQkrnX3Pgg5YsL8VAJlYMjg-CUTnOW-xvnsLEXRszjA"
+                "img": "https://lh3.googleusercontent.com/0ubOl493BsBJhETruI2v_HguHeSlIDzCvivzOMg8mcDjsayEIt8zXCYEYbvzAXvYhc9KsEqhaRLWy2fTsQWM68Y7GFoxo6DoTtliIQ"
             },
             {
-                "name": "Ninja",
+                "name": "Bard",
                 "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/eS6RZcyF5dLD9pS2YPKrRKrWV2YlUgLK99qlLAFRG57WcC_xM9ep28YTMB42iSypE9543uluVxcCqoQRsgVbPXvuHmMoqZK-t-ePFlY"
+                "img": "https://lh3.googleusercontent.com/p36AOVvX7gIlvNYNhSA590cUs8oNVArpPdSCJo4S5trcoq06oz1V0GA8i20KyZoztN7QrGfSTg7iBzk8XGFXO5P4ASTU2HbdJzoiUYo"
             }
         ],
     },
 ]
 
-export default function FactionIgnisMain() {
+export default function FactionGlaciaMain() {
     return (
         <div className='faction-lore'>
             <CoverFaction
-                title='Ignis'
-                description='The feisty Ignis proudly bear their faction’s fire insignia. Much like the scorching desert they call home, they are the life and soul of any party - an Ignis never backs down from a challenge.'
+                title='Glacia'
+                description='The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake.'
             />
             <LoreSection
-                title={`“We are Ignis!”`}
-                logo='ignis' //ignis /glacia /terra
+                title={`“Truth serves justice”`}
+                logo='glacia' //ignis /glacia /terra
                 description={`
                 <p>
                 The feisty Ignis proudly bear their faction’s fire insignia. Much like the scorching desert they call home, they are the life and soul of any party; an Ignisian never backs down from a challenge.
@@ -133,7 +133,7 @@ export default function FactionIgnisMain() {
                 `}
             />
             <LegendSection
-                title="Ignisians"
+                title="Glacians"
                 data={data}
             />
             <LandmarkSection
