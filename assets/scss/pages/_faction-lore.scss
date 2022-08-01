@@ -16,9 +16,9 @@
       // animation: zoomInSm 1.5s $home-anim-cover-delay ease(in-out-quart) both;
       position: relative;
       height: 90vh;
-      background-position:bottom center, bottom, left  20px bottom,  center; // bgbottom/ overlay/ flag/ bg
+      background-position: bottom, left  20px bottom,  center; // bgbottom/ overlay/ flag/ bg
       background-repeat: no-repeat;
-      background-size: 100%,cover, 100% , cover,;
+      background-size:cover, 100% , cover,;
       .middle {
          .wraptitle {
             margin-bottom: 30px;
@@ -36,42 +36,38 @@
    }
 
    .lore-section{
+      z-index: 10;
+      margin-top: -60px;
+      padding-top: 100px;
       position: relative;
       min-height: 100vh;
       background-repeat: no-repeat;
       background-size:cover;
-      background-position: center bottom;
+      background-position: top center;
       .wrapdesc{
-         overflow: scroll;
+         overflow-y: scroll;
          max-height: 466px;
-         &::-webkit-scrollbar-track {
-               background: transparent;
-         }
-         &::-webkit-scrollbar-thumb {
+         &::-webkit-scrollbar {
+            width: 10px;
+          }
+      
+          &::-webkit-scrollbar-track {
+            background: transparent;
+          }
+      
+          &::-webkit-scrollbar-thumb {
             ///SEMENTARA
             background-color: #423B38 !important;
             border: 1px solid #A69580 !important;
-         }
+          }
          .desctitle{
             margin-bottom: 26px;
          }
          .desc{
             // height: 100%;
             // max-height: 466px;
+            width: 100%;
             max-width: 665px;
-            &::-webkit-scrollbar {
-               width: 10px;
-             }
-         
-             &::-webkit-scrollbar-track {
-               background: transparent;
-             }
-         
-             &::-webkit-scrollbar-thumb {
-               ///SEMENTARA
-               background-color: #423B38 !important;
-               border: 1px solid #A69580 !important;
-             }
             p{
                font-family: 'D-DIN';
                font-style: italic;
@@ -86,6 +82,7 @@
 
    .sc-legend{
       min-height: 100vh;
+      padding-bottom: 60px;
 
       .subclass{
          font-weight: 700;
@@ -107,7 +104,10 @@
          margin-bottom: 45px;
          .wrapimage{
             position: relative;
-            flex-basis: 250px;
+            flex-basis: 270px;
+            img{
+               aspect-ratio: 1/1;
+            }
             .frame{
                position: absolute;
                z-index: 1;
@@ -125,20 +125,28 @@
                margin: 0;
             }
          }
-         @include media-breakpoint-down(sm) {
-            .wrapimage {
-              flex: auto;
-              flex-basis: 150px;
-        
-            //   img {
-            //     width: 100% !important;
-            //     object-fit: fill !important;
-            //     height: auto !important;
-            //     aspect-ratio: 1 / 1;
-            //   }
-            }
-          }
       }
+      // @include media-breakpoint-down(xxl) {
+      //    .box-heroes{
+      //       gap: 45px;
+      //       .wrapimage {
+      //          flex: auto;
+      //          flex-basis: 270px;
+      //       }
+      //    }
+      // }
+
+      @include media-breakpoint-down(sm) {
+         .box-heroes{
+            gap: 24px;
+            .wrapimage {
+               flex: auto;
+               flex-basis: 150px;
+            }
+         }
+      }
+
+     
 
       .wrapnavhero{
          max-width: 392px;
@@ -177,6 +185,7 @@
 
    .sc-landmark{
       min-height: 100vh;
+      margin-top: -60px;
       .wrapmap{
          position: relative;
          .pin-mark{

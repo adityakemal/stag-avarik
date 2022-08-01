@@ -15,6 +15,85 @@ import ignisCity3 from 'assets/img/factionLore/landmarkSection/ignisCity3.svg'
 import ignisCity4 from 'assets/img/factionLore/landmarkSection/ignisCity4.svg'
 import ignisCity5 from 'assets/img/factionLore/landmarkSection/ignisCity5.svg'
 import ignisCity6 from 'assets/img/factionLore/landmarkSection/ignisCity6.svg'
+import ignisCity7 from 'assets/img/factionLore/landmarkSection/ignisCity7.png' //from wa
+
+const data = [
+    {
+        type: 'knight',
+        heroes: [
+            {
+                "name": "Legionaire",
+                "subclass": "Legendary Knight",
+                "img": "https://lh3.googleusercontent.com/gigtp8rqH60mjPucykVgqEJK4P3zXVybjexY2pz2AuVSrD7wj5UUq5NcEdRRsqO5EA-R2Q7oxB0GgSZ6Ju4C2D-ZdUw0Jh_Ak52WVUk"
+            },
+            {
+                "name": "Dragon Knight",
+                "subclass": "Legendary Knight",
+                "img": "https://lh3.googleusercontent.com/bQye73RjCdpX57s5jRqgMNcJUwwvMST_eaGtj1oGxyiGv0jY-QLuNQ4sfpF79ikNahfFFurcmm1o0AhNgfG1nECtiyuaVWZT7mrc"
+            },
+            {
+                "name": "Samurai",
+                "subclass": "Legendary Knight",
+                "img": "https://lh3.googleusercontent.com/Dhi261_2MnUkDRqDLhcoYFfBFD5e2bRo5f4_VMnKFnbvBdeKVCpJ6xJo6KhCk9edAsql0x1Ocaa_qcymCBwhy4HA61-l2tOVOfGfDQ"
+            },
+            {
+                "name": "Arcane Knight",
+                "subclass": "Legendary Knight",
+                "img": "https://lh3.googleusercontent.com/p4Yn_wLbKCvVU6V7QEXhmCmD5GBs0Wc0G1tsgAGLb3MIf8UXnQGWVlMWYQeG5b2MmZl6f6tvRE_-UG0y0t-MCU4AjEn-twBEY1nrfQ"
+            }
+        ],
+    },
+    {
+        type: 'wizard',
+        heroes: [
+            {
+                "name": "Thunder Lord",
+                "subclass": "Legendary Wizard",
+                "img": "https://lh3.googleusercontent.com/87CReAR3MWty6BU6LuNl5Ti5ZCCs9EjRD4VNQMJdHlB2L_YOeBPg46iRgBvvUEX526d03ApAKHZk0DrvNYm6896r62bt1MRcuyL5iFs"
+            },
+            {
+                "name": "Fire Sorceress",
+                "subclass": "Legendary Wizard",
+                "img": "https://lh3.googleusercontent.com/VuIXJzAXYgFZOiGBOlSA0bnpjRWpDTkpunAV9O85ntZhzAoth6t4ZqIbXcrR6mjY9drnx-aTtINbNJOI19_DJW__FM-GIFU6xYsO59U"
+            },
+            {
+                "name": "Dragon Mage",
+                "subclass": "Legendary Wizard",
+                "img": "https://lh3.googleusercontent.com/iOFyN_D4pmSvoSKK7-enUYHMxpzHUYMKCjyRA0PotRGpz2BWrKqBR3-oeujL2qiLr1tHQVqGDsMZNIPY4YtImuY6n8kbFWWeTJJq1g"
+            },
+            {
+                "name": "Time Keeper",
+                "subclass": "Legendary Wizard",
+                "img": "https://lh3.googleusercontent.com/Hb_AfUw6VjTTm0dfkic9tYDDL7ZqHdyDk8brN7v0c2Wy6s3lMnpA6owU1X8h-wmv9lIRssUM-6QHfjU6TXENu4-xv0QJStac1QS6n1I"
+            }
+        ],
+    },
+    {
+        type: 'marksman',
+        heroes: [
+            {
+                "name": "Huntress",
+                "subclass": "Legendary Marksman",
+                "img": "https://lh3.googleusercontent.com/c8zjirY6hUVH2jxPWSCM4bFgnzUmFMXjinQebv0XJqWS-xZOKe47Kbgr1qzatlSO3PBwc1O0AuamUN9Sy6pJ9cPXHC0SnnVJQgAbDS0"
+            },
+            {
+                "name": "Ranger",
+                "subclass": "Legendary Marksman",
+                "img": "https://lh3.googleusercontent.com/lS_xs8RyPqYjm47t1CpqB9MP5rnhZ3-0nr44asKJ9PE6d3GM2fPNRd9P8lPANArtDOUiK8uPT2tFY8ooooMnUaHsq6oveIui6q5j5g"
+            },
+            {
+                "name": "Assassin",
+                "subclass": "Legendary Marksman",
+                "img": "https://lh3.googleusercontent.com/vwpdKYS3zsnvLVN0ySHX-Y4WLh87mEzo_NrnJsGgVOSHne8OyQureHbUoIzaQkrnX3Pgg5YsL8VAJlYMjg-CUTnOW-xvnsLEXRszjA"
+            },
+            {
+                "name": "Ninja",
+                "subclass": "Legendary Marksman",
+                "img": "https://lh3.googleusercontent.com/eS6RZcyF5dLD9pS2YPKrRKrWV2YlUgLK99qlLAFRG57WcC_xM9ep28YTMB42iSypE9543uluVxcCqoQRsgVbPXvuHmMoqZK-t-ePFlY"
+            }
+        ],
+    },
+]
 
 export default function FactionIgnisMain() {
     return (
@@ -56,17 +135,19 @@ export default function FactionIgnisMain() {
             />
             <LegendSection
                 title="Ignisians"
+                data={data}
             />
             <LandmarkSection
                 bigland_img={ignisMap}
                 bgLand={bgLandIgnis}
                 locations={[
-                    { name: 'caerstro', img: ignisCity1, desc: 'desc', coordinate: { top: '30%', left: '22.5%' }, },
-                    { name: 'city2', img: ignisCity2, desc: 'desc', coordinate: { top: '23%', left: '38%' } },
-                    { name: 'city3', img: ignisCity3, desc: 'desc', coordinate: { top: '14%', left: '57%' } },
-                    { name: 'city4', img: ignisCity4, desc: 'desc', coordinate: { top: '26%', left: '64%' } },
-                    { name: 'city5', img: ignisCity5, desc: 'desc', coordinate: { top: '38%', left: '38%' } },
-                    { name: 'city6', img: ignisCity6, desc: 'desc', coordinate: { top: '55%', left: '58%' } },
+                    { name: 'Calor City', img: ignisCity1, desc: 'The culturally rich capital of Calidum, home to shrewd merchants and gifted craftsmen. Located on the fringes of the desert, its citizens are driven with the fiery passion to showcase their might.', coordinate: { top: '30%', left: '22.5%' }, },
+                    { name: 'Tears of Helios', img: ignisCity2, desc: 'Legend has it that Helios had taken pity on the mortals and their arid home, cursed with never-ending thirst. Having wept so, he blessed the land and let his essence pool as a magical, eternal oasis.', coordinate: { top: '23%', left: '38%' } },
+                    { name: `Kilghora’s Resting Place`, img: ignisCity3, desc: `Lodged on the outskirts of Calidum, this cave is where Ignacio had lured and slain the dragon Kilghora. Its skull still remains inside, surrounded by the remnants of Kilghora’s flames.`, coordinate: { top: '14%', left: '57%' } },
+                    { name: 'Solis Desert', img: ignisCity4, desc: 'A panorama of endless sand that spans as far as the eyes can see. People hailing from various tribes call this vast expanse their home, including bands of nomads who find comfort in this balmy tract.', coordinate: { top: '26%', left: '64%' } },
+                    { name: 'Mirage Market', img: ignisCity5, desc: 'The thriving center of Avarus’ economy. Exotic Terran fruits, steel contrabands from Tenebris, Glacian essays on forbidden sagas, you name it... For the right price, you can find anything in this market.', coordinate: { top: '38%', left: '38%' } },
+                    { name: 'Grim Wastes', img: ignisCity6, desc: 'An ever-moving region and the hottest point in the desert. In its scorching heart resides Xalanthi the Phoenix, ever eager to challenge those foolish enough to set foot on these barren lands.', coordinate: { top: '55%', left: '58%' } },
+                    { name: 'Sunset Gorge', img: ignisCity7, desc: 'A massive gorge formed from the overflowing water of the Tears of Helios over the course of centuries. The small river coursing through it now sustains all the lives that have made the gorge their home.', coordinate: { top: '36%', left: '7%' } },
                 ]}
             />
         </div>

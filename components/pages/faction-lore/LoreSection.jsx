@@ -16,13 +16,13 @@ import bottomLine from '../../../assets/img/factionLore/bottomLine.svg'
 
 export default function LoreSection({ title, description, logo }) {
 
-    let imageLogo = logo === 'ignis' ? ignisLogo : title === 'glacia' ? glaciaLogo : terraLogo
+    let imageLogo = logo === 'ignis' ? ignisLogo : logo === 'glacia' ? glaciaLogo : terraLogo
 
-    let imageLogoBg = logo === 'ignis' ? bgMapIgnis : title === 'glacia' ? bgMapGlacia : bgMapTerra
+    let imageLogoBg = logo === 'ignis' ? bgMapIgnis : logo === 'glacia' ? bgMapGlacia : bgMapTerra
 
     return (
         <section
-            className='lore-section py-main d-flex align-items-center'
+            className='lore-section pb-5 d-flex align-items-center'
             style={{
                 backgroundImage: `url(${loreBg})`,
             }}

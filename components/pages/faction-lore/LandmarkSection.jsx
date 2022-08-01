@@ -57,7 +57,7 @@ export default function LandmarkSection({ bigland_img, locations, bgLand }) {
                         <div className="text-center text-white">
                             <h2>{locations[activeLocation]?.name}</h2>
                             <p className="desc">
-                                The capital of Calidum, house of the best swordman in Ava Land. Located in the middle of mountains, this city depend on its natural resources such as rare mineral.
+                                {locations[activeLocation]?.desc}
                             </p>
                         </div>
                     </div>

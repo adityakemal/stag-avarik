@@ -20,11 +20,13 @@ export default function CoverFaction({ title, description }) {
 
     let overlay = title === 'Ignis' ? ignisOverlay : title === 'Glacia' ? glaciaOverlay : terraOverlay;
 
+    let flag = title === 'Ignis' ? ignisFlag : title === 'Glacia' ? glaciaFlag : terraFlag;
+
     return (
         <div
             className="cover-bg-wrap d-flex justify-content-center align-items-center"
             style={{
-                backgroundImage: `url(${bgBottomCover}), url(${overlay}), url(${ignisFlag}), url(${background})`,
+                backgroundImage: `url(${overlay}), url(${flag}), url(${background})`,
             }}
         >
             <div className="middle d-flex justify-content-center align-items-center flex-column">
