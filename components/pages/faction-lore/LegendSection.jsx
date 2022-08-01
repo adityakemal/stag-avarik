@@ -210,7 +210,7 @@ export default function LegendSection({ title, data }) {
                 backgroundSize: 'cover'
             }}
         >
-            <div className="container-fluid py-5">
+            <div className="container-xxl py-5">
                 <div className="d-flex justify-content-center w-100 mb-2 pt-5">
                     <AvarikTitle title={title} variant={'white'} />
                 </div>
@@ -221,7 +221,7 @@ export default function LegendSection({ title, data }) {
                             <div className={`wrapimage text-white text-center ${anim(i + 2, "revealInDown")}`} key={i} >
                                 <img src={legendFrame} className='img-fluid frame ' alt="" />
                                 <img src={res.img} className='img-fluid' alt="" />
-                                <p className="name mt-3">
+                                <p className="name mt-3 mb-0">
                                     {res?.name}
                                 </p>
                                 {/* <p className="desc">
@@ -230,6 +230,16 @@ export default function LegendSection({ title, data }) {
                             </div>
                         ))
                     }
+
+                    {
+                        [1].map((res, i) => (
+                            <div className={`wrapimage text-white text-center`} style={{ opacity: 0 }} >
+                                <img src={''} className='img-fluid frame ' alt="" />
+                            </div>
+                        ))
+                    }
+
+
                 </div>
 
                 <div className="w-100 d-flex align-items-center justify-content-center">

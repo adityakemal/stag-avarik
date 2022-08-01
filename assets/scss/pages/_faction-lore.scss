@@ -100,7 +100,10 @@
          margin-bottom: 45px;
          .wrapimage{
             position: relative;
-            flex-basis: 250px;
+            flex-basis: 270px;
+            img{
+               aspect-ratio: 1/1;
+            }
             .frame{
                position: absolute;
                z-index: 1;
@@ -118,20 +121,28 @@
                margin: 0;
             }
          }
-         @include media-breakpoint-down(sm) {
-            .wrapimage {
-              flex: auto;
-              flex-basis: 150px;
-        
-            //   img {
-            //     width: 100% !important;
-            //     object-fit: fill !important;
-            //     height: auto !important;
-            //     aspect-ratio: 1 / 1;
-            //   }
-            }
-          }
       }
+      // @include media-breakpoint-down(xxl) {
+      //    .box-heroes{
+      //       gap: 45px;
+      //       .wrapimage {
+      //          flex: auto;
+      //          flex-basis: 270px;
+      //       }
+      //    }
+      // }
+
+      @include media-breakpoint-down(sm) {
+         .box-heroes{
+            gap: 24px;
+            .wrapimage {
+               flex: auto;
+               flex-basis: 150px;
+            }
+         }
+      }
+
+     
 
       .wrapnavhero{
          max-width: 392px;

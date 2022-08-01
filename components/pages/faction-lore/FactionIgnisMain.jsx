@@ -140,12 +140,12 @@ export default function FactionIgnisMain() {
                 bigland_img={ignisMap}
                 bgLand={bgLandIgnis}
                 locations={[
-                    { name: 'caerstro', img: ignisCity1, desc: 'desc', coordinate: { top: '30%', left: '22.5%' }, },
-                    { name: 'city2', img: ignisCity2, desc: 'desc', coordinate: { top: '23%', left: '38%' } },
-                    { name: 'city3', img: ignisCity3, desc: 'desc', coordinate: { top: '14%', left: '57%' } },
-                    { name: 'city4', img: ignisCity4, desc: 'desc', coordinate: { top: '26%', left: '64%' } },
-                    { name: 'city5', img: ignisCity5, desc: 'desc', coordinate: { top: '38%', left: '38%' } },
-                    { name: 'city6', img: ignisCity6, desc: 'desc', coordinate: { top: '55%', left: '58%' } },
+                    { name: 'Calor City', img: ignisCity1, desc: 'The culturally rich capital of Calidum, home to shrewd merchants and gifted craftsmen. Located on the fringes of the desert, its citizens are driven with the fiery passion to showcase their might.', coordinate: { top: '30%', left: '22.5%' }, },
+                    { name: 'Tears of Helios', img: ignisCity2, desc: 'Legend has it that Helios had taken pity on the mortals and their arid home, cursed with never-ending thirst. Having wept so, he blessed the land and let his essence pool as a magical, eternal oasis.', coordinate: { top: '23%', left: '38%' } },
+                    { name: `Kilghora’s Resting Place`, img: ignisCity3, desc: `Lodged on the outskirts of Calidum, this cave is where Ignacio had lured and slain the dragon Kilghora. Its skull still remains inside, surrounded by the remnants of Kilghora’s flames.`, coordinate: { top: '14%', left: '57%' } },
+                    { name: 'Solis Desert', img: ignisCity4, desc: 'A panorama of endless sand that spans as far as the eyes can see. People hailing from various tribes call this vast expanse their home, including bands of nomads who find comfort in this balmy tract.', coordinate: { top: '26%', left: '64%' } },
+                    { name: 'Mirage Market', img: ignisCity5, desc: 'The thriving center of Avarus’ economy. Exotic Terran fruits, steel contrabands from Tenebris, Glacian essays on forbidden sagas, you name it... For the right price, you can find anything in this market.', coordinate: { top: '38%', left: '38%' } },
+                    { name: 'Grim Wastes', img: ignisCity6, desc: 'An ever-moving region and the hottest point in the desert. In its scorching heart resides Xalanthi the Phoenix, ever eager to challenge those foolish enough to set foot on these barren lands.', coordinate: { top: '55%', left: '58%' } },
                 ]}
             />
         </div>

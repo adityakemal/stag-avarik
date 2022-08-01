@@ -106,29 +106,30 @@ export default function FactionGlaciaMain() {
                 logo='glacia' //ignis /glacia /terra
                 description={`
                 <p>
-                The feisty Ignis proudly bear their faction’s fire insignia. Much like the scorching desert they call home, they are the life and soul of any party; an Ignisian never backs down from a challenge.
+                The fluid Glacians may seem delicate, but fragile they are not. Ambitious and always striking with precision, they move with meaning and carry the grace of a floating snowflake.
                 </p>
                 <p>
-                Its people are daring and bold, and carry great ardor for life. Expressing themselves through their art and craft, an Ignisian finds beauty even in the face of peril. Their spirited manner also translates to incredible prowess on the battlefield.
-                </p>
-
-                <p>
-                Calor City, the capital of Calidum, is often said to be a melting pot of the land’s rich cultures and traditions. Theaters and galleries flourish at every turn, while circus troupes and nomadic merchants enliven its streets.
+                Living in everlasting winter has made the Glacians unbreakable yet impossibly poised. Its people value knowledge and information above all, with libraries in every district and reason underlying their every action.
                 </p>
 
                 <p>
-                As a symbol of their might, the Calidum Colosseum stands at the heart of the capital, where the best gladiators prove their worth and spectators vary from local city people to Ignisian nobility and foreign travelers. Within these historic walls, Ignacio the Dragon Knight himself had obtained his first taste of fame.
+                However, their fighters are not to be dismissed; hardened by cold nights and austere hearts, they are indeed a fierce and unyielding troupe. As a domain erected amidst water, pirates are not unheard of, so be wary where you set sail.
                 </p>
 
                 <p>
-                For a land made up of mostly scorching deserts and arid wastelands, the Tears of Helios and nearby Sunset Gorge are the main sustenance for Ignisians. The water from this oasis gives the clothes fashioned by the Silkweavers their magical healing properties.
-                </p>
-                <p>
-                This is also where the Ignisian Guardian Dragon was said to have once manifested its might in an effort to defend the land. Some people believe the guardian’s spirit still roams these grounds, while others maintain that it is long dead, preserved only by legends and stories.
+                Its capital, Eisdorf, is a wintry metropolis tucked behind the bleak and barren expanse known only as the Tundra. This frozen tract is host to year-long snowstorms and remarkable Yeti sightings.
                 </p>
 
                 <p>
-                Finally, one shan’t ignore the Grim Wastes, the hottest point in the entire kingdom that is also home to the majestic yet formidable Xalanthi, Herald of the Sun.
+                As the entire Vinterberg region comprises countless islets and frozen lakes, many of its people rely on marine life for their livelihood, which is why you will come across just as many Glacian fishermen as scholars and warriors; some even identify as two of these three.
+                </p>
+
+                <p>
+                In the more remote parts of the land hide the Sanctuary, rumored to be resting place of the gods themselves, although none has stepped foot in this mythical site, much less know the truth behind these stories.
+                </p>
+                
+                <p>
+                Glacians too have their fair share of monster tales, most prominent of which is the Zeiglatz. Some believe the beast is guarding a treasure beyond compare, while others claim it is a threshold to a different realm.
                 </p>
                 `}
             />
