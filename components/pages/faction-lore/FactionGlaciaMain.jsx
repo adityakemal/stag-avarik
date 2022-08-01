@@ -136,7 +136,7 @@ export default function FactionGlaciaMain() {
                 title="Glacians"
                 data={data}
             />
-            <LandmarkSection
+            {/* <LandmarkSection
                 bigland_img={ignisMap}
                 bgLand={bgLandIgnis}
                 locations={[
@@ -147,7 +147,7 @@ export default function FactionGlaciaMain() {
                     { name: 'city5', img: ignisCity5, desc: 'desc', coordinate: { top: '38%', left: '38%' } },
                     { name: 'city6', img: ignisCity6, desc: 'desc', coordinate: { top: '55%', left: '58%' } },
                 ]}
-            />
+            /> */}
         </div>
     )
 }
