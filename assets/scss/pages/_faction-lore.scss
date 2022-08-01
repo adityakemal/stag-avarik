@@ -16,9 +16,9 @@
       // animation: zoomInSm 1.5s $home-anim-cover-delay ease(in-out-quart) both;
       position: relative;
       height: 90vh;
-      background-position:bottom center, bottom, left  20px bottom,  center; // bgbottom/ overlay/ flag/ bg
+      background-position: bottom, left  20px bottom,  center; // bgbottom/ overlay/ flag/ bg
       background-repeat: no-repeat;
-      background-size: 100%,cover, 100% , cover,;
+      background-size:cover, 100% , cover,;
       .middle {
          .wraptitle {
             margin-bottom: 30px;
@@ -36,11 +36,14 @@
    }
 
    .lore-section{
+      z-index: 10;
+      margin-top: -60px;
+      padding-top: 100px;
       position: relative;
       min-height: 100vh;
       background-repeat: no-repeat;
       background-size:cover;
-      background-position: center bottom;
+      background-position: top center;
       .wrapdesc{
          overflow-y: scroll;
          max-height: 466px;

@@ -26,7 +26,7 @@ export default function CoverFaction({ title, description }) {
         <div
             className="cover-bg-wrap d-flex justify-content-center align-items-center"
             style={{
-                backgroundImage: `url(${bgBottomCover}), url(${overlay}), url(${flag}), url(${background})`,
+                backgroundImage: `url(${overlay}), url(${flag}), url(${background})`,
             }}
         >
             <div className="middle d-flex justify-content-center align-items-center flex-column">

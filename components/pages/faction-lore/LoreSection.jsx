@@ -22,7 +22,7 @@ export default function LoreSection({ title, description, logo }) {
 
     return (
         <section
-            className='lore-section py-main d-flex align-items-center'
+            className='lore-section pb-5 d-flex align-items-center'
             style={{
                 backgroundImage: `url(${loreBg})`,
             }}
