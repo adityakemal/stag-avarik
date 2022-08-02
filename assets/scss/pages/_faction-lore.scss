@@ -6,13 +6,14 @@
    }
 
    .cover-bg-wrap {
-      animation: zoomInSm 1.5s $home-anim-cover-delay ease(in-out-quart) both;
-      animation: cameraPan 30s $home-anim-cover-delay infinite;
+      // animation: zoomInSm 1.5s $home-anim-cover-delay ease(in-out-quart) both;
+      // animation: cameraPan 30s $home-anim-cover-delay infinite;
       position: relative;
-      height: 90vh;
-      background-position: center left; // bgbottom/ overlay/ flag/ bg
+      height: 95vh;
+      background-position: bottom left; // bgbottom/ overlay/ flag/ bg
       background-repeat: no-repeat;
-      background-size:cover;
+      // background-size:cover;
+      background-size: cover;
       .middle {
          .wraptitle {
             margin-bottom: 30px;
@@ -57,7 +58,7 @@
       background-position: top center;
       margin-top: -8vh;
       @media (min-width: 2000px) {
-         margin-top: -10vh;
+         margin-top: -11vh;
        }
       .loreleft{
        height: 500px;     
@@ -243,7 +244,7 @@
       min-height: 100vh;
       margin-top: -8vh;
       @media (min-width: 2000px) {
-         margin-top: -10vh;
+         margin-top: -11vh;
        }
       .wrapmap{
          position: relative;
