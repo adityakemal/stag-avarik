@@ -1,5 +1,5 @@
 import { Cover } from 'components/anti'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import CoverFaction from './CoverFaction'
 import LandmarkSection from './LandmarkSection'
@@ -16,6 +16,7 @@ import ignisCity4 from 'assets/img/factionLore/landmarkSection/ignisCity4.svg'
 import ignisCity5 from 'assets/img/factionLore/landmarkSection/ignisCity5.svg'
 import ignisCity6 from 'assets/img/factionLore/landmarkSection/ignisCity6.svg'
 import ignisCity7 from 'assets/img/factionLore/landmarkSection/ignisCity7.png' //from wa
+import { useSelector } from 'react-redux'
 
 const data = [
     {
@@ -96,6 +97,10 @@ const data = [
 ]
 
 export default function FactionIgnisMain() {
+    const { initialGallery } = useSelector(state => state.gallery)
+    useEffect(() => {
+        console.log(initialGallery.filter(res => res.Faction === 'Ignis' && res.Subclass === 'Legendary Knight'))
+    }, [])
     return (
         <div className='faction-lore'>
             <CoverFaction
