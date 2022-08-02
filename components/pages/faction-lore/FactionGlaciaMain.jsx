@@ -1,5 +1,9 @@
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { getHandleLegendHeroes } from 'redux/gallery/gallery.reducer'
+
 import { Cover } from 'components/anti'
-import React from 'react'
+
 
 import CoverFaction from './CoverFaction'
 import LandmarkSection from './LandmarkSection'
@@ -9,92 +13,18 @@ import LoreSection from './LoreSection'
 import ignisMap from 'assets/img/factionLore/landmarkSection/ignisMap.png'
 import bgLandIgnis from 'assets/img/factionLore/landmarkSection/bgLandIgnis.png'
 //cities
-import ignisCity1 from 'assets/img/factionLore/landmarkSection/ignisCity1.svg'
-import ignisCity2 from 'assets/img/factionLore/landmarkSection/ignisCity2.svg'
-import ignisCity3 from 'assets/img/factionLore/landmarkSection/ignisCity3.svg'
-import ignisCity4 from 'assets/img/factionLore/landmarkSection/ignisCity4.svg'
-import ignisCity5 from 'assets/img/factionLore/landmarkSection/ignisCity5.svg'
-import ignisCity6 from 'assets/img/factionLore/landmarkSection/ignisCity6.svg'
 
-const data = [
-    {
-        type: 'knight',
-        heroes: [
-            {
-                "name": "High Templar",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/1ZJ5lJKXODLgPYffs3tcftbld6XD4BZIjGKijmNsslHaAwIbnhTfu1RuOAX9XMcHMN7zRGOVZfqiPZzEV_PT--N8zSmpsiX3o4dqy6c"
-            },
-            {
-                "name": "Duelist",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/D_ao1jc715wYoC3UHdvdSfCuaT_qdI9Cjxn_gyDSwTVPipfH175Kn6jLvZR24efUdtStdvpMSKkOlJe9FENkn9JbGbDDvQUUS4wH"
-            },
-            {
-                "name": "Paladin",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/YGIKOjnjjYEIYaI_3uoGshhSig0hbdoNosRofG3v_AaYCuYn8sOSPVligvqAtXUIUQuXCjxJPdvWGy5TaLyb9LJ-uTC1Yv_irzQiIw"
-            },
-            {
-                "name": "Lancer",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/vgQ388fBURs-6ciuCgK-9-oAKhEv5ZuRRQodcSm6-aV1FlDCXpRrIh2Zi_uM5ce7U9aMbU6X7QolCfTADJMI2cAWTaJH07KE4Fqrhw"
-            }
-        ],
-    },
-    {
-        type: 'wizard',
-        heroes: [
-            {
-                "name": "Priest",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/xktrvZCklnlWkPwX8DwKZL_snnyk7V92mOwde8_oS2HmK-e2T2gs0u2jeCtLjAMmNwoyscdRC_5TuzRepnaiGeZ187sQe5pY7gVd"
-            },
-            {
-                "name": "Cleric",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/uFIWvRWohmG-3jps9_GUDZ5ocbktdWmwN3i_zbxsWkOuTGA-RKhKmxIO6zaBJDTs7zesgc9QBnbZvm_4UK-2P_nS_eMxJwJ6X1EvPA"
-            },
-            {
-                "name": "Sealer",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/0frPWJODcKFqc-HD9eyM0vm1P67vfd7jxI5hwRa33DX7Ao7Xy1V3rImjmRRj-yMzSJpOGLTY8ZX1RlJgnNv5_j8n9t921CX7gdQGGHQ"
-            },
-            {
-                "name": "Ice Wizard",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/3xDKqiYlKLEInQS6O6okMt8r1k8B-p7_upmRDCM8dChB4rCNrWVfgaywMlDEv_jU4LxBupttmbPllSarvH-KXEUhynuW6xcmIHTIwQ"
-            }
-        ],
-    },
-    {
-        type: 'marksman',
-        heroes: [
-            {
-                "name": "Beastmaster",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/fRyICzixIPbKrzImwYVTTdyz96TXyl8FI3yK01xyWo-doWmFx2Oid6q6-UuXnT-mKcYZGDmUxBJxV-jAQk57YTneY54aSF7JbiB6U4A"
-            },
-            {
-                "name": "Seeker",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/yYXTLecPpApv030DfFdG9q1NZ_4J43XojtNUd-cBtNnR9lVGmv8y2DR_GTdZc3EiVcXpJsWy1flUsQr3VzaQrhQXIMkW66pWOfPBSQ"
-            },
-            {
-                "name": "Pirate",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/0ubOl493BsBJhETruI2v_HguHeSlIDzCvivzOMg8mcDjsayEIt8zXCYEYbvzAXvYhc9KsEqhaRLWy2fTsQWM68Y7GFoxo6DoTtliIQ"
-            },
-            {
-                "name": "Bard",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/p36AOVvX7gIlvNYNhSA590cUs8oNVArpPdSCJo4S5trcoq06oz1V0GA8i20KyZoztN7QrGfSTg7iBzk8XGFXO5P4ASTU2HbdJzoiUYo"
-            }
-        ],
-    },
-]
+
 
 export default function FactionGlaciaMain() {
+
+    const { legendaryHeroes } = useSelector(state => state.gallery)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(getHandleLegendHeroes('Glacia'))
+    }, [])
+
+
     return (
         <div className='faction-lore'>
             <CoverFaction
@@ -135,7 +65,7 @@ export default function FactionGlaciaMain() {
             />
             <LegendSection
                 title="Glacians"
-                data={data}
+                data={legendaryHeroes}
             />
             {/* <LandmarkSection
                 bigland_img={ignisMap}

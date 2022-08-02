@@ -192,12 +192,16 @@ export default function LegendSection({ title, data }) {
     const handleNext = () => {
         if (selectedHeroType < (data.length - 1)) {
             setSelectedHeroType(selectedHeroType + 1)
+        } else {
+            setSelectedHeroType(0)
         }
     }
 
     const handlePrev = () => {
         if (selectedHeroType > 0) {
             setSelectedHeroType(selectedHeroType - 1)
+        } else {
+            setSelectedHeroType(data.length - 1)
         }
     }
 
@@ -220,7 +224,7 @@ export default function LegendSection({ title, data }) {
                         data[selectedHeroType]?.heroes?.map((res, i) => (
                             <div className={`wrapimage text-white text-center ${anim(i + 2, "revealInDown")}`} key={i} >
                                 <img src={legendFrame} className='img-fluid frame ' alt="" />
-                                <img src={res.img} className='img-fluid' alt="" />
+                                <img src={res?.image} className='img-fluid' alt="" />
                                 <p className="name mt-3 mb-0">
                                     {res?.name}
                                 </p>
@@ -232,7 +236,7 @@ export default function LegendSection({ title, data }) {
                     }
 
                     {
-                        [1].map((res, i) => (
+                        [1, 1].map((res, i) => (
                             <div className={`wrapimage text-white text-center`} style={{ opacity: 0 }} >
                                 <img src={''} className='img-fluid frame ' alt="" />
                             </div>

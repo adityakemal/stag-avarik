@@ -1,5 +1,7 @@
-import { Cover } from 'components/anti'
 import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { Cover } from 'components/anti'
 
 import CoverFaction from './CoverFaction'
 import LandmarkSection from './LandmarkSection'
@@ -16,91 +18,19 @@ import ignisCity4 from 'assets/img/factionLore/landmarkSection/ignisCity4.svg'
 import ignisCity5 from 'assets/img/factionLore/landmarkSection/ignisCity5.svg'
 import ignisCity6 from 'assets/img/factionLore/landmarkSection/ignisCity6.svg'
 import ignisCity7 from 'assets/img/factionLore/landmarkSection/ignisCity7.png' //from wa
-import { useSelector } from 'react-redux'
+import { getHandleLegendHeroes } from 'redux/gallery/gallery.reducer'
 
-const data = [
-    {
-        type: 'knight',
-        heroes: [
-            {
-                "name": "Legionaire",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/gigtp8rqH60mjPucykVgqEJK4P3zXVybjexY2pz2AuVSrD7wj5UUq5NcEdRRsqO5EA-R2Q7oxB0GgSZ6Ju4C2D-ZdUw0Jh_Ak52WVUk"
-            },
-            {
-                "name": "Dragon Knight",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/bQye73RjCdpX57s5jRqgMNcJUwwvMST_eaGtj1oGxyiGv0jY-QLuNQ4sfpF79ikNahfFFurcmm1o0AhNgfG1nECtiyuaVWZT7mrc"
-            },
-            {
-                "name": "Samurai",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/Dhi261_2MnUkDRqDLhcoYFfBFD5e2bRo5f4_VMnKFnbvBdeKVCpJ6xJo6KhCk9edAsql0x1Ocaa_qcymCBwhy4HA61-l2tOVOfGfDQ"
-            },
-            {
-                "name": "Arcane Knight",
-                "subclass": "Legendary Knight",
-                "img": "https://lh3.googleusercontent.com/p4Yn_wLbKCvVU6V7QEXhmCmD5GBs0Wc0G1tsgAGLb3MIf8UXnQGWVlMWYQeG5b2MmZl6f6tvRE_-UG0y0t-MCU4AjEn-twBEY1nrfQ"
-            }
-        ],
-    },
-    {
-        type: 'wizard',
-        heroes: [
-            {
-                "name": "Thunder Lord",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/87CReAR3MWty6BU6LuNl5Ti5ZCCs9EjRD4VNQMJdHlB2L_YOeBPg46iRgBvvUEX526d03ApAKHZk0DrvNYm6896r62bt1MRcuyL5iFs"
-            },
-            {
-                "name": "Fire Sorceress",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/VuIXJzAXYgFZOiGBOlSA0bnpjRWpDTkpunAV9O85ntZhzAoth6t4ZqIbXcrR6mjY9drnx-aTtINbNJOI19_DJW__FM-GIFU6xYsO59U"
-            },
-            {
-                "name": "Dragon Mage",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/iOFyN_D4pmSvoSKK7-enUYHMxpzHUYMKCjyRA0PotRGpz2BWrKqBR3-oeujL2qiLr1tHQVqGDsMZNIPY4YtImuY6n8kbFWWeTJJq1g"
-            },
-            {
-                "name": "Time Keeper",
-                "subclass": "Legendary Wizard",
-                "img": "https://lh3.googleusercontent.com/Hb_AfUw6VjTTm0dfkic9tYDDL7ZqHdyDk8brN7v0c2Wy6s3lMnpA6owU1X8h-wmv9lIRssUM-6QHfjU6TXENu4-xv0QJStac1QS6n1I"
-            }
-        ],
-    },
-    {
-        type: 'marksman',
-        heroes: [
-            {
-                "name": "Huntress",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/c8zjirY6hUVH2jxPWSCM4bFgnzUmFMXjinQebv0XJqWS-xZOKe47Kbgr1qzatlSO3PBwc1O0AuamUN9Sy6pJ9cPXHC0SnnVJQgAbDS0"
-            },
-            {
-                "name": "Ranger",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/lS_xs8RyPqYjm47t1CpqB9MP5rnhZ3-0nr44asKJ9PE6d3GM2fPNRd9P8lPANArtDOUiK8uPT2tFY8ooooMnUaHsq6oveIui6q5j5g"
-            },
-            {
-                "name": "Assassin",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/vwpdKYS3zsnvLVN0ySHX-Y4WLh87mEzo_NrnJsGgVOSHne8OyQureHbUoIzaQkrnX3Pgg5YsL8VAJlYMjg-CUTnOW-xvnsLEXRszjA"
-            },
-            {
-                "name": "Ninja",
-                "subclass": "Legendary Marksman",
-                "img": "https://lh3.googleusercontent.com/eS6RZcyF5dLD9pS2YPKrRKrWV2YlUgLK99qlLAFRG57WcC_xM9ep28YTMB42iSypE9543uluVxcCqoQRsgVbPXvuHmMoqZK-t-ePFlY"
-            }
-        ],
-    },
-]
+
 
 export default function FactionIgnisMain() {
-    const { initialGallery } = useSelector(state => state.gallery)
+
+    const { legendaryHeroes } = useSelector(state => state.gallery)
+    const dispatch = useDispatch()
     useEffect(() => {
-        console.log(initialGallery.filter(res => res.Faction === 'Ignis' && res.Subclass === 'Legendary Knight'))
+        dispatch(getHandleLegendHeroes('Ignis'))
     }, [])
+
+
     return (
         <div className='faction-lore'>
             <CoverFaction
@@ -140,7 +70,7 @@ export default function FactionIgnisMain() {
             />
             <LegendSection
                 title="Ignisians"
-                data={data}
+                data={legendaryHeroes}
             />
             <LandmarkSection
                 bigland_img={ignisMap}
