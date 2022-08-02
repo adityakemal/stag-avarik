@@ -17,12 +17,16 @@ export default function LandmarkSection({ bigland_img, locations, bgLand }) {
     const handleNext = () => {
         if (activeLocation < (locations.length - 1)) {
             setActiveLocation(activeLocation + 1)
+        } else {
+            setActiveLocation(0)
         }
     }
 
     const handlePrev = () => {
         if (activeLocation > 0) {
             setActiveLocation(activeLocation - 1)
+        } else {
+            setActiveLocation(locations.length - 1)
         }
     }
 
