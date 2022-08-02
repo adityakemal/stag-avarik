@@ -49,13 +49,16 @@
 
    .lore-section{
       z-index: 10;
-      margin-top: -8vh;
       padding-top: 100px;
       position: relative;
       min-height: 100vh;
       background-repeat: no-repeat;
       background-size:cover;
       background-position: top center;
+      margin-top: -8vh;
+      @media (min-width: 2000px) {
+         margin-top: -10vh;
+       }
       .loreleft{
        height: 500px;     
       }
@@ -239,6 +242,9 @@
    .sc-landmark{
       min-height: 100vh;
       margin-top: -8vh;
+      @media (min-width: 2000px) {
+         margin-top: -10vh;
+       }
       .wrapmap{
          position: relative;
          .pin-mark{

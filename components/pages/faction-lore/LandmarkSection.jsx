@@ -15,7 +15,7 @@ export default function LandmarkSection({ bigland_img, locations, bgLand }) {
     const [activeLocation, setActiveLocation] = useState(0)
 
     const handleNext = () => {
-        if (activeLocation < (locations.length - 1)) {
+        if (activeLocation < (locations?.length - 1)) {
             setActiveLocation(activeLocation + 1)
         } else {
             setActiveLocation(0)
@@ -26,7 +26,7 @@ export default function LandmarkSection({ bigland_img, locations, bgLand }) {
         if (activeLocation > 0) {
             setActiveLocation(activeLocation - 1)
         } else {
-            setActiveLocation(locations.length - 1)
+            setActiveLocation(locations?.length - 1)
         }
     }
 

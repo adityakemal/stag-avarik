@@ -25,7 +25,7 @@ export default function LegendSection({ title, data }) {
 
 
     const handleNext = () => {
-        if (selectedHeroType < (data.length - 1)) {
+        if (selectedHeroType < (data?.length - 1)) {
             setSelectedHeroType(selectedHeroType + 1)
         } else {
             setSelectedHeroType(0)
@@ -36,7 +36,7 @@ export default function LegendSection({ title, data }) {
         if (selectedHeroType > 0) {
             setSelectedHeroType(selectedHeroType - 1)
         } else {
-            setSelectedHeroType(data.length - 1)
+            setSelectedHeroType(data?.length - 1)
         }
     }
 
