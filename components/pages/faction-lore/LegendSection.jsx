@@ -15,6 +15,7 @@ import legendFrame from 'assets/img/factionLore/legendsSection/legendFrame.svg'
 
 import bgLegend from 'assets/img/factionLore/legendsSection/bgLegend.jpeg'
 import bgLegendGlacia from 'assets/img/factionLore/legendsSection/bgLegendGlacia.png'
+import ModalPic from '../gallery/modal';
 
 
 
@@ -22,6 +23,11 @@ export default function LegendSection({ title, data }) {
     const [trigger, anim] = useScrollAnim()
 
     const [selectedHeroType, setSelectedHeroType] = useState(0)
+    //modal
+    const [open, setOpen] = React.useState(false)
+    const [currentItem, setCurrentItem] = React.useState(null)
+    const handleOpen = () => setOpen(true)
+    const handleClose = () => setOpen(false)
 
 
     const handleNext = () => {
@@ -49,6 +55,13 @@ export default function LegendSection({ title, data }) {
                 backgroundSize: 'cover'
             }}
         >
+            <ModalPic
+                open={open}
+                handleClose={handleClose}
+                currentItem={currentItem}
+                isFactionPage={true}
+            />
+
             <div className="container-xxl py-5">
                 <div className="d-flex justify-content-center w-100 mb-4 pt-5">
                     <AvarikTitle title={title} variant={'white'} />
@@ -57,7 +70,15 @@ export default function LegendSection({ title, data }) {
                 <div className={`w-100 box-heroes`}>
                     {
                         data[selectedHeroType]?.heroes?.map((res, i) => (
-                            <div className={`wrapimage text-white text-center ${anim(i + 2, "revealInDown")}`} key={i} ref={trigger}>
+                            <div
+                                className={`wrapimage text-white text-center cursor-pointer ${anim(i + 2, "revealInDown")}`}
+                                key={i}
+                                ref={trigger}
+                                onClick={() => {
+                                    setCurrentItem(res)
+                                    handleOpen(true)
+                                }}
+                            >
                                 <img src={legendFrame} className='img-fluid frame ' alt="" />
                                 <img src={res?.image} className='img-fluid' alt="" />
                                 <p className="name mt-3 mt-xs-2 mb-0">

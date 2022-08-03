@@ -92,7 +92,6 @@ export default function App() {
             <div
               className="wrapfigure transition "
               onClick={() => {
-                console.log(item)
                 setCurrentItem(item)
                 handleOpen(true)
               }}

@@ -55,53 +55,6 @@ const RowModal = ({ title, content, icon, rowGutter, titleRow = 'col-7' }) => {
   )
 }
 
-// const Traits = ({ currentItem }) => {
-//   return (
-//     <>
-//       <div className="col-sm-6">
-//         {currentItem?.traits.slice(0, 5).map((item, i) => (
-//           <RowModal
-//             rowGutter={'row-4'}
-//             key={i}
-//             title={<div className="">{item?.trait_type}</div>}
-//             content={item?.value}
-//             icon={
-//               <img
-//                 src={
-//                   META_FILTER?.find((j) => j?.trait_type === item?.trait_type)
-//                     ?.icon
-//                 }
-//                 style={{ width: 20, height: 20 }}
-//               />
-//             }
-//           />
-//         ))}
-//       </div>
-
-//       <div className="col-sm-6">
-//         {currentItem?.traits.slice(5, 11).map((item, i) => (
-//           <RowModal
-//             rowGutter={'row-4'}
-//             key={i}
-//             title={<div className="">{item?.trait_type}</div>}
-//             // {_item?.trait_type} : {_item?.value}
-//             content={item?.value}
-//             icon={
-//               <img
-//                 src={
-//                   META_FILTER?.find((j) => j?.trait_type === item?.trait_type)
-//                     ?.icon
-//                 }
-//                 style={{ width: 20, height: 20 }}
-//               />
-//             }
-//           />
-//         ))}
-
-//       </div>
-//     </>
-//   )
-// }
 
 
 const BoxStat = ({ imgSrc, title, value, isPercentage = true, alignStart }) => {
@@ -129,7 +82,7 @@ const BoxStat = ({ imgSrc, title, value, isPercentage = true, alignStart }) => {
   )
 }
 
-export default function ModalPic({ open, handleClose, currentItem }) {
+export default function ModalPic({ open, handleClose, currentItem, isFactionPage }) {
   if (!currentItem) return null
   return (
     <Modal
@@ -277,13 +230,6 @@ export default function ModalPic({ open, handleClose, currentItem }) {
 
               </div>
 
-
-
-              {/* <div className="w-100 px-2">
-                <div className="d-flex row-5">
-                  <Traits {...{ currentItem }} />
-                </div>
-              </div> */}
             </div>
 
             {/* // CHARACTER STAT  */}
@@ -324,69 +270,76 @@ export default function ModalPic({ open, handleClose, currentItem }) {
               </div>
             </div>
 
-            <hr className="mt-0 w-100" style={{ borderColor: '#A59480' }} />
+            {
+              isFactionPage ?
+                null
+                :
+                <>
+                  <hr className="mt-0 w-100" style={{ borderColor: '#A59480' }} />
 
-            <div className="col-md-12 row" >
-              <div className="col-6 col-sm-3">
-                <BoxStat
-                  imgSrc={`/assets/modal/counter.svg`}
-                  title="Counter Rate"
-                  value={currentItem?.battle_stats["Counter Rate"]}
-                  alignStart={true}
-                />
-                <BoxStat
-                  imgSrc={`/assets/modal/evasion.svg`}
-                  title="Evasion"
-                  value={currentItem?.battle_stats["Evasion"]}
-                  alignStart={true}
-                />
-              </div>
-              <div className="col-6 col-sm-3">
-                <BoxStat
-                  alignStart={true}
-                  imgSrc={`/assets/modal/acc.svg`}
-                  title="Accuracy"
-                  value={currentItem?.battle_stats["Accuracy"]}
-                />
-                <BoxStat
-                  alignStart={true}
-                  imgSrc={`/assets/modal/crit-rate.svg`}
-                  title="Critical Rate"
-                  value={currentItem?.battle_stats["Critical Rate"]}
-                />
-              </div>
-              <div className="col-6 col-sm-3">
-                <BoxStat
-                  alignStart={true}
-                  imgSrc={`/assets/modal/block.svg`}
-                  title="Block Rate"
-                  value={currentItem?.battle_stats["Block Rate"]}
-                />{" "}
-                <BoxStat
-                  alignStart={true}
-                  imgSrc={`/assets/modal/crit-dmg.svg`}
-                  title="Critical Damage"
-                  value={currentItem?.battle_stats["Critical Damage"]}
-                />
-              </div>
-              <div className="col-6 col-sm-3">
-                <BoxStat
-                  alignStart={true}
-                  imgSrc={`/assets/modal/multi.svg`}
-                  title="Multi Hit"
-                  value={currentItem?.battle_stats["Multi Hit"]}
-                />
-                <BoxStat
-                  alignStart={true}
-                  imgSrc={`/assets/modal/pierce.svg`}
-                  title="Pierce Rate"
-                  value={currentItem?.battle_stats["Pierce Rate"]}
-                />
-              </div>
-            </div>
+                  <div className="col-md-12 row" >
+                    <div className="col-6 col-sm-3">
+                      <BoxStat
+                        imgSrc={`/assets/modal/counter.svg`}
+                        title="Counter Rate"
+                        value={currentItem?.battle_stats["Counter Rate"]}
+                        alignStart={true}
+                      />
+                      <BoxStat
+                        imgSrc={`/assets/modal/evasion.svg`}
+                        title="Evasion"
+                        value={currentItem?.battle_stats["Evasion"]}
+                        alignStart={true}
+                      />
+                    </div>
+                    <div className="col-6 col-sm-3">
+                      <BoxStat
+                        alignStart={true}
+                        imgSrc={`/assets/modal/acc.svg`}
+                        title="Accuracy"
+                        value={currentItem?.battle_stats["Accuracy"]}
+                      />
+                      <BoxStat
+                        alignStart={true}
+                        imgSrc={`/assets/modal/crit-rate.svg`}
+                        title="Critical Rate"
+                        value={currentItem?.battle_stats["Critical Rate"]}
+                      />
+                    </div>
+                    <div className="col-6 col-sm-3">
+                      <BoxStat
+                        alignStart={true}
+                        imgSrc={`/assets/modal/block.svg`}
+                        title="Block Rate"
+                        value={currentItem?.battle_stats["Block Rate"]}
+                      />{" "}
+                      <BoxStat
+                        alignStart={true}
+                        imgSrc={`/assets/modal/crit-dmg.svg`}
+                        title="Critical Damage"
+                        value={currentItem?.battle_stats["Critical Damage"]}
+                      />
+                    </div>
+                    <div className="col-6 col-sm-3">
+                      <BoxStat
+                        alignStart={true}
+                        imgSrc={`/assets/modal/multi.svg`}
+                        title="Multi Hit"
+                        value={currentItem?.battle_stats["Multi Hit"]}
+                      />
+                      <BoxStat
+                        alignStart={true}
+                        imgSrc={`/assets/modal/pierce.svg`}
+                        title="Pierce Rate"
+                        value={currentItem?.battle_stats["Pierce Rate"]}
+                      />
+                    </div>
+                  </div>
+                </>
+            }
 
 
-            <div className="col-md-12 d-flex justify-content-center mb-3" style={{ marginTop: 48 }}>
+            <div className="col-md-12 d-flex justify-content-center mb-3" style={{ marginTop: isFactionPage ? 18 : 48 }}>
               <AvarikButton
                 text="Buy Now on Opensea"
                 variant="dark"
