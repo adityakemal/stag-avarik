@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import 'animate.css';
 
 import { useScrollAnim } from 'components/hooks/hooks'
@@ -16,6 +16,7 @@ import legendFrame from 'assets/img/factionLore/legendsSection/legendFrame.svg'
 import bgLegend from 'assets/img/factionLore/legendsSection/bgLegend.jpeg'
 import bgLegendGlacia from 'assets/img/factionLore/legendsSection/bgLegendGlacia.png'
 import ModalPic from '../gallery/modal';
+import Slider from 'react-slick';
 
 
 
@@ -30,20 +31,49 @@ export default function LegendSection({ title, data }) {
     const handleClose = () => setOpen(false)
 
 
+
+    //creating the ref
+    const customeSlider = useRef();
     const handleNext = () => {
-        if (selectedHeroType < (data?.length - 1)) {
-            setSelectedHeroType(selectedHeroType + 1)
-        } else {
-            setSelectedHeroType(0)
-        }
+        customeSlider.current.slickNext()
     }
 
     const handlePrev = () => {
-        if (selectedHeroType > 0) {
-            setSelectedHeroType(selectedHeroType - 1)
-        } else {
-            setSelectedHeroType(data?.length - 1)
-        }
+        customeSlider.current.slickPrev()
+    }
+
+
+    const sliderContent = () => {
+        return (
+            data?.map((res, i) =>
+                <div className='w-100'>
+                    <div className=" row mx-0 w-100 box-heroes" key={i}>
+                        {
+                            res?.heroes?.map((h, j) => (
+                                <div className='col-xs-6 col-sm-6 col-md-3 px-2 px-sm-2 px-md-3 px-xl-4  ' style={{ position: 'relative' }}>
+                                    <div
+                                        className={` wrapimage text-white text-center cursor-pointer `}
+                                        key={j}
+                                        ref={trigger}
+                                        onClick={() => {
+                                            setCurrentItem(h)
+                                            handleOpen(true)
+                                        }}
+                                    >
+                                        <img src={legendFrame} className='img-fluid frame ' alt="" />
+                                        <img src={h?.image} className='img-fluid' alt="" />
+                                        <p className="name mt-3 mt-xs-2 mb-3">
+                                            {h?.name}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            )
+        )
+
     }
 
     return (
@@ -67,40 +97,25 @@ export default function LegendSection({ title, data }) {
                     <AvarikTitle title={title} variant={'white'} />
                 </div>
                 <h5 className='text-white text-center mb-5'>{data[selectedHeroType]?.heroes[0].Subclass}s</h5>
-                <div className={`w-100 box-heroes`}>
-                    {
-                        data[selectedHeroType]?.heroes?.map((res, i) => (
-                            <div
-                                className={`wrapimage text-white text-center cursor-pointer ${anim(i + 2, "revealInDown")}`}
-                                key={i}
-                                ref={trigger}
-                                onClick={() => {
-                                    setCurrentItem(res)
-                                    handleOpen(true)
-                                }}
-                            >
-                                <img src={legendFrame} className='img-fluid frame ' alt="" />
-                                <img src={res?.image} className='img-fluid' alt="" />
-                                <p className="name mt-3 mt-xs-2 mb-0">
-                                    {res?.name}
-                                </p>
-                                {/* <p className="desc">
-                                    {res.subclass}
-                                </p> */}
-                            </div>
-                        ))
-                    }
+                <div >
+                    <Slider
+                        ref={customeSlider}
+                        {...{
+                            dots: false,
+                            arrows: false,
+                            infinite: true,
+                            speed: 500,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            beforeChange: (current, next) => setSelectedHeroType(next)
+                        }}
 
-                    {
-                        [1, 1].map((res, i) => (
-                            <div className={`wrapimage text-white text-center`} style={{ opacity: 0 }} >
-                                <img src={''} className='img-fluid frame ' alt="" />
-                            </div>
-                        ))
-                    }
-
-
+                    >
+                        {sliderContent()}
+                    </Slider>
                 </div>
+
+
 
                 <div className="w-100 d-flex align-items-center justify-content-center">
                     <div className={`d-flex align-items-center justify-content-between w-100 wrapnavhero`}>
@@ -109,7 +124,7 @@ export default function LegendSection({ title, data }) {
                             <div
                                 key={i}
                                 className={`navbut ${i === selectedHeroType && 'active'} `}
-                                onClick={() => setSelectedHeroType(i)}
+                                onClick={() => customeSlider.current.slickGoTo(i)}
                             >
                                 <img src={res?.type === 'knight' ? knightButton : res?.type === 'wizard' ? wizardButton : marksmanButton} alt="" />
                             </div>
