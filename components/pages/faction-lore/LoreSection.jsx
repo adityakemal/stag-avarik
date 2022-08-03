@@ -1,8 +1,9 @@
 import React from 'react'
-import { useScrollAnim } from 'components/hooks/hooks'
+import { useScrollAnim, useWindowSize } from 'components/hooks/hooks'
 import AvarikTitle from 'components/avarik-saga/avarik-title'
 
 import loreBg from '../../../assets/img/factionLore/loreBg.png'
+import bgLoreMobile from '../../../assets/img/factionLore/bgLoreMobile.svg'
 
 import ignisLogo from '../../../assets/img/factionLore/ignisLogo.svg'
 import glaciaLogo from '../../../assets/img/factionLore/glaciaLogo.svg'
@@ -24,12 +25,14 @@ export default function LoreSection({ title, description, logo }) {
 
     let imageLogoBg = logo === 'ignis' ? bgMapIgnis : logo === 'glacia' ? bgMapGlacia : bgMapTerra
 
+    const { width } = useWindowSize() // < 767
+
     return (
         <section
             className={`lore-section pb-5 d-flex align-items-center`}
             ref={trigger}
             style={{
-                backgroundImage: `url(${loreBg})`,
+                backgroundImage: `url(${width < 500 ? bgLoreMobile : loreBg})`,
             }}
         >
             <div className="container-xxl p-auto p-xs-0">
@@ -55,10 +58,10 @@ export default function LoreSection({ title, description, logo }) {
                     </div>
                 </div>
 
-                <div className="w-100 text-center d-none d-sm-block">
+                <div className="w-100 text-center d-none d-sm-block px-3 px-sm-3 px-md-3 px-lg-0">
                     <img src={bottomLine} className='img-fluid bottomline' alt="" />
                 </div>
-                <div className="w-100 text-center d-block d-sm-none px-4 px-md-auto">
+                <div className="w-100 text-center d-block d-sm-none px-3 px-md-auto">
                     <img src={bottomLineMobile} className='img-fluid bottomline' alt="" />
                 </div>
             </div>

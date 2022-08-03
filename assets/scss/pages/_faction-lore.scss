@@ -29,6 +29,7 @@
          }
       }
       @include media-breakpoint-down(sm) {
+         animation: zoomInSm 1.5s $home-anim-cover-delay ease(in-out-quart) both;
          h1{
             font-size: 32px;
          }
@@ -123,6 +124,7 @@
 
          .wrapdesc{
             .desc{
+               max-width: 100%;
                max-height: unset;
                overflow-y: unset;
                p{
@@ -131,8 +133,15 @@
                }
             }
          }
+      }
 
+      @include media-breakpoint-down(md) {
 
+         .wrapdesc{
+            .desc{
+               max-width: 100%;
+            }
+         }
 
       }
    }

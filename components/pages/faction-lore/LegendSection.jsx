@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import 'animate.css';
 
-import { useScrollAnim } from 'components/hooks/hooks'
+import { useScrollAnim, useWindowSize } from 'components/hooks/hooks'
 import AvarikTitle from 'components/avarik-saga/avarik-title'
 
 
@@ -42,6 +42,8 @@ export default function LegendSection({ title, data }) {
         customeSlider.current.slickPrev()
     }
 
+    const { width } = useWindowSize() // < 767
+
 
     const sliderContent = () => {
         return (
@@ -50,11 +52,11 @@ export default function LegendSection({ title, data }) {
                     <div className=" row mx-0 w-100 box-heroes" key={i}>
                         {
                             res?.heroes?.map((h, j) => (
-                                <div className='col-xs-6 col-sm-6 col-md-3 px-2 px-sm-2 px-md-3 px-xl-4  ' style={{ position: 'relative' }}>
+                                <div className='col-xs-6 col-sm-6 col-md-3 px-2 px-sm-2 px-md-3 px-xl-4' style={{ position: 'relative' }}>
+
                                     <div
                                         className={` wrapimage text-white text-center cursor-pointer `}
                                         key={j}
-                                        ref={trigger}
                                         onClick={() => {
                                             setCurrentItem(h)
                                             handleOpen(true)
