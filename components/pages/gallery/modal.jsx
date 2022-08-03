@@ -224,7 +224,7 @@ export default function ModalPic({ open, handleClose, currentItem, isFactionPage
                           <div className="valuedesc">: {item?.value}</div>
                         </div>
                       ))
-                      : <img src="/assets/modal/legendNull.svg" alt="" className="img-fluid d-sm-none d-md-block" style={{ marginTop: "-20px" }} />
+                      : <img src="/assets/modal/legendNull.svg" alt="" className="img-fluid d-none d-md-block" style={{ marginTop: "-20px" }} />
                   }
                 </div>
 
