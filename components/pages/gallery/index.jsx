@@ -32,7 +32,7 @@ export default function App() {
   const [allArr, setAllArr] = React.useState([])
   // const [_options, addFilter] = React.useState([])
   const [_options] = React.useState([])
-  const [range, setRange] = React.useState(24)
+  const [range, setRange] = React.useState(54)
   const [isPending, startTransition] = React.useTransition()
 
   React.useEffect(() => {
