@@ -136,7 +136,7 @@ export default function ModalPic({ open, handleClose, currentItem, isFactionPage
               />
               <RowModal
                 title={<div className="">Description</div>}
-                content={currentItem?.description.replaceAll('�',`'`)}
+                content={currentItem?.description.replaceAll('�', `'`)}
                 titleRow='col-5'
               />
               <RowModal
