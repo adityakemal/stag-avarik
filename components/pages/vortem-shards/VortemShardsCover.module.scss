@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(0.4vw + 93px) 16px calc(11vw + 100px) 16px;
+  position: relative;
+
+  .desc {
+    width: 80%;
+    min-width: 316px;
+    max-width: 570px;
+    margin-top: 2.6411658%;
+  }
+}
+
+.shard {
+  width: calc(4vw + 24px);
+  height: calc(3.4vw + 20px);
+  position: absolute;
+  left: calc(17.9vw - 8px);
+  top: calc(2.7vw + 35px);
+}
