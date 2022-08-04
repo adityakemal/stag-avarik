@@ -1,17 +1,11 @@
 import React, { useEffect, useLayoutEffect, useContext } from "react"
-// import { navigate } from "gatsby"
 import { useRouter } from "next/router"
 
-import { Navbar, Footer, Loader } from "components/anti"
+import { Navbar, Footer } from "components/anti"
 import { LoadingContext } from "context/loading-context"
 import { ErrorStateContext } from "context/error-msg-context"
 
-// const navigate = (to) => {
-//   const router = useRouter()
-//   router.push(to)
-// }
-
-const Layout = ({ children, hasFooter = true }) => {
+const Layout = ({ children, hasFooter = true, mainClass }) => {
   // Loader Context
   // allows loader only shown when directly visited via URL
   const { initialLoading } = useContext(LoadingContext)
@@ -77,8 +71,6 @@ const Layout = ({ children, hasFooter = true }) => {
     }
   }, [])
 
-  // console.log(initialLoading)
-
   return (
     <>
       {errorMsg && (
@@ -95,10 +87,8 @@ const Layout = ({ children, hasFooter = true }) => {
           </div>
         </>
       )}
-      {/* <Loader variant="image" theme="dark" effect="fadeOut" /> */}
       <Navbar />
-      <main>
-        {/* {!initialLoading ? children : <div className="h-vh-100 w-vw-100" />} */}
+      <main className={mainClass || ""}>
         {children}
         {hasFooter && <Footer />}
       </main>
