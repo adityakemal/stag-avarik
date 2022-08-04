@@ -2,20 +2,12 @@
   position: relative;
   z-index: 2;
   background-image: url("./assets/LorePaper.png");
-  background-position-x: right;
+  background-position-x: center;
   background-position-y: bottom;
   background-repeat: no-repeat;
-  padding: 0 calc(0.1vw + 18.3px) 0 calc(11vw - 23px);
   margin-top: -115px;
-  background-size: cover;
-  min-height: 1194px;
-
-  @media (max-width: 1066px) {
-    min-height: unset;
-    background-size: auto 100%;
-    padding-top: 120px;
-    padding-bottom: calc(1.8vw + 69px);
-  }
+  background-size: max(1537px, 100%) 100%;
+  padding: 120px calc(0.1vw + 18.3px) calc(1.8vw + 69px) calc(11vw - 23px);
 }
 .main {
   display: flex;
