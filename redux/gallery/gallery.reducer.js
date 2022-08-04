@@ -8,6 +8,7 @@ let initialState = {
     galleryList: [...nftDataJson],
     filterList: [],
     sortString: '',
+    legendaryHeroes: []
 };
 
 export const gallerySlice = createSlice({
@@ -59,9 +60,6 @@ export const gallerySlice = createSlice({
 
         filterEngine: (state) => {
             // console.log(nftDataJson)
-
-
-
             let filterToQueryString = (name) => {
                 let filterByname = state?.filterList?.filter(res => res.trait_type === name)
                 if (filterByname.length === 0) {
@@ -79,27 +77,27 @@ export const gallerySlice = createSlice({
 
             // console.log(allQueryString)
             var result = jsonQuery(allQueryString, { data: data }).value
-            // console.log(result.map(res => ({ name: res.name, subclass: res.Subclass, img: res.image })))
+            // console.log(result.map(res => res))
             state.galleryList = result
+        },
+        getHandleLegendHeroes: (state, { payload }) => {
+            const data = state.initialGallery
+            const knightArr = data.filter(res => res.Faction === payload && res.Subclass === 'Legendary Knight')
+            const wizardArr = data.filter(res => res.Faction === payload && res.Subclass === 'Legendary Wizard')
+            const marksmanArr = data.filter(res => res.Faction === payload && res.Subclass === 'Legendary Marksman')
 
-            // if (state.filterList.length !== 0) {
+            state.legendaryHeroes = [
+                { type: 'knight', heroes: knightArr },
+                { type: 'wizard', heroes: wizardArr },
+                { type: 'marksman', heroes: marksmanArr },
+            ]
 
-            //     let data = []
-            //     for (var fil of state?.filterList) {
-            //         // console.log(JSON.stringify(fil))
-            //         const filtered = nftDataJson?.filter(res => res?.traits?.find(val => JSON.stringify(val) === JSON.stringify(fil)))
-            //         data.push(...filtered)
-            //     }
-            //     state.galleryList = data
-            // } else {
-            //     state.galleryList = [...nftDataJson]
-            // }
         }
 
     },
 });
 
 // Action creators are generated for each case reducer function
-export const { getInitialData, getHandleSortBy, handleFilterData, filterEngine, handleSortName, handleResetData, getHandleSearch } = gallerySlice.actions;
+export const { getInitialData, getHandleSortBy, handleFilterData, filterEngine, handleSortName, handleResetData, getHandleSearch, getHandleLegendHeroes } = gallerySlice.actions;
 
 export default gallerySlice.reducer;
