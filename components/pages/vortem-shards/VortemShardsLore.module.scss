@@ -1,0 +1,60 @@
+.root {
+  position: relative;
+  z-index: 2;
+  background-image: url("./assets/LorePaper.png");
+  background-position-x: center;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  margin-top: -115px;
+  background-size: max(1537px, 100%) 100%;
+  padding: 120px calc(0.1vw + 18.3px) calc(1.8vw + 69px) calc(11vw - 23px);
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1248px) and (min-width: 768px) {
+    flex: 0 0 35%;
+    max-width: 35%;
+  }
+}
+.subtitle {
+  margin-top: calc(0.2vw + 14px);
+  text-align: center;
+  font-family: 'Trajan Pro', sans-serif;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0.05em;
+}
+.desc {
+  margin-top: 20px;
+}
+.imgContainer {
+  align-items: center;
+  @media (max-width: 1248px) and (min-width: 768px) {
+    flex: 0 0 65%;
+    max-width: 65%;
+  }
+  div {
+    max-width: 876px;
+    margin: auto;
+  }
+}
+.shard1 {
+  position: absolute;
+  width: calc(10vw + 28px);
+  height: calc(8vw + 24px);
+  right: calc(16vw - 17px);
+  top: calc(-2vw + 9px);
+  transform: rotate(26.64deg);
+}
+
+.shard2 {
+  position: absolute;
+  width: calc(6vw + 45px);
+  height: calc(5vw + 38px);
+  left: calc(16vw - 17px);
+  bottom: calc(-1vw - 25px);
+  transform: rotate(-8deg);
+}

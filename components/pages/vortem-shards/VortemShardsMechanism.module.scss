@@ -1,0 +1,66 @@
+.root {
+  color: #FFFFFF;
+  padding: calc(0.1vw + 93px) 11.8%;
+}
+.title {
+  margin: auto;
+  width: fit-content;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    font-family: 'Trajan Pro', sans-serif;
+    margin: 0;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    min-width: 14ch;
+
+    @media screen and (max-width: 767px) {
+      font-size: 20px;
+    }
+  }
+  img {
+    max-width: min(342px, 100%);
+  }
+}
+.dashedBox {
+  margin-top: -15px;
+  margin-bottom: 8px;
+  width: 50px;
+  height: 50px;
+  background: url("./assets/number.png");
+  line-height: 55px;
+  text-align: center;
+  font-family: 'Trajan Pro', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+.desc {
+  max-width: 254px;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.smallDiamond {
+  width: 5.11px;
+  height: 5.11px;
+  background: #FFFFFF;
+  transform: rotate(-45deg);
+}
+.dividerLine {
+  width: 15.28%;
+  min-width: 154px;
+  max-width: 219px;
+  height: 2.37px;
+  background: #FFFFFF;
+  margin: 0 10px;
+  @media screen and (max-width: 767px) {
+    min-width: 184px;
+  }
+}
