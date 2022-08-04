@@ -136,7 +136,7 @@ export default function ModalPic({ open, handleClose, currentItem, isFactionPage
               />
               <RowModal
                 title={<div className="">Description</div>}
-                content={currentItem?.description}
+                content={currentItem?.description.replaceAll('�',`'`)}
                 titleRow='col-5'
               />
               <RowModal
@@ -258,13 +258,13 @@ export default function ModalPic({ open, handleClose, currentItem, isFactionPage
                 <BoxStat
                   imgSrc={`/assets/modal/atk.svg`}
                   title="ATK"
-                  value={currentItem?.battle_stats["ATK"]}
+                  value={currentItem?.battle_stats["Attack"]}
                   isPercentage={false}
                 />
                 <BoxStat
                   imgSrc={`/assets/modal/def.svg`}
                   title="DEF"
-                  value={currentItem?.battle_stats["DEF"]}
+                  value={currentItem?.battle_stats["Defense"]}
                   isPercentage={false}
                 />
               </div>
