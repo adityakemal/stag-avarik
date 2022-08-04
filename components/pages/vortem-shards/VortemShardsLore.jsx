@@ -2,7 +2,7 @@ import classes from "./VortemShardsLore.module.scss"
 import AvarikTitle from "../../avarik-saga/avarik-title"
 import { useScrollAnim } from "../../hooks/hooks"
 import AvarikDesc from "../../avarik-saga/AvarikDesc/AvarikDesc"
-import vortemLore from "./assets/VortemLore.png"
+import vortemLore from "./assets/VortemLore.webp"
 import clsx from "clsx"
 import VortemShard from "../../../assets/img/vortemShards/vortem_shard.png"
 
