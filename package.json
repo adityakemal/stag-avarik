@@ -25,6 +25,7 @@
     "@web3-react/walletconnect-connector": "^6.2.4",
     "axios": "^0.24.0",
     "bootstrap": "^4.4.1",
+    "clsx": "^1.2.1",
     "cogo-toast": "^4.2.3",
     "dotenv": "^8.2.0",
     "formik": "^2.2.6",
